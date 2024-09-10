@@ -7,7 +7,7 @@ class CustomTextFormFields extends StatefulWidget {
   const CustomTextFormFields({super.key});
 
   @override
-  _CustomTextFormFieldsState createState() => _CustomTextFormFieldsState();
+  State<CustomTextFormFields> createState() => _CustomTextFormFieldsState();
 }
 
 class _CustomTextFormFieldsState extends State<CustomTextFormFields> {

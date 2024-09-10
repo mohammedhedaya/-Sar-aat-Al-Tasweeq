@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopping_chart/core/utils/app_colors.dart';
-import 'package:shopping_chart/features/login/presentation/widgets/custom_buttom_to_reset_password.dart';
-import 'package:shopping_chart/features/login/presentation/widgets/hello_and_change_lang.dart';
-import 'package:shopping_chart/features/login/presentation/widgets/text_form_field.dart';
+import 'package:shopping_chart/features/auth/presentation/widgets/custom_buttom_to_reset_password.dart';
+import 'package:shopping_chart/features/auth/presentation/widgets/hello_and_change_lang.dart';
+import 'package:shopping_chart/features/auth/presentation/widgets/text_form_field.dart';
 
 class CustomPositioned extends StatefulWidget {
   const CustomPositioned({super.key});
