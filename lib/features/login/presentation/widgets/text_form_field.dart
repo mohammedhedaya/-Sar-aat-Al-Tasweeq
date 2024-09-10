@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shopping_chart/core/utils/app_colors.dart';
-import 'package:shopping_chart/core/utils/assets.dart';
+import 'package:shopping_chart/features/login/presentation/widgets/swith_theme.dart';
 
 class CustomTextFormFields extends StatefulWidget {
   const CustomTextFormFields({super.key});
@@ -12,110 +11,87 @@ class CustomTextFormFields extends StatefulWidget {
 
 class _CustomTextFormFieldsState extends State<CustomTextFormFields> {
   bool _obscureText = true;
-  bool _isDarkTheme = false;
 
   @override
   Widget build(BuildContext context) {
-    return Positioned(
-      top: 350,
-      left: 30,
-      right: 30,
-      child: Column(
-        children: [
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15),
-              color: AppColors.dimGray,
-            ),
-            child: TextFormField(
-              textAlign: TextAlign.right,
-              decoration: InputDecoration(
-                hintText: 'الإيميل',
-                hintStyle: const TextStyle(color: AppColors.whiteColor),
-                filled: true,
-                fillColor: Colors.transparent,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(50),
-                  borderSide: BorderSide.none,
+    return Stack(
+      children: [
+        Positioned(
+          top: 350,
+          left: 30,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                width: MediaQuery.of(context).size.width * 0.8,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  color: AppColors.dimGray,
                 ),
-                contentPadding: const EdgeInsets.all(15),
-              ),
-              style: const TextStyle(color: AppColors.whiteColor, fontSize: 18),
-            ),
-          ),
-          const SizedBox(height: 15),
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15),
-              color: AppColors.dimGray,
-            ),
-            child: Row(
-              children: [
-                IconButton(
-                  icon: Icon(
-                    _obscureText ? Icons.visibility_off : Icons.visibility,
-                    color: AppColors.whiteColor,
-                  ),
-                  onPressed: () {
-                    setState(() {
-                      _obscureText = !_obscureText;
-                    });
-                  },
-                ),
-                Expanded(
-                  child: TextFormField(
-                    textAlign: TextAlign.right,
-                    obscureText: _obscureText,
-                    decoration: InputDecoration(
-                      hintText: 'كلمة السر',
-                      hintStyle: const TextStyle(color: AppColors.whiteColor),
-                      filled: true,
-                      fillColor: Colors.transparent,
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide.none,
-                      ),
-                      contentPadding: const EdgeInsets.all(15),
+                child: TextFormField(
+                  textAlign: TextAlign.right,
+                  decoration: InputDecoration(
+                    hintText: 'الإيميل',
+                    hintStyle: const TextStyle(color: AppColors.whiteColor),
+                    filled: true,
+                    fillColor: Colors.transparent,
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(50),
+                      borderSide: BorderSide.none,
                     ),
-                    style: const TextStyle(color: AppColors.whiteColor, fontSize: 18),
+                    contentPadding: const EdgeInsets.all(15),
                   ),
+                  style: const TextStyle(color: AppColors.whiteColor, fontSize: 18),
                 ),
-              ],
-            ),
-          ),
-          const SizedBox(height: 20),
-          Container(
-            decoration: BoxDecoration(
-              color: AppColors.dimGray,
-              borderRadius: BorderRadius.circular(30),
-            ),
-            child: Row(
+              ),
+              const SizedBox(height: 15),
 
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                SvgPicture.asset(
-                  _isDarkTheme ? AppAssets.darkIcon : AppAssets.lightIcon,
-                  width: 24,
-                  height: 24,
+              Container(
+                width: MediaQuery.of(context).size.width * 0.8,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  color: AppColors.dimGray,
                 ),
-                Switch(
-                  value: _isDarkTheme,
-                  onChanged: (value) {
-                    setState(() {
-                      _isDarkTheme = value;
-                    });
-                  },
+                child: Row(
+                  children: [
+                    IconButton(
+                      icon: Icon(
+                        _obscureText ? Icons.visibility_off : Icons.visibility,
+                        color: AppColors.whiteColor,
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          _obscureText = !_obscureText;
+                        });
+                      },
+                    ),
+                    Expanded(
+                      child: TextFormField(
+                        textAlign: TextAlign.right,
+                        obscureText: _obscureText,
+                        decoration: InputDecoration(
+                          hintText: 'كلمة السر',
+                          hintStyle: const TextStyle(color: AppColors.whiteColor),
+                          filled: true,
+                          fillColor: Colors.transparent,
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            borderSide: BorderSide.none,
+                          ),
+                          contentPadding: const EdgeInsets.all(15),
+                        ),
+                        style: const TextStyle(color: AppColors.whiteColor, fontSize: 18),
+                      ),
+                    ),
+                  ],
                 ),
-                SvgPicture.asset(
-                  _isDarkTheme ?  AppAssets.lightIcon : AppAssets.darkIcon,
-                  width: 24,
-                  height: 24,
-                ),
-              ],
-            ),
+              ),
+              const SizedBox(height: 20),
+              SwithTheme(),
+            ],
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

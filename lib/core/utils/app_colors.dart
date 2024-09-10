@@ -8,5 +8,8 @@ class AppColors{
   static const Color dimGray = Color(0xff696969);
   static const Color silverPink = Color(0xffD3B6B6);
   static const darkGray = Color(0xFF2F2F2F);
+  static const mixWhiteAndGray = Color(0xFFD9D9D9);
+  static const gray = Color(0xFF78838D);
+
 
 }
