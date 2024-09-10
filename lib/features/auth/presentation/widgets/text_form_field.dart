@@ -94,7 +94,7 @@ class _CustomTextFormFieldsState extends State<CustomTextFormFields> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 SvgPicture.asset(
-                  _isDarkTheme ? AppAssets.darkIcon : AppAssets.lightIcon,
+                  _isDarkTheme ? Assets.imagesDark : Assets.imagesLight,
                   width: 24,
                   height: 24,
                 ),
@@ -107,7 +107,7 @@ class _CustomTextFormFieldsState extends State<CustomTextFormFields> {
                   },
                 ),
                 SvgPicture.asset(
-                  _isDarkTheme ?  AppAssets.lightIcon : AppAssets.darkIcon,
+                  _isDarkTheme ?  Assets.imagesLight : Assets.imagesDark,
                   width: 24,
                   height: 24,
                 ),
