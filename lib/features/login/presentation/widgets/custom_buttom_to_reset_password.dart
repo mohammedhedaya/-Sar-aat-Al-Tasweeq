@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:shopping_chart/core/utils/app_colors.dart';
 
 class CustomButtomToResetPassword extends StatelessWidget {
@@ -37,6 +38,8 @@ class CustomButtomToResetPassword extends StatelessWidget {
               ),
               child: TextButton(
                 onPressed: () {
+                  GoRouter.of(context).push('/resetPassword');
+
                 },
                 child: const Text(
                   "نسيت كلمة المرور",
