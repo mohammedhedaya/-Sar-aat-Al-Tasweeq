@@ -8,15 +8,18 @@ class CustomAuthTextField extends StatelessWidget {
     required this.hintText,
     this.onChanged,
     this.controller,
+    this.keyboardType,
   });
   final String hintText;
   final void Function(String)? onChanged;
   final TextEditingController? controller;
+  final TextInputType? keyboardType;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
       onChanged: onChanged,
+      keyboardType: keyboardType,
       cursorColor: AppColors.whiteColor,
       textAlign: TextAlign.right,
       decoration: InputDecoration(

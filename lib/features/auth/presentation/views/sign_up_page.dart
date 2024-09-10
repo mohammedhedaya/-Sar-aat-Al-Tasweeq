@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:shopping_chart/core/utils/app_colors.dart';
 import 'package:shopping_chart/core/utils/app_text_style.dart';
 import 'package:shopping_chart/core/utils/assets.dart';
@@ -19,9 +20,12 @@ class SignUpPage extends StatelessWidget {
         elevation: 0,
         surfaceTintColor: Colors.transparent,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            context.pop();
+          },
           icon: const Icon(
             Icons.arrow_back_ios_new_outlined,
+            color: Colors.black38,
           ),
         ),
       ),
@@ -47,27 +51,29 @@ class SignUpPage extends StatelessWidget {
               ),
             ),
           ),
-          const Positioned(
+          Positioned(
             top: 230,
             left: 41,
             right: 26,
             child: Column(
               children: [
-                CustomAuthTextField(
+                const CustomAuthTextField(
                   hintText: 'الاسم الأول',
                 ),
-                SizedBox(height: 21),
-                CustomAuthTextField(
+                SizedBox(height: 21.h),
+                const CustomAuthTextField(
                   hintText: 'الاسم الثانى',
                 ),
-                SizedBox(height: 21),
-                CustomAuthTextField(
+                SizedBox(height: 21.h),
+                const CustomAuthTextField(
                   hintText: 'الاسم الأخير',
                 ),
-                SizedBox(height: 21),
-                CustomAuthTextField(
+                SizedBox(height: 21.h),
+                const CustomAuthTextField(
                   hintText: 'الأيميل',
+                  keyboardType: TextInputType.emailAddress,
                 ),
+                SizedBox(height: 7.h),
               ],
             ),
           ),
@@ -83,6 +89,36 @@ class SignUpPage extends StatelessWidget {
                   topRight: Radius.circular(300),
                 ),
               ),
+            ),
+          ),
+          Positioned(
+            bottom: 115,
+            left: 41,
+            child: Row(
+              children: [
+                InkWell(
+                  onTap: () {},
+                  child: Container(
+                    constraints: const BoxConstraints(
+                      minHeight: 64,
+                      minWidth: 64,
+                    ),
+                    decoration: const BoxDecoration(
+                      color: AppColors.circleGray,
+                      shape: BoxShape.circle,
+                    ),
+                    child: const Icon(
+                      Icons.arrow_back_outlined,
+                      color: AppColors.whiteColor,
+                    ),
+                  ),
+                ),
+                SizedBox(width: 80.w),
+                Text(
+                  "تسجيل\nالحساب",
+                  style: AppStyles.style32W700,
+                ),
+              ],
             ),
           ),
         ],
