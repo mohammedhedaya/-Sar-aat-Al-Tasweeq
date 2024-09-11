@@ -89,7 +89,9 @@ class _SignUpOTPViewState extends State<SignUpOTPView> {
                       borderRadius: BorderRadius.circular(5.r),
                     ),
                   ),
-                  onCompleted: (pin) {},
+                  onCompleted: (pin) {
+                    context.push('/successSignUpView');
+                  },
                   onChanged: (value) {},
                   onSubmitted: (value) {},
                 ),

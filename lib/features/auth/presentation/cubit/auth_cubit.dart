@@ -6,6 +6,7 @@ class AuthCubit extends Cubit<AuthState> {
   AuthCubit() : super(AuthInitial());
 
   GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
+  GlobalKey<FormState> signUpFormKey = GlobalKey<FormState>();
   GlobalKey<FormState> signUpProfileFormKey = GlobalKey<FormState>();
   bool? obscurePasswordTextValue = true;
   String? firstName;

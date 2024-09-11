@@ -69,40 +69,37 @@ class SignUpProfileView extends StatelessWidget {
                         keyboardType: TextInputType.phone,
                         prefixIcon: InkWell(
                           onTap: () {},
-                          child: Expanded(
-                            child: Container(
-                              constraints: BoxConstraints(
-                                minHeight: 67.h,
-                                minWidth: 95.w,
+                          child: Container(
+                            constraints: BoxConstraints(
+                              minWidth: 95.w,
+                            ),
+                            width: 95.w,
+                            height: 70.h,
+                            decoration: const BoxDecoration(
+                              color: Color(0xffD9D9D9),
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(20),
+                                bottomLeft: Radius.circular(20),
                               ),
-                              width: 95.w,
-                              height: 70.h,
-                              decoration: const BoxDecoration(
-                                color: Color(0xffD9D9D9),
-                                borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(20),
-                                  bottomLeft: Radius.circular(20),
+                            ),
+                            child: Row(
+                              children: [
+                                const Icon(
+                                  Icons.keyboard_arrow_down,
+                                  color: AppColors.blackColor,
                                 ),
-                              ),
-                              child: Row(
-                                children: [
-                                  const Icon(
-                                    Icons.keyboard_arrow_down,
+                                SizedBox(width: 5.w),
+                                SvgPicture.asset(
+                                  Assets.imagesSuadiFlag,
+                                ),
+                                SizedBox(width: 5.w),
+                                Text(
+                                  "966",
+                                  style: AppStyles.style16W400.copyWith(
                                     color: AppColors.blackColor,
                                   ),
-                                  SizedBox(width: 5.w),
-                                  SvgPicture.asset(
-                                    Assets.imagesSuadiFlag,
-                                  ),
-                                  SizedBox(width: 5.w),
-                                  Text(
-                                    "966",
-                                    style: AppStyles.style16W400.copyWith(
-                                      color: AppColors.blackColor,
-                                    ),
-                                  ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
                           ),
                         ),
