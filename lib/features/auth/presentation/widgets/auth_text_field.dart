@@ -9,8 +9,10 @@ class CustomAuthTextField extends StatelessWidget {
     this.onChanged,
     this.controller,
     this.keyboardType,
+    this.prefixIcon,
   });
   final String hintText;
+  final Widget? prefixIcon;
   final void Function(String)? onChanged;
   final TextEditingController? controller;
   final TextInputType? keyboardType;
@@ -23,6 +25,7 @@ class CustomAuthTextField extends StatelessWidget {
       cursorColor: AppColors.whiteColor,
       textAlign: TextAlign.right,
       decoration: InputDecoration(
+        prefixIcon: prefixIcon,
         hintText: hintText,
         hintStyle: AppStyles.style18W400,
         filled: true,

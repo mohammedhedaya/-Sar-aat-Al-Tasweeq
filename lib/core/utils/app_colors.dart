@@ -10,4 +10,5 @@ class AppColors {
   static const darkGray = Color(0xFF2F2F2F);
   static const signInGray = Color(0xff78838D);
   static const circleGray = Color(0xff757575);
+  static const visibilityColor = Color(0xff939393);
 }
