@@ -19,7 +19,9 @@ class CreateAccountAndResetPassword extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                context.push('/signUpView');
+              },
               child: Text(
                 "إنشاء حساب",
                 style: AppStyles.style18W900,

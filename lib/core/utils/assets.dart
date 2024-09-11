@@ -25,5 +25,29 @@ class Assets {
   /// Assets for imagesLogincircle3
   /// assets/images/logincircle3.svg
   static const String imagesLogincircle3 = "assets/images/logincircle3.svg";
+
+  /// Assets for imagesSuadiFlag
+  /// assets/images/SuadiFlag.svg
+  static const String imagesSuadiFlag = "assets/images/SuadiFlag.svg";
+
+  /// Assets for imagesSuccesscircle1
+  /// assets/images/Successcircle1.svg
+  static const String imagesSuccesscircle1 = "assets/images/Successcircle1.svg";
+
+  /// Assets for imagesSuccesscircle2
+  /// assets/images/Successcircle2.svg
+  static const String imagesSuccesscircle2 = "assets/images/Successcircle2.svg";
+
+  /// Assets for imagesSuccesscircle3
+  /// assets/images/Successcircle3.svg
+  static const String imagesSuccesscircle3 = "assets/images/Successcircle3.svg";
+
+  /// Assets for imagesSuccesscircle4
+  /// assets/images/Successcircle4.svg
+  static const String imagesSuccesscircle4 = "assets/images/Successcircle4.svg";
+
+  /// Assets for imagesWhitecircle
+  /// assets/images/Whitecircle.svg
+  static const String imagesWhitecircle = "assets/images/Whitecircle.svg";
 }
 
