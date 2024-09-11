@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart'; // Import ScreenUtil
 import 'package:shopping_chart/core/utils/app_colors.dart';
 import 'package:shopping_chart/features/login/presentation/widgets/swith_theme.dart';
 
@@ -17,39 +18,38 @@ class _CustomTextFormFieldsState extends State<CustomTextFormFields> {
     return Stack(
       children: [
         Positioned(
-          top: 350,
-          left: 30,
+          top: 350.h, // Use ScreenUtil for vertical position
+          left: 30.w, // Use ScreenUtil for horizontal position
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                width: MediaQuery.of(context).size.width * 0.8,
+                width: 0.8.sw, // Use ScreenUtil to set width as a percentage of screen width
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
+                  borderRadius: BorderRadius.circular(15.r), // Use ScreenUtil for border radius
                   color: AppColors.dimGray,
                 ),
                 child: TextFormField(
                   textAlign: TextAlign.right,
                   decoration: InputDecoration(
-                    hintText: 'الإيميل',
-                    hintStyle: const TextStyle(color: AppColors.whiteColor),
+                    hintText: 'الأيميل',
+                    hintStyle: TextStyle(color: AppColors.whiteColor),
                     filled: true,
                     fillColor: Colors.transparent,
                     border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(50),
+                      borderRadius: BorderRadius.circular(50.r), // Use ScreenUtil for border radius
                       borderSide: BorderSide.none,
                     ),
-                    contentPadding: const EdgeInsets.all(15),
+                    contentPadding: EdgeInsets.all(15.w), // Use ScreenUtil for padding
                   ),
-                  style: const TextStyle(color: AppColors.whiteColor, fontSize: 18),
+                  style: TextStyle(color: AppColors.whiteColor, fontSize: 18.sp), // Use ScreenUtil for font size
                 ),
               ),
-              const SizedBox(height: 15),
-
+              SizedBox(height: 15.h), // Use ScreenUtil for spacing
               Container(
-                width: MediaQuery.of(context).size.width * 0.8,
+                width: 0.8.sw, // Use ScreenUtil to set width as a percentage of screen width
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
+                  borderRadius: BorderRadius.circular(15.r), // Use ScreenUtil for border radius
                   color: AppColors.dimGray,
                 ),
                 child: Row(
@@ -71,23 +71,23 @@ class _CustomTextFormFieldsState extends State<CustomTextFormFields> {
                         obscureText: _obscureText,
                         decoration: InputDecoration(
                           hintText: 'كلمة السر',
-                          hintStyle: const TextStyle(color: AppColors.whiteColor),
+                          hintStyle: TextStyle(color: AppColors.whiteColor),
                           filled: true,
                           fillColor: Colors.transparent,
                           border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
+                            borderRadius: BorderRadius.circular(10.r), // Use ScreenUtil for border radius
                             borderSide: BorderSide.none,
                           ),
-                          contentPadding: const EdgeInsets.all(15),
+                          contentPadding: EdgeInsets.all(15.w), // Use ScreenUtil for padding
                         ),
-                        style: const TextStyle(color: AppColors.whiteColor, fontSize: 18),
+                        style: TextStyle(color: AppColors.whiteColor, fontSize: 18.sp), // Use ScreenUtil for font size
                       ),
                     ),
                   ],
                 ),
               ),
-              const SizedBox(height: 20),
-              SwithTheme(),
+              SizedBox(height: 20.h), // Use ScreenUtil for spacing
+              SwithTheme(), // Use the responsive switch theme
             ],
           ),
         ),

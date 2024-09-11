@@ -8,18 +8,18 @@ class HelloAndChangeLang extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      top: 80,
+      top: 80.h, // Adjust top positioning based on screen height
       left: 0,
       right: 0,
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 30.w),
-        child: const Row(
+        padding: EdgeInsets.symmetric(horizontal: 30.w), // Adjust horizontal padding based on screen width
+        child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
               "English",
               style: TextStyle(
-                fontSize: 23,
+                fontSize: 23.sp, // Adjust font size based on screen size
                 color: AppColors.whiteColor,
                 fontWeight: FontWeight.bold,
               ),
@@ -27,7 +27,7 @@ class HelloAndChangeLang extends StatelessWidget {
             Text(
               "مرحباً",
               style: TextStyle(
-                fontSize: 46,
+                fontSize: 46.sp, // Adjust font size based on screen size
                 color: AppColors.whiteColor,
                 fontWeight: FontWeight.bold,
               ),
