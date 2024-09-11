@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopping_chart/core/utils/app_colors.dart';
-import 'package:shopping_chart/features/login/presentation/widgets/auth_text_field.dart';
-import 'package:shopping_chart/features/login/presentation/widgets/swith_theme.dart';
+import 'package:shopping_chart/features/auth/presentation/widgets/auth_text_field.dart';
+import 'package:shopping_chart/features/auth/presentation/widgets/swith_theme.dart';
 
 class CustomLoginForm extends StatelessWidget {
   const CustomLoginForm({super.key});

@@ -3,10 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shopping_chart/core/utils/app_colors.dart';
 import 'package:shopping_chart/core/utils/assets.dart';
-import 'package:shopping_chart/features/login/presentation/widgets/custom_buttom_to_reset_password.dart';
-import 'package:shopping_chart/features/login/presentation/widgets/custom_login_icon.dart';
-import 'package:shopping_chart/features/login/presentation/widgets/hello_and_change_lang.dart';
-import 'package:shopping_chart/features/login/presentation/widgets/text_form_field.dart';
+import 'package:shopping_chart/features/auth/presentation/widgets/custom_buttom_to_reset_password.dart';
+import 'package:shopping_chart/features/auth/presentation/widgets/custom_login_icon.dart';
+import 'package:shopping_chart/features/auth/presentation/widgets/hello_and_change_lang.dart';
+import 'package:shopping_chart/features/auth/presentation/widgets/text_form_field.dart';
 
 class LoginViewBody extends StatelessWidget {
   const LoginViewBody({super.key});
