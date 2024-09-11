@@ -4,14 +4,16 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shopping_chart/core/utils/app_colors.dart';
 import 'package:pinput/pinput.dart';
+import 'package:shopping_chart/core/utils/app_text_style.dart';
+import 'package:shopping_chart/features/auth/presentation/widgets/auth_btn.dart';
 
-class OtpPage extends StatefulWidget {
-  const OtpPage({super.key});
+class ResetPasswordOTPView extends StatefulWidget {
+  const ResetPasswordOTPView({super.key});
   @override
-  _OtpPageState createState() => _OtpPageState();
+  State<ResetPasswordOTPView> createState() => _ResetPasswordOTPViewState();
 }
 
-class _OtpPageState extends State<OtpPage> {
+class _ResetPasswordOTPViewState extends State<ResetPasswordOTPView> {
   final TextEditingController _pinController = TextEditingController();
   final FocusNode _focusNode = FocusNode();
   late Timer _timer;
@@ -70,10 +72,7 @@ class _OtpPageState extends State<OtpPage> {
                   Text(
                     'يرجى إدخال رمز التحقق',
                     textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: AppColors.gray,
-                      fontSize: 16.sp,
-                    ),
+                    style: AppStyles.style12W400,
                   ),
                   SizedBox(height: 30.h),
                   Pinput(
@@ -83,35 +82,33 @@ class _OtpPageState extends State<OtpPage> {
                     showCursor: true,
                     readOnly: true,
                     defaultPinTheme: PinTheme(
-                      width: 60.w,
-                      height: 60.h,
+                      width: 40.w,
+                      height: 40.h,
                       textStyle: TextStyle(
                         fontSize: 22.sp,
                         color: Colors.black,
                       ),
                       decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(12.r),
+                        color: AppColors.mixWhiteAndGray,
+                        borderRadius: BorderRadius.circular(5.r),
                       ),
                     ),
-                    onCompleted: (pin) {
-                      print("Pin entered: $pin");
-                    },
+                    onCompleted: (pin) {},
+                    onChanged: (value) {},
+                    onSubmitted: (pin) {},
+                    keyboardType: TextInputType.number,
                   ),
-                  SizedBox(height: 20.h),
+                  SizedBox(height: 12.h),
                   Text(
-                    '$_start',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18.sp,
-                    ),
+                    '0:$_start',
+                    style: AppStyles.style12W600,
                   ),
                 ],
               ),
             ),
           ),
           Container(
-            color: AppColors.dimGray,
+            color: const Color(0xffABABAB),
             padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 15.h),
             child: Column(
               children: [
@@ -133,7 +130,7 @@ class _OtpPageState extends State<OtpPage> {
                       value = "<"; // For backspace symbol
                     }
                     return Material(
-                      color: AppColors.dimGray,
+                      color: const Color(0xffABABAB),
                       child: InkWell(
                         onTap: () {
                           setState(() {
@@ -148,41 +145,29 @@ class _OtpPageState extends State<OtpPage> {
                           ),
                           child: value == "<"
                               ? Icon(
-                            Icons.backspace_outlined,
-                            color: Colors.black,
-                            size: 24.sp,
-                          )
+                                  Icons.backspace_outlined,
+                                  color: Colors.black,
+                                  size: 24.sp,
+                                )
                               : Text(
-                            value,
-                            style: TextStyle(
-                              fontSize: 24.sp,
-                              color: Colors.black,
-                            ),
-                          ),
+                                  value,
+                                  style: TextStyle(
+                                    fontSize: 24.sp,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.black,
+                                  ),
+                                ),
                         ),
                       ),
                     );
                   }),
                 ),
                 SizedBox(height: 20.h),
-                ElevatedButton(
+                CustomAuthBtn(
                   onPressed: () {
-                    GoRouter.of(context).push('/newPasswordPage');
+                    context.push('/newPasswordPage');
                   },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.black,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20.r),
-                    ),
-                    minimumSize: Size(double.infinity, 50.h),
-                  ),
-                  child: Text(
-                    'التالي',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18.sp,
-                    ),
-                  ),
+                  text: "التالي",
                 ),
               ],
             ),

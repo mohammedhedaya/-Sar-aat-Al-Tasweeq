@@ -33,7 +33,7 @@ class ResetPasswordView extends StatelessWidget {
               const Spacer(),
               CustomAuthBtn(
                 onPressed: () {
-                  context.push('/otp');
+                  context.push('/resetPasswordOTPView');
                 },
                 text: "التالي",
               ),
@@ -44,4 +44,3 @@ class ResetPasswordView extends StatelessWidget {
     );
   }
 }
-
