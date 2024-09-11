@@ -27,10 +27,10 @@ class CustomLoginForm extends StatelessWidget {
               SizedBox(height: 20.h),
               CustomAuthTextField(
                 hintText: "كلمة السر",
-                prefixIcon: GestureDetector(
-                  onTap: () {},
-                  child: const Icon(
-                    color: AppColors.visibilityColor,
+                prefixIcon: IconButton(
+                  onPressed: () {},
+                  color: AppColors.visibilityColor,
+                  icon: const Icon(
                     Icons.visibility_outlined,
                   ),
                 ),

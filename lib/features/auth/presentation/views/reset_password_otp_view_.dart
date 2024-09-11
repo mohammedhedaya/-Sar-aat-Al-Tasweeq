@@ -165,7 +165,7 @@ class _ResetPasswordOTPViewState extends State<ResetPasswordOTPView> {
                 SizedBox(height: 20.h),
                 CustomAuthBtn(
                   onPressed: () {
-                    context.push('/newPasswordPage');
+                    context.push('/resetNewPasswordView');
                   },
                   text: "التالي",
                 ),
