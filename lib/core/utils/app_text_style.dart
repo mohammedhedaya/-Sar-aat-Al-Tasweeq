@@ -18,6 +18,11 @@ class AppStyles {
     fontSize: 18.sp,
     fontWeight: FontWeight.w400,
   );
+  static TextStyle style18W700 = TextStyle(
+    color: AppColors.whiteColor,
+    fontSize: 18.sp,
+    fontWeight: FontWeight.w400,
+  );
   static TextStyle style32W700 = TextStyle(
     color: AppColors.whiteColor,
     fontSize: 32.sp,

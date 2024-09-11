@@ -53,5 +53,13 @@ class Assets {
   /// Assets for imagesWhitecircle
   /// assets/images/Whitecircle.svg
   static const String imagesWhitecircle = "assets/images/Whitecircle.svg";
+  ///Assets For Image Person App Bar
+  static const String imagePersonInAppBar = "assets/images/imagePersonInAppBar.png";
+  static const String jewel = "assets/images/jewel.svg";
+  static const String wallet = "assets/images/jewel.svg";
+  static const String coffee = "assets/images/coffee.png";
+  static const String whatsApp = "assets/images/whatsAppImage.webp";
+  static const String telegram = "assets/images/telegramImage.webp";
+  static const String instagram = "assets/images/instagram-new-gradient-logo-animation.gif";
 }
 
