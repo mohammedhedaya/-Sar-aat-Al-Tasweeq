@@ -67,8 +67,8 @@ class _ResetPasswordOTPViewState extends State<ResetPasswordOTPView> {
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 30.h),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  const SizedBox(height: 150),
                   Text(
                     'يرجى إدخال رمز التحقق',
                     textAlign: TextAlign.center,
@@ -99,9 +99,15 @@ class _ResetPasswordOTPViewState extends State<ResetPasswordOTPView> {
                     keyboardType: TextInputType.number,
                   ),
                   SizedBox(height: 12.h),
-                  Text(
-                    '0:$_start',
-                    style: AppStyles.style12W600,
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 70.w),
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        '0:$_start',
+                        style: AppStyles.style12W600,
+                      ),
+                    ),
                   ),
                 ],
               ),
