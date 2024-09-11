@@ -17,9 +17,10 @@ class SuccessSignUpView extends StatelessWidget {
           ),
           Positioned(
             top: 0,
-            left: 40,
+            left: 50,
             child: SvgPicture.asset(
               Assets.imagesSuccesscircle2,
+              fit: BoxFit.fill,
             ),
           ),
           Positioned(
@@ -27,6 +28,7 @@ class SuccessSignUpView extends StatelessWidget {
             right: 50,
             child: SvgPicture.asset(
               Assets.imagesSuccesscircle3,
+              fit: BoxFit.fill,
             ),
           ),
           Positioned(
@@ -34,6 +36,7 @@ class SuccessSignUpView extends StatelessWidget {
             right: 0,
             child: SvgPicture.asset(
               Assets.imagesSuccesscircle4,
+              fit: BoxFit.fill,
             ),
           ),
           Column(
