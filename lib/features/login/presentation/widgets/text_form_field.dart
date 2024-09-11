@@ -1,93 +1,42 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart'; // Import ScreenUtil
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopping_chart/core/utils/app_colors.dart';
+import 'package:shopping_chart/features/login/presentation/widgets/auth_text_field.dart';
 import 'package:shopping_chart/features/login/presentation/widgets/swith_theme.dart';
 
-class CustomTextFormFields extends StatefulWidget {
-  const CustomTextFormFields({super.key});
-
-  @override
-  _CustomTextFormFieldsState createState() => _CustomTextFormFieldsState();
-}
-
-class _CustomTextFormFieldsState extends State<CustomTextFormFields> {
-  bool _obscureText = true;
+class CustomLoginForm extends StatelessWidget {
+  const CustomLoginForm({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         Positioned(
-          top: 350.h, // Use ScreenUtil for vertical position
-          left: 30.w, // Use ScreenUtil for horizontal position
+          top: 350,
+          left: 36,
+          right: 36,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                width: 0.8.sw, // Use ScreenUtil to set width as a percentage of screen width
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15.r), // Use ScreenUtil for border radius
-                  color: AppColors.dimGray,
-                ),
-                child: TextFormField(
-                  textAlign: TextAlign.right,
-                  decoration: InputDecoration(
-                    hintText: 'الأيميل',
-                    hintStyle: TextStyle(color: AppColors.whiteColor),
-                    filled: true,
-                    fillColor: Colors.transparent,
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(50.r), // Use ScreenUtil for border radius
-                      borderSide: BorderSide.none,
-                    ),
-                    contentPadding: EdgeInsets.all(15.w), // Use ScreenUtil for padding
+              CustomAuthTextField(
+                hintText: "الأيميل",
+                keyboardType: TextInputType.emailAddress,
+                onChanged: (email) {},
+              ),
+              SizedBox(height: 20.h),
+              CustomAuthTextField(
+                hintText: "كلمة السر",
+                prefixIcon: GestureDetector(
+                  onTap: () {},
+                  child: const Icon(
+                    color: AppColors.visibilityColor,
+                    Icons.visibility_outlined,
                   ),
-                  style: TextStyle(color: AppColors.whiteColor, fontSize: 18.sp), // Use ScreenUtil for font size
                 ),
+                onChanged: (password) {},
               ),
-              SizedBox(height: 15.h), // Use ScreenUtil for spacing
-              Container(
-                width: 0.8.sw, // Use ScreenUtil to set width as a percentage of screen width
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15.r), // Use ScreenUtil for border radius
-                  color: AppColors.dimGray,
-                ),
-                child: Row(
-                  children: [
-                    IconButton(
-                      icon: Icon(
-                        _obscureText ? Icons.visibility_off : Icons.visibility,
-                        color: AppColors.whiteColor,
-                      ),
-                      onPressed: () {
-                        setState(() {
-                          _obscureText = !_obscureText;
-                        });
-                      },
-                    ),
-                    Expanded(
-                      child: TextFormField(
-                        textAlign: TextAlign.right,
-                        obscureText: _obscureText,
-                        decoration: InputDecoration(
-                          hintText: 'كلمة السر',
-                          hintStyle: TextStyle(color: AppColors.whiteColor),
-                          filled: true,
-                          fillColor: Colors.transparent,
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10.r), // Use ScreenUtil for border radius
-                            borderSide: BorderSide.none,
-                          ),
-                          contentPadding: EdgeInsets.all(15.w), // Use ScreenUtil for padding
-                        ),
-                        style: TextStyle(color: AppColors.whiteColor, fontSize: 18.sp), // Use ScreenUtil for font size
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(height: 20.h), // Use ScreenUtil for spacing
-              SwithTheme(), // Use the responsive switch theme
+              SizedBox(height: 26.h),
+              const SwithTheme(),
             ],
           ),
         ),

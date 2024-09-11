@@ -17,11 +17,12 @@ class _SwithThemeState extends State<SwithTheme> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 0.2.sw, // Use ScreenUtil to set width as a percentage of screen width
-      height: 0.1.sw, // Use ScreenUtil to set height as a percentage of screen width
+      width: 0.2.sw,
+      height: 0.1.sw,
+      constraints: const BoxConstraints(minHeight: 39, minWidth: 89),
       decoration: BoxDecoration(
         color: AppColors.mixWhiteAndGray,
-        borderRadius: BorderRadius.circular(30.r), // Use ScreenUtil for border radius
+        borderRadius: BorderRadius.circular(30.r),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -33,13 +34,14 @@ class _SwithThemeState extends State<SwithTheme> {
               });
             },
             child: SvgPicture.asset(
-              AppAssets.lightIcon,
-              width: 29.w, // Use ScreenUtil for width
-              height: 30.h, // Use ScreenUtil for height
-              color: !_isDarkTheme ? Colors.black : Colors.grey,
+              Assets.imagesLight,
+              colorFilter: ColorFilter.mode(
+                !_isDarkTheme ? Colors.black : Colors.grey,
+                BlendMode.srcIn,
+              ),
             ),
           ),
-          SizedBox(width: 10.w), // Use ScreenUtil for spacing
+          SizedBox(width: 12.w),
           GestureDetector(
             onTap: () {
               setState(() {
@@ -47,10 +49,11 @@ class _SwithThemeState extends State<SwithTheme> {
               });
             },
             child: SvgPicture.asset(
-              AppAssets.darkIcon,
-              width: 29.w, // Use ScreenUtil for width
-              height: 30.h, // Use ScreenUtil for height
-              color: _isDarkTheme ? Colors.black : Colors.grey,
+              Assets.imagesDark,
+              colorFilter: ColorFilter.mode(
+                _isDarkTheme ? Colors.black : Colors.grey,
+                BlendMode.srcIn,
+              ),
             ),
           ),
         ],

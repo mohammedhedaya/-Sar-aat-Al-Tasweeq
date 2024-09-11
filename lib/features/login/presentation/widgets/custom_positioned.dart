@@ -8,82 +8,70 @@ import 'package:shopping_chart/features/login/presentation/widgets/custom_login_
 import 'package:shopping_chart/features/login/presentation/widgets/hello_and_change_lang.dart';
 import 'package:shopping_chart/features/login/presentation/widgets/text_form_field.dart';
 
-class CustomPositioned extends StatefulWidget {
-  const CustomPositioned({super.key});
+class LoginViewBody extends StatelessWidget {
+  const LoginViewBody({super.key});
 
-  @override
-  State<CustomPositioned> createState() => _CustomPositionedState();
-}
-
-class _CustomPositionedState extends State<CustomPositioned> {
   @override
   Widget build(BuildContext context) {
-    final keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
-
-    return Scaffold(
-      backgroundColor: AppColors.darkGray,
-      body: Stack(
-        children: [
-          Positioned(
-            right: 0,
-            top: 200.h,
-            child: SizedBox(
-              height: 180.h,
-              width: 180.w,
-              child: SvgPicture.asset(
-                AppAssets.ellipse3,
-                fit: BoxFit.cover,
+    return Stack(
+      children: [
+        Positioned(
+          right: 0,
+          top: 0,
+          child: SizedBox(
+            child: SvgPicture.asset(
+              Assets.imagesLogincircle3,
+              fit: BoxFit.fill,
+            ),
+          ),
+        ),
+        Positioned(
+          top: 0,
+          left: 0,
+          right: 0,
+          child: SizedBox(
+            width: double.infinity,
+            child: SvgPicture.asset(
+              Assets.imagesLogincircle2,
+              fit: BoxFit.fill,
+            ),
+          ),
+        ),
+        Positioned(
+          top: 0,
+          left: 0,
+          right: 150.h,
+          child: SizedBox(
+            child: SvgPicture.asset(
+              Assets.imagesLogincircle1,
+              fit: BoxFit.fill,
+            ),
+          ),
+        ),
+        Positioned(
+          bottom: 0,
+          left: -50.w,
+          child: Container(
+            height: 200.h,
+            width: 200.w,
+            decoration: const BoxDecoration(
+              color: AppColors.whiteColor,
+              borderRadius: BorderRadius.only(
+                topRight: Radius.circular(300),
               ),
             ),
           ),
-          Positioned(
-            top: 0,
-            left: 0,
-            right: 0,
-            child: SizedBox(
-              height: 300.h,
-              width: double.infinity,
-              child: SvgPicture.asset(
-                AppAssets.ellipse2,
-                fit: BoxFit.fill,
-              ),
-            ),
-          ),
-          Positioned(
-            top: 0,
-            left: 0,
-            right: 150.h,
-            child: SizedBox(
-              height: 150.h,
-              child: SvgPicture.asset(
-                AppAssets.ellipse1,
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
-          Positioned(
-            bottom: 0,
-            left: -50.w,
-            child: SizedBox(
-              height: 230.h,
-              width: 230.w,
-              child: SvgPicture.asset(
-                AppAssets.ellipse4,
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
-          // Content Widgets
-          const HelloAndChangeLang(),
-          const CustomTextFormFields(),
-          const CustomButtomToResetPassword(),
-          Positioned(
-            top: 650.h,
-            right: 30.w,
-            child:  CustomLoginIcon(),
-          ),
-        ],
-      ),
+        ),
+        const HelloAndChangeLang(),
+        const CustomLoginForm(),
+        const CustomButtomToResetPassword(),
+        Positioned(
+          bottom: 125.h,
+          right: 0.w,
+          left: 0.w,
+          child: const CustomLoginIcon(),
+        ),
+      ],
     );
   }
 }

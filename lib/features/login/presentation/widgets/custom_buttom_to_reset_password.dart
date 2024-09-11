@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shopping_chart/core/utils/app_colors.dart';
+import 'package:shopping_chart/core/utils/app_text_style.dart';
 
 class CustomButtomToResetPassword extends StatelessWidget {
   const CustomButtomToResetPassword({super.key});
@@ -9,35 +10,25 @@ class CustomButtomToResetPassword extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      bottom: 30.h, // Use ScreenUtil for bottom padding
+      bottom: 30.h,
       left: 0,
       right: 0,
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20.w), // Use ScreenUtil for horizontal padding
+        padding: EdgeInsets.symmetric(horizontal: 20.w),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             TextButton(
-              onPressed: () {
-                // Define the action for "Create Account" button
-              },
+              onPressed: () {},
               child: Text(
                 "إنشاء حساب",
-                style: TextStyle(
-                  color: AppColors.blackColor,
-                  fontSize: 18.sp, // Use ScreenUtil for font size
-                  fontWeight: FontWeight.bold,
-                ),
+                style: AppStyles.style18W900,
               ),
             ),
             Container(
-              padding: EdgeInsets.symmetric(
-                horizontal: 20.w, // Use ScreenUtil for horizontal padding
-                vertical: 1.h, // Use ScreenUtil for vertical padding
-              ),
               decoration: BoxDecoration(
-                border: Border.all(color: Colors.white),
-                borderRadius: BorderRadius.circular(8.r), // Use ScreenUtil for border radius
+                border: Border.all(color: AppColors.whiteColor),
+                borderRadius: BorderRadius.circular(5.r),
               ),
               child: TextButton(
                 onPressed: () {
@@ -45,10 +36,7 @@ class CustomButtomToResetPassword extends StatelessWidget {
                 },
                 child: Text(
                   "نسيت كلمة المرور",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18.sp, // Use ScreenUtil for font size
-                  ),
+                  style: AppStyles.style18W300,
                 ),
               ),
             ),
