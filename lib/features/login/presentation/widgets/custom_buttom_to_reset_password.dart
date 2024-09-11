@@ -9,7 +9,7 @@ class CustomButtomToResetPassword extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      bottom: 30.h, // Use ScreenUtil for bottom padding
+      bottom: 10.h, // Use ScreenUtil for bottom padding
       left: 0,
       right: 0,
       child: Padding(

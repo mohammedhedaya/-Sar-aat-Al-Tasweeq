@@ -80,7 +80,7 @@ class _CustomPositionedState extends State<CustomPositioned> {
           Positioned(
             top: 650.h,
             right: 30.w,
-            child:  CustomLoginIcon(),
+            child: const CustomLoginIcon(),
           ),
         ],
       ),

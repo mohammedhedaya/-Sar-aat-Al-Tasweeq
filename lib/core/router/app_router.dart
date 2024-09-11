@@ -1,4 +1,5 @@
 import 'package:go_router/go_router.dart';
+import 'package:shopping_chart/features/home/presentation/views/home_page.dart';
 import 'package:shopping_chart/features/login/presentation/views/login_page.dart';
 import 'package:shopping_chart/features/login/presentation/views/new_password_page.dart';
 import 'package:shopping_chart/features/login/presentation/views/otp_page.dart';
@@ -8,7 +9,7 @@ final GoRouter router = GoRouter(
   routes: [
     GoRoute(
       path: '/',
-      builder: (context, state) => const LoginPage(),
+      builder: (context, state) => const HomePage(),
     ),
     GoRoute(
       path: '/resetPassword',
@@ -22,5 +23,9 @@ final GoRouter router = GoRouter(
       path: '/newPasswordPage',
       builder: (context, state) => const NewPasswordPage(),
     ),
+    // GoRoute(
+    //   path: '/homePage',
+    //   builder: (context, state) =>  HomePage(),
+    // ),
   ],
 );

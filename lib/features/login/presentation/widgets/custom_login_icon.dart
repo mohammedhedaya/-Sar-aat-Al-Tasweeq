@@ -14,7 +14,7 @@ class CustomLoginIcon extends StatelessWidget {
           icon: Container(
             width: 64.w, // Use ScreenUtil for width
             height: 64.h, // Use ScreenUtil for height
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               shape: BoxShape.circle,
               color: Colors.grey,
             ),

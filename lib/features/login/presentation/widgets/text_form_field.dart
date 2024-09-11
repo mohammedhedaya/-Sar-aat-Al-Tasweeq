@@ -33,7 +33,7 @@ class _CustomTextFormFieldsState extends State<CustomTextFormFields> {
                   textAlign: TextAlign.right,
                   decoration: InputDecoration(
                     hintText: 'الأيميل',
-                    hintStyle: TextStyle(color: AppColors.whiteColor),
+                    hintStyle: const TextStyle(color: AppColors.whiteColor),
                     filled: true,
                     fillColor: Colors.transparent,
                     border: OutlineInputBorder(
@@ -71,7 +71,7 @@ class _CustomTextFormFieldsState extends State<CustomTextFormFields> {
                         obscureText: _obscureText,
                         decoration: InputDecoration(
                           hintText: 'كلمة السر',
-                          hintStyle: TextStyle(color: AppColors.whiteColor),
+                          hintStyle: const TextStyle(color: AppColors.whiteColor),
                           filled: true,
                           fillColor: Colors.transparent,
                           border: OutlineInputBorder(
@@ -87,7 +87,7 @@ class _CustomTextFormFieldsState extends State<CustomTextFormFields> {
                 ),
               ),
               SizedBox(height: 20.h), // Use ScreenUtil for spacing
-              SwithTheme(), // Use the responsive switch theme
+              const SwithTheme(), // Use the responsive switch theme
             ],
           ),
         ),

@@ -95,7 +95,6 @@ class _OtpPageState extends State<OtpPage> {
                       ),
                     ),
                     onCompleted: (pin) {
-                      print("Pin entered: $pin");
                     },
                   ),
                   SizedBox(height: 20.h),
