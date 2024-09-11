@@ -12,4 +12,5 @@ class AppColors {
   static const gray = Color(0xFF78838D);
   static const visibilityColor = Color(0xFF939393);
   static const loginBtn = Color(0xFF757575);
+  static const redColor = Color(0xFFFF0000);
 }

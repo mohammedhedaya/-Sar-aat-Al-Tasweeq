@@ -9,6 +9,7 @@ import 'package:shopping_chart/features/auth/presentation/views/signup/sign_up_o
 import 'package:shopping_chart/features/auth/presentation/views/signup/sign_up_profile.dart';
 import 'package:shopping_chart/features/auth/presentation/views/signup/sign_up_view.dart';
 import 'package:shopping_chart/features/auth/presentation/views/signup/success_sign_up_view.dart';
+import 'package:shopping_chart/features/home/presentation/views/home_page.dart';
 
 final GoRouter router = GoRouter(
   routes: [
@@ -46,6 +47,9 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/successSignUpView',
       builder: (context, state) => const SuccessSignUpView(),
+    ),GoRoute(
+      path: '/homePage',
+      builder: (context, state) => const HomePage(),
     ),
   ],
 );
