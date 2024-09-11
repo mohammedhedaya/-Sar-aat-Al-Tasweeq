@@ -13,7 +13,10 @@ class CustomAuthTextField extends StatelessWidget {
     this.prefixIcon,
     this.suffixIcon,
     this.textAlign,
+    this.validator,
+    this.obscureText,
   });
+
   final String hintText;
   final Widget? prefixIcon;
   final Widget? suffixIcon;
@@ -21,6 +24,9 @@ class CustomAuthTextField extends StatelessWidget {
   final TextEditingController? controller;
   final TextInputType? keyboardType;
   final TextAlign? textAlign;
+  final String? Function(String?)? validator;
+  final bool? obscureText;
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -32,7 +38,24 @@ class CustomAuthTextField extends StatelessWidget {
       style: const TextStyle(
         color: AppColors.whiteColor,
       ),
+      validator: validator ??
+          (value) {
+            if (value == null || value.isEmpty) {
+              return 'هذا الحقل مطلوب';
+            }
+            return null;
+          },
+      obscureText: obscureText ?? false,
       decoration: InputDecoration(
+        errorStyle: const TextStyle(
+          color: AppColors.whiteColor,
+        ),
+        errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(20.r),
+          borderSide: const BorderSide(
+            color: Colors.red,
+          ),
+        ),
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
         hintText: hintText,
