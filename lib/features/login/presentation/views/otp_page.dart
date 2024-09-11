@@ -10,21 +10,25 @@ class OtpPage extends StatefulWidget {
   @override
   _OtpPageState createState() => _OtpPageState();
 }
+
 class _OtpPageState extends State<OtpPage> {
   final TextEditingController _pinController = TextEditingController();
   final FocusNode _focusNode = FocusNode();
   late Timer _timer;
   int _start = 30;
+
   @override
   void initState() {
     super.initState();
     startTimer();
   }
+
   @override
   void dispose() {
     _timer.cancel();
     super.dispose();
   }
+
   void startTimer() {
     _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       if (_start == 0) {
@@ -36,6 +40,7 @@ class _OtpPageState extends State<OtpPage> {
       }
     });
   }
+
   void _handleKeyTap(String value) {
     if (value == "<") {
       // Backspace
@@ -49,6 +54,7 @@ class _OtpPageState extends State<OtpPage> {
       }
     }
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -76,17 +82,16 @@ class _OtpPageState extends State<OtpPage> {
                     focusNode: _focusNode,
                     showCursor: true,
                     readOnly: true,
-                    //
                     defaultPinTheme: PinTheme(
-                      width: 50.w,
-                      height: 50.h,
+                      width: 60.w,
+                      height: 60.h,
                       textStyle: TextStyle(
                         fontSize: 22.sp,
                         color: Colors.black,
                       ),
                       decoration: BoxDecoration(
                         color: Colors.white,
-                        borderRadius: BorderRadius.circular(10.r),
+                        borderRadius: BorderRadius.circular(12.r),
                       ),
                     ),
                     onCompleted: (pin) {
@@ -107,7 +112,7 @@ class _OtpPageState extends State<OtpPage> {
           ),
           Container(
             color: AppColors.dimGray,
-            padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 20.h),
+            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 15.h),
             child: Column(
               children: [
                 GridView.count(
@@ -115,7 +120,7 @@ class _OtpPageState extends State<OtpPage> {
                   crossAxisCount: 3,
                   crossAxisSpacing: 10.w,
                   mainAxisSpacing: 10.h,
-                  childAspectRatio: 2,
+                  childAspectRatio: 1.5,
                   children: List.generate(12, (index) {
                     String value;
                     if (index < 9) {
@@ -143,17 +148,17 @@ class _OtpPageState extends State<OtpPage> {
                           ),
                           child: value == "<"
                               ? Icon(
-                                  Icons.backspace_outlined,
-                                  color: Colors.black,
-                                  size: 22.sp,
-                                )
+                            Icons.backspace_outlined,
+                            color: Colors.black,
+                            size: 24.sp,
+                          )
                               : Text(
-                                  value,
-                                  style: TextStyle(
-                                    fontSize: 22.sp,
-                                    color: Colors.black,
-                                  ),
-                                ),
+                            value,
+                            style: TextStyle(
+                              fontSize: 24.sp,
+                              color: Colors.black,
+                            ),
+                          ),
                         ),
                       ),
                     );

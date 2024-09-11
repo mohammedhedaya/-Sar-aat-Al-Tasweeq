@@ -8,44 +8,46 @@ class CustomButtomToResetPassword extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Positioned(
-      bottom: 30,
+    return Positioned(
+      bottom: 30.h, // Use ScreenUtil for bottom padding
       left: 0,
       right: 0,
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20.w),
+        padding: EdgeInsets.symmetric(horizontal: 20.w), // Use ScreenUtil for horizontal padding
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             TextButton(
               onPressed: () {
+                // Define the action for "Create Account" button
               },
-              child: const Text(
+              child: Text(
                 "إنشاء حساب",
                 style: TextStyle(
-                    color: AppColors.blackColor,
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold
+                  color: AppColors.blackColor,
+                  fontSize: 18.sp, // Use ScreenUtil for font size
+                  fontWeight: FontWeight.bold,
                 ),
               ),
             ),
             Container(
-              padding: const EdgeInsets.symmetric(
-                  horizontal: 20, vertical: 2),
+              padding: EdgeInsets.symmetric(
+                horizontal: 20.w, // Use ScreenUtil for horizontal padding
+                vertical: 1.h, // Use ScreenUtil for vertical padding
+              ),
               decoration: BoxDecoration(
                 border: Border.all(color: Colors.white),
-                borderRadius: BorderRadius.circular(8),
+                borderRadius: BorderRadius.circular(8.r), // Use ScreenUtil for border radius
               ),
               child: TextButton(
                 onPressed: () {
                   GoRouter.of(context).push('/resetPassword');
-
                 },
-                child: const Text(
+                child: Text(
                   "نسيت كلمة المرور",
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 18,
+                    fontSize: 18.sp, // Use ScreenUtil for font size
                   ),
                 ),
               ),

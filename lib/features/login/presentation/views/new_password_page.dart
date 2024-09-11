@@ -50,7 +50,7 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
                     controller: _passwordController,
                     obscureText: !_isPasswordVisible,
                     focusNode: _passwordFocusNode,
-                    readOnly: true,
+                    readOnly: true, // Disable the mobile keyboard
                     textAlign: TextAlign.center,
                     decoration: InputDecoration(
                       suffixIcon: IconButton(
@@ -92,7 +92,7 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
                     controller: _confirmPasswordController,
                     obscureText: !_isConfirmPasswordVisible,
                     focusNode: _confirmPasswordFocusNode,
-                    readOnly: true,
+                    readOnly: true, // Disable the mobile keyboard
                     textAlign: TextAlign.center,
                     decoration: InputDecoration(
                       suffixIcon: IconButton(
@@ -227,4 +227,3 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
     );
   }
 }
-
