@@ -34,7 +34,7 @@ class _SwithThemeState extends State<SwithTheme> {
               });
             },
             child: SvgPicture.asset(
-              Assets.imagesLight,
+              Assets.imagesDark,
               colorFilter: ColorFilter.mode(
                 !_isDarkTheme ? Colors.black : Colors.grey,
                 BlendMode.srcIn,
@@ -49,7 +49,7 @@ class _SwithThemeState extends State<SwithTheme> {
               });
             },
             child: SvgPicture.asset(
-              Assets.imagesDark,
+              Assets.imagesLight,
               colorFilter: ColorFilter.mode(
                 _isDarkTheme ? Colors.black : Colors.grey,
                 BlendMode.srcIn,

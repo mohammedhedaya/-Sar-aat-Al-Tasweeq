@@ -4,8 +4,8 @@ import 'package:go_router/go_router.dart';
 import 'package:shopping_chart/core/utils/app_colors.dart';
 import 'package:shopping_chart/core/utils/app_text_style.dart';
 
-class CustomButtomToResetPassword extends StatelessWidget {
-  const CustomButtomToResetPassword({super.key});
+class CreateAccountAndResetPassword extends StatelessWidget {
+  const CreateAccountAndResetPassword({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class CustomButtomToResetPassword extends StatelessWidget {
               ),
               child: TextButton(
                 onPressed: () {
-                  GoRouter.of(context).push('/resetPassword');
+                  GoRouter.of(context).push('/resetPasswordView');
                 },
                 child: Text(
                   "نسيت كلمة المرور",

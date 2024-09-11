@@ -6,8 +6,8 @@ import 'package:shopping_chart/core/utils/app_text_style.dart';
 import 'package:shopping_chart/core/utils/assets.dart';
 
 class CustomLoginIcon extends StatelessWidget {
-  const CustomLoginIcon({super.key});
-
+  const CustomLoginIcon({super.key, this.onTap});
+  final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -16,7 +16,7 @@ class CustomLoginIcon extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           InkWell(
-            onTap: () {},
+            onTap: onTap,
             child: Container(
               constraints: BoxConstraints(
                 minHeight: 64.h,

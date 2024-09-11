@@ -24,6 +24,9 @@ class CustomAuthTextField extends StatelessWidget {
       keyboardType: keyboardType,
       cursorColor: AppColors.whiteColor,
       textAlign: TextAlign.right,
+      style: const TextStyle(
+        color: AppColors.whiteColor,
+      ),
       decoration: InputDecoration(
         prefixIcon: prefixIcon,
         hintText: hintText,
