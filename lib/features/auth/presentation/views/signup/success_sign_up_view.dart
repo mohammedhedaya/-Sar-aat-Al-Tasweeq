@@ -66,8 +66,7 @@ class SuccessSignUpView extends StatelessWidget {
                       children: [
                         InkWell(
                           onTap: () {
-                            GoRouter.of(context).go('/homePage');
-
+                            context.go('/homeView');
                           },
                           child: Container(
                             constraints: const BoxConstraints(

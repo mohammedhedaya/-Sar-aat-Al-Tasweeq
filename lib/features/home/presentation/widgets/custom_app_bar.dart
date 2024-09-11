@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shopping_chart/core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
@@ -11,37 +12,13 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: AppColors.darkGray,
+      surfaceTintColor: Colors.transparent,
       elevation: 0,
-      leading: Stack(
-        children: [
-          SizedBox(
-            width: 40.w,
-            height: 40.h,
-            child: IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.notifications,
-                size: 40.sp,
-                color: AppColors.whiteColor,
-              ),
-            ),
-          ),
-          Positioned(
-            right: 11.w,
-            top: 2.h,
-            child: Container(
-              padding: EdgeInsets.all(5.w),
-              decoration: const BoxDecoration(
-                color: AppColors.redColor,
-                shape: BoxShape.circle,
-              ),
-              child: Text(
-                '5',
-                style: AppStyles.style12W100.copyWith(fontSize: 12.sp),
-              ),
-            ),
-          ),
-        ],
+      leading: IconButton(
+        onPressed: () {},
+        icon: SvgPicture.asset(
+          Assets.imagesNotifications,
+        ),
       ),
       actions: [
         Row(
@@ -50,23 +27,22 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               text: TextSpan(
                 children: [
                   TextSpan(
-                    text: 'يا هلا ,',
-                    style: AppStyles.style18W700.copyWith(fontSize: 18.sp),
+                    text: 'ياهلا,',
+                    style: AppStyles.style12W700,
                   ),
                   TextSpan(
                     text: ' فيصل',
-                    style: AppStyles.style12W100.copyWith(fontSize: 12.sp),
+                    style: AppStyles.style12W100,
                   ),
                 ],
               ),
             ),
-            SizedBox(width: 8.w),
             Padding(
               padding: EdgeInsets.all(8.w),
               child: CircleAvatar(
                 radius: 20.r,
                 backgroundImage: const AssetImage(
-                  Assets.imagePersonInAppBar,
+                  Assets.imagesImagePersonInAppBar,
                 ),
               ),
             ),

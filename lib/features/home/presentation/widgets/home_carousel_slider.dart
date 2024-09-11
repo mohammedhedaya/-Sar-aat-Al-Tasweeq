@@ -1,0 +1,78 @@
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shopping_chart/core/utils/app_colors.dart';
+import 'package:shopping_chart/core/utils/assets.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+
+class HomeCarouselSlider extends StatefulWidget {
+  const HomeCarouselSlider({super.key});
+
+  @override
+  State<HomeCarouselSlider> createState() => _HomeCarouselSliderState();
+}
+
+class _HomeCarouselSliderState extends State<HomeCarouselSlider> {
+  int _currentSlide = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      alignment: Alignment.bottomCenter,
+      children: [
+        CarouselSlider(
+          options: CarouselOptions(
+            height: 250.h,
+            enlargeCenterPage: true,
+            enableInfiniteScroll: true,
+            viewportFraction: 1.0,
+            onPageChanged: (index, reason) {
+              setState(() {
+                _currentSlide = index;
+              });
+            },
+          ),
+          items: [
+            Assets.imagesCoffee,
+            Assets.imagesCoffee,
+            Assets.imagesCoffee,
+          ].map(
+            (i) {
+              return Builder(
+                builder: (BuildContext context) {
+                  return Container(
+                    width: MediaQuery.of(context).size.width,
+                    margin: EdgeInsets.symmetric(horizontal: 5.w),
+                    child: Image.asset(i, fit: BoxFit.fill),
+                  );
+                },
+              );
+            },
+          ).toList(),
+        ),
+        Positioned(
+          bottom: 15.h,
+          child: Container(
+            padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 7.h),
+            decoration: BoxDecoration(
+              color: Colors.black.withOpacity(0.44),
+              borderRadius: BorderRadius.circular(50.r),
+            ),
+            child: AnimatedSmoothIndicator(
+              activeIndex: _currentSlide,
+              count: 3,
+              effect: const SlideEffect(
+                activeDotColor: AppColors.darkGray,
+                dotHeight: 14,
+                dotWidth: 14,
+                dotColor: AppColors.whiteColor,
+                paintStyle: PaintingStyle.fill,
+                type: SlideType.normal,
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
