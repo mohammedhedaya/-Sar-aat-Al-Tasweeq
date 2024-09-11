@@ -15,11 +15,13 @@ class CustomAuthTextField extends StatelessWidget {
     this.textAlign,
     this.validator,
     this.obscureText,
+    this.prefix,
   });
 
   final String hintText;
   final Widget? prefixIcon;
   final Widget? suffixIcon;
+  final Widget? prefix;
   final void Function(String)? onChanged;
   final TextEditingController? controller;
   final TextInputType? keyboardType;
@@ -58,6 +60,7 @@ class CustomAuthTextField extends StatelessWidget {
         ),
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
+        prefix: prefix,
         hintText: hintText,
         hintStyle: AppStyles.style18W400,
         filled: true,
