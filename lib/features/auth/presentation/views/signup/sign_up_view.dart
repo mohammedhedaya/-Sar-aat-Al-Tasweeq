@@ -10,7 +10,6 @@ class SignUpView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: AppColors.darkGray,
       appBar: AppBar(
         backgroundColor: AppColors.whiteColor,
         elevation: 0,

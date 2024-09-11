@@ -55,38 +55,84 @@ class SignUpProfileView extends StatelessWidget {
                   style: AppStyles.style20W400,
                 ),
                 SizedBox(height: 75.h),
-                CustomAuthTextField(
-                  hintText: "رقم الهاتف",
-                  prefixIcon: Container(
-                    width: 95.w,
-                    height: 67.h,
-                    decoration: const BoxDecoration(
-                      color: Color(0xffD9D9D9),
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(20),
-                        bottomLeft: Radius.circular(20),
-                      ),
-                    ),
-                    child: Row(
-                      children: [
-                        const Icon(
-                          Icons.keyboard_arrow_down,
-                          color: AppColors.blackColor,
-                        ),
-                        SizedBox(width: 5.w),
-                        SvgPicture.asset(
-                          Assets.imagesSuadiFlag,
-                        ),
-                        SizedBox(width: 5.w),
-                        Text(
-                          "966",
-                          style: AppStyles.style16W400.copyWith(
-                            color: AppColors.blackColor,
+                Row(
+                  children: [
+                    InkWell(
+                      onTap: () {},
+                      child: Container(
+                        height: 67.h,
+                        width: 110.w,
+                        decoration: const BoxDecoration(
+                          color: Color(0xffD9D9D9),
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(20),
+                            bottomLeft: Radius.circular(20),
                           ),
                         ),
-                      ],
+                        child: Row(
+                          children: [
+                            const Icon(
+                              Icons.keyboard_arrow_down,
+                              color: AppColors.blackColor,
+                              size: 30,
+                            ),
+                            SvgPicture.asset(
+                              Assets.imagesSuadiFlag,
+                            ),
+                            SizedBox(width: 5.w),
+                            Text(
+                              "966",
+                              style: AppStyles.style16W400.copyWith(
+                                color: AppColors.blackColor,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
-                  ),
+                    Expanded(
+                      child: TextFormField(
+                        onChanged: (value) {},
+                        keyboardType: TextInputType.phone,
+                        cursorColor: AppColors.whiteColor,
+                        textAlign: TextAlign.right,
+                        style: const TextStyle(
+                          color: AppColors.whiteColor,
+                        ),
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'هذا الحقل مطلوب';
+                          }
+                          return null;
+                        },
+                        decoration: InputDecoration(
+                          errorStyle: const TextStyle(
+                            color: AppColors.whiteColor,
+                          ),
+                          errorBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.only(
+                              topRight: Radius.circular(20.r),
+                              bottomRight: Radius.circular(20.r),
+                            ),
+                            borderSide: const BorderSide(
+                              color: Colors.red,
+                            ),
+                          ),
+                          hintText: "رقم الهاتف",
+                          hintStyle: AppStyles.style18W400,
+                          filled: true,
+                          fillColor: AppColors.dimGray,
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.only(
+                              topRight: Radius.circular(20.r),
+                              bottomRight: Radius.circular(20.r),
+                            ),
+                            borderSide: BorderSide.none,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
                 SizedBox(height: 23.h),
                 CustomAuthTextField(
