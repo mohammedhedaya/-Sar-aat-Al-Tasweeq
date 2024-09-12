@@ -29,12 +29,15 @@ class MyApp extends StatelessWidget {
             return const Locale('ar');
           },
           builder: DevicePreview.appBuilder,
-          title: 'Shopping Chart',
+          title: 'سرعة التسويق',
           debugShowCheckedModeBanner: false,
           routerConfig: router,
           theme: ThemeData(
             scaffoldBackgroundColor: AppColors.darkGray,
           ),
+          // theme: ThemeData.light(),
+          // darkTheme: ThemeData.dark(),
+          // themeMode: ThemeMode.system, // This allows system theme changes
         );
       },
     );

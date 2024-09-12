@@ -1,4 +1,5 @@
 import 'package:shopping_chart/features/home/presentation/views/home_view.dart';
+import 'package:shopping_chart/features/home/presentation/widgets/custom_drawer.dart';
 import 'package:shopping_chart/features/home/presentation/widgets/user_bottom_nav_bar_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:shopping_chart/features/menu/presentation/views/menu_view.dart';
@@ -15,6 +16,7 @@ class UserMainLayoutScreen extends StatefulWidget {
 class _UserMainLayoutScreenState extends State<UserMainLayoutScreen> {
   int currentIndex = 0;
   late List<Widget> screens;
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
@@ -30,13 +32,21 @@ class _UserMainLayoutScreenState extends State<UserMainLayoutScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       resizeToAvoidBottomInset: false,
       body: screens[currentIndex],
+      drawer: const CustomDrawer(),
       bottomNavigationBar: UserBottomNavBarWidget(
         currentIndex: currentIndex,
         onTap: (index) {
-          currentIndex = index;
-          setState(() {});
+          if (index == 3) {
+            //! Open the drawer when the menu is tapped
+            _scaffoldKey.currentState?.openDrawer();
+          } else {
+            setState(() {
+              currentIndex = index;
+            });
+          }
         },
       ),
     );
