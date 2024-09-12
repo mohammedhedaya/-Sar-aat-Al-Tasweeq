@@ -13,8 +13,12 @@ class SuccessSignUpView extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          SvgPicture.asset(
-            Assets.imagesSuccesscircle1,
+          Positioned(
+            top: 0,
+            right: 0,
+            child: SvgPicture.asset(
+              Assets.imagesSuccesscircle4,
+            ),
           ),
           Positioned(
             top: 0,
@@ -34,9 +38,9 @@ class SuccessSignUpView extends StatelessWidget {
           ),
           Positioned(
             top: 0,
-            right: 0,
+            left: 0,
             child: SvgPicture.asset(
-              Assets.imagesSuccesscircle4,
+              Assets.imagesSuccesscircle1,
               fit: BoxFit.fill,
             ),
           ),
