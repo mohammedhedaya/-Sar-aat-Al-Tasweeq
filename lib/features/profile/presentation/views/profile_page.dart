@@ -6,8 +6,8 @@ import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
 import '../widgets/custom_item_include_names_and_phone.dart';
 
-class ProfilePage extends StatelessWidget {
-  const ProfilePage({super.key});
+class ProfileView extends StatelessWidget {
+  const ProfileView({super.key});
 
   @override
   Widget build(BuildContext context) {

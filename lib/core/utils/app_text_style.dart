@@ -92,7 +92,8 @@ class AppStyles {
     color: AppColors.whiteColor,
     fontSize: 25.sp,
     fontWeight: FontWeight.w800,
-  );static TextStyle style25W400 = TextStyle(
+  );
+  static TextStyle style25W400 = TextStyle(
     color: AppColors.whiteColor,
     fontSize: 25.sp,
     fontWeight: FontWeight.w800,
@@ -126,7 +127,8 @@ class AppStyles {
     color: AppColors.whiteColor,
     fontSize: 14.sp,
     fontWeight: FontWeight.w600,
-  ); static TextStyle style14W800 = TextStyle(
+  );
+  static TextStyle style14W800 = TextStyle(
     color: AppColors.whiteColor,
     fontSize: 14.sp,
     fontWeight: FontWeight.w600,
@@ -145,10 +147,5 @@ class AppStyles {
     color: AppColors.whiteColor,
     fontSize: 20.sp,
     fontWeight: FontWeight.w900,
-  );
-  static TextStyle style14W400 = TextStyle(
-    color: const Color(0xff323232),
-    fontSize: 14.sp,
-    fontWeight: FontWeight.w400,
   );
 }

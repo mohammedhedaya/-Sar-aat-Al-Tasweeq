@@ -4,8 +4,8 @@ import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
 import '../widgets/edit_item_profile.dart';
 
-class EditProfile extends StatelessWidget {
-  const EditProfile({super.key});
+class EditProfileView extends StatelessWidget {
+  const EditProfileView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,8 @@ class EditProfile extends StatelessWidget {
                       children: [
                         const CircleAvatar(
                           radius: 50,
-                          backgroundImage: AssetImage(Assets.imagesImageInProfile),
+                          backgroundImage:
+                              AssetImage(Assets.imagesImageInProfile),
                         ),
                         SizedBox(height: 10.h),
                         Text(

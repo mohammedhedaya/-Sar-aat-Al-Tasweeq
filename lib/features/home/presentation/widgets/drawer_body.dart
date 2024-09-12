@@ -34,13 +34,19 @@ class _DrawerBodyState extends State<DrawerBody> {
           title: "منصات الترويج",
           icon: Assets.imagesSHAREICON,
           isSelected: _selectedIndex == 0,
-          onTap: () => _onItemTap(0),
+          onTap: () {
+            _onItemTap(0);
+            context.pop();
+          },
         ),
         DrawerListTileItem(
           title: "الملف الشخصي",
           icon: Assets.imagesHomeInDrawer,
           isSelected: _selectedIndex == 1,
-          onTap: () => _onItemTap(1),
+          onTap: () {
+            _onItemTap(1);
+            context.push('/profileView');
+          },
         ),
         DrawerListTileItem(
           title: "اشتراك بالباقة",

@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shopping_chart/core/utils/app_colors.dart';
-import 'package:go_router/go_router.dart';
-
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
 
@@ -49,9 +47,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       actions: [
         IconButton(
-          onPressed: () {
-            GoRouter.of(context).push('/profilePage');
-          },
+          onPressed: () {},
           icon: SvgPicture.asset(
             Assets.imagesNotifications,
           ),

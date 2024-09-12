@@ -6,8 +6,8 @@ import '../../../../core/utils/assets.dart';
 import '../../../auth/presentation/widgets/auth_btn.dart';
 import '../../../auth/presentation/widgets/auth_text_field.dart';
 
-class ChangePassword extends StatelessWidget {
-  const ChangePassword({super.key});
+class ProfileChangePasswordView extends StatelessWidget {
+  const ProfileChangePasswordView({super.key});
 
   @override
   Widget build(BuildContext context) {

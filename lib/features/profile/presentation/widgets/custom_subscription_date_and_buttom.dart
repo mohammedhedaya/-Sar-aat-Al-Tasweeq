@@ -53,7 +53,7 @@ class CustomSubscriptionDate extends StatelessWidget {
           children: [
             ElevatedButton(
               onPressed: () {
-                GoRouter.of(context).push('/changePassword');
+                GoRouter.of(context).push('/profileChangePasswordView');
               },
               style: ElevatedButton.styleFrom(
                 padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 10.h),
@@ -69,7 +69,7 @@ class CustomSubscriptionDate extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                GoRouter.of(context).push('/editProfile');
+                GoRouter.of(context).push('/editProfileView');
               },
               style: ElevatedButton.styleFrom(
                 padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 10.h),
