@@ -28,7 +28,8 @@ class CustomItemIncludeNames extends StatelessWidget {
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
                           "الاسم الأول",
-                          style: AppStyles.style12W400.copyWith(color: AppColors.whiteColor, fontSize: 12),
+                          style: AppStyles.style12W400.copyWith(
+                              color: AppColors.whiteColor, fontSize: 12),
                           textAlign: TextAlign.right,
                         ),
                       ),
@@ -62,7 +63,8 @@ class CustomItemIncludeNames extends StatelessWidget {
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
                           "الاسم الثاني",
-                          style: AppStyles.style12W400.copyWith(color: AppColors.whiteColor, fontSize: 12),
+                          style: AppStyles.style12W400.copyWith(
+                              color: AppColors.whiteColor, fontSize: 12),
                           textAlign: TextAlign.right,
                         ),
                       ),
@@ -100,7 +102,8 @@ class CustomItemIncludeNames extends StatelessWidget {
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
                           "الاسم الثالث",
-                          style: AppStyles.style12W400.copyWith(color: AppColors.whiteColor, fontSize: 12),
+                          style: AppStyles.style12W400.copyWith(
+                              color: AppColors.whiteColor, fontSize: 12),
                           textAlign: TextAlign.right,
                         ),
                       ),
@@ -138,7 +141,8 @@ class CustomItemIncludeNames extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
                     "رقم الهاتف",
-                    style: AppStyles.style12W400.copyWith(color: AppColors.whiteColor, fontSize: 12),
+                    style: AppStyles.style12W400
+                        .copyWith(color: AppColors.whiteColor, fontSize: 12),
                     textAlign: TextAlign.right,
                   ),
                 ),
@@ -158,7 +162,8 @@ class CustomItemIncludeNames extends StatelessWidget {
                         children: [
                           Text(
                             "966",
-                            style: AppStyles.style16W400.copyWith(color: AppColors.whiteColor),
+                            style: AppStyles.style16W400
+                                .copyWith(color: AppColors.whiteColor),
                           ),
                           SizedBox(width: 5.w),
                           const Icon(
@@ -173,11 +178,11 @@ class CustomItemIncludeNames extends StatelessWidget {
               ],
             ),
             SizedBox(height: 30.h),
-            CustomItemIncludeCountry(),
+            const CustomItemIncludeCountry(),
             SizedBox(height: 30.h),
-            CustomIncludeEmail(),
+            const CustomIncludeEmail(),
             SizedBox(height: 15.h),
-            CustomSubscriptionDate(),
+            const CustomSubscriptionDate(),
           ],
         ),
       ),

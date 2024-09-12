@@ -33,7 +33,7 @@ class EditProfile extends StatelessWidget {
                       children: [
                         const CircleAvatar(
                           radius: 50,
-                          backgroundImage: AssetImage(Assets.imageInProfile),
+                          backgroundImage: AssetImage(Assets.imagesImageInProfile),
                         ),
                         SizedBox(height: 10.h),
                         Text(
@@ -54,7 +54,7 @@ class EditProfile extends StatelessWidget {
                     ),
                   ],
                 ),
-                EditItemProfile(),
+                const EditItemProfile(),
               ],
             ),
           ),
