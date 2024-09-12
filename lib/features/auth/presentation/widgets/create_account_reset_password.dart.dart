@@ -22,6 +22,12 @@ class CreateAccountAndResetPassword extends StatelessWidget {
               onPressed: () {
                 context.push('/resetPasswordView');
               },
+              style: TextButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(5.r),
+                  side: const BorderSide(color: AppColors.whiteColor),
+                ),
+              ),
               child: Text(
                 "نسيت كلمة المرور",
                 style: AppStyles.style18W300,

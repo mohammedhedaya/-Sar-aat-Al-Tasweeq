@@ -29,7 +29,7 @@ class HomeViewBody extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 8),
+                padding: const EdgeInsets.symmetric(horizontal: 8),
                 child: Text(
                   "400",
                   style: AppStyles.style12W700.copyWith(

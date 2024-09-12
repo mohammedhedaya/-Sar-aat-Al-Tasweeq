@@ -14,13 +14,12 @@ class CustomLoginIcon extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 31.w),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
             'تسجيل\nالدخول',
             style: AppStyles.style32W700,
           ),
-          const SizedBox(),
+          SizedBox(width: MediaQuery.of(context).size.width * 0.35),
           InkWell(
             onTap: onTap,
             child: Container(

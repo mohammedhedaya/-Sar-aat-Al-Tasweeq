@@ -78,7 +78,6 @@ class CustomLoginForm extends StatelessWidget {
               ),
               Positioned(
                 bottom: 125.h,
-                right: 0.w,
                 left: 0.w,
                 child: CustomLoginIcon(
                   onTap: () {

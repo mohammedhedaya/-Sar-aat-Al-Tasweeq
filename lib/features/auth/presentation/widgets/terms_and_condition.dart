@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:shopping_chart/core/utils/app_colors.dart';
 import 'package:shopping_chart/core/utils/app_text_style.dart';
@@ -18,18 +17,6 @@ class _TermsConditionsWidgetState extends State<TermsConditionsWidget> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        RichText(
-          text: TextSpan(
-            text: "أوافق على",
-            style: AppStyles.style13W400,
-            children: [
-              TextSpan(
-                text: " الشروط والاحكام",
-                style: AppStyles.style13W600,
-              )
-            ],
-          ),
-        ),
         Checkbox(
           value: isChecked,
           visualDensity: const VisualDensity(
@@ -46,6 +33,21 @@ class _TermsConditionsWidgetState extends State<TermsConditionsWidget> {
           side: const BorderSide(
             color: AppColors.whiteColor,
             strokeAlign: 3.0,
+          ),
+        ),
+        InkWell(
+          onTap: () {},
+          child: RichText(
+            text: TextSpan(
+              text: "أوافق على",
+              style: AppStyles.style13W400,
+              children: [
+                TextSpan(
+                  text: " الشروط والاحكام",
+                  style: AppStyles.style13W600,
+                )
+              ],
+            ),
           ),
         ),
       ],

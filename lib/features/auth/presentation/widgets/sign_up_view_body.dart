@@ -117,7 +117,7 @@ class SignUpViewBody extends StatelessWidget {
                           style: AppStyles.style32W700,
                         ),
                         SizedBox(
-                            width: MediaQuery.of(context).size.width * 0.1),
+                            width: MediaQuery.of(context).size.width * 0.25),
                         InkWell(
                           onTap: () {
                             if (cubit.signUpFormKey.currentState!.validate()) {
