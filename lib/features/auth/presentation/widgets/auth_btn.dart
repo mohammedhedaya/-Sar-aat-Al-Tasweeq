@@ -25,7 +25,7 @@ class CustomAuthBtn extends StatelessWidget {
         minimumSize: Size(double.infinity, 45.h),
       ),
       child: Text(
-        'التالي',
+        text, // Display the provided text
         style: AppStyles.style14W600,
       ),
     );

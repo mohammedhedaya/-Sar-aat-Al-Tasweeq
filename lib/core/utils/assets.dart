@@ -112,6 +112,7 @@ class Assets {
   /// Assets for imagesWhitecircle
   /// assets/images/Whitecircle.svg
   static const String imagesWhitecircle = "assets/images/Whitecircle.svg";
+  static const String imageInProfile = "assets/images/imageInProfile.png";
 
 
 
