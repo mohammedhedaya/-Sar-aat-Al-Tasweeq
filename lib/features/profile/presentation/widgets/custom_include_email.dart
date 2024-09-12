@@ -17,24 +17,28 @@ class CustomIncludeEmail extends StatelessWidget {
             children: [
               Text(
                 "الإيميل",
-                style: AppStyles.style12W400.copyWith(color: AppColors.whiteColor, fontSize: 12),
+                style: AppStyles.style12W400.copyWith(
+                  color: AppColors.whiteColor,
+                ),
                 textAlign: TextAlign.right,
               ),
-              SizedBox(height: 8.h),
-              InkWell(
-                onTap: () {},
-                child: Container(
-                  height: 60.h,
-                  decoration: const BoxDecoration(
-                    color: AppColors.dimGray,
-                    borderRadius: BorderRadius.all(Radius.circular(20)),
+              SizedBox(height: 9.h),
+              Container(
+                height: 60.h,
+                padding: EdgeInsets.symmetric(horizontal: 16.w),
+                decoration: BoxDecoration(
+                  color: AppColors.whiteColor.withOpacity(0.10),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(20.r),
                   ),
-                  child: Center(
-                    child: Text(
-                      'faisal_abdelaziz@yahoo.com',
-                      style: AppStyles.style18W400,
-                      textAlign: TextAlign.center,
-                    ),
+                ),
+                child: Align(
+                  alignment: Alignment.centerRight,
+                  child: Text(
+                    'faisal_abdelaziz@yahoo.com',
+                    style: AppStyles.style18W400,
+                    textAlign: TextAlign.start,
+                    overflow: TextOverflow.ellipsis,
                   ),
                 ),
               ),

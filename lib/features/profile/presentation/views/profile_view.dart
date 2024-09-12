@@ -11,31 +11,32 @@ class ProfileView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(
-              Assets.imagesHomeBackground,
+    return SafeArea(
+      child: Scaffold(
+        body: Container(
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(
+                Assets.imagesHomeBackground,
+              ),
+              opacity: 0.10,
             ),
-            fit: BoxFit.cover,
           ),
-        ),
-        child: SingleChildScrollView(
-          child: Center(
+          child: SingleChildScrollView(
+            padding: EdgeInsets.symmetric(horizontal: 30.w),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(height: 100.h),
+                SizedBox(height: 60.h),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const CircleAvatar(
                       radius: 50,
-                      backgroundImage: AssetImage(Assets.imagesImageInProfile),
+                      backgroundImage: AssetImage(
+                        Assets.imagesImageInProfile,
+                      ),
                     ),
-                    SizedBox(width: 40.w),
+                    SizedBox(width: 25.w),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -47,11 +48,14 @@ class ProfileView extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 20.h),
+                SizedBox(height: 50.h),
                 CircularPercentIndicator(
                   radius: 50.0,
-                  lineWidth: 10.0,
-                  percent: 0.6,
+                  lineWidth: 5.0,
+                  percent: 0.70,
+                  backgroundColor: AppColors.blackColor,
+                  progressColor: AppColors.whiteColor,
+                  reverse: true,
                   center: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -59,15 +63,20 @@ class ProfileView extends StatelessWidget {
                       Text("متبقي", style: AppStyles.style14W300),
                     ],
                   ),
-                  progressColor: AppColors.whiteColor,
                 ),
-                SizedBox(height: 20.h),
+                SizedBox(height: 10.h),
                 Text(
-                  "   تنتهي في \n26/08/2024",
+                  "تنتهي في",
                   style: AppStyles.style14W800,
+                  textAlign: TextAlign.center,
+                ),
+                Text(
+                  "26/08/2024",
+                  style: AppStyles.style14W300,
+                  textAlign: TextAlign.center,
                 ),
                 SizedBox(height: 40.h),
-                const CustomItemIncludeNames(),
+                const CustomProfileData(),
               ],
             ),
           ),

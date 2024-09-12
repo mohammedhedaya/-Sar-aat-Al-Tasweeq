@@ -12,79 +12,88 @@ class CustomItemIncludeCountry extends StatelessWidget {
     return Row(
       children: [
         Expanded(
+          flex: 2,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Text(
                 "الدوله",
-                style: AppStyles.style12W400.copyWith(color: AppColors.whiteColor, fontSize: 12),
+                style: AppStyles.style12W400.copyWith(
+                  color: AppColors.whiteColor,
+                ),
                 textAlign: TextAlign.right,
               ),
-              SizedBox(height: 8.h),
-              InkWell(
-                onTap: () {},
-                child: Container(
-                  height: 60.h,
-                  decoration: const BoxDecoration(
-                    color: AppColors.dimGray,
-                    borderRadius: BorderRadius.all(Radius.circular(20)),
+              SizedBox(height: 9.h),
+              Container(
+                height: 60.h,
+                padding: EdgeInsets.only(right: 16.w),
+                decoration: BoxDecoration(
+                  color: AppColors.whiteColor.withOpacity(0.10),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(20.r),
                   ),
-                  child: Row(
-                    children: [
-                      const Icon(
-                        Icons.keyboard_arrow_down,
-                        color: AppColors.whiteColor,
+                ),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Text(
+                        'المملكة العربية السعودية',
+                        style: AppStyles.style14W400,
+                        textAlign: TextAlign.right,
+                        overflow: TextOverflow.ellipsis,
                       ),
-                      SizedBox(width: 6.w),
-                      Expanded(
-                        child: Text(
-                          'المملكة العربية السعودية',
-                          style: AppStyles.style18W400,
-                          textAlign: TextAlign.right,
-                        ),
-                      ),
-                    ],
-                  ),
+                    ),
+                    SizedBox(width: 5.w),
+                    const Icon(
+                      Icons.keyboard_arrow_down,
+                      color: AppColors.whiteColor,
+                      size: 35,
+                    ),
+                  ],
                 ),
               ),
             ],
           ),
         ),
-        SizedBox(width: 6.w),
+        SizedBox(width: 4.w),
         Expanded(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "المدينه",
-                style: AppStyles.style12W400.copyWith(color: AppColors.whiteColor, fontSize: 12),
+                "المدينة",
+                style: AppStyles.style12W400.copyWith(
+                  color: AppColors.whiteColor,
+                ),
                 textAlign: TextAlign.right,
               ),
               SizedBox(height: 8.h),
-              InkWell(
-                onTap: () {},
-                child: Container(
-                  height: 60.h,
-                  decoration: const BoxDecoration(
-                    color: AppColors.dimGray,
-                    borderRadius: BorderRadius.all(Radius.circular(20)),
+              Container(
+                height: 60.h,
+                padding: EdgeInsets.only(right: 16.w),
+                decoration: BoxDecoration(
+                  color: AppColors.whiteColor.withOpacity(0.10),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(20.r),
                   ),
-                  child: Row(
-                    children: [
-                      const Icon(
-                        Icons.keyboard_arrow_down,
-                        color: AppColors.whiteColor,
+                ),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Text(
+                        'الرياض',
+                        style: AppStyles.style18W400,
+                        textAlign: TextAlign.right,
+                        overflow: TextOverflow.ellipsis,
                       ),
-                      SizedBox(width: 6.w),
-                      Expanded(
-                        child: Text(
-                          'الرياض',
-                          style: AppStyles.style18W400,
-                          textAlign: TextAlign.right,
-                        ),
-                      ),
-                    ],
-                  ),
+                    ),
+                    SizedBox(width: 5.w),
+                    const Icon(
+                      Icons.keyboard_arrow_down,
+                      color: AppColors.whiteColor,
+                      size: 35,
+                    ),
+                  ],
                 ),
               ),
             ],

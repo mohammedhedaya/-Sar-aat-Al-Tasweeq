@@ -29,7 +29,7 @@ class CustomSubscriptionDate extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 10.h),
+                SizedBox(height: 7.h),
                 Row(
                   children: [
                     Text(
@@ -47,44 +47,47 @@ class CustomSubscriptionDate extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(height: 30.h),
+        SizedBox(height: 24.h),
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            ElevatedButton(
-              onPressed: () {
-                GoRouter.of(context).push('/profileChangePasswordView');
-              },
-              style: ElevatedButton.styleFrom(
-                padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 10.h),
-                backgroundColor: Colors.white, // Background color
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10.r),
+            Expanded(
+              child: ElevatedButton(
+                onPressed: () {
+                  GoRouter.of(context).push('/profileChangePasswordView');
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.r),
+                  ),
                 ),
-              ),
-              child: Text(
-                'تغيير كلمة السر',
-                style: AppStyles.style14W600Profile,
+                child: Text(
+                  'تغيير كلمة السر',
+                  style: AppStyles.style14W600Profile,
+                ),
               ),
             ),
-            ElevatedButton(
-              onPressed: () {
-                GoRouter.of(context).push('/editProfileView');
-              },
-              style: ElevatedButton.styleFrom(
-                padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 10.h),
-                backgroundColor: Colors.teal, // Background color
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10.r),
+            SizedBox(width: 10.w),
+            Expanded(
+              child: ElevatedButton(
+                onPressed: () {
+                  GoRouter.of(context).push('/editProfileView');
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.teal,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.r),
+                  ),
                 ),
-              ),
-              child: Text(
-                'تـعـديـل الـحـسـاب',
-                style: AppStyles.style14W600,
+                child: Text(
+                  'تعديـل الحـساب',
+                  style: AppStyles.style14W600,
+                ),
               ),
             ),
           ],
         ),
+        SizedBox(height: 24.h),
       ],
     );
   }
