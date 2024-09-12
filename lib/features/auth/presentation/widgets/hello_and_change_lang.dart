@@ -19,13 +19,13 @@ class HelloAndChangeLang extends StatelessWidget {
             InkWell(
               onTap: () {},
               child: Text(
-                "English",
-                style: AppStyles.style23W700,
+                "مرحباً",
+                style: AppStyles.style46W400,
               ),
             ),
             Text(
-              "مرحباً",
-              style: AppStyles.style46W400,
+              "English",
+              style: AppStyles.style23W700,
             ),
           ],
         ),

@@ -64,9 +64,13 @@ class SuccessSignUpView extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
+                        Text(
+                          "أبدأ التسويق",
+                          style: AppStyles.style32W700,
+                        ),
                         InkWell(
                           onTap: () {
-                            context.go('/homeView');
+                            context.push('/homeView');
                           },
                           child: Container(
                             constraints: const BoxConstraints(
@@ -78,14 +82,10 @@ class SuccessSignUpView extends StatelessWidget {
                               shape: BoxShape.circle,
                             ),
                             child: const Icon(
-                              Icons.arrow_back_outlined,
+                              Icons.arrow_forward_ios,
                               color: AppColors.whiteColor,
                             ),
                           ),
-                        ),
-                        Text(
-                          "أبدأ التسويق",
-                          style: AppStyles.style32W700,
                         ),
                       ],
                     ),

@@ -49,7 +49,7 @@ class CustomLoginForm extends StatelessWidget {
                     SizedBox(height: 20.h),
                     CustomAuthTextField(
                       hintText: "كلمة السر",
-                      prefixIcon: IconButton(
+                      suffixIcon: IconButton(
                         onPressed: () {
                           cubit.obscurePasswordText();
                         },

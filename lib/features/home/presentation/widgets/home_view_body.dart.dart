@@ -20,9 +20,22 @@ class HomeViewBody extends StatelessWidget {
         elevation: 0,
         actions: [
           Row(
+            mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              const Padding(
-                padding: EdgeInsets.symmetric(vertical: 15.0),
+              IconButton(
+                onPressed: () {},
+                icon: SvgPicture.asset(
+                  Assets.imagesWallet,
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 8),
+                child: Text(
+                  "400",
+                  style: AppStyles.style12W700.copyWith(
+                    fontWeight: FontWeight.w900,
+                  ),
+                ),
               ),
               IconButton(
                 onPressed: () {},
@@ -30,17 +43,8 @@ class HomeViewBody extends StatelessWidget {
                   Assets.imagesJewel,
                 ),
               ),
-              Text(
-                "400",
-                style: AppStyles.style12W700.copyWith(
-                  fontWeight: FontWeight.w900,
-                ),
-              ),
-              IconButton(
-                onPressed: () {},
-                icon: SvgPicture.asset(
-                  Assets.imagesWallet,
-                ),
+              const Padding(
+                padding: EdgeInsets.only(right: 280.0),
               ),
             ],
           ),

@@ -16,7 +16,7 @@ class _TermsConditionsWidgetState extends State<TermsConditionsWidget> {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.end,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
         RichText(
           text: TextSpan(

@@ -14,17 +14,22 @@ class SignUpView extends StatelessWidget {
         backgroundColor: AppColors.whiteColor,
         elevation: 0,
         surfaceTintColor: Colors.transparent,
-        leading: IconButton(
-          onPressed: () {
-            context.pop();
-          },
-          icon: const Icon(
-            Icons.arrow_back_ios_new_outlined,
-            color: Colors.black38,
+        automaticallyImplyLeading: false,
+        title: Align(
+          alignment: Alignment.centerLeft,
+          child: IconButton(
+            onPressed: () {
+              context.pop();
+            },
+            icon: const Icon(
+              Icons.arrow_forward_ios_outlined,
+              color: Colors.black38,
+            ),
           ),
         ),
       ),
       body: const SignUpViewBody(),
+
     );
   }
 }

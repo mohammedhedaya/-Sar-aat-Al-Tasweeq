@@ -14,16 +14,20 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: AppColors.darkGray,
       surfaceTintColor: Colors.transparent,
       elevation: 0,
-      leading: IconButton(
-        onPressed: () {},
-        icon: SvgPicture.asset(
-          Assets.imagesNotifications,
-        ),
-      ),
-      actions: [
-        Row(
-          children: [
-            RichText(
+      leadingWidth: 150.w,
+      leading: Row(
+        children: [
+          Padding(
+            padding: EdgeInsets.all(8.w),
+            child: CircleAvatar(
+              radius: 20.r,
+              backgroundImage: const AssetImage(
+                Assets.imagesImagePersonInAppBar,
+              ),
+            ),
+          ),
+          Expanded(
+            child: RichText(
               text: TextSpan(
                 children: [
                   TextSpan(
@@ -36,17 +40,17 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                   ),
                 ],
               ),
+              overflow: TextOverflow.ellipsis, 
             ),
-            Padding(
-              padding: EdgeInsets.all(8.w),
-              child: CircleAvatar(
-                radius: 20.r,
-                backgroundImage: const AssetImage(
-                  Assets.imagesImagePersonInAppBar,
-                ),
-              ),
-            ),
-          ],
+          ),
+        ],
+      ),
+      actions: [
+        IconButton(
+          onPressed: () {},
+          icon: SvgPicture.asset(
+            Assets.imagesNotifications,
+          ),
         ),
       ],
     );
