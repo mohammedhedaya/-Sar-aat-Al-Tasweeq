@@ -112,6 +112,12 @@ class SignUpViewBody extends StatelessWidget {
                     left: 41.w,
                     child: Row(
                       children: [
+                        Text(
+                          "تسجيل\nالحساب",
+                          style: AppStyles.style32W700,
+                        ),
+                        SizedBox(
+                            width: MediaQuery.of(context).size.width * 0.1),
                         InkWell(
                           onTap: () {
                             if (cubit.signUpFormKey.currentState!.validate()) {
@@ -133,12 +139,6 @@ class SignUpViewBody extends StatelessWidget {
                               ),
                             ),
                           ),
-                        ),
-                        SizedBox(
-                            width: MediaQuery.of(context).size.width * 0.2),
-                        Text(
-                          "تسجيل\nالحساب",
-                          style: AppStyles.style32W700,
                         ),
                       ],
                     ),

@@ -67,7 +67,7 @@ class SignUpProfileView extends StatelessWidget {
                       CustomAuthTextField(
                         hintText: "رقم الهاتف",
                         keyboardType: TextInputType.phone,
-                        prefixIcon: InkWell(
+                        suffixIcon: InkWell(
                           onTap: () {},
                           child: Container(
                             constraints: BoxConstraints(
@@ -83,21 +83,22 @@ class SignUpProfileView extends StatelessWidget {
                               ),
                             ),
                             child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center, // Ensure content is centered
                               children: [
-                                const Icon(
-                                  Icons.keyboard_arrow_down,
-                                  color: AppColors.blackColor,
+                                Text(
+                                  "966",
+                                  style: AppStyles.style16W400.copyWith(
+                                    color: AppColors.blackColor,
+                                  ),
                                 ),
                                 SizedBox(width: 5.w),
                                 SvgPicture.asset(
                                   Assets.imagesSuadiFlag,
                                 ),
                                 SizedBox(width: 5.w),
-                                Text(
-                                  "966",
-                                  style: AppStyles.style16W400.copyWith(
-                                    color: AppColors.blackColor,
-                                  ),
+                                const Icon(
+                                  Icons.keyboard_arrow_down,
+                                  color: AppColors.blackColor,
                                 ),
                               ],
                             ),
@@ -107,7 +108,7 @@ class SignUpProfileView extends StatelessWidget {
                       SizedBox(height: 23.h),
                       CustomAuthTextField(
                         hintText: "كلمة السر",
-                        prefixIcon: IconButton(
+                        suffixIcon: IconButton(
                           onPressed: () {
                             cubit.obscurePasswordText();
                           },
@@ -126,7 +127,7 @@ class SignUpProfileView extends StatelessWidget {
                       SizedBox(height: 23.h),
                       CustomAuthTextField(
                         hintText: "تأكيد كلمة السر",
-                        prefixIcon: IconButton(
+                        suffixIcon: IconButton(
                           onPressed: () {
                             cubit.obscurePasswordText();
                           },
@@ -173,9 +174,8 @@ class SignUpProfileView extends StatelessWidget {
                                       size: 40,
                                     ),
                                     SizedBox(width: 25.w),
-                                    Text(
-                                      "المدينة",
-                                      style: AppStyles.style18W400,
+                                    SvgPicture.asset(
+                                      Assets.imagesSuadiFlag,
                                     ),
                                   ],
                                 ),
@@ -203,8 +203,9 @@ class SignUpProfileView extends StatelessWidget {
                                       size: 40,
                                     ),
                                     SizedBox(width: 25.w),
-                                    SvgPicture.asset(
-                                      Assets.imagesSuadiFlag,
+                                    Text(
+                                      "المدينة",
+                                      style: AppStyles.style18W400,
                                     ),
                                   ],
                                 ),

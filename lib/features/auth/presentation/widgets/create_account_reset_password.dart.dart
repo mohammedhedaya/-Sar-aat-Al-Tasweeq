@@ -20,11 +20,11 @@ class CreateAccountAndResetPassword extends StatelessWidget {
           children: [
             TextButton(
               onPressed: () {
-                context.push('/signUpView');
+                context.push('/resetPasswordView');
               },
               child: Text(
-                "إنشاء حساب",
-                style: AppStyles.style18W900,
+                "نسيت كلمة المرور",
+                style: AppStyles.style18W300,
               ),
             ),
             Container(
@@ -34,11 +34,11 @@ class CreateAccountAndResetPassword extends StatelessWidget {
               ),
               child: TextButton(
                 onPressed: () {
-                  GoRouter.of(context).push('/resetPasswordView');
+                  GoRouter.of(context).push('/signUpView');
                 },
                 child: Text(
-                  "نسيت كلمة المرور",
-                  style: AppStyles.style18W300,
+                  "إنشاء حساب",
+                  style: AppStyles.style18W900,
                 ),
               ),
             ),
