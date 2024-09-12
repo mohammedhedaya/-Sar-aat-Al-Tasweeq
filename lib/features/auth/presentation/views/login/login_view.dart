@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_chart/core/utils/app_colors.dart';
-import 'package:shopping_chart/features/auth/presentation/widgets/custom_positioned.dart';
+import '../../../../../core/utils/app_colors.dart';
+import '../../widgets/custom_positioned.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});

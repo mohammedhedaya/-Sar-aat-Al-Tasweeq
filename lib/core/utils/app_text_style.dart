@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shopping_chart/core/utils/app_colors.dart';
+import 'app_colors.dart';
 
 class AppStyles {
   static TextStyle style46W400 = TextStyle(
@@ -140,5 +140,15 @@ class AppStyles {
     color: AppColors.blackColor,
     fontSize: 14.sp,
     fontWeight: FontWeight.w600,
+  );
+  static TextStyle style20W900 = TextStyle(
+    color: AppColors.whiteColor,
+    fontSize: 20.sp,
+    fontWeight: FontWeight.w900,
+  );
+  static TextStyle style14W400 = TextStyle(
+    color: const Color(0xff323232),
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w400,
   );
 }

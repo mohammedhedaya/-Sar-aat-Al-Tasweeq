@@ -3,12 +3,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
-import 'package:shopping_chart/core/utils/app_colors.dart';
-import 'package:shopping_chart/core/utils/app_text_style.dart';
-import 'package:shopping_chart/core/utils/assets.dart';
-import 'package:shopping_chart/features/auth/presentation/cubit/auth_cubit.dart';
-import 'package:shopping_chart/features/auth/presentation/cubit/auth_state.dart';
-import 'package:shopping_chart/features/auth/presentation/widgets/auth_text_field.dart';
+import '../../../../core/utils/app_colors.dart';
+import '../../../../core/utils/app_text_style.dart';
+import '../../../../core/utils/assets.dart';
+import '../cubit/auth_cubit.dart';
+import '../cubit/auth_state.dart';
+import 'auth_text_field.dart';
 
 class SignUpViewBody extends StatelessWidget {
   const SignUpViewBody({super.key});
