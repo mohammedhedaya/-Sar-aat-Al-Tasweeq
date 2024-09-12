@@ -93,5 +93,22 @@ class Assets {
   /// Assets for imagesWhitecircle
   /// assets/images/Whitecircle.svg
   static const String imagesWhitecircle = "assets/images/Whitecircle.svg";
+
+
+
+  /// Assets For Drawer /////////////////////////////////////
+static const String promotionPlatforms = "assets/images/Promotion platforms.svg";
+static const String homeInDrawer = "assets/images/homeInDrawer.svg";
+static const String subscribeOfPackage = "assets/images/subscribeOfPackage.svg";
+static const String chatting = "assets/images/chating.svg";
+static const String connectUs = "assets/images/conectUs.svg";
+static const String addGroups = "assets/images/addGroups.svg";
+static const String shareingWithMyFriends = "assets/images/shareingWithMyFriends.svg";
+static const String arabicLang = "assets/images/arabicLang.svg";
+static const String iconTheme = "assets/images/iconTheme.svg";
+static const String suggestions = "assets/images/suggestions.svg";
+static const String marketingSpeedCalculations = "assets/images/Marketing speed calculations.svg";
+static const String applicationPolicy = "assets/images/Application policy.svg";
+static const String logOutIcon = "assets/images/logOutIcon.svg";
 }
 
