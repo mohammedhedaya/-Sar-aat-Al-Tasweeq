@@ -82,7 +82,7 @@ class CustomLoginForm extends StatelessWidget {
                 child: CustomLoginIcon(
                   onTap: () {
                     if (cubit.loginFormKey.currentState!.validate()) {
-                      context.go("/homeView");
+                      context.go("/navBarView");
                     }
                   },
                 ),
