@@ -17,38 +17,26 @@ class HomeViewBody extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: AppColors.darkGray,
         surfaceTintColor: Colors.transparent,
+        automaticallyImplyLeading: false,
         elevation: 0,
-        actions: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              IconButton(
-                onPressed: () {},
-                icon: SvgPicture.asset(
-                  Assets.imagesWallet,
-                ),
+        title: Row(
+          children: [
+            SvgPicture.asset(
+              Assets.imagesWallet,
+            ),
+            SizedBox(width: 10.w),
+            Text(
+              "400",
+              style: AppStyles.style12W700.copyWith(
+                fontWeight: FontWeight.w900,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8),
-                child: Text(
-                  "400",
-                  style: AppStyles.style12W700.copyWith(
-                    fontWeight: FontWeight.w900,
-                  ),
-                ),
-              ),
-              IconButton(
-                onPressed: () {},
-                icon: SvgPicture.asset(
-                  Assets.imagesJewel,
-                ),
-              ),
-              const Padding(
-                padding: EdgeInsets.only(right: 280.0),
-              ),
-            ],
-          ),
-        ],
+            ),
+            SizedBox(width: 10.w),
+            SvgPicture.asset(
+              Assets.imagesJewel,
+            ),
+          ],
+        ),
       ),
       body: Container(
         decoration: const BoxDecoration(
@@ -60,7 +48,6 @@ class HomeViewBody extends StatelessWidget {
         ),
         child: SingleChildScrollView(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               const HomeCarouselSlider(),
               SizedBox(height: 48.h),

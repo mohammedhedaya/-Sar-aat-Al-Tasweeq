@@ -40,7 +40,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                   ),
                 ],
               ),
-              overflow: TextOverflow.ellipsis, 
+              overflow: TextOverflow.ellipsis,
             ),
           ),
         ],
