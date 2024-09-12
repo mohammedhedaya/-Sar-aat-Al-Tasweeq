@@ -18,6 +18,10 @@ class Assets {
   /// assets/images/Ellipse4.svg
   static const String imagesEllipse4 = "assets/images/Ellipse4.svg";
 
+  /// Assets for imagesHomeBackground
+  /// assets/images/homeBackground.png
+  static const String imagesHomeBackground = "assets/images/homeBackground.png";
+
   /// Assets for imagesImagePersonInAppBar
   /// assets/images/imagePersonInAppBar.png
   static const String imagesImagePersonInAppBar = "assets/images/imagePersonInAppBar.png";

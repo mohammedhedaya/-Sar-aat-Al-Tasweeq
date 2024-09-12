@@ -46,33 +46,42 @@ class HomeViewBody extends StatelessWidget {
           ),
         ],
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            const HomeCarouselSlider(),
-            SizedBox(height: 48.h),
-            const CustomTextInHome(),
-            SizedBox(height: 38.h),
-            SocialMediaCard(
-              onTap: () {},
-              imagePath: Assets.imagesWhatsAppImage,
-              label: 'WHATSAPP',
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(
+              Assets.imagesHomeBackground,
             ),
-            SizedBox(height: 50.h),
-            SocialMediaCard(
-              onTap: () {},
-              imagePath: Assets.imagesTelegramImage,
-              label: 'TELEGRAM',
-            ),
-            SizedBox(height: 50.h),
-            SocialMediaCard(
-              onTap: () {},
-              imagePath: Assets.imagesInstagramNewGradientLogoAnimation,
-              label: 'INSTAGRAM',
-            ),
-            SizedBox(height: 25.h),
-          ],
+          ),
+        ),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              const HomeCarouselSlider(),
+              SizedBox(height: 48.h),
+              const CustomTextInHome(),
+              SizedBox(height: 38.h),
+              SocialMediaCard(
+                onTap: () {},
+                imagePath: Assets.imagesWhatsAppImage,
+                label: 'WHATSAPP',
+              ),
+              SizedBox(height: 50.h),
+              SocialMediaCard(
+                onTap: () {},
+                imagePath: Assets.imagesTelegramImage,
+                label: 'TELEGRAM',
+              ),
+              SizedBox(height: 50.h),
+              SocialMediaCard(
+                onTap: () {},
+                imagePath: Assets.imagesInstagramNewGradientLogoAnimation,
+                label: 'INSTAGRAM',
+              ),
+              SizedBox(height: 25.h),
+            ],
+          ),
         ),
       ),
     );
