@@ -108,4 +108,14 @@ class AppStyles {
     fontSize: 14.sp,
     fontWeight: FontWeight.w600,
   );
+  static TextStyle style20W900 = TextStyle(
+    color: AppColors.whiteColor,
+    fontSize: 20.sp,
+    fontWeight: FontWeight.w900,
+  );
+  static TextStyle style14W400 = TextStyle(
+    color: const Color(0xff323232),
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w400,
+  );
 }
