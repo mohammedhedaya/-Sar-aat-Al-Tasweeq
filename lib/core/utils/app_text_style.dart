@@ -18,6 +18,16 @@ class AppStyles {
     fontSize: 18.sp,
     fontWeight: FontWeight.w400,
   );
+  static TextStyle style14W400 = TextStyle(
+    color: AppColors.whiteColor,
+    fontSize: 18.sp,
+    fontWeight: FontWeight.w400,
+  );
+  static TextStyle style14W500 = TextStyle(
+    color: AppColors.whiteColor,
+    fontSize: 18.sp,
+    fontWeight: FontWeight.w400,
+  );
   static TextStyle style18W700 = TextStyle(
     color: AppColors.whiteColor,
     fontSize: 18.sp,
@@ -40,6 +50,11 @@ class AppStyles {
   );
   static TextStyle style12W400 = TextStyle(
     color: AppColors.gray,
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w400,
+  );
+  static TextStyle style12W400Edite = TextStyle(
+    color: AppColors.whiteColor,
     fontSize: 12.sp,
     fontWeight: FontWeight.w400,
   );
@@ -77,6 +92,10 @@ class AppStyles {
     color: AppColors.whiteColor,
     fontSize: 25.sp,
     fontWeight: FontWeight.w800,
+  );static TextStyle style25W400 = TextStyle(
+    color: AppColors.whiteColor,
+    fontSize: 25.sp,
+    fontWeight: FontWeight.w800,
   );
   static TextStyle style12W700 = TextStyle(
     color: AppColors.whiteColor,
@@ -105,6 +124,20 @@ class AppStyles {
   );
   static TextStyle style14W600 = TextStyle(
     color: AppColors.whiteColor,
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w600,
+  ); static TextStyle style14W800 = TextStyle(
+    color: AppColors.whiteColor,
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w600,
+  );
+  static TextStyle style14W300 = TextStyle(
+    color: AppColors.whiteColor,
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w600,
+  );
+  static TextStyle style14W600Profile = TextStyle(
+    color: AppColors.blackColor,
     fontSize: 14.sp,
     fontWeight: FontWeight.w600,
   );

@@ -12,6 +12,9 @@ import 'package:shopping_chart/features/auth/presentation/views/signup/sign_up_v
 import 'package:shopping_chart/features/auth/presentation/views/signup/success_sign_up_view.dart';
 import 'package:shopping_chart/features/home/presentation/views/home_view.dart';
 import 'package:shopping_chart/features/home/presentation/widgets/nav_bar_widgets.dart';
+import 'package:shopping_chart/features/profile/presentation/views/change_password.dart';
+import 'package:shopping_chart/features/profile/presentation/views/edit_profile.dart';
+import 'package:shopping_chart/features/profile/presentation/views/profile_page.dart';
 
 final GoRouter router = GoRouter(
   routes: [
@@ -78,6 +81,18 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/homeView',
       builder: (context, state) => const HomeView(),
+    ),
+    GoRoute(
+      path: '/profilePage',
+      builder: (context, state) => const ProfilePage(),
+    ),
+    GoRoute(
+      path: '/changePassword',
+      builder: (context, state) => const ChangePassword(),
+    ),
+    GoRoute(
+      path: '/editProfile',
+      builder: (context, state) => const EditProfile(),
     ),
   ],
 );
