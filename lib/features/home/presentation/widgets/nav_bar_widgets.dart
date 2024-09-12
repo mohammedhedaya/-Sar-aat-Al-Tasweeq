@@ -20,10 +20,10 @@ class _UserMainLayoutScreenState extends State<UserMainLayoutScreen> {
   void initState() {
     super.initState();
     screens = [
-      const MenuView(),
-      const MessagesView(),
-      const WalletView(),
       const HomeView(),
+      const WalletView(),
+      const MessagesView(),
+      const MenuView(),
     ];
   }
 

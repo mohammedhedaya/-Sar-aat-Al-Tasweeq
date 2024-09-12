@@ -26,23 +26,13 @@ class UserBottomNavBarWidget extends StatelessWidget {
       showUnselectedLabels: false,
       items: [
         BottomNavigationBarItem(
-          tooltip: "Menu",
-          label: 'Menu',
+          tooltip: "Home",
+          label: 'Home',
           activeIcon: const ActiveNavBarContainer(
-            image: Assets.imagesMenuicon,
+            image: Assets.imagesHomeicon,
           ),
           icon: SvgPicture.asset(
-            Assets.imagesMenuicon,
-          ),
-        ),
-        BottomNavigationBarItem(
-          tooltip: "Message",
-          label: 'Message',
-          activeIcon: const ActiveNavBarContainer(
-            image: Assets.imagesNessageicon,
-          ),
-          icon: SvgPicture.asset(
-            Assets.imagesNessageicon,
+            Assets.imagesHomeicon,
           ),
         ),
         BottomNavigationBarItem(
@@ -56,13 +46,23 @@ class UserBottomNavBarWidget extends StatelessWidget {
           ),
         ),
         BottomNavigationBarItem(
-          tooltip: "Home",
-          label: 'Home',
+          tooltip: "Message",
+          label: 'Message',
           activeIcon: const ActiveNavBarContainer(
-            image: Assets.imagesHomeicon,
+            image: Assets.imagesNessageicon,
           ),
           icon: SvgPicture.asset(
-            Assets.imagesHomeicon,
+            Assets.imagesNessageicon,
+          ),
+        ),
+        BottomNavigationBarItem(
+          tooltip: "Menu",
+          label: 'Menu',
+          activeIcon: const ActiveNavBarContainer(
+            image: Assets.imagesMenuicon,
+          ),
+          icon: SvgPicture.asset(
+            Assets.imagesMenuicon,
           ),
         ),
       ],
