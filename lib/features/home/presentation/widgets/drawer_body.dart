@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:shopping_chart/core/utils/assets.dart';
-import 'package:shopping_chart/features/home/presentation/widgets/drawer_delete_account_btn.dart';
-import 'package:shopping_chart/features/home/presentation/widgets/drawer_list_tile_item.dart';
-import 'package:shopping_chart/features/home/presentation/widgets/drawer_notification_item.dart';
+import '../../../../core/utils/assets.dart';
+import 'drawer_delete_account_btn.dart';
+import 'drawer_list_tile_item.dart';
+import 'drawer_notification_item.dart';
 
 class DrawerBody extends StatefulWidget {
   const DrawerBody({super.key});

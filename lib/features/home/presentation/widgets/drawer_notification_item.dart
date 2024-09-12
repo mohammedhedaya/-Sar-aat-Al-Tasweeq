@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_chart/core/utils/app_colors.dart';
-import 'package:shopping_chart/core/utils/assets.dart';
-import 'package:shopping_chart/features/home/presentation/widgets/drawer_list_tile_item.dart';
+import '../../../../core/utils/app_colors.dart';
+import '../../../../core/utils/assets.dart';
+import 'drawer_list_tile_item.dart';
 
 class DrawerNotificationItem extends StatefulWidget {
   const DrawerNotificationItem({

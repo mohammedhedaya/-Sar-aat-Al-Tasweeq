@@ -1,10 +1,10 @@
-import 'package:shopping_chart/features/home/presentation/views/home_view.dart';
-import 'package:shopping_chart/features/home/presentation/widgets/custom_drawer.dart';
-import 'package:shopping_chart/features/home/presentation/widgets/user_bottom_nav_bar_widget.dart';
+import '../views/home_view.dart';
+import 'custom_drawer.dart';
+import 'user_bottom_nav_bar_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:shopping_chart/features/menu/presentation/views/menu_view.dart';
-import 'package:shopping_chart/features/messages/presentation/views/messages_view.dart';
-import 'package:shopping_chart/features/wallet/presentation/views/wallet_view.dart';
+import '../../../menu/presentation/views/menu_view.dart';
+import '../../../messages/presentation/views/messages_view.dart';
+import '../../../wallet/presentation/views/wallet_view.dart';
 
 class UserMainLayoutScreen extends StatefulWidget {
   const UserMainLayoutScreen({super.key});

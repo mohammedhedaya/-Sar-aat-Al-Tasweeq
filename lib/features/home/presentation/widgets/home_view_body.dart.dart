@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:shopping_chart/core/utils/app_colors.dart';
-import 'package:shopping_chart/features/home/presentation/widgets/custom_text_in_home.dart';
-import 'package:shopping_chart/features/home/presentation/widgets/home_carousel_slider.dart';
-import 'package:shopping_chart/features/home/presentation/widgets/social_media_card.dart';
+import '../../../../core/utils/app_colors.dart';
+import 'custom_text_in_home.dart';
+import 'home_carousel_slider.dart';
+import 'social_media_card.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
 

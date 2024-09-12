@@ -1,4 +1,4 @@
-import 'package:shopping_chart/features/home/presentation/widgets/active_nav_bar_container.dart';
+import 'active_nav_bar_container.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/assets.dart';
 import 'package:flutter/material.dart';

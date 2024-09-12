@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:shopping_chart/core/utils/app_colors.dart';
-import 'package:shopping_chart/core/utils/assets.dart';
-import 'package:shopping_chart/features/auth/presentation/widgets/create_account_reset_password.dart.dart';
-import 'package:shopping_chart/features/auth/presentation/widgets/custom_login_form.dart';
-import 'package:shopping_chart/features/auth/presentation/widgets/hello_and_change_lang.dart';
+import '../../../../core/utils/app_colors.dart';
+import '../../../../core/utils/assets.dart';
+import 'create_account_reset_password.dart.dart';
+import 'custom_login_form.dart';
+import 'hello_and_change_lang.dart';
 
 class LoginViewBody extends StatelessWidget {
   const LoginViewBody({super.key});

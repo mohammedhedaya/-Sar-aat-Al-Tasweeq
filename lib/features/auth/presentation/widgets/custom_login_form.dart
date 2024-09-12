@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:shopping_chart/core/utils/app_colors.dart';
-import 'package:shopping_chart/features/auth/presentation/cubit/auth_cubit.dart';
-import 'package:shopping_chart/features/auth/presentation/cubit/auth_state.dart';
-import 'package:shopping_chart/features/auth/presentation/widgets/auth_text_field.dart';
-import 'package:shopping_chart/features/auth/presentation/widgets/custom_login_icon.dart';
-import 'package:shopping_chart/features/auth/presentation/widgets/swith_theme.dart';
+import '../../../../core/utils/app_colors.dart';
+import '../cubit/auth_cubit.dart';
+import '../cubit/auth_state.dart';
+import 'auth_text_field.dart';
+import 'custom_login_icon.dart';
+import 'swith_theme.dart';
 
 class CustomLoginForm extends StatelessWidget {
   const CustomLoginForm({super.key});
