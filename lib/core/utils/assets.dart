@@ -1,14 +1,15 @@
 // ignore_for_file: prefer_single_quotes
 class Assets {
   Assets._();
-  
+
   /// Assets for imagesApplogo
   /// assets/images/applogo.png
   static const String imagesApplogo = "assets/images/applogo.png";
 
   /// Assets for imagesArrowForwardLoginPage
   /// assets/images/arrowForwardLoginPage.svg
-  static const String imagesArrowForwardLoginPage = "assets/images/arrowForwardLoginPage.svg";
+  static const String imagesArrowForwardLoginPage =
+      "assets/images/arrowForwardLoginPage.svg";
 
   /// Assets for imagesCoffee
   /// assets/images/coffee.png
@@ -26,13 +27,19 @@ class Assets {
   /// assets/images/homeBackground.png
   static const String imagesHomeBackground = "assets/images/homeBackground.png";
 
+  /// Assets for imagesHomeicon
+  /// assets/images/homeicon.svg
+  static const String imagesHomeicon = "assets/images/homeicon.svg";
+
   /// Assets for imagesImagePersonInAppBar
   /// assets/images/imagePersonInAppBar.png
-  static const String imagesImagePersonInAppBar = "assets/images/imagePersonInAppBar.png";
+  static const String imagesImagePersonInAppBar =
+      "assets/images/imagePersonInAppBar.png";
 
   /// Assets for imagesInstagramNewGradientLogoAnimation
   /// assets/images/instagram-new-gradient-logo-animation.gif
-  static const String imagesInstagramNewGradientLogoAnimation = "assets/images/instagram-new-gradient-logo-animation.gif";
+  static const String imagesInstagramNewGradientLogoAnimation =
+      "assets/images/instagram-new-gradient-logo-animation.gif";
 
   /// Assets for imagesJewel
   /// assets/images/jewel.svg
@@ -53,6 +60,14 @@ class Assets {
   /// Assets for imagesLogincircle3
   /// assets/images/logincircle3.svg
   static const String imagesLogincircle3 = "assets/images/logincircle3.svg";
+
+  /// Assets for imagesMenuicon
+  /// assets/images/menuicon.svg
+  static const String imagesMenuicon = "assets/images/menuicon.svg";
+
+  /// Assets for imagesNessageicon
+  /// assets/images/nessageicon.svg
+  static const String imagesNessageicon = "assets/images/nessageicon.svg";
 
   /// Assets for imagesNotifications
   /// assets/images/notifications.svg
@@ -86,6 +101,10 @@ class Assets {
   /// assets/images/wallet.svg
   static const String imagesWallet = "assets/images/wallet.svg";
 
+  /// Assets for imagesWalleticon
+  /// assets/images/Walleticon.svg
+  static const String imagesWalleticon = "assets/images/Walleticon.svg";
+
   /// Assets for imagesWhatsAppImage
   /// assets/images/whatsAppImage.webp
   static const String imagesWhatsAppImage = "assets/images/whatsAppImage.webp";
@@ -94,4 +113,3 @@ class Assets {
   /// assets/images/Whitecircle.svg
   static const String imagesWhitecircle = "assets/images/Whitecircle.svg";
 }
-
