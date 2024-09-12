@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shopping_chart/core/utils/app_text_style.dart';
+import 'package:shopping_chart/core/utils/assets.dart';
 import 'package:shopping_chart/features/auth/presentation/widgets/auth_btn.dart';
 import 'package:shopping_chart/features/auth/presentation/widgets/auth_text_field.dart';
 
@@ -16,7 +17,10 @@ class ResetPasswordView extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 36, vertical: 25),
           child: Column(
             children: [
-              const SizedBox(height: 180),
+              Image.asset(
+                Assets.imagesApplogo,
+                height: 225.h,
+              ),
               Center(
                 child: Text(
                   "قم بإدخال بريدك المسجل وقم بحفظه لإعادة\nتعيين كلمة مرور جديدة",
@@ -24,7 +28,7 @@ class ResetPasswordView extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
               ),
-              SizedBox(height: 21.h),
+              SizedBox(height: 30.h),
               CustomAuthTextField(
                 hintText: "البريد الالكتروني",
                 keyboardType: TextInputType.emailAddress,
