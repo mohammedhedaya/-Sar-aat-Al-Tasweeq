@@ -22,7 +22,7 @@ class _SuccessSubscribedViewState extends State<SuccessSubscribedView>
       vsync: this,
       duration: const Duration(seconds: 2),
     );
-    _animation = Tween<double>(begin: -200, end: 0).animate(
+    _animation = Tween<double>(begin: -350, end: 0).animate(
       CurvedAnimation(
         parent: _controller,
         curve: Curves.easeInOut,
