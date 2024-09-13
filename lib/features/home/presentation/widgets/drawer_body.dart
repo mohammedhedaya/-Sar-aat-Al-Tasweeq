@@ -61,7 +61,11 @@ class _DrawerBodyState extends State<DrawerBody> {
           title: "المحفظة الماسية",
           icon: Assets.imagesWallet,
           isSelected: _selectedIndex == 3,
-          onTap: () => _onItemTap(3),
+          onTap: () {
+            _onItemTap(3);
+            context.push('/diamondWallet');
+          },
+
         ),
         DrawerListTileItem(
           title: "المحادثة الفورية",

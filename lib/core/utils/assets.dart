@@ -201,5 +201,9 @@ class Assets {
   /// Assets for imagesWhitecircle
   /// assets/images/Whitecircle.svg
   static const String imagesWhitecircle = "assets/images/Whitecircle.svg";
+  static const String imageInProfile = "assets/images/imageInProfile.png";
+  /// Image for diamondWallet
+  static const String jewelDiamondWallet = "assets/images/jewelInDiamondWallet.svg";
+  static const String jewelDiamondWalletTop = "assets/images/jewelnTopScreen.svg";
 }
 

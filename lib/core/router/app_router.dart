@@ -1,5 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shopping_chart/features/diamondWallet/presentation/views/diamond_wallet.dart';
+import 'package:shopping_chart/features/diamondWallet/presentation/widgets/purchase_completed_successfully.dart';
 import 'package:shopping_chart/features/profile/presentation/views/change_password_view.dart';
 import 'package:shopping_chart/features/profile/presentation/views/edit_profile_view.dart';
 import 'package:shopping_chart/features/profile/presentation/views/profile_view.dart';
@@ -7,6 +9,8 @@ import 'package:shopping_chart/features/subscribe_package/presentation/views/Sub
 import 'package:shopping_chart/features/subscribe_package/presentation/views/my_cards_view.dart';
 import 'package:shopping_chart/features/subscribe_package/presentation/views/payment_gateway_view.dart';
 import 'package:shopping_chart/features/subscribe_package/presentation/views/subscribe_to_the_package_view.dart';
+import '../../features/diamondWallet/presentation/widgets/my_card_view_diamond_wallet.dart';
+import '../../features/diamondWallet/presentation/widgets/purchase_process.dart';
 import '../services/service_locator.dart';
 import '../../features/auth/presentation/cubit/auth_cubit.dart';
 import '../../features/auth/presentation/views/login/login_view.dart';
@@ -113,6 +117,22 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/subscribedView',
       builder: (context, state) => const SuccessSubscribedView(),
+    ),
+    GoRoute(
+      path: '/diamondWallet',
+      builder: (context, state) => const DiamondWallet(),
+    ),
+    GoRoute(
+      path: '/purchaseProcess',
+      builder: (context, state) => const PurchaseProcess(),
+    ),
+    GoRoute(
+      path: '/myCardViewDiamondWallet',
+      builder: (context, state) => const MyCardViewDiamondWallet(),
+    ),
+    GoRoute(
+      path: '/purchaseCompletedSuccessfully',
+      builder: (context, state) => const PurchaseCompletedSuccessfully(),
     ),
   ],
 );
