@@ -38,6 +38,18 @@ class Assets {
   /// assets/images/dark.svg
   static const String imagesDark = "assets/images/dark.svg";
 
+  /// Assets for imagesEllipse10
+  /// assets/images/Ellipse10.svg
+  static const String imagesEllipse10 = "assets/images/Ellipse10.svg";
+
+  /// Assets for imagesEllipse11
+  /// assets/images/Ellipse11.svg
+  static const String imagesEllipse11 = "assets/images/Ellipse11.svg";
+
+  /// Assets for imagesEllipse12
+  /// assets/images/Ellipse12.svg
+  static const String imagesEllipse12 = "assets/images/Ellipse12.svg";
+
   /// Assets for imagesEllipse4
   /// assets/images/Ellipse4.svg
   static const String imagesEllipse4 = "assets/images/Ellipse4.svg";
@@ -117,6 +129,10 @@ class Assets {
   /// Assets for imagesPromotionplatforms
   /// assets/images/Promotionplatforms.svg
   static const String imagesPromotionplatforms = "assets/images/Promotionplatforms.svg";
+
+  /// Assets for imagesRssLine
+  /// assets/images/rss-line.svg
+  static const String imagesRssLine = "assets/images/rss-line.svg";
 
   /// Assets for imagesSHAREICON
   /// assets/images/SHAREICON.svg

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:shopping_chart/core/utils/app_colors.dart';
 import 'package:shopping_chart/core/utils/app_text_style.dart';
 import 'package:shopping_chart/core/utils/assets.dart';
@@ -26,7 +27,9 @@ class PaymentGatewayViewBody extends StatelessWidget {
           CustomPaymentMethodItem(
             title: "Visa / Master Card",
             icon: Assets.imagesWalletLine,
-            onTap: () {},
+            onTap: () {
+              context.push("/MyCardsView");
+            },
           ),
           SizedBox(height: 15.h),
           CustomPaymentMethodItem(
