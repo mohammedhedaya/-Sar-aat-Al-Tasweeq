@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:shopping_chart/features/profile/presentation/views/change_password_view.dart';
 import 'package:shopping_chart/features/profile/presentation/views/edit_profile_view.dart';
 import 'package:shopping_chart/features/profile/presentation/views/profile_view.dart';
+import 'package:shopping_chart/features/subscribe_package/presentation/views/payment_gateway_view.dart';
 import 'package:shopping_chart/features/subscribe_package/presentation/views/subscribe_to_the_package_view.dart';
 import '../services/service_locator.dart';
 import '../../features/auth/presentation/cubit/auth_cubit.dart';
@@ -98,6 +99,10 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/subscribeToThePackageView',
       builder: (context, state) => const SubscribeToThePackageView(),
+    ),
+     GoRoute(
+      path: '/paymentGatewayView',
+      builder: (context, state) => const PaymentGatewayView(),
     ),
   ],
 );

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
@@ -158,25 +159,30 @@ class SubscribeToThePackageViewBody extends StatelessWidget {
                               ),
                             ),
                             SizedBox(height: 25.h),
-                            Center(
-                              child: Container(
-                                padding: EdgeInsets.symmetric(
-                                    horizontal: 20.w, vertical: 10.h),
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(5.r),
-                                  gradient: const LinearGradient(
-                                    colors: [
-                                      Color(0xff00C0CC),
-                                      Color(0xff006066),
-                                    ],
-                                    begin: Alignment.topCenter,
-                                    end: Alignment.bottomCenter,
+                            InkWell(
+                              onTap: () {
+                                context.push("/paymentGatewayView");
+                              },
+                              child: Center(
+                                child: Container(
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal: 20.w, vertical: 10.h),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(5.r),
+                                    gradient: const LinearGradient(
+                                      colors: [
+                                        Color(0xff00C0CC),
+                                        Color(0xff006066),
+                                      ],
+                                      begin: Alignment.topCenter,
+                                      end: Alignment.bottomCenter,
+                                    ),
                                   ),
-                                ),
-                                child: Text(
-                                  "أشتراك",
-                                  style: AppStyles.style14W400.copyWith(
-                                    color: AppColors.whiteColor,
+                                  child: Text(
+                                    "أشتراك",
+                                    style: AppStyles.style14W400.copyWith(
+                                      color: AppColors.whiteColor,
+                                    ),
                                   ),
                                 ),
                               ),

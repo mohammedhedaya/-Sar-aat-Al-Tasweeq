@@ -6,6 +6,10 @@ class Assets {
   /// assets/images/addGroups.svg
   static const String imagesAddGroups = "assets/images/addGroups.svg";
 
+  /// Assets for imagesApplePay
+  /// assets/images/ApplePay.svg
+  static const String imagesApplePay = "assets/images/ApplePay.svg";
+
   /// Assets for imagesApplicationpolicy
   /// assets/images/Applicationpolicy.svg
   static const String imagesApplicationpolicy = "assets/images/Applicationpolicy.svg";
@@ -157,6 +161,10 @@ class Assets {
   /// Assets for imagesWallet
   /// assets/images/wallet.svg
   static const String imagesWallet = "assets/images/wallet.svg";
+
+  /// Assets for imagesWalletLine
+  /// assets/images/wallet-line.svg
+  static const String imagesWalletLine = "assets/images/wallet-line.svg";
 
   /// Assets for imagesWalleticon
   /// assets/images/Walleticon.svg
