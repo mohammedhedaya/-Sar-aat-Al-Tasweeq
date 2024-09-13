@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:shopping_chart/features/profile/presentation/views/change_password_view.dart';
 import 'package:shopping_chart/features/profile/presentation/views/edit_profile_view.dart';
 import 'package:shopping_chart/features/profile/presentation/views/profile_view.dart';
+import 'package:shopping_chart/features/subscribe_package/presentation/views/Subscribed_view.dart';
 import 'package:shopping_chart/features/subscribe_package/presentation/views/my_cards_view.dart';
 import 'package:shopping_chart/features/subscribe_package/presentation/views/payment_gateway_view.dart';
 import 'package:shopping_chart/features/subscribe_package/presentation/views/subscribe_to_the_package_view.dart';
@@ -25,7 +26,7 @@ final GoRouter router = GoRouter(
       path: '/',
       builder: (context, state) => BlocProvider(
         create: (context) => getIt<AuthCubit>(),
-        child: const MyCardsView(),
+        child: const LoginView(),
       ),
     ),
     GoRoute(
@@ -108,6 +109,10 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/myCardsView',
       builder: (context, state) => const MyCardsView(),
+    ),
+    GoRoute(
+      path: '/subscribedView',
+      builder: (context, state) => const SuccessSubscribedView(),
     ),
   ],
 );

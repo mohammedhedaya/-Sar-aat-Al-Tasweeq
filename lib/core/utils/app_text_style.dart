@@ -153,4 +153,9 @@ class AppStyles {
     fontSize: 20.sp,
     fontWeight: FontWeight.w800,
   );
+  static TextStyle style22W600 = TextStyle(
+    color: AppColors.whiteColor,
+    fontSize: 22.sp,
+    fontWeight: FontWeight.w600,
+  );
 }

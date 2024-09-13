@@ -22,6 +22,10 @@ class Assets {
   /// assets/images/arrowForwardLoginPage.svg
   static const String imagesArrowForwardLoginPage = "assets/images/arrowForwardLoginPage.svg";
 
+  /// Assets for imagesCelebration
+  /// assets/images/celebration.png
+  static const String imagesCelebration = "assets/images/celebration.png";
+
   /// Assets for imagesChating
   /// assets/images/chating.svg
   static const String imagesChating = "assets/images/chating.svg";
@@ -125,6 +129,10 @@ class Assets {
   /// Assets for imagesNotifications
   /// assets/images/notifications.svg
   static const String imagesNotifications = "assets/images/notifications.svg";
+
+  /// Assets for imagesPackageSubscribed
+  /// assets/images/packageSubscribed.png
+  static const String imagesPackageSubscribed = "assets/images/packageSubscribed.png";
 
   /// Assets for imagesPromotionplatforms
   /// assets/images/Promotionplatforms.svg
