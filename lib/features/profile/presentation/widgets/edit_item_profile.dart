@@ -11,183 +11,165 @@ class EditItemProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Row(
-              children: [
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          "الاسم الأول",
-                          style: AppStyles.style12W400Edite,
-                          textAlign: TextAlign.right,
-                        ),
-                      ),
-                      SizedBox(height: 8.h),
-                      TextFormField(
-                        initialValue: 'فيصل', // Initial value
-                        decoration: InputDecoration(
-                          filled: true,
-                          fillColor: AppColors.dimGray,
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                        ),
-                        style: AppStyles.style18W400,
-                        textAlign: TextAlign.right,
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(width: 6.w),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          "الاسم الثاني",
-                          style: AppStyles.style12W400Edite,
-                          textAlign: TextAlign.right,
-                        ),
-                      ),
-                      SizedBox(height: 8.h),
-                      TextFormField(
-                        initialValue: 'عبدالعزيز',
-                        decoration: InputDecoration(
-                          filled: true,
-                          fillColor: AppColors.dimGray,
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                        ),
-                        style: AppStyles.style18W400,
-                        textAlign: TextAlign.right,
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: 20.h),
-            Row(
-              children: [
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          "الاسم الثالث",
-                          style: AppStyles.style12W400Edite,
-                          textAlign: TextAlign.right,
-                        ),
-                      ),
-                      SizedBox(height: 8.h),
-                      TextFormField(
-                        initialValue: 'آل سعود',
-                        decoration: InputDecoration(
-                          filled: true,
-                          fillColor: AppColors.dimGray,
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                        ),
-                        style: AppStyles.style18W400,
-                        textAlign: TextAlign.right,
-                      ),
-                    ],
-                  ),
-                ),
-                Expanded(
-                  child: Container(),
-                ),
-              ],
-            ),
-            SizedBox(height: 30.h),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    "رقم الهاتف",
-                    style: AppStyles.style12W400Edite,
-                    textAlign: TextAlign.right,
-                  ),
-                ),
-                TextFormField(
-                  initialValue: '0501234567',
-                  keyboardType: TextInputType.phone,
-                  decoration: InputDecoration(
-                    suffixIcon: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 16.w),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Text(
-                            "966",
-                            style: AppStyles.style18W400,
-                          ),
-                          const Icon(Icons.keyboard_arrow_down,
-                              color: AppColors.whiteColor),
-                        ],
-                      ),
+      child: Column(
+        children: [
+          Row(
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "الاسم الأول",
+                      style: AppStyles.style12W400Edite,
+                      textAlign: TextAlign.right,
                     ),
-                    filled: true,
-                    fillColor: AppColors.dimGray,
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20),
+                    SizedBox(height: 9.h),
+                    TextFormField(
+                      initialValue: 'فيصل',
+                      decoration: InputDecoration(
+                        filled: true,
+                        fillColor: AppColors.whiteColor.withOpacity(0.10),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10.r),
+                        ),
+                      ),
+                      style: AppStyles.style18W400,
+                      textAlign: TextAlign.right,
                     ),
-                  ),
+                  ],
+                ),
+              ),
+              SizedBox(width: 9.w),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "الاسم الثاني",
+                      style: AppStyles.style12W400Edite,
+                      textAlign: TextAlign.right,
+                    ),
+                    SizedBox(height: 9.h),
+                    TextFormField(
+                      initialValue: 'عبدالعزيز',
+                      decoration: InputDecoration(
+                        filled: true,
+                        fillColor: AppColors.whiteColor.withOpacity(0.10),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10.r),
+                        ),
+                      ),
+                      style: AppStyles.style18W400,
+                      textAlign: TextAlign.right,
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: 30.h),
+          Row(
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "الاسم الثالث",
+                      style: AppStyles.style12W400Edite,
+                      textAlign: TextAlign.right,
+                    ),
+                    SizedBox(height: 9.h),
+                    TextFormField(
+                      initialValue: 'آل سعود',
+                      decoration: InputDecoration(
+                        filled: true,
+                        fillColor: AppColors.whiteColor.withOpacity(0.10),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10.r),
+                        ),
+                      ),
+                      style: AppStyles.style18W400,
+                      textAlign: TextAlign.right,
+                    ),
+                  ],
+                ),
+              ),
+              const Expanded(
+                child: SizedBox(),
+              ),
+            ],
+          ),
+          SizedBox(height: 30.h),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  "رقم الهاتف",
                   style: AppStyles.style12W400Edite,
+                  textAlign: TextAlign.right,
                 ),
-              ],
-            ),
-            SizedBox(height: 30.h),
-            const CustomItemIncludeCountry(),
-            SizedBox(height: 30.h),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    "الإيميل",
-                    style: AppStyles.style12W400Edite,
-                    textAlign: TextAlign.right,
+              ),
+              TextFormField(
+                initialValue: '0501234567',
+                keyboardType: TextInputType.phone,
+                decoration: InputDecoration(
+                  suffixIcon: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        "966",
+                        style: AppStyles.style18W400,
+                      ),
+                      const Icon(
+                        Icons.keyboard_arrow_down,
+                        color: AppColors.whiteColor,
+                      ),
+                    ],
+                  ),
+                  filled: true,
+                  fillColor: AppColors.whiteColor.withOpacity(0.10),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20.r),
                   ),
                 ),
-                TextFormField(
-                  initialValue: 'faisal_abdelaziz@yahoo.com',
-                  keyboardType: TextInputType.emailAddress,
-                  decoration: InputDecoration(
-                    filled: true,
-                    fillColor: AppColors.dimGray,
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
+                style: AppStyles.style18W400,
+              ),
+            ],
+          ),
+          SizedBox(height: 30.h),
+          const CustomItemIncludeCountry(),
+          SizedBox(height: 30.h),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "الإيميل",
+                style: AppStyles.style12W400Edite,
+                textAlign: TextAlign.right,
+              ),
+              SizedBox(height: 9.h),
+              TextFormField(
+                initialValue: 'faisal_abdelaziz@yahoo.com',
+                keyboardType: TextInputType.emailAddress,
+                decoration: InputDecoration(
+                  filled: true,
+                  fillColor: AppColors.whiteColor.withOpacity(0.10),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20.r),
                   ),
-                  style: AppStyles.style18W400,
-                  textAlign: TextAlign.center,
                 ),
-                const SizedBox(
-                  height: 20,
-                ),
-                const CustomButtomSaveAndExit(),
-              ],
-            ),
-          ],
-        ),
+                style: AppStyles.style18W400,
+              ),
+              SizedBox(height: 30.h),
+              const CustomButtomSaveAndExit(),
+              SizedBox(height: 25.h),
+            ],
+          ),
+        ],
       ),
     );
   }

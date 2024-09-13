@@ -193,7 +193,7 @@ class CustomProfileData extends StatelessWidget {
           SizedBox(height: 30.h),
           const CustomIncludeEmail(),
           SizedBox(height: 15.h),
-          const CustomSubscriptionDate(),
+          const CustomSubscriptionDateAndBtns(),
         ],
       ),
     );

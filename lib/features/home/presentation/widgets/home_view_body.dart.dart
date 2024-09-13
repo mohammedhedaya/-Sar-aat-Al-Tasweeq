@@ -44,6 +44,7 @@ class HomeViewBody extends StatelessWidget {
             image: AssetImage(
               Assets.imagesHomeBackground,
             ),
+            opacity: 0.45,
           ),
         ),
         child: SingleChildScrollView(

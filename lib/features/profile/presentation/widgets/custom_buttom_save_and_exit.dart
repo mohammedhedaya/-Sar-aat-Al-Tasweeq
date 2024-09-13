@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../core/utils/app_colors.dart';
+import 'package:go_router/go_router.dart';
 import '../../../../core/utils/app_text_style.dart';
 
 class CustomButtomSaveAndExit extends StatelessWidget {
@@ -9,38 +9,40 @@ class CustomButtomSaveAndExit extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        ElevatedButton(
-          onPressed: () {
-            // GoRouter.of(context).push('/changePassword');
-          },
-          style: ElevatedButton.styleFrom(
-            padding: EdgeInsets.symmetric(horizontal: 60.w, vertical: 10.h),
-            backgroundColor: AppColors.greenColor,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10.r),
+        Expanded(
+          child: ElevatedButton(
+            onPressed: () {
+              context.pop();
+            },
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color(0xff52B850),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.r),
+              ),
             ),
-          ),
-          child: Text(
-            'حفظ',
-            style: AppStyles.style14W600,
+            child: Text(
+              'حفظ',
+              style: AppStyles.style14W600,
+            ),
           ),
         ),
-        ElevatedButton(
-          onPressed: () {
-            // GoRouter.of(context).push('/editProfile');
-          },
-          style: ElevatedButton.styleFrom(
-            padding: EdgeInsets.symmetric(horizontal: 60.w, vertical: 10.h),
-            backgroundColor:AppColors.redColor, // Background color
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10.r),
+        SizedBox(width: 11.w),
+        Expanded(
+          child: ElevatedButton(
+            onPressed: () {
+              context.pop();
+            },
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color(0xffDA3131),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.r),
+              ),
             ),
-          ),
-          child: Text(
-            'إلغاء',
-            style: AppStyles.style14W600,
+            child: Text(
+              'إلغاء',
+              style: AppStyles.style14W600,
+            ),
           ),
         ),
       ],

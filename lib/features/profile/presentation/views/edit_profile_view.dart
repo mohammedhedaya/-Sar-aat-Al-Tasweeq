@@ -9,52 +9,51 @@ class EditProfileView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(
-              Assets.imagesHomeBackground,
+    return SafeArea(
+      child: Scaffold(
+        resizeToAvoidBottomInset: false,
+        body: Container(
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(
+                Assets.imagesHomeBackground,
+              ),
+              opacity: 0.10,
             ),
-            fit: BoxFit.cover,
           ),
-        ),
-        child: SingleChildScrollView(
-          child: Center(
+          child: SingleChildScrollView(
+            padding: EdgeInsets.symmetric(horizontal: 30.w),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(height: 100.h),
+                SizedBox(height: 60.h),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Column(
                       children: [
-                        const CircleAvatar(
-                          radius: 50,
-                          backgroundImage:
-                              AssetImage(Assets.imagesImageInProfile),
+                        CircleAvatar(
+                          radius: 50.r,
+                          backgroundImage: const AssetImage(
+                            Assets.imagesImageInProfile,
+                          ),
                         ),
                         SizedBox(height: 10.h),
-                        Text(
-                          "رفع صورة جديدة",
-                          style: AppStyles.style14W500,
+                        InkWell(
+                          onTap: () {},
+                          child: Text(
+                            "رفع صورة جديدة",
+                            style: AppStyles.style14W500,
+                          ),
                         ),
                       ],
                     ),
-                    SizedBox(width: 40.w),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "فيصل, عبدالعزيز",
-                          style: AppStyles.style25W400,
-                        ),
-                      ],
+                    Text(
+                      "فيصل, عبدالعزيز",
+                      style: AppStyles.style25W400,
                     ),
                   ],
                 ),
+                SizedBox(height: 50.h),
                 const EditItemProfile(),
               ],
             ),

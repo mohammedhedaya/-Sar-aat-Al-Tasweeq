@@ -13,68 +13,82 @@ class ProfileChangePasswordView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 20),
+        resizeToAvoidBottomInset: false,
+        body: Container(
+          padding: EdgeInsets.symmetric(horizontal: 35.w, vertical: 20.h),
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(
+                Assets.imagesHomeBackground,
+              ),
+              alignment: Alignment.topCenter,
+              opacity: 0.10,
+            ),
+          ),
           child: Column(
             children: [
-              Image.asset(
-                Assets.imagesApplogo,
-                height: 225.h,
-              ),
-              Text(
-                'كلمة السر االقديمه',
-                style: AppStyles.style12W400,
-              ),
-              SizedBox(height: 25.h),
-              CustomAuthTextField(
-                hintText: "************",
-                textAlign: TextAlign.center,
-                suffixIcon: IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
-                    Icons.visibility_outlined,
-                    color: AppColors.visibilityColor,
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      SizedBox(height: 62.h),
+                      Text(
+                        'كلمة السر االقديمه',
+                        style: AppStyles.style12W400,
+                      ),
+                      SizedBox(height: 25.h),
+                      CustomAuthTextField(
+                        hintText: "************",
+                        textAlign: TextAlign.center,
+                        prefixIcon: IconButton(
+                          onPressed: () {},
+                          icon: const Icon(
+                            Icons.visibility_outlined,
+                            color: AppColors.visibilityColor,
+                          ),
+                        ),
+                        onChanged: (value) {},
+                      ),
+                      SizedBox(height: 25.h),
+                      Text(
+                        'تأكيد كلمة السر الجديدة',
+                        style: AppStyles.style12W400,
+                      ),
+                      SizedBox(height: 23.h),
+                      CustomAuthTextField(
+                        hintText: "************",
+                        textAlign: TextAlign.center,
+                        prefixIcon: IconButton(
+                          onPressed: () {},
+                          icon: const Icon(
+                            Icons.visibility_outlined,
+                            color: AppColors.visibilityColor,
+                          ),
+                        ),
+                        onChanged: (value) {},
+                      ),
+                      SizedBox(height: 25.h),
+                      Text(
+                        'تأكيد كلمة السر الجديدة',
+                        style: AppStyles.style12W400,
+                      ),
+                      SizedBox(height: 23.h),
+                      CustomAuthTextField(
+                        hintText: "************",
+                        textAlign: TextAlign.center,
+                        prefixIcon: IconButton(
+                          onPressed: () {},
+                          icon: const Icon(
+                            Icons.visibility_outlined,
+                            color: AppColors.visibilityColor,
+                          ),
+                        ),
+                        onChanged: (value) {},
+                      ),
+                    ],
                   ),
                 ),
-                onChanged: (value) {},
               ),
-              SizedBox(height: 25.h),
-              Text(
-                'تأكيد كلمة السر الجديدة',
-                style: AppStyles.style12W400,
-              ),
-              SizedBox(height: 23.h),
-              CustomAuthTextField(
-                hintText: "************",
-                textAlign: TextAlign.center,
-                suffixIcon: IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
-                    Icons.visibility_outlined,
-                    color: AppColors.visibilityColor,
-                  ),
-                ),
-                onChanged: (value) {},
-              ),
-              SizedBox(height: 25.h),
-              Text(
-                'تأكيد كلمة السر الجديدة',
-                style: AppStyles.style12W400,
-              ),
-              SizedBox(height: 23.h),
-              CustomAuthTextField(
-                hintText: "************",
-                textAlign: TextAlign.center,
-                suffixIcon: IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
-                    Icons.visibility_outlined,
-                    color: AppColors.visibilityColor,
-                  ),
-                ),
-                onChanged: (value) {},
-              ),
-              const Spacer(),
               CustomAuthBtn(
                 onPressed: () {},
                 text: "حفظ",
