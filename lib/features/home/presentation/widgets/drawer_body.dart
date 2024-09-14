@@ -148,7 +148,10 @@ class _DrawerBodyState extends State<DrawerBody> {
           title: "تسجيل الخروج",
           icon: Assets.imagesLogOutIcon,
           isSelected: _selectedIndex == 14,
-          onTap: () => _onItemTap(14),
+          onTap: () {
+            _onItemTap(14);
+            context.go('/');
+          },
         ),
         const DrawerDeletAccountBtn(),
       ],
