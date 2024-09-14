@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:shopping_chart/features/add_group/presentation/views/add_group_view.dart';
 import 'package:shopping_chart/features/add_group/presentation/views/add_telegram_group_view.dart';
 import 'package:shopping_chart/features/add_group/presentation/views/add_whatsapp_group_view.dart';
+import 'package:shopping_chart/features/add_suggestion/presentation/views/add_suggestion_view.dart';
 import 'package:shopping_chart/features/diamond_wallet/presentation/views/diamond_wallet_view.dart';
 import 'package:shopping_chart/features/diamond_wallet/presentation/views/diamonds_payment_gateways_view.dart';
 import 'package:shopping_chart/features/diamond_wallet/presentation/views/purchase_completed_successfully.dart';
@@ -165,9 +166,13 @@ final GoRouter router = GoRouter(
       path: '/addTelegramGroupView',
       builder: (context, state) => const AddTelegramGroupView(),
     ),
-     GoRoute(
+    GoRoute(
       path: '/shareAndEarnView',
       builder: (context, state) => const ShareAndEarnView(),
+    ),
+    GoRoute(
+      path: '/addSuggestionView',
+      builder: (context, state) => const AddSuggestionView(),
     ),
   ],
 );

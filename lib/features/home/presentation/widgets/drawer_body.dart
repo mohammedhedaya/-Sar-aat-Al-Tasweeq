@@ -100,12 +100,15 @@ class _DrawerBodyState extends State<DrawerBody> {
           onTap: () {
             _onItemTap(7);
             context.push('/shareAndEarnView');
-          },        ),
+          },
+        ),
         DrawerListTileItem(
           title: "اللغة (العربية)",
           icon: Assets.imagesLanguage,
           isSelected: _selectedIndex == 8,
-          onTap: () => _onItemTap(8),
+          onTap: () {
+            _onItemTap(8);
+          },
         ),
         DrawerNotificationItem(
           onTap: () => _onItemTap(9),
@@ -121,7 +124,10 @@ class _DrawerBodyState extends State<DrawerBody> {
           title: "الاقتراحات",
           icon: Assets.imagesSuggestions,
           isSelected: _selectedIndex == 11,
-          onTap: () => _onItemTap(11),
+          onTap: () {
+            _onItemTap(11);
+            context.push('/addSuggestionView');
+          },
         ),
         DrawerListTileItem(
           title: "حسابات سرعة التسويق",

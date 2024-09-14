@@ -91,7 +91,7 @@ class AddTelegramGroupViewBody extends StatelessWidget {
                   barrierColor: const Color(0xffFFF9F9).withOpacity(0.33),
                   builder: (context) {
                     return const CustomAddedSuccesDialog(
-                      text: " تم إضافة قناتك في التلجرام",
+                      text: "تم إضافة قناتك في التلجرام",
                     );
                   },
                 );
