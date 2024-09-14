@@ -11,7 +11,7 @@ class BodyOfPurchaseProcess extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 30.w),
+      margin: EdgeInsets.symmetric(horizontal: 10.w),
       decoration: const BoxDecoration(
         image: DecorationImage(
           image: AssetImage(
@@ -21,50 +21,59 @@ class BodyOfPurchaseProcess extends StatelessWidget {
         ),
       ),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Row(
             children: [
-              // Image
               Image.asset(
                 Assets.imagesApplogo,
                 width: 137.w,
                 height: 188.h,
               ),
-              // Text side
               Expanded(
-                child: Text(
-                  'سرعة التسويق\n شراء ماسات داخل التطبيق\n40 ماسة',
-                  style: AppStyles.style20W400,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "سرعة التسويق",
+                      style: AppStyles.style20W400.copyWith(
+                        fontWeight: FontWeight.w200,
+                      ),
+                      textAlign: TextAlign.start,
+                    ),
+                    Text(
+                      "شراء ماسات داخل التطبيق\n40 ماسة",
+                      style: AppStyles.style20W400.copyWith(
+                        fontWeight: FontWeight.w200,
+                      ),
+                      textAlign: TextAlign.start,
+                    ),
+                  ],
                 ),
               ),
             ],
           ),
-          SizedBox(height: 40.h),
+          SizedBox(height: 5.h),
           InkWell(
             onTap: () {
-              context.push("/myCardViewDiamondWallet");
+              context.push("/diamondsPaymentGatewayView");
             },
-            child: Center(
-              child: Container(
-                padding: EdgeInsets.symmetric(
-                    horizontal: 30.w, vertical: 10.h),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5.r),
-                  gradient: const LinearGradient(
-                    colors: [
-                      Color(0xff00C0CC),
-                      Color(0xff006066),
-                    ],
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                  ),
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 4.h),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(5.r),
+                gradient: const LinearGradient(
+                  colors: [
+                    Color(0xff00C0CC),
+                    Color(0xff006066),
+                  ],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
                 ),
-                child: Text(
-                  "ادفع 40 ر.س",
-                  style: AppStyles.style14W400.copyWith(
-                    color: AppColors.whiteColor,
-                  ),
+              ),
+              child: Text(
+                "ادفع 40 ر.س",
+                style: AppStyles.style14W400.copyWith(
+                  color: AppColors.whiteColor,
                 ),
               ),
             ),

@@ -18,37 +18,27 @@ class ViewBodyOfDiamondWallet extends StatelessWidget {
       {'price': '150 ماسة', 'diamonds': '150 ر.س'},
       {'price': '200 ماسة', 'diamonds': '200 ر.س'},
     ];
-
     return Stack(
       children: [
-        // Background Image
         Container(
           alignment: Alignment.topCenter,
-          child: Opacity(
-            opacity: 0.90,
-            child: SvgPicture.asset(
-              Assets.jewelDiamondWallet,
-              fit: BoxFit.cover,
-            ),
+          child: SvgPicture.asset(
+            Assets.jewelDiamondWallet,
           ),
         ),
         Column(
           children: [
-            SizedBox(height: MediaQuery.of(context).size.height * 0.1),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.05),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Column(
                   children: [
-                    SizedBox(
-                      width: 65.w,
-                      height: 65.h,
-                      child: SvgPicture.asset(
-                        Assets.jewelDiamondWalletTop,
-                        fit: BoxFit.cover,
-                      ),
+                    SvgPicture.asset(
+                      Assets.jewelDiamondWalletTop,
+                      fit: BoxFit.cover,
                     ),
-                    SizedBox(height: 10.h),
+                    SizedBox(height: 20.h),
                     Text(
                       'المحفظة الماسية',
                       style: AppStyles.style20W600,
@@ -61,13 +51,14 @@ class ViewBodyOfDiamondWallet extends StatelessWidget {
             Expanded(
               child: Container(
                 width: double.infinity,
-                padding: const EdgeInsets.all(20),
-                decoration: const BoxDecoration(
+                padding: EdgeInsets.only(
+                    top: 100.h, right: 13.w, left: 13.w, bottom: 13.h),
+                decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(50),
-                    topLeft: Radius.circular(50),
+                    topRight: Radius.circular(70.r),
+                    topLeft: Radius.circular(70.r),
                   ),
-                  color: Color(0xff080D12),
+                  color: const Color(0xff080D12).withOpacity(0.80),
                 ),
                 child: ListView.builder(
                   itemCount: diamondData.length,
@@ -77,38 +68,41 @@ class ViewBodyOfDiamondWallet extends StatelessWidget {
                         GoRouter.of(context).push('/purchaseProcess');
                       },
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 10.0),
+                        padding: EdgeInsets.only(bottom: 20.h),
                         child: Container(
                           padding: const EdgeInsets.all(16),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(15.r),
-                            color: AppColors.whiteColor,
+                            color: const Color(0xffFBFBFB),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.white.withOpacity(0.25),
+                                spreadRadius: 5,
+                                blurRadius: 40,
+                                offset: const Offset(0, 0),
+                              ),
+                            ],
                           ),
                           child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               SvgPicture.asset(
-                                // color: AppColors.blackColor,
                                 Assets.imagesJewel,
-                                height: 17.h,
-                                width: 21.w,
+                                colorFilter: const ColorFilter.mode(
+                                  AppColors.blackColor,
+                                  BlendMode.srcIn,
+                                ),
                               ),
-                              SizedBox(width: 10.w),
+                              SizedBox(width: 6.w),
                               Text(
                                 diamondData[index]['price'],
-                                style: TextStyle(
-                                  fontSize: 18.sp,
-                                  color: Colors.black,
-                                ),
+                                style: AppStyles.style16W600,
                               ),
                               const Spacer(),
                               Text(
                                 diamondData[index]['diamonds'],
-                                style: TextStyle(
-                                  fontSize: 18.sp,
-                                  color: Colors.black,
-                                ),
+                                style: AppStyles.style16W600,
                               ),
+                              SizedBox(width: 10.w),
                             ],
                           ),
                         ),

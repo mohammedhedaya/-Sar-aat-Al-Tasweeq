@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:shopping_chart/core/utils/app_colors.dart';
 import 'package:shopping_chart/core/utils/app_text_style.dart';
 import 'package:shopping_chart/core/utils/assets.dart';
 
@@ -9,10 +8,12 @@ class PurchaseCompletedSuccessfully extends StatefulWidget {
   const PurchaseCompletedSuccessfully({super.key});
 
   @override
-  State<PurchaseCompletedSuccessfully> createState() => _PurchaseCompletedSuccessfullyState();
+  State<PurchaseCompletedSuccessfully> createState() =>
+      _PurchaseCompletedSuccessfullyState();
 }
 
-class _PurchaseCompletedSuccessfullyState extends State<PurchaseCompletedSuccessfully>
+class _PurchaseCompletedSuccessfullyState
+    extends State<PurchaseCompletedSuccessfully>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _animation;
@@ -24,7 +25,7 @@ class _PurchaseCompletedSuccessfullyState extends State<PurchaseCompletedSuccess
       vsync: this,
       duration: const Duration(seconds: 2),
     );
-    _animation = Tween<double>(begin: -200, end: 0).animate(
+    _animation = Tween<double>(begin: -350, end: 0).animate(
       CurvedAnimation(
         parent: _controller,
         curve: Curves.easeInOut,
@@ -79,8 +80,12 @@ class _PurchaseCompletedSuccessfullyState extends State<PurchaseCompletedSuccess
                   SizedBox(height: 25.h),
                   Container(
                     width: double.infinity,
-
-                    padding: const EdgeInsets.all(40),
+                    padding: EdgeInsets.only(
+                      top: 24.h,
+                      left: 20.w,
+                      right: 20.w,
+                      bottom: 15.h,
+                    ),
                     margin: EdgeInsets.symmetric(horizontal: 25.w),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(16.r),
@@ -93,13 +98,8 @@ class _PurchaseCompletedSuccessfullyState extends State<PurchaseCompletedSuccess
                         end: Alignment.centerLeft,
                       ),
                     ),
-                    child: Stack(alignment: Alignment.topLeft,
+                    child: Column(
                       children: [
-                        SvgPicture.asset(
-                          Assets.jewelDiamondWallet,height: MediaQuery.of(context).size.height * 0.1, // SVG asset
-                          width: MediaQuery.of(context).size.width * 0.2, // Scale as needed
-                        ),
-                        // Purchase Information
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -117,19 +117,24 @@ class _PurchaseCompletedSuccessfullyState extends State<PurchaseCompletedSuccess
                               ],
                             ),
                             SizedBox(height: 20.h),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    '• 40 ماسة',
-                                    style: AppStyles.style14W400.copyWith(
-                                      color: AppColors.whiteColor,
+                            Column(
+                              children: [
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      '  • 40 ماسة',
+                                      style: AppStyles.style14W400,
                                     ),
-                                  ),
-                                ],
-                              ),
+                                    SvgPicture.asset(
+                                      Assets.jewelDiamondWallet,
+                                      height: 61.h,
+                                    ),
+                                  ],
+                                ),
+                              ],
                             ),
                           ],
                         ),

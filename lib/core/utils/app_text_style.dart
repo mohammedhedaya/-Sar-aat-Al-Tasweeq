@@ -20,7 +20,7 @@ class AppStyles {
   );
   static TextStyle style14W400 = TextStyle(
     color: AppColors.whiteColor,
-    fontSize: 18.sp,
+    fontSize: 14.sp,
     fontWeight: FontWeight.w400,
   );
   static TextStyle style14W500 = TextStyle(
@@ -116,7 +116,7 @@ class AppStyles {
   static TextStyle style16W600 = TextStyle(
     color: AppColors.blackColor,
     fontSize: 16.sp,
-    fontWeight: FontWeight.w900,
+    fontWeight: FontWeight.w600,
   );
   static TextStyle style10W300 = TextStyle(
     color: AppColors.whiteColor,

@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shopping_chart/core/utils/app_text_style.dart';
+import 'package:shopping_chart/features/diamondWallet/presentation/widgets/diamonds_payment_gateways_view_body.dart';
 
-import '../widgets/view_body_of_diamond_wallet.dart';
-
-
-class DiamondWallet extends StatelessWidget {
-  const DiamondWallet({super.key});
+class DiamondsPaymentGatewayView extends StatelessWidget {
+  const DiamondsPaymentGatewayView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Colors.transparent,
@@ -26,8 +26,13 @@ class DiamondWallet extends StatelessWidget {
           ),
         ],
         elevation: 0,
+        title: Text(
+          "بوابه الدفع",
+          style: AppStyles.style20W800,
+        ),
       ),
-      body: ViewBodyOfDiamondWallet(),
+      body: const DiamondsPaymentGatewayViewBody(),
     );
   }
 }
+

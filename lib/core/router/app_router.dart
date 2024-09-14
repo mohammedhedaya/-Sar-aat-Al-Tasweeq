@@ -1,7 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:shopping_chart/features/diamondWallet/presentation/views/diamond_wallet.dart';
-import 'package:shopping_chart/features/diamondWallet/presentation/widgets/purchase_completed_successfully.dart';
+import 'package:shopping_chart/features/diamondWallet/presentation/views/diamond_wallet_view.dart';
+import 'package:shopping_chart/features/diamondWallet/presentation/views/diamonds_payment_gateways_view.dart';
+import 'package:shopping_chart/features/diamondWallet/presentation/views/purchase_completed_successfully.dart';
 import 'package:shopping_chart/features/profile/presentation/views/change_password_view.dart';
 import 'package:shopping_chart/features/profile/presentation/views/edit_profile_view.dart';
 import 'package:shopping_chart/features/profile/presentation/views/profile_view.dart';
@@ -9,8 +10,8 @@ import 'package:shopping_chart/features/subscribe_package/presentation/views/Sub
 import 'package:shopping_chart/features/subscribe_package/presentation/views/my_cards_view.dart';
 import 'package:shopping_chart/features/subscribe_package/presentation/views/payment_gateway_view.dart';
 import 'package:shopping_chart/features/subscribe_package/presentation/views/subscribe_to_the_package_view.dart';
-import '../../features/diamondWallet/presentation/widgets/my_card_view_diamond_wallet.dart';
-import '../../features/diamondWallet/presentation/widgets/purchase_process.dart';
+import '../../features/diamondWallet/presentation/views/my_card_view_diamond_wallet.dart';
+import '../../features/diamondWallet/presentation/views/purchase_process_view.dart';
 import '../services/service_locator.dart';
 import '../../features/auth/presentation/cubit/auth_cubit.dart';
 import '../../features/auth/presentation/views/login/login_view.dart';
@@ -120,7 +121,7 @@ final GoRouter router = GoRouter(
     ),
     GoRoute(
       path: '/diamondWallet',
-      builder: (context, state) => const DiamondWallet(),
+      builder: (context, state) => const DiamondWalletView(),
     ),
     GoRoute(
       path: '/purchaseProcess',
@@ -133,6 +134,10 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/purchaseCompletedSuccessfully',
       builder: (context, state) => const PurchaseCompletedSuccessfully(),
+    ),
+      GoRoute(
+      path: '/diamondsPaymentGatewayView',
+      builder: (context, state) => const DiamondsPaymentGatewayView(),
     ),
   ],
 );

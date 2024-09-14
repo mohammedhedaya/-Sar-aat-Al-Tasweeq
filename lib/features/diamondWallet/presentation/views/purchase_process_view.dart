@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../core/utils/app_text_style.dart';
-import 'body_of_purchase_process.dart';
+import '../widgets/body_of_purchase_process.dart';
 
 class PurchaseProcess extends StatelessWidget {
   const PurchaseProcess({super.key});
@@ -31,7 +31,7 @@ class PurchaseProcess extends StatelessWidget {
           style: AppStyles.style20W900,
         ),
       ),
-      body: BodyOfPurchaseProcess(),
+      body: const BodyOfPurchaseProcess(),
     );
   }
 }
