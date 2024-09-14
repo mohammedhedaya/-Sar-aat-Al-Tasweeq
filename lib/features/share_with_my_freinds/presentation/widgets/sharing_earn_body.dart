@@ -17,7 +17,7 @@ class SharingEarnBody extends StatelessWidget {
           Positioned(
             top: -MediaQuery.of(context).size.height * 0.1,
             child: SvgPicture.asset(
-              Assets.bgOfSharingWithMyFriends,
+              Assets.imagesShareingWithMyFriends,
               height: MediaQuery.of(context).size.height * 0.5,
               width: MediaQuery.of(context).size.width,
               fit: BoxFit.cover,
@@ -80,7 +80,7 @@ class SharingEarnBody extends StatelessWidget {
                           alignment: Alignment.center,
                           children: [
                             Image.asset(
-                              Assets.imageSea,
+                              Assets.imagesImageSea,
                               width: double.infinity,
                               height: 170,
                               fit: BoxFit.cover,
