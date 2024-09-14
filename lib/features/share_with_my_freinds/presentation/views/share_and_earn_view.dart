@@ -34,3 +34,4 @@ class ShareAndEarnView extends StatelessWidget {
     );
   }
 }
+
