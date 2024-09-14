@@ -7,6 +7,7 @@ import 'package:shopping_chart/features/add_suggestion/presentation/views/add_su
 import 'package:shopping_chart/features/diamond_wallet/presentation/views/diamond_wallet_view.dart';
 import 'package:shopping_chart/features/diamond_wallet/presentation/views/diamonds_payment_gateways_view.dart';
 import 'package:shopping_chart/features/diamond_wallet/presentation/views/purchase_completed_successfully.dart';
+import 'package:shopping_chart/features/our_accounts/presentation/views/our_accounts_view.dart';
 import 'package:shopping_chart/features/profile/presentation/views/change_password_view.dart';
 import 'package:shopping_chart/features/profile/presentation/views/edit_profile_view.dart';
 import 'package:shopping_chart/features/profile/presentation/views/profile_view.dart';
@@ -173,6 +174,10 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/addSuggestionView',
       builder: (context, state) => const AddSuggestionView(),
+    ),
+       GoRoute(
+      path: '/ourAccountsView',
+      builder: (context, state) => const OurAccountsView(),
     ),
   ],
 );

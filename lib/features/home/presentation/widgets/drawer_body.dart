@@ -133,7 +133,10 @@ class _DrawerBodyState extends State<DrawerBody> {
           title: "حسابات سرعة التسويق",
           icon: Assets.imagesMarketingspeedcalculations,
           isSelected: _selectedIndex == 12,
-          onTap: () => _onItemTap(12),
+          onTap: () {
+            _onItemTap(12);
+            context.push('/ourAccountsView');
+          },
         ),
         DrawerListTileItem(
           title: "سياسة التطبيق",

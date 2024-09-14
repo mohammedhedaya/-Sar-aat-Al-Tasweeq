@@ -194,6 +194,10 @@ class Assets {
   /// assets/images/shareingWithMyFriends.svg
   static const String imagesShareingWithMyFriends = "assets/images/shareingWithMyFriends.svg";
 
+  /// Assets for imagesSnapchat
+  /// assets/images/snapchat.png
+  static const String imagesSnapchat = "assets/images/snapchat.png";
+
   /// Assets for imagesSuadiFlag
   /// assets/images/SuadiFlag.svg
   static const String imagesSuadiFlag = "assets/images/SuadiFlag.svg";
@@ -226,9 +230,17 @@ class Assets {
   /// assets/images/suggestions.svg
   static const String imagesSuggestions = "assets/images/suggestions.svg";
 
+  /// Assets for imagesTIKTOK
+  /// assets/images/TIKTOK.png
+  static const String imagesTIKTOK = "assets/images/TIKTOK.png";
+
   /// Assets for imagesTelegramImage
   /// assets/images/telegramImage.webp
   static const String imagesTelegramImage = "assets/images/telegramImage.webp";
+
+  /// Assets for imagesVerifyIcon
+  /// assets/images/verify-icon.svg
+  static const String imagesVerifyIcon = "assets/images/verify-icon.svg";
 
   /// Assets for imagesWallet
   /// assets/images/wallet.svg
