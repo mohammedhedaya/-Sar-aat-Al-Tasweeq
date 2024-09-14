@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:shopping_chart/core/utils/app_colors.dart';
 import 'package:shopping_chart/core/utils/app_text_style.dart';
 import 'package:shopping_chart/core/utils/assets.dart';
@@ -15,7 +16,9 @@ class NotificationItem extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(bottom: 21.h),
       child: ListTile(
-        onTap: () {},
+        onTap: () {
+          context.push('/notificationsDetailsView');
+        },
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15.r),
         ),
