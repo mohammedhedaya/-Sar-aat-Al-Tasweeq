@@ -71,13 +71,19 @@ class _DrawerBodyState extends State<DrawerBody> {
           title: "المحادثة الفورية",
           icon: Assets.imagesChating,
           isSelected: _selectedIndex == 4,
-          onTap: () => _onItemTap(4),
+          onTap: () {
+            _onItemTap(4);
+            context.push('/chatView');
+          },
         ),
         DrawerListTileItem(
           title: "تواصل معنا",
           icon: Assets.imagesConectUs,
           isSelected: _selectedIndex == 5,
-          onTap: () => _onItemTap(5),
+          onTap: () {
+            _onItemTap(5);
+            context.push('/contactUsView');
+          },
         ),
         DrawerListTileItem(
           title: "اضافة مجموعات",

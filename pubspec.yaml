@@ -50,6 +50,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   percent_indicator: ^4.2.3
+  chat_bubbles: ^1.6.0
 
 dev_dependencies:
   flutter_test:

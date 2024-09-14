@@ -134,6 +134,10 @@ class Assets {
   /// assets/images/packageSubscribed.png
   static const String imagesPackageSubscribed = "assets/images/packageSubscribed.png";
 
+  /// Assets for imagesPhone
+  /// assets/images/Phone.svg
+  static const String imagesPhone = "assets/images/Phone.svg";
+
   /// Assets for imagesPromotionplatforms
   /// assets/images/Promotionplatforms.svg
   static const String imagesPromotionplatforms = "assets/images/Promotionplatforms.svg";
@@ -197,6 +201,10 @@ class Assets {
   /// Assets for imagesWhatsAppImage
   /// assets/images/whatsAppImage.webp
   static const String imagesWhatsAppImage = "assets/images/whatsAppImage.webp";
+
+  /// Assets for imagesWhatsapp
+  /// assets/images/whatsapp.svg
+  static const String imagesWhatsapp = "assets/images/whatsapp.svg";
 
   /// Assets for imagesWhitecircle
   /// assets/images/Whitecircle.svg
