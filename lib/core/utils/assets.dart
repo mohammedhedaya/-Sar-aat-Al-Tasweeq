@@ -62,6 +62,10 @@ class Assets {
   /// assets/images/dark.svg
   static const String imagesDark = "assets/images/dark.svg";
 
+  /// Assets for imagesDeleteicon
+  /// assets/images/deleteicon.svg
+  static const String imagesDeleteicon = "assets/images/deleteicon.svg";
+
   /// Assets for imagesEllipse10
   /// assets/images/Ellipse10.svg
   static const String imagesEllipse10 = "assets/images/Ellipse10.svg";

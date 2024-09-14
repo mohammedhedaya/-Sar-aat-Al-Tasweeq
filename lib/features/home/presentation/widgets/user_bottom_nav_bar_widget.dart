@@ -46,8 +46,8 @@ class UserBottomNavBarWidget extends StatelessWidget {
           ),
         ),
         BottomNavigationBarItem(
-          tooltip: "Message",
-          label: 'Message',
+          tooltip: "Package",
+          label: 'Package',
           activeIcon: const ActiveNavBarContainer(
             image: Assets.imagesNessageicon,
           ),
