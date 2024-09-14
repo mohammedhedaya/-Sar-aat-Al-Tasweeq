@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:shopping_chart/core/utils/app_text_style.dart';
-import 'package:shopping_chart/features/diamond_wallet/presentation/widgets/diamonds_payment_gateways_view_body.dart';
+import '../../../../core/utils/app_text_style.dart';
+import '../widgets/diamonds_payment_gateways_view_body.dart';
 
 class DiamondsPaymentGatewayView extends StatelessWidget {
   const DiamondsPaymentGatewayView({super.key});

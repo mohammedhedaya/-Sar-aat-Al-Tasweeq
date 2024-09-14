@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:shopping_chart/core/utils/app_text_style.dart';
-import 'package:shopping_chart/features/contact_us/presentation/widgets/contact_us_view_body.dart';
+import '../../../../core/utils/app_text_style.dart';
+import '../widgets/contact_us_view_body.dart';
 
 class ContactUsView extends StatelessWidget {
   const ContactUsView({super.key});

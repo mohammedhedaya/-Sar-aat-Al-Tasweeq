@@ -1,10 +1,12 @@
+import '../../../diamond_wallet/presentation/views/diamond_wallet_view.dart';
+import '../../../subscribe_package/presentation/views/subscribe_to_the_package_view.dart';
+
 import '../views/home_view.dart';
 import 'custom_drawer.dart';
 import 'user_bottom_nav_bar_widget.dart';
 import 'package:flutter/material.dart';
 import '../../../menu/presentation/views/menu_view.dart';
-import '../../../messages/presentation/views/messages_view.dart';
-import '../../../wallet/presentation/views/wallet_view.dart';
+
 
 class UserMainLayoutScreen extends StatefulWidget {
   const UserMainLayoutScreen({super.key});
@@ -23,8 +25,8 @@ class _UserMainLayoutScreenState extends State<UserMainLayoutScreen> {
     super.initState();
     screens = [
       const HomeView(),
-      const WalletView(),
-      const MessagesView(),
+      const DiamondWalletView(),
+      const SubscribeToThePackageView(),
       const MenuView(),
     ];
   }

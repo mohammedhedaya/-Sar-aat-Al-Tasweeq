@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:shopping_chart/core/utils/app_text_style.dart';
-import 'package:shopping_chart/features/add_group/presentation/widgets/add_group_view_body.dart';
+import '../../../../core/utils/app_text_style.dart';
+import '../widgets/add_group_view_body.dart';
 
 class AddGroupView extends StatelessWidget {
   const AddGroupView({super.key});

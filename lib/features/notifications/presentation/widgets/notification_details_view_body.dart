@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shopping_chart/core/utils/app_text_style.dart';
-import 'package:shopping_chart/core/utils/assets.dart';
+import '../../../../core/utils/app_text_style.dart';
+import '../../../../core/utils/assets.dart';
 
 class NotificationsDetailsViewBody extends StatelessWidget {
   const NotificationsDetailsViewBody({super.key});
@@ -49,6 +49,7 @@ class NotificationsDetailsViewBody extends StatelessWidget {
                   height: 163.h,
                 ),
               ),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.03),
             ],
           ),
         ),

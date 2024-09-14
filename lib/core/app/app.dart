@@ -2,6 +2,7 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart'; // Add this import for localization
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../router/app_router.dart';
 import '../utils/app_colors.dart';
 

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:shopping_chart/core/utils/app_colors.dart';
-import 'package:shopping_chart/core/utils/app_text_style.dart';
-import 'package:shopping_chart/core/utils/assets.dart';
-import 'package:shopping_chart/features/subscribe_package/presentation/widgets/custom_payment_method_item.dart';
+import '../../../../core/utils/app_colors.dart';
+import '../../../../core/utils/app_text_style.dart';
+import '../../../../core/utils/assets.dart';
+import 'custom_payment_method_item.dart';
 
 class PaymentGatewayViewBody extends StatelessWidget {
   const PaymentGatewayViewBody({super.key});
