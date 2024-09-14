@@ -30,21 +30,20 @@ class ProfileView extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const CircleAvatar(
-                      radius: 50,
-                      backgroundImage: AssetImage(
-                        Assets.imagesImageInProfile,
+                    const Expanded(
+                      child: CircleAvatar(
+                        radius: 50,
+                        backgroundImage: AssetImage(
+                          Assets.imagesImageInProfile,
+                        ),
                       ),
                     ),
-                    SizedBox(width: 25.w),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "فيصل, عبدالعزيز",
-                          style: AppStyles.style25W400,
-                        ),
-                      ],
+                    // SizedBox(width: 25.w),
+                    Expanded(
+                      child: Text(
+                        "فيصل, عبدالعزيز",
+                        style: AppStyles.style25W400,
+                      ),
                     ),
                   ],
                 ),
