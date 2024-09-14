@@ -65,7 +65,6 @@ class _DrawerBodyState extends State<DrawerBody> {
             _onItemTap(3);
             context.push('/diamondWallet');
           },
-
         ),
         DrawerListTileItem(
           title: "المحادثة الفورية",
@@ -89,7 +88,10 @@ class _DrawerBodyState extends State<DrawerBody> {
           title: "اضافة مجموعات",
           icon: Assets.imagesAddGroups,
           isSelected: _selectedIndex == 6,
-          onTap: () => _onItemTap(6),
+          onTap: () {
+            _onItemTap(6);
+            context.push('/addGroupView');
+          },
         ),
         DrawerListTileItem(
           title: "شارك مع الأصدقاء واربح",

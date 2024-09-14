@@ -6,6 +6,14 @@ class Assets {
   /// assets/images/addGroups.svg
   static const String imagesAddGroups = "assets/images/addGroups.svg";
 
+  /// Assets for imagesAddWhatsappgroup
+  /// assets/images/AddWhatsappgroup.svg
+  static const String imagesAddWhatsappgroup = "assets/images/AddWhatsappgroup.svg";
+
+  /// Assets for imagesAddtelegramgroup
+  /// assets/images/addtelegramgroup.svg
+  static const String imagesAddtelegramgroup = "assets/images/addtelegramgroup.svg";
+
   /// Assets for imagesApplePay
   /// assets/images/ApplePay.svg
   static const String imagesApplePay = "assets/images/ApplePay.svg";
@@ -90,6 +98,14 @@ class Assets {
   /// assets/images/jewel.svg
   static const String imagesJewel = "assets/images/jewel.svg";
 
+  /// Assets for imagesJewelInDiamondWallet
+  /// assets/images/jewelInDiamondWallet.svg
+  static const String imagesJewelInDiamondWallet = "assets/images/jewelInDiamondWallet.svg";
+
+  /// Assets for imagesJewelnTopScreen
+  /// assets/images/jewelnTopScreen.svg
+  static const String imagesJewelnTopScreen = "assets/images/jewelnTopScreen.svg";
+
   /// Assets for imagesLanguage
   /// assets/images/Language.svg
   static const String imagesLanguage = "assets/images/Language.svg";
@@ -133,6 +149,10 @@ class Assets {
   /// Assets for imagesPackageSubscribed
   /// assets/images/packageSubscribed.png
   static const String imagesPackageSubscribed = "assets/images/packageSubscribed.png";
+
+  /// Assets for imagesPastLink
+  /// assets/images/pastLink.svg
+  static const String imagesPastLink = "assets/images/pastLink.svg";
 
   /// Assets for imagesPhone
   /// assets/images/Phone.svg
@@ -178,6 +198,10 @@ class Assets {
   /// assets/images/Successcircle4.svg
   static const String imagesSuccesscircle4 = "assets/images/Successcircle4.svg";
 
+  /// Assets for imagesSuccessgreenicon
+  /// assets/images/successgreenicon.svg
+  static const String imagesSuccessgreenicon = "assets/images/successgreenicon.svg";
+
   /// Assets for imagesSuggestions
   /// assets/images/suggestions.svg
   static const String imagesSuggestions = "assets/images/suggestions.svg";
@@ -209,9 +233,5 @@ class Assets {
   /// Assets for imagesWhitecircle
   /// assets/images/Whitecircle.svg
   static const String imagesWhitecircle = "assets/images/Whitecircle.svg";
-  static const String imageInProfile = "assets/images/imageInProfile.png";
-  /// Image for diamondWallet
-  static const String jewelDiamondWallet = "assets/images/jewelInDiamondWallet.svg";
-  static const String jewelDiamondWalletTop = "assets/images/jewelnTopScreen.svg";
 }
 

@@ -1,38 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shopping_chart/core/utils/app_text_style.dart';
-import 'package:shopping_chart/features/diamondWallet/presentation/widgets/diamonds_payment_gateways_view_body.dart';
+import 'package:shopping_chart/features/add_group/presentation/widgets/add_telegram_group_view_body.dart';
 
-class DiamondsPaymentGatewayView extends StatelessWidget {
-  const DiamondsPaymentGatewayView({super.key});
+class AddTelegramGroupView extends StatelessWidget {
+  const AddTelegramGroupView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        automaticallyImplyLeading: false,
         backgroundColor: Colors.transparent,
         surfaceTintColor: Colors.transparent,
+        elevation: 0,
+        automaticallyImplyLeading: false,
+        title: Text(
+          'إضافة مجموعات الواتساب',
+          style: AppStyles.style20W400,
+        ),
         actions: [
           IconButton(
             onPressed: () {
               context.pop();
             },
             icon: const Icon(
-              Icons.arrow_forward_ios_outlined,
+              Icons.arrow_forward_ios_rounded,
               color: Colors.white,
             ),
           ),
         ],
-        elevation: 0,
-        title: Text(
-          "بوابه الدفع",
-          style: AppStyles.style20W800,
-        ),
       ),
-      body: const DiamondsPaymentGatewayViewBody(),
+      body: const AddTelegramGroupViewBody(),
     );
   }
 }
-

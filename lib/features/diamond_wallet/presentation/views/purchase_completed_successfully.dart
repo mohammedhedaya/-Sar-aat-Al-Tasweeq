@@ -129,7 +129,7 @@ class _PurchaseCompletedSuccessfullyState
                                       style: AppStyles.style14W400,
                                     ),
                                     SvgPicture.asset(
-                                      Assets.jewelDiamondWallet,
+                                      Assets.imagesJewelInDiamondWallet,
                                       height: 61.h,
                                     ),
                                   ],

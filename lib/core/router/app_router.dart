@@ -1,8 +1,11 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:shopping_chart/features/diamondWallet/presentation/views/diamond_wallet_view.dart';
-import 'package:shopping_chart/features/diamondWallet/presentation/views/diamonds_payment_gateways_view.dart';
-import 'package:shopping_chart/features/diamondWallet/presentation/views/purchase_completed_successfully.dart';
+import 'package:shopping_chart/features/add_group/presentation/views/add_group_view.dart';
+import 'package:shopping_chart/features/add_group/presentation/views/add_telegram_group_view.dart';
+import 'package:shopping_chart/features/add_group/presentation/views/add_whatsapp_group_view.dart';
+import 'package:shopping_chart/features/diamond_wallet/presentation/views/diamond_wallet_view.dart';
+import 'package:shopping_chart/features/diamond_wallet/presentation/views/diamonds_payment_gateways_view.dart';
+import 'package:shopping_chart/features/diamond_wallet/presentation/views/purchase_completed_successfully.dart';
 import 'package:shopping_chart/features/profile/presentation/views/change_password_view.dart';
 import 'package:shopping_chart/features/profile/presentation/views/edit_profile_view.dart';
 import 'package:shopping_chart/features/profile/presentation/views/profile_view.dart';
@@ -10,8 +13,8 @@ import 'package:shopping_chart/features/subscribe_package/presentation/views/Sub
 import 'package:shopping_chart/features/subscribe_package/presentation/views/my_cards_view.dart';
 import 'package:shopping_chart/features/subscribe_package/presentation/views/payment_gateway_view.dart';
 import 'package:shopping_chart/features/subscribe_package/presentation/views/subscribe_to_the_package_view.dart';
-import '../../features/diamondWallet/presentation/views/my_card_view_diamond_wallet.dart';
-import '../../features/diamondWallet/presentation/views/purchase_process_view.dart';
+import '../../features/diamond_wallet/presentation/views/my_card_view_diamond_wallet.dart';
+import '../../features/diamond_wallet/presentation/views/purchase_process_view.dart';
 import 'package:shopping_chart/features/chat/presentation/views/chat_view.dart';
 import 'package:shopping_chart/features/contact_us/presentation/views/contact_us_view.dart';
 import '../services/service_locator.dart';
@@ -148,6 +151,18 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/diamondsPaymentGatewayView',
       builder: (context, state) => const DiamondsPaymentGatewayView(),
+    ),
+    GoRoute(
+      path: '/addGroupView',
+      builder: (context, state) => const AddGroupView(),
+    ),
+    GoRoute(
+      path: '/addWhatsappGroupView',
+      builder: (context, state) => const AddWhatsappGroupView(),
+    ),
+    GoRoute(
+      path: '/addTelegramGroupView',
+      builder: (context, state) => const AddTelegramGroupView(),
     ),
   ],
 );

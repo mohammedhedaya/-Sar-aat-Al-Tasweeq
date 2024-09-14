@@ -23,7 +23,7 @@ class ViewBodyOfDiamondWallet extends StatelessWidget {
         Container(
           alignment: Alignment.topCenter,
           child: SvgPicture.asset(
-            Assets.jewelDiamondWallet,
+            Assets.imagesJewelInDiamondWallet,
           ),
         ),
         Column(
@@ -35,7 +35,7 @@ class ViewBodyOfDiamondWallet extends StatelessWidget {
                 Column(
                   children: [
                     SvgPicture.asset(
-                      Assets.jewelDiamondWalletTop,
+                      Assets.imagesJewelnTopScreen,
                       fit: BoxFit.cover,
                     ),
                     SizedBox(height: 20.h),
