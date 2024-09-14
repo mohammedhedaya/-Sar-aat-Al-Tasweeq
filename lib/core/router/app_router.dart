@@ -121,15 +121,15 @@ final GoRouter router = GoRouter(
       path: '/subscribedView',
       builder: (context, state) => const SuccessSubscribedView(),
     ),
-       GoRoute(
+    GoRoute(
       path: '/chatView',
       builder: (context, state) => const ChatView(),
     ),
-      GoRoute(
+    GoRoute(
       path: '/contactUsView',
       builder: (context, state) => const ContactUsView(),
     ),
-      GoRoute(
+    GoRoute(
       path: '/diamondWallet',
       builder: (context, state) => const DiamondWalletView(),
     ),
@@ -145,7 +145,7 @@ final GoRouter router = GoRouter(
       path: '/purchaseCompletedSuccessfully',
       builder: (context, state) => const PurchaseCompletedSuccessfully(),
     ),
-      GoRoute(
+    GoRoute(
       path: '/diamondsPaymentGatewayView',
       builder: (context, state) => const DiamondsPaymentGatewayView(),
     ),

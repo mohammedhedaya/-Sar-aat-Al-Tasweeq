@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:shopping_chart/core/utils/app_text_style.dart';
 import 'package:shopping_chart/features/contact_us/presentation/widgets/contact_us_view_body.dart';
 
@@ -12,13 +13,16 @@ class ContactUsView extends StatelessWidget {
         backgroundColor: Colors.transparent,
         surfaceTintColor: Colors.transparent,
         elevation: 0,
+        automaticallyImplyLeading: false,
         title: Text(
           "تواصل معنا",
           style: AppStyles.style20W900,
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              context.pop();
+            },
             icon: const Icon(
               Icons.arrow_forward_ios_rounded,
               color: Colors.white,
