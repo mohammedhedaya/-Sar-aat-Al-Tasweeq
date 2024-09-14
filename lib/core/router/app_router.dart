@@ -14,6 +14,7 @@ import '../../features/diamondWallet/presentation/views/my_card_view_diamond_wal
 import '../../features/diamondWallet/presentation/views/purchase_process_view.dart';
 import 'package:shopping_chart/features/chat/presentation/views/chat_view.dart';
 import 'package:shopping_chart/features/contact_us/presentation/views/contact_us_view.dart';
+import '../../features/share_with_my_freinds/presentation/views/share_and_earn_view.dart';
 import '../services/service_locator.dart';
 import '../../features/auth/presentation/cubit/auth_cubit.dart';
 import '../../features/auth/presentation/views/login/login_view.dart';
@@ -148,6 +149,10 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/diamondsPaymentGatewayView',
       builder: (context, state) => const DiamondsPaymentGatewayView(),
+    ),
+    GoRoute(
+      path: '/shareAndEarnView',
+      builder: (context, state) => const ShareAndEarnView(),
     ),
   ],
 );

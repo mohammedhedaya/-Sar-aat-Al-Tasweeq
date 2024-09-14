@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_single_quotes
 class Assets {
   Assets._();
-  
+
   /// Assets for imagesAddGroups
   /// assets/images/addGroups.svg
   static const String imagesAddGroups = "assets/images/addGroups.svg";
@@ -12,7 +12,8 @@ class Assets {
 
   /// Assets for imagesApplicationpolicy
   /// assets/images/Applicationpolicy.svg
-  static const String imagesApplicationpolicy = "assets/images/Applicationpolicy.svg";
+  static const String imagesApplicationpolicy =
+      "assets/images/Applicationpolicy.svg";
 
   /// Assets for imagesApplogo
   /// assets/images/applogo.png
@@ -20,7 +21,8 @@ class Assets {
 
   /// Assets for imagesArrowForwardLoginPage
   /// assets/images/arrowForwardLoginPage.svg
-  static const String imagesArrowForwardLoginPage = "assets/images/arrowForwardLoginPage.svg";
+  static const String imagesArrowForwardLoginPage =
+      "assets/images/arrowForwardLoginPage.svg";
 
   /// Assets for imagesCelebration
   /// assets/images/celebration.png
@@ -80,11 +82,13 @@ class Assets {
 
   /// Assets for imagesImagePersonInAppBar
   /// assets/images/imagePersonInAppBar.png
-  static const String imagesImagePersonInAppBar = "assets/images/imagePersonInAppBar.png";
+  static const String imagesImagePersonInAppBar =
+      "assets/images/imagePersonInAppBar.png";
 
   /// Assets for imagesInstagramNewGradientLogoAnimation
   /// assets/images/instagram-new-gradient-logo-animation.gif
-  static const String imagesInstagramNewGradientLogoAnimation = "assets/images/instagram-new-gradient-logo-animation.gif";
+  static const String imagesInstagramNewGradientLogoAnimation =
+      "assets/images/instagram-new-gradient-logo-animation.gif";
 
   /// Assets for imagesJewel
   /// assets/images/jewel.svg
@@ -116,7 +120,8 @@ class Assets {
 
   /// Assets for imagesMarketingspeedcalculations
   /// assets/images/Marketingspeedcalculations.svg
-  static const String imagesMarketingspeedcalculations = "assets/images/Marketingspeedcalculations.svg";
+  static const String imagesMarketingspeedcalculations =
+      "assets/images/Marketingspeedcalculations.svg";
 
   /// Assets for imagesMenuicon
   /// assets/images/menuicon.svg
@@ -132,7 +137,8 @@ class Assets {
 
   /// Assets for imagesPackageSubscribed
   /// assets/images/packageSubscribed.png
-  static const String imagesPackageSubscribed = "assets/images/packageSubscribed.png";
+  static const String imagesPackageSubscribed =
+      "assets/images/packageSubscribed.png";
 
   /// Assets for imagesPhone
   /// assets/images/Phone.svg
@@ -140,7 +146,8 @@ class Assets {
 
   /// Assets for imagesPromotionplatforms
   /// assets/images/Promotionplatforms.svg
-  static const String imagesPromotionplatforms = "assets/images/Promotionplatforms.svg";
+  static const String imagesPromotionplatforms =
+      "assets/images/Promotionplatforms.svg";
 
   /// Assets for imagesRssLine
   /// assets/images/rss-line.svg
@@ -152,7 +159,8 @@ class Assets {
 
   /// Assets for imagesShareingWithMyFriends
   /// assets/images/shareingWithMyFriends.svg
-  static const String imagesShareingWithMyFriends = "assets/images/shareingWithMyFriends.svg";
+  static const String imagesShareingWithMyFriends =
+      "assets/images/shareingWithMyFriends.svg";
 
   /// Assets for imagesSuadiFlag
   /// assets/images/SuadiFlag.svg
@@ -160,7 +168,8 @@ class Assets {
 
   /// Assets for imagesSubscribeOfPackage
   /// assets/images/subscribeOfPackage.svg
-  static const String imagesSubscribeOfPackage = "assets/images/subscribeOfPackage.svg";
+  static const String imagesSubscribeOfPackage =
+      "assets/images/subscribeOfPackage.svg";
 
   /// Assets for imagesSuccesscircle1
   /// assets/images/Successcircle1.svg
@@ -210,8 +219,14 @@ class Assets {
   /// assets/images/Whitecircle.svg
   static const String imagesWhitecircle = "assets/images/Whitecircle.svg";
   static const String imageInProfile = "assets/images/imageInProfile.png";
-  /// Image for diamondWallet
-  static const String jewelDiamondWallet = "assets/images/jewelInDiamondWallet.svg";
-  static const String jewelDiamondWalletTop = "assets/images/jewelnTopScreen.svg";
-}
 
+  /// Image for diamondWallet
+  static const String jewelDiamondWallet =
+      "assets/images/jewelInDiamondWallet.svg";
+  static const String jewelDiamondWalletTop =
+      "assets/images/jewelnTopScreen.svg";
+
+  ///Image for Sharing With Friends Screen
+  static const String bgOfSharingWithMyFriends = "assets/images/bg_sharing_screen.svg";
+  static const String imageSea = "assets/images/imageSea.png";
+}
