@@ -50,6 +50,10 @@ class Assets {
   /// assets/images/conectUs.svg
   static const String imagesConectUs = "assets/images/conectUs.svg";
 
+  /// Assets for imagesCopyicon
+  /// assets/images/copyicon.svg
+  static const String imagesCopyicon = "assets/images/copyicon.svg";
+
   /// Assets for imagesDark
   /// assets/images/dark.svg
   static const String imagesDark = "assets/images/dark.svg";

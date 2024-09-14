@@ -12,6 +12,7 @@ class ShareAndEarnView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
+        surfaceTintColor: Colors.transparent,
         elevation: 0,
         automaticallyImplyLeading: false,
         title: Text(
@@ -30,8 +31,7 @@ class ShareAndEarnView extends StatelessWidget {
           ),
         ],
       ),
-      body: SharingEarnBody(),
+      body: const SharingEarnBody(),
     );
   }
 }
-
