@@ -15,4 +15,5 @@ class AppColors {
   static const redColor = Color(0xFFFF0000);
   static const navBarColor = Color(0xFF1C1C1C);
   static const greenColor = Color(0xFF52B850);
+  static const colorInShareWithFriend = Color(0xFF535353);
 }

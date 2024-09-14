@@ -1,0 +1,31 @@
+<svg width="375" height="398" viewBox="0 0 375 398" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g filter="url(#filter0_d_385_365)">
+        <ellipse cx="356.5" cy="298" rx="102.5" ry="92" fill="#D9D9D9" fill-opacity="0.41" shape-rendering="crispEdges"/>
+    </g>
+    <ellipse cx="14.5" cy="16" rx="102.5" ry="92" fill="#D9D9D9" fill-opacity="0.41"/>
+    <ellipse cx="357.537" cy="144.562" rx="5.73429" ry="5.5" transform="rotate(-0.172582 357.537 144.562)" fill="#D9D9D9" fill-opacity="0.19"/>
+    <ellipse cx="372.282" cy="144.518" rx="5.73429" ry="5.5" transform="rotate(-0.172582 372.282 144.518)" fill="#D9D9D9" fill-opacity="0.19"/>
+    <ellipse cx="372.327" cy="159.517" rx="5.73429" ry="5.5" transform="rotate(-0.172582 372.327 159.517)" fill="#D9D9D9" fill-opacity="0.19"/>
+    <ellipse cx="372.373" cy="174.517" rx="5.73429" ry="5.5" transform="rotate(-0.172582 372.373 174.517)" fill="#D9D9D9" fill-opacity="0.19"/>
+    <ellipse cx="372.418" cy="189.517" rx="5.73429" ry="5.5" transform="rotate(-0.172582 372.418 189.517)" fill="#D9D9D9" fill-opacity="0.19"/>
+    <ellipse cx="372.463" cy="204.517" rx="5.73429" ry="5.5" transform="rotate(-0.172582 372.463 204.517)" fill="#D9D9D9" fill-opacity="0.19"/>
+    <ellipse cx="372.508" cy="219.517" rx="5.73429" ry="5.5" transform="rotate(-0.172582 372.508 219.517)" fill="#D9D9D9" fill-opacity="0.19"/>
+    <ellipse cx="357.582" cy="159.562" rx="5.73429" ry="5.5" transform="rotate(-0.172582 357.582 159.562)" fill="#D9D9D9" fill-opacity="0.19"/>
+    <ellipse cx="357.628" cy="174.562" rx="5.73429" ry="5.5" transform="rotate(-0.172582 357.628 174.562)" fill="#D9D9D9" fill-opacity="0.19"/>
+    <ellipse cx="357.673" cy="189.562" rx="5.73429" ry="5.5" transform="rotate(-0.172582 357.673 189.562)" fill="#D9D9D9" fill-opacity="0.19"/>
+    <ellipse cx="357.718" cy="204.562" rx="5.73429" ry="5.5" transform="rotate(-0.172582 357.718 204.562)" fill="#D9D9D9" fill-opacity="0.19"/>
+    <ellipse cx="357.763" cy="219.562" rx="5.73429" ry="5.5" transform="rotate(-0.172582 357.763 219.562)" fill="#D9D9D9" fill-opacity="0.19"/>
+    <path d="M232.174 176.256C254.787 169.071 271 149.982 271 127.614L270.861 122.149H235.169V108H139.831V122.149H104.139L104 127.614C104 149.982 120.213 169.071 142.826 176.256C148.153 188.087 159.448 196.695 173.359 200.488V213.333C172.732 223.397 163.07 231.959 151.486 231.959V243.52H139.821V266H235.179V243.52H223.514V231.959C211.93 231.959 202.268 223.397 201.641 213.333V200.488C215.552 196.695 226.847 188.087 232.174 176.256ZM235.179 133.049H257.462C257.418 133.323 257.387 133.702 257.337 133.974C255.135 146.085 246.734 156.249 235.169 162.239C235.198 161.636 235.179 133.049 235.179 133.049ZM117.663 133.974C117.613 133.702 117.582 133.323 117.538 133.049H139.821C139.821 133.049 139.802 161.636 139.831 162.239C128.266 156.249 119.865 146.085 117.663 133.974ZM187.5 160.523L172.732 169.207L177.544 154.151L163.606 144.462L181.347 143.841L187.501 129.169L193.654 143.841L211.396 144.462L197.456 154.151L202.267 169.208L187.5 160.523Z" fill="#757575"/>
+    <defs>
+        <filter id="filter0_d_385_365" x="250" y="206" width="213" height="192" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+            <feOffset dy="4"/>
+            <feGaussianBlur stdDeviation="2"/>
+            <feComposite in2="hardAlpha" operator="out"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_385_365"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_385_365" result="shape"/>
+        </filter>
+    </defs>
+</svg>

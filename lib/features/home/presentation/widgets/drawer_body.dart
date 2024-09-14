@@ -97,8 +97,10 @@ class _DrawerBodyState extends State<DrawerBody> {
           title: "شارك مع الأصدقاء واربح",
           icon: Assets.imagesShareingWithMyFriends,
           isSelected: _selectedIndex == 7,
-          onTap: () => _onItemTap(7),
-        ),
+          onTap: () {
+            _onItemTap(7);
+            context.push('/shareAndEarnView');
+          },        ),
         DrawerListTileItem(
           title: "اللغة (العربية)",
           icon: Assets.imagesLanguage,

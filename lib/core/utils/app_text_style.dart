@@ -78,6 +78,11 @@ class AppStyles {
     fontSize: 20.sp,
     fontWeight: FontWeight.w400,
   );
+  static TextStyle style20W400ShareWithFiends = TextStyle(
+    color: AppColors.colorInShareWithFriend,
+    fontSize: 20.sp,
+    fontWeight: FontWeight.w400,
+  );
   static TextStyle style13W400 = TextStyle(
     color: AppColors.whiteColor,
     fontSize: 13.sp,
