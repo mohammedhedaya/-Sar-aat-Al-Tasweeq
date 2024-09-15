@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shopping_chart/features/whatsapp/presentation/views/choose_the_destination_view.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/views/launch_your_ad_view.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/views/scan_qr_code_view.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/views/scan_qr_container_view.dart';
@@ -46,7 +47,7 @@ final GoRouter router = GoRouter(
       path: '/',
       builder: (context, state) => BlocProvider(
         create: (context) => getIt<AuthCubit>(),
-        child: const LaunchYourAdView(),
+        child: const LoginView(),
       ),
     ),
     GoRoute(
@@ -210,9 +211,13 @@ final GoRouter router = GoRouter(
       path: '/whatsappAddSuggestionView',
       builder: (context, state) => const WhatsappAddSuggestionView(),
     ),
-      GoRoute(
+    GoRoute(
       path: '/launchYourAdView',
       builder: (context, state) => const LaunchYourAdView(),
+    ),
+     GoRoute(
+      path: '/chooseTheDestinationView',
+      builder: (context, state) => const ChooseTheDestinationView(),
     ),
   ],
 );
