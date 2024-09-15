@@ -194,6 +194,10 @@ class Assets {
   /// assets/images/QR_Code.png
   static const String imagesQRCode = "assets/images/QR_Code.png";
 
+  /// Assets for imagesRocket
+  /// assets/images/Rocket.svg
+  static const String imagesRocket = "assets/images/Rocket.svg";
+
   /// Assets for imagesRssLine
   /// assets/images/rss-line.svg
   static const String imagesRssLine = "assets/images/rss-line.svg";

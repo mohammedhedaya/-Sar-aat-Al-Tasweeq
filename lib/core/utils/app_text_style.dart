@@ -156,12 +156,12 @@ class AppStyles {
   static TextStyle style14W800 = TextStyle(
     color: AppColors.whiteColor,
     fontSize: 14.sp,
-    fontWeight: FontWeight.w600,
+    fontWeight: FontWeight.w800,
   );
   static TextStyle style14W300 = TextStyle(
     color: AppColors.whiteColor,
     fontSize: 14.sp,
-    fontWeight: FontWeight.w600,
+    fontWeight: FontWeight.w300,
   );
   static TextStyle style14W600Profile = TextStyle(
     color: AppColors.blackColor,
@@ -202,5 +202,10 @@ class AppStyles {
     color: AppColors.whiteColor,
     fontSize: 78.sp,
     fontWeight: FontWeight.w400,
+  );
+    static TextStyle style10W800 = TextStyle(
+    color: AppColors.blackColor,
+    fontSize: 10.sp,
+    fontWeight: FontWeight.w800,
   );
 }

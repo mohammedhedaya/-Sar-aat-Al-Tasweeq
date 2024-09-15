@@ -5,11 +5,19 @@ import 'package:shopping_chart/core/utils/app_colors.dart';
 import 'package:shopping_chart/core/utils/app_text_style.dart';
 
 class CustomShowDialog extends StatelessWidget {
-  const CustomShowDialog(
-      {super.key, this.content, required this.image, required this.textButton});
+  const CustomShowDialog({
+    super.key,
+    this.content,
+    required this.image,
+    required this.textButton,
+    this.onTap,
+  });
+
   final String image;
   final String textButton;
   final Widget? content;
+  final void Function()? onTap;
+
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
@@ -23,7 +31,7 @@ class CustomShowDialog extends StatelessWidget {
       content: content,
       actions: [
         InkWell(
-          onTap: () {},
+          onTap: onTap,
           child: Center(
             child: Container(
               height: 31.h,

@@ -54,6 +54,9 @@ class WhatsappViewBody extends StatelessWidget {
                       barrierColor: const Color(0xffFFF9F9).withOpacity(0.33),
                       builder: (context) {
                         return CustomShowDialog(
+                          onTap: () {
+                            context.push('/launchYourAdView');
+                          },
                           image: Assets.imagesXerror,
                           textButton: "الأشتراك",
                           content: Row(
