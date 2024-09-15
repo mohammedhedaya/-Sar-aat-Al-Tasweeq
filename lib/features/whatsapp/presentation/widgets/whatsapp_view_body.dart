@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:shopping_chart/core/utils/app_text_style.dart';
 import 'package:shopping_chart/core/utils/assets.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/widgets/custom_show_dialog.dart';
@@ -77,7 +78,9 @@ class WhatsappViewBody extends StatelessWidget {
                 ),
                 SizedBox(height: 50.h),
                 CustomSubscribeBtn(
-                  onPressed: () {},
+                  onPressed: () {
+                    context.push('/scanQrCodeView');
+                  },
                   text: "مسح الباركود",
                 ),
                 SizedBox(height: 39.h),

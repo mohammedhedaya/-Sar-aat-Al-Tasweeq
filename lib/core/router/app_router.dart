@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shopping_chart/features/whatsapp/presentation/views/scan_qr_code_view.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/views/whatsapp_view.dart';
 import '../../features/add_group/presentation/views/add_group_view.dart';
 import '../../features/add_group/presentation/views/add_telegram_group_view.dart';
@@ -42,7 +43,7 @@ final GoRouter router = GoRouter(
       path: '/',
       builder: (context, state) => BlocProvider(
         create: (context) => getIt<AuthCubit>(),
-        child: const UserMainLayoutScreen(),
+        child: const WhatsappView(),
       ),
     ),
     GoRoute(
@@ -193,6 +194,10 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/whatsappView',
       builder: (context, state) => const WhatsappView(),
+    ),
+    GoRoute(
+      path: '/scanQrCodeView',
+      builder: (context, state) => const ScanQrCodeView(),
     ),
   ],
 );

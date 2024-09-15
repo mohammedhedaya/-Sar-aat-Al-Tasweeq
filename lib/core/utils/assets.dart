@@ -38,6 +38,10 @@ class Assets {
   /// assets/images/bg_sharing_screen.svg
   static const String imagesBgSharingScreen = "assets/images/bg_sharing_screen.svg";
 
+  /// Assets for imagesCameraIcon
+  /// assets/images/cameraIcon.svg
+  static const String imagesCameraIcon = "assets/images/cameraIcon.svg";
+
   /// Assets for imagesCelebration
   /// assets/images/celebration.png
   static const String imagesCelebration = "assets/images/celebration.png";
@@ -185,6 +189,10 @@ class Assets {
   /// Assets for imagesPromotionplatforms
   /// assets/images/Promotionplatforms.svg
   static const String imagesPromotionplatforms = "assets/images/Promotionplatforms.svg";
+
+  /// Assets for imagesQRCode
+  /// assets/images/QR_Code.png
+  static const String imagesQRCode = "assets/images/QR_Code.png";
 
   /// Assets for imagesRssLine
   /// assets/images/rss-line.svg
