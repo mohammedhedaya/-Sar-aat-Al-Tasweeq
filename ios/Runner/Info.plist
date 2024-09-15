@@ -26,6 +26,10 @@
 	<true/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>This app needs access to the microphone for recording audio.</string>
+	<key>NSDocumentsFolderUsageDescription</key>
+	<string>This app needs access to the file system to save recordings.</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>io.flutter.embedded_views_preview</key>
