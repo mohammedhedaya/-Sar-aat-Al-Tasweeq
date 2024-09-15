@@ -113,7 +113,9 @@ class WhatsappViewBody extends StatelessWidget {
                 ),
                 SizedBox(height: 16.h),
                 InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    context.push('/whatsappAddSuggestionView');
+                  },
                   child: Center(
                     child: Container(
                       height: 31.h,
@@ -147,4 +149,3 @@ class WhatsappViewBody extends StatelessWidget {
     );
   }
 }
-
