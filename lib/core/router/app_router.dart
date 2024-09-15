@@ -1,6 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/views/scan_qr_code_view.dart';
+import 'package:shopping_chart/features/whatsapp/presentation/views/scan_qr_container_view.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/views/whatsapp_view.dart';
 import '../../features/add_group/presentation/views/add_group_view.dart';
 import '../../features/add_group/presentation/views/add_telegram_group_view.dart';
@@ -198,6 +199,10 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/scanQrCodeView',
       builder: (context, state) => const ScanQrCodeView(),
+    ),
+       GoRoute(
+      path: '/qrViewInContainer',
+      builder: (context, state) => const QRViewInContainer(),
     ),
   ],
 );
