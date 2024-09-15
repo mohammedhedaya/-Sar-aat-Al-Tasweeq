@@ -17,6 +17,7 @@ class CustomAuthTextField extends StatelessWidget {
     this.obscureText,
     this.prefix,
     this.fiiledColor,
+    this.hintStyle,
   });
 
   final String hintText;
@@ -30,6 +31,7 @@ class CustomAuthTextField extends StatelessWidget {
   final String? Function(String?)? validator;
   final bool? obscureText;
   final Color? fiiledColor;
+  final TextStyle? hintStyle;
 
   @override
   Widget build(BuildContext context) {
@@ -64,7 +66,7 @@ class CustomAuthTextField extends StatelessWidget {
         suffixIcon: suffixIcon,
         prefix: prefix,
         hintText: hintText,
-        hintStyle: AppStyles.style18W400,
+        hintStyle: hintStyle ?? AppStyles.style18W400,
         filled: true,
         fillColor: fiiledColor ?? AppColors.dimGray,
         border: OutlineInputBorder(

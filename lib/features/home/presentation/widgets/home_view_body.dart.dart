@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import '../../../../core/utils/app_colors.dart';
 import 'custom_text_in_home.dart';
 import 'home_carousel_slider.dart';
@@ -55,7 +56,9 @@ class HomeViewBody extends StatelessWidget {
               const CustomTextInHome(),
               SizedBox(height: 38.h),
               SocialMediaCard(
-                onTap: () {},
+                onTap: () {
+                  context.push('/whatsappView');
+                },
                 imagePath: Assets.imagesWhatsAppImage,
                 label: 'WHATSAPP',
               ),

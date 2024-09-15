@@ -266,8 +266,16 @@ class Assets {
   /// assets/images/whatsapp.svg
   static const String imagesWhatsapp = "assets/images/whatsapp.svg";
 
+  /// Assets for imagesWhatsapplogo
+  /// assets/images/whatsapplogo.svg
+  static const String imagesWhatsapplogo = "assets/images/whatsapplogo.svg";
+
   /// Assets for imagesWhitecircle
   /// assets/images/Whitecircle.svg
   static const String imagesWhitecircle = "assets/images/Whitecircle.svg";
+
+  /// Assets for imagesXerror
+  /// assets/images/Xerror.svg
+  static const String imagesXerror = "assets/images/Xerror.svg";
 }
 
