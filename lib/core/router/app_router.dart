@@ -46,7 +46,7 @@ final GoRouter router = GoRouter(
       path: '/',
       builder: (context, state) => BlocProvider(
         create: (context) => getIt<AuthCubit>(),
-        child: const LaunchYourAdView(),
+        child: const LoginView(),
       ),
     ),
     GoRoute(

@@ -162,6 +162,18 @@ class Assets {
   /// assets/images/Marketingspeedcalculations.svg
   static const String imagesMarketingspeedcalculations = "assets/images/Marketingspeedcalculations.svg";
 
+  /// Assets for imagesMenuCamera
+  /// assets/images/menuCamera.svg
+  static const String imagesMenuCamera = "assets/images/menuCamera.svg";
+
+  /// Assets for imagesMenuFile
+  /// assets/images/menuFile.svg
+  static const String imagesMenuFile = "assets/images/menuFile.svg";
+
+  /// Assets for imagesMenuImage
+  /// assets/images/menuImage.svg
+  static const String imagesMenuImage = "assets/images/menuImage.svg";
+
   /// Assets for imagesMenuicon
   /// assets/images/menuicon.svg
   static const String imagesMenuicon = "assets/images/menuicon.svg";
