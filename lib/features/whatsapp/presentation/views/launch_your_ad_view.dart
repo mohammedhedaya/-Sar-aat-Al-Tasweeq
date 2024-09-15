@@ -15,7 +15,8 @@ class LaunchYourAdView extends StatelessWidget {
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
       floatingActionButton: FloatingActionButton(
-        backgroundColor: const Color(0xff00C0CC),
+        elevation: 10,
+        backgroundColor: Colors.teal,
         onPressed: () {},
         child: const Icon(
           Icons.add,
@@ -63,5 +64,3 @@ class LaunchYourAdView extends StatelessWidget {
     );
   }
 }
-
-
