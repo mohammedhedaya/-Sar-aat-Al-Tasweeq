@@ -4,6 +4,7 @@ import 'package:shopping_chart/features/whatsapp/presentation/views/choose_the_d
 import 'package:shopping_chart/features/whatsapp/presentation/views/launch_your_ad_view.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/views/scan_qr_code_view.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/views/scan_qr_container_view.dart';
+import 'package:shopping_chart/features/whatsapp/presentation/views/whastapp_sending_view.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/views/whatsapp_add_suggestion_view.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/views/whatsapp_view.dart';
 import '../../features/add_group/presentation/views/add_group_view.dart';
@@ -218,6 +219,10 @@ final GoRouter router = GoRouter(
      GoRoute(
       path: '/chooseTheDestinationView',
       builder: (context, state) => const ChooseTheDestinationView(),
+    ),
+     GoRoute(
+      path: '/whastappSendingView',
+      builder: (context, state) => const WhatsappSendingView(),
     ),
   ],
 );

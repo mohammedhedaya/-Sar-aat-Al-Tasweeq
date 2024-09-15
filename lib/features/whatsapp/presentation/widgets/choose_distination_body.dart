@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:shopping_chart/core/utils/app_colors.dart';
 import 'package:shopping_chart/core/utils/app_text_style.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/widgets/destination_check_box.dart';
@@ -16,7 +17,7 @@ class ChooseTheDestinationViewBody extends StatelessWidget {
           children: [
             Center(
               child: Text(
-                'أختر وجهة (دليل الهاتف)',
+                "أختر وجهة ( الواتساب )",
                 style: AppStyles.style17W800,
                 textAlign: TextAlign.center,
               ),
@@ -96,7 +97,9 @@ class ChooseTheDestinationViewBody extends StatelessWidget {
             ),
             SizedBox(height: 59.h),
             InkWell(
-              onTap: () {},
+              onTap: () {
+                context.push('/whastappSendingView');
+              },
               child: Container(
                 height: 40.h,
                 width: 200.w,
@@ -114,7 +117,7 @@ class ChooseTheDestinationViewBody extends StatelessWidget {
                 ),
                 child: Center(
                   child: Text(
-                    "إختار الوجهة",
+                    "قم بالإرسال",
                     style: AppStyles.style14W400,
                     textAlign: TextAlign.center,
                   ),

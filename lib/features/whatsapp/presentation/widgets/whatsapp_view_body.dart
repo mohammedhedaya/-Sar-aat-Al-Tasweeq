@@ -11,6 +11,7 @@ class WhatsappViewBody extends StatelessWidget {
   const WhatsappViewBody({super.key});
 
   @override
+
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
