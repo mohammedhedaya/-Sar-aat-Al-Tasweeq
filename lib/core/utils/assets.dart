@@ -50,6 +50,10 @@ class Assets {
   /// assets/images/chating.svg
   static const String imagesChating = "assets/images/chating.svg";
 
+  /// Assets for imagesChatslogo
+  /// assets/images/chatslogo.png
+  static const String imagesChatslogo = "assets/images/chatslogo.png";
+
   /// Assets for imagesCoffee
   /// assets/images/coffee.png
   static const String imagesCoffee = "assets/images/coffee.png";

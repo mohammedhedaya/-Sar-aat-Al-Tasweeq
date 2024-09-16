@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:shopping_chart/core/utils/app_colors.dart';
 import 'package:shopping_chart/core/utils/app_text_style.dart';
-import 'package:shopping_chart/features/whatsapp/presentation/views/launch_pages_view/chats_page_view.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/views/launch_pages_view/delete_page_view.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/views/launch_pages_view/phone_directory_page_view.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/views/launch_pages_view/whatsapp_page_view.dart';
@@ -103,7 +103,9 @@ class _LaunchYourAdViewBodyState extends State<LaunchYourAdViewBody> {
                 ),
               ),
               TextButton(
-                onPressed: () => _onButtonTapped(3),
+                onPressed: () {
+                  context.push('/launchAdChatsView');
+                },
                 style: ButtonStyle(
                   backgroundColor: _currentPage == 3
                       ? WidgetStateProperty.all(const Color(0xffFFF6F6))
@@ -140,8 +142,6 @@ class _LaunchYourAdViewBodyState extends State<LaunchYourAdViewBody> {
                 PhoneDirectoryPageView(),
                 // Page 3: Deleted
                 DeletePageView(),
-                // Page 4: Chats
-                ChatsPageView(),
               ],
             ),
           ),
