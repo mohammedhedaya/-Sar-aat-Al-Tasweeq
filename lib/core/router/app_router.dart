@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/views/convert_number_to_whatsapp_link_view.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/views/delete_choose_the_destination_view.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/views/delete_sending_view.dart';
+import 'package:shopping_chart/features/whatsapp/presentation/views/launch_ad_add_whatsapp_groups_view.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/views/launch_ad_chats_view.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/views/launch_chats_messages_view.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/views/phone_choose_the_destination_view.dart';
@@ -258,6 +259,10 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/convertNumberToWhatsappLinkView',
       builder: (context, state) => const ConvertNumberToWhatsappLinkView(),
+    ),
+       GoRoute(
+      path: '/launchAdAddWhatsappGroupsView',
+      builder: (context, state) => const LaunchAdAddWhatsappGroupsView(),
     ),
   ],
 );
