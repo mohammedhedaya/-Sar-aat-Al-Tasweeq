@@ -6,6 +6,7 @@ import 'package:shopping_chart/features/whatsapp/presentation/views/delete_sendi
 import 'package:shopping_chart/features/whatsapp/presentation/views/launch_ad_add_whatsapp_groups_view.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/views/launch_ad_chats_view.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/views/launch_ad_choose_group_view.dart';
+import 'package:shopping_chart/features/whatsapp/presentation/views/launch_ad_choosegroup__to_send_view.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/views/launch_chats_messages_view.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/views/phone_choose_the_destination_view.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/views/phone_sending_view.dart';
@@ -57,7 +58,7 @@ final GoRouter router = GoRouter(
       path: '/',
       builder: (context, state) => BlocProvider(
         create: (context) => getIt<AuthCubit>(),
-        child: const LaunchYourAdView(),
+        child: const LaunchAdChooseGroupView(),
       ),
     ),
     GoRoute(
@@ -268,6 +269,10 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/launchAdChooseGroupView',
       builder: (context, state) => const LaunchAdChooseGroupView(),
+    ),
+    GoRoute(
+      path: '/launchAdChooseGroupToSendView',
+      builder: (context, state) => const LaunchAdChooseGroupToSendView1(),
     ),
   ],
 );

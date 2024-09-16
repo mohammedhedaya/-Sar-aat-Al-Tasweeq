@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:shopping_chart/core/utils/app_colors.dart';
 import 'package:shopping_chart/core/utils/app_text_style.dart';
 import 'package:shopping_chart/core/utils/assets.dart';
@@ -87,7 +88,9 @@ class LaunchAdChooseGroupViewBody extends StatelessWidget {
                   ),
                   SizedBox(height: 19.h),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      context.push('/launchAdChooseGroupToSendView');
+                    },
                     child: Container(
                       padding:
                           EdgeInsets.symmetric(horizontal: 22.w, vertical: 4.h),

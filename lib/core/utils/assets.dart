@@ -238,6 +238,10 @@ class Assets {
   /// assets/images/SHAREICON.svg
   static const String imagesSHAREICON = "assets/images/SHAREICON.svg";
 
+  /// Assets for imagesSendforward
+  /// assets/images/sendforward.svg
+  static const String imagesSendforward = "assets/images/sendforward.svg";
+
   /// Assets for imagesShareingWithMyFriends
   /// assets/images/shareingWithMyFriends.svg
   static const String imagesShareingWithMyFriends = "assets/images/shareingWithMyFriends.svg";
