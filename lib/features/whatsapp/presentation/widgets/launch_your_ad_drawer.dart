@@ -123,7 +123,9 @@ class LaunchYourAdDrawer extends StatelessWidget {
                 image: Assets.imagesChoosegroup,
               ),
               CustomLaunchDrawerItem(
-                onTap: () {},
+                onTap: () {
+                  context.push('/whatsappGroupsView');
+                },
                 title: "جروبات الواتساب",
                 image: Assets.imagesWhatsappGroupicon,
               ),

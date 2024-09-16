@@ -18,6 +18,7 @@ import 'package:shopping_chart/features/whatsapp/presentation/views/scan_qr_code
 import 'package:shopping_chart/features/whatsapp/presentation/views/scan_qr_container_view.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/views/whastapp_sending_view.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/views/whatsapp_add_suggestion_view.dart';
+import 'package:shopping_chart/features/whatsapp/presentation/views/whatsapp_groups_view.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/views/whatsapp_view.dart';
 import '../../features/add_group/presentation/views/add_group_view.dart';
 import '../../features/add_group/presentation/views/add_telegram_group_view.dart';
@@ -60,7 +61,7 @@ final GoRouter router = GoRouter(
       path: '/',
       builder: (context, state) => BlocProvider(
         create: (context) => getIt<AuthCubit>(),
-        child: const LoginView(),
+        child: const LaunchYourAdView(),
       ),
     ),
     GoRoute(
@@ -283,6 +284,10 @@ final GoRouter router = GoRouter(
       GoRoute(
       path: '/sendingChoosenGroupView',
       builder: (context, state) => const SendingChoosenGroupView(),
+    ),
+     GoRoute(
+      path: '/whatsappGroupsView',
+      builder: (context, state) => const WhatsappGroupsView(),
     ),
   ],
 );
