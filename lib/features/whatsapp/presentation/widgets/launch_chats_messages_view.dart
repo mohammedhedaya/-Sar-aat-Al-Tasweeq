@@ -10,31 +10,24 @@ class LaunchChatsMessagesViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      physics: const NeverScrollableScrollPhysics(),
-      slivers: [
-        SliverToBoxAdapter(
-          child: Column(
-            children: [
-              SizedBox(height: 30.h),
-              CircleAvatar(
-                radius: 40.r,
-                backgroundImage: const AssetImage(
-                  Assets.imagesImageInProfile,
-                ),
-              ),
-              SizedBox(height: 10.h),
-              Text(
-                "أحمد على محمد",
-                style: AppStyles.style10W800.copyWith(
-                  color: Colors.white,
-                ),
-              ),
-              SizedBox(height: 53.h),
-            ],
+    return Column(
+      children: [
+        SizedBox(height: 30.h),
+        CircleAvatar(
+          radius: 40.r,
+          backgroundImage: const AssetImage(
+            Assets.imagesImageInProfile,
           ),
         ),
-        SliverFillRemaining(
+        SizedBox(height: 10.h),
+        Text(
+          "أحمد على محمد",
+          style: AppStyles.style10W800.copyWith(
+            color: Colors.white,
+          ),
+        ),
+        SizedBox(height: 53.h),
+        Expanded(
           child: Container(
             width: double.infinity,
             padding: const EdgeInsets.all(12),
@@ -45,140 +38,201 @@ class LaunchChatsMessagesViewBody extends StatelessWidget {
                 topRight: Radius.circular(50.r),
               ),
             ),
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                children: [
-                  SizedBox(height: 25.h),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Container(
-                        padding: const EdgeInsets.all(8),
-                        decoration: BoxDecoration(
-                          color: const Color(0xff323232),
-                          borderRadius: BorderRadius.circular(10.r),
-                        ),
-                        child: Row(
+            child: Column(
+              children: [
+                Expanded(
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        SizedBox(height: 25.h),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            const Icon(
-                              Icons.play_arrow_rounded,
-                              color: Color(0xffE0E0E0),
-                            ),
-                            SizedBox(width: 5.w),
-                            AudioWaveforms(
-                              size: Size(100.w, 20.h),
-                              recorderController: RecorderController(),
-                              waveStyle: const WaveStyle(
-                                waveColor: Color(0xffE0E0E0),
-                                backgroundColor: Color(0xffE0E0E0),
-                                waveThickness: 2,
-                                middleLineThickness: 1.0,
-                              ),
-                            ),
-                            SizedBox(width: 5.w),
-                            Text(
-                              "0:31",
-                              style: AppStyles.style12W700,
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(width: 10.w),
-                      CircleAvatar(
-                        radius: 20.r,
-                        backgroundImage: const AssetImage(
-                          Assets.imagesImageInProfile,
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 27.h),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      CircleAvatar(
-                        radius: 20.r,
-                        backgroundImage: const AssetImage(
-                          Assets.imagesImageInProfile,
-                        ),
-                      ),
-                      SizedBox(width: 10.w),
-                      Container(
-                        padding: const EdgeInsets.all(8),
-                        decoration: BoxDecoration(
-                          color: const Color(0xffE0E0E0),
-                          borderRadius: BorderRadius.circular(10.r),
-                        ),
-                        child: Row(
-                          children: [
-                            const Icon(
-                              Icons.play_arrow_rounded,
-                              color: Color(0xff323232),
-                            ),
-                            SizedBox(width: 5.w),
-                            AudioWaveforms(
-                              size: Size(100.w, 20.h),
-                              recorderController: RecorderController(),
-                              waveStyle: const WaveStyle(
-                                waveColor: Color(0xffE0E0E0),
-                                backgroundColor: Color(0xffE0E0E0),
-                                waveThickness: 2,
-                                middleLineThickness: 1.0,
-                              ),
-                            ),
-                            SizedBox(width: 5.w),
-                            Text(
-                              "0:31",
-                              style: AppStyles.style12W700.copyWith(
+                            Container(
+                              padding: const EdgeInsets.all(8),
+                              decoration: BoxDecoration(
                                 color: const Color(0xff323232),
+                                borderRadius: BorderRadius.circular(10.r),
+                              ),
+                              child: Row(
+                                children: [
+                                  const Icon(
+                                    Icons.play_arrow_rounded,
+                                    color: Color(0xffE0E0E0),
+                                  ),
+                                  SizedBox(width: 5.w),
+                                  AudioWaveforms(
+                                    size: Size(100.w, 20.h),
+                                    recorderController: RecorderController(),
+                                    waveStyle: const WaveStyle(
+                                      waveColor: Color(0xffE0E0E0),
+                                      backgroundColor: Color(0xffE0E0E0),
+                                      waveThickness: 2,
+                                      middleLineThickness: 1.0,
+                                    ),
+                                  ),
+                                  SizedBox(width: 5.w),
+                                  Text(
+                                    "0:31",
+                                    style: AppStyles.style12W700,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(width: 10.w),
+                            CircleAvatar(
+                              radius: 20.r,
+                              backgroundImage: const AssetImage(
+                                Assets.imagesImageInProfile,
                               ),
                             ),
                           ],
                         ),
-                      ),
-                    ],
+                        SizedBox(height: 27.h),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            CircleAvatar(
+                              radius: 20.r,
+                              backgroundImage: const AssetImage(
+                                Assets.imagesImageInProfile,
+                              ),
+                            ),
+                            SizedBox(width: 10.w),
+                            Container(
+                              padding: const EdgeInsets.all(8),
+                              decoration: BoxDecoration(
+                                color: const Color(0xffE0E0E0),
+                                borderRadius: BorderRadius.circular(10.r),
+                              ),
+                              child: Row(
+                                children: [
+                                  const Icon(
+                                    Icons.play_arrow_rounded,
+                                    color: Color(0xff323232),
+                                  ),
+                                  SizedBox(width: 5.w),
+                                  AudioWaveforms(
+                                    size: Size(100.w, 20.h),
+                                    recorderController: RecorderController(),
+                                    waveStyle: const WaveStyle(
+                                      waveColor: Color(0xffE0E0E0),
+                                      backgroundColor: Color(0xffE0E0E0),
+                                      waveThickness: 2,
+                                      middleLineThickness: 1.0,
+                                    ),
+                                  ),
+                                  SizedBox(width: 5.w),
+                                  Text(
+                                    "0:31",
+                                    style: AppStyles.style12W700.copyWith(
+                                      color: const Color(0xff323232),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 27.h),
+                        Row(
+                          children: [
+                            CircleAvatar(
+                              radius: 20.r,
+                              backgroundImage: const AssetImage(
+                                Assets.imagesImageInProfile,
+                              ),
+                            ),
+                            const BubbleSpecialThree(
+                              text: 'Sure',
+                              color: Color(0xffE0E0E0),
+                              tail: false,
+                              isSender: false,
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 27.h),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            const BubbleSpecialThree(
+                              text: 'OK',
+                              color: Color(0xff323232),
+                              textStyle: TextStyle(
+                                color: Color(0xffE0E0E0),
+                              ),
+                              tail: false,
+                              isSender: false,
+                            ),
+                            CircleAvatar(
+                              radius: 20.r,
+                              backgroundImage: const AssetImage(
+                                Assets.imagesImageInProfile,
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 50.h),
+                      ],
+                    ),
                   ),
-                  SizedBox(height: 27.h),
-                  Row(
-                    children: [
-                      CircleAvatar(
-                        radius: 20.r,
-                        backgroundImage: const AssetImage(
-                          Assets.imagesImageInProfile,
+                ),
+                Row(
+                  children: [
+                    InkWell(
+                      onTap: () {},
+                      child: Container(
+                        padding: const EdgeInsets.all(8),
+                        decoration: const BoxDecoration(
+                          color: Color(0xff3F3F3F),
+                          shape: BoxShape.circle,
+                        ),
+                        child: const Icon(
+                          Icons.mic,
+                          color: Colors.white,
+                          size: 30,
                         ),
                       ),
-                      const BubbleSpecialThree(
-                        text: 'Sure',
-                        color: Color(0xffE0E0E0),
-                        tail: false,
-                        isSender: false,
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 27.h),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      const BubbleSpecialThree(
-                        text: 'OK',
-                        color: Color(0xff323232),
-                        textStyle: TextStyle(
-                          color: Color(0xffE0E0E0),
+                    ),
+                    SizedBox(width: 4.w),
+                    Expanded(
+                      child: TextField(
+                        cursorColor: const Color(0xff3F3F3F),
+                        onChanged: (value) {},
+                        decoration: InputDecoration(
+                          hintText: 'اكتب رسالتك',
+                          hintStyle: const TextStyle(
+                            color: Color(0xffBBBBBB),
+                          ),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(50.r),
+                            borderSide: BorderSide.none,
+                          ),
+                          filled: true,
+                          fillColor: const Color(0xffFFFEFE),
+                          contentPadding: EdgeInsets.symmetric(
+                              horizontal: 20.w, vertical: 10.h),
+                          suffixIcon: InkWell(
+                            onTap: () {},
+                            child: Container(
+                              margin: const EdgeInsets.all(7),
+                              decoration: const BoxDecoration(
+                                color: Color(0xffB6B6B6),
+                                shape: BoxShape.circle,
+                              ),
+                              child: const Icon(
+                                Icons.add,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
                         ),
-                        tail: false,
-                        isSender: false,
+                        textAlign: TextAlign.start,
                       ),
-                      CircleAvatar(
-                        radius: 20.r,
-                        backgroundImage: const AssetImage(
-                          Assets.imagesImageInProfile,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
+                    ),
+                  ],
+                ),
+              ],
             ),
           ),
         ),
