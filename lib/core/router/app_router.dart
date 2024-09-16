@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/views/delete_choose_the_destination_view.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/views/delete_sending_view.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/views/launch_ad_chats_view.dart';
+import 'package:shopping_chart/features/whatsapp/presentation/views/launch_chats_messages_view.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/views/phone_choose_the_destination_view.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/views/phone_sending_view.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/views/whatsapp_choose_the_destination_view.dart';
@@ -248,6 +249,10 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/launchAdChatsView',
       builder: (context, state) => const LaunchAdChatsView(),
+    ),
+      GoRoute(
+      path: '/launchChatsMessagesView',
+      builder: (context, state) => const LaunchChatsMessagesView(),
     ),
   ],
 );
