@@ -70,6 +70,10 @@ class Assets {
   /// assets/images/conectUs.svg
   static const String imagesConectUs = "assets/images/conectUs.svg";
 
+  /// Assets for imagesCopyIcon2
+  /// assets/images/copyIcon2.svg
+  static const String imagesCopyIcon2 = "assets/images/copyIcon2.svg";
+
   /// Assets for imagesCopyicon
   /// assets/images/copyicon.svg
   static const String imagesCopyicon = "assets/images/copyicon.svg";
@@ -306,9 +310,9 @@ class Assets {
   /// assets/images/whatsapp.svg
   static const String imagesWhatsapp = "assets/images/whatsapp.svg";
 
-  /// Assets for imagesWhatsappgroup
-  /// assets/images/whatsappgroup.svg
-  static const String imagesWhatsappgroup = "assets/images/whatsappgroup.svg";
+  /// Assets for imagesWhatsappGroupicon
+  /// assets/images/whatsappGroupicon.svg
+  static const String imagesWhatsappGroupicon = "assets/images/whatsappGroupicon.svg";
 
   /// Assets for imagesWhatsapplogo
   /// assets/images/whatsapplogo.svg
