@@ -62,7 +62,7 @@ class WhatsappPageView extends StatelessWidget {
           Center(
             child: InkWell(
               onTap: () {
-                context.push('/chooseTheDestinationView');
+                context.push('/whatsappChooseTheDestinationView');
               },
               child: Container(
                 height: 40.h,

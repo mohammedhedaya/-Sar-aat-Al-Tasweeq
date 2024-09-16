@@ -5,8 +5,8 @@ import 'package:shopping_chart/core/utils/app_colors.dart';
 import 'package:shopping_chart/core/utils/app_text_style.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/widgets/destination_check_box.dart';
 
-class WhatsappChooseTheDestinationViewBody extends StatelessWidget {
-  const WhatsappChooseTheDestinationViewBody({super.key});
+class PhoneChooseTheDestinationViewBody extends StatelessWidget {
+  const PhoneChooseTheDestinationViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class WhatsappChooseTheDestinationViewBody extends StatelessWidget {
           children: [
             Center(
               child: Text(
-                "أختر وجهة ( الواتساب )",
+                "أختر وجهة (دليل الهاتف)",
                 style: AppStyles.style17W800,
                 textAlign: TextAlign.center,
               ),
@@ -98,7 +98,7 @@ class WhatsappChooseTheDestinationViewBody extends StatelessWidget {
             SizedBox(height: 59.h),
             InkWell(
               onTap: () {
-                context.push('/whastappSendingView');
+                context.push('/phoneSendingView');
               },
               child: Container(
                 height: 40.h,

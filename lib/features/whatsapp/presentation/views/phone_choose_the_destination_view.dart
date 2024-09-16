@@ -5,10 +5,10 @@ import 'package:go_router/go_router.dart';
 import 'package:shopping_chart/core/utils/app_colors.dart';
 import 'package:shopping_chart/core/utils/app_text_style.dart';
 import 'package:shopping_chart/core/utils/assets.dart';
-import 'package:shopping_chart/features/whatsapp/presentation/widgets/choose_distination_body.dart';
+import 'package:shopping_chart/features/whatsapp/presentation/widgets/phone_choose_destination_view_body.dart';
 
-class ChooseTheDestinationView extends StatelessWidget {
-  const ChooseTheDestinationView({super.key});
+class PhoneChooseTheDestinationView extends StatelessWidget {
+  const PhoneChooseTheDestinationView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +49,8 @@ class ChooseTheDestinationView extends StatelessWidget {
           ),
         ],
       ),
-      body: const ChooseTheDestinationViewBody(),
+      body: const PhoneChooseTheDestinationViewBody(),
     );
   }
 }
+

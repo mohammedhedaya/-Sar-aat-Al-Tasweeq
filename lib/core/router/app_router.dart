@@ -1,6 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:shopping_chart/features/whatsapp/presentation/views/choose_the_destination_view.dart';
+import 'package:shopping_chart/features/whatsapp/presentation/views/phone_choose_the_destination_view.dart';
+import 'package:shopping_chart/features/whatsapp/presentation/views/phone_sending_view.dart';
+import 'package:shopping_chart/features/whatsapp/presentation/views/whatsapp_choose_the_destination_view.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/views/launch_your_ad_view.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/views/scan_qr_code_view.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/views/scan_qr_container_view.dart';
@@ -216,13 +218,21 @@ final GoRouter router = GoRouter(
       path: '/launchYourAdView',
       builder: (context, state) => const LaunchYourAdView(),
     ),
-     GoRoute(
-      path: '/chooseTheDestinationView',
-      builder: (context, state) => const ChooseTheDestinationView(),
+    GoRoute(
+      path: '/whatsappChooseTheDestinationView',
+      builder: (context, state) => const WhatsappChooseTheDestinationView(),
     ),
-     GoRoute(
+    GoRoute(
       path: '/whastappSendingView',
       builder: (context, state) => const WhatsappSendingView(),
+    ),
+    GoRoute(
+      path: '/phoneChooseTheDestinationView',
+      builder: (context, state) => const PhoneChooseTheDestinationView(),
+    ),
+    GoRoute(
+      path: '/phoneSendingView',
+      builder: (context, state) => const PhoneSendingView(),
     ),
   ],
 );

@@ -216,7 +216,7 @@ class _LaunchAdTextFieldState extends State<LaunchAdTextField> {
               ),
             ),
           ),
-        if (_filePath != null && !_isRecording)
+        if (_filePath != null)
           Positioned(
             top: 20.h,
             left: 20.w,
