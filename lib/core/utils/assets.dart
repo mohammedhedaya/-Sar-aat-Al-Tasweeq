@@ -246,6 +246,10 @@ class Assets {
   /// assets/images/snapchat.png
   static const String imagesSnapchat = "assets/images/snapchat.png";
 
+  /// Assets for imagesStartMarktingYourProject
+  /// assets/images/startMarktingYourProject.svg
+  static const String imagesStartMarktingYourProject = "assets/images/startMarktingYourProject.svg";
+
   /// Assets for imagesSuadiFlag
   /// assets/images/SuadiFlag.svg
   static const String imagesSuadiFlag = "assets/images/SuadiFlag.svg";

@@ -116,7 +116,9 @@ class LaunchYourAdDrawer extends StatelessWidget {
                 image: Assets.imagesAddgroup,
               ),
               CustomLaunchDrawerItem(
-                onTap: () {},
+                onTap: () {
+                  context.push('/launchAdChooseGroupView');
+                },
                 title: "أختار أحد المجموعات ويتم الإرسال على جميع الأرقام ",
                 image: Assets.imagesChoosegroup,
               ),
