@@ -2,10 +2,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:shopping_chart/core/utils/app_colors.dart';
-import 'package:shopping_chart/core/utils/app_text_style.dart';
-import 'package:shopping_chart/core/utils/assets.dart';
-import 'package:shopping_chart/features/add_group/presentation/widgets/custom_added_success_dialog.dart';
+import '../../../../core/utils/app_colors.dart';
+import '../../../../core/utils/app_text_style.dart';
+import '../../../../core/utils/assets.dart';
+import '../../../add_group/presentation/widgets/custom_added_success_dialog.dart';
 
 class WhatsappAddSuggestionViewBody extends StatelessWidget {
   const WhatsappAddSuggestionViewBody({super.key});

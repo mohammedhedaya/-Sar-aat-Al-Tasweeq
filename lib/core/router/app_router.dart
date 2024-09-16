@@ -1,25 +1,26 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:shopping_chart/features/whatsapp/presentation/views/convert_number_to_whatsapp_link_view.dart';
-import 'package:shopping_chart/features/whatsapp/presentation/views/delete_choose_the_destination_view.dart';
-import 'package:shopping_chart/features/whatsapp/presentation/views/delete_sending_view.dart';
-import 'package:shopping_chart/features/whatsapp/presentation/views/launch_ad_add_whatsapp_groups_view.dart';
-import 'package:shopping_chart/features/whatsapp/presentation/views/launch_ad_chats_view.dart';
-import 'package:shopping_chart/features/whatsapp/presentation/views/launch_ad_choose_group__to_send_view_2.dart';
-import 'package:shopping_chart/features/whatsapp/presentation/views/launch_ad_choose_group_view.dart';
-import 'package:shopping_chart/features/whatsapp/presentation/views/launch_ad_choose_group__to_send_view_1.dart';
-import 'package:shopping_chart/features/whatsapp/presentation/views/launch_chats_messages_view.dart';
-import 'package:shopping_chart/features/whatsapp/presentation/views/phone_choose_the_destination_view.dart';
-import 'package:shopping_chart/features/whatsapp/presentation/views/phone_sending_view.dart';
-import 'package:shopping_chart/features/whatsapp/presentation/views/sending_choosen_group_view.dart';
-import 'package:shopping_chart/features/whatsapp/presentation/views/whatsapp_choose_the_destination_view.dart';
-import 'package:shopping_chart/features/whatsapp/presentation/views/launch_your_ad_view.dart';
-import 'package:shopping_chart/features/whatsapp/presentation/views/scan_qr_code_view.dart';
-import 'package:shopping_chart/features/whatsapp/presentation/views/scan_qr_container_view.dart';
-import 'package:shopping_chart/features/whatsapp/presentation/views/whastapp_sending_view.dart';
-import 'package:shopping_chart/features/whatsapp/presentation/views/whatsapp_add_suggestion_view.dart';
-import 'package:shopping_chart/features/whatsapp/presentation/views/whatsapp_groups_view.dart';
-import 'package:shopping_chart/features/whatsapp/presentation/views/whatsapp_view.dart';
+import '../../features/whatsapp/presentation/views/convert_number_to_whatsapp_link_view.dart';
+import '../../features/whatsapp/presentation/views/delete_choose_the_destination_view.dart';
+import '../../features/whatsapp/presentation/views/delete_sending_view.dart';
+import '../../features/whatsapp/presentation/views/groups_details_view.dart';
+import '../../features/whatsapp/presentation/views/launch_ad_add_whatsapp_groups_view.dart';
+import '../../features/whatsapp/presentation/views/launch_ad_chats_view.dart';
+import '../../features/whatsapp/presentation/views/launch_ad_choose_group__to_send_view_2.dart';
+import '../../features/whatsapp/presentation/views/launch_ad_choose_group_view.dart';
+import '../../features/whatsapp/presentation/views/launch_ad_choose_group__to_send_view_1.dart';
+import '../../features/whatsapp/presentation/views/launch_chats_messages_view.dart';
+import '../../features/whatsapp/presentation/views/phone_choose_the_destination_view.dart';
+import '../../features/whatsapp/presentation/views/phone_sending_view.dart';
+import '../../features/whatsapp/presentation/views/sending_choosen_group_view.dart';
+import '../../features/whatsapp/presentation/views/whatsapp_choose_the_destination_view.dart';
+import '../../features/whatsapp/presentation/views/launch_your_ad_view.dart';
+import '../../features/whatsapp/presentation/views/scan_qr_code_view.dart';
+import '../../features/whatsapp/presentation/views/scan_qr_container_view.dart';
+import '../../features/whatsapp/presentation/views/whastapp_sending_view.dart';
+import '../../features/whatsapp/presentation/views/whatsapp_add_suggestion_view.dart';
+import '../../features/whatsapp/presentation/views/whatsapp_groups_view.dart';
+import '../../features/whatsapp/presentation/views/whatsapp_view.dart';
 import '../../features/add_group/presentation/views/add_group_view.dart';
 import '../../features/add_group/presentation/views/add_telegram_group_view.dart';
 import '../../features/add_group/presentation/views/add_whatsapp_group_view.dart';
@@ -61,7 +62,7 @@ final GoRouter router = GoRouter(
       path: '/',
       builder: (context, state) => BlocProvider(
         create: (context) => getIt<AuthCubit>(),
-        child: const LaunchYourAdView(),
+        child: const LoginView(),
       ),
     ),
     GoRoute(
@@ -281,13 +282,17 @@ final GoRouter router = GoRouter(
       path: '/launchAdChooseGroupToSendView2',
       builder: (context, state) => const LaunchAdChooseGroupToSendView2(),
     ),
-      GoRoute(
+    GoRoute(
       path: '/sendingChoosenGroupView',
       builder: (context, state) => const SendingChoosenGroupView(),
     ),
-     GoRoute(
+    GoRoute(
       path: '/whatsappGroupsView',
       builder: (context, state) => const WhatsappGroupsView(),
+    ),
+    GoRoute(
+      path: '/whatsappGroupsDetailsView',
+      builder: (context, state) => const WhatsappGroupsDetailsView(),
     ),
   ],
 );

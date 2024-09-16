@@ -2,8 +2,8 @@ import 'package:audio_waveforms/audio_waveforms.dart';
 import 'package:chat_bubbles/bubbles/bubble_special_three.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shopping_chart/core/utils/app_text_style.dart';
-import 'package:shopping_chart/core/utils/assets.dart';
+import '../../../../core/utils/app_text_style.dart';
+import '../../../../core/utils/assets.dart';
 
 class LaunchChatsMessagesViewBody extends StatelessWidget {
   const LaunchChatsMessagesViewBody({super.key});

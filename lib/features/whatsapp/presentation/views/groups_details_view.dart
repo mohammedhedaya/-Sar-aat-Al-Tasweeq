@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import '../../../../core/utils/app_colors.dart';
-import '../widgets/whatsapp_view_body.dart';
+import '../widgets/whatsapp_groups_details_view_body.dart';
 
-class WhatsappView extends StatelessWidget {
-  const WhatsappView({super.key});
+class WhatsappGroupsDetailsView extends StatelessWidget {
+  const WhatsappGroupsDetailsView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,8 +11,8 @@ class WhatsappView extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         surfaceTintColor: Colors.transparent,
-        automaticallyImplyLeading: false,
         elevation: 0,
+        automaticallyImplyLeading: false,
         actions: [
           IconButton(
             onPressed: () {
@@ -21,12 +20,12 @@ class WhatsappView extends StatelessWidget {
             },
             icon: const Icon(
               Icons.arrow_forward_ios_sharp,
-              color: AppColors.whiteColor,
+              color: Colors.white,
             ),
           ),
         ],
       ),
-      body: const WhatsappViewBody(),
+      body: const GroupsDetailsViewBody(),
     );
   }
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:shopping_chart/core/utils/app_text_style.dart';
-import 'package:shopping_chart/features/whatsapp/presentation/widgets/whatsapp_add_sugestion_body.dart';
+import '../../../../core/utils/app_text_style.dart';
+import '../widgets/whatsapp_add_sugestion_body.dart';
 
 class WhatsappAddSuggestionView extends StatelessWidget {
   const WhatsappAddSuggestionView({super.key});

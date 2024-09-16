@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:shopping_chart/core/utils/app_text_style.dart';
-import 'package:shopping_chart/features/whatsapp/presentation/widgets/launch_ad_add_whatsapp_groups_view_body.dart';
+import '../../../../core/utils/app_text_style.dart';
+import '../widgets/launch_ad_add_whatsapp_groups_view_body.dart';
 
 class   LaunchAdAddWhatsappGroupsView extends StatelessWidget {
   const LaunchAdAddWhatsappGroupsView({super.key});

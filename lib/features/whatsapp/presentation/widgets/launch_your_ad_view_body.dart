@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:shopping_chart/core/utils/app_colors.dart';
-import 'package:shopping_chart/core/utils/app_text_style.dart';
-import 'package:shopping_chart/features/whatsapp/presentation/views/launch_pages_view/delete_page_view.dart';
-import 'package:shopping_chart/features/whatsapp/presentation/views/launch_pages_view/phone_directory_page_view.dart';
-import 'package:shopping_chart/features/whatsapp/presentation/views/launch_pages_view/whatsapp_page_view.dart';
+import '../../../../core/utils/app_colors.dart';
+import '../../../../core/utils/app_text_style.dart';
+import '../views/launch_pages_view/delete_page_view.dart';
+import '../views/launch_pages_view/phone_directory_page_view.dart';
+import '../views/launch_pages_view/whatsapp_page_view.dart';
 
 class LaunchYourAdViewBody extends StatefulWidget {
   const LaunchYourAdViewBody({super.key});
