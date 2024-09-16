@@ -5,19 +5,30 @@ import 'package:go_router/go_router.dart';
 import 'package:shopping_chart/core/utils/app_colors.dart';
 import 'package:shopping_chart/core/utils/app_text_style.dart';
 import 'package:shopping_chart/core/utils/assets.dart';
+import 'package:shopping_chart/features/whatsapp/presentation/widgets/launch_your_ad_drawer.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/widgets/launch_your_ad_view_body.dart';
 
-class LaunchYourAdView extends StatelessWidget {
+class LaunchYourAdView extends StatefulWidget {
   const LaunchYourAdView({super.key});
 
   @override
+  State<LaunchYourAdView> createState() => _LaunchYourAdViewState();
+}
+
+class _LaunchYourAdViewState extends State<LaunchYourAdView> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
+      drawer: const LaunchYourAdDrawer(),
       floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
       floatingActionButton: FloatingActionButton(
         elevation: 10,
         backgroundColor: Colors.teal,
-        onPressed: () {},
+        onPressed: () {
+          _scaffoldKey.currentState!.openDrawer();
+        },
         child: const Icon(
           Icons.add,
           color: Colors.white,

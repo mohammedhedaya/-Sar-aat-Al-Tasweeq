@@ -23,12 +23,12 @@ class AppStyles {
     fontSize: 18.sp,
     fontWeight: FontWeight.w400,
   );
-    static TextStyle style19W900 = TextStyle(
+  static TextStyle style19W900 = TextStyle(
     color: AppColors.whiteColor,
     fontSize: 19.sp,
     fontWeight: FontWeight.w900,
   );
-   static TextStyle style46W900 = TextStyle(
+  static TextStyle style46W900 = TextStyle(
     color: AppColors.whiteColor,
     fontSize: 46.sp,
     fontWeight: FontWeight.w900,

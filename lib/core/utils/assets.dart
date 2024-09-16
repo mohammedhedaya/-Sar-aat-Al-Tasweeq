@@ -14,6 +14,10 @@ class Assets {
   /// assets/images/AddWhatsappgroup.svg
   static const String imagesAddWhatsappgroup = "assets/images/AddWhatsappgroup.svg";
 
+  /// Assets for imagesAddgroup
+  /// assets/images/addgroup.svg
+  static const String imagesAddgroup = "assets/images/addgroup.svg";
+
   /// Assets for imagesAddtelegramgroup
   /// assets/images/addtelegramgroup.svg
   static const String imagesAddtelegramgroup = "assets/images/addtelegramgroup.svg";
@@ -53,6 +57,10 @@ class Assets {
   /// Assets for imagesChatslogo
   /// assets/images/chatslogo.png
   static const String imagesChatslogo = "assets/images/chatslogo.png";
+
+  /// Assets for imagesChoosegroup
+  /// assets/images/choosegroup.svg
+  static const String imagesChoosegroup = "assets/images/choosegroup.svg";
 
   /// Assets for imagesCoffee
   /// assets/images/coffee.png
@@ -137,6 +145,10 @@ class Assets {
   /// Assets for imagesLanguage
   /// assets/images/Language.svg
   static const String imagesLanguage = "assets/images/Language.svg";
+
+  /// Assets for imagesLaunchJewel
+  /// assets/images/launch_jewel.svg
+  static const String imagesLaunchJewel = "assets/images/launch_jewel.svg";
 
   /// Assets for imagesLight
   /// assets/images/light.svg
@@ -294,9 +306,17 @@ class Assets {
   /// assets/images/whatsapp.svg
   static const String imagesWhatsapp = "assets/images/whatsapp.svg";
 
+  /// Assets for imagesWhatsappgroup
+  /// assets/images/whatsappgroup.svg
+  static const String imagesWhatsappgroup = "assets/images/whatsappgroup.svg";
+
   /// Assets for imagesWhatsapplogo
   /// assets/images/whatsapplogo.svg
   static const String imagesWhatsapplogo = "assets/images/whatsapplogo.svg";
+
+  /// Assets for imagesWhatsapppast
+  /// assets/images/Whatsapppast.svg
+  static const String imagesWhatsapppast = "assets/images/Whatsapppast.svg";
 
   /// Assets for imagesWhitecircle
   /// assets/images/Whitecircle.svg

@@ -37,7 +37,7 @@ class LaunchChatsMessagesView extends StatelessWidget {
                       style: AppStyles.style12W700,
                     ),
                     TextSpan(
-                      text: 'فيصل',
+                      text: ' فيصل',
                       style: AppStyles.style12W100,
                     ),
                   ],
