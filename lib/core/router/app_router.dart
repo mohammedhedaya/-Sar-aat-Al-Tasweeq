@@ -11,6 +11,7 @@ import 'package:shopping_chart/features/whatsapp/presentation/views/launch_ad_ch
 import 'package:shopping_chart/features/whatsapp/presentation/views/launch_chats_messages_view.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/views/phone_choose_the_destination_view.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/views/phone_sending_view.dart';
+import 'package:shopping_chart/features/whatsapp/presentation/views/sending_choosen_group_view.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/views/whatsapp_choose_the_destination_view.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/views/launch_your_ad_view.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/views/scan_qr_code_view.dart';
@@ -59,7 +60,7 @@ final GoRouter router = GoRouter(
       path: '/',
       builder: (context, state) => BlocProvider(
         create: (context) => getIt<AuthCubit>(),
-        child: const LaunchAdChooseGroupView(),
+        child: const LoginView(),
       ),
     ),
     GoRoute(
@@ -278,6 +279,10 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/launchAdChooseGroupToSendView2',
       builder: (context, state) => const LaunchAdChooseGroupToSendView2(),
+    ),
+      GoRoute(
+      path: '/sendingChoosenGroupView',
+      builder: (context, state) => const SendingChoosenGroupView(),
     ),
   ],
 );
