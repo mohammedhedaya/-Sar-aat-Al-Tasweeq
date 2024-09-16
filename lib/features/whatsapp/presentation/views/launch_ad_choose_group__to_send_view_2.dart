@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:shopping_chart/features/whatsapp/presentation/widgets/launch_ad_choosegroup__to_send_view_body.dart';
+import 'package:shopping_chart/features/whatsapp/presentation/widgets/launch_ad_choosegroup__to_send_view_body2.dart';
 
-class LaunchAdChooseGroupToSendView1 extends StatelessWidget {
-  const LaunchAdChooseGroupToSendView1({super.key});
+class LaunchAdChooseGroupToSendView2 extends StatelessWidget {
+  const LaunchAdChooseGroupToSendView2({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class LaunchAdChooseGroupToSendView1 extends StatelessWidget {
           ),
         ],
       ),
-      body: const LaunchAdChooseGroupToSendViewBody(),
+      body: const LaunchAdChooseGroupToSendViewBody2(),
     );
   }
 }

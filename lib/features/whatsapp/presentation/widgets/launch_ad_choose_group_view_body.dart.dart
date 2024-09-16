@@ -89,7 +89,7 @@ class LaunchAdChooseGroupViewBody extends StatelessWidget {
                   SizedBox(height: 19.h),
                   InkWell(
                     onTap: () {
-                      context.push('/launchAdChooseGroupToSendView');
+                      context.push('/launchAdChooseGroupToSendView1');
                     },
                     child: Container(
                       padding:

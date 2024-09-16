@@ -24,8 +24,8 @@ class _ChooseDestinationCheckboxState extends State<ChooseDestinationCheckbox> {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(2.r),
       ),
-      activeColor: Colors.teal,
-      checkColor: Colors.teal,
+      activeColor: const Color(0xff00C0CC),
+      checkColor: const Color(0xff00C0CC),
       visualDensity: VisualDensity.compact,
       side: const BorderSide(
         color: Colors.white,

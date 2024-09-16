@@ -226,6 +226,10 @@ class Assets {
   /// assets/images/QR_Code.png
   static const String imagesQRCode = "assets/images/QR_Code.png";
 
+  /// Assets for imagesRechargeWallet
+  /// assets/images/recharge_wallet.svg
+  static const String imagesRechargeWallet = "assets/images/recharge_wallet.svg";
+
   /// Assets for imagesRocket
   /// assets/images/Rocket.svg
   static const String imagesRocket = "assets/images/Rocket.svg";
