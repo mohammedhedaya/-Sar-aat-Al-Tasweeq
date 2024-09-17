@@ -124,7 +124,7 @@ class LaunchYourTelegramAdDrawer extends StatelessWidget {
               ),
               CustomLaunchDrawerItem(
                 onTap: () {
-                  context.push('/whatsappGroupsView');
+                  context.push('/telegramGroupsView');
                 },
                 title: "قنوات التليجرام",
                 image: Assets.imagesWhatsappGroupicon,
