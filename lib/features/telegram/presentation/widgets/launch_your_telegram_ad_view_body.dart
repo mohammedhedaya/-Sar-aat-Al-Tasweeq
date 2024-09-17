@@ -106,7 +106,7 @@ class _LaunchYourTelegramAdViewBodyState
               ),
               TextButton(
                 onPressed: () {
-                  context.push('/launchAdChatsView');
+                  context.push('/telegramChatsView');
                 },
                 style: ButtonStyle(
                   backgroundColor: _currentPage == 3

@@ -1,6 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shopping_chart/features/telegram/presentation/views/launch_your_telegram_ad_view.dart';
+import 'package:shopping_chart/features/telegram/presentation/views/telegram_chats_View.dart';
 import 'package:shopping_chart/features/telegram/presentation/views/telegram_choose_destination_view.dart';
 import 'package:shopping_chart/features/telegram/presentation/views/telegram_view.dart';
 import '../../features/whatsapp/presentation/views/convert_number_to_whatsapp_link_view.dart';
@@ -65,7 +66,7 @@ final GoRouter router = GoRouter(
       path: '/',
       builder: (context, state) => BlocProvider(
         create: (context) => getIt<AuthCubit>(),
-        child: const UserMainLayoutScreen(),
+        child: const LoginView(),
       ),
     ),
     GoRoute(
@@ -308,6 +309,10 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/telegramChooseDestinationView',
       builder: (context, state) => const TelegramChooseDestinationView(),
+    ),
+     GoRoute(
+      path: '/telegramChatsView',
+      builder: (context, state) => const TelegramChatsView(),
     ),
   ],
 );
