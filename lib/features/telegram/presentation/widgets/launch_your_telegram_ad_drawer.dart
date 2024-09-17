@@ -110,7 +110,7 @@ class LaunchYourTelegramAdDrawer extends StatelessWidget {
               ),
               CustomLaunchDrawerItem(
                 onTap: () {
-                  context.push('/launchAdAddWhatsappGroupsView');
+                  context.push('/launchAdTelegramGroupsView');
                 },
                 title: "إضافة جروبك (زود المتابعين)",
                 image: Assets.imagesAddgroup,

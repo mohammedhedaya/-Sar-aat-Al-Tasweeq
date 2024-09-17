@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shopping_chart/features/telegram/presentation/widgets/launch_telegram_groups_view_body.dart';
 import '../../../../core/utils/app_text_style.dart';
-import '../widgets/launch_ad_add_whatsapp_groups_view_body.dart';
 
-class LaunchAdAddWhatsappGroupsView extends StatelessWidget {
-  const LaunchAdAddWhatsappGroupsView({super.key});
+class LaunchAdTelegramGroupsView extends StatelessWidget {
+  const LaunchAdTelegramGroupsView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class LaunchAdAddWhatsappGroupsView extends StatelessWidget {
           ),
         ],
       ),
-      body: const LaunchAdAddWhatsappGroupsViewBody(),
+      body: const LaunchAdTelegramGroupsViewBody(),
     );
   }
 }
