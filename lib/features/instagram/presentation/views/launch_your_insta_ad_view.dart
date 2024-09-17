@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:shopping_chart/core/utils/app_colors.dart';
 import 'package:shopping_chart/core/utils/app_text_style.dart';
 import 'package:shopping_chart/core/utils/assets.dart';
+import 'package:shopping_chart/features/instagram/presentation/widgets/launch_your_ad_insta_drawer.dart';
 import 'package:shopping_chart/features/instagram/presentation/widgets/launch_your_insta_ad_view_body.dart';
 
 class LaunchYourInstaAdView extends StatefulWidget {
@@ -20,7 +21,7 @@ class _LaunchYourInstaAdViewState extends State<LaunchYourInstaAdView> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      drawer: const Drawer(),
+      drawer: const LaunchYourAdInstagramDrawer(),
       floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
       floatingActionButton: FloatingActionButton(
         elevation: 10,
@@ -76,3 +77,4 @@ class _LaunchYourInstaAdViewState extends State<LaunchYourInstaAdView> {
     );
   }
 }
+

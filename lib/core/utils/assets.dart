@@ -118,6 +118,10 @@ class Assets {
   /// assets/images/iconTheme.svg
   static const String imagesIconTheme = "assets/images/iconTheme.svg";
 
+  /// Assets for imagesIconsendtwoarrow
+  /// assets/images/iconsendtwoarrow.svg
+  static const String imagesIconsendtwoarrow = "assets/images/iconsendtwoarrow.svg";
+
   /// Assets for imagesImageInProfile
   /// assets/images/imageInProfile.png
   static const String imagesImageInProfile = "assets/images/imageInProfile.png";
@@ -253,6 +257,10 @@ class Assets {
   /// Assets for imagesSendforward
   /// assets/images/sendforward.svg
   static const String imagesSendforward = "assets/images/sendforward.svg";
+
+  /// Assets for imagesShareDribbbleLight
+  /// assets/images/shareDribbbleLight.svg
+  static const String imagesShareDribbbleLight = "assets/images/shareDribbbleLight.svg";
 
   /// Assets for imagesShareingWithMyFriends
   /// assets/images/shareingWithMyFriends.svg

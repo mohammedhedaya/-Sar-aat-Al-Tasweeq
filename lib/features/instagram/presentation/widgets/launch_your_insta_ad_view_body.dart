@@ -23,7 +23,7 @@ class _LaunchYourInstaAdViewBodyState extends State<LaunchYourInstaAdViewBody> {
   final ImagePicker _picker = ImagePicker();
 
   Future<void> _pickMedia() async {
-    final pickedFile = await _picker.pickImage(source: ImageSource.camera);
+    final pickedFile = await _picker.pickImage(source: ImageSource.gallery);
 
     if (pickedFile != null) {
       setState(() {
