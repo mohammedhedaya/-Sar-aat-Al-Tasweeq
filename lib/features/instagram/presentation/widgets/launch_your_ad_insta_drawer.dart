@@ -109,7 +109,9 @@ class LaunchYourAdInstagramDrawer extends StatelessWidget {
                 image: Assets.imagesIconsendtwoarrow,
               ),
               CustomLaunchDrawerItem(
-                onTap: () {},
+                onTap: () {
+                  context.push("/choosePersonAndSendAdView");
+                },
                 title: "أختر شخص من الإنستجرام ارسل اعلانك على جميع متابعينه",
                 image: Assets.imagesShareDribbbleLight,
               ),

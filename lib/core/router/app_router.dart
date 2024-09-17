@@ -1,6 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shopping_chart/features/instagram/presentation/views/add_hashtags_view.dart';
+import 'package:shopping_chart/features/instagram/presentation/views/choose_person_and_send_ad_view.dart';
 import 'package:shopping_chart/features/instagram/presentation/views/instagram_choose_destination_view.dart';
 import 'package:shopping_chart/features/instagram/presentation/views/instagram_sending_view.dart';
 import 'package:shopping_chart/features/instagram/presentation/views/launch_your_insta_ad_view.dart';
@@ -76,7 +77,7 @@ final GoRouter router = GoRouter(
       path: '/',
       builder: (context, state) => BlocProvider(
         create: (context) => getIt<AuthCubit>(),
-        child: const InstagramView(),
+        child: const LaunchYourInstaAdView(),
       ),
     ),
     GoRoute(
@@ -360,9 +361,13 @@ final GoRouter router = GoRouter(
       path: '/instagramChooseDestinationView',
       builder: (context, state) => const InstagramChooseDestinationView(),
     ),
-     GoRoute(
+    GoRoute(
       path: '/instagramSendingView',
       builder: (context, state) => const InstagramSendingView(),
+    ),
+    GoRoute(
+      path: '/choosePersonAndSendAdView',
+      builder: (context, state) => const ChoosePersonAndSendAdView(),
     ),
   ],
 );
