@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shopping_chart/features/telegram/presentation/views/launch_pages_view/telegram_page_view.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 
@@ -135,7 +136,7 @@ class _LaunchYourTelegramAdViewBodyState
                 });
               },
               children: const [
-                // Page 1: WhatsApp
+                // Page 1: Telegram
                 TelegramPageView(),
                 // Page 2: Phone Directory
                 TelegramPhoneDirectoryPageView(),
@@ -145,19 +146,6 @@ class _LaunchYourTelegramAdViewBodyState
             ),
           ),
         ],
-      ),
-    );
-  }
-}
-
-class TelegramPageView extends StatelessWidget {
-  const TelegramPageView({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      child: Text(
-        "Telegram Page",
       ),
     );
   }
