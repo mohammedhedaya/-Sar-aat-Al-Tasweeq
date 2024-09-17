@@ -170,7 +170,9 @@ class _SendYourAdToFollowersViewBodyState
                   SizedBox(height: 21.h),
                   Center(
                     child: InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        context.push("/instagramChooseDestinationView");
+                      },
                       child: Container(
                         height: 40.h,
                         width: 200.w,
