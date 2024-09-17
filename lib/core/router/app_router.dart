@@ -5,6 +5,7 @@ import 'package:shopping_chart/features/instagram/presentation/views/choose_pers
 import 'package:shopping_chart/features/instagram/presentation/views/instagram_choose_destination_view.dart';
 import 'package:shopping_chart/features/instagram/presentation/views/instagram_sending_view.dart';
 import 'package:shopping_chart/features/instagram/presentation/views/launch_your_insta_ad_view.dart';
+import 'package:shopping_chart/features/instagram/presentation/views/search_person_to_send_ad_view.dart';
 import 'package:shopping_chart/features/instagram/presentation/views/send_your_ad_to_followers_view.dart';
 import '../../features/instagram/presentation/views/instagram_view.dart';
 import '../../features/telegram/presentation/views/convert_number_to_telegram_link_view.dart';
@@ -368,6 +369,10 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/choosePersonAndSendAdView',
       builder: (context, state) => const ChoosePersonAndSendAdView(),
+    ),
+    GoRoute(
+      path: '/searchPersonToSendAdView',
+      builder: (context, state) => const SearchPersonToSendAdView(),
     ),
   ],
 );

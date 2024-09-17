@@ -41,8 +41,8 @@ class AddHashtagsViewBody extends StatelessWidget {
                 ),
                 filled: true,
                 fillColor: const Color(0xffF3F3F3),
-                prefixIcon: Padding(
-                  padding: const EdgeInsets.all(5.0),
+                prefixIcon: Transform.scale(
+                  scale: 0.7,
                   child: SvgPicture.asset(
                     Assets.imagesKeyIcon,
                     height: 15.h,

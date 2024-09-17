@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:shopping_chart/core/utils/app_colors.dart';
 import 'package:shopping_chart/core/utils/app_text_style.dart';
@@ -156,7 +157,9 @@ class _ChoosePersonAndSendAdViewBodyState
                   SizedBox(height: 35.h),
                   Center(
                     child: CustomAuthBtn(
-                      onPressed: () {},
+                      onPressed: () {
+                        context.push("/searchPersonToSendAdView");
+                      },
                       text: "أبحث عن شخص ارسل اعلانك على جميع متابعينة",
                     ),
                   ),
