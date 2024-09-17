@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shopping_chart/features/telegram/presentation/views/convert_number_to_telegram_link_view.dart';
 import 'package:shopping_chart/features/telegram/presentation/views/launch_your_telegram_ad_view.dart';
 import 'package:shopping_chart/features/telegram/presentation/views/telegram_chats_View.dart';
 import 'package:shopping_chart/features/telegram/presentation/views/telegram_choose_destination_view.dart';
@@ -310,9 +311,13 @@ final GoRouter router = GoRouter(
       path: '/telegramChooseDestinationView',
       builder: (context, state) => const TelegramChooseDestinationView(),
     ),
-     GoRoute(
+    GoRoute(
       path: '/telegramChatsView',
       builder: (context, state) => const TelegramChatsView(),
+    ),
+    GoRoute(
+      path: '/convertNumberToTelegramLinkView',
+      builder: (context, state) => const ConvertNumberToTelegramLinkView(),
     ),
   ],
 );
