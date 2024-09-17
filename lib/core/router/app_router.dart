@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shopping_chart/features/instagram/presentation/views/launch_your_insta_ad_view.dart';
 import '../../features/instagram/presentation/views/instagram_view.dart';
 import '../../features/telegram/presentation/views/convert_number_to_telegram_link_view.dart';
 import '../../features/telegram/presentation/views/launch_ad_telegram_groups_view.dart';
@@ -71,7 +72,7 @@ final GoRouter router = GoRouter(
       path: '/',
       builder: (context, state) => BlocProvider(
         create: (context) => getIt<AuthCubit>(),
-        child: const LoginView(),
+        child: const InstagramView(),
       ),
     ),
     GoRoute(
@@ -338,6 +339,10 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/instagramView',
       builder: (context, state) => const InstagramView(),
+    ),
+     GoRoute(
+      path: '/launchYourInstaAdView',
+      builder: (context, state) => const LaunchYourInstaAdView(),
     ),
   ],
 );

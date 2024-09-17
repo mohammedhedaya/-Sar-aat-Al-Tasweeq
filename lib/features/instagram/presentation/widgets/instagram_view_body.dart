@@ -78,7 +78,7 @@ class InstagramViewBody extends StatelessWidget {
                         builder: (context) {
                           return CustomShowDialog(
                             onTap: () {
-                              context.pop();
+                              context.push("/launchYourInstaAdView");
                             },
                             image: Assets.imagesXerror,
                             textButton: "الأشتراك",

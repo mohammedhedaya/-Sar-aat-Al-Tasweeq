@@ -306,6 +306,10 @@ class Assets {
   /// assets/images/telegramlogo.svg
   static const String imagesTelegramlogo = "assets/images/telegramlogo.svg";
 
+  /// Assets for imagesUploadIcon
+  /// assets/images/uploadIcon.svg
+  static const String imagesUploadIcon = "assets/images/uploadIcon.svg";
+
   /// Assets for imagesVerifyIcon
   /// assets/images/verify-icon.svg
   static const String imagesVerifyIcon = "assets/images/verify-icon.svg";
