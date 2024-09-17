@@ -298,6 +298,10 @@ class Assets {
   /// assets/images/telegramImage.webp
   static const String imagesTelegramImage = "assets/images/telegramImage.webp";
 
+  /// Assets for imagesTelegramlogo
+  /// assets/images/telegramlogo.svg
+  static const String imagesTelegramlogo = "assets/images/telegramlogo.svg";
+
   /// Assets for imagesVerifyIcon
   /// assets/images/verify-icon.svg
   static const String imagesVerifyIcon = "assets/images/verify-icon.svg";

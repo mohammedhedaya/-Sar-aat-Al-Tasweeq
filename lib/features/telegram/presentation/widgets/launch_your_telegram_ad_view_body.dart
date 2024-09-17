@@ -3,20 +3,17 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
-import '../views/launch_pages_view/delete_page_view.dart';
-import '../views/launch_pages_view/phone_directory_page_view.dart';
-import '../views/launch_pages_view/whatsapp_page_view.dart';
 
-class LaunchYourWhatsappAdViewBody extends StatefulWidget {
-  const LaunchYourWhatsappAdViewBody({super.key});
+class LaunchYourTelegramAdViewBody extends StatefulWidget {
+  const LaunchYourTelegramAdViewBody({super.key});
 
   @override
-  State<LaunchYourWhatsappAdViewBody> createState() =>
-      _LaunchYourWhatsappAdViewBodyState();
+  State<LaunchYourTelegramAdViewBody> createState() =>
+      _LaunchYourTelegramAdViewBodyState();
 }
 
-class _LaunchYourWhatsappAdViewBodyState
-    extends State<LaunchYourWhatsappAdViewBody> {
+class _LaunchYourTelegramAdViewBodyState
+    extends State<LaunchYourTelegramAdViewBody> {
   final PageController _pageController = PageController();
   int _currentPage = 0;
 
@@ -58,7 +55,7 @@ class _LaunchYourWhatsappAdViewBodyState
                   elevation: WidgetStateProperty.all(4),
                 ),
                 child: Text(
-                  "واتساب",
+                  "التليجرام",
                   style: AppStyles.style10W800,
                 ),
               ),
@@ -139,15 +136,54 @@ class _LaunchYourWhatsappAdViewBodyState
               },
               children: const [
                 // Page 1: WhatsApp
-                WhatsappPageView(),
+                TelegramPageView(),
                 // Page 2: Phone Directory
-                PhoneDirectoryPageView(),
+                TelegramPhoneDirectoryPageView(),
                 // Page 3: Deleted
-                DeletePageView(),
+                TelegramDeletePageView(),
               ],
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class TelegramPageView extends StatelessWidget {
+  const TelegramPageView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Center(
+      child: Text(
+        "Telegram Page",
+      ),
+    );
+  }
+}
+
+class TelegramPhoneDirectoryPageView extends StatelessWidget {
+  const TelegramPhoneDirectoryPageView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Center(
+      child: Text(
+        "Phone Directory Page",
+      ),
+    );
+  }
+}
+
+class TelegramDeletePageView extends StatelessWidget {
+  const TelegramDeletePageView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Center(
+      child: Text(
+        "Deleted Page",
       ),
     );
   }

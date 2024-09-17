@@ -64,7 +64,9 @@ class HomeViewBody extends StatelessWidget {
               ),
               SizedBox(height: 50.h),
               SocialMediaCard(
-                onTap: () {},
+                onTap: () {
+                  context.push('/telegramView');
+                },
                 imagePath: Assets.imagesTelegramImage,
                 label: 'TELEGRAM',
               ),

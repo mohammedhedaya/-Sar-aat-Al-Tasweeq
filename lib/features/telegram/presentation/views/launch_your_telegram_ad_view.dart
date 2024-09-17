@@ -2,26 +2,27 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shopping_chart/features/telegram/presentation/widgets/launch_your_telegram_ad_view_body.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
-import '../widgets/launch_your_ad_drawer.dart';
-import '../widgets/launch_your_ad_view_body.dart';
 
-class LaunchYourAdView extends StatefulWidget {
-  const LaunchYourAdView({super.key});
+
+class LaunchYourTelegramAdView extends StatefulWidget {
+  const LaunchYourTelegramAdView({super.key});
 
   @override
-  State<LaunchYourAdView> createState() => _LaunchYourAdViewState();
+  State<LaunchYourTelegramAdView> createState() =>
+      _LaunchYourTelegramAdViewState();
 }
 
-class _LaunchYourAdViewState extends State<LaunchYourAdView> {
+class _LaunchYourTelegramAdViewState extends State<LaunchYourTelegramAdView> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      drawer: const LaunchYourAdDrawer(),
+      // drawer: const LaunchYourAdDrawer(),
       floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
       floatingActionButton: FloatingActionButton(
         elevation: 10,
@@ -71,7 +72,7 @@ class _LaunchYourAdViewState extends State<LaunchYourAdView> {
           ),
         ],
       ),
-      body: const LaunchYourAdViewBody(),
+      body: const LaunchYourTelegramAdViewBody(),
     );
   }
 }

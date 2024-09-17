@@ -1,5 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shopping_chart/features/telegram/presentation/views/launch_your_telegram_ad_view.dart';
+import 'package:shopping_chart/features/telegram/presentation/views/telegram_view.dart';
 import '../../features/whatsapp/presentation/views/convert_number_to_whatsapp_link_view.dart';
 import '../../features/whatsapp/presentation/views/delete_choose_the_destination_view.dart';
 import '../../features/whatsapp/presentation/views/delete_sending_view.dart';
@@ -14,7 +16,7 @@ import '../../features/whatsapp/presentation/views/phone_choose_the_destination_
 import '../../features/whatsapp/presentation/views/phone_sending_view.dart';
 import '../../features/whatsapp/presentation/views/sending_choosen_group_view.dart';
 import '../../features/whatsapp/presentation/views/whatsapp_choose_the_destination_view.dart';
-import '../../features/whatsapp/presentation/views/launch_your_ad_view.dart';
+import '../../features/whatsapp/presentation/views/launch_your_whatsapp_ad_view.dart';
 import '../../features/whatsapp/presentation/views/scan_qr_code_view.dart';
 import '../../features/whatsapp/presentation/views/scan_qr_container_view.dart';
 import '../../features/whatsapp/presentation/views/whastapp_sending_view.dart';
@@ -62,7 +64,7 @@ final GoRouter router = GoRouter(
       path: '/',
       builder: (context, state) => BlocProvider(
         create: (context) => getIt<AuthCubit>(),
-        child: const LoginView(),
+        child: const UserMainLayoutScreen(),
       ),
     ),
     GoRoute(
@@ -228,7 +230,7 @@ final GoRouter router = GoRouter(
     ),
     GoRoute(
       path: '/launchYourAdView',
-      builder: (context, state) => const LaunchYourAdView(),
+      builder: (context, state) => const LaunchYourWhatsappAdView(),
     ),
     GoRoute(
       path: '/whatsappChooseTheDestinationView',
@@ -294,5 +296,15 @@ final GoRouter router = GoRouter(
       path: '/whatsappGroupsDetailsView',
       builder: (context, state) => const WhatsappGroupsDetailsView(),
     ),
+    GoRoute(
+      path: '/telegramView',
+      builder: (context, state) => const TelegramView(),
+    ),
+      GoRoute(
+      path: '/launchYourTelegramAdView',
+      builder: (context, state) => const LaunchYourTelegramAdView(),
+    ),
+  
   ],
+  
 );
