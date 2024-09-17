@@ -62,7 +62,7 @@ class TelegramPageView extends StatelessWidget {
           Center(
             child: InkWell(
               onTap: () {
-                context.push('/whatsappChooseTheDestinationView');
+                context.push('/telegramChooseDestinationView');
               },
               child: Container(
                 height: 40.h,
