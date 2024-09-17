@@ -4,11 +4,12 @@ import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
+import '../../../auth/presentation/widgets/auth_btn.dart';
+import '../../../auth/presentation/widgets/auth_text_field.dart';
 import '../../../whatsapp/presentation/widgets/custom_show_dialog.dart';
-import '../../../whatsapp/presentation/widgets/custom_subscribe_btn.dart';
 
-class TelegramViewBody extends StatelessWidget {
-  const TelegramViewBody({super.key});
+class InstagramViewBody extends StatelessWidget {
+  const InstagramViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,11 +20,11 @@ class TelegramViewBody extends StatelessWidget {
             children: [
               Center(
                 child: SvgPicture.asset(
-                  Assets.imagesTelegramlogo,
+                  Assets.imagesInstagramIcon,
                 ),
               ),
               Text(
-                "Telegram",
+                "Instagram",
                 style: AppStyles.style78W400,
                 textAlign: TextAlign.center,
               ),
@@ -47,48 +48,64 @@ class TelegramViewBody extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                CustomSubscribeBtn(
-                  onPressed: () {
-                    showDialog(
-                      context: context,
-                      barrierColor: const Color(0xffFFF9F9).withOpacity(0.33),
-                      builder: (context) {
-                        return CustomShowDialog(
-                          onTap: () {
-                            context.push('/launchYourTelegramAdView');
-                          },
-                          image: Assets.imagesXerror,
-                          textButton: "الأشتراك",
-                          content: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                "الرجاء الأشتراك فى الباقة",
-                                style: AppStyles.style15W900,
-                                textAlign: TextAlign.center,
-                              ),
-                              SizedBox(width: 10.w),
-                              SvgPicture.asset(
-                                Assets.imagesSubscribeOfPackage,
-                              ),
-                            ],
-                          ),
-                        );
-                      },
-                    );
-                  },
-                  text: "إضافة رقم التليجرام",
+                CustomAuthTextField(
+                  onChanged: (value) {},
+                  hintStyle: AppStyles.style14W400.copyWith(
+                    color: const Color(0xffBABABA),
+                  ),
+                  hintText: "اسم المستخدم",
+                  textAlign: TextAlign.center,
+                  fiiledColor: Colors.white.withOpacity(0.10),
                 ),
-                SizedBox(height: 50.h),
-                CustomSubscribeBtn(
-                  onPressed: () {
-                    context.push('/scanQrCodeView');
-                  },
-                  text: "مسح الباركود",
+                SizedBox(height: 35.h),
+                CustomAuthTextField(
+                  onChanged: (value) {},
+                  hintStyle: AppStyles.style14W400.copyWith(
+                    color: const Color(0xffBABABA),
+                  ),
+                  hintText: "كلمة السر",
+                  textAlign: TextAlign.center,
+                  fiiledColor: Colors.white.withOpacity(0.10),
+                ),
+                SizedBox(height: 36.h),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 40.w),
+                  child: CustomAuthBtn(
+                    onPressed: () {
+                      showDialog(
+                        context: context,
+                        barrierColor: const Color(0xffFFF9F9).withOpacity(0.33),
+                        builder: (context) {
+                          return CustomShowDialog(
+                            onTap: () {
+                              context.pop();
+                            },
+                            image: Assets.imagesXerror,
+                            textButton: "الأشتراك",
+                            content: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  "الرجاء الأشتراك فى الباقة",
+                                  style: AppStyles.style15W900,
+                                  textAlign: TextAlign.center,
+                                ),
+                                SizedBox(width: 10.w),
+                                SvgPicture.asset(
+                                  Assets.imagesSubscribeOfPackage,
+                                ),
+                              ],
+                            ),
+                          );
+                        },
+                      );
+                    },
+                    text: "دخول",
+                  ),
                 ),
                 SizedBox(height: 39.h),
                 Text(
-                 "شاهد طريقة أستخدام التليجرام ؟",
+                  "شاهد طريقة أستخدام الانستجرام ؟",
                   style: AppStyles.style14W600,
                 ),
                 SizedBox(height: 10.h),

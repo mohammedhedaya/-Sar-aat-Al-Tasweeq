@@ -130,6 +130,10 @@ class Assets {
   /// assets/images/imageSea.png
   static const String imagesImageSea = "assets/images/imageSea.png";
 
+  /// Assets for imagesInstagramIcon
+  /// assets/images/instagramIcon.svg
+  static const String imagesInstagramIcon = "assets/images/instagramIcon.svg";
+
   /// Assets for imagesInstagramNewGradientLogoAnimation
   /// assets/images/instagram-new-gradient-logo-animation.gif
   static const String imagesInstagramNewGradientLogoAnimation = "assets/images/instagram-new-gradient-logo-animation.gif";

@@ -1,13 +1,14 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:shopping_chart/features/telegram/presentation/views/convert_number_to_telegram_link_view.dart';
-import 'package:shopping_chart/features/telegram/presentation/views/launch_ad_telegram_groups_view.dart';
-import 'package:shopping_chart/features/telegram/presentation/views/launch_your_telegram_ad_view.dart';
-import 'package:shopping_chart/features/telegram/presentation/views/telegram_chats_View.dart';
-import 'package:shopping_chart/features/telegram/presentation/views/telegram_choose_destination_view.dart';
-import 'package:shopping_chart/features/telegram/presentation/views/telegram_groups_details_view.dart';
-import 'package:shopping_chart/features/telegram/presentation/views/telegram_groups_view.dart';
-import 'package:shopping_chart/features/telegram/presentation/views/telegram_view.dart';
+import '../../features/instagram/presentation/views/instagram_view.dart';
+import '../../features/telegram/presentation/views/convert_number_to_telegram_link_view.dart';
+import '../../features/telegram/presentation/views/launch_ad_telegram_groups_view.dart';
+import '../../features/telegram/presentation/views/launch_your_telegram_ad_view.dart';
+import '../../features/telegram/presentation/views/telegram_chats_View.dart';
+import '../../features/telegram/presentation/views/telegram_choose_destination_view.dart';
+import '../../features/telegram/presentation/views/telegram_groups_details_view.dart';
+import '../../features/telegram/presentation/views/telegram_groups_view.dart';
+import '../../features/telegram/presentation/views/telegram_view.dart';
 import '../../features/whatsapp/presentation/views/convert_number_to_whatsapp_link_view.dart';
 import '../../features/whatsapp/presentation/views/delete_choose_the_destination_view.dart';
 import '../../features/whatsapp/presentation/views/delete_sending_view.dart';
@@ -330,9 +331,13 @@ final GoRouter router = GoRouter(
       path: '/telegramGroupsView',
       builder: (context, state) => const TelegramGroupsView(),
     ),
-     GoRoute(
+    GoRoute(
       path: '/telegramGroupsDetailsView',
       builder: (context, state) => const TelegramGroupsDetailsView(),
+    ),
+    GoRoute(
+      path: '/instagramView',
+      builder: (context, state) => const InstagramView(),
     ),
   ],
 );

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:shopping_chart/features/telegram/presentation/views/launch_pages_view/telegram_delete_page_view.dart';
-import 'package:shopping_chart/features/telegram/presentation/views/launch_pages_view/telegram_page_view.dart';
-import 'package:shopping_chart/features/telegram/presentation/views/launch_pages_view/telegram_phone_page_view.dart';
+import '../views/launch_pages_view/telegram_delete_page_view.dart';
+import '../views/launch_pages_view/telegram_page_view.dart';
+import '../views/launch_pages_view/telegram_phone_page_view.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 
