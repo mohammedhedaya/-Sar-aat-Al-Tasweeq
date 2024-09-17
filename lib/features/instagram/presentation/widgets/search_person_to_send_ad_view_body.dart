@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:shopping_chart/core/utils/app_text_style.dart';
-import 'package:shopping_chart/core/utils/assets.dart';
+import 'package:go_router/go_router.dart';
+import '../../../../core/utils/app_text_style.dart';
+import '../../../../core/utils/assets.dart';
 
 class SearchPersonToSendAdViewBody extends StatelessWidget {
   const SearchPersonToSendAdViewBody({super.key});
@@ -16,7 +17,7 @@ class SearchPersonToSendAdViewBody extends StatelessWidget {
           Align(
             alignment: AlignmentDirectional.topStart,
             child: Text(
-              "  أبحث عن شخص ارسل اعلانك على جميع متابعينة",
+              "أبحث عن شخص ارسل اعلانك على جميع متابعينة",
               style: AppStyles.style13W600.copyWith(
                 fontWeight: FontWeight.w700,
               ),
@@ -60,29 +61,34 @@ class SearchPersonToSendAdViewBody extends StatelessWidget {
                     children: List.generate(
                       3,
                       (index) {
-                        return Padding(
-                          padding: EdgeInsets.only(
-                            left: 11.w,
-                            right: 11.w,
-                            bottom: 28.h,
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              Text(
-                                "CARZIMA24",
-                                style: AppStyles.style13W600.copyWith(
-                                  fontWeight: FontWeight.w700,
+                        return InkWell(
+                          onTap: (){
+                            context.push("/userDetailsView");
+                          },
+                          child: Padding(
+                            padding: EdgeInsets.only(
+                              left: 11.w,
+                              right: 11.w,
+                              bottom: 28.h,
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Text(
+                                  "CARZIMA24",
+                                  style: AppStyles.style13W600.copyWith(
+                                    fontWeight: FontWeight.w700,
+                                  ),
                                 ),
-                              ),
-                              SizedBox(width: 17.w),
-                              CircleAvatar(
-                                radius: 20.r,
-                                backgroundImage: const AssetImage(
-                                  Assets.imagesImageInProfile,
+                                SizedBox(width: 17.w),
+                                CircleAvatar(
+                                  radius: 20.r,
+                                  backgroundImage: const AssetImage(
+                                    Assets.imagesImageInProfile,
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         );
                       },
