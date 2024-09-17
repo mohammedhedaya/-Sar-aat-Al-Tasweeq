@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shopping_chart/features/instagram/presentation/views/add_hashtags_view.dart';
 import 'package:shopping_chart/features/instagram/presentation/views/launch_your_insta_ad_view.dart';
 import '../../features/instagram/presentation/views/instagram_view.dart';
 import '../../features/telegram/presentation/views/convert_number_to_telegram_link_view.dart';
@@ -340,9 +341,13 @@ final GoRouter router = GoRouter(
       path: '/instagramView',
       builder: (context, state) => const InstagramView(),
     ),
-     GoRoute(
+    GoRoute(
       path: '/launchYourInstaAdView',
       builder: (context, state) => const LaunchYourInstaAdView(),
+    ),
+    GoRoute(
+      path: '/addHashtagsView',
+      builder: (context, state) => const AddHashtagsView(),
     ),
   ],
 );
