@@ -2,6 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shopping_chart/features/instagram/presentation/views/add_hashtags_view.dart';
 import 'package:shopping_chart/features/instagram/presentation/views/launch_your_insta_ad_view.dart';
+import 'package:shopping_chart/features/instagram/presentation/views/send_your_ad_to_followers_view.dart';
 import '../../features/instagram/presentation/views/instagram_view.dart';
 import '../../features/telegram/presentation/views/convert_number_to_telegram_link_view.dart';
 import '../../features/telegram/presentation/views/launch_ad_telegram_groups_view.dart';
@@ -348,6 +349,10 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/addHashtagsView',
       builder: (context, state) => const AddHashtagsView(),
+    ),
+    GoRoute(
+      path: '/sendYourAdToFollowersView',
+      builder: (context, state) => const SendYourAdToFollowersView(),
     ),
   ],
 );

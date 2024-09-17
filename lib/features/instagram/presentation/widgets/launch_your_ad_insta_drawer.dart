@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:shopping_chart/core/utils/app_colors.dart';
 import 'package:shopping_chart/core/utils/app_text_style.dart';
 import 'package:shopping_chart/core/utils/assets.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/widgets/custom_launch_drawer_item.dart';
 
 class LaunchYourAdInstagramDrawer extends StatelessWidget {
-  const LaunchYourAdInstagramDrawer({
-    super.key,
-  });
+  const LaunchYourAdInstagramDrawer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -103,7 +102,9 @@ class LaunchYourAdInstagramDrawer extends StatelessWidget {
               ),
               SizedBox(height: 67.h),
               CustomLaunchDrawerItem(
-                onTap: () {},
+                onTap: () {
+                  context.push("/sendYourAdToFollowersView");
+                },
                 title: "أرسل إعلانك على المتابعين والمتابعون.",
                 image: Assets.imagesIconsendtwoarrow,
               ),
