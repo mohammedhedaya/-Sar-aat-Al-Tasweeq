@@ -23,6 +23,7 @@ class InstagramView extends StatelessWidget {
               Icons.arrow_forward_ios_sharp,
               color: AppColors.whiteColor,
             ),
+            
           ),
         ],
       ),
