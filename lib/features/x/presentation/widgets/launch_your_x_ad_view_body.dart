@@ -212,7 +212,9 @@ class _LaunchYourXAdViewBodyState extends State<LaunchYourXAdViewBody> {
             SizedBox(height: 21.h),
             Center(
               child: InkWell(
-                onTap: () {},
+                onTap: () {
+                  context.push("/sendingXAdView");
+                },
                 child: Container(
                   height: 40.h,
                   width: 200.w,
