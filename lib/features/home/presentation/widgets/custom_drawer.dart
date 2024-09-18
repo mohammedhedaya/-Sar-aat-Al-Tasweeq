@@ -15,6 +15,7 @@ class CustomMenuDrawer extends StatelessWidget {
         borderRadius: BorderRadius.circular(0.r),
       ),
       backgroundColor: AppColors.navBarColor,
+      clipBehavior: Clip.none,
       child: const DrawerBody(),
     );
   }
