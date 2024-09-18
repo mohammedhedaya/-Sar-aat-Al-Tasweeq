@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shopping_chart/features/x/presentation/views/launch_your_x_ad_view.dart';
 import 'package:shopping_chart/features/x/presentation/views/x_view.dart';
 import '../../features/instagram/presentation/views/add_hashtags_view.dart';
 import '../../features/instagram/presentation/views/choose_person_and_send_ad_view.dart';
@@ -383,6 +384,10 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/xView',
       builder: (context, state) => const XView(),
+    ),
+    GoRoute(
+      path: '/launchYourXAdView',
+      builder: (context, state) => const LaunchYourXAdView(),
     ),
   ],
 );
