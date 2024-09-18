@@ -17,7 +17,7 @@ class _SwithThemeState extends State<SwithTheme> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: Alignment.topLeft,
+      alignment: AlignmentDirectional.topEnd,
       child: Container(
         width: 0.2.sw,
         height: 0.1.sw,
@@ -38,7 +38,7 @@ class _SwithThemeState extends State<SwithTheme> {
               child: SvgPicture.asset(
                 Assets.imagesLight,
                 colorFilter: ColorFilter.mode(
-                  _isDarkTheme ? Colors.black : Colors.grey,
+                  _isDarkTheme ? Colors.white : Colors.black,
                   BlendMode.srcIn,
                 ),
               ),
@@ -50,11 +50,20 @@ class _SwithThemeState extends State<SwithTheme> {
                   _isDarkTheme = false;
                 });
               },
-              child: SvgPicture.asset(
-                Assets.imagesDark,
-                colorFilter: ColorFilter.mode(
-                  !_isDarkTheme ? Colors.black : Colors.grey,
-                  BlendMode.srcIn,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: _isDarkTheme ? Colors.transparent : Colors.black,
+                  shape: BoxShape.circle,
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(4.0),
+                  child: SvgPicture.asset(
+                    Assets.imagesDark,
+                    colorFilter: ColorFilter.mode(
+                      !_isDarkTheme ? Colors.white : Colors.black,
+                      BlendMode.srcIn,
+                    ),
+                  ),
                 ),
               ),
             ),
