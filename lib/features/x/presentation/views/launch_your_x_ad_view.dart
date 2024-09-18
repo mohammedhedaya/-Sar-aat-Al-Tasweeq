@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:shopping_chart/core/utils/app_colors.dart';
 import 'package:shopping_chart/core/utils/app_text_style.dart';
 import 'package:shopping_chart/core/utils/assets.dart';
+import 'package:shopping_chart/features/x/presentation/widgets/launch_your_x_ad_drawer.dart';
 import 'package:shopping_chart/features/x/presentation/widgets/launch_your_x_ad_view_body.dart';
 
 class LaunchYourXAdView extends StatefulWidget {
@@ -20,7 +21,7 @@ class _LaunchYourXAdViewState extends State<LaunchYourXAdView> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      drawer: const Drawer(),
+      drawer: const LaunchYourXAdDrawer(),
       floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
       floatingActionButton: FloatingActionButton(
         elevation: 10,
@@ -76,3 +77,4 @@ class _LaunchYourXAdViewState extends State<LaunchYourXAdView> {
     );
   }
 }
+
