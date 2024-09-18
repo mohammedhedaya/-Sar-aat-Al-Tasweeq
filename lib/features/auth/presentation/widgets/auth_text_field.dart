@@ -40,7 +40,7 @@ class CustomAuthTextField extends StatelessWidget {
       onChanged: onChanged,
       keyboardType: keyboardType,
       cursorColor: AppColors.whiteColor,
-      textAlign: textAlign ?? TextAlign.right,
+      textAlign: textAlign ?? TextAlign.start,
       style: const TextStyle(
         color: AppColors.whiteColor,
       ),

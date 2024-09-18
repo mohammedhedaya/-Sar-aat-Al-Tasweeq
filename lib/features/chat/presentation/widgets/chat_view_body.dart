@@ -94,7 +94,7 @@ class ChatViewBody extends StatelessWidget {
                     onSubmitted: (value) {},
                     onChanged: (value) {},
                     textDirection: TextDirection.rtl,
-                    textAlign: TextAlign.right,
+                    textAlign: TextAlign.start,
                     style: AppStyles.style12W400.copyWith(
                       color: const Color(0xff252525),
                       fontSize: 14.sp,

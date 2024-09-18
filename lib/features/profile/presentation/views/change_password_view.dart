@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
@@ -39,6 +38,7 @@ class ProfileChangePasswordView extends StatelessWidget {
                       ),
                       SizedBox(height: 25.h),
                       CustomAuthTextField(
+                        fiiledColor: AppColors.whiteColor.withOpacity(0.10),
                         hintText: "************",
                         textAlign: TextAlign.center,
                         prefixIcon: IconButton(
@@ -57,6 +57,7 @@ class ProfileChangePasswordView extends StatelessWidget {
                       ),
                       SizedBox(height: 23.h),
                       CustomAuthTextField(
+                        fiiledColor: AppColors.whiteColor.withOpacity(0.10),
                         hintText: "************",
                         textAlign: TextAlign.center,
                         prefixIcon: IconButton(
@@ -75,6 +76,7 @@ class ProfileChangePasswordView extends StatelessWidget {
                       ),
                       SizedBox(height: 23.h),
                       CustomAuthTextField(
+                        fiiledColor: AppColors.whiteColor.withOpacity(0.10),
                         hintText: "************",
                         textAlign: TextAlign.center,
                         prefixIcon: IconButton(

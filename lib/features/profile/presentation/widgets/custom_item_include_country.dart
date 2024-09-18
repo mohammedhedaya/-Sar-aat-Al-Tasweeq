@@ -21,7 +21,7 @@ class CustomItemIncludeCountry extends StatelessWidget {
                 style: AppStyles.style12W400.copyWith(
                   color: AppColors.whiteColor,
                 ),
-                textAlign: TextAlign.right,
+                textAlign: TextAlign.start,
               ),
               SizedBox(height: 9.h),
               Container(
@@ -39,7 +39,7 @@ class CustomItemIncludeCountry extends StatelessWidget {
                       child: Text(
                         'المملكة العربية السعودية',
                         style: AppStyles.style14W400,
-                        textAlign: TextAlign.right,
+                        textAlign: TextAlign.start,
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),
@@ -65,7 +65,7 @@ class CustomItemIncludeCountry extends StatelessWidget {
                 style: AppStyles.style12W400.copyWith(
                   color: AppColors.whiteColor,
                 ),
-                textAlign: TextAlign.right,
+                textAlign: TextAlign.start,
               ),
               SizedBox(height: 8.h),
               Container(
@@ -83,7 +83,7 @@ class CustomItemIncludeCountry extends StatelessWidget {
                       child: Text(
                         'الرياض',
                         style: AppStyles.style18W400,
-                        textAlign: TextAlign.right,
+                        textAlign: TextAlign.start,
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),

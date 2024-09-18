@@ -27,27 +27,24 @@ class EditProfileView extends StatelessWidget {
               children: [
                 SizedBox(height: 60.h),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Expanded(
-                      child: Column(
-                        children: [
-                          CircleAvatar(
-                            radius: 50.r,
-                            backgroundImage: const AssetImage(
-                              Assets.imagesImageInProfile,
-                            ),
+                    Column(
+                      children: [
+                        CircleAvatar(
+                          radius: 50.r,
+                          backgroundImage: const AssetImage(
+                            Assets.imagesImageInProfile,
                           ),
-                          SizedBox(height: 10.h),
-                          InkWell(
-                            onTap: () {},
-                            child: Text(
-                              "رفع صورة جديدة",
-                              style: AppStyles.style14W500,
-                            ),
+                        ),
+                        SizedBox(height: 10.h),
+                        InkWell(
+                          onTap: () {},
+                          child: Text(
+                            "رفع صورة جديدة",
+                            style: AppStyles.style14W500,
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                     Expanded(
                       child: Text(

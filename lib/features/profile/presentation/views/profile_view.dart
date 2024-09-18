@@ -28,17 +28,14 @@ class ProfileView extends StatelessWidget {
               children: [
                 SizedBox(height: 60.h),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Expanded(
-                      child: CircleAvatar(
-                        radius: 50,
-                        backgroundImage: AssetImage(
-                          Assets.imagesImageInProfile,
-                        ),
+                    const CircleAvatar(
+                      radius: 50,
+                      backgroundImage: AssetImage(
+                        Assets.imagesImageInProfile,
                       ),
                     ),
-                    // SizedBox(width: 25.w),
+                    SizedBox(width: 25.w),
                     Expanded(
                       child: Text(
                         "فيصل, عبدالعزيز",
@@ -58,8 +55,14 @@ class ProfileView extends StatelessWidget {
                   center: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("6 يوم", style: AppStyles.style14W800),
-                      Text("متبقي", style: AppStyles.style14W300),
+                      Text(
+                        "6 يوم",
+                        style: AppStyles.style14W800,
+                      ),
+                      Text(
+                        "متبقي",
+                        style: AppStyles.style14W300,
+                      ),
                     ],
                   ),
                 ),

@@ -26,7 +26,7 @@ class CustomProfileData extends StatelessWidget {
                       style: AppStyles.style12W400.copyWith(
                         color: AppColors.whiteColor,
                       ),
-                      textAlign: TextAlign.right,
+                      textAlign: TextAlign.start,
                     ),
                     SizedBox(height: 9.h),
                     Container(
@@ -60,7 +60,7 @@ class CustomProfileData extends StatelessWidget {
                       style: AppStyles.style12W400.copyWith(
                         color: AppColors.whiteColor,
                       ),
-                      textAlign: TextAlign.right,
+                      textAlign: TextAlign.start,
                     ),
                     SizedBox(height: 9.h),
                     Container(
@@ -77,7 +77,7 @@ class CustomProfileData extends StatelessWidget {
                         child: Text(
                           'عبدالعزيز',
                           style: AppStyles.style18W400,
-                          textAlign: TextAlign.right,
+                          textAlign: TextAlign.start,
                         ),
                       ),
                     ),
@@ -97,7 +97,7 @@ class CustomProfileData extends StatelessWidget {
                       "الاسم الثالث",
                       style: AppStyles.style12W400
                           .copyWith(color: AppColors.whiteColor, fontSize: 12),
-                      textAlign: TextAlign.right,
+                      textAlign: TextAlign.start,
                     ),
                     SizedBox(height: 9.h),
                     Container(
@@ -112,7 +112,7 @@ class CustomProfileData extends StatelessWidget {
                         child: Text(
                           'آل سعود',
                           style: AppStyles.style18W400,
-                          textAlign: TextAlign.right,
+                          textAlign: TextAlign.start,
                         ),
                       ),
                     ),
@@ -133,7 +133,7 @@ class CustomProfileData extends StatelessWidget {
                 style: AppStyles.style12W400.copyWith(
                   color: AppColors.whiteColor,
                 ),
-                textAlign: TextAlign.right,
+                textAlign: TextAlign.start,
               ),
               SizedBox(height: 9.h),
               Row(
@@ -154,7 +154,7 @@ class CustomProfileData extends StatelessWidget {
                         child: Text(
                           '5522335521',
                           style: AppStyles.style18W400,
-                          textAlign: TextAlign.right,
+                          textAlign: TextAlign.start,
                         ),
                       ),
                     ),
@@ -174,7 +174,7 @@ class CustomProfileData extends StatelessWidget {
                         Text(
                           '966',
                           style: AppStyles.style18W400,
-                          textAlign: TextAlign.right,
+                          textAlign: TextAlign.start,
                         ),
                         const Icon(
                           Icons.keyboard_arrow_down_outlined,

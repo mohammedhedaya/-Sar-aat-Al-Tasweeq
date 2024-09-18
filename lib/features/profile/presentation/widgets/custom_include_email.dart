@@ -20,7 +20,7 @@ class CustomIncludeEmail extends StatelessWidget {
                 style: AppStyles.style12W400.copyWith(
                   color: AppColors.whiteColor,
                 ),
-                textAlign: TextAlign.right,
+                textAlign: TextAlign.start,
               ),
               SizedBox(height: 9.h),
               Container(
@@ -32,12 +32,11 @@ class CustomIncludeEmail extends StatelessWidget {
                     Radius.circular(20.r),
                   ),
                 ),
-                child: Align(
-                  alignment: Alignment.centerRight,
+                child: Center(
                   child: Text(
                     'faisal_abdelaziz@yahoo.com',
                     style: AppStyles.style18W400,
-                    textAlign: TextAlign.start,
+                    textAlign: TextAlign.center,
                     overflow: TextOverflow.ellipsis,
                   ),
                 ),

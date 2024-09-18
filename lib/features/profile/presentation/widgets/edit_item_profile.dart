@@ -23,7 +23,7 @@ class EditItemProfile extends StatelessWidget {
                     Text(
                       "الاسم الأول",
                       style: AppStyles.style12W400Edite,
-                      textAlign: TextAlign.right,
+                      textAlign: TextAlign.start,
                     ),
                     SizedBox(height: 9.h),
                     TextFormField(
@@ -36,7 +36,7 @@ class EditItemProfile extends StatelessWidget {
                         ),
                       ),
                       style: AppStyles.style18W400,
-                      textAlign: TextAlign.right,
+                      textAlign: TextAlign.start,
                     ),
                   ],
                 ),
@@ -49,7 +49,7 @@ class EditItemProfile extends StatelessWidget {
                     Text(
                       "الاسم الثاني",
                       style: AppStyles.style12W400Edite,
-                      textAlign: TextAlign.right,
+                      textAlign: TextAlign.start,
                     ),
                     SizedBox(height: 9.h),
                     TextFormField(
@@ -62,7 +62,7 @@ class EditItemProfile extends StatelessWidget {
                         ),
                       ),
                       style: AppStyles.style18W400,
-                      textAlign: TextAlign.right,
+                      textAlign: TextAlign.start,
                     ),
                   ],
                 ),
@@ -79,7 +79,7 @@ class EditItemProfile extends StatelessWidget {
                     Text(
                       "الاسم الثالث",
                       style: AppStyles.style12W400Edite,
-                      textAlign: TextAlign.right,
+                      textAlign: TextAlign.start,
                     ),
                     SizedBox(height: 9.h),
                     TextFormField(
@@ -92,7 +92,7 @@ class EditItemProfile extends StatelessWidget {
                         ),
                       ),
                       style: AppStyles.style18W400,
-                      textAlign: TextAlign.right,
+                      textAlign: TextAlign.start,
                     ),
                   ],
                 ),
@@ -111,7 +111,7 @@ class EditItemProfile extends StatelessWidget {
                 child: Text(
                   "رقم الهاتف",
                   style: AppStyles.style12W400Edite,
-                  textAlign: TextAlign.right,
+                  textAlign: TextAlign.start,
                 ),
               ),
               TextFormField(
@@ -150,7 +150,7 @@ class EditItemProfile extends StatelessWidget {
               Text(
                 "الإيميل",
                 style: AppStyles.style12W400Edite,
-                textAlign: TextAlign.right,
+                textAlign: TextAlign.start,
               ),
               SizedBox(height: 9.h),
               TextFormField(

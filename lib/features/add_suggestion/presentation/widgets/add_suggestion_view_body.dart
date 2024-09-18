@@ -53,7 +53,7 @@ class AddSuggestionViewBody extends StatelessWidget {
               style: AppStyles.style12W400.copyWith(
                 color: AppColors.whiteColor,
               ),
-              textAlign: TextAlign.right,
+              textAlign: TextAlign.start,
             ),
             SizedBox(height: 10.h),
             TextFormField(
@@ -88,9 +88,9 @@ class AddSuggestionViewBody extends StatelessWidget {
                     context: context,
                     barrierColor: const Color(0xffFFF9F9).withOpacity(0.33),
                     builder: (context) {
-                      return  CustomAddedSuccesDialog(
+                      return CustomAddedSuccesDialog(
                         text: "سرعة التسويق يشكرك على الاقتراح",
-                        style:  AppStyles.style15W900,
+                        style: AppStyles.style15W900,
                       );
                     },
                   );
