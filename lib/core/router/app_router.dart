@@ -2,6 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shopping_chart/features/x/presentation/views/add_trends_view.dart';
 import 'package:shopping_chart/features/x/presentation/views/launch_your_x_ad_view.dart';
+import 'package:shopping_chart/features/x/presentation/views/send_your_x_ad_to_followrs_view.dart';
 import 'package:shopping_chart/features/x/presentation/views/sending_x_ad_view.dart';
 import 'package:shopping_chart/features/x/presentation/views/x_view.dart';
 import '../../features/instagram/presentation/views/add_hashtags_view.dart';
@@ -398,6 +399,10 @@ final GoRouter router = GoRouter(
      GoRoute(
       path: '/sendingXAdView',
       builder: (context, state) => const SendingXAdView(),
+    ),
+     GoRoute(
+      path: '/sendYourXAdToFollowrsView',
+      builder: (context, state) => const SendYourXAdToFollowrsView(),
     ),
   ],
 );

@@ -103,7 +103,7 @@ class LaunchYourXAdDrawer extends StatelessWidget {
               SizedBox(height: 67.h),
               CustomLaunchDrawerItem(
                 onTap: () {
-                  context.push('/');
+                  context.push('/sendYourXAdToFollowrsView');
                 },
                 title: "أرسل إعلانك على المتابعين والمتابعون.",
                 image: Assets.imagesIconsendtwoarrow,
