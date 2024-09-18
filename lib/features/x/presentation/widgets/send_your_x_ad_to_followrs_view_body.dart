@@ -161,7 +161,7 @@ class _SendYourXAdToFollowrsViewBodyState
                       width: 200.w,
                       child: CustomAuthBtn(
                         onPressed: () {
-                          context.push("/addHashtagsView");
+                          context.push("/addTrendsView");
                         },
                         text: "#   إضافة ترند",
                       ),
@@ -171,7 +171,7 @@ class _SendYourXAdToFollowrsViewBodyState
                   Center(
                     child: InkWell(
                       onTap: () {
-                        context.push("/addTrendsView");
+                        context.push("/chooseXAdDestinationView");
                       },
                       child: Container(
                         height: 40.h,
