@@ -27,6 +27,7 @@ class CustomAuthBtn extends StatelessWidget {
       child: Text(
         text,
         style: AppStyles.style14W600,
+        textAlign: TextAlign.center,
       ),
     );
   }

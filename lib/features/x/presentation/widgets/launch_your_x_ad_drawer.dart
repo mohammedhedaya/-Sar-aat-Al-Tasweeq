@@ -110,7 +110,7 @@ class LaunchYourXAdDrawer extends StatelessWidget {
               ),
               CustomLaunchDrawerItem(
                 onTap: () {
-                  context.push('/');
+                  context.push('/choosePersonAndSendXAdView');
                 },
                 title: "أختر شخص من X ارسل اعلانك على جميع متابعينه",
                 image: Assets.imagesShareDribbbleLight,
