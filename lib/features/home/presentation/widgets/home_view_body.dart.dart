@@ -78,6 +78,14 @@ class HomeViewBody extends StatelessWidget {
                 imagePath: Assets.imagesInstagramNewGradientLogoAnimation,
                 label: 'INSTAGRAM',
               ),
+              SizedBox(height: 50.h),
+              SocialMediaCard(
+                onTap: () {
+                  context.push('/xView');
+                },
+                imagePath: Assets.imagesXtwitter,
+                label: 'X',
+              ),
               SizedBox(height: 25.h),
             ],
           ),

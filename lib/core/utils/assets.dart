@@ -362,8 +362,16 @@ class Assets {
   /// assets/images/Whitecircle.svg
   static const String imagesWhitecircle = "assets/images/Whitecircle.svg";
 
+  /// Assets for imagesXIcon
+  /// assets/images/XIcon.svg
+  static const String imagesXIcon = "assets/images/XIcon.svg";
+
   /// Assets for imagesXerror
   /// assets/images/Xerror.svg
   static const String imagesXerror = "assets/images/Xerror.svg";
+
+  /// Assets for imagesXtwitter
+  /// assets/images/Xtwitter.png
+  static const String imagesXtwitter = "assets/images/Xtwitter.png";
 }
 
