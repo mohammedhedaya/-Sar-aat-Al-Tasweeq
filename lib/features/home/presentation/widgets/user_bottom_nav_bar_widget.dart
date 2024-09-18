@@ -1,3 +1,5 @@
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'active_nav_bar_container.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/assets.dart';
@@ -48,11 +50,12 @@ class UserBottomNavBarWidget extends StatelessWidget {
         BottomNavigationBarItem(
           tooltip: "Package",
           label: 'Package',
-          activeIcon: const ActiveNavBarContainer(
-            image: Assets.imagesNessageicon,
+          activeIcon: ActiveNavBarContainer(
+            image: Assets.imagesPackageicon,
+            height: 30.h,
           ),
           icon: SvgPicture.asset(
-            Assets.imagesNessageicon,
+            Assets.imagesPackageicon,
           ),
         ),
         BottomNavigationBarItem(

@@ -210,10 +210,6 @@ class Assets {
   /// assets/images/menuicon.svg
   static const String imagesMenuicon = "assets/images/menuicon.svg";
 
-  /// Assets for imagesNessageicon
-  /// assets/images/nessageicon.svg
-  static const String imagesNessageicon = "assets/images/nessageicon.svg";
-
   /// Assets for imagesNotifications
   /// assets/images/notifications.svg
   static const String imagesNotifications = "assets/images/notifications.svg";
@@ -221,6 +217,10 @@ class Assets {
   /// Assets for imagesPackageSubscribed
   /// assets/images/packageSubscribed.png
   static const String imagesPackageSubscribed = "assets/images/packageSubscribed.png";
+
+  /// Assets for imagesPackageicon
+  /// assets/images/packageicon.svg
+  static const String imagesPackageicon = "assets/images/packageicon.svg";
 
   /// Assets for imagesPastLink
   /// assets/images/pastLink.svg

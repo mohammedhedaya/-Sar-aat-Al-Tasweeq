@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/utils/app_colors.dart';
 import 'drawer_body.dart';
 
-class CustomDrawer extends StatelessWidget {
-  const CustomDrawer({super.key});
+class CustomMenuDrawer extends StatelessWidget {
+  const CustomMenuDrawer({super.key});
 
   @override
   Widget build(BuildContext context) {

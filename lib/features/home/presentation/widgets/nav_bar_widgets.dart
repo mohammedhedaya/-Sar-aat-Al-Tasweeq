@@ -7,7 +7,6 @@ import 'user_bottom_nav_bar_widget.dart';
 import 'package:flutter/material.dart';
 import '../../../menu/presentation/views/menu_view.dart';
 
-
 class UserMainLayoutScreen extends StatefulWidget {
   const UserMainLayoutScreen({super.key});
 
@@ -37,7 +36,7 @@ class _UserMainLayoutScreenState extends State<UserMainLayoutScreen> {
       key: _scaffoldKey,
       resizeToAvoidBottomInset: false,
       body: screens[currentIndex],
-      drawer: const CustomDrawer(),
+      drawer: const CustomMenuDrawer(),
       bottomNavigationBar: UserBottomNavBarWidget(
         currentIndex: currentIndex,
         onTap: (index) {

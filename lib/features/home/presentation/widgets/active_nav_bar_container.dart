@@ -7,8 +7,10 @@ class ActiveNavBarContainer extends StatelessWidget {
   const ActiveNavBarContainer({
     super.key,
     required this.image,
+    this.height,
   });
   final String image;
+  final double? height;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -19,6 +21,7 @@ class ActiveNavBarContainer extends StatelessWidget {
       ),
       child: SvgPicture.asset(
         image,
+        height: height,
         colorFilter: const ColorFilter.mode(
           AppColors.blackColor,
           BlendMode.srcIn,

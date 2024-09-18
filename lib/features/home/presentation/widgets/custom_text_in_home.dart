@@ -8,22 +8,20 @@ class CustomTextInHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 12.w),
-      child: RichText(
-        textAlign: TextAlign.right,
-        text: TextSpan(
-          children: [
-            TextSpan(
-              text: 'ابدأ الترويج\n',
-              style: AppStyles.style16W900,
-            ),
-            TextSpan(
-              text:
-                  'لوريم ايبسوم هو نص شكلي بمعنى أن الغاية هي الشكل وليس المحتوى. يستخدم في صناعات المطابع ودور النشر. كان لوريم ايبسوم ولايزال المعيار به في النص الشكلي منذ القرن الخامس عشر...عندما قامت مطبعة مجهولة برص مجموعة من الأحرف بشكل عشوائي أخذتها من نص، لتكوّن كتيّب بمثابة',
-              style: AppStyles.style10W300,
-            ),
-          ],
-        ),
+      padding: EdgeInsetsDirectional.symmetric(horizontal: 12.w),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "أبدأ الترويج",
+            style: AppStyles.style16W900,
+          ),
+          SizedBox(height: 4.h),
+          Text(
+            'لوريم ايبسوم هو نص شكلي بمعنى أن الغاية هي الشكل وليس المحتوى. يستخدم في صناعات المطابع ودور النشر. كان لوريم ايبسوم ولايزال المعيار به في النص الشكلي منذ القرن الخامس عشر...عندما قامت مطبعة مجهولة برص مجموعة من الأحرف بشكل عشوائي أخذتها من نص، لتكوّن كتيّب بمثابة',
+            style: AppStyles.style10W300,
+          ),
+        ],
       ),
     );
   }

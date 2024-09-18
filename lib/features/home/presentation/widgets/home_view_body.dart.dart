@@ -15,30 +15,6 @@ class HomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: AppColors.darkGray,
-        surfaceTintColor: Colors.transparent,
-        automaticallyImplyLeading: false,
-        elevation: 0,
-        title: Row(
-          children: [
-            SvgPicture.asset(
-              Assets.imagesWallet,
-            ),
-            SizedBox(width: 10.w),
-            Text(
-              "400",
-              style: AppStyles.style12W700.copyWith(
-                fontWeight: FontWeight.w900,
-              ),
-            ),
-            SizedBox(width: 10.w),
-            SvgPicture.asset(
-              Assets.imagesJewel,
-            ),
-          ],
-        ),
-      ),
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
@@ -48,47 +24,76 @@ class HomeViewBody extends StatelessWidget {
             opacity: 0.45,
           ),
         ),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              const HomeCarouselSlider(),
-              SizedBox(height: 48.h),
-              const CustomTextInHome(),
-              SizedBox(height: 38.h),
-              SocialMediaCard(
-                onTap: () {
-                  context.push('/whatsappView');
-                },
-                imagePath: Assets.imagesWhatsAppImage,
-                label: 'WHATSAPP',
+        child: Column(
+          children: [
+            Container(
+              width: double.infinity,
+              color: AppColors.darkGray,
+              margin: EdgeInsetsDirectional.only(bottom: 10.h, start: 19.w),
+              child: Row(
+                children: [
+                  SvgPicture.asset(
+                    Assets.imagesWallet,
+                  ),
+                  SizedBox(width: 10.w),
+                  Text(
+                    "400",
+                    style: AppStyles.style12W700.copyWith(
+                      fontWeight: FontWeight.w900,
+                    ),
+                  ),
+                  SizedBox(width: 10.w),
+                  SvgPicture.asset(
+                    Assets.imagesJewel,
+                  ),
+                ],
               ),
-              SizedBox(height: 50.h),
-              SocialMediaCard(
-                onTap: () {
-                  context.push('/telegramView');
-                },
-                imagePath: Assets.imagesTelegramImage,
-                label: 'TELEGRAM',
+            ),
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    const HomeCarouselSlider(),
+                    SizedBox(height: 48.h),
+                    const CustomTextInHome(),
+                    SizedBox(height: 38.h),
+                    SocialMediaCard(
+                      onTap: () {
+                        context.push('/whatsappView');
+                      },
+                      imagePath: Assets.imagesWhatsAppImage,
+                      label: 'WHATSAPP',
+                    ),
+                    SizedBox(height: 50.h),
+                    SocialMediaCard(
+                      onTap: () {
+                        context.push('/telegramView');
+                      },
+                      imagePath: Assets.imagesTelegramImage,
+                      label: 'TELEGRAM',
+                    ),
+                    SizedBox(height: 50.h),
+                    SocialMediaCard(
+                      onTap: () {
+                        context.push('/instagramView');
+                      },
+                      imagePath: Assets.imagesInstagramNewGradientLogoAnimation,
+                      label: 'INSTAGRAM',
+                    ),
+                    SizedBox(height: 50.h),
+                    SocialMediaCard(
+                      onTap: () {
+                        context.push('/xView');
+                      },
+                      imagePath: Assets.imagesXtwitter,
+                      label: 'X',
+                    ),
+                    SizedBox(height: 25.h),
+                  ],
+                ),
               ),
-              SizedBox(height: 50.h),
-              SocialMediaCard(
-                onTap: () {
-                  context.push('/instagramView');
-                },
-                imagePath: Assets.imagesInstagramNewGradientLogoAnimation,
-                label: 'INSTAGRAM',
-              ),
-              SizedBox(height: 50.h),
-              SocialMediaCard(
-                onTap: () {
-                  context.push('/xView');
-                },
-                imagePath: Assets.imagesXtwitter,
-                label: 'X',
-              ),
-              SizedBox(height: 25.h),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
