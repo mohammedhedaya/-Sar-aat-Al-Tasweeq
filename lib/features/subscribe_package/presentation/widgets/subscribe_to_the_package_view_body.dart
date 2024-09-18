@@ -33,7 +33,10 @@ class SubscribeToThePackageViewBody extends StatelessWidget {
                   width: double.infinity,
                   padding: const EdgeInsets.all(24),
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(25.r),
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(25.r),
+                      topRight: Radius.circular(25.r),
+                    ),
                     color: const Color(0xffABABAB),
                   ),
                   child: Column(
