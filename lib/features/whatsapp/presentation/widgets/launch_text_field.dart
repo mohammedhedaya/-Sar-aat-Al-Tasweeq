@@ -1,8 +1,5 @@
-import 'package:audio_waveforms/audio_waveforms.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_sound/flutter_sound.dart';
-import 'package:path_provider/path_provider.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
 import 'custom_launch_menu_brn.dart';
@@ -23,86 +20,6 @@ class LaunchAdTextField extends StatefulWidget {
 
 class _LaunchAdTextFieldState extends State<LaunchAdTextField> {
   bool _isExpanded = false;
-  bool _isRecording = false;
-  bool _isPlaying = false;
-  String? _filePath;
-  FlutterSoundRecorder _recorder = FlutterSoundRecorder();
-  FlutterSoundPlayer _player = FlutterSoundPlayer();
-  final RecorderController _recorderController = RecorderController();
-
-  @override
-  void initState() {
-    super.initState();
-    _initRecorder();
-    _initPlayer();
-  }
-
-  Future<void> _initRecorder() async {
-    _recorder = FlutterSoundRecorder();
-    _filePath = '${(await getTemporaryDirectory()).path}/temp_audio.aac';
-  }
-
-  Future<void> _initPlayer() async {
-    _player = FlutterSoundPlayer();
-    await _player.openPlayer();
-  }
-
-  Future<void> _startRecording() async {
-    await _recorderController.checkPermission();
-    await _recorder.openRecorder();
-    await _recorder.startRecorder(
-      toFile: _filePath,
-      codec: Codec.aacADTS,
-      sampleRate: 16000,
-    );
-    _recorderController.record();
-    setState(() {
-      _isRecording = true;
-      _isPlaying = false;
-    });
-  }
-
-  Future<void> _stopRecording() async {
-    await _recorder.stopRecorder();
-    _recorderController.stop();
-    setState(() {
-      _isRecording = false;
-      // Prepare for playback
-      _isPlaying = false;
-    });
-  }
-
-  Future<void> _playRecording() async {
-    if (_filePath != null) {
-      await _player.startPlayer(
-        fromURI: _filePath,
-        codec: Codec.aacADTS,
-        whenFinished: () {
-          setState(() {
-            _isPlaying = false;
-          });
-        },
-      );
-      setState(() {
-        _isPlaying = true;
-      });
-    }
-  }
-
-  Future<void> _stopPlayback() async {
-    await _player.stopPlayer();
-    setState(() {
-      _isPlaying = false;
-    });
-  }
-
-  @override
-  void dispose() {
-    _recorder.closeRecorder();
-    _player.closePlayer();
-    _recorderController.dispose();
-    super.dispose();
-  }
 
   void _toggleExpand() {
     setState(() {
@@ -178,61 +95,12 @@ class _LaunchAdTextFieldState extends State<LaunchAdTextField> {
             bottom: 20.h,
             right: 10.w,
             child: GestureDetector(
-              onTap: () async {
-                if (_isRecording) {
-                  await _stopRecording();
-                } else {
-                  await _startRecording();
-                }
-              },
-              child: CircleAvatar(
-                radius: 15.r,
-                backgroundColor:
-                    _isRecording ? Colors.red : const Color(0xffB6B6B6),
-                child: Icon(
-                  _isRecording ? Icons.mic : Icons.mic,
-                  color: Colors.white,
-                ),
-              ),
-            ),
-          ),
-        if (_isRecording)
-          Positioned(
-            bottom: 20.h,
-            right: 50.w,
-            left: 80.w,
-            child: AudioWaveforms(
-              enableGesture: true,
-              size: Size(45.w, 27.h),
-              padding: EdgeInsets.all(5.r),
-              recorderController: _recorderController,
-              decoration: BoxDecoration(
-                color: const Color(0xffD9D9D9),
-                borderRadius: BorderRadius.circular(50.r),
-              ),
-              waveStyle: const WaveStyle(
-                middleLineThickness: 0.0,
-                waveThickness: 5.0,
-              ),
-            ),
-          ),
-        if (_filePath != null)
-          Positioned(
-            top: 20.h,
-            left: 20.w,
-            child: GestureDetector(
-              onTap: () {
-                if (_isPlaying) {
-                  _stopPlayback();
-                } else {
-                  _playRecording();
-                }
-              },
+              onTap: () async {},
               child: CircleAvatar(
                 radius: 15.r,
                 backgroundColor: const Color(0xffB6B6B6),
-                child: Icon(
-                  _isPlaying ? Icons.pause : Icons.play_arrow,
+                child: const Icon(
+                  Icons.mic,
                   color: Colors.white,
                 ),
               ),

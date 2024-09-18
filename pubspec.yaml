@@ -52,9 +52,6 @@ dependencies:
   percent_indicator: ^4.2.3
   chat_bubbles: ^1.6.0
   qr_code_scanner: ^1.0.1
-  flutter_sound: ^9.6.0
-  path_provider: ^2.1.4
-  audio_waveforms: ^1.0.5
   image_picker: ^1.1.2
 
 dev_dependencies:

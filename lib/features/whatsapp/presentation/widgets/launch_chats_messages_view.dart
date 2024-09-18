@@ -1,4 +1,4 @@
-import 'package:audio_waveforms/audio_waveforms.dart';
+// import 'package:audio_waveforms/audio_waveforms.dart';
 import 'package:chat_bubbles/bubbles/bubble_special_three.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -61,17 +61,6 @@ class LaunchChatsMessagesViewBody extends StatelessWidget {
                                     color: Color(0xffE0E0E0),
                                   ),
                                   SizedBox(width: 5.w),
-                                  AudioWaveforms(
-                                    size: Size(100.w, 20.h),
-                                    recorderController: RecorderController(),
-                                    waveStyle: const WaveStyle(
-                                      waveColor: Color(0xffE0E0E0),
-                                      backgroundColor: Color(0xffE0E0E0),
-                                      waveThickness: 2,
-                                      middleLineThickness: 1.0,
-                                    ),
-                                  ),
-                                  SizedBox(width: 5.w),
                                   Text(
                                     "0:31",
                                     style: AppStyles.style12W700,
@@ -110,17 +99,6 @@ class LaunchChatsMessagesViewBody extends StatelessWidget {
                                   const Icon(
                                     Icons.play_arrow_rounded,
                                     color: Color(0xff323232),
-                                  ),
-                                  SizedBox(width: 5.w),
-                                  AudioWaveforms(
-                                    size: Size(100.w, 20.h),
-                                    recorderController: RecorderController(),
-                                    waveStyle: const WaveStyle(
-                                      waveColor: Color(0xffE0E0E0),
-                                      backgroundColor: Color(0xffE0E0E0),
-                                      waveThickness: 2,
-                                      middleLineThickness: 1.0,
-                                    ),
                                   ),
                                   SizedBox(width: 5.w),
                                   Text(
