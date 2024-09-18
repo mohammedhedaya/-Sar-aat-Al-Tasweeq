@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:shopping_chart/core/utils/app_colors.dart';
 import 'package:shopping_chart/core/utils/app_text_style.dart';
 
@@ -31,7 +32,10 @@ class AddTrendsViewBody extends StatelessWidget {
               cursorColor: Colors.blue,
               decoration: InputDecoration(
                 isDense: true,
-                hintText: "",
+                hintText: "ابحث عن ترندات X",
+                hintStyle: AppStyles.style20W400.copyWith(
+                  color: const Color(0xff00C0CC),
+                ),
                 filled: true,
                 fillColor: const Color(0xffF3F3F3),
                 border: OutlineInputBorder(
@@ -75,7 +79,9 @@ class AddTrendsViewBody extends StatelessWidget {
             ),
             SizedBox(height: 59.h),
             InkWell(
-              onTap: () {},
+              onTap: () {
+                context.pop();
+              },
               child: Container(
                 height: 40.h,
                 width: 200.w,
