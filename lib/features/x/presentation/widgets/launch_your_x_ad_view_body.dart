@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:image_picker/image_picker.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
@@ -164,7 +165,9 @@ class _LaunchYourXAdViewBodyState extends State<LaunchYourXAdViewBody> {
                                       child: Column(
                                         children: [
                                           ListTile(
-                                            onTap: () {},
+                                            onTap: () {
+                                              context.push("/addTrendsView");
+                                            },
                                             contentPadding: EdgeInsets.zero,
                                             visualDensity:
                                                 VisualDensity.compact,
