@@ -30,6 +30,7 @@ class CustomLoginForm extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     CustomAuthTextField(
+                      fiiledColor: AppColors.whiteColor.withOpacity(0.10),
                       hintText: "الأيميل",
                       keyboardType: TextInputType.emailAddress,
                       onChanged: (email) {
@@ -48,6 +49,7 @@ class CustomLoginForm extends StatelessWidget {
                     ),
                     SizedBox(height: 20.h),
                     CustomAuthTextField(
+                      fiiledColor: AppColors.whiteColor.withOpacity(0.10),
                       hintText: "كلمة السر",
                       suffixIcon: IconButton(
                         onPressed: () {

@@ -65,6 +65,7 @@ class SignUpProfileView extends StatelessWidget {
                       ),
                       SizedBox(height: 75.h),
                       CustomAuthTextField(
+                        fiiledColor: AppColors.whiteColor.withOpacity(0.10),
                         hintText: "رقم الهاتف",
                         keyboardType: TextInputType.phone,
                         suffixIcon: InkWell(
@@ -83,7 +84,8 @@ class SignUpProfileView extends StatelessWidget {
                               ),
                             ),
                             child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center, // Ensure content is centered
+                              mainAxisAlignment: MainAxisAlignment
+                                  .center, // Ensure content is centered
                               children: [
                                 Text(
                                   "966",
@@ -107,6 +109,7 @@ class SignUpProfileView extends StatelessWidget {
                       ),
                       SizedBox(height: 23.h),
                       CustomAuthTextField(
+                        fiiledColor: AppColors.whiteColor.withOpacity(0.10),
                         hintText: "كلمة السر",
                         suffixIcon: IconButton(
                           onPressed: () {
@@ -126,6 +129,7 @@ class SignUpProfileView extends StatelessWidget {
                       ),
                       SizedBox(height: 23.h),
                       CustomAuthTextField(
+                        fiiledColor: AppColors.whiteColor.withOpacity(0.10),
                         hintText: "تأكيد كلمة السر",
                         suffixIcon: IconButton(
                           onPressed: () {
@@ -160,9 +164,9 @@ class SignUpProfileView extends StatelessWidget {
                               child: Container(
                                 height: 60.h,
                                 width: double.infinity,
-                                decoration: const BoxDecoration(
-                                  color: AppColors.dimGray,
-                                  borderRadius: BorderRadius.all(
+                                decoration: BoxDecoration(
+                                  color: AppColors.whiteColor.withOpacity(0.10),
+                                  borderRadius: const BorderRadius.all(
                                     Radius.circular(20),
                                   ),
                                 ),
@@ -189,9 +193,9 @@ class SignUpProfileView extends StatelessWidget {
                               child: Container(
                                 height: 60.h,
                                 width: double.infinity,
-                                decoration: const BoxDecoration(
-                                  color: AppColors.dimGray,
-                                  borderRadius: BorderRadius.all(
+                                decoration: BoxDecoration(
+                                  color: AppColors.whiteColor.withOpacity(0.10),
+                                  borderRadius: const BorderRadius.all(
                                     Radius.circular(20),
                                   ),
                                 ),

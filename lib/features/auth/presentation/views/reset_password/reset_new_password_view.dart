@@ -28,6 +28,7 @@ class ResetNewPasswordView extends StatelessWidget {
               ),
               SizedBox(height: 25.h),
               CustomAuthTextField(
+                fiiledColor: AppColors.whiteColor.withOpacity(0.10),
                 hintText: "************",
                 textAlign: TextAlign.center,
                 suffixIcon: IconButton(
@@ -46,6 +47,7 @@ class ResetNewPasswordView extends StatelessWidget {
               ),
               SizedBox(height: 23.h),
               CustomAuthTextField(
+                fiiledColor: AppColors.whiteColor.withOpacity(0.10),
                 hintText: "************",
                 textAlign: TextAlign.center,
                 suffixIcon: IconButton(

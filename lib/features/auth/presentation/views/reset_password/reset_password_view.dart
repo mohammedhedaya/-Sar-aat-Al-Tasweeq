@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shopping_chart/core/utils/app_colors.dart';
 import '../../../../../core/utils/app_text_style.dart';
 import '../../../../../core/utils/assets.dart';
 import '../../widgets/auth_btn.dart';
@@ -30,6 +31,7 @@ class ResetPasswordView extends StatelessWidget {
               ),
               SizedBox(height: 30.h),
               CustomAuthTextField(
+                fiiledColor: AppColors.whiteColor.withOpacity(0.10),
                 hintText: "البريد الالكتروني",
                 keyboardType: TextInputType.emailAddress,
                 onChanged: (email) {},

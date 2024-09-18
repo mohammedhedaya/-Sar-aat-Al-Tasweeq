@@ -85,9 +85,10 @@ class SuccessSignUpView extends StatelessWidget {
                               color: AppColors.loginBtn,
                               shape: BoxShape.circle,
                             ),
-                            child: const Icon(
-                              Icons.arrow_forward_ios,
-                              color: AppColors.whiteColor,
+                            child: Center(
+                              child: SvgPicture.asset(
+                                Assets.imagesArrowForwardLoginPage,
+                              ),
                             ),
                           ),
                         ),

@@ -47,12 +47,13 @@ class SignUpViewBody extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    top: 230,
+                    top: 200,
                     left: 41,
                     right: 26,
                     child: Column(
                       children: [
                         CustomAuthTextField(
+                          fiiledColor: AppColors.whiteColor.withOpacity(0.10),
                           hintText: 'الاسم الأول',
                           onChanged: (firstName) {
                             cubit.firstName = firstName;
@@ -60,6 +61,7 @@ class SignUpViewBody extends StatelessWidget {
                         ),
                         SizedBox(height: 40.h),
                         CustomAuthTextField(
+                          fiiledColor: AppColors.whiteColor.withOpacity(0.10),
                           hintText: 'الاسم الثانى',
                           onChanged: (secondName) {
                             cubit.secondName = secondName;
@@ -67,6 +69,7 @@ class SignUpViewBody extends StatelessWidget {
                         ),
                         SizedBox(height: 40.h),
                         CustomAuthTextField(
+                          fiiledColor: AppColors.whiteColor.withOpacity(0.10),
                           hintText: 'الاسم الأخير',
                           onChanged: (lastName) {
                             cubit.lastName = lastName;
@@ -74,6 +77,7 @@ class SignUpViewBody extends StatelessWidget {
                         ),
                         SizedBox(height: 40.h),
                         CustomAuthTextField(
+                          fiiledColor: AppColors.whiteColor.withOpacity(0.10),
                           hintText: 'الأيميل',
                           keyboardType: TextInputType.emailAddress,
                           validator: (email) {
