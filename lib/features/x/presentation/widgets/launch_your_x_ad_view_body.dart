@@ -2,7 +2,6 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:go_router/go_router.dart';
 import 'package:image_picker/image_picker.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
@@ -135,7 +134,74 @@ class _LaunchYourXAdViewBodyState extends State<LaunchYourXAdViewBody> {
               width: 200.w,
               child: CustomAuthBtn(
                 onPressed: () {
-                  context.push("/addTrendsView");
+                  showModalBottomSheet(
+                    context: context,
+                    enableDrag: true,
+                    isScrollControlled: true,
+                    barrierColor: AppColors.blackColor.withOpacity(0.71),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(50.r),
+                        topRight: Radius.circular(50.r),
+                      ),
+                    ),
+                    backgroundColor: const Color(0xffDDDDDD),
+                    builder: (builder) {
+                      return SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.7,
+                        child: Column(
+                          children: [
+                            SizedBox(height: 80.h),
+                            Expanded(
+                              child: SingleChildScrollView(
+                                child: Column(
+                                  children: List.generate(5, (index) {
+                                    return Padding(
+                                      padding: EdgeInsets.only(
+                                        left: 40.h,
+                                        right: 40.h,
+                                      ),
+                                      child: Column(
+                                        children: [
+                                          ListTile(
+                                            onTap: () {},
+                                            contentPadding: EdgeInsets.zero,
+                                            visualDensity:
+                                                VisualDensity.compact,
+                                            title: Text(
+                                              "أنشر أعلانك على ${1 + index + 4} ترندات X",
+                                              style: AppStyles.style18W700
+                                                  .copyWith(
+                                                color: Colors.black,
+                                              ),
+                                            ),
+                                            trailing: Container(
+                                              decoration: const BoxDecoration(
+                                                color: Color(0xff3C3636),
+                                                shape: BoxShape.circle,
+                                              ),
+                                              child: const Icon(
+                                                Icons.keyboard_arrow_left_sharp,
+                                                color: Colors.white,
+                                              ),
+                                            ),
+                                          ),
+                                          const Divider(
+                                            color: Colors.black,
+                                            thickness: 1,
+                                          ),
+                                        ],
+                                      ),
+                                    );
+                                  }),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      );
+                    },
+                  );
                 },
                 text: "#   إضافة ترند",
               ),
