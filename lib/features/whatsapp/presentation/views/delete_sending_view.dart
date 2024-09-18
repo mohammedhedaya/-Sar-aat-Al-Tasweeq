@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
+import 'package:shopping_chart/features/whatsapp/presentation/widgets/custom_progress_bar_text.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
@@ -81,26 +82,23 @@ class DeleteSendingView extends StatelessWidget {
                             ),
                             child: Column(
                               children: [
-                                _buildProgressRow(
+                                const CustomProgressBarAndText(
                                   label: "حذف الدردشات :",
                                   value: "1000",
                                   progress: 0.2,
-                                  context: context,
                                 ),
                                 SizedBox(height: 11.h),
-                                _buildProgressRow(
+                                const CustomProgressBarAndText(
                                   label: "حذف المجموعات :",
                                   value: "1000",
                                   progress: 0.4,
-                                  context: context,
                                 ),
                                 SizedBox(height: 11.h),
-                                _buildProgressRow(
+                                const CustomProgressBarAndText(
                                   label: "حذف عدد الكل :",
                                   value: "3000",
                                   progress: 0.8,
-                                  textcolor: const Color(0xffE21D1D),
-                                  context: context,
+                                  textcolor: Color(0xffE21D1D),
                                 ),
                               ],
                             ),
@@ -167,49 +165,6 @@ class DeleteSendingView extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-
-  Widget _buildProgressRow({
-    required String label,
-    required String value,
-    required double progress,
-    Color? color,
-    Color? textcolor,
-    required BuildContext context,
-  }) {
-    return Column(
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Flexible(
-              child: Text(
-                label,
-                style: AppStyles.style20W900.copyWith(
-                  fontSize: 11.sp,
-                ),
-              ),
-            ),
-            Flexible(
-              child: Text(
-                value,
-                style: AppStyles.style20W900.copyWith(
-                  fontSize: 13.sp,
-                  color: textcolor ?? AppColors.whiteColor,
-                ),
-              ),
-            ),
-          ],
-        ),
-        SizedBox(height: 4.h),
-        LinearProgressIndicator(
-          value: progress,
-          backgroundColor: const Color(0xff3F3F3F),
-          color: color ?? const Color(0xffD9D9D9),
-          minHeight: 11.h,
-        ),
-      ],
     );
   }
 }

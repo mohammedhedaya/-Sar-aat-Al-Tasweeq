@@ -5,6 +5,7 @@ import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:shopping_chart/core/utils/app_colors.dart';
 import 'package:shopping_chart/core/utils/app_text_style.dart';
 import 'package:shopping_chart/core/utils/assets.dart';
+import 'package:shopping_chart/features/whatsapp/presentation/widgets/custom_progress_bar_text.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/widgets/custom_show_dialog.dart';
 
 class SendingXAdView extends StatelessWidget {
@@ -77,12 +78,11 @@ class SendingXAdView extends StatelessWidget {
                             ),
                           ),
                           SizedBox(height: 24.h),
-                          _buildProgressRow(
+                          const CustomProgressBarAndText(
                             label: "يتم الإرسال على 20 ترند",
                             value: "18",
                             progress: 0.8,
-                            textcolor: const Color(0xffE21D1D),
-                            context: context,
+                            textcolor: Color(0xffE21D1D),
                           ),
                         ],
                       ),
@@ -144,49 +144,6 @@ class SendingXAdView extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-
-  Widget _buildProgressRow({
-    required String label,
-    required String value,
-    required double progress,
-    Color? color,
-    Color? textcolor,
-    required BuildContext context,
-  }) {
-    return Column(
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Flexible(
-              child: Text(
-                label,
-                style: AppStyles.style20W900.copyWith(
-                  fontSize: 11.sp,
-                ),
-              ),
-            ),
-            Flexible(
-              child: Text(
-                value,
-                style: AppStyles.style20W900.copyWith(
-                  fontSize: 13.sp,
-                  color: textcolor ?? AppColors.whiteColor,
-                ),
-              ),
-            ),
-          ],
-        ),
-        SizedBox(height: 4.h),
-        LinearProgressIndicator(
-          value: progress,
-          backgroundColor: const Color(0xff3F3F3F),
-          color: color ?? const Color(0xffD9D9D9),
-          minHeight: 11.h,
-        ),
-      ],
     );
   }
 }
