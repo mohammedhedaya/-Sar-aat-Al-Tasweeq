@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:shopping_chart/features/instagram/presentation/widgets/custom_pick_media_dialog.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
@@ -82,7 +83,23 @@ class _ChoosePersonAndSendXAdViewBodyState
                   ),
                   SizedBox(height: 17.h),
                   InkWell(
-                    onTap: _pickMedia,
+                    onTap: () {
+                      showDialog(
+                        context: context,
+                        barrierColor: const Color(0xfffff9f9).withOpacity(0.33),
+                        builder: (context) {
+                          return CustomPickMediaDialog(
+                            onTapSocialMedia: () {},
+                            onTapLocalMedia: () {
+                              _pickMedia();
+                              context.pop();
+                            },
+                            socailMediaImage: Assets.imagesXIcon,
+                            socailMediaText: "الأنستجرام",
+                          );
+                        },
+                      );
+                    },
                     child: Container(
                       width: double.infinity,
                       height: 268.h,
@@ -166,9 +183,7 @@ class _ChoosePersonAndSendXAdViewBodyState
                   SizedBox(height: 21.h),
                   Center(
                     child: InkWell(
-                      onTap: () {
-                        // context.push("/chooseXAdDestinationView");
-                      },
+                      onTap: () {},
                       child: Container(
                         height: 40.h,
                         width: 200.w,

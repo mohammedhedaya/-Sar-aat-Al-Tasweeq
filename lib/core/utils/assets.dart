@@ -102,6 +102,10 @@ class Assets {
   /// assets/images/Ellipse4.svg
   static const String imagesEllipse4 = "assets/images/Ellipse4.svg";
 
+  /// Assets for imagesGaleryIcon
+  /// assets/images/galeryIcon.svg
+  static const String imagesGaleryIcon = "assets/images/galeryIcon.svg";
+
   /// Assets for imagesHomeBackground
   /// assets/images/homeBackground.png
   static const String imagesHomeBackground = "assets/images/homeBackground.png";

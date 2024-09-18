@@ -35,11 +35,20 @@ class _SwithThemeState extends State<SwithTheme> {
                   _isDarkTheme = true;
                 });
               },
-              child: SvgPicture.asset(
-                Assets.imagesLight,
-                colorFilter: ColorFilter.mode(
-                  _isDarkTheme ? Colors.white : Colors.black,
-                  BlendMode.srcIn,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: _isDarkTheme ? Colors.black : Colors.transparent,
+                  shape: BoxShape.circle,
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(4.0),
+                  child: SvgPicture.asset(
+                    Assets.imagesLight,
+                    colorFilter: ColorFilter.mode(
+                      _isDarkTheme ? Colors.white : Colors.black,
+                      BlendMode.srcIn,
+                    ),
+                  ),
                 ),
               ),
             ),
