@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shopping_chart/features/facebook/presentation/views/add_facebook_groups_view.dart';
 import 'package:shopping_chart/features/facebook/presentation/views/facbook_delete_groups_choose_destination_view.dart';
 import 'package:shopping_chart/features/facebook/presentation/views/facebook_choose_destination_view.dart';
 import 'package:shopping_chart/features/facebook/presentation/views/facebook_delete_groups_sending_view.dart';
@@ -96,7 +97,7 @@ final GoRouter router = GoRouter(
       path: '/',
       builder: (context, state) => BlocProvider(
         create: (context) => getIt<AuthCubit>(),
-        child: const LaunchYourFacebookAdView(),
+        child: const LoginView(),
       ),
     ),
     GoRoute(
@@ -464,6 +465,10 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/facebookDeleteGroupsSendingView',
       builder: (context, state) => const FacebookDeleteGroupsSendingView(),
+    ),
+     GoRoute(
+      path: '/addFacebookGroupsView',
+      builder: (context, state) => const AddFacebookGroupsView(),
     ),
   ],
 );
