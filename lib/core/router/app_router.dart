@@ -1,6 +1,10 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shopping_chart/features/facebook/presentation/views/facebook_choose_destination_view.dart';
+import 'package:shopping_chart/features/facebook/presentation/views/facebook_sending_view.dart';
 import 'package:shopping_chart/features/facebook/presentation/views/facebook_view.dart';
+import 'package:shopping_chart/features/facebook/presentation/views/launch_your_facebook_Ad_view.dart';
+import 'package:shopping_chart/features/facebook/presentation/widgets/launch_your_facebook_ad_view_body.dart';
 import 'package:shopping_chart/features/x/presentation/views/add_trends_view.dart';
 import 'package:shopping_chart/features/x/presentation/views/choose_person_and_send_x_ad_view.dart';
 import 'package:shopping_chart/features/x/presentation/views/choose_x_ad_destination_view.dart';
@@ -89,7 +93,7 @@ final GoRouter router = GoRouter(
       path: '/',
       builder: (context, state) => BlocProvider(
         create: (context) => getIt<AuthCubit>(),
-        child: const UserMainLayoutScreen(),
+        child: const LoginView(),
       ),
     ),
     GoRoute(
@@ -428,6 +432,18 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/facebookView',
       builder: (context, state) => const FacebookView(),
+    ),
+    GoRoute(
+      path: '/launchYourFacebookAdView',
+      builder: (context, state) => const LaunchYourFacebookAdView(),
+    ),
+    GoRoute(
+      path: '/facebookChooseDestinationView',
+      builder: (context, state) => const FacebookChooseDestinationView(),
+    ),
+     GoRoute(
+      path: '/facebookSendingView',
+      builder: (context, state) => const FacebookSendingView(),
     ),
   ],
 );

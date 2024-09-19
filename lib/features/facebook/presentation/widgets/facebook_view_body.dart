@@ -78,7 +78,7 @@ class FacebookViewBody extends StatelessWidget {
                         builder: (context) {
                           return CustomShowDialog(
                             onTap: () {
-                              context.push("/launchYourfacebookAdView");
+                              context.push("/launchYourFacebookAdView");
                             },
                             image: Assets.imagesXerror,
                             textButton: "الأشتراك",
