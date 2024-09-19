@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shopping_chart/features/facebook/presentation/widgets/launch_face_ad_drawer.dart';
 import 'package:shopping_chart/features/facebook/presentation/widgets/launch_your_facebook_ad_view_body.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
@@ -11,7 +12,8 @@ class LaunchYourFacebookAdView extends StatefulWidget {
   const LaunchYourFacebookAdView({super.key});
 
   @override
-  State<LaunchYourFacebookAdView> createState() => _LaunchYourFacebookAdViewState();
+  State<LaunchYourFacebookAdView> createState() =>
+      _LaunchYourFacebookAdViewState();
 }
 
 class _LaunchYourFacebookAdViewState extends State<LaunchYourFacebookAdView> {
@@ -20,7 +22,7 @@ class _LaunchYourFacebookAdViewState extends State<LaunchYourFacebookAdView> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      drawer: const Drawer(),
+      drawer: const CustomLaunchFacebookAdDrawer(),
       floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
       floatingActionButton: FloatingActionButton(
         elevation: 10,
