@@ -1,6 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shopping_chart/features/facebook/presentation/views/facebook_choose_destination_view.dart';
+import 'package:shopping_chart/features/facebook/presentation/views/facebook_groups_choose_destination_view.dart';
+import 'package:shopping_chart/features/facebook/presentation/views/facebook_groups_sending_view.dart';
 import 'package:shopping_chart/features/facebook/presentation/views/facebook_sending_view.dart';
 import 'package:shopping_chart/features/facebook/presentation/views/facebook_view.dart';
 import 'package:shopping_chart/features/facebook/presentation/views/launch_your_facebook_Ad_view.dart';
@@ -441,9 +443,17 @@ final GoRouter router = GoRouter(
       path: '/facebookChooseDestinationView',
       builder: (context, state) => const FacebookChooseDestinationView(),
     ),
-     GoRoute(
+    GoRoute(
       path: '/facebookSendingView',
       builder: (context, state) => const FacebookSendingView(),
+    ),
+    GoRoute(
+      path: '/facebookGroupsChooseDestinationView',
+      builder: (context, state) => const FacebookGroupsChooseDestinationView(),
+    ),
+    GoRoute(
+      path: '/facebookGroupsSendingView',
+      builder: (context, state) => const FacebookGroupsSendingView(),
     ),
   ],
 );
