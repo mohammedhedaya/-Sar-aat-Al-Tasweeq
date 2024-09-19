@@ -1,12 +1,13 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shopping_chart/features/facebook/presentation/views/facbook_delete_groups_choose_destination_view.dart';
 import 'package:shopping_chart/features/facebook/presentation/views/facebook_choose_destination_view.dart';
+import 'package:shopping_chart/features/facebook/presentation/views/facebook_delete_groups_sending_view.dart';
 import 'package:shopping_chart/features/facebook/presentation/views/facebook_groups_choose_destination_view.dart';
 import 'package:shopping_chart/features/facebook/presentation/views/facebook_groups_sending_view.dart';
 import 'package:shopping_chart/features/facebook/presentation/views/facebook_sending_view.dart';
 import 'package:shopping_chart/features/facebook/presentation/views/facebook_view.dart';
 import 'package:shopping_chart/features/facebook/presentation/views/launch_your_facebook_Ad_view.dart';
-import 'package:shopping_chart/features/facebook/presentation/widgets/launch_your_facebook_ad_view_body.dart';
 import 'package:shopping_chart/features/x/presentation/views/add_trends_view.dart';
 import 'package:shopping_chart/features/x/presentation/views/choose_person_and_send_x_ad_view.dart';
 import 'package:shopping_chart/features/x/presentation/views/choose_x_ad_destination_view.dart';
@@ -454,6 +455,15 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/facebookGroupsSendingView',
       builder: (context, state) => const FacebookGroupsSendingView(),
+    ),
+    GoRoute(
+      path: '/facbookDeleteGroupsChooseDestinationView',
+      builder: (context, state) =>
+          const FacbookDeleteGroupsChooseDestinationView(),
+    ),
+    GoRoute(
+      path: '/facebookDeleteGroupsSendingView',
+      builder: (context, state) => const FacebookDeleteGroupsSendingView(),
     ),
   ],
 );
