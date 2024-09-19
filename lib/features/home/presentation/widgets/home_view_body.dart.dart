@@ -88,6 +88,14 @@ class HomeViewBody extends StatelessWidget {
                       imagePath: Assets.imagesXtwitter,
                       label: 'X',
                     ),
+                    SizedBox(height: 50.h),
+                    SocialMediaCard(
+                      onTap: () {
+                        context.push('/facebookView');
+                      },
+                      imagePath: Assets.imagesFacebookLogo,
+                      label: 'FACEBOOK',
+                    ),
                     SizedBox(height: 25.h),
                   ],
                 ),

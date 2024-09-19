@@ -102,6 +102,14 @@ class Assets {
   /// assets/images/Ellipse4.svg
   static const String imagesEllipse4 = "assets/images/Ellipse4.svg";
 
+  /// Assets for imagesFacebookIcon
+  /// assets/images/facebookIcon.svg
+  static const String imagesFacebookIcon = "assets/images/facebookIcon.svg";
+
+  /// Assets for imagesFacebookLogo
+  /// assets/images/facebook_logo.png
+  static const String imagesFacebookLogo = "assets/images/facebook_logo.png";
+
   /// Assets for imagesGaleryIcon
   /// assets/images/galeryIcon.svg
   static const String imagesGaleryIcon = "assets/images/galeryIcon.svg";
