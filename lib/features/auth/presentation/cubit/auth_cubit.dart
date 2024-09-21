@@ -24,6 +24,20 @@ class AuthCubit extends Cubit<AuthState> {
   File? profileImage;
   String? profileImageError;
 
+  String? validatePassword(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'هذا الحقل مطلوب';
+    }
+    if (value.length < 8) {
+      return 'يجب أن تحتوي كلمة المرور على 8 أحرف على الأقل';
+    }
+    if (!RegExp(r'^(?=.*?[A-Za-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$')
+        .hasMatch(value)) {
+      return 'يجب أن تحتوي كلمة المرور على حرف واحد\nورقم واحد ورمز واحد على الأقل';
+    }
+    return null;
+  }
+
   void setProfileImage(File? image) {
     profileImage = image;
     validateProfileImage();

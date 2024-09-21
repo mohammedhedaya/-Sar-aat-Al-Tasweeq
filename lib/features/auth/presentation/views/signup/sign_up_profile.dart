@@ -93,6 +93,7 @@ class SignUpProfileView extends StatelessWidget {
                           ),
                         ),
                         obscureText: cubit.obscurePasswordTextValue,
+                        validator: cubit.validatePassword,
                         onChanged: (password) {
                           cubit.password = password;
                         },
@@ -176,6 +177,7 @@ class SignUpProfileView extends StatelessWidget {
                                       showFlag: true,
                                       hideMainText: true,
                                       showCountryOnly: true,
+                                      showDropDownButton: true,
                                       flagDecoration: BoxDecoration(
                                         borderRadius:
                                             BorderRadius.circular(5.r),
