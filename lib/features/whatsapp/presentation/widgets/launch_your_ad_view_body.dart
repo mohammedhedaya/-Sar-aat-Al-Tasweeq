@@ -6,7 +6,7 @@ import '../../../../core/utils/app_text_style.dart';
 import '../views/launch_pages_view/delete_page_view.dart';
 import '../views/launch_pages_view/phone_directory_page_view.dart';
 import '../views/launch_pages_view/whatsapp_page_view.dart';
-
+ 
 class LaunchYourWhatsappAdViewBody extends StatefulWidget {
   const LaunchYourWhatsappAdViewBody({super.key});
 
@@ -150,5 +150,6 @@ class _LaunchYourWhatsappAdViewBodyState
         ],
       ),
     );
+  
   }
 }
