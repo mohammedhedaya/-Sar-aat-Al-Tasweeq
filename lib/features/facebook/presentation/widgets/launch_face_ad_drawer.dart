@@ -118,7 +118,9 @@ class CustomLaunchFacebookAdDrawer extends StatelessWidget {
                 image: Assets.imagesShareDribbbleLight,
               ),
               CustomLaunchDrawerItem(
-                onTap: () {},
+                onTap: () {
+                  context.push("/chooseGroupToSendFacbookAdView");
+                },
                 title: "أختار أحد المجموعات ويتم الإرسال على جميع الحسابات ",
                 image: Assets.imagesChoosegroup,
               ),

@@ -1,6 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shopping_chart/features/facebook/presentation/views/add_facebook_groups_view.dart';
+import 'package:shopping_chart/features/facebook/presentation/views/choose_group_to_send_facbook_ad_view.dart';
 import 'package:shopping_chart/features/facebook/presentation/views/choose_person_to_send_facebook_ad_view.dart';
 import 'package:shopping_chart/features/facebook/presentation/views/facbook_delete_groups_choose_destination_view.dart';
 import 'package:shopping_chart/features/facebook/presentation/views/facebook_choose_destination_view.dart';
@@ -476,9 +477,13 @@ final GoRouter router = GoRouter(
       path: '/choosePersonToSendFacebookAdView',
       builder: (context, state) => const ChoosePersonToSendFacebookAdView(),
     ),
-     GoRoute(
+    GoRoute(
       path: '/searchPersonToSendFacebookAdView',
       builder: (context, state) => const SearchPersonToSendFacebookAdView(),
+    ),
+    GoRoute(
+      path: '/chooseGroupToSendFacbookAdView',
+      builder: (context, state) => const ChooseGroupToSendFacbookAdView(),
     ),
   ],
 );
