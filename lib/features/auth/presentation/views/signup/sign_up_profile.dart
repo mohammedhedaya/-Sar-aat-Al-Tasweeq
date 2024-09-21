@@ -30,7 +30,10 @@ class SignUpProfileView extends StatelessWidget {
                   child: Column(
                     children: [
                       SizedBox(height: 70.h),
-                      const CustomAddProfileImageWidget(),
+                      CustomAddProfileImageWidget(
+                        onImageSelected: (file) => cubit.setProfileImage(file),
+                        errorText: cubit.profileImageError,
+                      ),
                       SizedBox(height: 29.h),
                       Text(
                         "صورة الملف الشخصى",
@@ -126,34 +129,67 @@ class SignUpProfileView extends StatelessWidget {
                       Row(
                         children: [
                           Expanded(
-                            child: Container(
-                              height: 60.h,
-                              width: double.infinity,
-                              decoration: BoxDecoration(
-                                color: AppColors.whiteColor.withOpacity(0.10),
-                                borderRadius: const BorderRadius.all(
-                                  Radius.circular(20),
-                                ),
-                              ),
-                              child: CountryCodePicker(
-                                onChanged: (value) {},
-                                initialSelection: 'SA',
-                                favorite: const ['+966', 'SA'],
-                                barrierColor:
-                                    const Color(0xfffff9f9).withOpacity(0.33),
-                                textOverflow: TextOverflow.ellipsis,
-                                boxDecoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8.r),
-                                  color: const Color(0XFFD9D9D9),
-                                ),
-                                padding: EdgeInsets.zero,
-                                showFlag: true,
-                                hideMainText: true,
-                                showCountryOnly: true,
-                                flagDecoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(5.r),
-                                ),
-                              ),
+                            child: FormField<String>(
+                              builder: (FormFieldState<String> state) {
+                                return InputDecorator(
+                                  decoration: InputDecoration(
+                                    border: InputBorder.none,
+                                    errorText:
+                                        state.hasError ? state.errorText : null,
+                                    errorBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(20.r),
+                                      borderSide: const BorderSide(
+                                        color: Colors.red,
+                                      ),
+                                    ),
+                                    contentPadding: EdgeInsets.zero,
+                                    errorStyle: const TextStyle(
+                                      color: AppColors.whiteColor,
+                                    ),
+                                  ),
+                                  child: Container(
+                                    height: 60.h,
+                                    width: double.infinity,
+                                    decoration: BoxDecoration(
+                                      color: AppColors.whiteColor
+                                          .withOpacity(0.10),
+                                      borderRadius: const BorderRadius.all(
+                                        Radius.circular(20),
+                                      ),
+                                    ),
+                                    child: CountryCodePicker(
+                                      onChanged: (value) {
+                                        cubit.setSelectedCountry(value.code);
+                                        state.didChange(value.code);
+                                      },
+                                      initialSelection: 'SA',
+                                      favorite: const ['+966', 'SA'],
+                                      barrierColor: const Color(0xfffff9f9)
+                                          .withOpacity(0.33),
+                                      textOverflow: TextOverflow.ellipsis,
+                                      boxDecoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(8.r),
+                                        color: const Color(0XFFD9D9D9),
+                                      ),
+                                      padding: EdgeInsets.zero,
+                                      showFlag: true,
+                                      hideMainText: true,
+                                      showCountryOnly: true,
+                                      flagDecoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(5.r),
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              },
+                              validator: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return 'هذا الحقل مطلوب';
+                                }
+                                return null;
+                              },
                             ),
                           ),
                           SizedBox(width: 6.w),
@@ -174,8 +210,7 @@ class SignUpProfileView extends StatelessWidget {
                         width: double.infinity,
                         child: ElevatedButton(
                           onPressed: () {
-                            if (cubit.signUpProfileFormKey.currentState!
-                                .validate()) {
+                            if (cubit.validateSignUpProfile()) {
                               context.push("/signUpOTPView");
                             }
                           },
