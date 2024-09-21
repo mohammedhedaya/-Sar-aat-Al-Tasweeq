@@ -1,12 +1,11 @@
+import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shopping_chart/features/auth/presentation/widgets/cusom_add_profile_image_widget.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_text_style.dart';
-import '../../../../../core/utils/assets.dart';
 import '../../cubit/auth_cubit.dart';
 import '../../cubit/auth_state.dart';
 import '../../widgets/auth_text_field.dart';
@@ -48,7 +47,6 @@ class SignUpProfileView extends StatelessWidget {
                             constraints: BoxConstraints(
                               minWidth: 95.w,
                             ),
-                            width: 95.w,
                             height: 70.h,
                             decoration: BoxDecoration(
                               color: const Color(0xffD9D9D9),
@@ -57,25 +55,21 @@ class SignUpProfileView extends StatelessWidget {
                                 bottomLeft: Radius.circular(20.r),
                               ),
                             ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  "966",
-                                  style: AppStyles.style16W400.copyWith(
-                                    color: AppColors.blackColor,
-                                  ),
-                                ),
-                                SizedBox(width: 5.w),
-                                SvgPicture.asset(
-                                  Assets.imagesSuadiFlag,
-                                ),
-                                SizedBox(width: 5.w),
-                                const Icon(
-                                  Icons.keyboard_arrow_down,
-                                  color: AppColors.blackColor,
-                                ),
-                              ],
+                            child: CountryCodePicker(
+                              onChanged: (value) {},
+                              initialSelection: 'SA',
+                              favorite: const ['+966', 'SA'],
+                              barrierColor:
+                                  const Color(0xfffff9f9).withOpacity(0.33),
+                              textOverflow: TextOverflow.ellipsis,
+                              boxDecoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(8.r),
+                                color: const Color(0XFFD9D9D9),
+                              ),
+                              padding: EdgeInsets.zero,
+                              flagDecoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(5.r),
+                              ),
                             ),
                           ),
                         ),
@@ -132,61 +126,43 @@ class SignUpProfileView extends StatelessWidget {
                       Row(
                         children: [
                           Expanded(
-                            child: InkWell(
-                              onTap: () {},
-                              child: Container(
-                                height: 60.h,
-                                width: double.infinity,
-                                decoration: BoxDecoration(
-                                  color: AppColors.whiteColor.withOpacity(0.10),
-                                  borderRadius: const BorderRadius.all(
-                                    Radius.circular(20),
-                                  ),
+                            child: Container(
+                              height: 60.h,
+                              width: double.infinity,
+                              decoration: BoxDecoration(
+                                color: AppColors.whiteColor.withOpacity(0.10),
+                                borderRadius: const BorderRadius.all(
+                                  Radius.circular(20),
                                 ),
-                                child: Row(
-                                  children: [
-                                    const Icon(
-                                      Icons.keyboard_arrow_down,
-                                      color: AppColors.whiteColor,
-                                      size: 40,
-                                    ),
-                                    SizedBox(width: 25.w),
-                                    SvgPicture.asset(
-                                      Assets.imagesSuadiFlag,
-                                    ),
-                                  ],
+                              ),
+                              child: CountryCodePicker(
+                                onChanged: (value) {},
+                                initialSelection: 'SA',
+                                favorite: const ['+966', 'SA'],
+                                barrierColor:
+                                    const Color(0xfffff9f9).withOpacity(0.33),
+                                textOverflow: TextOverflow.ellipsis,
+                                boxDecoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(8.r),
+                                  color: const Color(0XFFD9D9D9),
+                                ),
+                                padding: EdgeInsets.zero,
+                                showFlag: true,
+                                hideMainText: true,
+                                showCountryOnly: true,
+                                flagDecoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(5.r),
                                 ),
                               ),
                             ),
                           ),
                           SizedBox(width: 6.w),
                           Expanded(
-                            child: InkWell(
-                              onTap: () {},
-                              child: Container(
-                                height: 60.h,
-                                width: double.infinity,
-                                decoration: BoxDecoration(
-                                  color: AppColors.whiteColor.withOpacity(0.10),
-                                  borderRadius: const BorderRadius.all(
-                                    Radius.circular(20),
-                                  ),
-                                ),
-                                child: Row(
-                                  children: [
-                                    const Icon(
-                                      Icons.keyboard_arrow_down,
-                                      color: AppColors.whiteColor,
-                                      size: 40,
-                                    ),
-                                    SizedBox(width: 25.w),
-                                    Text(
-                                      "المدينة",
-                                      style: AppStyles.style18W400,
-                                    ),
-                                  ],
-                                ),
-                              ),
+                            child: CustomAuthTextField(
+                              onChanged: (value) {},
+                              hintText: "المدينة",
+                              textAlign: TextAlign.center,
+                              fiiledColor: Colors.white.withOpacity(0.10),
                             ),
                           ),
                         ],
