@@ -28,9 +28,7 @@ class AddFacebookGroupsViewBody extends StatelessWidget {
                     SizedBox(width: 10.w),
                     Text(
                       "300",
-                      style: AppStyles.style12W700.copyWith(
-                        fontWeight: FontWeight.w900,
-                      ),
+                      style: AppStyles.style17W800,
                     ),
                     SizedBox(width: 10.w),
                     SvgPicture.asset(
@@ -66,7 +64,7 @@ class AddFacebookGroupsViewBody extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 24.h),
+          SizedBox(height: 44.h),
           Padding(
             padding: EdgeInsetsDirectional.only(start: 7.w, end: 37.w),
             child: TextField(
@@ -81,6 +79,12 @@ class AddFacebookGroupsViewBody extends StatelessWidget {
                 hintStyle: AppStyles.style20W400.copyWith(
                   color: Colors.black,
                 ),
+                prefixIcon: Transform.scale(
+                  scale: 0.65,
+                  child: SvgPicture.asset(
+                    Assets.imagesKeyIcon,
+                  ),
+                ),
                 filled: true,
                 fillColor: const Color(0xffF3F3F3),
                 border: OutlineInputBorder(
@@ -93,7 +97,7 @@ class AddFacebookGroupsViewBody extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 60.h),
+          SizedBox(height: 40.h),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 30.w),
             child: GridView.count(

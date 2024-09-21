@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import '../widgets/facebook_choose_groups_view_body1.dart';
 
-import '../widgets/facebook_choose_groups_view_body.dart';
-
-class FacebookChooseGroupsView extends StatelessWidget {
-  const FacebookChooseGroupsView({super.key});
+class FacebookChooseGroupsView1 extends StatelessWidget {
+  const FacebookChooseGroupsView1({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +25,7 @@ class FacebookChooseGroupsView extends StatelessWidget {
           ),
         ],
       ),
-      body: const FacebookChooseGroupsViewBody(),
+      body: const FacebookChooseGroupsViewBody1(),
     );
   }
 }

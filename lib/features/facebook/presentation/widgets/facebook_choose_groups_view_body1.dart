@@ -7,8 +7,8 @@ import 'package:shopping_chart/core/utils/app_text_style.dart';
 import 'package:shopping_chart/core/utils/assets.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/widgets/destination_check_box.dart';
 
-class FacebookChooseGroupsViewBody extends StatelessWidget {
-  const FacebookChooseGroupsViewBody({super.key});
+class FacebookChooseGroupsViewBody1 extends StatelessWidget {
+  const FacebookChooseGroupsViewBody1({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -131,7 +131,7 @@ class FacebookChooseGroupsViewBody extends StatelessWidget {
           SizedBox(height: 59.h),
           InkWell(
             onTap: () {
-              // context.push('/launchAdChooseGroupToSendView2');
+              context.push('/facebookChooseGroupsView2');
             },
             child: Container(
               height: 40.h,
