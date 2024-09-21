@@ -25,7 +25,7 @@ class LaunchAdChatsViewBody extends StatelessWidget {
             SizedBox(height: 30.h),
             Column(
               children: List.generate(
-                5,
+                7,
                 (index) => Stack(
                   clipBehavior: Clip.none,
                   children: [
@@ -33,7 +33,7 @@ class LaunchAdChatsViewBody extends StatelessWidget {
                       padding: EdgeInsets.only(bottom: 35.h),
                       child: ListTile(
                         onTap: () {
-                          context.push("/launchChatsMessagesView");
+                          context.push("/telegramChatsMessagesViewBody");
                         },
                         tileColor: const Color(0xffA1A1A1),
                         shape: RoundedRectangleBorder(

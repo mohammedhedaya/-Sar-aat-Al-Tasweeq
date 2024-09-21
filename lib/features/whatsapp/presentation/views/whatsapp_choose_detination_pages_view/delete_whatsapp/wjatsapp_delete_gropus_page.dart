@@ -59,33 +59,30 @@ class WhatsappDeleteGroupsPage extends StatelessWidget {
             ),
           ),
         ),
-        Padding(
-          padding: EdgeInsetsDirectional.only(bottom: 15.h),
-          child: InkWell(
-            onTap: () {
-              context.push('/deleteSendingView');
-            },
-            child: Container(
-              height: 40.h,
-              width: 200.w,
-              padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 4.h),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5.r),
-                gradient: const LinearGradient(
-                  colors: [
-                    Color(0xff00C0CC),
-                    Color(0xff006066),
-                  ],
-                  begin: Alignment.centerLeft,
-                  end: Alignment.centerRight,
-                ),
+        InkWell(
+          onTap: () {
+            context.push('/deleteSendingView');
+          },
+          child: Container(
+            height: 40.h,
+            width: 200.w,
+            padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 4.h),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(5.r),
+              gradient: const LinearGradient(
+                colors: [
+                  Color(0xff00C0CC),
+                  Color(0xff006066),
+                ],
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
               ),
-              child: Center(
-                child: Text(
-                  "قم بالحذف",
-                  style: AppStyles.style14W400,
-                  textAlign: TextAlign.center,
-                ),
+            ),
+            child: Center(
+              child: Text(
+                "قم بالحذف",
+                style: AppStyles.style14W400,
+                textAlign: TextAlign.center,
               ),
             ),
           ),

@@ -5,8 +5,8 @@ import 'package:shopping_chart/core/utils/app_colors.dart';
 import 'package:shopping_chart/core/utils/app_text_style.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/widgets/destination_check_box.dart';
 
-class WhatsappSendToGroupsPage extends StatelessWidget {
-  const WhatsappSendToGroupsPage({super.key});
+class TelegramSendToAllPage extends StatelessWidget {
+  const TelegramSendToAllPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class WhatsappSendToGroupsPage extends StatelessWidget {
                       const ChooseDestinationCheckbox(),
                     ],
                   ),
-                  SizedBox(height: 20.h),
+                  SizedBox(height: 10.h),
                   Column(
                     children: List.generate(
                       10,
@@ -54,7 +54,6 @@ class WhatsappSendToGroupsPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: 59.h),
                 ],
               ),
             ),

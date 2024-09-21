@@ -57,25 +57,22 @@ class LaunchAdAddWhatsappGroupsViewBody extends StatelessWidget {
               readOnly: true,
               fiiledColor: AppColors.whiteColor.withOpacity(0.10),
               hintText: "",
-              prefixIcon: Padding(
-                padding: EdgeInsets.only(right: 10.w),
-                child: CountryCodePicker(
-                  onChanged: (value) {},
-                  initialSelection: 'SA',
-                  favorite: const ['+966', 'SA'],
-                  barrierColor: const Color(0xfffff9f9).withOpacity(0.33),
-                  textOverflow: TextOverflow.ellipsis,
-                  boxDecoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8.r),
-                    color: const Color(0XFFD9D9D9),
-                  ),
-                  showCountryOnly: true,
-                  hideMainText: true,
-                  flagWidth: 50.w,
-                  padding: EdgeInsets.zero,
-                  flagDecoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5.r),
-                  ),
+              prefixIcon: CountryCodePicker(
+                onChanged: (value) {},
+                initialSelection: 'SA',
+                favorite: const ['+966', 'SA'],
+                barrierColor: const Color(0xfffff9f9).withOpacity(0.33),
+                textOverflow: TextOverflow.ellipsis,
+                boxDecoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8.r),
+                  color: const Color(0XFFD9D9D9),
+                ),
+                showCountryOnly: true,
+                hideMainText: true,
+                flagWidth: 50.w,
+                padding: EdgeInsets.zero,
+                flagDecoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5.r),
                 ),
               ),
               suffixIcon: const Icon(

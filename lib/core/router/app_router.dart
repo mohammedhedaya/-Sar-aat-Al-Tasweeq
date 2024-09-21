@@ -12,6 +12,12 @@ import 'package:shopping_chart/features/facebook/presentation/views/facebook_gro
 import 'package:shopping_chart/features/facebook/presentation/views/facebook_sending_view.dart';
 import 'package:shopping_chart/features/facebook/presentation/views/facebook_view.dart';
 import 'package:shopping_chart/features/facebook/presentation/views/launch_your_facebook_Ad_view.dart';
+import 'package:shopping_chart/features/telegram/presentation/views/choose_telegram_group_to_send_view.dart';
+import 'package:shopping_chart/features/telegram/presentation/views/choose_telegram_group_to_send_view1.dart';
+import 'package:shopping_chart/features/telegram/presentation/views/choose_telegram_group_to_send_view2.dart';
+import 'package:shopping_chart/features/telegram/presentation/views/telegram_chats_messages_view.dart';
+import 'package:shopping_chart/features/telegram/presentation/views/telegram_delete_choose_destination_view.dart';
+import 'package:shopping_chart/features/telegram/presentation/views/telegram_deleting_view.dart';
 import 'package:shopping_chart/features/x/presentation/views/add_trends_view.dart';
 import 'package:shopping_chart/features/x/presentation/views/choose_person_and_send_x_ad_view.dart';
 import 'package:shopping_chart/features/x/presentation/views/choose_x_ad_destination_view.dart';
@@ -102,7 +108,7 @@ final GoRouter router = GoRouter(
       path: '/',
       builder: (context, state) => BlocProvider(
         create: (context) => getIt<AuthCubit>(),
-        child: const UserMainLayoutScreen(),
+        child: const LoginView(),
       ),
     ),
     GoRoute(
@@ -494,6 +500,30 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/facebookChooseGroupsView2',
       builder: (context, state) => const FacebookChooseGroupsView2(),
+    ),
+    GoRoute(
+      path: '/telegramDeleteChooseDestinationView',
+      builder: (context, state) => const TelegramDeleteChooseDestinationView(),
+    ),
+    GoRoute(
+      path: '/telegramDeletingView',
+      builder: (context, state) => const TelegramDeletingView(),
+    ),
+    GoRoute(
+      path: '/chooseTelegramGroupToSendView',
+      builder: (context, state) => const ChooseTelegramGroupToSendView(),
+    ),
+    GoRoute(
+      path: '/chooseTelegramGroupToSendView1',
+      builder: (context, state) => const ChooseTelegramGroupToSendView1(),
+    ),
+    GoRoute(
+      path: '/chooseTelegramGroupToSendView2',
+      builder: (context, state) => const ChooseTelegramGroupToSendView2(),
+    ),
+    GoRoute(
+      path: '/telegramChatsMessagesViewBody',
+      builder: (context, state) => const TelegramChatsMessagesView(),
     ),
   ],
 );

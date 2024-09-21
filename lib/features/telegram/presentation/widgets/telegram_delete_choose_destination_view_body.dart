@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shopping_chart/features/telegram/presentation/views/telegram_choose_destination_page/send_telegram/telegram_send_to_all_page.dart';
-import 'package:shopping_chart/features/telegram/presentation/views/telegram_choose_destination_page/send_telegram/telegram_send_to_chats_page.dart';
-import 'package:shopping_chart/features/telegram/presentation/views/telegram_choose_destination_page/send_telegram/telegram_send_to_groups_page.dart';
+import 'package:shopping_chart/features/telegram/presentation/views/telegram_choose_destination_page/delete_telegram/telegram_delete_all_page.dart';
+import 'package:shopping_chart/features/telegram/presentation/views/telegram_choose_destination_page/delete_telegram/telegram_delete_chats_page.dart';
+import 'package:shopping_chart/features/telegram/presentation/views/telegram_choose_destination_page/delete_telegram/telegram_delete_groups_page.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 
-class TelegramChooseTheDestinationViewBody extends StatefulWidget {
-  const TelegramChooseTheDestinationViewBody({super.key});
+class TelegramDeleteChooseDestinationViewBody extends StatefulWidget {
+  const TelegramDeleteChooseDestinationViewBody({super.key});
 
   @override
-  State<TelegramChooseTheDestinationViewBody> createState() =>
-      _TelegramChooseTheDestinationViewBodyState();
+  State<TelegramDeleteChooseDestinationViewBody> createState() =>
+      _TelegramDeleteChooseDestinationViewBodyState();
 }
 
-class _TelegramChooseTheDestinationViewBodyState
-    extends State<TelegramChooseTheDestinationViewBody> {
+class _TelegramDeleteChooseDestinationViewBodyState
+    extends State<TelegramDeleteChooseDestinationViewBody> {
   final PageController _pageController = PageController();
   int _currentPage = 0;
 
@@ -38,7 +38,7 @@ class _TelegramChooseTheDestinationViewBodyState
         children: [
           Center(
             child: Text(
-              "أختر وجهة ( تيليجرام )",
+              "أختر الوجهة (حذف التليجرام)",
               style: AppStyles.style17W800,
               textAlign: TextAlign.center,
             ),
@@ -73,8 +73,8 @@ class _TelegramChooseTheDestinationViewBodyState
                     child: Column(
                       children: [
                         Text(
-                          "الكل",
-                          style: AppStyles.style17W800.copyWith(
+                          "حذف الكل",
+                          style: AppStyles.style10W800.copyWith(
                             color: _currentPage == 0
                                 ? const Color(0xff2F2F2F)
                                 : Colors.white,
@@ -119,12 +119,12 @@ class _TelegramChooseTheDestinationViewBodyState
                     child: Column(
                       children: [
                         Text(
-                          "الدردشات",
+                          "حذف الدردشات",
                           style: _currentPage == 1
-                              ? AppStyles.style17W800.copyWith(
+                              ? AppStyles.style10W800.copyWith(
                                   color: const Color(0xff2F2F2F),
                                 )
-                              : AppStyles.style17W800,
+                              : AppStyles.style10W800,
                         ),
                         Text(
                           "1000",
@@ -165,12 +165,12 @@ class _TelegramChooseTheDestinationViewBodyState
                     child: Column(
                       children: [
                         Text(
-                          "المجموعات",
+                          "حذف المجموعات",
                           style: _currentPage == 2
-                              ? AppStyles.style17W800.copyWith(
+                              ? AppStyles.style10W800.copyWith(
                                   color: const Color(0xff2F2F2F),
                                 )
-                              : AppStyles.style17W800,
+                              : AppStyles.style10W800,
                         ),
                         Text(
                           "3000",
@@ -196,11 +196,11 @@ class _TelegramChooseTheDestinationViewBodyState
               },
               children: const [
                 // Page 1: All
-                TelegramSendToAllPage(),
+                TelegramDeleteAllPage(),
                 // Page 2: Chats
-                TelegramSendToChatsPage(),
+                TelegramDeleteChatsPage(),
                 // Page 3: Groups
-                TelegramSendToGroupsPage(),
+                TelegramDeleteGroupsPage(),
               ],
             ),
           ),

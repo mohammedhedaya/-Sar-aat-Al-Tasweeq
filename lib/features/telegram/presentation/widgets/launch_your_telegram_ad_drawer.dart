@@ -108,20 +108,23 @@ class LaunchYourTelegramAdDrawer extends StatelessWidget {
                 title: "تحويل الرقم الى رابط مباشرة للتليجرام",
                 image: Assets.imagesWhatsapppast,
               ),
+              SizedBox(height: 40.h),
               CustomLaunchDrawerItem(
                 onTap: () {
                   context.push('/launchAdTelegramGroupsView');
                 },
-                title: "إضافة جروبك (زود المتابعين)",
+                title: "إضافة قناتك (زود المتابعين)",
                 image: Assets.imagesAddgroup,
               ),
+              SizedBox(height: 40.h),
               CustomLaunchDrawerItem(
                 onTap: () {
-                  context.push('/launchAdChooseGroupView');
+                  context.push('/chooseTelegramGroupToSendView');
                 },
-                title: "أختار أحد المجموعات ويتم الإرسال على جميع الأرقام ",
+                title: "أختار أحد القنوات ويتم الإرسال على جميع الأرقام ",
                 image: Assets.imagesChoosegroup,
               ),
+              SizedBox(height: 40.h),
               CustomLaunchDrawerItem(
                 onTap: () {
                   context.push('/telegramGroupsView');

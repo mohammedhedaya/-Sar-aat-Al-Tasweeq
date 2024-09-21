@@ -1,4 +1,6 @@
+import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import '../../../../core/utils/app_colors.dart';
@@ -47,20 +49,7 @@ class LaunchAdTelegramGroupsViewBody extends StatelessWidget {
               ),
             ),
             SizedBox(height: 4.h),
-            CustomAuthTextField(
-              fiiledColor: AppColors.whiteColor.withOpacity(0.10),
-              hintText: "",
-              suffixIcon: InkWell(
-                onTap: () {},
-                child: Transform.scale(
-                  scale: 0.5,
-                  child: SvgPicture.asset(
-                    Assets.imagesPastLink,
-                  ),
-                ),
-              ),
-              onChanged: (value) {},
-            ),
+            const CustomPastLinkTelegramTextField(),
             SizedBox(height: 26.h),
             Padding(
               padding: EdgeInsetsDirectional.only(start: 10.w),
@@ -73,22 +62,31 @@ class LaunchAdTelegramGroupsViewBody extends StatelessWidget {
             ),
             SizedBox(height: 4.h),
             CustomAuthTextField(
+              readOnly: true,
               fiiledColor: AppColors.whiteColor.withOpacity(0.10),
               hintText: "",
-              prefixIcon: Padding(
-                padding: EdgeInsets.only(right: 10.w),
-                child: SvgPicture.asset(
-                  Assets.imagesSuadiFlag,
-                  height: 41.h,
+              prefixIcon: CountryCodePicker(
+                onChanged: (value) {},
+                initialSelection: 'SA',
+                favorite: const ['+966', 'SA'],
+                barrierColor: const Color(0xfffff9f9).withOpacity(0.33),
+                textOverflow: TextOverflow.ellipsis,
+                boxDecoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8.r),
+                  color: const Color(0XFFD9D9D9),
+                ),
+                showCountryOnly: true,
+                hideMainText: true,
+                flagWidth: 50.w,
+                padding: EdgeInsets.zero,
+                flagDecoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5.r),
                 ),
               ),
-              suffixIcon: InkWell(
-                onTap: () {},
-                child: const Icon(
-                  Icons.keyboard_arrow_down_rounded,
-                  color: AppColors.whiteColor,
-                  size: 30,
-                ),
+              suffixIcon: const Icon(
+                Icons.keyboard_arrow_down_rounded,
+                color: AppColors.whiteColor,
+                size: 30,
               ),
               onChanged: (value) {},
             ),
@@ -132,6 +130,55 @@ class LaunchAdTelegramGroupsViewBody extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class CustomPastLinkTelegramTextField extends StatefulWidget {
+  const CustomPastLinkTelegramTextField({
+    super.key,
+  });
+
+  @override
+  State<CustomPastLinkTelegramTextField> createState() =>
+      _CustomPastLinkTelegramTextFieldState();
+}
+
+class _CustomPastLinkTelegramTextFieldState
+    extends State<CustomPastLinkTelegramTextField> {
+  final TextEditingController linkController = TextEditingController();
+
+  @override
+  void dispose() {
+    linkController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return CustomAuthTextField(
+      controller: linkController,
+      fiiledColor: AppColors.whiteColor.withOpacity(0.10),
+      hintText: "",
+      suffixIcon: InkWell(
+        onTap: () async {
+          // Get the data from the clipboard
+          ClipboardData? clipboardData = await Clipboard.getData('text/plain');
+          if (clipboardData != null) {
+            // Set the clipboard text to the controller
+            setState(() {
+              linkController.text = clipboardData.text ?? '';
+            });
+          }
+        },
+        child: Transform.scale(
+          scale: 0.5,
+          child: SvgPicture.asset(
+            Assets.imagesPastLink,
+          ),
+        ),
+      ),
+      onChanged: (value) {},
     );
   }
 }

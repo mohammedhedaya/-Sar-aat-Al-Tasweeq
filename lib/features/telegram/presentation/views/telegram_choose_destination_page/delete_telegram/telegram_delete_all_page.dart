@@ -5,8 +5,8 @@ import 'package:shopping_chart/core/utils/app_colors.dart';
 import 'package:shopping_chart/core/utils/app_text_style.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/widgets/destination_check_box.dart';
 
-class WhatsappSendToGroupsPage extends StatelessWidget {
-  const WhatsappSendToGroupsPage({super.key});
+class TelegramDeleteAllPage extends StatelessWidget {
+  const TelegramDeleteAllPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class WhatsappSendToGroupsPage extends StatelessWidget {
                       const ChooseDestinationCheckbox(),
                     ],
                   ),
-                  SizedBox(height: 20.h),
+                  SizedBox(height: 27.h),
                   Column(
                     children: List.generate(
                       10,
@@ -54,36 +54,38 @@ class WhatsappSendToGroupsPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: 59.h),
                 ],
               ),
             ),
           ),
         ),
-        InkWell(
-          onTap: () {
-            context.push('/whastappSendingView');
-          },
-          child: Container(
-            height: 40.h,
-            width: 200.w,
-            padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 4.h),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(5.r),
-              gradient: const LinearGradient(
-                colors: [
-                  Color(0xff00C0CC),
-                  Color(0xff006066),
-                ],
-                begin: Alignment.centerLeft,
-                end: Alignment.centerRight,
+        Padding(
+          padding: EdgeInsetsDirectional.only(bottom: 15.h),
+          child: InkWell(
+            onTap: () {
+              context.push('/telegramDeletingView');
+            },
+            child: Container(
+              height: 40.h,
+              width: 200.w,
+              padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 4.h),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(5.r),
+                gradient: const LinearGradient(
+                  colors: [
+                    Color(0xff00C0CC),
+                    Color(0xff006066),
+                  ],
+                  begin: Alignment.centerLeft,
+                  end: Alignment.centerRight,
+                ),
               ),
-            ),
-            child: Center(
-              child: Text(
-                "قم بالإرسال",
-                style: AppStyles.style14W400,
-                textAlign: TextAlign.center,
+              child: Center(
+                child: Text(
+                  "قم بالحذف",
+                  style: AppStyles.style14W400,
+                  textAlign: TextAlign.center,
+                ),
               ),
             ),
           ),

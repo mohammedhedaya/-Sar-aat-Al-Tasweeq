@@ -15,20 +15,26 @@ class TelegramViewBody extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          Column(
+          Stack(
+            alignment: Alignment.center,
+            clipBehavior: Clip.none,
             children: [
+              Positioned(
+                top: 80.h,
+                child: Text(
+                  "TELEGRAM",
+                  style: AppStyles.style78W400,
+                  textAlign: TextAlign.center,
+                ),
+              ),
               Center(
                 child: SvgPicture.asset(
                   Assets.imagesTelegramlogo,
                 ),
               ),
-              Text(
-                "Telegram",
-                style: AppStyles.style78W400,
-                textAlign: TextAlign.center,
-              ),
             ],
           ),
+          SizedBox(height: 80.h),
           Container(
             width: double.infinity,
             padding: EdgeInsets.only(
@@ -82,7 +88,33 @@ class TelegramViewBody extends StatelessWidget {
                 SizedBox(height: 50.h),
                 CustomSubscribeBtn(
                   onPressed: () {
-                    context.push('/scanQrCodeView');
+                    showDialog(
+                      context: context,
+                      barrierColor: const Color(0xffFFF9F9).withOpacity(0.33),
+                      builder: (context) {
+                        return CustomShowDialog(
+                          onTap: () {
+                            context.push('/scanQrCodeView');
+                          },
+                          image: Assets.imagesXerror,
+                          textButton: "الأشتراك",
+                          content: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "الرجاء الأشتراك فى الباقة",
+                                style: AppStyles.style15W900,
+                                textAlign: TextAlign.center,
+                              ),
+                              SizedBox(width: 10.w),
+                              SvgPicture.asset(
+                                Assets.imagesSubscribeOfPackage,
+                              ),
+                            ],
+                          ),
+                        );
+                      },
+                    );
                   },
                   text: "مسح الباركود",
                 ),

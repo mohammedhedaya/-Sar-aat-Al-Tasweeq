@@ -63,7 +63,7 @@ class TelegramGroupsViewBody extends StatelessWidget {
                           ),
                           SizedBox(height: 20.h),
                           Text(
-                            "مجموعات المملكة العربية السعودية",
+                            "قنوات المملكة العربية السعودية",
                             style: AppStyles.style13W600,
                             textAlign: TextAlign.center,
                             overflow: TextOverflow.ellipsis,

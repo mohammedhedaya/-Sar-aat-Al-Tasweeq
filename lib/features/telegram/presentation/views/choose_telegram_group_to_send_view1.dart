@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import '../widgets/launch_telegram_groups_view_body.dart';
-import '../../../../core/utils/app_text_style.dart';
+import 'package:shopping_chart/features/telegram/presentation/widgets/choose_telegram_group_to_send_view1_body.dart';
 
-class LaunchAdTelegramGroupsView extends StatelessWidget {
-  const LaunchAdTelegramGroupsView({super.key});
+class ChooseTelegramGroupToSendView1 extends StatelessWidget {
+  const ChooseTelegramGroupToSendView1({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,10 +13,6 @@ class LaunchAdTelegramGroupsView extends StatelessWidget {
         surfaceTintColor: Colors.transparent,
         elevation: 0,
         automaticallyImplyLeading: false,
-        title: Text(
-          "إضافة قنوات تيليجرام",
-          style: AppStyles.style20W400,
-        ),
         actions: [
           IconButton(
             onPressed: () {
@@ -30,7 +25,8 @@ class LaunchAdTelegramGroupsView extends StatelessWidget {
           ),
         ],
       ),
-      body: const LaunchAdTelegramGroupsViewBody(),
+      body: const ChooseTelegramGroupToSendViewBody1(),
     );
   }
 }
+
