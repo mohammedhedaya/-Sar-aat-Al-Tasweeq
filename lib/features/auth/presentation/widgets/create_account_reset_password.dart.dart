@@ -25,7 +25,6 @@ class CreateAccountAndResetPassword extends StatelessWidget {
               style: TextButton.styleFrom(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(5.r),
-                  side: const BorderSide(color: AppColors.whiteColor),
                 ),
               ),
               child: Text(
