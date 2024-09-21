@@ -168,8 +168,8 @@ class InstagramChooseDestinationViewBody extends StatelessWidget {
                       Color(0xff00C0CC),
                       Color(0xff006066),
                     ],
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
                   ),
                 ),
                 child: Center(

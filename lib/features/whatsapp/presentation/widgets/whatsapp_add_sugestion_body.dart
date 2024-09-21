@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -13,7 +12,7 @@ class WhatsappAddSuggestionViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-     return SingleChildScrollView(
+    return SingleChildScrollView(
       child: Container(
         margin: EdgeInsets.symmetric(horizontal: 25.w),
         decoration: const BoxDecoration(
@@ -90,9 +89,9 @@ class WhatsappAddSuggestionViewBody extends StatelessWidget {
                     context: context,
                     barrierColor: const Color(0xffFFF9F9).withOpacity(0.33),
                     builder: (context) {
-                      return  CustomAddedSuccesDialog(
+                      return CustomAddedSuccesDialog(
                         text: "سرعة التسويق يشكرك على الاقتراح",
-                        style:  AppStyles.style15W900,
+                        style: AppStyles.style15W900,
                       );
                     },
                   );
@@ -109,8 +108,8 @@ class WhatsappAddSuggestionViewBody extends StatelessWidget {
                         Color(0xff00C0CC),
                         Color(0xff006066),
                       ],
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
+                      begin: Alignment.bottomLeft,
+                      end: Alignment.centerRight,
                     ),
                   ),
                   child: Center(
@@ -129,6 +128,6 @@ class WhatsappAddSuggestionViewBody extends StatelessWidget {
           ],
         ),
       ),
-    );  
+    );
   }
 }

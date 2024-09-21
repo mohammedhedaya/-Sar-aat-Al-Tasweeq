@@ -90,13 +90,13 @@ class DeleteSendingView extends StatelessWidget {
                                 SizedBox(height: 11.h),
                                 const CustomProgressBarAndText(
                                   label: "حذف المجموعات :",
-                                  value: "1000",
+                                  value: "3000",
                                   progress: 0.4,
                                 ),
                                 SizedBox(height: 11.h),
                                 const CustomProgressBarAndText(
                                   label: "حذف عدد الكل :",
-                                  value: "3000",
+                                  value: "4000",
                                   progress: 0.8,
                                   textcolor: Color(0xffE21D1D),
                                 ),
@@ -145,8 +145,8 @@ class DeleteSendingView extends StatelessWidget {
                               Color(0xff00C0CC),
                               Color(0xff006066),
                             ],
-                            begin: Alignment.topCenter,
-                            end: Alignment.bottomCenter,
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
                           ),
                         ),
                         child: Center(

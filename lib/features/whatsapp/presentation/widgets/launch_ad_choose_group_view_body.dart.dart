@@ -46,6 +46,7 @@ class LaunchAdChooseGroupViewBody extends StatelessWidget {
               child: Column(
                 children: [
                   LaunchAdTextField(
+                    onChanged: (value) {},
                     hintText: "اكتب رسالتك",
                     onSuffixIconTap: () {},
                   ),
@@ -61,11 +62,7 @@ class LaunchAdChooseGroupViewBody extends StatelessWidget {
                       child: Transform.scale(
                         scale: 0.5,
                         child: SvgPicture.asset(
-                          Assets.imagesPastLink,
-                          colorFilter: const ColorFilter.mode(
-                            Colors.tealAccent,
-                            BlendMode.srcIn,
-                          ),
+                          Assets.imagesLinkTeal,
                         ),
                       ),
                     ),
@@ -80,9 +77,11 @@ class LaunchAdChooseGroupViewBody extends StatelessWidget {
                     ),
                     suffixIcon: InkWell(
                       onTap: () {},
-                      child: const Icon(
-                        Icons.location_on_outlined,
-                        color: Colors.tealAccent,
+                      child: Transform.scale(
+                        scale: 0.5,
+                        child: SvgPicture.asset(
+                          Assets.imagesLocationTeal,
+                        ),
                       ),
                     ),
                     onChanged: (value) {},
@@ -102,8 +101,8 @@ class LaunchAdChooseGroupViewBody extends StatelessWidget {
                             Color(0xff00C0CC),
                             Color(0xff006066),
                           ],
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter,
+                          begin: Alignment.centerLeft,
+                          end: Alignment.centerRight,
                         ),
                       ),
                       child: Text(

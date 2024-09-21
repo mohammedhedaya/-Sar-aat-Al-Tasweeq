@@ -88,7 +88,7 @@ class TelegramViewBody extends StatelessWidget {
                 ),
                 SizedBox(height: 39.h),
                 Text(
-                 "شاهد طريقة أستخدام التليجرام ؟",
+                  "شاهد طريقة أستخدام التليجرام ؟",
                   style: AppStyles.style14W600,
                 ),
                 SizedBox(height: 10.h),
@@ -130,8 +130,8 @@ class TelegramViewBody extends StatelessWidget {
                             Color(0xff00C0CC),
                             Color(0xff006066),
                           ],
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter,
+                          begin: Alignment.centerLeft,
+                          end: Alignment.centerRight,
                         ),
                       ),
                       child: Center(

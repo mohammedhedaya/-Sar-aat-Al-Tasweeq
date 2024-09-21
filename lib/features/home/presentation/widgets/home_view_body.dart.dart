@@ -40,6 +40,7 @@ class HomeViewBody extends StatelessWidget {
                     "400",
                     style: AppStyles.style12W700.copyWith(
                       fontWeight: FontWeight.w900,
+                      fontFamily: "Titillium Web",
                     ),
                   ),
                   SizedBox(width: 10.w),

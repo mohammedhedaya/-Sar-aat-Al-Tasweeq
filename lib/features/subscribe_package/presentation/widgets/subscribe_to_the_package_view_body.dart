@@ -78,8 +78,8 @@ class SubscribeToThePackageViewBody extends StatelessWidget {
                               const Color(0xff7B7B7B),
                               const Color(0xff0f0f0f).withOpacity(0.65),
                             ],
-                            begin: Alignment.topCenter,
-                            end: Alignment.bottomCenter,
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
                           ),
                         ),
                         child: Column(
@@ -177,8 +177,8 @@ class SubscribeToThePackageViewBody extends StatelessWidget {
                                         Color(0xff00C0CC),
                                         Color(0xff006066),
                                       ],
-                                      begin: Alignment.topCenter,
-                                      end: Alignment.bottomCenter,
+                                      begin: Alignment.centerLeft,
+                                      end: Alignment.centerRight,
                                     ),
                                   ),
                                   child: Text(

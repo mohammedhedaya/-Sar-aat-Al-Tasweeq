@@ -108,6 +108,7 @@ class LaunchYourAdDrawer extends StatelessWidget {
                 title: "تحويل الرقم الى رابط مباشرة للواتساب",
                 image: Assets.imagesWhatsapppast,
               ),
+              SizedBox(height: 40.h),
               CustomLaunchDrawerItem(
                 onTap: () {
                   context.push('/launchAdAddWhatsappGroupsView');
@@ -115,6 +116,7 @@ class LaunchYourAdDrawer extends StatelessWidget {
                 title: "إضافة جروبك (زود المتابعين)",
                 image: Assets.imagesAddgroup,
               ),
+              SizedBox(height: 40.h),
               CustomLaunchDrawerItem(
                 onTap: () {
                   context.push('/launchAdChooseGroupView');
@@ -122,6 +124,7 @@ class LaunchYourAdDrawer extends StatelessWidget {
                 title: "أختار أحد المجموعات ويتم الإرسال على جميع الأرقام ",
                 image: Assets.imagesChoosegroup,
               ),
+              SizedBox(height: 40.h),
               CustomLaunchDrawerItem(
                 onTap: () {
                   context.push('/whatsappGroupsView');
@@ -129,6 +132,7 @@ class LaunchYourAdDrawer extends StatelessWidget {
                 title: "جروبات الواتساب",
                 image: Assets.imagesWhatsappGroupicon,
               ),
+              SizedBox(height: 20.h),
             ],
           ),
         ),

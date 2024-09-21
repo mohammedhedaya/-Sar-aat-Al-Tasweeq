@@ -186,6 +186,14 @@ class Assets {
   /// assets/images/likeicon.svg
   static const String imagesLikeicon = "assets/images/likeicon.svg";
 
+  /// Assets for imagesLinkTeal
+  /// assets/images/linkTeal.svg
+  static const String imagesLinkTeal = "assets/images/linkTeal.svg";
+
+  /// Assets for imagesLocationTeal
+  /// assets/images/locationTeal.svg
+  static const String imagesLocationTeal = "assets/images/locationTeal.svg";
+
   /// Assets for imagesLogOutIcon
   /// assets/images/logOutIcon.svg
   static const String imagesLogOutIcon = "assets/images/logOutIcon.svg";
@@ -349,6 +357,10 @@ class Assets {
   /// Assets for imagesWalleticon
   /// assets/images/Walleticon.svg
   static const String imagesWalleticon = "assets/images/Walleticon.svg";
+
+  /// Assets for imagesWaverecord
+  /// assets/images/waverecord.svg
+  static const String imagesWaverecord = "assets/images/waverecord.svg";
 
   /// Assets for imagesWhatsAppImage
   /// assets/images/whatsAppImage.webp

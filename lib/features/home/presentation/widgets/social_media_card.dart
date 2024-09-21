@@ -48,7 +48,9 @@ class SocialMediaCard extends StatelessWidget {
         SizedBox(height: 13.h),
         Text(
           label,
-          style: AppStyles.style24W400,
+          style: AppStyles.style24W400.copyWith(
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ],
     );

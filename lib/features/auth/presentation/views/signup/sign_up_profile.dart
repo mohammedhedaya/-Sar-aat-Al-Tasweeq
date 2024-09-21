@@ -44,35 +44,32 @@ class SignUpProfileView extends StatelessWidget {
                         fiiledColor: AppColors.whiteColor.withOpacity(0.10),
                         hintText: "رقم الهاتف",
                         keyboardType: TextInputType.phone,
-                        suffixIcon: InkWell(
-                          onTap: () {},
-                          child: Container(
-                            constraints: BoxConstraints(
-                              minWidth: 95.w,
+                        suffixIcon: Container(
+                          constraints: BoxConstraints(
+                            minWidth: 95.w,
+                          ),
+                          height: 70.h,
+                          decoration: BoxDecoration(
+                            color: const Color(0xffD9D9D9),
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(20.r),
+                              bottomLeft: Radius.circular(20.r),
                             ),
-                            height: 70.h,
-                            decoration: BoxDecoration(
-                              color: const Color(0xffD9D9D9),
-                              borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(20.r),
-                                bottomLeft: Radius.circular(20.r),
-                              ),
+                          ),
+                          child: CountryCodePicker(
+                            onChanged: (value) {},
+                            initialSelection: 'SA',
+                            favorite: const ['+966', 'SA'],
+                            barrierColor:
+                                const Color(0xfffff9f9).withOpacity(0.33),
+                            textOverflow: TextOverflow.ellipsis,
+                            boxDecoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8.r),
+                              color: const Color(0XFFD9D9D9),
                             ),
-                            child: CountryCodePicker(
-                              onChanged: (value) {},
-                              initialSelection: 'SA',
-                              favorite: const ['+966', 'SA'],
-                              barrierColor:
-                                  const Color(0xfffff9f9).withOpacity(0.33),
-                              textOverflow: TextOverflow.ellipsis,
-                              boxDecoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(8.r),
-                                color: const Color(0XFFD9D9D9),
-                              ),
-                              padding: EdgeInsets.zero,
-                              flagDecoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(5.r),
-                              ),
+                            padding: EdgeInsets.zero,
+                            flagDecoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(5.r),
                             ),
                           ),
                         ),

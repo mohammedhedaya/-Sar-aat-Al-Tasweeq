@@ -17,9 +17,9 @@ class CustomAuthTextField extends StatelessWidget {
     this.obscureText,
     this.prefix,
     this.fiiledColor,
-    this.hintStyle,
+    this.hintStyle, this.readOnly,
   });
-
+  final bool? readOnly;
   final String hintText;
   final Widget? prefixIcon;
   final Widget? suffixIcon;
@@ -36,6 +36,7 @@ class CustomAuthTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      readOnly: readOnly ?? false,
       controller: controller,
       onChanged: onChanged,
       keyboardType: keyboardType,

@@ -8,7 +8,6 @@ import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
 
-
 class FacebookChooseGroupsViewBody2 extends StatelessWidget {
   const FacebookChooseGroupsViewBody2({super.key});
 
@@ -89,8 +88,8 @@ class FacebookChooseGroupsViewBody2 extends StatelessWidget {
                           Color(0xff00C0CC),
                           Color(0xff006066),
                         ],
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
+                        begin: Alignment.centerLeft,
+                        end: Alignment.centerRight,
                       ),
                     ),
                     child: Center(
@@ -177,8 +176,8 @@ class FacebookChooseGroupsViewBody2 extends StatelessWidget {
                       Color(0xff00C0CC),
                       Color(0xff006066),
                     ],
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
                   ),
                 ),
                 child: Center(

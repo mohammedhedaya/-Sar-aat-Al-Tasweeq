@@ -162,6 +162,7 @@ class AppStyles {
     color: AppColors.whiteColor,
     fontSize: 24.sp,
     fontWeight: FontWeight.w400,
+    fontFamily: "Bayon",
   );
   static TextStyle style14W600 = TextStyle(
     color: AppColors.whiteColor,
@@ -217,6 +218,7 @@ class AppStyles {
     color: AppColors.whiteColor,
     fontSize: 78.sp,
     fontWeight: FontWeight.w400,
+    fontFamily: "Londrina Shadow",
   );
   static TextStyle style10W800 = TextStyle(
     color: AppColors.blackColor,

@@ -1,3 +1,4 @@
+import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -18,10 +19,26 @@ class ConvertNumberToWhatsappLinkViewBody extends StatefulWidget {
 class _ConvertNumberToWhatsappLinkViewBodyState
     extends State<ConvertNumberToWhatsappLinkViewBody> {
   final TextEditingController _phoneController = TextEditingController();
-  String _whatsAppLink = "https://web.whatsapp.com/966";
+  String _countryCode = '+966'; // Default country code
+  String _whatsAppLink = '';
+
+  @override
+  void initState() {
+    super.initState();
+    _updateWhatsAppLink(''); // Initialize with an empty number
+  }
+
   void _updateWhatsAppLink(String number) {
     setState(() {
-      _whatsAppLink = "https://web.whatsapp.com/$number";
+      _whatsAppLink = "https://web.whatsapp.com/$_countryCode$number";
+    });
+  }
+
+  void _updateCountryCode(String code) {
+    setState(() {
+      _countryCode = code;
+      _whatsAppLink =
+          "https://web.whatsapp.com/$_countryCode${_phoneController.text}";
     });
   }
 
@@ -29,9 +46,7 @@ class _ConvertNumberToWhatsappLinkViewBodyState
     Clipboard.setData(ClipboardData(text: _whatsAppLink));
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(
-        content: Text(
-          'تم نسخ رابط الواتس اب !',
-        ),
+        content: Text('تم نسخ رابط الواتس اب !'),
       ),
     );
   }
@@ -42,9 +57,7 @@ class _ConvertNumberToWhatsappLinkViewBodyState
       padding: const EdgeInsets.all(35),
       child: ListView(
         children: [
-          Image.asset(
-            Assets.imagesApplogo,
-          ),
+          Image.asset(Assets.imagesApplogo),
           SizedBox(height: 50.h),
           // Phone Number Input Field
           CustomAuthTextField(
@@ -53,40 +66,33 @@ class _ConvertNumberToWhatsappLinkViewBodyState
             hintText: "رقم الهاتف",
             keyboardType: TextInputType.phone,
             fiiledColor: AppColors.whiteColor.withOpacity(0.10),
-            suffixIcon: InkWell(
-              onTap: () {},
-              child: Container(
-                constraints: BoxConstraints(
-                  minWidth: 95.w,
+            suffixIcon: Container(
+              constraints: BoxConstraints(
+                minWidth: 95.w,
+              ),
+              height: 70.h,
+              decoration: BoxDecoration(
+                color: const Color(0xffD9D9D9),
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(20.r),
+                  bottomLeft: Radius.circular(20.r),
                 ),
-                width: 95.w,
-                height: 70.h,
-                decoration: const BoxDecoration(
-                  color: Color(0xffD9D9D9),
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(20),
-                    bottomLeft: Radius.circular(20),
-                  ),
+              ),
+              child: CountryCodePicker(
+                onChanged: (value) {
+                  _updateCountryCode(value.dialCode!);
+                },
+                initialSelection: 'SA',
+                favorite: const ['+966', 'SA'],
+                barrierColor: const Color(0xfffff9f9).withOpacity(0.33),
+                textOverflow: TextOverflow.ellipsis,
+                boxDecoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8.r),
+                  color: const Color(0XFFD9D9D9),
                 ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "966",
-                      style: AppStyles.style16W400.copyWith(
-                        color: AppColors.blackColor,
-                      ),
-                    ),
-                    SizedBox(width: 5.w),
-                    SvgPicture.asset(
-                      Assets.imagesSuadiFlag,
-                    ),
-                    SizedBox(width: 5.w),
-                    const Icon(
-                      Icons.keyboard_arrow_down,
-                      color: AppColors.blackColor,
-                    ),
-                  ],
+                padding: EdgeInsets.zero,
+                flagDecoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5.r),
                 ),
               ),
             ),
@@ -124,14 +130,11 @@ class _ConvertNumberToWhatsappLinkViewBodyState
                 SizedBox(width: 8.w),
                 InkWell(
                   onTap: _copyToClipboard,
-                  child: SvgPicture.asset(
-                    Assets.imagesCopyIcon2,
-                  ),
+                  child: SvgPicture.asset(Assets.imagesCopyIcon2),
                 ),
               ],
             ),
           ),
-          
         ],
       ),
     );

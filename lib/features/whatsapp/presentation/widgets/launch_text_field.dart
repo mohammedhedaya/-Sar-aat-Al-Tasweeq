@@ -7,11 +7,12 @@ import 'custom_launch_menu_brn.dart';
 class LaunchAdTextField extends StatefulWidget {
   final String hintText;
   final VoidCallback onSuffixIconTap;
-
+  final void Function(String)? onChanged;
   const LaunchAdTextField({
     super.key,
     required this.hintText,
     required this.onSuffixIconTap,
+    this.onChanged,
   });
 
   @override
@@ -32,6 +33,7 @@ class _LaunchAdTextFieldState extends State<LaunchAdTextField> {
     return Stack(
       children: [
         TextField(
+          onChanged: widget.onChanged,
           cursorColor: Colors.teal,
           maxLines: 10,
           decoration: InputDecoration(
@@ -77,13 +79,34 @@ class _LaunchAdTextFieldState extends State<LaunchAdTextField> {
               ],
               GestureDetector(
                 onTap: _toggleExpand,
-                child: CircleAvatar(
-                  radius: 15.r,
-                  backgroundColor:
-                      _isExpanded ? const Color(0xffCC0000) : Colors.teal,
-                  child: Icon(
-                    _isExpanded ? Icons.close : Icons.add,
-                    color: Colors.white,
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: _isExpanded ? const Color(0xffCC0000) : null,
+                    shape: BoxShape.circle,
+                    gradient: _isExpanded
+                        ? null
+                        : const LinearGradient(
+                            colors: [
+                              Color(0xFF006066),
+                              Color(0xFF00C0CC),
+                            ],
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                          ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.25),
+                        spreadRadius: 0,
+                        blurRadius: 4,
+                        offset: const Offset(0, 4),
+                      ),
+                    ],
+                  ),
+                  child: Center(
+                    child: Icon(
+                      _isExpanded ? Icons.close : Icons.add,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ),

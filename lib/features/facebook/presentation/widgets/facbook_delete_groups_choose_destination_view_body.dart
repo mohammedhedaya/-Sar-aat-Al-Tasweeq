@@ -17,7 +17,7 @@ class FacbookDeleteGroupsChooseDestinationViewBody extends StatelessWidget {
           children: [
             Center(
               child: Text(
-               "أختر الوجهة (حذف الفيسبوك)",
+                "أختر الوجهة (حذف الفيسبوك)",
                 style: AppStyles.style17W800,
                 textAlign: TextAlign.center,
               ),
@@ -111,8 +111,8 @@ class FacbookDeleteGroupsChooseDestinationViewBody extends StatelessWidget {
                       Color(0xff00C0CC),
                       Color(0xff006066),
                     ],
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
                   ),
                 ),
                 child: Center(

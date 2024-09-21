@@ -2,6 +2,7 @@
 import 'package:chat_bubbles/bubbles/bubble_special_three.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
 
@@ -58,7 +59,16 @@ class LaunchChatsMessagesViewBody extends StatelessWidget {
                                 children: [
                                   const Icon(
                                     Icons.play_arrow_rounded,
+                                    size: 35,
                                     color: Color(0xffE0E0E0),
+                                  ),
+                                  SizedBox(width: 5.w),
+                                  SvgPicture.asset(
+                                    Assets.imagesWaverecord,
+                                    colorFilter: const ColorFilter.mode(
+                                      Color(0xffDADADA),
+                                      BlendMode.srcIn,
+                                    ),
                                   ),
                                   SizedBox(width: 5.w),
                                   Text(
@@ -99,6 +109,11 @@ class LaunchChatsMessagesViewBody extends StatelessWidget {
                                   const Icon(
                                     Icons.play_arrow_rounded,
                                     color: Color(0xff323232),
+                                    size: 35,
+                                  ),
+                                  SizedBox(width: 5.w),
+                                  SvgPicture.asset(
+                                    Assets.imagesWaverecord,
                                   ),
                                   SizedBox(width: 5.w),
                                   Text(
