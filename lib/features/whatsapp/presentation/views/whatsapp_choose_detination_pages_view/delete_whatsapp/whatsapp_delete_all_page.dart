@@ -5,8 +5,8 @@ import 'package:shopping_chart/core/utils/app_colors.dart';
 import 'package:shopping_chart/core/utils/app_text_style.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/widgets/destination_check_box.dart';
 
-class WhatsappSendToGroupsPage extends StatelessWidget {
-  const WhatsappSendToGroupsPage({super.key});
+class WhatsappDeleteAllPage extends StatelessWidget {
+  const WhatsappDeleteAllPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class WhatsappSendToGroupsPage extends StatelessWidget {
         Expanded(
           child: SingleChildScrollView(
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 25.h),
+              padding: EdgeInsets.symmetric(vertical: 25.h),
               child: Column(
                 children: [
                   Row(
@@ -25,10 +25,10 @@ class WhatsappSendToGroupsPage extends StatelessWidget {
                         "تحديد الكل",
                         style: AppStyles.style13W600,
                       ),
-                      const ChooseDestinationCheckbox()
+                      const ChooseDestinationCheckbox(),
                     ],
                   ),
-                  SizedBox(height: 20.h),
+                  SizedBox(height: 27.h),
                   Column(
                     children: List.generate(
                       10,
@@ -54,17 +54,16 @@ class WhatsappSendToGroupsPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: 59.h),
                 ],
               ),
             ),
           ),
         ),
         Padding(
-          padding: EdgeInsetsDirectional.only(bottom: 20.h),
+          padding: EdgeInsetsDirectional.only(bottom: 15.h),
           child: InkWell(
             onTap: () {
-              context.push('/whastappSendingView');
+              context.push('/deleteSendingView');
             },
             child: Container(
               height: 40.h,
@@ -83,7 +82,7 @@ class WhatsappSendToGroupsPage extends StatelessWidget {
               ),
               child: Center(
                 child: Text(
-                  "قم بالإرسال",
+                  "قم بالحذف",
                   style: AppStyles.style14W400,
                   textAlign: TextAlign.center,
                 ),

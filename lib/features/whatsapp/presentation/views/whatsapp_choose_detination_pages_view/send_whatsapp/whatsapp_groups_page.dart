@@ -5,8 +5,8 @@ import 'package:shopping_chart/core/utils/app_colors.dart';
 import 'package:shopping_chart/core/utils/app_text_style.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/widgets/destination_check_box.dart';
 
-class WhatsappSendToChatsPage extends StatelessWidget {
-  const WhatsappSendToChatsPage({super.key});
+class WhatsappSendToGroupsPage extends StatelessWidget {
+  const WhatsappSendToGroupsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class WhatsappSendToChatsPage extends StatelessWidget {
         Expanded(
           child: SingleChildScrollView(
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 25.h),
+              padding: EdgeInsets.symmetric(vertical: 25.h),
               child: Column(
                 children: [
                   Row(
