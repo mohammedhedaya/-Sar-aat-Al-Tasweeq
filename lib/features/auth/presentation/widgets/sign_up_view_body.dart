@@ -37,8 +37,8 @@ class SignUpViewBody extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    top: 30,
-                    right: 24,
+                    top: 30.h,
+                    right: 24.h,
                     child: Text(
                       "إنشاء حساب",
                       style: AppStyles.style40W600.copyWith(
@@ -47,9 +47,9 @@ class SignUpViewBody extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    top: 200,
-                    left: 41,
-                    right: 26,
+                    top: 250.h,
+                    left: 41.w,
+                    right: 26.w,
                     child: Column(
                       children: [
                         CustomAuthTextField(

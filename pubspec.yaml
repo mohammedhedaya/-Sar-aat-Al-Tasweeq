@@ -53,6 +53,7 @@ dependencies:
   chat_bubbles: ^1.6.0
   qr_code_scanner: ^1.0.1
   image_picker: ^1.1.2
+  country_code_picker: ^3.0.0
 
 dev_dependencies:
   flutter_test:
