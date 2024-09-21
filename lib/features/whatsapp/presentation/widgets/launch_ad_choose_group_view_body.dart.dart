@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
-
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
@@ -51,23 +51,7 @@ class LaunchAdChooseGroupViewBody extends StatelessWidget {
                     onSuffixIconTap: () {},
                   ),
                   SizedBox(height: 72.h),
-                  CustomAuthTextField(
-                    fiiledColor: AppColors.whiteColor.withOpacity(0.10),
-                    hintText: "اضف الرابط",
-                    hintStyle: AppStyles.style12W700.copyWith(
-                      color: const Color(0xff9C9C9C),
-                    ),
-                    suffixIcon: InkWell(
-                      onTap: () {},
-                      child: Transform.scale(
-                        scale: 0.5,
-                        child: SvgPicture.asset(
-                          Assets.imagesLinkTeal,
-                        ),
-                      ),
-                    ),
-                    onChanged: (value) {},
-                  ),
+                  const CustomChooseGroupPastLinkTextField(),
                   SizedBox(height: 19.h),
                   CustomAuthTextField(
                     fiiledColor: AppColors.whiteColor.withOpacity(0.10),
@@ -75,13 +59,10 @@ class LaunchAdChooseGroupViewBody extends StatelessWidget {
                     hintStyle: AppStyles.style12W700.copyWith(
                       color: const Color(0xff9C9C9C),
                     ),
-                    suffixIcon: InkWell(
-                      onTap: () {},
-                      child: Transform.scale(
-                        scale: 0.5,
-                        child: SvgPicture.asset(
-                          Assets.imagesLocationTeal,
-                        ),
+                    suffixIcon: Transform.scale(
+                      scale: 0.5,
+                      child: SvgPicture.asset(
+                        Assets.imagesLocationTeal,
                       ),
                     ),
                     onChanged: (value) {},
@@ -119,6 +100,55 @@ class LaunchAdChooseGroupViewBody extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+class CustomChooseGroupPastLinkTextField extends StatefulWidget {
+  const CustomChooseGroupPastLinkTextField({
+    super.key,
+  });
+
+  @override
+  State<CustomChooseGroupPastLinkTextField> createState() =>
+      _CustomChooseGroupPastLinkTextFieldState();
+}
+
+class _CustomChooseGroupPastLinkTextFieldState
+    extends State<CustomChooseGroupPastLinkTextField> {
+  final TextEditingController linkController = TextEditingController();
+  @override
+  void dispose() {
+    linkController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return CustomAuthTextField(
+      controller: linkController,
+      fiiledColor: AppColors.whiteColor.withOpacity(0.10),
+      hintText: "اضف الرابط",
+      hintStyle: AppStyles.style12W700.copyWith(
+        color: const Color(0xff9C9C9C),
+      ),
+      suffixIcon: InkWell(
+        onTap: () async {
+          ClipboardData? clipboardData = await Clipboard.getData('text/plain');
+          if (clipboardData != null) {
+            setState(() {
+              linkController.text = clipboardData.text ?? '';
+            });
+          }
+        },
+        child: Transform.scale(
+          scale: 0.5,
+          child: SvgPicture.asset(
+            Assets.imagesLinkTeal,
+          ),
+        ),
+      ),
+      onChanged: (value) {},
     );
   }
 }
