@@ -70,7 +70,7 @@ class ChoosePersonToSendFacebookAdViewBody extends StatelessWidget {
             Center(
               child: InkWell(
                 onTap: () {
-                  // context.push('/phoneChooseTheDestinationView');
+                  context.push('/searchPersonToSendFacebookAdView');
                 },
                 child: Container(
                   height: 40.h,

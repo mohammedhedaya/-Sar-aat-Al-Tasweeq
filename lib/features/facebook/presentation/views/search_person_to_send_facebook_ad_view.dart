@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
-import 'package:shopping_chart/core/utils/app_colors.dart';
-import 'package:shopping_chart/core/utils/app_text_style.dart';
-import 'package:shopping_chart/core/utils/assets.dart';
-import 'package:shopping_chart/features/facebook/presentation/widgets/choose_person_to_send_facebook_ad_view_body.dart';
 
-class ChoosePersonToSendFacebookAdView extends StatelessWidget {
-  const ChoosePersonToSendFacebookAdView({super.key});
+import '../../../../core/utils/app_colors.dart';
+import '../../../../core/utils/app_text_style.dart';
+import '../../../../core/utils/assets.dart';
+import '../widgets/search_person_to_send_facebook_ad_view_body.dart';
+
+class SearchPersonToSendFacebookAdView extends StatelessWidget {
+  const SearchPersonToSendFacebookAdView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,13 +19,6 @@ class ChoosePersonToSendFacebookAdView extends StatelessWidget {
         surfaceTintColor: Colors.transparent,
         automaticallyImplyLeading: false,
         elevation: 0,
-        leading: IconButton(
-          onPressed: () {},
-          icon: const Icon(
-            Icons.logout,
-            color: Colors.white,
-          ),
-        ),
         title: Row(
           children: [
             Text(
@@ -51,7 +45,7 @@ class ChoosePersonToSendFacebookAdView extends StatelessWidget {
           ),
         ],
       ),
-      body: const ChoosePersonToSendFacebookAdViewBody(),
+      body: const SearchPersonToSendFacebookAdViewBody(),
     );
   }
 }

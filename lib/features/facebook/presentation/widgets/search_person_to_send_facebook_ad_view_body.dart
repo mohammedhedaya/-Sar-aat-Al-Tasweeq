@@ -2,31 +2,56 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
-import '../../../../core/utils/app_text_style.dart';
-import '../../../../core/utils/assets.dart';
+import 'package:shopping_chart/core/utils/app_colors.dart';
+import 'package:shopping_chart/core/utils/app_text_style.dart';
+import 'package:shopping_chart/core/utils/assets.dart';
 
-class SearchPersonToSendAdViewBody extends StatelessWidget {
-  const SearchPersonToSendAdViewBody({super.key});
+class SearchPersonToSendFacebookAdViewBody extends StatelessWidget {
+  const SearchPersonToSendFacebookAdViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 24.h),
-      child: Column(
-        children: [
-          Align(
-            alignment: AlignmentDirectional.topStart,
-            child: Text(
-              "أبحث عن شخص ارسل اعلانك على جميع متابعينة",
-              style: AppStyles.style13W600.copyWith(
-                fontWeight: FontWeight.w700,
+    return Column(
+      children: [
+        Container(
+          width: double.infinity,
+          color: AppColors.navBarColor,
+          padding: EdgeInsetsDirectional.only(bottom: 10.h, start: 20.w),
+          child: Row(
+            children: [
+              SvgPicture.asset(
+                Assets.imagesWallet,
               ),
-            ),
+              SizedBox(width: 10.w),
+              Text(
+                "400",
+                style: AppStyles.style12W700.copyWith(
+                  fontWeight: FontWeight.w900,
+                ),
+              ),
+              SizedBox(width: 10.w),
+              SvgPicture.asset(
+                Assets.imagesJewel,
+              ),
+            ],
           ),
-          Expanded(
-            child: SingleChildScrollView(
+        ),
+        Expanded(
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: EdgeInsetsDirectional.symmetric(
+                  horizontal: 21.w, vertical: 24.h),
               child: Column(
                 children: [
+                  Align(
+                    alignment: AlignmentDirectional.topStart,
+                    child: Text(
+                      "أبحث عن شخص ارسل اعلانك على جميع متابعينة",
+                      style: AppStyles.style13W600.copyWith(
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  ),
                   SizedBox(height: 22.h),
                   TextField(
                     onChanged: (value) {},
@@ -98,8 +123,8 @@ class SearchPersonToSendAdViewBody extends StatelessWidget {
               ),
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
