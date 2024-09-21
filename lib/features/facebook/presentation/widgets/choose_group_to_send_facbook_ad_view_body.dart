@@ -95,7 +95,7 @@ class ChooseGroupToSendFacbookAdViewBody extends StatelessWidget {
                   Center(
                     child: InkWell(
                       onTap: () {
-                        // context.push('/searchPersonToSendFacebookAdView');
+                        context.push('/facebookChooseGroupsView');
                       },
                       child: Container(
                         height: 40.h,

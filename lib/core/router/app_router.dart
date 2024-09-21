@@ -20,6 +20,7 @@ import 'package:shopping_chart/features/x/presentation/views/send_your_x_ad_to_f
 import 'package:shopping_chart/features/x/presentation/views/sending_X_ad_to_followrs_view.dart';
 import 'package:shopping_chart/features/x/presentation/views/sending_x_ad_view.dart';
 import 'package:shopping_chart/features/x/presentation/views/x_view.dart';
+import '../../features/facebook/presentation/views/facebook_choose_groups_view.dart';
 import '../../features/facebook/presentation/views/search_person_to_send_facebook_ad_view.dart';
 import '../../features/instagram/presentation/views/add_hashtags_view.dart';
 import '../../features/instagram/presentation/views/choose_person_and_send_ad_view.dart';
@@ -484,6 +485,10 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/chooseGroupToSendFacbookAdView',
       builder: (context, state) => const ChooseGroupToSendFacbookAdView(),
+    ),
+       GoRoute(
+      path: '/facebookChooseGroupsView',
+      builder: (context, state) => const FacebookChooseGroupsView(),
     ),
   ],
 );
