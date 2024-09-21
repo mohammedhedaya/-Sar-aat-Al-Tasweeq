@@ -49,14 +49,15 @@ class HomeViewBody extends StatelessWidget {
                 ],
               ),
             ),
+            const HomeCarouselSlider(),
+            SizedBox(height: 48.h),
+            const CustomTextInHome(),
+            SizedBox(height: 10.h),
             Expanded(
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    const HomeCarouselSlider(),
-                    SizedBox(height: 48.h),
-                    const CustomTextInHome(),
-                    SizedBox(height: 38.h),
+                    SizedBox(height: 18.h),
                     SocialMediaCard(
                       onTap: () {
                         context.push('/whatsappView');
