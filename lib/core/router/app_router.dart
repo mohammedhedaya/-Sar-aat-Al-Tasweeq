@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shopping_chart/features/sms/presentation/views/sms_view.dart';
 import '../../features/facebook/presentation/views/add_facebook_groups_view.dart';
 import '../../features/facebook/presentation/views/choose_group_to_send_facbook_ad_view.dart';
 import '../../features/facebook/presentation/views/choose_person_to_send_facebook_ad_view.dart';
@@ -12,6 +13,7 @@ import '../../features/facebook/presentation/views/facebook_groups_sending_view.
 import '../../features/facebook/presentation/views/facebook_sending_view.dart';
 import '../../features/facebook/presentation/views/facebook_view.dart';
 import '../../features/facebook/presentation/views/launch_your_facebook_Ad_view.dart';
+import '../../features/sms/presentation/views/sms_launch_your_ad_phone_directory_view.dart';
 import '../../features/telegram/presentation/views/choose_telegram_group_to_send_view.dart';
 import '../../features/telegram/presentation/views/choose_telegram_group_to_send_view1.dart';
 import '../../features/telegram/presentation/views/choose_telegram_group_to_send_view2.dart';
@@ -108,7 +110,7 @@ final GoRouter router = GoRouter(
       path: '/',
       builder: (context, state) => BlocProvider(
         create: (context) => getIt<AuthCubit>(),
-        child: const LoginView(),
+        child: const UserMainLayoutScreen(),
       ),
     ),
     GoRoute(
@@ -525,6 +527,14 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/telegramChatsMessagesViewBody',
       builder: (context, state) => const TelegramChatsMessagesView(),
+    ),
+    GoRoute(
+      path: '/smsView',
+      builder: (context, state) => const SMSView(),
+    ),
+    GoRoute(
+      path: '/smsLaunchYourAdPhoneDirectoryView',
+      builder: (context, state) => const SMSLaunchYourAdPhoneDirectoryView(),
     ),
   ],
 );

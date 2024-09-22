@@ -98,6 +98,14 @@ class HomeViewBody extends StatelessWidget {
                       imagePath: Assets.imagesFacebookLogo,
                       label: 'FACEBOOK',
                     ),
+                    SizedBox(height: 50.h),
+                    SocialMediaCard(
+                      onTap: () {
+                        context.push('/smsView');
+                      },
+                      imagePath: Assets.imagesSmsLogo,
+                      label: 'SMS',
+                    ),
                     SizedBox(height: 25.h),
                   ],
                 ),

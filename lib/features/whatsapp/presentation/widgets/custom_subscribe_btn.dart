@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/utils/app_colors.dart';
@@ -9,9 +8,11 @@ class CustomSubscribeBtn extends StatelessWidget {
     super.key,
     this.onPressed,
     required this.text,
+    this.textStyle,
   });
   final void Function()? onPressed;
   final String text;
+  final TextStyle? textStyle;
   @override
   Widget build(BuildContext context) {
     return TextButton(
@@ -27,9 +28,10 @@ class CustomSubscribeBtn extends StatelessWidget {
       ),
       child: Text(
         text,
-        style: AppStyles.style14W400.copyWith(
-          color: const Color(0xffBABABA),
-        ),
+        style: textStyle ??
+            AppStyles.style14W400.copyWith(
+              color: const Color(0xffBABABA),
+            ),
       ),
     );
   }

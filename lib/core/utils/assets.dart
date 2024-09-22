@@ -286,6 +286,10 @@ class Assets {
   /// assets/images/shareingWithMyFriends.svg
   static const String imagesShareingWithMyFriends = "assets/images/shareingWithMyFriends.svg";
 
+  /// Assets for imagesSmsLogo
+  /// assets/images/sms_logo.png
+  static const String imagesSmsLogo = "assets/images/sms_logo.png";
+
   /// Assets for imagesSnapchat
   /// assets/images/snapchat.png
   static const String imagesSnapchat = "assets/images/snapchat.png";
