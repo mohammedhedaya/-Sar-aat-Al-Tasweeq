@@ -1,6 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shopping_chart/features/sms/presentation/views/sms_choose_destination_phone_directory_view.dart';
+import 'package:shopping_chart/features/sms/presentation/views/sms_choose_destination_transfer_another_number_view.dart';
 import 'package:shopping_chart/features/sms/presentation/views/sms_phone_directory_sending_view.dart';
 import 'package:shopping_chart/features/sms/presentation/views/sms_view.dart';
 import '../../features/facebook/presentation/views/add_facebook_groups_view.dart';
@@ -17,6 +18,7 @@ import '../../features/facebook/presentation/views/facebook_view.dart';
 import '../../features/facebook/presentation/views/launch_your_facebook_Ad_view.dart';
 import '../../features/sms/presentation/views/sms_launch_your_ad_phone_directory_view.dart';
 import '../../features/sms/presentation/views/sms_transfer_another_number_view.dart';
+import '../../features/sms/presentation/views/sms_transfer_sending_view.dart';
 import '../../features/telegram/presentation/views/choose_telegram_group_to_send_view.dart';
 import '../../features/telegram/presentation/views/choose_telegram_group_to_send_view1.dart';
 import '../../features/telegram/presentation/views/choose_telegram_group_to_send_view2.dart';
@@ -113,7 +115,7 @@ final GoRouter router = GoRouter(
       path: '/',
       builder: (context, state) => BlocProvider(
         create: (context) => getIt<AuthCubit>(),
-        child: const UserMainLayoutScreen(),
+        child: const LoginView(),
       ),
     ),
     GoRoute(
@@ -548,9 +550,17 @@ final GoRouter router = GoRouter(
       path: '/smsPhoneDirectorySendingView',
       builder: (context, state) => const SMSPhoneDirectorySendingView(),
     ),
-     GoRoute(
+    GoRoute(
       path: '/smsTransferAnotherNumberView',
       builder: (context, state) => const SMSTransferAnotherNumberView(),
+    ),
+    GoRoute(
+      path: '/smsChooseDestinationTransferAnotherNumberView',
+      builder: (context, state) => const SMSChooseDestinationTransferAnotherNumberView(),
+    ),
+     GoRoute(
+      path: '/smsTransferSendingView',
+      builder: (context, state) => const SMSTransferSendingView(),
     ),
   ],
 );

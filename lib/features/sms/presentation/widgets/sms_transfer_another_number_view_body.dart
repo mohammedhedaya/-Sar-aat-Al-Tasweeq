@@ -105,7 +105,7 @@ class SMSTransferAnotherNumberViewBody extends StatelessWidget {
             Center(
               child: InkWell(
                 onTap: () {
-                  // context.push("/smsChooseDestinationPhoneDirectoryView");
+                  context.push("/smsChooseDestinationTransferAnotherNumberView");
                 },
                 child: Container(
                   height: 40.h,
