@@ -55,4 +55,3 @@ class SendYourXAdToFollowrsView extends StatelessWidget {
     );
   }
 }
-

@@ -16,20 +16,24 @@ class XViewBody extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          Column(
+          Stack(
+            clipBehavior: Clip.none,
+            alignment: Alignment.center,
             children: [
-              Center(
-                child: SvgPicture.asset(
-                  Assets.imagesXIcon,
+              Positioned(
+                top: 40.h,
+                child: Text(
+                  "X",
+                  style: AppStyles.style78W400,
+                  textAlign: TextAlign.center,
                 ),
               ),
-              Text(
-                "X",
-                style: AppStyles.style78W400,
-                textAlign: TextAlign.center,
+              SvgPicture.asset(
+                Assets.imagesXIcon,
               ),
             ],
           ),
+          SizedBox(height: 100.h),
           Container(
             width: double.infinity,
             padding: EdgeInsets.only(

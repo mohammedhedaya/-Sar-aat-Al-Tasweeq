@@ -6,6 +6,7 @@ import 'package:shopping_chart/features/sms/presentation/views/sms_choose_destin
 import 'package:shopping_chart/features/sms/presentation/views/sms_choose_destination_transfer_another_number_view.dart';
 import 'package:shopping_chart/features/sms/presentation/views/sms_phone_directory_sending_view.dart';
 import 'package:shopping_chart/features/sms/presentation/views/sms_view.dart';
+import 'package:shopping_chart/features/x/presentation/views/x_user_details_view.dart';
 import '../../features/email/presentation/views/email_choose_detination_view.dart';
 import '../../features/email/presentation/views/launch_your_email_ad_view.dart';
 import '../../features/facebook/presentation/views/add_facebook_groups_view.dart';
@@ -119,7 +120,7 @@ final GoRouter router = GoRouter(
       path: '/',
       builder: (context, state) => BlocProvider(
         create: (context) => getIt<AuthCubit>(),
-        child: const UserMainLayoutScreen(),
+        child: const LoginView(),
       ),
     ),
     GoRoute(
@@ -582,6 +583,10 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/emailSendingView',
       builder: (context, state) => const EmailSendingView(),
+    ),
+    GoRoute(
+      path: '/xUserDetailsView',
+      builder: (context, state) => const XUserDetailsView(),
     ),
   ],
 );

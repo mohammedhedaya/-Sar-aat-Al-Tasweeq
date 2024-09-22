@@ -2,22 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
-import 'instagram_user_details/instagram_user_details_select_all_page.dart';
-import 'instagram_user_details/instagram_user_details_select_followers_page.dart';
-import 'instagram_user_details/instagram_user_details_select_followings_page.dart';
+import 'package:shopping_chart/features/x/presentation/views/x_user_details_page_view/x_user_detail_select_all_page.dart';
+import 'package:shopping_chart/features/x/presentation/views/x_user_details_page_view/x_user_detail_select_followings_page.dart';
+import 'package:shopping_chart/features/x/presentation/views/x_user_details_page_view/x_user_detail_select_followrs_page.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
 
-class InstagramUserDetailsView extends StatefulWidget {
-  const InstagramUserDetailsView({super.key});
+class XUserDetailsView extends StatefulWidget {
+  const XUserDetailsView({super.key});
 
   @override
-  State<InstagramUserDetailsView> createState() =>
-      _InstagramUserDetailsViewState();
+  State<XUserDetailsView> createState() => _XUserDetailsViewState();
 }
 
-class _InstagramUserDetailsViewState extends State<InstagramUserDetailsView> {
+class _XUserDetailsViewState extends State<XUserDetailsView> {
   final PageController _pageController = PageController();
   int _currentPage = 0;
 
@@ -313,11 +312,11 @@ class _InstagramUserDetailsViewState extends State<InstagramUserDetailsView> {
                   },
                   children: const [
                     // Page 1: All
-                    InstagramUserDetailsSelectAllPage(),
+                    XUserDetailsSelectAllPage(),
                     // Page 2: Followers
-                    InstagramUserDetailsSelectFollowersPage(),
+                    XUserDetailsSelectFollowrsPage(),
                     // Page 3: Followings
-                    InstagramUserDetailsSelectFollowingsPage(),
+                    XUserDetailsSelectFollowingsPage(),
                   ],
                 ),
               ),

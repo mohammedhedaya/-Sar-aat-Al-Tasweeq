@@ -63,7 +63,7 @@ class SearchPersonToSendXAdViewBody extends StatelessWidget {
                       (index) {
                         return InkWell(
                           onTap: () {
-                            context.push("/instagramUserDetailsView");
+                            context.push("/xUserDetailsView");
                           },
                           child: Padding(
                             padding: EdgeInsets.only(

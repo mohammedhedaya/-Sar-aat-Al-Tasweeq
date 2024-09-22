@@ -87,7 +87,7 @@ class SendingXAdView extends StatelessWidget {
                         ],
                       ),
                     ),
-                    SizedBox(height: 45.h),
+                    SizedBox(height: 80.h),
                     InkWell(
                       onTap: () {
                         showDialog(
