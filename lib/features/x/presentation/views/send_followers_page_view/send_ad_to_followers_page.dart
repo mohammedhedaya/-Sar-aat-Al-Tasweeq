@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:shopping_chart/core/utils/app_colors.dart';
-import 'package:shopping_chart/core/utils/app_text_style.dart';
-import 'package:shopping_chart/features/whatsapp/presentation/widgets/destination_check_box.dart';
+import '../../../../../core/utils/app_colors.dart';
+import '../../../../../core/utils/app_text_style.dart';
+import '../../../../whatsapp/presentation/widgets/destination_check_box.dart';
 
 class SendAdXToFollowrsPage extends StatelessWidget {
   const SendAdXToFollowrsPage({super.key});

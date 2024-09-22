@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
-import '../widgets/custom_progress_bar_text.dart';
+
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
+import '../widgets/custom_progress_bar_text.dart';
 import '../widgets/custom_show_dialog.dart';
 
 class PhoneSendingView extends StatelessWidget {

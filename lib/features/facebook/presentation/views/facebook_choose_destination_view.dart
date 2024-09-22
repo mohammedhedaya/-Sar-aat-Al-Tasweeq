@@ -56,5 +56,3 @@ class FacebookChooseDestinationView extends StatelessWidget {
     );
   }
 }
-
-

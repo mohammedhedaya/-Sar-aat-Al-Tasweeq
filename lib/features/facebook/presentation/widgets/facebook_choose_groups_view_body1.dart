@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
+
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
@@ -30,21 +31,19 @@ class FacebookChooseGroupsViewBody1 extends StatelessWidget {
                         width: 1,
                       ),
                     ),
-                    child: Expanded(
-                      child: Row(
-                        children: [
-                          SvgPicture.asset(
-                            Assets.imagesSendforward,
+                    child: Row(
+                      children: [
+                        SvgPicture.asset(
+                          Assets.imagesSendforward,
+                        ),
+                        SizedBox(width: 10.w),
+                        Expanded(
+                          child: Text(
+                            "أختار أحد المجموعات ويتم الإرسال على جميع الحسابات ",
+                            style: AppStyles.style14W400,
                           ),
-                          SizedBox(width: 10.w),
-                          Expanded(
-                            child: Text(
-                              "أختار أحد المجموعات ويتم الإرسال على جميع الحسابات ",
-                              style: AppStyles.style14W400,
-                            ),
-                          ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ),
                 ),

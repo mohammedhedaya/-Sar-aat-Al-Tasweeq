@@ -1,9 +1,10 @@
+import 'package:chat_bubbles/chat_bubbles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
-import 'package:chat_bubbles/chat_bubbles.dart';
 
 class ChatViewBody extends StatelessWidget {
   const ChatViewBody({super.key});

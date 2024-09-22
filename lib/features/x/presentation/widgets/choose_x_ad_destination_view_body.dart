@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shopping_chart/core/utils/app_colors.dart';
-import 'package:shopping_chart/features/x/presentation/views/send_followers_page_view/send_ad_to_all_page.dart';
-import 'package:shopping_chart/features/x/presentation/views/send_followers_page_view/send_ad_to_followers_page.dart';
+import '../../../../core/utils/app_colors.dart';
+import '../views/send_followers_page_view/send_ad_to_all_page.dart';
+import '../views/send_followers_page_view/send_ad_to_followers_page.dart';
 
 import '../../../../core/utils/app_text_style.dart';
 import '../views/send_followers_page_view/send_to_followings_page.dart';

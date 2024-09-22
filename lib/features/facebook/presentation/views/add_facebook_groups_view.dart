@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import '../../../../core/utils/app_text_style.dart';
 import '../widgets/add_facebook_groups_view_body.dart';
 
 class AddFacebookGroupsView extends StatelessWidget {
@@ -13,6 +14,12 @@ class AddFacebookGroupsView extends StatelessWidget {
         surfaceTintColor: Colors.transparent,
         elevation: 0,
         automaticallyImplyLeading: false,
+        title: Text(
+          "إضافة مجموعات الفيسبوك",
+          style: AppStyles.style22W600.copyWith(
+            fontWeight: FontWeight.w400,
+          ),
+        ),
         actions: [
           IconButton(
             onPressed: () {

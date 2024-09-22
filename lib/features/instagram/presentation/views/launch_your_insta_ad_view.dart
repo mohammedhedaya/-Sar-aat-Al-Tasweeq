@@ -61,7 +61,11 @@ class _LaunchYourInstaAdViewState extends State<LaunchYourInstaAdView> {
         automaticallyImplyLeading: false,
         elevation: 0,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            context.pop();
+            context.pop();
+            context.pop();
+          },
           icon: const Icon(
             Icons.logout,
             color: Colors.white,

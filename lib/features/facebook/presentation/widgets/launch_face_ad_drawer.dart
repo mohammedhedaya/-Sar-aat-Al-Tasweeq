@@ -110,6 +110,7 @@ class CustomLaunchFacebookAdDrawer extends StatelessWidget {
                 title: "إضافة مجموعات فيسبوك",
                 image: Assets.imagesIconsendtwoarrow,
               ),
+              SizedBox(height: 40.h),
               CustomLaunchDrawerItem(
                 onTap: () {
                   context.push("/choosePersonToSendFacebookAdView");
@@ -117,6 +118,7 @@ class CustomLaunchFacebookAdDrawer extends StatelessWidget {
                 title: "أختر شخص من فيسبوك ارسل اعلانك على جميع متابعينه",
                 image: Assets.imagesShareDribbbleLight,
               ),
+              SizedBox(height: 40.h),
               CustomLaunchDrawerItem(
                 onTap: () {
                   context.push("/chooseGroupToSendFacbookAdView");
@@ -124,6 +126,7 @@ class CustomLaunchFacebookAdDrawer extends StatelessWidget {
                 title: "أختار أحد المجموعات ويتم الإرسال على جميع الحسابات ",
                 image: Assets.imagesChoosegroup,
               ),
+              SizedBox(height: 20.h),
             ],
           ),
         ),

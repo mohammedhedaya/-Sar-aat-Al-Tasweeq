@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+
 import '../../../../core/utils/app_text_style.dart';
 import '../widgets/subscribe_to_the_package_view_body.dart';
 

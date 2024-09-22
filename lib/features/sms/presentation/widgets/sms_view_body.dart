@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
-import 'package:shopping_chart/core/utils/app_text_style.dart';
-import 'package:shopping_chart/core/utils/assets.dart';
-import 'package:shopping_chart/features/whatsapp/presentation/widgets/custom_show_dialog.dart';
-import 'package:shopping_chart/features/whatsapp/presentation/widgets/custom_subscribe_btn.dart';
+import '../../../../core/utils/app_text_style.dart';
+import '../../../../core/utils/assets.dart';
+import '../../../whatsapp/presentation/widgets/custom_show_dialog.dart';
+import '../../../whatsapp/presentation/widgets/custom_subscribe_btn.dart';
 
 class SMSViewBody extends StatelessWidget {
   const SMSViewBody({super.key});

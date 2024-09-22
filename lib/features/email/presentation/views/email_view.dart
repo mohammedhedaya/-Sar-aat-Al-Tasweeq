@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:shopping_chart/core/utils/app_colors.dart';
-import 'package:shopping_chart/features/email/presentation/widgets/email_view_body.dart';
+import '../../../../core/utils/app_colors.dart';
+import '../widgets/email_view_body.dart';
 
 class EmailView extends StatelessWidget {
   const EmailView({super.key});

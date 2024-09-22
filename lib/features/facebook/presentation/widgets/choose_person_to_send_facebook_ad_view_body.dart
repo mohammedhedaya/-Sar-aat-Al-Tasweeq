@@ -25,6 +25,7 @@ class ChoosePersonToSendFacebookAdViewBody extends StatelessWidget {
             ),
             SizedBox(height: 19.h),
             LaunchAdTextField(
+              onChanged: (value) {},
               hintText: 'أكتب رسالتك...',
               onSuffixIconTap: () {},
             ),
@@ -35,17 +36,10 @@ class ChoosePersonToSendFacebookAdViewBody extends StatelessWidget {
               hintStyle: AppStyles.style12W700.copyWith(
                 color: const Color(0xff9C9C9C),
               ),
-              suffixIcon: InkWell(
-                onTap: () {},
-                child: Transform.scale(
-                  scale: 0.5,
-                  child: SvgPicture.asset(
-                    Assets.imagesPastLink,
-                    colorFilter: const ColorFilter.mode(
-                      Colors.tealAccent,
-                      BlendMode.srcIn,
-                    ),
-                  ),
+              suffixIcon: Transform.scale(
+                scale: 0.5,
+                child: SvgPicture.asset(
+                  Assets.imagesLinkTeal,
                 ),
               ),
               onChanged: (value) {},
@@ -57,11 +51,10 @@ class ChoosePersonToSendFacebookAdViewBody extends StatelessWidget {
               hintStyle: AppStyles.style12W700.copyWith(
                 color: const Color(0xff9C9C9C),
               ),
-              suffixIcon: InkWell(
-                onTap: () {},
-                child: const Icon(
-                  Icons.location_on_outlined,
-                  color: Colors.tealAccent,
+              suffixIcon: Transform.scale(
+                scale: 0.5,
+                child: SvgPicture.asset(
+                  Assets.imagesLocationTeal,
                 ),
               ),
               onChanged: (value) {},
