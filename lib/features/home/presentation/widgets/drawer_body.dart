@@ -14,10 +14,18 @@ class DrawerBody extends StatefulWidget {
 }
 
 class _DrawerBodyState extends State<DrawerBody> {
+  bool _isDarkTheme = false;
+  bool _isNotificationSwitched = true;
   int? _selectedIndex;
   void _onItemTap(int index) {
     setState(() {
       _selectedIndex = index;
+    });
+  }
+
+  void _onNotificationSwitchChanged(bool value) {
+    setState(() {
+      _isNotificationSwitched = value;
     });
   }
 
@@ -114,6 +122,8 @@ class _DrawerBodyState extends State<DrawerBody> {
         DrawerNotificationItem(
           onTap: () => _onItemTap(9),
           isSelected: _selectedIndex == 9,
+          isSwitched: _isNotificationSwitched,
+          onSwitchChanged: _onNotificationSwitchChanged,
         ),
         DrawerListTileItem(
           title: "الثيم",
@@ -121,8 +131,18 @@ class _DrawerBodyState extends State<DrawerBody> {
           isSelected: _selectedIndex == 10,
           onTap: () {
             _onItemTap(10);
+            setState(() {
+              _isDarkTheme = !_isDarkTheme;
+            });
           },
-          trailing: const CustomThemeDrawerWidget(),
+          trailing: CustomThemeDrawerWidget(
+            isDarkTheme: _isDarkTheme,
+            onThemeChange: (bool isDark) {
+              setState(() {
+                _isDarkTheme = isDark;
+              });
+            },
+          ),
         ),
         DrawerListTileItem(
           title: "الاقتراحات",

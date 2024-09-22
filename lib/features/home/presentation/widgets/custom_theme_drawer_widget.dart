@@ -5,8 +5,13 @@ import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/assets.dart';
 
 class CustomThemeDrawerWidget extends StatefulWidget {
+  final bool isDarkTheme;
+  final ValueChanged<bool> onThemeChange;
+
   const CustomThemeDrawerWidget({
     super.key,
+    required this.isDarkTheme,
+    required this.onThemeChange,
   });
 
   @override
@@ -15,8 +20,6 @@ class CustomThemeDrawerWidget extends StatefulWidget {
 }
 
 class _CustomThemeDrawerWidgetState extends State<CustomThemeDrawerWidget> {
-  bool _isDarkTheme = false;
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -31,13 +34,11 @@ class _CustomThemeDrawerWidgetState extends State<CustomThemeDrawerWidget> {
         children: [
           GestureDetector(
             onTap: () {
-              setState(() {
-                _isDarkTheme = true;
-              });
+              widget.onThemeChange(true); // Notify parent of theme change
             },
             child: Container(
               decoration: BoxDecoration(
-                color: _isDarkTheme ? Colors.black : Colors.transparent,
+                color: widget.isDarkTheme ? Colors.black : Colors.transparent,
                 shape: BoxShape.circle,
               ),
               child: Padding(
@@ -46,7 +47,7 @@ class _CustomThemeDrawerWidgetState extends State<CustomThemeDrawerWidget> {
                   Assets.imagesLight,
                   height: 14.h,
                   colorFilter: ColorFilter.mode(
-                    _isDarkTheme ? Colors.white : Colors.black,
+                    widget.isDarkTheme ? Colors.white : Colors.black,
                     BlendMode.srcIn,
                   ),
                 ),
@@ -56,13 +57,11 @@ class _CustomThemeDrawerWidgetState extends State<CustomThemeDrawerWidget> {
           SizedBox(width: 3.w),
           GestureDetector(
             onTap: () {
-              setState(() {
-                _isDarkTheme = false;
-              });
+              widget.onThemeChange(false); // Notify parent of theme change
             },
             child: Container(
               decoration: BoxDecoration(
-                color: _isDarkTheme ? Colors.transparent : Colors.black,
+                color: widget.isDarkTheme ? Colors.transparent : Colors.black,
                 shape: BoxShape.circle,
               ),
               child: Padding(
@@ -71,7 +70,7 @@ class _CustomThemeDrawerWidgetState extends State<CustomThemeDrawerWidget> {
                   Assets.imagesDark,
                   height: 14.h,
                   colorFilter: ColorFilter.mode(
-                    !_isDarkTheme ? Colors.white : Colors.black,
+                    !widget.isDarkTheme ? Colors.white : Colors.black,
                     BlendMode.srcIn,
                   ),
                 ),
