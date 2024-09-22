@@ -94,7 +94,7 @@ class SMSViewBody extends StatelessWidget {
                       builder: (context) {
                         return CustomShowDialog(
                           onTap: () {
-                            // context.push('/scanQrCodeView');
+                            context.push('/smsTransferAnotherNumberView');
                           },
                           image: Assets.imagesXerror,
                           textButton: "الأشتراك",
