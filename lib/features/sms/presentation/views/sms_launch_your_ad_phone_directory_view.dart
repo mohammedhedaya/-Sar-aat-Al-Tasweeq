@@ -17,11 +17,13 @@ class SMSLaunchYourAdPhoneDirectoryView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         backgroundColor: AppColors.navBarColor,
         surfaceTintColor: Colors.transparent,
         automaticallyImplyLeading: false,
         elevation: 0,
         title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
               'أطلق إعلانك بكل سهولة',
@@ -38,6 +40,8 @@ class SMSLaunchYourAdPhoneDirectoryView extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {
+              context.pop();
+              context.pop();
               context.pop();
             },
             icon: Transform.rotate(

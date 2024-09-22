@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:shopping_chart/core/utils/app_colors.dart';
 import 'package:shopping_chart/core/utils/app_text_style.dart';
 import 'package:shopping_chart/core/utils/assets.dart';
@@ -102,7 +103,9 @@ class SMSLaunchYourAdPhoneDirectoryViewBody extends StatelessWidget {
             SizedBox(height: 19.h),
             Center(
               child: InkWell(
-                onTap: () {},
+                onTap: () {
+                  context.push("/smsChooseDestinationPhoneDirectoryView");
+                },
                 child: Container(
                   height: 40.h,
                   width: 200.w,

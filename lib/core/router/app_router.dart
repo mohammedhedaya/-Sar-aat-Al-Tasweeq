@@ -1,5 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shopping_chart/features/sms/presentation/views/sms_choose_destination_phone_directory_view.dart';
+import 'package:shopping_chart/features/sms/presentation/views/sms_phone_directory_sending_view.dart';
 import 'package:shopping_chart/features/sms/presentation/views/sms_view.dart';
 import '../../features/facebook/presentation/views/add_facebook_groups_view.dart';
 import '../../features/facebook/presentation/views/choose_group_to_send_facbook_ad_view.dart';
@@ -535,6 +537,15 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/smsLaunchYourAdPhoneDirectoryView',
       builder: (context, state) => const SMSLaunchYourAdPhoneDirectoryView(),
+    ),
+    GoRoute(
+      path: '/smsChooseDestinationPhoneDirectoryView',
+      builder: (context, state) =>
+          const SMSChooseDestinationPhoneDirectoryView(),
+    ),
+    GoRoute(
+      path: '/smsPhoneDirectorySendingView',
+      builder: (context, state) => const SMSPhoneDirectorySendingView(),
     ),
   ],
 );
