@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shopping_chart/features/email/presentation/views/email_sending_view.dart';
 import 'package:shopping_chart/features/email/presentation/views/email_view.dart';
 import 'package:shopping_chart/features/sms/presentation/views/sms_choose_destination_phone_directory_view.dart';
 import 'package:shopping_chart/features/sms/presentation/views/sms_choose_destination_transfer_another_number_view.dart';
@@ -118,7 +119,7 @@ final GoRouter router = GoRouter(
       path: '/',
       builder: (context, state) => BlocProvider(
         create: (context) => getIt<AuthCubit>(),
-        child: const UserMainLayoutScreen(),
+        child: const LoginView(),
       ),
     ),
     GoRoute(
@@ -577,6 +578,10 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/emailChooseDestinationView',
       builder: (context, state) => const EmailChooseDetinationView(),
+    ),
+    GoRoute(
+      path: '/emailSendingView',
+      builder: (context, state) => const EmailSendingView(),
     ),
   ],
 );

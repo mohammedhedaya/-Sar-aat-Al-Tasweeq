@@ -103,7 +103,7 @@ class EmailChooseDetinationView extends StatelessWidget {
             Center(
               child: InkWell(
                 onTap: () {
-                  // context.push("/smsPhoneDirectorySendingView");
+                  context.push("/emailSendingView");
                 },
                 child: Container(
                   height: 40.h,
