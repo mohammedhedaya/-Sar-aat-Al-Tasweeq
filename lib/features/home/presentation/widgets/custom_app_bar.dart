@@ -7,7 +7,8 @@ import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomAppBar({super.key});
+  const CustomAppBar({super.key, required this.scaffoldKey});
+  final GlobalKey<ScaffoldState> scaffoldKey;
 
   @override
   Widget build(BuildContext context) {
@@ -18,12 +19,17 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       leadingWidth: 150.w,
       leading: Row(
         children: [
-          Padding(
-            padding: EdgeInsets.all(8.w),
-            child: CircleAvatar(
-              radius: 20.r,
-              backgroundImage: const AssetImage(
-                Assets.imagesImagePersonInAppBar,
+          InkWell(
+            onTap: () {
+              scaffoldKey.currentState?.openDrawer();
+            },
+            child: Padding(
+              padding: EdgeInsets.all(8.w),
+              child: CircleAvatar(
+                radius: 20.r,
+                backgroundImage: const AssetImage(
+                  Assets.imagesImagePersonInAppBar,
+                ),
               ),
             ),
           ),
