@@ -106,6 +106,14 @@ class HomeViewBody extends StatelessWidget {
                       imagePath: Assets.imagesSmsLogo,
                       label: 'SMS',
                     ),
+                      SizedBox(height: 50.h),
+                    SocialMediaCard(
+                      onTap: () {
+                        context.push('/emailView');
+                      },
+                      imagePath: Assets.imagesEmailLogo,
+                      label: 'E-mail',
+                    ),
                     SizedBox(height: 25.h),
                   ],
                 ),

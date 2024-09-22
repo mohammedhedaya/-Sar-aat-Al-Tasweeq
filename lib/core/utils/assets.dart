@@ -106,6 +106,10 @@ class Assets {
   /// assets/images/Ellipse4.svg
   static const String imagesEllipse4 = "assets/images/Ellipse4.svg";
 
+  /// Assets for imagesEmailLogo
+  /// assets/images/emailLogo.png
+  static const String imagesEmailLogo = "assets/images/emailLogo.png";
+
   /// Assets for imagesFacebookIcon
   /// assets/images/facebookIcon.svg
   static const String imagesFacebookIcon = "assets/images/facebookIcon.svg";
