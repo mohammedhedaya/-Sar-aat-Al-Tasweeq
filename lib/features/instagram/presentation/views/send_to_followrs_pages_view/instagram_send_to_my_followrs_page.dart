@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import '../../../../../../core/utils/app_colors.dart';
-import '../../../../../../core/utils/app_text_style.dart';
-import '../../../../../whatsapp/presentation/widgets/destination_check_box.dart';
+import '../../../../../core/utils/app_colors.dart';
+import '../../../../../core/utils/app_text_style.dart';
+import '../../../../whatsapp/presentation/widgets/destination_check_box.dart';
 
-class TelegramSendToAllPage extends StatelessWidget {
-  const TelegramSendToAllPage({super.key});
+class InstagramSendToMyFollowrsPage extends StatelessWidget {
+  const InstagramSendToMyFollowrsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class TelegramSendToAllPage extends StatelessWidget {
         Expanded(
           child: SingleChildScrollView(
             child: Padding(
-              padding: EdgeInsets.symmetric(vertical: 25.h),
+              padding: EdgeInsets.symmetric(vertical: 22.h),
               child: Column(
                 children: [
                   Row(
@@ -28,7 +28,7 @@ class TelegramSendToAllPage extends StatelessWidget {
                       const ChooseDestinationCheckbox(),
                     ],
                   ),
-                  SizedBox(height: 10.h),
+                  SizedBox(height: 27.h),
                   Column(
                     children: List.generate(
                       10,
@@ -61,7 +61,7 @@ class TelegramSendToAllPage extends StatelessWidget {
         ),
         InkWell(
           onTap: () {
-            context.push('/whastappSendingView');
+            context.push('/instagramSendingView');
           },
           child: Container(
             height: 40.h,
@@ -80,7 +80,7 @@ class TelegramSendToAllPage extends StatelessWidget {
             ),
             child: Center(
               child: Text(
-                "قم بالإرسال",
+                "إرسال",
                 style: AppStyles.style14W400,
                 textAlign: TextAlign.center,
               ),

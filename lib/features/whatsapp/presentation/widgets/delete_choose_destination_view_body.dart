@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shopping_chart/features/whatsapp/presentation/views/whatsapp_choose_detination_pages_view/delete_whatsapp/whatsapp_delete%20chats_page.dart';
-import 'package:shopping_chart/features/whatsapp/presentation/views/whatsapp_choose_detination_pages_view/delete_whatsapp/whatsapp_delete_all_page.dart';
-import 'package:shopping_chart/features/whatsapp/presentation/views/whatsapp_choose_detination_pages_view/delete_whatsapp/wjatsapp_delete_gropus_page.dart';
+import '../views/whatsapp_choose_detination_pages_view/delete_whatsapp/whatsapp_delete%20chats_page.dart';
+import '../views/whatsapp_choose_detination_pages_view/delete_whatsapp/whatsapp_delete_all_page.dart';
+import '../views/whatsapp_choose_detination_pages_view/delete_whatsapp/wjatsapp_delete_gropus_page.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 

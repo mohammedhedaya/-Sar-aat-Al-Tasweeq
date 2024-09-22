@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:shopping_chart/features/telegram/presentation/widgets/choose_telegram_group_to_send_view2_body.dart';
+import '../widgets/choose_telegram_group_to_send_view2_body.dart';
 
 class ChooseTelegramGroupToSendView2 extends StatelessWidget {
   const ChooseTelegramGroupToSendView2({super.key});

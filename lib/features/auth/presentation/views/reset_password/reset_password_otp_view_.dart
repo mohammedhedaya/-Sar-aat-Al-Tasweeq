@@ -1,9 +1,11 @@
 import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import '../../../../../core/utils/app_colors.dart';
 import 'package:pinput/pinput.dart';
+
+import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_text_style.dart';
 import '../../widgets/auth_btn.dart';
 

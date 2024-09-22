@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
-import 'package:shopping_chart/core/utils/app_text_style.dart';
-import 'package:shopping_chart/core/utils/assets.dart';
-import 'package:shopping_chart/features/auth/presentation/widgets/auth_btn.dart';
-import 'package:shopping_chart/features/auth/presentation/widgets/auth_text_field.dart';
-import 'package:shopping_chart/features/whatsapp/presentation/widgets/custom_show_dialog.dart';
+import '../../../../core/utils/app_text_style.dart';
+import '../../../../core/utils/assets.dart';
+import '../../../auth/presentation/widgets/auth_btn.dart';
+import '../../../auth/presentation/widgets/auth_text_field.dart';
+import '../../../whatsapp/presentation/widgets/custom_show_dialog.dart';
 
 class XViewBody extends StatelessWidget {
   const XViewBody({super.key});

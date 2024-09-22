@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:shopping_chart/features/auth/presentation/widgets/cusom_add_profile_image_widget.dart';
+import '../../widgets/cusom_add_profile_image_widget.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_text_style.dart';
 import '../../cubit/auth_cubit.dart';

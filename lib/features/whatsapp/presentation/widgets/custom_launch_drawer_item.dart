@@ -17,7 +17,7 @@ class CustomLaunchDrawerItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       onTap: onTap,
-      contentPadding: EdgeInsetsDirectional.only(start: 7.w),
+      contentPadding: EdgeInsetsDirectional.only(start: 7.w, end: 3.w),
       tileColor: const Color(0xff7D7D7D),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadiusDirectional.circular(5.r),

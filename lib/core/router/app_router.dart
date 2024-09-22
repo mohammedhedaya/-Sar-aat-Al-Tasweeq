@@ -1,32 +1,32 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:shopping_chart/features/facebook/presentation/views/add_facebook_groups_view.dart';
-import 'package:shopping_chart/features/facebook/presentation/views/choose_group_to_send_facbook_ad_view.dart';
-import 'package:shopping_chart/features/facebook/presentation/views/choose_person_to_send_facebook_ad_view.dart';
-import 'package:shopping_chart/features/facebook/presentation/views/facbook_delete_groups_choose_destination_view.dart';
-import 'package:shopping_chart/features/facebook/presentation/views/facebook_choose_destination_view.dart';
-import 'package:shopping_chart/features/facebook/presentation/views/facebook_choose_groups_view2.dart';
-import 'package:shopping_chart/features/facebook/presentation/views/facebook_delete_groups_sending_view.dart';
-import 'package:shopping_chart/features/facebook/presentation/views/facebook_groups_choose_destination_view.dart';
-import 'package:shopping_chart/features/facebook/presentation/views/facebook_groups_sending_view.dart';
-import 'package:shopping_chart/features/facebook/presentation/views/facebook_sending_view.dart';
-import 'package:shopping_chart/features/facebook/presentation/views/facebook_view.dart';
-import 'package:shopping_chart/features/facebook/presentation/views/launch_your_facebook_Ad_view.dart';
-import 'package:shopping_chart/features/telegram/presentation/views/choose_telegram_group_to_send_view.dart';
-import 'package:shopping_chart/features/telegram/presentation/views/choose_telegram_group_to_send_view1.dart';
-import 'package:shopping_chart/features/telegram/presentation/views/choose_telegram_group_to_send_view2.dart';
-import 'package:shopping_chart/features/telegram/presentation/views/telegram_chats_messages_view.dart';
-import 'package:shopping_chart/features/telegram/presentation/views/telegram_delete_choose_destination_view.dart';
-import 'package:shopping_chart/features/telegram/presentation/views/telegram_deleting_view.dart';
-import 'package:shopping_chart/features/x/presentation/views/add_trends_view.dart';
-import 'package:shopping_chart/features/x/presentation/views/choose_person_and_send_x_ad_view.dart';
-import 'package:shopping_chart/features/x/presentation/views/choose_x_ad_destination_view.dart';
-import 'package:shopping_chart/features/x/presentation/views/launch_your_x_ad_view.dart';
-import 'package:shopping_chart/features/x/presentation/views/search_person_to_send_x_ad_view.dart';
-import 'package:shopping_chart/features/x/presentation/views/send_your_x_ad_to_followrs_view.dart';
-import 'package:shopping_chart/features/x/presentation/views/sending_X_ad_to_followrs_view.dart';
-import 'package:shopping_chart/features/x/presentation/views/sending_x_ad_view.dart';
-import 'package:shopping_chart/features/x/presentation/views/x_view.dart';
+import '../../features/facebook/presentation/views/add_facebook_groups_view.dart';
+import '../../features/facebook/presentation/views/choose_group_to_send_facbook_ad_view.dart';
+import '../../features/facebook/presentation/views/choose_person_to_send_facebook_ad_view.dart';
+import '../../features/facebook/presentation/views/facbook_delete_groups_choose_destination_view.dart';
+import '../../features/facebook/presentation/views/facebook_choose_destination_view.dart';
+import '../../features/facebook/presentation/views/facebook_choose_groups_view2.dart';
+import '../../features/facebook/presentation/views/facebook_delete_groups_sending_view.dart';
+import '../../features/facebook/presentation/views/facebook_groups_choose_destination_view.dart';
+import '../../features/facebook/presentation/views/facebook_groups_sending_view.dart';
+import '../../features/facebook/presentation/views/facebook_sending_view.dart';
+import '../../features/facebook/presentation/views/facebook_view.dart';
+import '../../features/facebook/presentation/views/launch_your_facebook_Ad_view.dart';
+import '../../features/telegram/presentation/views/choose_telegram_group_to_send_view.dart';
+import '../../features/telegram/presentation/views/choose_telegram_group_to_send_view1.dart';
+import '../../features/telegram/presentation/views/choose_telegram_group_to_send_view2.dart';
+import '../../features/telegram/presentation/views/telegram_chats_messages_view.dart';
+import '../../features/telegram/presentation/views/telegram_delete_choose_destination_view.dart';
+import '../../features/telegram/presentation/views/telegram_deleting_view.dart';
+import '../../features/x/presentation/views/add_trends_view.dart';
+import '../../features/x/presentation/views/choose_person_and_send_x_ad_view.dart';
+import '../../features/x/presentation/views/choose_x_ad_destination_view.dart';
+import '../../features/x/presentation/views/launch_your_x_ad_view.dart';
+import '../../features/x/presentation/views/search_person_to_send_x_ad_view.dart';
+import '../../features/x/presentation/views/send_your_x_ad_to_followrs_view.dart';
+import '../../features/x/presentation/views/sending_X_ad_to_followrs_view.dart';
+import '../../features/x/presentation/views/sending_x_ad_view.dart';
+import '../../features/x/presentation/views/x_view.dart';
 import '../../features/facebook/presentation/views/facebook_choose_groups_view1.dart';
 import '../../features/facebook/presentation/views/search_person_to_send_facebook_ad_view.dart';
 import '../../features/instagram/presentation/views/add_hashtags_view.dart';
@@ -36,7 +36,7 @@ import '../../features/instagram/presentation/views/instagram_sending_view.dart'
 import '../../features/instagram/presentation/views/launch_your_insta_ad_view.dart';
 import '../../features/instagram/presentation/views/search_person_to_send_ad_view.dart';
 import '../../features/instagram/presentation/views/send_your_ad_to_followers_view.dart';
-import '../../features/instagram/presentation/views/user_details_view.dart';
+import '../../features/instagram/presentation/views/instagram_user_details_view.dart';
 import '../../features/instagram/presentation/views/instagram_view.dart';
 import '../../features/telegram/presentation/views/convert_number_to_telegram_link_view.dart';
 import '../../features/telegram/presentation/views/launch_ad_telegram_groups_view.dart';
@@ -389,8 +389,9 @@ final GoRouter router = GoRouter(
       builder: (context, state) => const SendYourAdToFollowersView(),
     ),
     GoRoute(
-      path: '/instagramChooseDestinationView',
-      builder: (context, state) => const InstagramChooseDestinationView(),
+      path: '/instagramChooseDestinationSendToFollowrsView',
+      builder: (context, state) =>
+          const InstagramChooseDestinationSendToFollowrsView(),
     ),
     GoRoute(
       path: '/instagramSendingView',
@@ -405,8 +406,8 @@ final GoRouter router = GoRouter(
       builder: (context, state) => const SearchPersonToSendAdView(),
     ),
     GoRoute(
-      path: '/userDetailsView',
-      builder: (context, state) => const UserDetailsView(),
+      path: '/instagramUserDetailsView',
+      builder: (context, state) => const InstagramUserDetailsView(),
     ),
     GoRoute(
       path: '/xView',

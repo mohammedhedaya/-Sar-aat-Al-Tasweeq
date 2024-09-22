@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:shopping_chart/features/instagram/presentation/widgets/custom_pick_media_dialog.dart';
+import 'custom_pick_media_dialog.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
@@ -141,17 +141,10 @@ class _ChoosePersonAndSendAdViewBodyState
                     hintStyle: AppStyles.style12W700.copyWith(
                       color: const Color(0xff9C9C9C),
                     ),
-                    suffixIcon: InkWell(
-                      onTap: () {},
-                      child: Transform.scale(
-                        scale: 0.5,
-                        child: SvgPicture.asset(
-                          Assets.imagesPastLink,
-                          colorFilter: const ColorFilter.mode(
-                            Colors.tealAccent,
-                            BlendMode.srcIn,
-                          ),
-                        ),
+                    suffixIcon: Transform.scale(
+                      scale: 0.5,
+                      child: SvgPicture.asset(
+                        Assets.imagesLinkTeal,
                       ),
                     ),
                   ),
@@ -162,11 +155,10 @@ class _ChoosePersonAndSendAdViewBodyState
                     hintStyle: AppStyles.style12W700.copyWith(
                       color: const Color(0xff9C9C9C),
                     ),
-                    suffixIcon: InkWell(
-                      onTap: () {},
-                      child: const Icon(
-                        Icons.location_on_outlined,
-                        color: Colors.tealAccent,
+                    suffixIcon: Transform.scale(
+                      scale: 0.5,
+                      child: SvgPicture.asset(
+                        Assets.imagesLocationTeal,
                       ),
                     ),
                     onChanged: (value) {},

@@ -7,8 +7,8 @@ import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
 import '../widgets/instagram_choose_detination_view_body.dart';
 
-class InstagramChooseDestinationView extends StatelessWidget {
-  const InstagramChooseDestinationView({super.key});
+class InstagramChooseDestinationSendToFollowrsView extends StatelessWidget {
+  const InstagramChooseDestinationSendToFollowrsView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +51,7 @@ class InstagramChooseDestinationView extends StatelessWidget {
           ),
         ],
       ),
-      body: const InstagramChooseDestinationViewBody(),
+      body: const InstagramChooseDestinationSendToFollowrsViewBody(),
     );
   }
 }

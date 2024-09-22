@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shopping_chart/features/facebook/presentation/views/launch_page_views/delete_groups_page_view.dart';
-import 'package:shopping_chart/features/facebook/presentation/views/launch_page_views/facebook_page_view.dart';
-import 'package:shopping_chart/features/facebook/presentation/views/launch_page_views/groups_page_view.dart';
+import '../views/launch_page_views/delete_groups_page_view.dart';
+import '../views/launch_page_views/facebook_page_view.dart';
+import '../views/launch_page_views/groups_page_view.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 

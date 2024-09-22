@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:shopping_chart/features/facebook/presentation/widgets/add_facebook_groups_view_body.dart';
+import '../widgets/add_facebook_groups_view_body.dart';
 
 class AddFacebookGroupsView extends StatelessWidget {
   const AddFacebookGroupsView({super.key});

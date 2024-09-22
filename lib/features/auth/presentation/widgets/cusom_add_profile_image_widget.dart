@@ -2,7 +2,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:shopping_chart/features/auth/presentation/widgets/dashed_circle_avatar.dart_painter.dart';
+import 'dashed_circle_avatar.dart_painter.dart';
 
 class CustomAddProfileImageWidget extends StatefulWidget {
   final Function(File?) onImageSelected;

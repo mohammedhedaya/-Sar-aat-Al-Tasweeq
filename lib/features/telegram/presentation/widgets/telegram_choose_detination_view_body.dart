@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shopping_chart/features/telegram/presentation/views/telegram_choose_destination_page/send_telegram/telegram_send_to_all_page.dart';
-import 'package:shopping_chart/features/telegram/presentation/views/telegram_choose_destination_page/send_telegram/telegram_send_to_chats_page.dart';
-import 'package:shopping_chart/features/telegram/presentation/views/telegram_choose_destination_page/send_telegram/telegram_send_to_groups_page.dart';
+import '../views/telegram_choose_destination_page/send_telegram/telegram_send_to_all_page.dart';
+import '../views/telegram_choose_destination_page/send_telegram/telegram_send_to_chats_page.dart';
+import '../views/telegram_choose_destination_page/send_telegram/telegram_send_to_groups_page.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 

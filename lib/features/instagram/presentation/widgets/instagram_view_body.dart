@@ -16,20 +16,26 @@ class InstagramViewBody extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          Column(
+          Stack(
+            clipBehavior: Clip.none,
+            alignment: Alignment.center,
             children: [
+              Positioned(
+                top: 40.h,
+                child: Text(
+                  "Instagram",
+                  style: AppStyles.style78W400,
+                  textAlign: TextAlign.center,
+                ),
+              ),
               Center(
                 child: SvgPicture.asset(
                   Assets.imagesInstagramIcon,
                 ),
               ),
-              Text(
-                "Instagram",
-                style: AppStyles.style78W400,
-                textAlign: TextAlign.center,
-              ),
             ],
           ),
+          SizedBox(height: 80.h),
           Container(
             width: double.infinity,
             padding: EdgeInsets.only(

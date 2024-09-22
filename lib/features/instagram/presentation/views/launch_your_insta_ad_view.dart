@@ -23,16 +23,36 @@ class _LaunchYourInstaAdViewState extends State<LaunchYourInstaAdView> {
       key: _scaffoldKey,
       drawer: const LaunchYourAdInstagramDrawer(),
       floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
-      floatingActionButton: FloatingActionButton(
-        elevation: 10,
-        backgroundColor: Colors.teal,
-        onPressed: () {
-          _scaffoldKey.currentState!.openDrawer();
-        },
-        child: const Icon(
-          Icons.add,
-          color: Colors.white,
-          size: 40,
+      floatingActionButton: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(15.r)),
+          gradient: const LinearGradient(
+            colors: [
+              Color(0xFF006066),
+              Color(0xFF00C0CC),
+            ],
+            begin: Alignment.center,
+            end: Alignment.center,
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.25),
+              spreadRadius: 4,
+              blurRadius: 4,
+              offset: const Offset(-4, 8),
+            ),
+          ],
+        ),
+        child: FloatingActionButton(
+          backgroundColor: Colors.transparent,
+          onPressed: () {
+            _scaffoldKey.currentState!.openDrawer();
+          },
+          child: const Icon(
+            Icons.add,
+            color: Colors.white,
+            size: 40,
+          ),
         ),
       ),
       appBar: AppBar(
@@ -77,4 +97,3 @@ class _LaunchYourInstaAdViewState extends State<LaunchYourInstaAdView> {
     );
   }
 }
-

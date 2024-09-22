@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:shopping_chart/features/home/presentation/widgets/custom_theme_drawer_widget.dart';
+import 'custom_theme_drawer_widget.dart';
 import '../../../../core/utils/assets.dart';
 import 'drawer_delete_account_btn.dart';
 import 'drawer_list_tile_item.dart';

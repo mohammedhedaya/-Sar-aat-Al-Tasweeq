@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:shopping_chart/core/utils/app_colors.dart';
-import 'package:shopping_chart/core/utils/app_text_style.dart';
-import 'package:shopping_chart/core/utils/assets.dart';
+import '../../../../core/utils/app_colors.dart';
+import '../../../../core/utils/app_text_style.dart';
+import '../../../../core/utils/assets.dart';
 
 class CustomPickMediaDialog extends StatelessWidget {
   const CustomPickMediaDialog({
