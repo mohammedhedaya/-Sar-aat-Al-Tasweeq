@@ -60,6 +60,7 @@ class EmailViewBody extends StatelessWidget {
                   onChanged: (value) {},
                   hintStyle: AppStyles.style14W800,
                   hintText: "الأيميل",
+                  keyboardType: TextInputType.emailAddress,
                   textAlign: TextAlign.center,
                   fiiledColor: Colors.white.withOpacity(0.10),
                 ),
@@ -82,7 +83,7 @@ class EmailViewBody extends StatelessWidget {
                         builder: (context) {
                           return CustomShowDialog(
                             onTap: () {
-                              // context.push("/launchYourInstaAdView");
+                              context.push("/launchYourEmailAdView");
                             },
                             image: Assets.imagesXerror,
                             textButton: "الأشتراك",
