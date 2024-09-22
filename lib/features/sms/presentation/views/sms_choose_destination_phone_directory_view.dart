@@ -53,6 +53,7 @@ class SMSChooseDestinationPhoneDirectoryView extends StatelessWidget {
             Expanded(
               child: SingleChildScrollView(
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       "عدد الأرقام :(5000) دليل الهاتف",

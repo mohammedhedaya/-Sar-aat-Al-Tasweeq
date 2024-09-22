@@ -86,7 +86,7 @@ class LaunchYourEmailAdViewBody extends StatelessWidget {
             Center(
               child: InkWell(
                 onTap: () {
-                  context.push("/smsChooseDestinationPhoneDirectoryView");
+                  context.push("/emailChooseDestinationView");
                 },
                 child: Container(
                   height: 40.h,
