@@ -91,7 +91,7 @@ class GroupsDetailsViewBody extends StatelessWidget {
               physics: const NeverScrollableScrollPhysics(),
               crossAxisSpacing: 10.w,
               mainAxisSpacing: 10.h,
-              childAspectRatio: 0.8,
+              childAspectRatio: 0.85.r,
               shrinkWrap: true,
               children: [
                 for (int i = 0; i < 12; i++)
@@ -114,8 +114,9 @@ class GroupsDetailsViewBody extends StatelessWidget {
                         Text(
                           "جروب العائلة",
                           style: AppStyles.style13W600,
+                          textAlign: TextAlign.center,
                         ),
-                        SizedBox(height: 40.h),
+                        const Spacer(),
                         InkWell(
                           onTap: () {
                             showDialog(
@@ -238,68 +239,65 @@ class GroupsDetailsViewBody extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 17.w),
             child: Row(
               children: [
-                Expanded(
-                  child: InkWell(
-                    onTap: () {
-                      showDialog(
-                        context: context,
-                        barrierColor: const Color(0xffFFF9F9).withOpacity(0.33),
-                        builder: (context) {
-                          return CustomShowDialog(
-                            onTap: () {
-                              context.pop();
-                            },
-                            image: Assets.imagesRechargeWallet,
-                            textButton: "التالى",
-                            content: Text(
-                              "إعادة الشحن",
-                              style: AppStyles.style32W700,
-                              textAlign: TextAlign.center,
-                            ),
-                          );
-                        },
-                      );
-                    },
-                    child: Container(
-                      padding: EdgeInsets.only(
-                        top: 15.h,
-                        bottom: 11.h,
-                        left: 22.h,
-                        right: 22.w,
-                      ),
-                      decoration: BoxDecoration(
-                        gradient: const LinearGradient(
-                          colors: [
-                            Color(0xff00C0CC),
-                            Color(0xff006066),
-                          ],
-                          begin: Alignment.centerLeft,
-                          end: Alignment.centerRight,
-                        ),
-                        borderRadius: BorderRadius.circular(15.r),
-                        border: Border.all(
-                          color: Colors.white,
-                          width: 1,
-                        ),
-                      ),
-                      child: Column(
-                        children: [
-                          SvgPicture.asset(
-                            Assets.imagesLaunchJewel,
+                InkWell(
+                  onTap: () {
+                    showDialog(
+                      context: context,
+                      barrierColor: const Color(0xffFFF9F9).withOpacity(0.33),
+                      builder: (context) {
+                        return CustomShowDialog(
+                          onTap: () {
+                            context.pop();
+                          },
+                          image: Assets.imagesRechargeWallet,
+                          textButton: "التالى",
+                          content: Text(
+                            "إعادة الشحن",
+                            style: AppStyles.style32W700,
+                            textAlign: TextAlign.center,
                           ),
-                          SizedBox(height: 11.h),
-                          Text(
-                            '300',
-                            style: AppStyles.style14W400,
-                          ),
+                        );
+                      },
+                    );
+                  },
+                  child: Container(
+                    padding: EdgeInsets.only(
+                      top: 15.h,
+                      bottom: 11.h,
+                      left: 22.h,
+                      right: 22.w,
+                    ),
+                    decoration: BoxDecoration(
+                      gradient: const LinearGradient(
+                        colors: [
+                          Color(0xff00C0CC),
+                          Color(0xff006066),
                         ],
+                        begin: Alignment.centerLeft,
+                        end: Alignment.centerRight,
                       ),
+                      borderRadius: BorderRadius.circular(15.r),
+                      border: Border.all(
+                        color: Colors.white,
+                        width: 1,
+                      ),
+                    ),
+                    child: Column(
+                      children: [
+                        SvgPicture.asset(
+                          Assets.imagesLaunchJewel,
+                        ),
+                        SizedBox(height: 11.h),
+                        Text(
+                          '300',
+                          style: AppStyles.style14W400,
+                        ),
+                      ],
                     ),
                   ),
                 ),
                 SizedBox(width: 18.w),
                 Expanded(
-                  flex: 3,
                   child: Container(
                     padding: EdgeInsets.only(
                       top: 8.h,
@@ -328,9 +326,11 @@ class GroupsDetailsViewBody extends StatelessWidget {
                           ),
                         ),
                         SizedBox(width: 5.w),
-                        Text(
-                          'أختار 300 مجموعة بشكل عشوائى',
-                          style: AppStyles.style14W400,
+                        Expanded(
+                          child: Text(
+                            'أختار 300 مجموعة بشكل عشوائى',
+                            style: AppStyles.style14W400,
+                          ),
                         ),
                       ],
                     ),

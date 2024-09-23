@@ -128,95 +128,11 @@ class AddFacebookGroupsViewBody extends StatelessWidget {
                         Text(
                           "جروب العائلة",
                           style: AppStyles.style13W600,
+                          textAlign: TextAlign.center,
                         ),
-                        SizedBox(height: 40.h),
+                        const Spacer(),
                         InkWell(
-                          onTap: () {
-                            // showDialog(
-                            //   context: context,
-                            //   useSafeArea: true,
-                            //   barrierColor:
-                            //       const Color(0xffFFF9F9).withOpacity(0.33),
-                            //   builder: (context) {
-                            //     return AlertDialog(
-                            //       backgroundColor: AppColors.darkGray,
-                            //       title: Text(
-                            //         "رابط الجروب",
-                            //         style: AppStyles.style12W400.copyWith(
-                            //           color: Colors.white,
-                            //         ),
-                            //       ),
-                            //       content: Container(
-                            //         decoration: BoxDecoration(
-                            //           color: Colors.white.withOpacity(0.10),
-                            //           borderRadius: BorderRadius.circular(20.r),
-                            //         ),
-                            //         padding: const EdgeInsets.all(22),
-                            //         child: Row(
-                            //           children: [
-                            //             Expanded(
-                            //               child: Text(
-                            //                 "https://web.whatsapp.com/",
-                            //                 style:
-                            //                     AppStyles.style12W400.copyWith(
-                            //                   color: Colors.white,
-                            //                 ),
-                            //                 textAlign: TextAlign.center,
-                            //               ),
-                            //             ),
-                            //             SizedBox(width: 8.w),
-                            //             InkWell(
-                            //               onTap: () {},
-                            //               child: SvgPicture.asset(
-                            //                 Assets.imagesCopyIcon2,
-                            //               ),
-                            //             ),
-                            //           ],
-                            //         ),
-                            //       ),
-                            //       actions: [
-                            //         InkWell(
-                            //           onTap: () {
-                            //             context.pop();
-                            //           },
-                            //           child: Center(
-                            //             child: Container(
-                            //               width: double.infinity,
-                            //               padding: EdgeInsets.only(
-                            //                 top: 3.h,
-                            //                 bottom: 3.h,
-                            //                 left: 12.h,
-                            //                 right: 12.w,
-                            //               ),
-                            //               margin: EdgeInsets.symmetric(
-                            //                   horizontal: 30.w),
-                            //               decoration: BoxDecoration(
-                            //                 gradient: const LinearGradient(
-                            //                   colors: [
-                            //                     Color(0xff00C0CC),
-                            //                     Color(0xff006066),
-                            //                   ],
-                            //                   begin: Alignment.centerLeft,
-                            //                   end: Alignment.centerRight,
-                            //                 ),
-                            //                 borderRadius:
-                            //                     BorderRadius.circular(5.r),
-                            //               ),
-                            //               child: Center(
-                            //                 child: Text(
-                            //                   "التالى",
-                            //                   style: AppStyles.style14W400,
-                            //                   textAlign: TextAlign.center,
-                            //                 ),
-                            //               ),
-                            //             ),
-                            //           ),
-                            //         ),
-                            //       ],
-                            //     );
-                            //   },
-                            // );
-                          },
+                          onTap: () {},
                           child: Container(
                             padding: EdgeInsets.symmetric(
                               horizontal: 10.w,
@@ -253,62 +169,60 @@ class AddFacebookGroupsViewBody extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 17.w),
             child: Row(
               children: [
-                Expanded(
-                  child: InkWell(
-                    onTap: () {
-                      showDialog(
-                        context: context,
-                        barrierColor: const Color(0xffFFF9F9).withOpacity(0.33),
-                        builder: (context) {
-                          return CustomShowDialog(
-                            onTap: () {
-                              context.pop();
-                            },
-                            image: Assets.imagesRechargeWallet,
-                            textButton: "التالى",
-                            content: Text(
-                              "إعادة الشحن",
-                              style: AppStyles.style32W700,
-                              textAlign: TextAlign.center,
-                            ),
-                          );
-                        },
-                      );
-                    },
-                    child: Container(
-                      padding: EdgeInsets.only(
-                        top: 15.h,
-                        bottom: 11.h,
-                        left: 22.h,
-                        right: 22.w,
-                      ),
-                      decoration: BoxDecoration(
-                        gradient: const LinearGradient(
-                          colors: [
-                            Color(0xff00C0CC),
-                            Color(0xff006066),
-                          ],
-                          begin: Alignment.centerLeft,
-                          end: Alignment.centerRight,
-                        ),
-                        borderRadius: BorderRadius.circular(15.r),
-                        border: Border.all(
-                          color: Colors.white,
-                          width: 1,
-                        ),
-                      ),
-                      child: Column(
-                        children: [
-                          SvgPicture.asset(
-                            Assets.imagesLaunchJewel,
+                InkWell(
+                  onTap: () {
+                    showDialog(
+                      context: context,
+                      barrierColor: const Color(0xffFFF9F9).withOpacity(0.33),
+                      builder: (context) {
+                        return CustomShowDialog(
+                          onTap: () {
+                            context.pop();
+                          },
+                          image: Assets.imagesRechargeWallet,
+                          textButton: "التالى",
+                          content: Text(
+                            "إعادة الشحن",
+                            style: AppStyles.style32W700,
+                            textAlign: TextAlign.center,
                           ),
-                          SizedBox(height: 11.h),
-                          Text(
-                            '300',
-                            style: AppStyles.style14W400,
-                          ),
+                        );
+                      },
+                    );
+                  },
+                  child: Container(
+                    padding: EdgeInsets.only(
+                      top: 15.h,
+                      bottom: 11.h,
+                      left: 22.h,
+                      right: 22.w,
+                    ),
+                    decoration: BoxDecoration(
+                      gradient: const LinearGradient(
+                        colors: [
+                          Color(0xff00C0CC),
+                          Color(0xff006066),
                         ],
+                        begin: Alignment.centerLeft,
+                        end: Alignment.centerRight,
                       ),
+                      borderRadius: BorderRadius.circular(15.r),
+                      border: Border.all(
+                        color: Colors.white,
+                        width: 1,
+                      ),
+                    ),
+                    child: Column(
+                      children: [
+                        SvgPicture.asset(
+                          Assets.imagesLaunchJewel,
+                        ),
+                        SizedBox(height: 11.h),
+                        Text(
+                          '300',
+                          style: AppStyles.style14W400,
+                        ),
+                      ],
                     ),
                   ),
                 ),
@@ -343,9 +257,11 @@ class AddFacebookGroupsViewBody extends StatelessWidget {
                           ),
                         ),
                         SizedBox(width: 5.w),
-                        Text(
-                          'أختار 300 مجموعة بشكل عشوائى',
-                          style: AppStyles.style14W400,
+                        Flexible(
+                          child: Text(
+                            'أختار 300 مجموعة بشكل عشوائى',
+                            style: AppStyles.style14W400,
+                          ),
                         ),
                       ],
                     ),

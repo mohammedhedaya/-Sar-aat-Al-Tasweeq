@@ -46,8 +46,8 @@ class TelegramGroupsViewBody extends StatelessWidget {
                       padding: EdgeInsets.only(
                         left: 5.w,
                         right: 5.w,
-                        bottom: 20.h,
-                        top: 22.h,
+                        bottom: 15.h,
+                        top: 15.h,
                       ),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15.r),
@@ -62,7 +62,7 @@ class TelegramGroupsViewBody extends StatelessWidget {
                             Assets.imagesSuadiFlag,
                             height: 41.h,
                           ),
-                          SizedBox(height: 20.h),
+                          const Spacer(),
                           Text(
                             "قنوات المملكة العربية السعودية",
                             style: AppStyles.style13W600,

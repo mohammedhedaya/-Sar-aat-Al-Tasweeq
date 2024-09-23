@@ -71,12 +71,14 @@ class _LaunchYourTelegramAdViewState extends State<LaunchYourTelegramAdView> {
           ),
         ),
         title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              'أطلق إعلانك بكل سهولة',
-              style: AppStyles.style20W800,
+            Flexible(
+              child: Text(
+                'أطلق إعلانك بكل سهولة',
+                style: AppStyles.style20W800,
+              ),
             ),
-            SizedBox(width: 9.w),
             SvgPicture.asset(
               Assets.imagesRocket,
             ),
