@@ -34,7 +34,9 @@ class ProfileChangePasswordView extends StatelessWidget {
                       SizedBox(height: 62.h),
                       Text(
                         'كلمة السر االقديمه',
-                        style: AppStyles.style12W400,
+                        style: AppStyles.style12W400.copyWith(
+                          color: Colors.white,
+                        ),
                       ),
                       SizedBox(height: 25.h),
                       CustomAuthTextField(
@@ -53,7 +55,9 @@ class ProfileChangePasswordView extends StatelessWidget {
                       SizedBox(height: 25.h),
                       Text(
                         'تأكيد كلمة السر الجديدة',
-                        style: AppStyles.style12W400,
+                        style: AppStyles.style12W400.copyWith(
+                          color: Colors.white,
+                        ),
                       ),
                       SizedBox(height: 23.h),
                       CustomAuthTextField(
@@ -72,7 +76,9 @@ class ProfileChangePasswordView extends StatelessWidget {
                       SizedBox(height: 25.h),
                       Text(
                         'تأكيد كلمة السر الجديدة',
-                        style: AppStyles.style12W400,
+                        style: AppStyles.style12W400.copyWith(
+                          color: Colors.white,
+                        ),
                       ),
                       SizedBox(height: 23.h),
                       CustomAuthTextField(

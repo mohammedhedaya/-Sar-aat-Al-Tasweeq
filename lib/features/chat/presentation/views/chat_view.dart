@@ -14,7 +14,7 @@ class ChatView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: AppColors.navBarColor,
+        // // backgroundColor: AppColors.navBarColor,
         surfaceTintColor: Colors.transparent,
         elevation: 0,
         title: Text(

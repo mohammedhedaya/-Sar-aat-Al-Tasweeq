@@ -35,7 +35,7 @@ class SearchPersonToSendAdViewBody extends StatelessWidget {
                       isDense: true,
                       hintText: "بحث عن شخص",
                       hintStyle: AppStyles.style14W800.copyWith(
-                        color: const Color(0xff9C9C9C),
+                        color: const Color(0xffffffff),
                       ),
                       filled: true,
                       fillColor: const Color(0xffF3F3F3),

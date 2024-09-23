@@ -20,7 +20,6 @@ class LaunchAdChooseGroupToSendViewBody1 extends StatelessWidget {
             Row(
               children: [
                 Expanded(
-                  flex: 2,
                   child: Container(
                     padding: const EdgeInsets.all(11),
                     decoration: BoxDecoration(
@@ -30,43 +29,39 @@ class LaunchAdChooseGroupToSendViewBody1 extends StatelessWidget {
                         width: 1,
                       ),
                     ),
-                    child: Expanded(
-                      child: Row(
-                        children: [
-                          SvgPicture.asset(
-                            Assets.imagesSendforward,
+                    child: Row(
+                      children: [
+                        SvgPicture.asset(
+                          Assets.imagesSendforward,
+                        ),
+                        SizedBox(width: 10.w),
+                        Expanded(
+                          child: Text(
+                            "أختار أحد المجموعات ويتم الإرسال على جميع الأرقام ",
+                            style: AppStyles.style14W400,
                           ),
-                          SizedBox(width: 10.w),
-                          Expanded(
-                            child: Text(
-                              "أختار أحد المجموعات ويتم الإرسال على جميع الأرقام ",
-                              style: AppStyles.style14W400,
-                            ),
-                          ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
                 SizedBox(width: 11.w),
-                Expanded(
-                  child: Container(
-                    padding: const EdgeInsets.all(24),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5.r),
-                      gradient: const LinearGradient(
-                        colors: [
-                          Color(0xff00C0CC),
-                          Color(0xff006066),
-                        ],
-                        begin: Alignment.centerLeft,
-                        end: Alignment.centerRight,
-                      ),
+                Container(
+                  padding: const EdgeInsets.all(24),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5.r),
+                    gradient: const LinearGradient(
+                      colors: [
+                        Color(0xff00C0CC),
+                        Color(0xff006066),
+                      ],
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight,
                     ),
-                    child: Text(
-                      "إعادة الشحن",
-                      style: AppStyles.style14W400,
-                    ),
+                  ),
+                  child: Text(
+                    "إعادة الشحن",
+                    style: AppStyles.style14W400,
                   ),
                 ),
               ],
@@ -86,7 +81,7 @@ class LaunchAdChooseGroupToSendViewBody1 extends StatelessWidget {
                   "حراج",
                   style: AppStyles.style13W600,
                 ),
-                const ChooseDestinationCheckbox()
+                const ChooseDestinationCheckbox(),
               ],
             ),
             const Divider(
@@ -106,7 +101,7 @@ class LaunchAdChooseGroupToSendViewBody1 extends StatelessWidget {
                           "جروب العائلة",
                           style: AppStyles.style13W600,
                         ),
-                        const ChooseDestinationCheckbox()
+                        const ChooseDestinationCheckbox(),
                       ],
                     ),
                     Divider(

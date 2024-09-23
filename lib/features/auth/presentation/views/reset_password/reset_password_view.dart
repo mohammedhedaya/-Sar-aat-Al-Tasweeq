@@ -26,7 +26,9 @@ class ResetPasswordView extends StatelessWidget {
               Center(
                 child: Text(
                   "قم بإدخال بريدك المسجل وقم بحفظه لإعادة\nتعيين كلمة مرور جديدة",
-                  style: AppStyles.style12W400,
+                  style: AppStyles.style12W400.copyWith(
+                    color: AppColors.whiteColor,
+                  ),
                   textAlign: TextAlign.center,
                 ),
               ),

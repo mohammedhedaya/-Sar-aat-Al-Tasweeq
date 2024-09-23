@@ -58,7 +58,7 @@ class _SignUpOTPViewState extends State<SignUpOTPView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF2F2F2F),
+      // backgroundColor: const Color(0xFF2F2F2F),
       body: Column(
         children: [
           Expanded(

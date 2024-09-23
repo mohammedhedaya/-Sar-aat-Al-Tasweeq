@@ -16,20 +16,26 @@ class FacebookViewBody extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          Column(
+          Stack(
+            alignment: Alignment.center,
+            clipBehavior: Clip.none,
             children: [
+              Positioned(
+                top: 40.h,
+                child: Text(
+                  "Facebook",
+                  style: AppStyles.style78W400,
+                  textAlign: TextAlign.center,
+                ),
+              ),
               Center(
                 child: SvgPicture.asset(
                   Assets.imagesFacebookIcon,
                 ),
               ),
-              Text(
-                "Facebook",
-                style: AppStyles.style78W400,
-                textAlign: TextAlign.center,
-              ),
             ],
           ),
+          SizedBox(height: 80.h),
           Container(
             width: double.infinity,
             padding: EdgeInsets.only(

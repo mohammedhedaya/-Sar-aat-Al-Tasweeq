@@ -54,6 +54,7 @@ dependencies:
   qr_code_scanner: ^1.0.1
   image_picker: ^1.1.2
   country_code_picker: ^3.0.0
+  adaptive_theme: ^3.6.0
 
 dev_dependencies:
   flutter_test:

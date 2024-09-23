@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -15,6 +16,7 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
@@ -29,8 +31,8 @@ class HomeViewBody extends StatelessWidget {
           children: [
             Container(
               width: double.infinity,
-              color: AppColors.darkGray,
-              margin: EdgeInsetsDirectional.only(bottom: 10.h, start: 19.w),
+              color: isDark ? AppColors.navBarColor : null,
+              padding: EdgeInsetsDirectional.only(start: 10.w, bottom: 10.h),
               child: Row(
                 children: [
                   SvgPicture.asset(
@@ -107,7 +109,7 @@ class HomeViewBody extends StatelessWidget {
                       imagePath: Assets.imagesSmsLogo,
                       label: 'SMS',
                     ),
-                      SizedBox(height: 50.h),
+                    SizedBox(height: 50.h),
                     SocialMediaCard(
                       onTap: () {
                         context.push('/emailView');

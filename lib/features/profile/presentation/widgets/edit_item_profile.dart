@@ -33,6 +33,7 @@ class EditItemProfile extends StatelessWidget {
                         fillColor: AppColors.whiteColor.withOpacity(0.10),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10.r),
+                          borderSide: const BorderSide(width: 0),
                         ),
                       ),
                       style: AppStyles.style18W400,

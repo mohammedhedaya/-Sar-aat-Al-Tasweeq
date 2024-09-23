@@ -82,7 +82,7 @@ class _CustomAddProfileImageWidgetState
             child: Text(
               widget.errorText!,
               style: TextStyle(
-                color: Colors.red,
+                color: Colors.white,
                 fontSize: 12.sp,
               ),
             ),

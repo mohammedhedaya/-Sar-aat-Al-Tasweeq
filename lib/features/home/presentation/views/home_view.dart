@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../widgets/custom_drawer.dart';
-import '../../../../core/utils/app_colors.dart';
 import '../widgets/custom_app_bar.dart';
 import '../widgets/home_view_body.dart.dart';
 
@@ -18,7 +17,6 @@ class _HomeViewState extends State<HomeView> {
     return Scaffold(
       key: _scaffoldKey,
       drawer: const CustomMenuDrawer(),
-      backgroundColor: AppColors.darkGray,
       appBar: CustomAppBar(
         scaffoldKey: _scaffoldKey,
       ),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../core/utils/app_colors.dart';
 import 'drawer_body.dart';
 
 class CustomMenuDrawer extends StatelessWidget {
@@ -14,7 +13,7 @@ class CustomMenuDrawer extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(0.r),
       ),
-      backgroundColor: AppColors.navBarColor,
+      // backgroundColor: AppColors.navBarColor,
       clipBehavior: Clip.none,
       child: const DrawerBody(),
     );

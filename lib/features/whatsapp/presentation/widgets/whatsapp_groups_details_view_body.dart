@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
-import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
 import 'custom_show_dialog.dart';
@@ -126,7 +125,6 @@ class GroupsDetailsViewBody extends StatelessWidget {
                                   const Color(0xffFFF9F9).withOpacity(0.33),
                               builder: (context) {
                                 return AlertDialog(
-                                  backgroundColor: AppColors.darkGray,
                                   title: Text(
                                     "رابط الجروب",
                                     style: AppStyles.style12W400.copyWith(

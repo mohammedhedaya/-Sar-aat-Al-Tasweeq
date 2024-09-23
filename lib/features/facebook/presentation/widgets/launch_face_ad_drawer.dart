@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
-import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
 import '../../../whatsapp/presentation/widgets/custom_launch_drawer_item.dart';
@@ -20,7 +19,7 @@ class CustomLaunchFacebookAdDrawer extends StatelessWidget {
         borderRadius: BorderRadius.circular(0),
       ),
       width: MediaQuery.of(context).size.width * 0.6,
-      backgroundColor: AppColors.navBarColor,
+      // // backgroundColor: AppColors.navBarColor,
       child: Padding(
         padding: const EdgeInsets.all(20),
         child: SingleChildScrollView(

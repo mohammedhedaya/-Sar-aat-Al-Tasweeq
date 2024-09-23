@@ -1,10 +1,10 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart'; // Add this import for localization
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import 'package:adaptive_theme/adaptive_theme.dart';
+import 'package:shopping_chart/core/components/app_theme.dart';
 import '../router/app_router.dart';
-import '../utils/app_colors.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -16,29 +16,30 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
-        return MaterialApp.router(
-          locale: DevicePreview.locale(context),
-          supportedLocales: const [
-            Locale('ar'),
-          ],
-          localizationsDelegates: const [
-            GlobalMaterialLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate,
-          ],
-          localeResolutionCallback: (locale, supportedLocales) {
-            return const Locale('ar');
-          },
-          builder: DevicePreview.appBuilder,
-          title: 'سرعة التسويق',
-          debugShowCheckedModeBanner: false,
-          routerConfig: router,
-          theme: ThemeData(
-            scaffoldBackgroundColor: AppColors.darkGray,
+        return AdaptiveTheme(
+          light: lightTheme,
+          dark: darkTheme,
+          initial: AdaptiveThemeMode.dark,
+          builder: (theme, darkTheme) => MaterialApp.router(
+            locale: DevicePreview.locale(context),
+            supportedLocales: const [
+              Locale('ar'),
+            ],
+            localizationsDelegates: const [
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+            ],
+            localeResolutionCallback: (locale, supportedLocales) {
+              return const Locale('ar');
+            },
+            builder: DevicePreview.appBuilder,
+            title: 'سرعة التسويق',
+            debugShowCheckedModeBanner: false,
+            routerConfig: router,
+            theme: theme,
+            darkTheme: darkTheme,
           ),
-          // theme: ThemeData.light(),
-          // darkTheme: ThemeData.dark(),
-          // themeMode: ThemeMode.system, // This allows system theme changes
         );
       },
     );

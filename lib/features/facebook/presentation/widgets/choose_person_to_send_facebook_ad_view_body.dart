@@ -34,7 +34,7 @@ class ChoosePersonToSendFacebookAdViewBody extends StatelessWidget {
               fiiledColor: AppColors.whiteColor.withOpacity(0.10),
               hintText: "أضف الرابط",
               hintStyle: AppStyles.style12W700.copyWith(
-                color: const Color(0xff9C9C9C),
+                color: const Color(0xffffffff),
               ),
               suffixIcon: Transform.scale(
                 scale: 0.5,
@@ -49,7 +49,7 @@ class ChoosePersonToSendFacebookAdViewBody extends StatelessWidget {
               fiiledColor: AppColors.whiteColor.withOpacity(0.10),
               hintText: "أضف الموقع",
               hintStyle: AppStyles.style12W700.copyWith(
-                color: const Color(0xff9C9C9C),
+                color: const Color(0xffffffff),
               ),
               suffixIcon: Transform.scale(
                 scale: 0.5,

@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -14,12 +15,13 @@ class ChooseTelegramGroupToSendViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return Column(
       children: [
         Container(
           width: double.infinity,
-          color: AppColors.navBarColor,
-          padding: EdgeInsetsDirectional.only(bottom: 10.h, start: 15.w),
+          color: isDark ? AppColors.navBarColor : null,
+          padding: EdgeInsetsDirectional.only(start: 10.w, bottom: 10.h),
           child: Row(
             children: [
               SvgPicture.asset(
@@ -30,6 +32,7 @@ class ChooseTelegramGroupToSendViewBody extends StatelessWidget {
                 "400",
                 style: AppStyles.style12W700.copyWith(
                   fontWeight: FontWeight.w900,
+                  fontFamily: "Titillium Web",
                 ),
               ),
               SizedBox(width: 10.w),
@@ -57,7 +60,7 @@ class ChooseTelegramGroupToSendViewBody extends StatelessWidget {
                     fiiledColor: AppColors.whiteColor.withOpacity(0.10),
                     hintText: "أضف الموقع",
                     hintStyle: AppStyles.style12W700.copyWith(
-                      color: const Color(0xff9C9C9C),
+                      color: const Color(0xffffffff),
                     ),
                     suffixIcon: Transform.scale(
                       scale: 0.5,

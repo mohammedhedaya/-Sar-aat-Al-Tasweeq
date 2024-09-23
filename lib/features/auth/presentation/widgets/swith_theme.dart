@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart'; // Import ScreenUtil
-import '../../../../core/utils/app_colors.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:adaptive_theme/adaptive_theme.dart';
 import '../../../../core/utils/assets.dart';
 
 class SwithTheme extends StatefulWidget {
@@ -12,18 +12,17 @@ class SwithTheme extends StatefulWidget {
 }
 
 class _SwithThemeState extends State<SwithTheme> {
-  bool _isDarkTheme = false;
-
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return Align(
       alignment: AlignmentDirectional.topEnd,
       child: Container(
         width: 0.2.sw,
         height: 0.1.sw,
-        constraints: const BoxConstraints(minHeight: 39, minWidth: 89),
+        constraints: BoxConstraints(minHeight: 39.h, minWidth: 89.h),
         decoration: BoxDecoration(
-          color: AppColors.mixWhiteAndGray,
+          color: const Color(0xffD9D9D9),
           borderRadius: BorderRadius.circular(30.r),
         ),
         child: Row(
@@ -31,13 +30,11 @@ class _SwithThemeState extends State<SwithTheme> {
           children: [
             GestureDetector(
               onTap: () {
-                setState(() {
-                  _isDarkTheme = true;
-                });
+                AdaptiveTheme.of(context).setLight();
               },
               child: Container(
                 decoration: BoxDecoration(
-                  color: _isDarkTheme ? Colors.black : Colors.transparent,
+                  color: isDark ? Colors.transparent : Colors.black,
                   shape: BoxShape.circle,
                 ),
                 child: Padding(
@@ -45,7 +42,7 @@ class _SwithThemeState extends State<SwithTheme> {
                   child: SvgPicture.asset(
                     Assets.imagesLight,
                     colorFilter: ColorFilter.mode(
-                      _isDarkTheme ? Colors.white : Colors.black,
+                      isDark ? Colors.black : Colors.white,
                       BlendMode.srcIn,
                     ),
                   ),
@@ -55,13 +52,11 @@ class _SwithThemeState extends State<SwithTheme> {
             SizedBox(width: 12.w),
             GestureDetector(
               onTap: () {
-                setState(() {
-                  _isDarkTheme = false;
-                });
+                AdaptiveTheme.of(context).setDark();
               },
               child: Container(
                 decoration: BoxDecoration(
-                  color: _isDarkTheme ? Colors.transparent : Colors.black,
+                  color: isDark ? Colors.black : Colors.transparent,
                   shape: BoxShape.circle,
                 ),
                 child: Padding(
@@ -69,7 +64,7 @@ class _SwithThemeState extends State<SwithTheme> {
                   child: SvgPicture.asset(
                     Assets.imagesDark,
                     colorFilter: ColorFilter.mode(
-                      !_isDarkTheme ? Colors.white : Colors.black,
+                      isDark ? Colors.white : Colors.black,
                       BlendMode.srcIn,
                     ),
                   ),

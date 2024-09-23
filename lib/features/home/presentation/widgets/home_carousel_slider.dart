@@ -25,7 +25,7 @@ class _HomeCarouselSliderState extends State<HomeCarouselSlider> {
             height: 250.h,
             enlargeCenterPage: true,
             enableInfiniteScroll: true,
-            viewportFraction: 1.0,
+            viewportFraction: 1.1,
             onPageChanged: (index, reason) {
               setState(() {
                 _currentSlide = index;

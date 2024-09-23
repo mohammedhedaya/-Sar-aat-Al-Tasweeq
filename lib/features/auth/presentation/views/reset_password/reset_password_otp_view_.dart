@@ -62,7 +62,7 @@ class _ResetPasswordOTPViewState extends State<ResetPasswordOTPView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF2F2F2F),
+      // backgroundColor: const Color(0xFF2F2F2F),
       body: Column(
         children: [
           Expanded(
@@ -74,7 +74,9 @@ class _ResetPasswordOTPViewState extends State<ResetPasswordOTPView> {
                   Text(
                     'يرجى إدخال رمز التحقق',
                     textAlign: TextAlign.center,
-                    style: AppStyles.style12W400,
+                    style: AppStyles.style12W400.copyWith(
+                      color: AppColors.whiteColor,
+                    ),
                   ),
                   SizedBox(height: 30.h),
                   Pinput(

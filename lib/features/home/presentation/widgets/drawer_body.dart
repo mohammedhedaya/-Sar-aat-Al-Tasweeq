@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'custom_theme_drawer_widget.dart';
@@ -134,6 +135,7 @@ class _DrawerBodyState extends State<DrawerBody> {
             setState(() {
               _isDarkTheme = !_isDarkTheme;
             });
+            AdaptiveTheme.of(context).toggleThemeMode();
           },
           trailing: CustomThemeDrawerWidget(
             isDarkTheme: _isDarkTheme,

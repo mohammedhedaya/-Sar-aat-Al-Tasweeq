@@ -4,7 +4,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import '../widgets/launch_face_ad_drawer.dart';
 import '../widgets/launch_your_facebook_ad_view_body.dart';
-import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
 
@@ -57,7 +56,6 @@ class _LaunchYourFacebookAdViewState extends State<LaunchYourFacebookAdView> {
         ),
       ),
       appBar: AppBar(
-        backgroundColor: AppColors.navBarColor,
         surfaceTintColor: Colors.transparent,
         automaticallyImplyLeading: false,
         elevation: 0,

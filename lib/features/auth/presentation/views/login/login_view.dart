@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/utils/app_colors.dart';
 import '../../widgets/custom_positioned.dart';
 
 class LoginView extends StatelessWidget {
@@ -11,7 +10,7 @@ class LoginView extends StatelessWidget {
     return const SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,
-        backgroundColor: AppColors.darkGray,
+        // backgroundColor: AppColors.darkGray,
         body: LoginViewBody(),
       ),
     );

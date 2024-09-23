@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import 'package:go_router/go_router.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_text_style.dart';
 import '../../../../../core/utils/assets.dart';
@@ -24,7 +24,9 @@ class ResetNewPasswordView extends StatelessWidget {
               ),
               Text(
                 'كلمة السر الجديدة',
-                style: AppStyles.style12W400,
+                style: AppStyles.style12W400.copyWith(
+                  color: AppColors.whiteColor,
+                ),
               ),
               SizedBox(height: 25.h),
               CustomAuthTextField(
@@ -43,7 +45,9 @@ class ResetNewPasswordView extends StatelessWidget {
               SizedBox(height: 25.h),
               Text(
                 'تأكيد كلمة السر الجديدة',
-                style: AppStyles.style12W400,
+                style: AppStyles.style12W400.copyWith(
+                  color: AppColors.whiteColor,
+                ),
               ),
               SizedBox(height: 23.h),
               CustomAuthTextField(
@@ -61,7 +65,9 @@ class ResetNewPasswordView extends StatelessWidget {
               ),
               const Spacer(),
               CustomAuthBtn(
-                onPressed: () {},
+                onPressed: () {
+                  context.go("/");
+                },
                 text: "التالي",
               ),
             ],

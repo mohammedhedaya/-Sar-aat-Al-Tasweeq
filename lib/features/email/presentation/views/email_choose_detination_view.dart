@@ -15,7 +15,7 @@ class EmailChooseDetinationView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: AppColors.navBarColor,
+        // // backgroundColor: AppColors.navBarColor,
         surfaceTintColor: Colors.transparent,
         automaticallyImplyLeading: false,
         elevation: 0,
