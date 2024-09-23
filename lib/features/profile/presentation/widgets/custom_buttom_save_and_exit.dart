@@ -11,37 +11,53 @@ class CustomButtomSaveAndExit extends StatelessWidget {
     return Row(
       children: [
         Expanded(
-          child: ElevatedButton(
-            onPressed: () {
-              context.pop();
-            },
-            style: ElevatedButton.styleFrom(
-              backgroundColor: const Color(0xff52B850),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10.r),
+          child: InkWell(
+            onTap: () => context.pop(),
+            child: Container(
+              padding: EdgeInsets.symmetric(vertical: 10.h),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadiusDirectional.circular(10.r),
+                gradient: const LinearGradient(
+                  colors: [
+                    Color(0xff52B850),
+                    Color(0xff245223),
+                  ],
+                  begin: Alignment.centerLeft,
+                  end: Alignment.centerRight,
+                ),
               ),
-            ),
-            child: Text(
-              'حفظ',
-              style: AppStyles.style14W600,
+              child: Center(
+                child: Text(
+                  "حفظ",
+                  style: AppStyles.style14W600,
+                ),
+              ),
             ),
           ),
         ),
         SizedBox(width: 11.w),
         Expanded(
-          child: ElevatedButton(
-            onPressed: () {
-              context.pop();
-            },
-            style: ElevatedButton.styleFrom(
-              backgroundColor: const Color(0xffDA3131),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10.r),
+          child: InkWell(
+            onTap: () => context.pop(),
+            child: Container(
+              padding: EdgeInsets.symmetric(vertical: 10.h),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadiusDirectional.circular(10.r),
+                gradient: const LinearGradient(
+                  colors: [
+                    Color(0xff741A1A),
+                    Color(0xffDA3131),
+                  ],
+                  begin: Alignment.centerLeft,
+                  end: Alignment.centerRight,
+                ),
               ),
-            ),
-            child: Text(
-              'إلغاء',
-              style: AppStyles.style14W600,
+              child: Center(
+                child: Text(
+                  "إلغاء",
+                  style: AppStyles.style14W600,
+                ),
+              ),
             ),
           ),
         ),

@@ -20,12 +20,9 @@ final ThemeData lightTheme = ThemeData(
   dialogTheme: const DialogTheme(
     backgroundColor: AppColors.lightTheme,
   ),
-  // textTheme: const TextTheme(
-  //   bodyLarge: TextStyle(color: Colors.black),
-  //   bodyMedium: TextStyle(color: Colors.black),
-  //   bodySmall: TextStyle(color: Colors.black),
-
-  // ),
+  listTileTheme: const ListTileThemeData(
+    tileColor: Color.fromARGB(255, 62, 62, 62),
+  ),
   bottomNavigationBarTheme: const BottomNavigationBarThemeData(
     backgroundColor: AppColors.gray,
   ),

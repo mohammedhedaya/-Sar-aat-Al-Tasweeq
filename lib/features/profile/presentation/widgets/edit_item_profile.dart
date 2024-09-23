@@ -26,18 +26,23 @@ class EditItemProfile extends StatelessWidget {
                       textAlign: TextAlign.start,
                     ),
                     SizedBox(height: 9.h),
-                    TextFormField(
-                      initialValue: 'فيصل',
-                      decoration: InputDecoration(
-                        filled: true,
-                        fillColor: AppColors.whiteColor.withOpacity(0.10),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10.r),
-                          borderSide: const BorderSide(width: 0),
-                        ),
+                    Container(
+                      decoration: BoxDecoration(
+                        color: AppColors.whiteColor.withOpacity(0.10),
+                        borderRadius: BorderRadius.circular(10.r),
                       ),
-                      style: AppStyles.style18W400,
-                      textAlign: TextAlign.start,
+                      child: TextFormField(
+                        initialValue: 'فيصل',
+                        decoration: const InputDecoration(
+                          border: InputBorder.none,
+                          contentPadding: EdgeInsets.symmetric(
+                            vertical: 15,
+                            horizontal: 12,
+                          ),
+                        ),
+                        style: AppStyles.style18W400,
+                        textAlign: TextAlign.start,
+                      ),
                     ),
                   ],
                 ),
@@ -53,17 +58,23 @@ class EditItemProfile extends StatelessWidget {
                       textAlign: TextAlign.start,
                     ),
                     SizedBox(height: 9.h),
-                    TextFormField(
-                      initialValue: 'عبدالعزيز',
-                      decoration: InputDecoration(
-                        filled: true,
-                        fillColor: AppColors.whiteColor.withOpacity(0.10),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10.r),
-                        ),
+                    Container(
+                      decoration: BoxDecoration(
+                        color: AppColors.whiteColor.withOpacity(0.10),
+                        borderRadius: BorderRadius.circular(10.r),
                       ),
-                      style: AppStyles.style18W400,
-                      textAlign: TextAlign.start,
+                      child: TextFormField(
+                        initialValue: 'عبدالعزيز',
+                        decoration: const InputDecoration(
+                          border: InputBorder.none,
+                          contentPadding: EdgeInsets.symmetric(
+                            vertical: 15,
+                            horizontal: 12,
+                          ),
+                        ),
+                        style: AppStyles.style18W400,
+                        textAlign: TextAlign.start,
+                      ),
                     ),
                   ],
                 ),
@@ -83,17 +94,21 @@ class EditItemProfile extends StatelessWidget {
                       textAlign: TextAlign.start,
                     ),
                     SizedBox(height: 9.h),
-                    TextFormField(
-                      initialValue: 'آل سعود',
-                      decoration: InputDecoration(
-                        filled: true,
-                        fillColor: AppColors.whiteColor.withOpacity(0.10),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10.r),
-                        ),
+                    Container(
+                      decoration: BoxDecoration(
+                        color: AppColors.whiteColor.withOpacity(0.10),
+                        borderRadius: BorderRadius.circular(10.r),
                       ),
-                      style: AppStyles.style18W400,
-                      textAlign: TextAlign.start,
+                      child: TextFormField(
+                        initialValue: 'ال سعود',
+                        decoration: const InputDecoration(
+                          border: InputBorder.none,
+                          contentPadding: EdgeInsets.symmetric(
+                              vertical: 15, horizontal: 12),
+                        ),
+                        style: AppStyles.style18W400,
+                        textAlign: TextAlign.start,
+                      ),
                     ),
                   ],
                 ),
@@ -115,30 +130,34 @@ class EditItemProfile extends StatelessWidget {
                   textAlign: TextAlign.start,
                 ),
               ),
-              TextFormField(
-                initialValue: '0501234567',
-                keyboardType: TextInputType.phone,
-                decoration: InputDecoration(
-                  suffixIcon: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        "966",
-                        style: AppStyles.style18W400,
-                      ),
-                      const Icon(
-                        Icons.keyboard_arrow_down,
-                        color: AppColors.whiteColor,
-                      ),
-                    ],
-                  ),
-                  filled: true,
-                  fillColor: AppColors.whiteColor.withOpacity(0.10),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20.r),
-                  ),
+              Container(
+                decoration: BoxDecoration(
+                  color: AppColors.whiteColor.withOpacity(0.10),
+                  borderRadius: BorderRadius.circular(20.r),
                 ),
-                style: AppStyles.style18W400,
+                child: TextFormField(
+                  initialValue: '0501234567',
+                  keyboardType: TextInputType.phone,
+                  decoration: InputDecoration(
+                    suffixIcon: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          "966",
+                          style: AppStyles.style18W400,
+                        ),
+                        const Icon(
+                          Icons.keyboard_arrow_down,
+                          color: AppColors.whiteColor,
+                        ),
+                      ],
+                    ),
+                    border: InputBorder.none,
+                    contentPadding: const EdgeInsets.symmetric(
+                        vertical: 15, horizontal: 12),
+                  ),
+                  style: AppStyles.style18W400,
+                ),
               ),
             ],
           ),
@@ -154,17 +173,21 @@ class EditItemProfile extends StatelessWidget {
                 textAlign: TextAlign.start,
               ),
               SizedBox(height: 9.h),
-              TextFormField(
-                initialValue: 'faisal_abdelaziz@yahoo.com',
-                keyboardType: TextInputType.emailAddress,
-                decoration: InputDecoration(
-                  filled: true,
-                  fillColor: AppColors.whiteColor.withOpacity(0.10),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20.r),
-                  ),
+              Container(
+                decoration: BoxDecoration(
+                  color: AppColors.whiteColor.withOpacity(0.10),
+                  borderRadius: BorderRadius.circular(20.r),
                 ),
-                style: AppStyles.style18W400,
+                child: TextFormField(
+                  initialValue: 'faisal_abdelaziz@yahoo.com',
+                  keyboardType: TextInputType.emailAddress,
+                  decoration: const InputDecoration(
+                    border: InputBorder.none,
+                    contentPadding:
+                        EdgeInsets.symmetric(vertical: 15, horizontal: 12),
+                  ),
+                  style: AppStyles.style18W400,
+                ),
               ),
               SizedBox(height: 30.h),
               const CustomButtomSaveAndExit(),

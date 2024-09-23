@@ -18,7 +18,7 @@ class SubscribeToThePackageViewBody extends StatelessWidget {
             image: AssetImage(
               Assets.imagesHomeBackground,
             ),
-            alignment: Alignment(0.0, -1.80),
+            alignment: Alignment(0.0, -2.0),
             opacity: 0.10,
           ),
         ),
@@ -193,6 +193,7 @@ class SubscribeToThePackageViewBody extends StatelessWidget {
                           ],
                         ),
                       ),
+                      SizedBox(height: 20.h),
                     ],
                   ),
                 ),
