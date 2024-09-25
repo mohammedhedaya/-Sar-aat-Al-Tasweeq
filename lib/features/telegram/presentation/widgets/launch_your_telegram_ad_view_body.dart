@@ -104,27 +104,46 @@ class _LaunchYourTelegramAdViewBodyState
                       .copyWith(color: AppColors.whiteColor),
                 ),
               ),
-              TextButton(
-                onPressed: () {
-                  context.push('/telegramChatsView');
-                },
-                style: ButtonStyle(
-                  backgroundColor: _currentPage == 3
-                      ? WidgetStateProperty.all(const Color(0xffFFF6F6))
-                      : WidgetStateProperty.all(const Color(0xffA4A4A4)),
-                  shape: WidgetStateProperty.all(
-                    const StadiumBorder(),
+              Stack(
+                clipBehavior: Clip.none,
+                children: [
+                  TextButton(
+                    onPressed: () {
+                      context.push('/telegramChatsView');
+                    },
+                    style: ButtonStyle(
+                      backgroundColor: _currentPage == 3
+                          ? WidgetStateProperty.all(const Color(0xffFFF6F6))
+                          : WidgetStateProperty.all(const Color(0xffA4A4A4)),
+                      shape: WidgetStateProperty.all(
+                        const StadiumBorder(),
+                      ),
+                      visualDensity: VisualDensity.compact,
+                      shadowColor: _currentPage == 3
+                          ? WidgetStateProperty.all(
+                              Colors.white.withOpacity(0.25))
+                          : WidgetStateProperty.all(Colors.transparent),
+                      elevation: WidgetStateProperty.all(4),
+                    ),
+                    child: Text(
+                      "الدردشات",
+                      style: AppStyles.style10W800,
+                    ),
                   ),
-                  visualDensity: VisualDensity.compact,
-                  shadowColor: _currentPage == 3
-                      ? WidgetStateProperty.all(Colors.white.withOpacity(0.25))
-                      : WidgetStateProperty.all(Colors.transparent),
-                  elevation: WidgetStateProperty.all(4),
-                ),
-                child: Text(
-                  "الدردشات",
-                  style: AppStyles.style10W800,
-                ),
+                  Positioned(
+                    top: -7,
+                    right: -10,
+                    child: CircleAvatar(
+                      radius: 12.r,
+                      backgroundColor: AppColors.redColor,
+                      child: Text(
+                        "7",
+                        style: AppStyles.style10W800
+                            .copyWith(color: AppColors.whiteColor),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),

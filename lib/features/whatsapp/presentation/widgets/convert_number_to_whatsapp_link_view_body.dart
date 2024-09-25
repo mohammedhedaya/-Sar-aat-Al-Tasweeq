@@ -19,24 +19,23 @@ class ConvertNumberToWhatsappLinkViewBody extends StatefulWidget {
 class _ConvertNumberToWhatsappLinkViewBodyState
     extends State<ConvertNumberToWhatsappLinkViewBody> {
   final TextEditingController _phoneController = TextEditingController();
-  String _countryCode = '+966'; // Default country code
+  String _countryCode = '+966';
   String _whatsAppLink = '';
+  bool _isButtonVisible = false;
 
   @override
   void initState() {
     super.initState();
-    _updateWhatsAppLink(''); // Initialize with an empty number
-  }
-
-  void _updateWhatsAppLink(String number) {
-    setState(() {
-      _whatsAppLink = "https://web.whatsapp.com/$_countryCode$number";
-    });
   }
 
   void _updateCountryCode(String code) {
     setState(() {
       _countryCode = code;
+    });
+  }
+
+  void _generateWhatsAppLink() {
+    setState(() {
       _whatsAppLink =
           "https://web.whatsapp.com/$_countryCode${_phoneController.text}";
     });
@@ -62,7 +61,11 @@ class _ConvertNumberToWhatsappLinkViewBodyState
           // Phone Number Input Field
           CustomAuthTextField(
             controller: _phoneController,
-            onChanged: _updateWhatsAppLink,
+            onChanged: (value) {
+              setState(() {
+                _isButtonVisible = value.isNotEmpty;
+              });
+            },
             hintText: "رقم الهاتف",
             keyboardType: TextInputType.phone,
             fiiledColor: AppColors.whiteColor.withOpacity(0.10),
@@ -85,10 +88,10 @@ class _ConvertNumberToWhatsappLinkViewBodyState
                 initialSelection: 'SA',
                 favorite: const ['+966', 'SA'],
                 barrierColor: const Color(0xfffff9f9).withOpacity(0.33),
+                textStyle: const TextStyle(color: Colors.black),
                 textOverflow: TextOverflow.ellipsis,
                 boxDecoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8.r),
-                  color: const Color(0XFFD9D9D9),
                 ),
                 padding: EdgeInsets.zero,
                 flagDecoration: BoxDecoration(
@@ -98,43 +101,65 @@ class _ConvertNumberToWhatsappLinkViewBodyState
             ),
           ),
           SizedBox(height: 20.h),
-          // WhatsApp Link Display
-          Padding(
-            padding: EdgeInsetsDirectional.only(start: 9.w),
-            child: Text(
-              "رابط الرقم",
-              style: AppStyles.style12W400.copyWith(
-                color: Colors.white,
+          // Button to Generate WhatsApp Link
+          if (_isButtonVisible)
+            ElevatedButton(
+              onPressed: _generateWhatsAppLink,
+              style: ElevatedButton.styleFrom(
+                padding: EdgeInsets.zero,
+                elevation: 0,
+                minimumSize: Size(double.infinity, 51.h),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20.r),
+                ),
+              ),
+              child: const Text(
+                "إنشاء رابط الواتس اب",
+                style: TextStyle(
+                  color: Colors.white,
+                ),
               ),
             ),
-          ),
-          SizedBox(height: 4.h),
-          Container(
-            decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.10),
-              borderRadius: BorderRadius.circular(20.r),
+          SizedBox(height: 20.h),
+          // WhatsApp Link Display
+          if (_whatsAppLink.isNotEmpty) ...[
+            Padding(
+              padding: EdgeInsetsDirectional.only(start: 9.w),
+              child: Text(
+                "رابط الرقم",
+                style: AppStyles.style12W400.copyWith(
+                  color: Colors.white,
+                ),
+              ),
             ),
-            padding: const EdgeInsets.all(22),
-            child: Row(
-              children: [
-                Expanded(
-                  child: Text(
-                    _whatsAppLink,
-                    style: AppStyles.style12W400.copyWith(
-                      color: Colors.white,
+            SizedBox(height: 4.h),
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.white.withOpacity(0.10),
+                borderRadius: BorderRadius.circular(20.r),
+              ),
+              padding: const EdgeInsets.all(22),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Text(
+                      _whatsAppLink,
+                      style: AppStyles.style12W400.copyWith(
+                        color: Colors.white,
+                      ),
+                      overflow: TextOverflow.ellipsis,
+                      textAlign: TextAlign.center,
                     ),
-                    overflow: TextOverflow.ellipsis,
-                    textAlign: TextAlign.center,
                   ),
-                ),
-                SizedBox(width: 8.w),
-                InkWell(
-                  onTap: _copyToClipboard,
-                  child: SvgPicture.asset(Assets.imagesCopyIcon2),
-                ),
-              ],
+                  SizedBox(width: 8.w),
+                  InkWell(
+                    onTap: _copyToClipboard,
+                    child: SvgPicture.asset(Assets.imagesCopyIcon2),
+                  ),
+                ],
+              ),
             ),
-          ),
+          ],
         ],
       ),
     );

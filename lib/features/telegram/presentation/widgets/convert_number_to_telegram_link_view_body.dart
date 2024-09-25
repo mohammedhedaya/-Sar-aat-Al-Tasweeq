@@ -19,35 +19,43 @@ class ConvertNumberToTelegramLinkViewBody extends StatefulWidget {
 class _ConvertNumberToTelegramLinkViewBodyState
     extends State<ConvertNumberToTelegramLinkViewBody> {
   final TextEditingController _phoneController = TextEditingController();
-  String _countryCode = '+966'; // Default country code
-  String _whatsAppLink = '';
+  String _countryCode = '+966';
+  String _telegramLink = '';
+  bool _isButtonVisible = false;
 
-  @override
-  void initState() {
-    super.initState();
-    _updateWhatsAppLink(''); // Initialize with an empty number
+  // Generate the Telegram link
+  void _generateTelegramLink() {
+    String phoneNumber = _phoneController.text.trim();
+    if (phoneNumber.isNotEmpty) {
+      setState(() {
+        _telegramLink = "https://t.me/$_countryCode$phoneNumber";
+      });
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('يرجى إدخال رقم هاتف صحيح!'),
+        ),
+      );
+    }
   }
 
-  void _updateWhatsAppLink(String number) {
-    setState(() {
-      _whatsAppLink = "https://t.me/$_countryCode$number";
-    });
-  }
-
+  // Update country code
   void _updateCountryCode(String code) {
     setState(() {
       _countryCode = code;
-      _whatsAppLink = "https://t.me/$_countryCode${_phoneController.text}";
     });
   }
 
+  // Copy to clipboard
   void _copyToClipboard() {
-    Clipboard.setData(ClipboardData(text: _whatsAppLink));
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        content: Text('تم نسخ رابط التليجرام !'),
-      ),
-    );
+    if (_telegramLink.isNotEmpty) {
+      Clipboard.setData(ClipboardData(text: _telegramLink));
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('تم نسخ رابط التليجرام!'),
+        ),
+      );
+    }
   }
 
   @override
@@ -58,10 +66,13 @@ class _ConvertNumberToTelegramLinkViewBodyState
         children: [
           Image.asset(Assets.imagesApplogo),
           SizedBox(height: 50.h),
-          // Phone Number Input Field
           CustomAuthTextField(
+            onChanged: (value) {
+              setState(() {
+                _isButtonVisible = value.isNotEmpty;
+              });
+            },
             controller: _phoneController,
-            onChanged: _updateWhatsAppLink,
             hintText: "رقم الهاتف",
             keyboardType: TextInputType.phone,
             fiiledColor: AppColors.whiteColor.withOpacity(0.10),
@@ -83,11 +94,11 @@ class _ConvertNumberToTelegramLinkViewBodyState
                 },
                 initialSelection: 'SA',
                 favorite: const ['+966', 'SA'],
+                textStyle: const TextStyle(color: Colors.black),
                 barrierColor: const Color(0xfffff9f9).withOpacity(0.33),
                 textOverflow: TextOverflow.ellipsis,
                 boxDecoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8.r),
-                  color: const Color(0XFFD9D9D9),
                 ),
                 padding: EdgeInsets.zero,
                 flagDecoration: BoxDecoration(
@@ -97,43 +108,63 @@ class _ConvertNumberToTelegramLinkViewBodyState
             ),
           ),
           SizedBox(height: 20.h),
-          // WhatsApp Link Display
-          Padding(
-            padding: EdgeInsetsDirectional.only(start: 9.w),
-            child: Text(
-              "رابط الرقم",
-              style: AppStyles.style12W400.copyWith(
-                color: Colors.white,
+          if (_isButtonVisible)
+            ElevatedButton(
+              onPressed: _generateTelegramLink,
+              style: ElevatedButton.styleFrom(
+                padding: EdgeInsets.zero,
+                elevation: 0,
+                minimumSize: Size(double.infinity, 51.h),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20.r),
+                ),
+              ),
+              child: const Text(
+                "إنشاء رابط التليجرام",
+                style: TextStyle(
+                  color: Colors.white,
+                ),
               ),
             ),
-          ),
-          SizedBox(height: 4.h),
-          Container(
-            decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.10),
-              borderRadius: BorderRadius.circular(20.r),
+          SizedBox(height: 20.h),
+          if (_telegramLink.isNotEmpty) ...[
+            Padding(
+              padding: EdgeInsetsDirectional.only(start: 9.w),
+              child: Text(
+                "رابط الرقم",
+                style: AppStyles.style12W400.copyWith(
+                  color: Colors.white,
+                ),
+              ),
             ),
-            padding: const EdgeInsets.all(22),
-            child: Row(
-              children: [
-                Expanded(
-                  child: Text(
-                    _whatsAppLink,
-                    style: AppStyles.style12W400.copyWith(
-                      color: Colors.white,
+            SizedBox(height: 4.h),
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.white.withOpacity(0.10),
+                borderRadius: BorderRadius.circular(20.r),
+              ),
+              padding: const EdgeInsets.all(22),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Text(
+                      _telegramLink,
+                      style: AppStyles.style12W400.copyWith(
+                        color: Colors.white,
+                      ),
+                      overflow: TextOverflow.ellipsis,
+                      textAlign: TextAlign.center,
                     ),
-                    overflow: TextOverflow.ellipsis,
-                    textAlign: TextAlign.center,
                   ),
-                ),
-                SizedBox(width: 8.w),
-                InkWell(
-                  onTap: _copyToClipboard,
-                  child: SvgPicture.asset(Assets.imagesCopyIcon2),
-                ),
-              ],
+                  SizedBox(width: 8.w),
+                  InkWell(
+                    onTap: _copyToClipboard,
+                    child: SvgPicture.asset(Assets.imagesCopyIcon2),
+                  ),
+                ],
+              ),
             ),
-          ),
+          ],
         ],
       ),
     );
