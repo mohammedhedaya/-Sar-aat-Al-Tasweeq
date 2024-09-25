@@ -16,8 +16,7 @@ class TelegramGroupsDetailsViewBody extends StatefulWidget {
 
 class _TelegramGroupsDetailsViewBodyState
     extends State<TelegramGroupsDetailsViewBody> {
-  List<bool> isAdded =
-      List.generate(15, (index) => false); // Track button state for each item
+  List<bool> isAdded = List.generate(15, (index) => false);
 
   @override
   Widget build(BuildContext context) {

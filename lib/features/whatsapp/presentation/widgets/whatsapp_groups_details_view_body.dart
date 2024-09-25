@@ -14,8 +14,7 @@ class GroupsDetailsViewBody extends StatefulWidget {
 }
 
 class _GroupsDetailsViewBodyState extends State<GroupsDetailsViewBody> {
-  List<bool> isAdded =
-      List.generate(15, (index) => false); // Track button state for each item
+  List<bool> isAdded = List.generate(15, (index) => false);
 
   @override
   Widget build(BuildContext context) {

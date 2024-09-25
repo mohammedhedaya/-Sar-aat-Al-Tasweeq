@@ -37,7 +37,7 @@ class _FacebookChooseDestinationViewBodyState
         children: [
           Center(
             child: Text(
-              "أختر الوجهة ( الإنستجرام )",
+              "أختر وجهة ( الفيسبوك )",
               style: AppStyles.style17W800,
             ),
           ),
