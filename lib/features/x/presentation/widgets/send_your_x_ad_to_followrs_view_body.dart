@@ -183,7 +183,7 @@ class _SendYourXAdToFollowrsViewBodyState
                   Center(
                     child: InkWell(
                       onTap: () {
-                        context.push("/chooseXAdDestinationView");
+                        context.push("/chooseXAdDestinationSendToFollowrsView");
                       },
                       child: Container(
                         height: 40.h,

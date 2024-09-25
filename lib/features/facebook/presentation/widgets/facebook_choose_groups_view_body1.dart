@@ -90,7 +90,7 @@ class FacebookChooseGroupsViewBody1 extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "حراج",
+                  "تحديد الكل",
                   style: AppStyles.style13W600,
                 ),
                 const ChooseDestinationCheckbox(),

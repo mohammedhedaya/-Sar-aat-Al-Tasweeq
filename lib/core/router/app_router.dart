@@ -442,8 +442,9 @@ final GoRouter router = GoRouter(
       builder: (context, state) => const SendYourXAdToFollowrsView(),
     ),
     GoRoute(
-      path: '/chooseXAdDestinationView',
-      builder: (context, state) => const ChooseXAdDestinationView(),
+      path: '/chooseXAdDestinationSendToFollowrsView',
+      builder: (context, state) =>
+          const ChooseXAdDestinationSendToFollowrsView(),
     ),
     GoRoute(
       path: '/sendingXAdToFollowrsView',

@@ -16,13 +16,6 @@ class ChoosePersonAndSendXAdView extends StatelessWidget {
         surfaceTintColor: Colors.transparent,
         automaticallyImplyLeading: false,
         elevation: 0,
-        leading: IconButton(
-          onPressed: () {},
-          icon: const Icon(
-            Icons.logout,
-            color: Colors.white,
-          ),
-        ),
         title: Row(
           children: [
             Text(

@@ -1,4 +1,3 @@
-import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
@@ -14,7 +13,6 @@ class SMSTransferAnotherNumberView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        // backgroundColor: AppColors.navBarColor,
         surfaceTintColor: Colors.transparent,
         automaticallyImplyLeading: false,
         elevation: 0,
@@ -34,22 +32,17 @@ class SMSTransferAnotherNumberView extends StatelessWidget {
             ),
           ],
         ),
-        actions: [
-          IconButton(
-            onPressed: () {
-              context.pop();
-              context.pop();
-              context.pop();
-            },
-            icon: Transform.rotate(
-              angle: -90 * pi / 90,
-              child: const Icon(
-                Icons.logout_sharp,
-                color: Colors.white,
-              ),
-            ),
+        leading: IconButton(
+          onPressed: () {
+            context.pop();
+            context.pop();
+            context.pop();
+          },
+          icon: const Icon(
+            Icons.logout_sharp,
+            color: Colors.white,
           ),
-        ],
+        ),
       ),
       body: const SMSTransferAnotherNumberViewBody(),
     );

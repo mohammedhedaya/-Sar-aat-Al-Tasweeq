@@ -6,8 +6,8 @@ import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
 import '../widgets/choose_x_ad_destination_view_body.dart';
 
-class ChooseXAdDestinationView extends StatelessWidget {
-  const ChooseXAdDestinationView({super.key});
+class ChooseXAdDestinationSendToFollowrsView extends StatelessWidget {
+  const ChooseXAdDestinationSendToFollowrsView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,13 +16,6 @@ class ChooseXAdDestinationView extends StatelessWidget {
         surfaceTintColor: Colors.transparent,
         automaticallyImplyLeading: false,
         elevation: 0,
-        leading: IconButton(
-          onPressed: () {},
-          icon: const Icon(
-            Icons.logout,
-            color: Colors.white,
-          ),
-        ),
         title: Row(
           children: [
             Text(

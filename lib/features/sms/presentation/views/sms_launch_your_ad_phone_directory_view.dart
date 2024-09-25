@@ -1,11 +1,8 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
-
 import '../widgets/sms_launch_your_ad_phone_directory_view_body.dart';
 
 class SMSLaunchYourAdPhoneDirectoryView extends StatelessWidget {
@@ -35,22 +32,17 @@ class SMSLaunchYourAdPhoneDirectoryView extends StatelessWidget {
             ),
           ],
         ),
-        actions: [
-          IconButton(
-            onPressed: () {
-              context.pop();
-              context.pop();
-              context.pop();
-            },
-            icon: Transform.rotate(
-              angle: -90 * pi / 90,
-              child: const Icon(
-                Icons.logout_sharp,
-                color: Colors.white,
-              ),
-            ),
+        leading: IconButton(
+          onPressed: () {
+            context.pop();
+            context.pop();
+            context.pop();
+          },
+          icon: const Icon(
+            Icons.logout_sharp,
+            color: Colors.white,
           ),
-        ],
+        ),
       ),
       body: const SMSLaunchYourAdPhoneDirectoryViewBody(),
     );
