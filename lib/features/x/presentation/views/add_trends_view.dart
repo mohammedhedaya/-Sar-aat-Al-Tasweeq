@@ -8,13 +8,16 @@ class AddTrendsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final GoRouterState state = GoRouterState.of(context);
+    final extra = state.extra as Map<String, int>?;
+    final Object numbOfTrends = extra?['numbOfTrends'] ?? 'Unknown Number';
     return Scaffold(
       appBar: AppBar(
         surfaceTintColor: Colors.transparent,
         elevation: 0,
         automaticallyImplyLeading: false,
         title: Text(
-          "أنشر أعلانك على 9 ترندات X",
+          "أنشر أعلانك على ${numbOfTrends.toString()} ترندات X",
           style: AppStyles.style18W700.copyWith(
             shadows: [
               Shadow(

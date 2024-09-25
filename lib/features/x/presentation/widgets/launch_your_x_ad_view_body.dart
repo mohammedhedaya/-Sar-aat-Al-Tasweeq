@@ -158,7 +158,12 @@ class _LaunchYourXAdViewBodyState extends State<LaunchYourXAdViewBody> {
                                         children: [
                                           ListTile(
                                             onTap: () {
-                                              context.push("/addTrendsView");
+                                              context.push(
+                                                "/addTrendsView",
+                                                extra: {
+                                                  "numbOfTrends": 1 + index + 4
+                                                },
+                                              );
                                             },
                                             contentPadding: EdgeInsets.zero,
                                             visualDensity:
