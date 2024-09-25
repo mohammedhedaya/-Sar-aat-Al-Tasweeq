@@ -1,62 +1,89 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import '../../../../../../core/utils/app_colors.dart';
 import '../../../../../../core/utils/app_text_style.dart';
-import '../../../../../whatsapp/presentation/widgets/destination_check_box.dart';
 
-class TelegramDeleteAllPage extends StatelessWidget {
+class TelegramDeleteAllPage extends StatefulWidget {
   const TelegramDeleteAllPage({super.key});
 
+  @override
+  State<TelegramDeleteAllPage> createState() => _TelegramDeleteAllPageState();
+}
+
+class _TelegramDeleteAllPageState extends State<TelegramDeleteAllPage> {
+    bool selectAll = false;
+  List<bool> isSelected = List.generate(15, (index) => false);
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
+         SizedBox(height: 25.h),
+        CheckboxListTile(
+          title: Text(
+            'تحديد الكل',
+            style: AppStyles.style13W600,
+          ),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(2.r),
+          ),
+          activeColor: const Color(0xff00C0CC),
+          checkColor: const Color(0xff00C0CC),
+          visualDensity: VisualDensity.compact,
+          contentPadding: EdgeInsets.zero,
+          side: const BorderSide(
+            color: Colors.white,
+          ),
+          value: selectAll,
+          onChanged: (value) {
+            setState(() {
+              selectAll = value!;
+              isSelected =
+                  List.generate(isSelected.length, (index) => selectAll);
+            });
+          },
+        ),
+        SizedBox(height: 20.h),
         Expanded(
-          child: SingleChildScrollView(
-            child: Padding(
-              padding: EdgeInsets.symmetric(vertical: 25.h),
-              child: Column(
+          child: ListView.builder(
+            itemCount: isSelected.length,
+            itemBuilder: (context, index) {
+              return Column(
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        "تحديد الكل",
-                        style: AppStyles.style13W600,
-                      ),
-                      const ChooseDestinationCheckbox(),
-                    ],
-                  ),
-                  SizedBox(height: 27.h),
-                  Column(
-                    children: List.generate(
-                      10,
-                      (index) => Column(
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                "فيصل عبدالعزيز",
-                                style: AppStyles.style13W600,
-                              ),
-                              const ChooseDestinationCheckbox(),
-                            ],
-                          ),
-                          Divider(
-                            color: AppColors.whiteColor,
-                            thickness: 1,
-                            endIndent: 25.w,
-                            indent: 25.w,
-                          ),
-                        ],
-                      ),
+                  CheckboxListTile(
+                    title: Text(
+                      'فيصل عبدالعزيز',
+                      style: AppStyles.style13W600,
                     ),
+                    contentPadding: EdgeInsets.zero,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(2.r),
+                    ),
+                    activeColor: const Color(0xff00C0CC),
+                    checkColor: const Color(0xff00C0CC),
+                    visualDensity: VisualDensity.compact,
+                    side: const BorderSide(
+                      color: Colors.white,
+                    ),
+                    value: isSelected[index],
+                    onChanged: (value) {
+                      setState(() {
+                        isSelected[index] = value!;
+                        if (!value) selectAll = false;
+                        if (isSelected.every((element) => element)) {
+                          selectAll = true;
+                        }
+                      });
+                    },
+                  ),
+                  Divider(
+                    color: Colors.white,
+                    thickness: 1,
+                    endIndent: 25.w,
+                    indent: 25.w,
                   ),
                 ],
-              ),
-            ),
+              );
+            },
           ),
         ),
         Padding(
