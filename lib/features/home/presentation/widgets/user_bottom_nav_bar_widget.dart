@@ -1,6 +1,3 @@
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import 'active_nav_bar_container.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/assets.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +17,6 @@ class UserBottomNavBarWidget extends StatelessWidget {
     return BottomNavigationBar(
       onTap: onTap,
       currentIndex: currentIndex,
-      // backgroundColor: AppColors.navBarColor,
       elevation: 4,
       type: BottomNavigationBarType.fixed,
       selectedItemColor: AppColors.whiteColor,
@@ -30,42 +26,57 @@ class UserBottomNavBarWidget extends StatelessWidget {
         BottomNavigationBarItem(
           tooltip: "Home",
           label: 'Home',
-          activeIcon: const ActiveNavBarContainer(
-            image: Assets.imagesHomeicon,
+          activeIcon: SvgPicture.asset(
+            Assets.imagesHomeicon,
           ),
           icon: SvgPicture.asset(
             Assets.imagesHomeicon,
+            colorFilter: const ColorFilter.mode(
+              AppColors.darkGray,
+              BlendMode.srcIn,
+            ),
           ),
         ),
         BottomNavigationBarItem(
           tooltip: "Wallet",
           label: 'Wallet',
-          activeIcon: const ActiveNavBarContainer(
-            image: Assets.imagesWalleticon,
+          activeIcon: SvgPicture.asset(
+            Assets.imagesWalleticon,
           ),
           icon: SvgPicture.asset(
             Assets.imagesWalleticon,
+            colorFilter: const ColorFilter.mode(
+              AppColors.darkGray,
+              BlendMode.srcIn,
+            ),
           ),
         ),
         BottomNavigationBarItem(
           tooltip: "Package",
           label: 'Package',
-          activeIcon: ActiveNavBarContainer(
-            image: Assets.imagesPackageicon,
-            height: 30.h,
+          activeIcon: SvgPicture.asset(
+            Assets.imagesPackageicon,
           ),
           icon: SvgPicture.asset(
             Assets.imagesPackageicon,
+            colorFilter: const ColorFilter.mode(
+              AppColors.darkGray,
+              BlendMode.srcIn,
+            ),
           ),
         ),
         BottomNavigationBarItem(
           tooltip: "Menu",
           label: 'Menu',
-          activeIcon: const ActiveNavBarContainer(
-            image: Assets.imagesMenuicon,
+          activeIcon: SvgPicture.asset(
+            Assets.imagesMenuicon,
           ),
           icon: SvgPicture.asset(
             Assets.imagesMenuicon,
+            colorFilter: const ColorFilter.mode(
+              AppColors.darkGray,
+              BlendMode.srcIn,
+            ),
           ),
         ),
       ],
