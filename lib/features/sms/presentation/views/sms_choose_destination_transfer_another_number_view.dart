@@ -2,14 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
-import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
-import '../../../whatsapp/presentation/widgets/destination_check_box.dart';
 
-class SMSChooseDestinationTransferAnotherNumberView extends StatelessWidget {
+class SMSChooseDestinationTransferAnotherNumberView extends StatefulWidget {
   const SMSChooseDestinationTransferAnotherNumberView({super.key});
 
+  @override
+  State<SMSChooseDestinationTransferAnotherNumberView> createState() =>
+      _SMSChooseDestinationTransferAnotherNumberViewState();
+}
+
+class _SMSChooseDestinationTransferAnotherNumberViewState
+    extends State<SMSChooseDestinationTransferAnotherNumberView> {
+  bool selectAll = false;
+  List<bool> isSelected = List.generate(15, (index) => false);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,54 +57,77 @@ class SMSChooseDestinationTransferAnotherNumberView extends StatelessWidget {
         padding: const EdgeInsets.all(20),
         child: Column(
           children: [
+            Text(
+              "عدد الأرقام :(5000) دليل الهاتف",
+              style: AppStyles.style17W800,
+            ),
+            SizedBox(height: 41.h),
+            CheckboxListTile(
+              title: Text(
+                'تحديد الكل',
+                style: AppStyles.style13W600,
+              ),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(2.r),
+              ),
+              activeColor: const Color(0xff00C0CC),
+              checkColor: const Color(0xff00C0CC),
+              visualDensity: VisualDensity.compact,
+              contentPadding: EdgeInsets.zero,
+              side: const BorderSide(
+                color: Colors.white,
+              ),
+              value: selectAll,
+              onChanged: (value) {
+                setState(() {
+                  selectAll = value!;
+                  isSelected =
+                      List.generate(isSelected.length, (index) => selectAll);
+                });
+              },
+            ),
+            SizedBox(height: 20.h),
             Expanded(
-              child: SingleChildScrollView(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "عدد الأرقام :(5000) دليل الهاتف",
-                      style: AppStyles.style17W800,
-                    ),
-                    SizedBox(height: 41.h),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          "تحديد الكل(14000)",
+              child: ListView.builder(
+                itemCount: isSelected.length,
+                itemBuilder: (context, index) {
+                  return Column(
+                    children: [
+                      CheckboxListTile(
+                        title: Text(
+                          'فيصل عبدالعزيز',
                           style: AppStyles.style13W600,
                         ),
-                        const ChooseDestinationCheckbox(),
-                      ],
-                    ),
-                    SizedBox(height: 15.h),
-                    Column(
-                      children: List.generate(
-                        15,
-                        (index) => Column(
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  "فيصل عبدالعزيز",
-                                  style: AppStyles.style13W600,
-                                ),
-                                const ChooseDestinationCheckbox(),
-                              ],
-                            ),
-                            Divider(
-                              color: AppColors.whiteColor,
-                              thickness: 1,
-                              endIndent: 25.w,
-                              indent: 25.w,
-                            ),
-                          ],
+                        contentPadding: EdgeInsets.zero,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(2.r),
                         ),
+                        activeColor: const Color(0xff00C0CC),
+                        checkColor: const Color(0xff00C0CC),
+                        visualDensity: VisualDensity.compact,
+                        side: const BorderSide(
+                          color: Colors.white,
+                        ),
+                        value: isSelected[index],
+                        onChanged: (value) {
+                          setState(() {
+                            isSelected[index] = value!;
+                            if (!value) selectAll = false;
+                            if (isSelected.every((element) => element)) {
+                              selectAll = true;
+                            }
+                          });
+                        },
                       ),
-                    ),
-                  ],
-                ),
+                      Divider(
+                        color: Colors.white,
+                        thickness: 1,
+                        endIndent: 25.w,
+                        indent: 25.w,
+                      ),
+                    ],
+                  );
+                },
               ),
             ),
             Center(
