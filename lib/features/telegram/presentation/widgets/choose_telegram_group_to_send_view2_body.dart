@@ -80,7 +80,9 @@ class ChooseTelegramGroupToSendViewBody2 extends StatelessWidget {
                         ),
                       ),
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          context.push("/diamondWallet");
+                        },
                         child: Container(
                           padding: EdgeInsets.symmetric(
                               horizontal: 10.w, vertical: 4.h),
@@ -111,10 +113,10 @@ class ChooseTelegramGroupToSendViewBody2 extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "حراج",
+                        "تحديد الكل",
                         style: AppStyles.style13W600,
                       ),
-                      const ChooseDestinationCheckbox()
+                      const ChooseDestinationCheckbox(),
                     ],
                   ),
                   const Divider(

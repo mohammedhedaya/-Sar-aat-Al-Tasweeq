@@ -65,7 +65,6 @@ class LaunchAdAddWhatsappGroupsViewBody extends StatelessWidget {
                 textOverflow: TextOverflow.ellipsis,
                 boxDecoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8.r),
-                  color: const Color(0XFFD9D9D9),
                 ),
                 showCountryOnly: true,
                 hideMainText: true,
@@ -77,7 +76,7 @@ class LaunchAdAddWhatsappGroupsViewBody extends StatelessWidget {
               ),
               suffixIcon: const Icon(
                 Icons.keyboard_arrow_down_rounded,
-                color: AppColors.whiteColor,
+                color: Color.fromARGB(255, 14, 204, 185),
                 size: 30,
               ),
               onChanged: (value) {},
@@ -157,7 +156,7 @@ class _CustomLinkGroupTextFieldState extends State<CustomLinkGroupTextField> {
         child: Transform.scale(
           scale: 0.5,
           child: SvgPicture.asset(
-            Assets.imagesPastLink,
+            Assets.imagesLinkTeal,
           ),
         ),
       ),

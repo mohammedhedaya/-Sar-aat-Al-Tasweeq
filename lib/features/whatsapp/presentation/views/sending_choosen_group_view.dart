@@ -52,18 +52,11 @@ class SendingChoosenGroupView extends StatelessWidget {
                           "اسم المجموعة :",
                           style: AppStyles.style19W900,
                         ),
-                        Container(
-                          padding: const EdgeInsets.all(5),
-                          decoration: BoxDecoration(
-                            color: AppColors.mixWhiteAndGray,
-                            borderRadius: BorderRadius.circular(5.r),
-                          ),
-                          child: Text(
-                            "حراج",
-                            style: AppStyles.style16W900.copyWith(
-                              fontSize: 17.sp,
-                              color: const Color(0xff2F2F2F),
-                            ),
+                        Text(
+                          "حراج",
+                          style: AppStyles.style16W900.copyWith(
+                            fontSize: 17.sp,
+                            color: Colors.red,
                           ),
                         ),
                       ],

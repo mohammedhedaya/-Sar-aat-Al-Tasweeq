@@ -49,22 +49,27 @@ class FacebookChooseGroupsViewBody1 extends StatelessWidget {
                 ),
                 SizedBox(width: 11.w),
                 Expanded(
-                  child: Container(
-                    padding: const EdgeInsets.all(24),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5.r),
-                      gradient: const LinearGradient(
-                        colors: [
-                          Color(0xff00C0CC),
-                          Color(0xff006066),
-                        ],
-                        begin: Alignment.centerLeft,
-                        end: Alignment.centerRight,
+                  child: InkWell(
+                    onTap: () {
+                      context.push("/diamondWallet");
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.all(24),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5.r),
+                        gradient: const LinearGradient(
+                          colors: [
+                            Color(0xff00C0CC),
+                            Color(0xff006066),
+                          ],
+                          begin: Alignment.centerLeft,
+                          end: Alignment.centerRight,
+                        ),
                       ),
-                    ),
-                    child: Text(
-                      "إعادة الشحن",
-                      style: AppStyles.style14W400,
+                      child: Text(
+                        "إعادة الشحن",
+                        style: AppStyles.style14W400,
+                      ),
                     ),
                   ),
                 ),

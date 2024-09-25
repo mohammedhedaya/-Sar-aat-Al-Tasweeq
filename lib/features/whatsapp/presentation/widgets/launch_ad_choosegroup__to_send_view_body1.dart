@@ -46,22 +46,27 @@ class LaunchAdChooseGroupToSendViewBody1 extends StatelessWidget {
                   ),
                 ),
                 SizedBox(width: 11.w),
-                Container(
-                  padding: const EdgeInsets.all(24),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5.r),
-                    gradient: const LinearGradient(
-                      colors: [
-                        Color(0xff00C0CC),
-                        Color(0xff006066),
-                      ],
-                      begin: Alignment.centerLeft,
-                      end: Alignment.centerRight,
+                InkWell(
+                  onTap: () {
+                    context.push("/diamondWallet");
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.all(24),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5.r),
+                      gradient: const LinearGradient(
+                        colors: [
+                          Color(0xff00C0CC),
+                          Color(0xff006066),
+                        ],
+                        begin: Alignment.centerLeft,
+                        end: Alignment.centerRight,
+                      ),
                     ),
-                  ),
-                  child: Text(
-                    "إعادة الشحن",
-                    style: AppStyles.style14W400,
+                    child: Text(
+                      "إعادة الشحن",
+                      style: AppStyles.style14W400,
+                    ),
                   ),
                 ),
               ],
@@ -78,17 +83,13 @@ class LaunchAdChooseGroupToSendViewBody1 extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "حراج",
+                  "تحديد الكل",
                   style: AppStyles.style13W600,
                 ),
                 const ChooseDestinationCheckbox(),
               ],
             ),
-            const Divider(
-              color: AppColors.whiteColor,
-              thickness: 1,
-              endIndent: 25,
-            ),
+            SizedBox(height: 15.h),
             Column(
               children: List.generate(
                 5,

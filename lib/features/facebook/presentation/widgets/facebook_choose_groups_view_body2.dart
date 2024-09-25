@@ -77,7 +77,9 @@ class FacebookChooseGroupsViewBody2 extends StatelessWidget {
                   ),
                 ),
                 InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    context.push("/diamondWallet");
+                  },
                   child: Container(
                     padding:
                         EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),

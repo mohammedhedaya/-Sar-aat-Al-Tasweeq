@@ -70,14 +70,17 @@ class LaunchAdChooseGroupToSendViewBody2 extends StatelessWidget {
                       TextSpan(
                         text: '(حراج)',
                         style: AppStyles.style13W600.copyWith(
-                            color: const Color(0xffE21D1D),
-                            fontWeight: FontWeight.w700),
+                          color: const Color(0xffE21D1D),
+                          fontWeight: FontWeight.w700,
+                        ),
                       ),
                     ],
                   ),
                 ),
                 InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    context.push("/diamondWallet");
+                  },
                   child: Container(
                     padding:
                         EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
@@ -108,7 +111,7 @@ class LaunchAdChooseGroupToSendViewBody2 extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "حراج",
+                  "تحديد الكل",
                   style: AppStyles.style13W600,
                 ),
                 const ChooseDestinationCheckbox()

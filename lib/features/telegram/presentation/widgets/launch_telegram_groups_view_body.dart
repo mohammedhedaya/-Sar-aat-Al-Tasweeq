@@ -73,7 +73,6 @@ class LaunchAdTelegramGroupsViewBody extends StatelessWidget {
                 textOverflow: TextOverflow.ellipsis,
                 boxDecoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8.r),
-                  color: const Color(0XFFD9D9D9),
                 ),
                 showCountryOnly: true,
                 hideMainText: true,
@@ -85,7 +84,7 @@ class LaunchAdTelegramGroupsViewBody extends StatelessWidget {
               ),
               suffixIcon: const Icon(
                 Icons.keyboard_arrow_down_rounded,
-                color: AppColors.whiteColor,
+                color: Color.fromARGB(255, 10, 208, 188),
                 size: 30,
               ),
               onChanged: (value) {},
@@ -174,7 +173,7 @@ class _CustomPastLinkTelegramTextFieldState
         child: Transform.scale(
           scale: 0.5,
           child: SvgPicture.asset(
-            Assets.imagesPastLink,
+            Assets.imagesLinkTeal,
           ),
         ),
       ),
