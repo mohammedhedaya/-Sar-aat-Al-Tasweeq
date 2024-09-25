@@ -13,8 +13,8 @@ class ChatView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         centerTitle: true,
-        // // backgroundColor: AppColors.navBarColor,
         surfaceTintColor: Colors.transparent,
         elevation: 0,
         title: Text(
@@ -27,24 +27,6 @@ class ChatView extends StatelessWidget {
                 offset: const Offset(0, 4),
               ),
             ],
-          ),
-        ),
-        leading: InkWell(
-          onTap: () {},
-          child: Container(
-            constraints: BoxConstraints(
-              minHeight: 40.h,
-              minWidth: 40.w,
-            ),
-            margin: EdgeInsets.all(10.w),
-            decoration: const BoxDecoration(
-              shape: BoxShape.circle,
-              color: AppColors.whiteColor,
-            ),
-            child: const Icon(
-              Icons.more_horiz_rounded,
-              color: Colors.black,
-            ),
           ),
         ),
         actions: [

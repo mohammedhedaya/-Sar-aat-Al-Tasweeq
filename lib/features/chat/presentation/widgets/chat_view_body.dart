@@ -46,6 +46,98 @@ class ChatViewBody extends StatelessWidget {
                     fontSize: 13,
                   ),
                 ),
+                SizedBox(height: 25.h),
+                const BubbleSpecialThree(
+                  text:
+                      'وريم إيبسوم هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى)',
+                  color: Color(0xFF7B7B7B),
+                  tail: true,
+                  textStyle: TextStyle(
+                    color: Colors.white,
+                    fontSize: 13,
+                  ),
+                ),
+                SizedBox(height: 25.h),
+                const BubbleSpecialThree(
+                  text:
+                      'وريم إيبسوم هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى)',
+                  color: Color(0xffFFFEFE),
+                  tail: true,
+                  isSender: false,
+                  textStyle: TextStyle(
+                    color: Colors.black,
+                    fontSize: 13,
+                  ),
+                ),
+                SizedBox(height: 25.h),
+                const BubbleSpecialThree(
+                  text:
+                      'وريم إيبسوم هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى)',
+                  color: Color(0xFF7B7B7B),
+                  tail: true,
+                  textStyle: TextStyle(
+                    color: Colors.white,
+                    fontSize: 13,
+                  ),
+                ),
+                SizedBox(height: 25.h),
+                const BubbleSpecialThree(
+                  text:
+                      'وريم إيبسوم هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى)',
+                  color: Color(0xffFFFEFE),
+                  tail: true,
+                  isSender: false,
+                  textStyle: TextStyle(
+                    color: Colors.black,
+                    fontSize: 13,
+                  ),
+                ),
+                SizedBox(height: 25.h),
+                const BubbleSpecialThree(
+                  text:
+                      'وريم إيبسوم هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى)',
+                  color: Color(0xFF7B7B7B),
+                  tail: true,
+                  textStyle: TextStyle(
+                    color: Colors.white,
+                    fontSize: 13,
+                  ),
+                ),
+                SizedBox(height: 25.h),
+                const BubbleSpecialThree(
+                  text:
+                      'وريم إيبسوم هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى)',
+                  color: Color(0xffFFFEFE),
+                  tail: true,
+                  isSender: false,
+                  textStyle: TextStyle(
+                    color: Colors.black,
+                    fontSize: 13,
+                  ),
+                ),
+                SizedBox(height: 25.h),
+                const BubbleSpecialThree(
+                  text:
+                      'وريم إيبسوم هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى)',
+                  color: Color(0xFF7B7B7B),
+                  tail: true,
+                  textStyle: TextStyle(
+                    color: Colors.white,
+                    fontSize: 13,
+                  ),
+                ),
+                SizedBox(height: 25.h),
+                const BubbleSpecialThree(
+                  text:
+                      'وريم إيبسوم هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى)',
+                  color: Color(0xffFFFEFE),
+                  tail: true,
+                  isSender: false,
+                  textStyle: TextStyle(
+                    color: Colors.black,
+                    fontSize: 13,
+                  ),
+                ),
               ],
             ),
           ),
