@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
-import '../../../whatsapp/presentation/widgets/destination_check_box.dart';
 
 class FacebookChooseDestinationViewBody extends StatefulWidget {
   const FacebookChooseDestinationViewBody({super.key});
@@ -208,58 +207,87 @@ class _FacebookChooseDestinationViewBodyState
   }
 }
 
-class FaceSendToAllPage extends StatelessWidget {
+class FaceSendToAllPage extends StatefulWidget {
   const FaceSendToAllPage({super.key});
 
   @override
+  State<FaceSendToAllPage> createState() => _FaceSendToAllPageState();
+}
+
+class _FaceSendToAllPageState extends State<FaceSendToAllPage> {
+  bool selectAll = false;
+  List<bool> isSelected = List.generate(15, (index) => false);
+  @override
   Widget build(BuildContext context) {
     return Column(
       children: [
+        SizedBox(height: 25.h),
+        CheckboxListTile(
+          title: Text(
+            'تحديد الكل',
+            style: AppStyles.style13W600,
+          ),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(2.r),
+          ),
+          activeColor: const Color(0xff00C0CC),
+          checkColor: const Color(0xff00C0CC),
+          visualDensity: VisualDensity.compact,
+          contentPadding: EdgeInsets.zero,
+          side: const BorderSide(
+            color: Colors.white,
+          ),
+          value: selectAll,
+          onChanged: (value) {
+            setState(() {
+              selectAll = value!;
+              isSelected =
+                  List.generate(isSelected.length, (index) => selectAll);
+            });
+          },
+        ),
+        SizedBox(height: 20.h),
         Expanded(
-          child: SingleChildScrollView(
-            child: Padding(
-              padding: EdgeInsets.symmetric(vertical: 25.h),
-              child: Column(
+          child: ListView.builder(
+            itemCount: isSelected.length,
+            itemBuilder: (context, index) {
+              return Column(
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        "تحديد الكل",
-                        style: AppStyles.style13W600,
-                      ),
-                      const ChooseDestinationCheckbox(),
-                    ],
-                  ),
-                  SizedBox(height: 10.h),
-                  Column(
-                    children: List.generate(
-                      10,
-                      (index) => Column(
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                "فيصل عبدالعزيز",
-                                style: AppStyles.style13W600,
-                              ),
-                              const ChooseDestinationCheckbox(),
-                            ],
-                          ),
-                          Divider(
-                            color: AppColors.whiteColor,
-                            thickness: 1,
-                            endIndent: 25.w,
-                            indent: 25.w,
-                          ),
-                        ],
-                      ),
+                  CheckboxListTile(
+                    title: Text(
+                      'فيصل عبدالعزيز',
+                      style: AppStyles.style13W600,
                     ),
+                    contentPadding: EdgeInsets.zero,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(2.r),
+                    ),
+                    activeColor: const Color(0xff00C0CC),
+                    checkColor: const Color(0xff00C0CC),
+                    visualDensity: VisualDensity.compact,
+                    side: const BorderSide(
+                      color: Colors.white,
+                    ),
+                    value: isSelected[index],
+                    onChanged: (value) {
+                      setState(() {
+                        isSelected[index] = value!;
+                        if (!value) selectAll = false;
+                        if (isSelected.every((element) => element)) {
+                          selectAll = true;
+                        }
+                      });
+                    },
+                  ),
+                  Divider(
+                    color: Colors.white,
+                    thickness: 1,
+                    endIndent: 25.w,
+                    indent: 25.w,
                   ),
                 ],
-              ),
-            ),
+              );
+            },
           ),
         ),
         InkWell(
@@ -295,58 +323,88 @@ class FaceSendToAllPage extends StatelessWidget {
   }
 }
 
-class FaceendToMyFollowrsPage extends StatelessWidget {
+class FaceendToMyFollowrsPage extends StatefulWidget {
   const FaceendToMyFollowrsPage({super.key});
 
   @override
+  State<FaceendToMyFollowrsPage> createState() =>
+      _FaceendToMyFollowrsPageState();
+}
+
+class _FaceendToMyFollowrsPageState extends State<FaceendToMyFollowrsPage> {
+  bool selectAll = false;
+  List<bool> isSelected = List.generate(15, (index) => false);
+  @override
   Widget build(BuildContext context) {
     return Column(
       children: [
+        SizedBox(height: 25.h),
+        CheckboxListTile(
+          title: Text(
+            'تحديد الكل',
+            style: AppStyles.style13W600,
+          ),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(2.r),
+          ),
+          activeColor: const Color(0xff00C0CC),
+          checkColor: const Color(0xff00C0CC),
+          visualDensity: VisualDensity.compact,
+          contentPadding: EdgeInsets.zero,
+          side: const BorderSide(
+            color: Colors.white,
+          ),
+          value: selectAll,
+          onChanged: (value) {
+            setState(() {
+              selectAll = value!;
+              isSelected =
+                  List.generate(isSelected.length, (index) => selectAll);
+            });
+          },
+        ),
+        SizedBox(height: 20.h),
         Expanded(
-          child: SingleChildScrollView(
-            child: Padding(
-              padding: EdgeInsets.symmetric(vertical: 25.h),
-              child: Column(
+          child: ListView.builder(
+            itemCount: isSelected.length,
+            itemBuilder: (context, index) {
+              return Column(
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        "تحديد الكل",
-                        style: AppStyles.style13W600,
-                      ),
-                      const ChooseDestinationCheckbox(),
-                    ],
-                  ),
-                  SizedBox(height: 10.h),
-                  Column(
-                    children: List.generate(
-                      10,
-                      (index) => Column(
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                "فيصل عبدالعزيز",
-                                style: AppStyles.style13W600,
-                              ),
-                              const ChooseDestinationCheckbox(),
-                            ],
-                          ),
-                          Divider(
-                            color: AppColors.whiteColor,
-                            thickness: 1,
-                            endIndent: 25.w,
-                            indent: 25.w,
-                          ),
-                        ],
-                      ),
+                  CheckboxListTile(
+                    title: Text(
+                      'فيصل عبدالعزيز',
+                      style: AppStyles.style13W600,
                     ),
+                    contentPadding: EdgeInsets.zero,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(2.r),
+                    ),
+                    activeColor: const Color(0xff00C0CC),
+                    checkColor: const Color(0xff00C0CC),
+                    visualDensity: VisualDensity.compact,
+                    side: const BorderSide(
+                      color: Colors.white,
+                    ),
+                    value: isSelected[index],
+                    onChanged: (value) {
+                      setState(() {
+                        isSelected[index] = value!;
+                        if (!value) selectAll = false;
+                        if (isSelected.every((element) => element)) {
+                          selectAll = true;
+                        }
+                      });
+                    },
+                  ),
+                  Divider(
+                    color: Colors.white,
+                    thickness: 1,
+                    endIndent: 25.w,
+                    indent: 25.w,
                   ),
                 ],
-              ),
-            ),
+              );
+            },
           ),
         ),
         InkWell(
@@ -382,58 +440,89 @@ class FaceendToMyFollowrsPage extends StatelessWidget {
   }
 }
 
-class FaceSendToMyFollowingsPage extends StatelessWidget {
+class FaceSendToMyFollowingsPage extends StatefulWidget {
   const FaceSendToMyFollowingsPage({super.key});
 
+  @override
+  State<FaceSendToMyFollowingsPage> createState() =>
+      _FaceSendToMyFollowingsPageState();
+}
+
+class _FaceSendToMyFollowingsPageState
+    extends State<FaceSendToMyFollowingsPage> {
+  bool selectAll = false;
+  List<bool> isSelected = List.generate(15, (index) => false);
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
+        SizedBox(height: 25.h),
+        CheckboxListTile(
+          title: Text(
+            'تحديد الكل',
+            style: AppStyles.style13W600,
+          ),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(2.r),
+          ),
+          activeColor: const Color(0xff00C0CC),
+          checkColor: const Color(0xff00C0CC),
+          visualDensity: VisualDensity.compact,
+          contentPadding: EdgeInsets.zero,
+          side: const BorderSide(
+            color: Colors.white,
+          ),
+          value: selectAll,
+          onChanged: (value) {
+            setState(() {
+              selectAll = value!;
+              isSelected =
+                  List.generate(isSelected.length, (index) => selectAll);
+            });
+          },
+        ),
+        SizedBox(height: 20.h),
         Expanded(
-          child: SingleChildScrollView(
-            child: Padding(
-              padding: EdgeInsets.symmetric(vertical: 25.h),
-              child: Column(
+          child: ListView.builder(
+            itemCount: isSelected.length,
+            itemBuilder: (context, index) {
+              return Column(
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        "تحديد الكل",
-                        style: AppStyles.style13W600,
-                      ),
-                      const ChooseDestinationCheckbox(),
-                    ],
-                  ),
-                  SizedBox(height: 10.h),
-                  Column(
-                    children: List.generate(
-                      10,
-                      (index) => Column(
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                "فيصل عبدالعزيز",
-                                style: AppStyles.style13W600,
-                              ),
-                              const ChooseDestinationCheckbox(),
-                            ],
-                          ),
-                          Divider(
-                            color: AppColors.whiteColor,
-                            thickness: 1,
-                            endIndent: 25.w,
-                            indent: 25.w,
-                          ),
-                        ],
-                      ),
+                  CheckboxListTile(
+                    title: Text(
+                      'فيصل عبدالعزيز',
+                      style: AppStyles.style13W600,
                     ),
+                    contentPadding: EdgeInsets.zero,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(2.r),
+                    ),
+                    activeColor: const Color(0xff00C0CC),
+                    checkColor: const Color(0xff00C0CC),
+                    visualDensity: VisualDensity.compact,
+                    side: const BorderSide(
+                      color: Colors.white,
+                    ),
+                    value: isSelected[index],
+                    onChanged: (value) {
+                      setState(() {
+                        isSelected[index] = value!;
+                        if (!value) selectAll = false;
+                        if (isSelected.every((element) => element)) {
+                          selectAll = true;
+                        }
+                      });
+                    },
+                  ),
+                  Divider(
+                    color: Colors.white,
+                    thickness: 1,
+                    endIndent: 25.w,
+                    indent: 25.w,
                   ),
                 ],
-              ),
-            ),
+              );
+            },
           ),
         ),
         InkWell(

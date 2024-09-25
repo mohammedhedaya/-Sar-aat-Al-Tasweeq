@@ -91,7 +91,7 @@ class SearchPersonToSendFacebookAdViewBody extends StatelessWidget {
                       (index) {
                         return InkWell(
                           onTap: () {
-                            context.push("/xUserDetailsView");
+                            context.push("/facebookUserDetailsView");
                           },
                           child: Padding(
                             padding: EdgeInsets.only(

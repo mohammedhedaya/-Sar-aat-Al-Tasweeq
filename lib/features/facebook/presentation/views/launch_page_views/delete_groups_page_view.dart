@@ -13,82 +13,77 @@ class DeleteGroupsPageView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SingleChildScrollView(
-          child: Column(
-            children: [
-              LaunchAdTextField(
-                onChanged: (value) {},
-                hintText: 'أكتب رسالتك...',
-                onSuffixIconTap: () {},
-              ),
-              SizedBox(height: 72.h),
-              CustomAuthTextField(
-                fiiledColor: AppColors.whiteColor.withOpacity(0.10),
-                hintText: "أضف الرابط",
-                hintStyle: AppStyles.style12W700.copyWith(
-                  color: const Color(0xffffffff),
-                ),
-                suffixIcon: Transform.scale(
-                  scale: 0.5,
-                  child: SvgPicture.asset(
-                    Assets.imagesLinkTeal,
-                  ),
-                ),
-                onChanged: (value) {},
-              ),
-              SizedBox(height: 19.h),
-              CustomAuthTextField(
-                fiiledColor: AppColors.whiteColor.withOpacity(0.10),
-                hintText: "أضف الموقع",
-                hintStyle: AppStyles.style12W700.copyWith(
-                  color: const Color(0xffffffff),
-                ),
-                suffixIcon: Transform.scale(
-                  scale: 0.5,
-                  child: SvgPicture.asset(
-                    Assets.imagesLocationTeal,
-                  ),
-                ),
-                onChanged: (value) {},
-              ),
-              SizedBox(height: 80.h),
-              Center(
-                child: InkWell(
-                  onTap: () {
-                    context.push('/facbookDeleteGroupsChooseDestinationView');
-                  },
-                  child: Container(
-                    height: 40.h,
-                    width: 200.w,
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 22.w, vertical: 4.h),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5.r),
-                      gradient: const LinearGradient(
-                        colors: [
-                          Color(0xff00C0CC),
-                          Color(0xff006066),
-                        ],
-                        begin: Alignment.centerLeft,
-                        end: Alignment.centerRight,
-                      ),
-                    ),
-                    child: Center(
-                      child: Text(
-                        "إختار الوجهة",
-                        style: AppStyles.style14W400,
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ],
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          LaunchAdTextField(
+            onChanged: (value) {},
+            hintText: 'أكتب رسالتك...',
+            onSuffixIconTap: () {},
           ),
-        ),
-      ],
+          SizedBox(height: 72.h),
+          CustomAuthTextField(
+            fiiledColor: AppColors.whiteColor.withOpacity(0.10),
+            hintText: "أضف الرابط",
+            hintStyle: AppStyles.style12W700.copyWith(
+              color: const Color(0xffffffff),
+            ),
+            suffixIcon: Transform.scale(
+              scale: 0.5,
+              child: SvgPicture.asset(
+                Assets.imagesLinkTeal,
+              ),
+            ),
+            onChanged: (value) {},
+          ),
+          SizedBox(height: 19.h),
+          CustomAuthTextField(
+            fiiledColor: AppColors.whiteColor.withOpacity(0.10),
+            hintText: "أضف الموقع",
+            hintStyle: AppStyles.style12W700.copyWith(
+              color: const Color(0xffffffff),
+            ),
+            suffixIcon: Transform.scale(
+              scale: 0.5,
+              child: SvgPicture.asset(
+                Assets.imagesLocationTeal,
+              ),
+            ),
+            onChanged: (value) {},
+          ),
+          SizedBox(height: 80.h),
+          Center(
+            child: InkWell(
+              onTap: () {
+                context.push('/facbookDeleteGroupsChooseDestinationView');
+              },
+              child: Container(
+                height: 40.h,
+                width: 200.w,
+                padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 4.h),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5.r),
+                  gradient: const LinearGradient(
+                    colors: [
+                      Color(0xff00C0CC),
+                      Color(0xff006066),
+                    ],
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
+                  ),
+                ),
+                child: Center(
+                  child: Text(
+                    "إختار الوجهة",
+                    style: AppStyles.style14W400,
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
