@@ -60,12 +60,13 @@ class SignUpProfileView extends StatelessWidget {
                             onChanged: (value) {},
                             initialSelection: 'SA',
                             favorite: const ['+966', 'SA'],
+                            textStyle: const TextStyle(color: Colors.black),
                             barrierColor:
                                 const Color(0xfffff9f9).withOpacity(0.33),
                             textOverflow: TextOverflow.ellipsis,
                             boxDecoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(8.r),
-                              color: const Color(0XFFD9D9D9),
+                              // color: const Color(0XFFD9D9D9),
                             ),
                             padding: EdgeInsets.zero,
                             flagDecoration: BoxDecoration(
@@ -168,7 +169,7 @@ class SignUpProfileView extends StatelessWidget {
                                       boxDecoration: BoxDecoration(
                                         borderRadius:
                                             BorderRadius.circular(8.r),
-                                        color: const Color(0XFFD9D9D9),
+                                        // color: const Color(0XFFD9D9D9),
                                       ),
                                       padding: EdgeInsets.zero,
                                       showFlag: true,

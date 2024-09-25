@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         return AdaptiveTheme(
           light: lightTheme,
           dark: darkTheme,
-          initial: AdaptiveThemeMode.dark,
+          initial: AdaptiveThemeMode.light,
           builder: (theme, darkTheme) => MaterialApp.router(
             locale: DevicePreview.locale(context),
             supportedLocales: const [

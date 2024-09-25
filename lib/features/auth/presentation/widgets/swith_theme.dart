@@ -17,61 +17,68 @@ class _SwithThemeState extends State<SwithTheme> {
     final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return Align(
       alignment: AlignmentDirectional.topEnd,
-      child: Container(
-        width: 0.2.sw,
-        height: 0.1.sw,
-        constraints: BoxConstraints(minHeight: 39.h, minWidth: 89.h),
-        decoration: BoxDecoration(
-          color: const Color(0xffD9D9D9),
-          borderRadius: BorderRadius.circular(30.r),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            GestureDetector(
-              onTap: () {
-                AdaptiveTheme.of(context).setLight();
-              },
-              child: Container(
-                decoration: BoxDecoration(
-                  color: isDark ? Colors.transparent : Colors.black,
-                  shape: BoxShape.circle,
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(4.0),
-                  child: SvgPicture.asset(
-                    Assets.imagesLight,
-                    colorFilter: ColorFilter.mode(
-                      isDark ? Colors.black : Colors.white,
-                      BlendMode.srcIn,
+      child: InkWell(
+        onTap: () {
+          AdaptiveTheme.of(context).toggleThemeMode();
+        },
+        child: Container(
+          width: 0.2.sw,
+          height: 0.1.sw,
+          constraints: BoxConstraints(minHeight: 39.h, minWidth: 89.h),
+          decoration: BoxDecoration(
+            color: const Color(0xffD9D9D9),
+            borderRadius: BorderRadius.circular(30.r),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              GestureDetector(
+                onTap: () {
+                  // AdaptiveTheme.of(context).setLight();
+                  AdaptiveTheme.of(context).toggleThemeMode();
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: isDark ? Colors.transparent : Colors.black,
+                    shape: BoxShape.circle,
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(4.0),
+                    child: SvgPicture.asset(
+                      Assets.imagesLight,
+                      colorFilter: ColorFilter.mode(
+                        isDark ? Colors.black : Colors.white,
+                        BlendMode.srcIn,
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-            SizedBox(width: 12.w),
-            GestureDetector(
-              onTap: () {
-                AdaptiveTheme.of(context).setDark();
-              },
-              child: Container(
-                decoration: BoxDecoration(
-                  color: isDark ? Colors.black : Colors.transparent,
-                  shape: BoxShape.circle,
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(4.0),
-                  child: SvgPicture.asset(
-                    Assets.imagesDark,
-                    colorFilter: ColorFilter.mode(
-                      isDark ? Colors.white : Colors.black,
-                      BlendMode.srcIn,
+              SizedBox(width: 12.w),
+              GestureDetector(
+                onTap: () {
+                  // AdaptiveTheme.of(context).setDark();
+                  AdaptiveTheme.of(context).toggleThemeMode();
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: isDark ? Colors.black : Colors.transparent,
+                    shape: BoxShape.circle,
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(4.0),
+                    child: SvgPicture.asset(
+                      Assets.imagesDark,
+                      colorFilter: ColorFilter.mode(
+                        isDark ? Colors.white : Colors.black,
+                        BlendMode.srcIn,
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

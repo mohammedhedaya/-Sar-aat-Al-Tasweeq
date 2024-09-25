@@ -29,7 +29,6 @@ class SignUpView extends StatelessWidget {
         ),
       ),
       body: const SignUpViewBody(),
-
     );
   }
 }
