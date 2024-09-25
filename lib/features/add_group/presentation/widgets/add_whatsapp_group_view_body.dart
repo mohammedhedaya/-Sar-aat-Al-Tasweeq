@@ -1,4 +1,6 @@
+import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart'; // Import this for Clipboard
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import '../../../../core/utils/app_colors.dart';
@@ -7,9 +9,16 @@ import '../../../../core/utils/assets.dart';
 import 'custom_added_success_dialog.dart';
 import '../../../auth/presentation/widgets/auth_text_field.dart';
 
-class AddWhatsappGroupViewBody extends StatelessWidget {
+class AddWhatsappGroupViewBody extends StatefulWidget {
   const AddWhatsappGroupViewBody({super.key});
 
+  @override
+  State<AddWhatsappGroupViewBody> createState() =>
+      _AddWhatsappGroupViewBodyState();
+}
+
+class _AddWhatsappGroupViewBodyState extends State<AddWhatsappGroupViewBody> {
+  final TextEditingController groupLinkController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -42,18 +51,24 @@ class AddWhatsappGroupViewBody extends StatelessWidget {
             ),
             SizedBox(height: 4.h),
             CustomAuthTextField(
+              onChanged: (value) {},
+              controller: groupLinkController,
               fiiledColor: AppColors.whiteColor.withOpacity(0.10),
               hintText: "",
               suffixIcon: InkWell(
-                onTap: () {},
+                onTap: () async {
+                  final data = await Clipboard.getData(Clipboard.kTextPlain);
+                  if (data != null) {
+                    groupLinkController.text = data.text ?? '';
+                  }
+                },
                 child: Transform.scale(
                   scale: 0.5,
                   child: SvgPicture.asset(
-                    Assets.imagesPastLink,
+                    Assets.imagesLinkTeal,
                   ),
                 ),
               ),
-              onChanged: (value) {},
             ),
             SizedBox(height: 26.h),
             Text(
@@ -64,20 +79,32 @@ class AddWhatsappGroupViewBody extends StatelessWidget {
             ),
             SizedBox(height: 4.h),
             CustomAuthTextField(
+              readOnly: true,
               fiiledColor: AppColors.whiteColor.withOpacity(0.10),
               hintText: "",
-              prefixIcon: Padding(
-                padding: EdgeInsets.only(right: 10.w),
-                child: SvgPicture.asset(
-                  Assets.imagesSuadiFlag,
-                  height: 41.h,
+              prefixIcon: CountryCodePicker(
+                onChanged: (value) {},
+                initialSelection: 'SA',
+                favorite: const ['+966', 'SA'],
+                barrierColor: const Color(0xfffff9f9).withOpacity(0.33),
+                textOverflow: TextOverflow.ellipsis,
+                boxDecoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8.r),
+                ),
+                padding: EdgeInsets.zero,
+                showFlag: true,
+                flagWidth: 50.w,
+                hideMainText: true,
+                showCountryOnly: true,
+                flagDecoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5.r),
                 ),
               ),
               suffixIcon: InkWell(
                 onTap: () {},
                 child: const Icon(
                   Icons.keyboard_arrow_down_rounded,
-                  color: AppColors.whiteColor,
+                  color: Color.fromARGB(255, 10, 229, 207),
                   size: 30,
                 ),
               ),
