@@ -17,9 +17,7 @@ class _HomeViewState extends State<HomeView> {
     return Scaffold(
       key: _scaffoldKey,
       drawer: const CustomMenuDrawer(),
-      appBar: CustomAppBar(
-        scaffoldKey: _scaffoldKey,
-      ),
+      appBar: const CustomHomeAppBar(),
       body: const HomeViewBody(),
     );
   }

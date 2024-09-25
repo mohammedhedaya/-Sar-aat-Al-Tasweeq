@@ -3,11 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
-
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
-import 'custom_text_in_home.dart';
 import 'home_carousel_slider.dart';
 import 'social_media_card.dart';
 
@@ -54,14 +52,13 @@ class HomeViewBody extends StatelessWidget {
               ),
             ),
             const HomeCarouselSlider(),
-            SizedBox(height: 48.h),
-            const CustomTextInHome(),
-            SizedBox(height: 10.h),
+            // SizedBox(height: 48.h),
+            // const CustomTextInHome(),
+            SizedBox(height: 20.h),
             Expanded(
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    SizedBox(height: 18.h),
                     SocialMediaCard(
                       onTap: () {
                         context.push('/whatsappView');
@@ -69,7 +66,7 @@ class HomeViewBody extends StatelessWidget {
                       imagePath: Assets.imagesWhatsAppImage,
                       label: 'WHATSAPP',
                     ),
-                    SizedBox(height: 50.h),
+                    SizedBox(height: 30.h),
                     SocialMediaCard(
                       onTap: () {
                         context.push('/telegramView');
@@ -77,7 +74,7 @@ class HomeViewBody extends StatelessWidget {
                       imagePath: Assets.imagesTelegramImage,
                       label: 'TELEGRAM',
                     ),
-                    SizedBox(height: 50.h),
+                    SizedBox(height: 30.h),
                     SocialMediaCard(
                       onTap: () {
                         context.push('/instagramView');
@@ -85,7 +82,7 @@ class HomeViewBody extends StatelessWidget {
                       imagePath: Assets.imagesInstagramNewGradientLogoAnimation,
                       label: 'INSTAGRAM',
                     ),
-                    SizedBox(height: 50.h),
+                    SizedBox(height: 30.h),
                     SocialMediaCard(
                       onTap: () {
                         context.push('/xView');
@@ -93,7 +90,7 @@ class HomeViewBody extends StatelessWidget {
                       imagePath: Assets.imagesXtwitter,
                       label: 'X',
                     ),
-                    SizedBox(height: 50.h),
+                    SizedBox(height: 30.h),
                     SocialMediaCard(
                       onTap: () {
                         context.push('/facebookView');
@@ -101,7 +98,7 @@ class HomeViewBody extends StatelessWidget {
                       imagePath: Assets.imagesFacebookLogo,
                       label: 'FACEBOOK',
                     ),
-                    SizedBox(height: 50.h),
+                    SizedBox(height: 30.h),
                     SocialMediaCard(
                       onTap: () {
                         context.push('/smsView');
@@ -109,7 +106,7 @@ class HomeViewBody extends StatelessWidget {
                       imagePath: Assets.imagesSmsLogo,
                       label: 'SMS',
                     ),
-                    SizedBox(height: 50.h),
+                    SizedBox(height: 30.h),
                     SocialMediaCard(
                       onTap: () {
                         context.push('/emailView');

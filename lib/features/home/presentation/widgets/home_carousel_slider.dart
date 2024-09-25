@@ -22,8 +22,9 @@ class _HomeCarouselSliderState extends State<HomeCarouselSlider> {
       children: [
         CarouselSlider(
           options: CarouselOptions(
-            height: 250.h,
+            height: 200.h,
             enlargeCenterPage: true,
+            autoPlay: true,
             enableInfiniteScroll: true,
             viewportFraction: 1.1,
             onPageChanged: (index, reason) {

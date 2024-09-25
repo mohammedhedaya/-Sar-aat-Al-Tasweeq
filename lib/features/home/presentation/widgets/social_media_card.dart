@@ -28,7 +28,7 @@ class SocialMediaCard extends StatelessWidget {
                 borderRadius: BorderRadius.circular(15.r),
               ),
               child: Container(
-                height: 116.h,
+                height: 100.h,
                 width: double.infinity,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15.r),
@@ -45,7 +45,7 @@ class SocialMediaCard extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(height: 13.h),
+        SizedBox(height: 10.h),
         Text(
           label,
           style: AppStyles.style24W400.copyWith(

@@ -17,7 +17,7 @@ class NotificationsDetailsViewBody extends StatelessWidget {
               Assets.imagesHomeBackground,
             ),
             opacity: 0.45,
-            alignment: Alignment.center,
+            // alignment: Alignment.center,
           ),
         ),
         child: Padding(
@@ -44,11 +44,8 @@ class NotificationsDetailsViewBody extends StatelessWidget {
                 ),
               ),
               SizedBox(height: MediaQuery.of(context).size.height * 0.06),
-              Center(
-                child: Image.asset(
-                  Assets.imagesImageSea,
-                  height: 163.h,
-                ),
+              Image.asset(
+                Assets.imagesImageSea,
               ),
               SizedBox(height: MediaQuery.of(context).size.height * 0.03),
             ],
