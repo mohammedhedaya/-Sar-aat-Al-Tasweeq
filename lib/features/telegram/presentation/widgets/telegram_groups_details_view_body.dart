@@ -1,181 +1,372 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import '../../../../core/utils/app_colors.dart';
+import 'package:go_router/go_router.dart';
+import 'package:shopping_chart/features/whatsapp/presentation/widgets/custom_show_dialog.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
-import '../../../whatsapp/presentation/widgets/destination_check_box.dart';
 
-class TelegramGroupsDetailsViewBody extends StatelessWidget {
+class TelegramGroupsDetailsViewBody extends StatefulWidget {
   const TelegramGroupsDetailsViewBody({super.key});
+
+  @override
+  State<TelegramGroupsDetailsViewBody> createState() =>
+      _TelegramGroupsDetailsViewBodyState();
+}
+
+class _TelegramGroupsDetailsViewBodyState
+    extends State<TelegramGroupsDetailsViewBody> {
+  List<bool> isAdded =
+      List.generate(15, (index) => false); // Track button state for each item
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Expanded(
-          child: SingleChildScrollView(
-            child: Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Column(
+        Padding(
+          padding: EdgeInsets.only(right: 13.w, left: 32.w),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
                 children: [
-                  ListTile(
-                    contentPadding: EdgeInsets.zero,
-                    title: Text(
-                      "المملكة العربية السعودية",
-                      style: AppStyles.style17W800,
-                    ),
-                    leading: SvgPicture.asset(
-                      Assets.imagesSuadiFlag,
-                      height: 41.h,
+                  SvgPicture.asset(
+                    Assets.imagesWallet,
+                  ),
+                  SizedBox(width: 10.w),
+                  Text(
+                    "300",
+                    style: AppStyles.style12W700.copyWith(
+                      fontWeight: FontWeight.w900,
                     ),
                   ),
-                  SizedBox(height: 6.h),
-                  Row(
-                    children: [
-                      Expanded(
-                        flex: 3,
-                        child: Container(
-                          padding: EdgeInsets.only(
-                            top: 8.h,
-                            bottom: 10.h,
-                            left: 12.h,
-                            right: 12.w,
-                          ),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10.r),
-                            border: Border.all(
-                              color: Colors.white,
-                              width: 1,
-                            ),
-                          ),
-                          child: Row(
-                            children: [
-                              SvgPicture.asset(
-                                Assets.imagesSendforward,
-                                colorFilter: const ColorFilter.mode(
-                                  Colors.white,
-                                  BlendMode.srcIn,
-                                ),
-                              ),
-                              SizedBox(width: 5.w),
-                              Expanded(
-                                child: Text(
-                                  'أختار 300 قناة بشكل عشوائى',
-                                  style: AppStyles.style14W400,
-                                  maxLines: 2,
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      SizedBox(width: 23.w),
-                      Expanded(
-                        child: InkWell(
-                          onTap: () {},
-                          child: Container(
-                            padding: EdgeInsets.only(
-                              top: 15.h,
-                              bottom: 11.h,
-                              left: 22.h,
-                              right: 22.w,
-                            ),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(15.r),
-                              border: Border.all(
-                                color: Colors.white,
-                                width: 1,
-                              ),
-                            ),
-                            child: Column(
-                              children: [
-                                SvgPicture.asset(
-                                  Assets.imagesLaunchJewel,
-                                ),
-                                SizedBox(height: 11.h),
-                                Text(
-                                  '300',
-                                  style: AppStyles.style14W400,
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 51.h),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        "تحديد الكل(1400)",
-                        style: AppStyles.style13W600,
-                      ),
-                      const ChooseDestinationCheckbox()
-                    ],
-                  ),
-                  SizedBox(height: 27.h),
-                  Column(
-                    children: List.generate(
-                      10,
-                      (index) => Column(
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                "قناة العائلة",
-                                style: AppStyles.style13W600,
-                              ),
-                              const ChooseDestinationCheckbox()
-                            ],
-                          ),
-                          Divider(
-                            color: AppColors.whiteColor,
-                            thickness: 1,
-                            endIndent: 25.w,
-                          ),
-                        ],
-                      ),
-                    ),
+                  SizedBox(width: 10.w),
+                  SvgPicture.asset(
+                    Assets.imagesJewel,
                   ),
                 ],
               ),
+              InkWell(
+                onTap: () {
+                  context.push("/diamondWallet");
+                },
+                child: Container(
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5.r),
+                    gradient: const LinearGradient(
+                      colors: [
+                        Color(0xff00C0CC),
+                        Color(0xff006066),
+                      ],
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight,
+                    ),
+                  ),
+                  child: Center(
+                    child: Text(
+                      "إعادة الشحن",
+                      style: AppStyles.style14W400,
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+        const Divider(
+          thickness: 1,
+          color: Colors.white,
+        ),
+        ListTile(
+          title: Text(
+            "المملكة العربية السعودية",
+            style: AppStyles.style17W800,
+          ),
+          leading: SvgPicture.asset(
+            Assets.imagesSuadiFlag,
+            height: 40.h,
+          ),
+        ),
+        const Divider(
+          thickness: 1,
+          color: Colors.white,
+        ),
+        SizedBox(height: 25.h),
+        Expanded(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 30.w),
+            child: GridView.count(
+              crossAxisCount: 3,
+              crossAxisSpacing: 10.w,
+              mainAxisSpacing: 10.h,
+              childAspectRatio: 0.85.r,
+              shrinkWrap: true,
+              children: [
+                for (int i = 0; i < 15; i++)
+                  Container(
+                    padding: EdgeInsets.only(
+                      left: 14.w,
+                      right: 14.w,
+                      bottom: 14.h,
+                      top: 19.h,
+                    ),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15.r),
+                      border: Border.all(
+                        color: Colors.white,
+                        width: 1,
+                      ),
+                    ),
+                    child: Column(
+                      children: [
+                        Text(
+                          "انضم لأكثر القنوات شهرة",
+                          style: AppStyles.style13W600,
+                          textAlign: TextAlign.center,
+                        ),
+                        const Spacer(),
+                        InkWell(
+                          onTap: () {
+                            if (!isAdded[i]) {
+                              setState(() {
+                                isAdded[i] = true;
+                              });
+                            } else {
+                              showDialog(
+                                context: context,
+                                useSafeArea: true,
+                                barrierColor:
+                                    const Color(0xffFFF9F9).withOpacity(0.33),
+                                builder: (context) {
+                                  return AlertDialog(
+                                    title: Text(
+                                      "رابط الجروب",
+                                      style: AppStyles.style12W400.copyWith(
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                    content: Container(
+                                      decoration: BoxDecoration(
+                                        color: Colors.white.withOpacity(0.10),
+                                        borderRadius:
+                                            BorderRadius.circular(20.r),
+                                      ),
+                                      padding: const EdgeInsets.all(22),
+                                      child: Row(
+                                        children: [
+                                          Expanded(
+                                            child: Text(
+                                              "https://t.me/",
+                                              style: AppStyles.style12W400
+                                                  .copyWith(
+                                                color: Colors.white,
+                                              ),
+                                              textAlign: TextAlign.center,
+                                            ),
+                                          ),
+                                          SizedBox(width: 8.w),
+                                          InkWell(
+                                            onTap: () {},
+                                            child: SvgPicture.asset(
+                                              Assets.imagesCopyIcon2,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    actions: [
+                                      InkWell(
+                                        onTap: () {
+                                          context.pop();
+                                        },
+                                        child: Center(
+                                          child: Container(
+                                            width: double.infinity,
+                                            padding: EdgeInsets.only(
+                                              top: 3.h,
+                                              bottom: 3.h,
+                                              left: 12.h,
+                                              right: 12.w,
+                                            ),
+                                            margin: EdgeInsets.symmetric(
+                                                horizontal: 30.w),
+                                            decoration: BoxDecoration(
+                                              gradient: const LinearGradient(
+                                                colors: [
+                                                  Color(0xff00C0CC),
+                                                  Color(0xff006066),
+                                                ],
+                                                begin: Alignment.centerLeft,
+                                                end: Alignment.centerRight,
+                                              ),
+                                              borderRadius:
+                                                  BorderRadius.circular(5.r),
+                                            ),
+                                            child: Center(
+                                              child: Text(
+                                                "التالى",
+                                                style: AppStyles.style14W400,
+                                                textAlign: TextAlign.center,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  );
+                                },
+                              );
+                            }
+                          },
+                          child: Container(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 10.w,
+                              vertical: 3.h,
+                            ),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(5.r),
+                              gradient: isAdded[i]
+                                  ? const LinearGradient(
+                                      colors: [
+                                        Color.fromARGB(255, 121, 125, 126),
+                                        Color.fromARGB(255, 127, 130, 130),
+                                      ],
+                                      begin: Alignment.centerLeft,
+                                      end: Alignment.centerRight,
+                                    )
+                                  : const LinearGradient(
+                                      colors: [
+                                        Color(0xff00C0CC),
+                                        Color(0xff006066),
+                                      ],
+                                      begin: Alignment.centerLeft,
+                                      end: Alignment.centerRight,
+                                    ),
+                            ),
+                            child: Center(
+                              child: Text(
+                                isAdded[i] ? "منضم" : "إضافة",
+                                style: AppStyles.style14W400,
+                                textAlign: TextAlign.center,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+              ],
             ),
           ),
         ),
         Padding(
-          padding: EdgeInsets.only(bottom: 20.h),
-          child: InkWell(
-            onTap: () {},
-            child: Container(
-              height: 40.h,
-              width: 200.w,
-              padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 4.h),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5.r),
-                gradient: const LinearGradient(
-                  colors: [
-                    Color(0xff00C0CC),
-                    Color(0xff006066),
-                  ],
-                  begin: Alignment.centerLeft,
-                  end: Alignment.centerRight,
+          padding: EdgeInsets.symmetric(horizontal: 17.w),
+          child: Row(
+            children: [
+              InkWell(
+                onTap: () {
+                  showDialog(
+                    context: context,
+                    barrierColor: const Color(0xffFFF9F9).withOpacity(0.33),
+                    builder: (context) {
+                      return CustomShowDialog(
+                        onTap: () {
+                          context.pop();
+                        },
+                        image: Assets.imagesRechargeWallet,
+                        textButton: "التالى",
+                        content: Text(
+                          "إعادة الشحن",
+                          style: AppStyles.style32W700,
+                          textAlign: TextAlign.center,
+                        ),
+                      );
+                    },
+                  );
+                },
+                child: Container(
+                  padding: EdgeInsets.only(
+                    top: 15.h,
+                    bottom: 11.h,
+                    left: 22.h,
+                    right: 22.w,
+                  ),
+                  decoration: BoxDecoration(
+                    gradient: const LinearGradient(
+                      colors: [
+                        Color(0xff00C0CC),
+                        Color(0xff006066),
+                      ],
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight,
+                    ),
+                    borderRadius: BorderRadius.circular(15.r),
+                    border: Border.all(
+                      color: Colors.white,
+                      width: 1,
+                    ),
+                  ),
+                  child: Column(
+                    children: [
+                      SvgPicture.asset(
+                        Assets.imagesLaunchJewel,
+                      ),
+                      SizedBox(height: 11.h),
+                      Text(
+                        '300',
+                        style: AppStyles.style14W400,
+                      ),
+                    ],
+                  ),
                 ),
               ),
-              child: Center(
-                child: Text(
-                  "قم بالإرسال",
-                  style: AppStyles.style14W400,
-                  textAlign: TextAlign.center,
+              SizedBox(width: 18.w),
+              Expanded(
+                child: Container(
+                  padding: EdgeInsets.only(
+                    top: 8.h,
+                    bottom: 10.h,
+                    left: 12.h,
+                    right: 12.w,
+                  ),
+                  decoration: BoxDecoration(
+                    gradient: const LinearGradient(
+                      colors: [
+                        Color(0xff00C0CC),
+                        Color(0xff006066),
+                      ],
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight,
+                    ),
+                    borderRadius: BorderRadius.circular(5.r),
+                  ),
+                  child: Row(
+                    children: [
+                      SvgPicture.asset(
+                        Assets.imagesSendforward,
+                        colorFilter: const ColorFilter.mode(
+                          Colors.white,
+                          BlendMode.srcIn,
+                        ),
+                      ),
+                      SizedBox(width: 5.w),
+                      Expanded(
+                        child: Text(
+                          'أختار 300 مجموعة بشكل عشوائى',
+                          style: AppStyles.style14W400,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
+            ],
           ),
         ),
+        SizedBox(height: 25.h),
       ],
     );
   }

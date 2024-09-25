@@ -70,35 +70,37 @@ class ChooseTelegramGroupToSendViewBody extends StatelessWidget {
                     ),
                     onChanged: (value) {},
                   ),
+                  SizedBox(height: 100.h),
+                  Padding(
+                    padding: EdgeInsets.only(bottom: 20.h),
+                    child: InkWell(
+                      onTap: () {
+                        context.push('/chooseTelegramGroupToSendView1');
+                      },
+                      child: Container(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 22.w, vertical: 4.h),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5.r),
+                          gradient: const LinearGradient(
+                            colors: [
+                              Color(0xff00C0CC),
+                              Color(0xff006066),
+                            ],
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                          ),
+                        ),
+                        child: Text(
+                          "إختار أحد القنوات",
+                          style: AppStyles.style14W400.copyWith(
+                            color: AppColors.whiteColor,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
-              ),
-            ),
-          ),
-        ),
-        Padding(
-          padding: EdgeInsets.only(bottom: 20.h),
-          child: InkWell(
-            onTap: () {
-              context.push('/chooseTelegramGroupToSendView1');
-            },
-            child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 4.h),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5.r),
-                gradient: const LinearGradient(
-                  colors: [
-                    Color(0xff00C0CC),
-                    Color(0xff006066),
-                  ],
-                  begin: Alignment.centerLeft,
-                  end: Alignment.centerRight,
-                ),
-              ),
-              child: Text(
-                "إختار أحد القنوات",
-                style: AppStyles.style14W400.copyWith(
-                  color: AppColors.whiteColor,
-                ),
               ),
             ),
           ),

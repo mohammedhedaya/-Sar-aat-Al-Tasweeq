@@ -98,7 +98,7 @@ class _ChoosePersonAndSendXAdViewBodyState
                               context.pop();
                             },
                             socailMediaImage: Assets.imagesXIcon,
-                            socailMediaText: "الأنستجرام",
+                            socailMediaText: "X",
                           );
                         },
                       );

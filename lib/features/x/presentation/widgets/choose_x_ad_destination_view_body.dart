@@ -120,7 +120,7 @@ class _ChooseXAdDestinationViewBodyState
                     child: Column(
                       children: [
                         Text(
-                          "الدردشات",
+                          "المتابعين",
                           style: _currentPage == 1
                               ? AppStyles.style10W800.copyWith(
                                   color: const Color(0xff2F2F2F),
@@ -166,7 +166,7 @@ class _ChooseXAdDestinationViewBodyState
                     child: Column(
                       children: [
                         Text(
-                          "المجموعات",
+                          "المتابعون",
                           style: _currentPage == 2
                               ? AppStyles.style10W800.copyWith(
                                   color: const Color(0xff2F2F2F),

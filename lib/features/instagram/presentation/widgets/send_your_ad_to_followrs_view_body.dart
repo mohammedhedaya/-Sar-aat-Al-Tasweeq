@@ -204,7 +204,7 @@ class _SendYourAdToFollowersViewBodyState
                         ),
                         child: Center(
                           child: Text(
-                            "إختار أحد المجموعات",
+                            "أختر الوجهه",
                             style: AppStyles.style14W400.copyWith(
                               color: AppColors.whiteColor,
                             ),

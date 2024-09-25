@@ -182,16 +182,26 @@ class _InstagramUserDetailsViewState extends State<InstagramUserDetailsView> {
                                 : const BoxShadow(),
                           ],
                         ),
-                        child: Center(
-                          child: Text(
-                            "تحديد الكل",
-                            style: AppStyles.style10W800.copyWith(
-                              color: _currentPage == 0
-                                  ? Colors.white
-                                  : Colors.white,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              "تحديد الكل",
+                              style: AppStyles.style10W800.copyWith(
+                                color: _currentPage == 0
+                                    ? Colors.white
+                                    : Colors.white,
+                              ),
+                              textAlign: TextAlign.center,
                             ),
-                            textAlign: TextAlign.center,
-                          ),
+                            Text(
+                              "4000",
+                              style: AppStyles.style17W800.copyWith(
+                                fontWeight: FontWeight.w200,
+                              ),
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ],
                         ),
                       ),
                     ),
