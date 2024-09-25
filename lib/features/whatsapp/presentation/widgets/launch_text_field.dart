@@ -38,9 +38,7 @@ class _LaunchAdTextFieldState extends State<LaunchAdTextField> {
           maxLines: 10,
           decoration: InputDecoration(
             hintText: widget.hintText,
-            hintStyle: AppStyles.style12W700.copyWith(
-                // color: const Color(0xffffffff),
-                ),
+            hintStyle: AppStyles.style12W700,
             filled: true,
             fillColor: Colors.white.withOpacity(0.10),
             enabledBorder: OutlineInputBorder(

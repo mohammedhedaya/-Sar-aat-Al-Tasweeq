@@ -71,7 +71,7 @@ class _LaunchYourFacebookAdViewState extends State<LaunchYourFacebookAdView> {
           ),
         ),
         title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Flexible(
               child: Text(

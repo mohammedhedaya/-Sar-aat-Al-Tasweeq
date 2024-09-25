@@ -71,7 +71,7 @@ class _LaunchYourTelegramAdViewState extends State<LaunchYourTelegramAdView> {
           ),
         ),
         title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Flexible(
               child: Text(

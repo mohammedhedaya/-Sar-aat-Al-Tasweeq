@@ -20,7 +20,7 @@ class _LaunchYourWhatsappAdViewState extends State<LaunchYourWhatsappAdView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
+      // resizeToAvoidBottomInset: false,
       key: _scaffoldKey,
       drawer: const LaunchYourAdDrawer(),
       floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
@@ -72,7 +72,7 @@ class _LaunchYourWhatsappAdViewState extends State<LaunchYourWhatsappAdView> {
           ),
         ),
         title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Flexible(
               child: Text(

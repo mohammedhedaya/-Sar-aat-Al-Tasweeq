@@ -12,19 +12,11 @@ class PhoneChooseTheDestinationView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // backgroundColor: AppColors.navBarColor,
         surfaceTintColor: Colors.transparent,
         automaticallyImplyLeading: false,
         elevation: 0,
-        leading: IconButton(
-          onPressed: () {},
-          icon: const Icon(
-            Icons.logout,
-            color: Colors.white,
-          ),
-        ),
         title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Flexible(
               child: Text(

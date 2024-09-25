@@ -70,7 +70,7 @@ class _LaunchYourXAdViewState extends State<LaunchYourXAdView> {
           ),
         ),
         title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Flexible(
               child: Text(

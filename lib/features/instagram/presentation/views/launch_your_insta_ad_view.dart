@@ -70,7 +70,7 @@ class _LaunchYourInstaAdViewState extends State<LaunchYourInstaAdView> {
           ),
         ),
         title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Flexible(
               child: Text(

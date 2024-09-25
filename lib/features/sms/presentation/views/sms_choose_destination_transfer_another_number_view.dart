@@ -15,12 +15,11 @@ class SMSChooseDestinationTransferAnotherNumberView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        // backgroundColor: AppColors.navBarColor,
         surfaceTintColor: Colors.transparent,
         automaticallyImplyLeading: false,
         elevation: 0,
         title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Flexible(
               child: Text(

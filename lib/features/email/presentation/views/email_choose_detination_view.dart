@@ -19,7 +19,7 @@ class EmailChooseDetinationView extends StatelessWidget {
         automaticallyImplyLeading: false,
         elevation: 0,
         title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Flexible(
               child: Text(
