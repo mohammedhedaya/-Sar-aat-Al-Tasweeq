@@ -46,6 +46,10 @@ class Assets {
   /// assets/images/bg_sharing_screen.svg
   static const String imagesBgSharingScreen = "assets/images/bg_sharing_screen.svg";
 
+  /// Assets for imagesBgdiamond
+  /// assets/images/bgdiamond.png
+  static const String imagesBgdiamond = "assets/images/bgdiamond.png";
+
   /// Assets for imagesCameraIcon
   /// assets/images/cameraIcon.svg
   static const String imagesCameraIcon = "assets/images/cameraIcon.svg";
