@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
 import '../../../../core/utils/app_colors.dart';
@@ -14,6 +15,21 @@ class ProfileView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          backgroundColor: Colors.transparent,
+          actions: [
+            IconButton(
+              onPressed: () {
+                context.pop();
+              },
+              icon: const Icon(
+                Icons.arrow_forward_ios_outlined,
+                color: Colors.white70,
+              ),
+            ),
+          ],
+        ),
         body: Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
@@ -27,7 +43,6 @@ class ProfileView extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 30.w),
             child: Column(
               children: [
-                SizedBox(height: 60.h),
                 Row(
                   children: [
                     const CircleAvatar(

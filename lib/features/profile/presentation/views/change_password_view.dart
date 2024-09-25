@@ -14,7 +14,21 @@ class ProfileChangePasswordView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        resizeToAvoidBottomInset: false,
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          backgroundColor: Colors.transparent,
+          actions: [
+            IconButton(
+              onPressed: () {
+                context.pop();
+              },
+              icon: const Icon(
+                Icons.arrow_forward_ios_outlined,
+                color: Colors.white70,
+              ),
+            ),
+          ],
+        ),
         body: Container(
           padding: EdgeInsets.symmetric(horizontal: 35.w, vertical: 20.h),
           decoration: const BoxDecoration(
@@ -42,7 +56,7 @@ class ProfileChangePasswordView extends StatelessWidget {
                       SizedBox(height: 25.h),
                       CustomAuthTextField(
                         fiiledColor: AppColors.whiteColor.withOpacity(0.10),
-                        hintText: "************",
+                        hintText: "",
                         textAlign: TextAlign.center,
                         prefixIcon: IconButton(
                           onPressed: () {},
@@ -63,7 +77,7 @@ class ProfileChangePasswordView extends StatelessWidget {
                       SizedBox(height: 23.h),
                       CustomAuthTextField(
                         fiiledColor: AppColors.whiteColor.withOpacity(0.10),
-                        hintText: "************",
+                        hintText: "",
                         textAlign: TextAlign.center,
                         prefixIcon: IconButton(
                           onPressed: () {},
@@ -84,7 +98,7 @@ class ProfileChangePasswordView extends StatelessWidget {
                       SizedBox(height: 23.h),
                       CustomAuthTextField(
                         fiiledColor: AppColors.whiteColor.withOpacity(0.10),
-                        hintText: "************",
+                        hintText: "",
                         textAlign: TextAlign.center,
                         prefixIcon: IconButton(
                           onPressed: () {},
@@ -95,6 +109,7 @@ class ProfileChangePasswordView extends StatelessWidget {
                         ),
                         onChanged: (value) {},
                       ),
+                      SizedBox(height: 25.h),
                     ],
                   ),
                 ),
