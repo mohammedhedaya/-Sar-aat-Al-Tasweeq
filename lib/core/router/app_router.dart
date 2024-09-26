@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:shopping_chart/features/facebook/presentation/views/facebook_user_details_view.dart';
+import '../../features/facebook/presentation/views/facebook_user_details_view.dart';
 import '../../features/email/presentation/views/email_sending_view.dart';
 import '../../features/email/presentation/views/email_view.dart';
 import '../../features/sms/presentation/views/sms_choose_destination_phone_directory_view.dart';

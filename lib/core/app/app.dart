@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:adaptive_theme/adaptive_theme.dart';
-import 'package:shopping_chart/core/components/app_theme.dart';
+import '../components/app_theme.dart';
 import '../router/app_router.dart';
 
 class MyApp extends StatelessWidget {

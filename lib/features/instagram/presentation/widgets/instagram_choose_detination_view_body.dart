@@ -30,7 +30,6 @@ class _InstagramChooseDestinationSendToFollowrsViewBodyState
     });
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -119,7 +118,7 @@ class _InstagramChooseDestinationSendToFollowrsViewBodyState
                     child: Column(
                       children: [
                         Text(
-                          "الدردشات",
+                          "المتابعين",
                           style: _currentPage == 1
                               ? AppStyles.style17W800.copyWith(
                                   color: const Color(0xff2F2F2F),
@@ -165,7 +164,7 @@ class _InstagramChooseDestinationSendToFollowrsViewBodyState
                     child: Column(
                       children: [
                         Text(
-                          "المجموعات",
+                          "المتابعون",
                           style: _currentPage == 2
                               ? AppStyles.style17W800.copyWith(
                                   color: const Color(0xff2F2F2F),

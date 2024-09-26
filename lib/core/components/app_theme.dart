@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_chart/core/utils/app_colors.dart';
+import '../utils/app_colors.dart';
 
 final ThemeData lightTheme = ThemeData(
   scaffoldBackgroundColor: AppColors.lightTheme,
