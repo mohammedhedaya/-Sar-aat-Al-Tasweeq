@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -31,7 +32,7 @@ class CustomLoginForm extends StatelessWidget {
                   children: [
                     CustomAuthTextField(
                       fiiledColor: AppColors.whiteColor.withOpacity(0.10),
-                      hintText: "الأيميل",
+                      hintText: "email".tr(context: context),
                       keyboardType: TextInputType.emailAddress,
                       onChanged: (email) {
                         cubit.email = email;
@@ -50,7 +51,7 @@ class CustomLoginForm extends StatelessWidget {
                     SizedBox(height: 20.h),
                     CustomAuthTextField(
                       fiiledColor: AppColors.whiteColor.withOpacity(0.10),
-                      hintText: "كلمة السر",
+                      hintText: "password".tr(context: context),
                       suffixIcon: IconButton(
                         onPressed: () {
                           cubit.obscurePasswordText();

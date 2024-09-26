@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -33,7 +34,7 @@ class ResetPasswordView extends StatelessWidget {
                     ),
                     Center(
                       child: Text(
-                        "قم بإدخال بريدك المسجل وقم بحفظه لإعادة\nتعيين كلمة مرور جديدة",
+                        "for_return_password".tr(context: context),
                         style: AppStyles.style12W400.copyWith(
                           color: AppColors.whiteColor,
                         ),
@@ -43,7 +44,7 @@ class ResetPasswordView extends StatelessWidget {
                     SizedBox(height: 30.h),
                     CustomAuthTextField(
                       fiiledColor: AppColors.whiteColor.withOpacity(0.10),
-                      hintText: "البريد الالكتروني",
+                      hintText: "email".tr(context: context),
                       keyboardType: TextInputType.emailAddress,
                       onChanged: (email) {},
                       validator: (email) {
@@ -65,7 +66,7 @@ class ResetPasswordView extends StatelessWidget {
                           context.push('/resetPasswordOTPView');
                         }
                       },
-                      text: "التالي",
+                      text: "next".tr(context: context),
                     ),
                   ],
                 ),

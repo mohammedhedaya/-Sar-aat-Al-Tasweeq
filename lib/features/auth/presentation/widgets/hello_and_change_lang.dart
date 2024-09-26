@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -8,6 +9,7 @@ class HelloAndChangeLang extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    context.locale;
     return Positioned(
       top: 35.h,
       left: 0,
@@ -17,16 +19,25 @@ class HelloAndChangeLang extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            InkWell(
-              onTap: () {},
-              child: Text(
-                "مرحباً",
-                style: AppStyles.style46W400,
-              ),
-            ),
             Text(
-              "English",
-              style: AppStyles.style23W700,
+              "hello".tr(context: context),
+              style: AppStyles.style46W400,
+            ),
+            InkWell(
+              onTap: () async {
+                if (context.locale == const Locale('en')) {
+                  await EasyLocalization.of(context)!
+                      .setLocale(const Locale('ar'));
+                } else {
+                  await EasyLocalization.of(context)!
+                      .setLocale(const Locale('en'));
+                }
+                // setState(() {});
+              },
+              child: Text(
+                context.locale == const Locale('en') ? "العربية" : "English",
+                style: AppStyles.style23W700,
+              ),
             ),
           ],
         ),

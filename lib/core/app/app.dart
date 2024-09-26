@@ -1,6 +1,6 @@
 import 'package:device_preview/device_preview.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:adaptive_theme/adaptive_theme.dart';
 import '../components/app_theme.dart';
@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    context.locale;
     return ScreenUtilInit(
       designSize: const Size(375, 917),
       minTextAdapt: true,
@@ -21,18 +22,9 @@ class MyApp extends StatelessWidget {
           dark: darkTheme,
           initial: AdaptiveThemeMode.light,
           builder: (theme, darkTheme) => MaterialApp.router(
-            locale: DevicePreview.locale(context),
-            supportedLocales: const [
-              Locale('ar'),
-            ],
-            localizationsDelegates: const [
-              GlobalMaterialLocalizations.delegate,
-              GlobalWidgetsLocalizations.delegate,
-              GlobalCupertinoLocalizations.delegate,
-            ],
-            localeResolutionCallback: (locale, supportedLocales) {
-              return const Locale('ar');
-            },
+            supportedLocales: context.supportedLocales,
+            locale: context.locale,
+            localizationsDelegates: context.localizationDelegates,
             builder: DevicePreview.appBuilder,
             title: 'سرعة التسويق',
             debugShowCheckedModeBanner: false,

@@ -1,6 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart'; // Import ScreenUtil
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
@@ -16,7 +17,7 @@ class CustomLoginIcon extends StatelessWidget {
       child: Row(
         children: [
           Text(
-            'تسجيل\nالدخول',
+            "login".tr(context: context),
             style: AppStyles.style32W700,
           ),
           SizedBox(width: MediaQuery.of(context).size.width * 0.35),

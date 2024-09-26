@@ -1,7 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 
 class CreateAccountAndResetPassword extends StatelessWidget {
@@ -28,23 +28,17 @@ class CreateAccountAndResetPassword extends StatelessWidget {
                 ),
               ),
               child: Text(
-                "نسيت كلمة المرور",
+                "forget_password".tr(context: context),
                 style: AppStyles.style18W300,
               ),
             ),
-            Container(
-              decoration: BoxDecoration(
-                border: Border.all(color: AppColors.whiteColor),
-                borderRadius: BorderRadius.circular(5.r),
-              ),
-              child: TextButton(
-                onPressed: () {
-                  GoRouter.of(context).push('/signUpView');
-                },
-                child: Text(
-                  "إنشاء حساب",
-                  style: AppStyles.style18W900,
-                ),
+            TextButton(
+              onPressed: () {
+                GoRouter.of(context).push('/signUpView');
+              },
+              child: Text(
+                "signup".tr(),
+                style: AppStyles.style18W900,
               ),
             ),
           ],

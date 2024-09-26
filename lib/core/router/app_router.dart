@@ -590,7 +590,7 @@ final GoRouter router = GoRouter(
       path: '/xUserDetailsView',
       builder: (context, state) => const XUserDetailsView(),
     ),
-     GoRoute(
+    GoRoute(
       path: '/facebookUserDetailsView',
       builder: (context, state) => const FaceBookUserDetailsView(),
     ),
