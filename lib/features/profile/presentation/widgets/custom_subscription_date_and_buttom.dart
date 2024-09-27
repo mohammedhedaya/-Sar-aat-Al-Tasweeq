@@ -1,7 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-
 import '../../../../core/utils/app_text_style.dart';
 
 class CustomSubscriptionDateAndBtns extends StatelessWidget {
@@ -20,7 +20,7 @@ class CustomSubscriptionDateAndBtns extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      "تاريخ الأشتراك",
+                      "subscription_date".tr(context: context),
                       style: AppStyles.style14W400,
                     ),
                     SizedBox(width: 8.w),
@@ -34,7 +34,7 @@ class CustomSubscriptionDateAndBtns extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      "تاريخ الأنتهاء",
+                      "expiration_date".tr(context: context),
                       style: AppStyles.style14W400,
                     ),
                     SizedBox(width: 8.w),
@@ -63,8 +63,9 @@ class CustomSubscriptionDateAndBtns extends StatelessWidget {
                   ),
                 ),
                 child: Text(
-                  'تغيير كلمة السر',
+                  "change_password".tr(context: context),
                   style: AppStyles.style14W600Profile,
+                  textAlign: TextAlign.center,
                 ),
               ),
             ),
@@ -81,7 +82,7 @@ class CustomSubscriptionDateAndBtns extends StatelessWidget {
                   ),
                 ),
                 child: Text(
-                  'تعديـل الحـساب',
+                  "edit_profile".tr(context: context),
                   style: AppStyles.style14W600,
                 ),
               ),

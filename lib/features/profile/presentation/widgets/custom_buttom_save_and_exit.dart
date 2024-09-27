@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -28,7 +29,7 @@ class CustomButtomSaveAndExit extends StatelessWidget {
               ),
               child: Center(
                 child: Text(
-                  "حفظ",
+                  "save".tr(context: context),
                   style: AppStyles.style14W600,
                 ),
               ),
@@ -54,7 +55,7 @@ class CustomButtomSaveAndExit extends StatelessWidget {
               ),
               child: Center(
                 child: Text(
-                  "إلغاء",
+                  "cancel".tr(context: context),
                   style: AppStyles.style14W600,
                 ),
               ),

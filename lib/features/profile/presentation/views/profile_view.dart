@@ -1,8 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
-
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
@@ -54,7 +54,7 @@ class ProfileView extends StatelessWidget {
                     SizedBox(width: 25.w),
                     Expanded(
                       child: Text(
-                        "فيصل, عبدالعزيز",
+                        "faisal_abdelaziz".tr(context: context),
                         style: AppStyles.style25W400,
                       ),
                     ),
@@ -72,11 +72,11 @@ class ProfileView extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "6 يوم",
+                        "6days".tr(context: context),
                         style: AppStyles.style14W800,
                       ),
                       Text(
-                        "متبقي",
+                        "remaining".tr(context: context),
                         style: AppStyles.style14W300,
                       ),
                     ],
@@ -84,7 +84,7 @@ class ProfileView extends StatelessWidget {
                 ),
                 SizedBox(height: 10.h),
                 Text(
-                  "تنتهي في",
+                  "ended_at".tr(context: context),
                   style: AppStyles.style14W800,
                   textAlign: TextAlign.center,
                 ),

@@ -1,3 +1,5 @@
+import 'package:country_code_picker/country_code_picker.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -14,10 +16,10 @@ class CustomItemIncludeCountry extends StatelessWidget {
         Expanded(
           flex: 2,
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "الدوله",
+                "country".tr(context: context),
                 style: AppStyles.style12W400.copyWith(
                   color: AppColors.whiteColor,
                 ),
@@ -26,6 +28,7 @@ class CustomItemIncludeCountry extends StatelessWidget {
               SizedBox(height: 9.h),
               Container(
                 height: 60.h,
+                width: double.infinity,
                 padding: EdgeInsets.only(right: 16.w),
                 decoration: BoxDecoration(
                   color: AppColors.whiteColor.withOpacity(0.10),
@@ -33,23 +36,21 @@ class CustomItemIncludeCountry extends StatelessWidget {
                     Radius.circular(20.r),
                   ),
                 ),
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: Text(
-                        'المملكة العربية السعودية',
-                        style: AppStyles.style14W400,
-                        textAlign: TextAlign.start,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ),
-                    SizedBox(width: 5.w),
-                    const Icon(
-                      Icons.keyboard_arrow_down,
-                      color: AppColors.whiteColor,
-                      size: 35,
-                    ),
-                  ],
+                child: CountryCodePicker(
+                  onChanged: (value) {},
+                  initialSelection: 'SA',
+                  favorite: const ['+966', 'SA'],
+                  barrierColor: const Color(0xfffff9f9).withOpacity(0.33),
+                  textOverflow: TextOverflow.ellipsis,
+                  boxDecoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8.r),
+                  ),
+                  showCountryOnly: true,
+                  showOnlyCountryWhenClosed: true,
+                  showFlagDialog: true,
+                  flagDecoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(4.r),
+                  ),
                 ),
               ),
             ],
@@ -61,7 +62,7 @@ class CustomItemIncludeCountry extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "المدينة",
+                "city".tr(context: context),
                 style: AppStyles.style12W400.copyWith(
                   color: AppColors.whiteColor,
                 ),
@@ -69,31 +70,21 @@ class CustomItemIncludeCountry extends StatelessWidget {
               ),
               SizedBox(height: 8.h),
               Container(
-                height: 60.h,
-                padding: EdgeInsets.only(right: 16.w),
                 decoration: BoxDecoration(
                   color: AppColors.whiteColor.withOpacity(0.10),
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(20.r),
-                  ),
+                  borderRadius: BorderRadius.circular(20.r),
                 ),
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: Text(
-                        'الرياض',
-                        style: AppStyles.style18W400,
-                        textAlign: TextAlign.start,
-                        overflow: TextOverflow.ellipsis,
-                      ),
+                child: TextFormField(
+                  initialValue: 'الرياض',
+                  decoration: const InputDecoration(
+                    border: InputBorder.none,
+                    contentPadding: EdgeInsets.symmetric(
+                      vertical: 15,
+                      horizontal: 12,
                     ),
-                    SizedBox(width: 5.w),
-                    const Icon(
-                      Icons.keyboard_arrow_down,
-                      color: AppColors.whiteColor,
-                      size: 35,
-                    ),
-                  ],
+                  ),
+                  style: AppStyles.style18W400,
+                  textAlign: TextAlign.start,
                 ),
               ),
             ],

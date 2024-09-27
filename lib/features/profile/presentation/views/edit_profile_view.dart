@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -23,15 +24,15 @@ class _EditProfileViewState extends State<EditProfileView> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: const Text("Choose Image Source"),
+          title: Text("ChooseImageSource".tr(context: context)),
           actions: <Widget>[
             TextButton(
               onPressed: () => Navigator.pop(context, 'camera'),
-              child: const Text('Camera'),
+              child: Text('Camera'.tr(context: context)),
             ),
             TextButton(
               onPressed: () => Navigator.pop(context, 'gallery'),
-              child: const Text('Gallery'),
+              child: Text('Gallery'.tr(context: context)),
             ),
           ],
         );
@@ -86,6 +87,7 @@ class _EditProfileViewState extends State<EditProfileView> {
                 Row(
                   children: [
                     Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         CircleAvatar(
                           radius: 50.r,
@@ -99,7 +101,7 @@ class _EditProfileViewState extends State<EditProfileView> {
                         InkWell(
                           onTap: _pickImage,
                           child: Text(
-                            "رفع صورة جديدة",
+                            "upload_new_image".tr(context: context),
                             style: AppStyles.style14W500,
                           ),
                         ),
@@ -107,8 +109,8 @@ class _EditProfileViewState extends State<EditProfileView> {
                     ),
                     Expanded(
                       child: Text(
-                        "فيصل, عبدالعزيز",
-                        style: AppStyles.style25W400,
+                        "faisal_abdelaziz".tr(context: context),
+                        style: AppStyles.style20W400,
                       ),
                     ),
                   ],

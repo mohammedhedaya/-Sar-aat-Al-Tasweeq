@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'custom_include_email.dart';
@@ -22,7 +23,7 @@ class CustomProfileData extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "الاسم الأول",
+                      "first_name".tr(context: context),
                       style: AppStyles.style12W400.copyWith(
                         color: AppColors.whiteColor,
                       ),
@@ -56,7 +57,7 @@ class CustomProfileData extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     Text(
-                      "الاسم الثاني",
+                      "second_name".tr(context: context),
                       style: AppStyles.style12W400.copyWith(
                         color: AppColors.whiteColor,
                       ),
@@ -94,7 +95,7 @@ class CustomProfileData extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "الاسم الثالث",
+                      "third_name".tr(context: context),
                       style: AppStyles.style12W400
                           .copyWith(color: AppColors.whiteColor, fontSize: 12),
                       textAlign: TextAlign.start,
@@ -129,63 +130,114 @@ class CustomProfileData extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "رقم الهاتف",
+                "phone".tr(context: context),
                 style: AppStyles.style12W400.copyWith(
                   color: AppColors.whiteColor,
                 ),
                 textAlign: TextAlign.start,
               ),
               SizedBox(height: 9.h),
-              Row(
-                children: [
-                  Expanded(
-                    child: Container(
-                      height: 60.h,
-                      padding: EdgeInsets.only(right: 16.w),
-                      decoration: BoxDecoration(
-                        color: AppColors.whiteColor.withOpacity(0.10),
-                        borderRadius: BorderRadius.only(
-                          topRight: Radius.circular(20.r),
-                          bottomRight: Radius.circular(20.r),
-                        ),
-                      ),
-                      child: Align(
-                        alignment: Alignment.centerRight,
-                        child: Text(
-                          '5522335521',
-                          style: AppStyles.style18W400,
-                          textAlign: TextAlign.start,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    height: 60.h,
-                    padding: EdgeInsets.all(6.w),
-                    decoration: BoxDecoration(
-                      color: AppColors.whiteColor.withOpacity(0.20),
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(20.r),
-                        bottomLeft: Radius.circular(20.r),
-                      ),
-                    ),
-                    child: Row(
+              context.locale.languageCode == 'en'
+                  ? Row(
                       children: [
-                        Text(
-                          '966',
-                          style: AppStyles.style18W400,
-                          textAlign: TextAlign.start,
+                        Expanded(
+                          child: Container(
+                            height: 60.h,
+                            padding: EdgeInsets.only(right: 16.w),
+                            decoration: BoxDecoration(
+                              color: AppColors.whiteColor.withOpacity(0.10),
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(20.r),
+                                bottomLeft: Radius.circular(20.r),
+                              ),
+                            ),
+                            child: Align(
+                              alignment: Alignment.center,
+                              child: Text(
+                                '5522335521',
+                                style: AppStyles.style18W400,
+                                textAlign: TextAlign.start,
+                              ),
+                            ),
+                          ),
                         ),
-                        const Icon(
-                          Icons.keyboard_arrow_down_outlined,
-                          color: AppColors.whiteColor,
-                          size: 35,
+                        Container(
+                          height: 60.h,
+                          padding: EdgeInsets.all(6.w),
+                          decoration: BoxDecoration(
+                            color: AppColors.whiteColor.withOpacity(0.20),
+                            borderRadius: BorderRadius.only(
+                              topRight: Radius.circular(20.r),
+                              bottomRight: Radius.circular(20.r),
+                            ),
+                          ),
+                          child: Row(
+                            children: [
+                              Text(
+                                '966',
+                                style: AppStyles.style18W400,
+                                textAlign: TextAlign.start,
+                              ),
+                              const Icon(
+                                Icons.keyboard_arrow_down_outlined,
+                                color: AppColors.whiteColor,
+                                size: 35,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    )
+                  : Row(
+                      children: [
+                        Expanded(
+                          child: Container(
+                            height: 60.h,
+                            padding: EdgeInsets.only(right: 16.w),
+                            decoration: BoxDecoration(
+                              color: AppColors.whiteColor.withOpacity(0.10),
+                              borderRadius: BorderRadius.only(
+                                topRight: Radius.circular(20.r),
+                                bottomRight: Radius.circular(20.r),
+                              ),
+                            ),
+                            child: Align(
+                              alignment: Alignment.centerRight,
+                              child: Text(
+                                '5522335521',
+                                style: AppStyles.style18W400,
+                                textAlign: TextAlign.start,
+                              ),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          height: 60.h,
+                          padding: EdgeInsets.all(6.w),
+                          decoration: BoxDecoration(
+                            color: AppColors.whiteColor.withOpacity(0.20),
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(20.r),
+                              bottomLeft: Radius.circular(20.r),
+                            ),
+                          ),
+                          child: Row(
+                            children: [
+                              Text(
+                                '966',
+                                style: AppStyles.style18W400,
+                                textAlign: TextAlign.start,
+                              ),
+                              const Icon(
+                                Icons.keyboard_arrow_down_outlined,
+                                color: AppColors.whiteColor,
+                                size: 35,
+                              ),
+                            ],
+                          ),
                         ),
                       ],
                     ),
-                  ),
-                ],
-              ),
             ],
           ),
           SizedBox(height: 30.h),

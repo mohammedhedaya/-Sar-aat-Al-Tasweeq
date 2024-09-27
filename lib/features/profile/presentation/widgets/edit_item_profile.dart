@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -21,7 +22,7 @@ class EditItemProfile extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "الاسم الأول",
+                      "first_name".tr(context: context),
                       style: AppStyles.style12W400Edite,
                       textAlign: TextAlign.start,
                     ),
@@ -53,7 +54,7 @@ class EditItemProfile extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "الاسم الثاني",
+                      "second_name".tr(context: context),
                       style: AppStyles.style12W400Edite,
                       textAlign: TextAlign.start,
                     ),
@@ -89,7 +90,7 @@ class EditItemProfile extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "الاسم الثالث",
+                      "last_name".tr(context: context),
                       style: AppStyles.style12W400Edite,
                       textAlign: TextAlign.start,
                     ),
@@ -125,7 +126,7 @@ class EditItemProfile extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
-                  "رقم الهاتف",
+                  "phone".tr(context: context),
                   style: AppStyles.style12W400Edite,
                   textAlign: TextAlign.start,
                 ),
@@ -153,8 +154,10 @@ class EditItemProfile extends StatelessWidget {
                       ],
                     ),
                     border: InputBorder.none,
-                    contentPadding: const EdgeInsets.symmetric(
-                        vertical: 15, horizontal: 12),
+                    contentPadding: EdgeInsets.symmetric(
+                      vertical: 15.h,
+                      horizontal: 12.w,
+                    ),
                   ),
                   style: AppStyles.style18W400,
                 ),
@@ -168,7 +171,7 @@ class EditItemProfile extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "الإيميل",
+                "email".tr(context: context),
                 style: AppStyles.style12W400Edite,
                 textAlign: TextAlign.start,
               ),

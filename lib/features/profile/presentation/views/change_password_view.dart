@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -48,7 +49,7 @@ class ProfileChangePasswordView extends StatelessWidget {
                     children: [
                       SizedBox(height: 62.h),
                       Text(
-                        'كلمة السر االقديمه',
+                        "old_password".tr(context: context),
                         style: AppStyles.style12W400.copyWith(
                           color: Colors.white,
                         ),
@@ -69,7 +70,7 @@ class ProfileChangePasswordView extends StatelessWidget {
                       ),
                       SizedBox(height: 25.h),
                       Text(
-                        'تأكيد كلمة السر الجديدة',
+                        "new_password".tr(context: context),
                         style: AppStyles.style12W400.copyWith(
                           color: Colors.white,
                         ),
@@ -90,7 +91,7 @@ class ProfileChangePasswordView extends StatelessWidget {
                       ),
                       SizedBox(height: 25.h),
                       Text(
-                        'تأكيد كلمة السر الجديدة',
+                        "confirm_new_password".tr(context: context),
                         style: AppStyles.style12W400.copyWith(
                           color: Colors.white,
                         ),
@@ -116,7 +117,7 @@ class ProfileChangePasswordView extends StatelessWidget {
               ),
               CustomAuthBtn(
                 onPressed: () => context.pop(),
-                text: "حفظ",
+                text: "save".tr(context: context),
               ),
             ],
           ),
