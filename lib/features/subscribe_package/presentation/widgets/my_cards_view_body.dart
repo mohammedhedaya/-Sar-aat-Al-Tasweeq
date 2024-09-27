@@ -143,14 +143,8 @@ class _MyCardsViewBodyState extends State<MyCardsViewBody> {
                 selectedCardIndex = null;
               });
             },
-            child: Container(
-              decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.white,
-              ),
-              child: const Icon(
-                Icons.keyboard_arrow_right_rounded,
-              ),
+            child: const Icon(
+              Icons.keyboard_arrow_right_rounded,
             ),
           ),
         ),

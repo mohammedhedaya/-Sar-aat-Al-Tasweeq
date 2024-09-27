@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -17,7 +18,6 @@ class NotificationsDetailsViewBody extends StatelessWidget {
               Assets.imagesHomeBackground,
             ),
             opacity: 0.45,
-            // alignment: Alignment.center,
           ),
         ),
         child: Padding(
@@ -27,7 +27,7 @@ class NotificationsDetailsViewBody extends StatelessWidget {
             children: [
               SizedBox(height: MediaQuery.of(context).size.height * 0.04),
               Text(
-                "أدمن سرعة التسويق",
+                "Admin".tr(context: context),
                 style: AppStyles.style15W800,
               ),
               SizedBox(height: MediaQuery.of(context).size.height * 0.1),
@@ -38,7 +38,7 @@ class NotificationsDetailsViewBody extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20.r),
                 ),
                 child: Text(
-                  "السلام عليكم ورحمه الله وبركاته عيد فطر مبارك علينا وعليكم",
+                  "alsalamealaykum".tr(context: context),
                   style: AppStyles.style36W400,
                   textAlign: TextAlign.start,
                 ),

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -31,7 +32,7 @@ class AddSuggestionViewBody extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "نسمعك بوضوح",
+                  "hearyouclearly".tr(context: context),
                   style: AppStyles.style25W400,
                 ),
                 SvgPicture.asset(
@@ -42,14 +43,14 @@ class AddSuggestionViewBody extends StatelessWidget {
             SizedBox(height: 30.h),
             Center(
               child: Text(
-                "نساعدك فى بناء تجربتك مع سرعه التسويق",
+                "WeHelpYou".tr(context: context),
                 style: AppStyles.style20W400,
                 textAlign: TextAlign.center,
               ),
             ),
             SizedBox(height: 50.h),
             Text(
-              "أطرح أقتراحك",
+              "writeyoursuggestion".tr(context: context),
               style: AppStyles.style12W400.copyWith(
                 color: AppColors.whiteColor,
               ),
@@ -61,7 +62,7 @@ class AddSuggestionViewBody extends StatelessWidget {
               onFieldSubmitted: (value) {},
               validator: (value) {
                 if (value == null || value.isEmpty) {
-                  return 'هذا الحقل مطلوب';
+                  return "defaultValidation".tr(context: context);
                 }
                 return null;
               },
@@ -89,7 +90,7 @@ class AddSuggestionViewBody extends StatelessWidget {
                     barrierColor: const Color(0xffFFF9F9).withOpacity(0.33),
                     builder: (context) {
                       return CustomAddedSuccesDialog(
-                        text: "سرعة التسويق يشكرك على الاقتراح",
+                        text: "wethankyouforsuggestion".tr(context: context),
                         style: AppStyles.style15W900,
                       );
                     },
@@ -113,7 +114,7 @@ class AddSuggestionViewBody extends StatelessWidget {
                   ),
                   child: Center(
                     child: Text(
-                      "إرسال",
+                      "send".tr(context: context),
                       style: AppStyles.style14W400.copyWith(
                         color: AppColors.whiteColor,
                       ),

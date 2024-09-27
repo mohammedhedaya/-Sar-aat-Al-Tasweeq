@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -37,7 +38,7 @@ class OurAccountsViewBody extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "حسابتنا الرسمية",
+                        "ouraccounts".tr(context: context),
                         style: AppStyles.style20W900.copyWith(
                           color: AppColors.blackColor,
                         ),
@@ -67,7 +68,7 @@ class OurAccountsViewBody extends StatelessWidget {
                           ),
                           SizedBox(height: 20.h),
                           Text(
-                            "Snapchat",
+                            "snapchat".tr(context: context),
                             style: AppStyles.style20W900,
                           ),
                         ],
@@ -93,7 +94,7 @@ class OurAccountsViewBody extends StatelessWidget {
                           ),
                           SizedBox(height: 20.h),
                           Text(
-                            "TikTok",
+                            "TikTok".tr(context: context),
                             style: AppStyles.style20W900,
                           ),
                         ],
@@ -122,7 +123,7 @@ class OurAccountsViewBody extends StatelessWidget {
                           ),
                           SizedBox(height: 20.h),
                           Text(
-                            "Snapchat",
+                            "snapchat".tr(context: context),
                             style: AppStyles.style20W900,
                           ),
                         ],
@@ -148,7 +149,7 @@ class OurAccountsViewBody extends StatelessWidget {
                           ),
                           SizedBox(height: 20.h),
                           Text(
-                            "TikTok",
+                            "TikTok".tr(context: context),
                             style: AppStyles.style20W900,
                           ),
                         ],
@@ -177,7 +178,7 @@ class OurAccountsViewBody extends StatelessWidget {
                           ),
                           SizedBox(height: 20.h),
                           Text(
-                            "Snapchat",
+                            "snapchat".tr(context: context),
                             style: AppStyles.style20W900,
                           ),
                         ],
@@ -203,7 +204,7 @@ class OurAccountsViewBody extends StatelessWidget {
                           ),
                           SizedBox(height: 20.h),
                           Text(
-                            "TikTok",
+                            "TikTok".tr(context: context),
                             style: AppStyles.style20W900,
                           ),
                         ],

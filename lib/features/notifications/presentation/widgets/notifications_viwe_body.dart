@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -30,7 +31,7 @@ class NotificationsViewBody extends StatelessWidget {
           InkWell(
             onTap: () {},
             child: Text(
-              "مسح الكل",
+              "deleteAll".tr(context: context),
               style: AppStyles.style14W400.copyWith(
                 color: const Color(0xffFD3B3B),
                 decoration: TextDecoration.underline,

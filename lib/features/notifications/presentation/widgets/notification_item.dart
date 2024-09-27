@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -24,7 +25,7 @@ class NotificationItem extends StatelessWidget {
         ),
         tileColor: const Color(0xffD3D3D3),
         title: Text(
-          "أرسل إليك الأدمن رسالة",
+          "adminsentyoumessage".tr(context: context),
           style: AppStyles.style15W900.copyWith(
             color: AppColors.navBarColor.withOpacity(0.91),
           ),

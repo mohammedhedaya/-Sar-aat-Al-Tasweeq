@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart'; // Import Clipboard
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -44,7 +45,7 @@ class SharingEarnBody extends StatelessWidget {
                     children: [
                       SizedBox(height: 50.h),
                       Text(
-                        'كود الإحالة',
+                        "referralCode".tr(context: context),
                         style: AppStyles.style20W400ShareWithFiends,
                       ),
                       SizedBox(height: 12.h),
@@ -65,8 +66,10 @@ class SharingEarnBody extends StatelessWidget {
                                 const ClipboardData(text: '152510238jcsuxb'),
                               );
                               ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(
-                                  content: Text('تم نسخ كود الإحالة'),
+                                SnackBar(
+                                  content: Text(
+                                    "referralCodeCopied".tr(context: context),
+                                  ),
                                 ),
                               );
                             },
@@ -81,7 +84,7 @@ class SharingEarnBody extends StatelessWidget {
                       ),
                       SizedBox(height: 10.h),
                       Text(
-                        'شارك التطبيق على 10 اشخاص اربح 15 الماسة',
+                        "shareTheAppToEarn".tr(context: context),
                         style: AppStyles.style20W400ShareWithFiends,
                         textAlign: TextAlign.start,
                       ),

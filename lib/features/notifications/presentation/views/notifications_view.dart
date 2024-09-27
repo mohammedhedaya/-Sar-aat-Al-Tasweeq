@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../core/utils/app_text_style.dart';
@@ -15,7 +16,7 @@ class NotificationsView extends StatelessWidget {
         elevation: 0,
         automaticallyImplyLeading: false,
         title: Text(
-          "الأشعارات",
+          "notifications".tr(context: context),
           style: AppStyles.style20W800,
         ),
         actions: [
