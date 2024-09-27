@@ -32,11 +32,20 @@ class CustomLoginIcon extends StatelessWidget {
                 shape: BoxShape.circle,
                 color: AppColors.loginBtn,
               ),
-              child: Center(
-                child: SvgPicture.asset(
-                  Assets.imagesArrowForwardLoginPage,
-                ),
-              ),
+              child: context.locale == const Locale('en')
+                  ? Center(
+                      child: Transform.flip(
+                        flipX: true,
+                        child: SvgPicture.asset(
+                          Assets.imagesArrowForwardLoginPage,
+                        ),
+                      ),
+                    )
+                  : Center(
+                      child: SvgPicture.asset(
+                        Assets.imagesArrowForwardLoginPage,
+                      ),
+                    ),
             ),
           ),
         ],

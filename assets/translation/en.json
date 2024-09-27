@@ -1,4 +1,8 @@
 {
+    "defaultValidation":"This field is required",
+    "passwordValidation":"Please enter your password",
+    "trueEmailValidation": "Please enter a valid email",
+    "emailValidation": "Please enter an email",
     "alsalamealaykum": "Peace, mercy, and blessings of Allah be upon you. Eid Fitr Mubarak to you and us",
     "Admin": "Admin of Fast Marketing",
     "adminsentyoumessage": "Admin sent you a message",

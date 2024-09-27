@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -48,20 +49,35 @@ class LoginViewBody extends StatelessWidget {
             ),
           ),
         ),
-        Positioned(
-          bottom: 0,
-          left: -50.w,
-          child: Container(
-            height: 200.h,
-            width: 200.w,
-            decoration: const BoxDecoration(
-              color: AppColors.whiteColor,
-              borderRadius: BorderRadius.only(
-                topRight: Radius.circular(300),
+        context.locale == const Locale('en')
+            ? Positioned(
+                bottom: 0,
+                right: -50.w,
+                child: Container(
+                  height: 200.h,
+                  width: 200.w,
+                  decoration: const BoxDecoration(
+                    color: AppColors.whiteColor,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(300),
+                    ),
+                  ),
+                ),
+              )
+            : Positioned(
+                bottom: 0,
+                left: -50.w,
+                child: Container(
+                  height: 200.h,
+                  width: 200.w,
+                  decoration: const BoxDecoration(
+                    color: AppColors.whiteColor,
+                    borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(300),
+                    ),
+                  ),
+                ),
               ),
-            ),
-          ),
-        ),
         const HelloAndChangeLang(),
         const CustomLoginForm(),
         const CreateAccountAndResetPassword(),

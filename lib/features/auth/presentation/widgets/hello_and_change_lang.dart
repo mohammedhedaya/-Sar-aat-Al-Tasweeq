@@ -32,7 +32,6 @@ class HelloAndChangeLang extends StatelessWidget {
                   await EasyLocalization.of(context)!
                       .setLocale(const Locale('en'));
                 }
-                // setState(() {});
               },
               child: Text(
                 context.locale == const Locale('en') ? "العربية" : "English",
