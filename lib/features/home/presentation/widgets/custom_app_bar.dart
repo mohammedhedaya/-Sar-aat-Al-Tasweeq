@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -36,11 +37,11 @@ class CustomHomeAppBar extends StatelessWidget implements PreferredSizeWidget {
               text: TextSpan(
                 children: [
                   TextSpan(
-                    text: 'ياهلا,',
+                    text: "hi".tr(context: context),
                     style: AppStyles.style12W700,
                   ),
                   TextSpan(
-                    text: ' فيصل',
+                    text: 'fiesl'.tr(context: context),
                     style: AppStyles.style12W100,
                   ),
                 ],

@@ -13,7 +13,6 @@ class CustomMenuDrawer extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(0.r),
       ),
-      // backgroundColor: AppColors.navBarColor,
       clipBehavior: Clip.none,
       child: const DrawerBody(),
     );

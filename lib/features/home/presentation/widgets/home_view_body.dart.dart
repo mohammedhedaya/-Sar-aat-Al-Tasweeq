@@ -1,4 +1,5 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -52,8 +53,6 @@ class HomeViewBody extends StatelessWidget {
               ),
             ),
             const HomeCarouselSlider(),
-            // SizedBox(height: 48.h),
-            // const CustomTextInHome(),
             SizedBox(height: 20.h),
             Expanded(
               child: SingleChildScrollView(
@@ -64,7 +63,7 @@ class HomeViewBody extends StatelessWidget {
                         context.push('/whatsappView');
                       },
                       imagePath: Assets.imagesWhatsAppImage,
-                      label: 'WHATSAPP',
+                      label: 'whatsapp'.tr(context: context),
                     ),
                     SizedBox(height: 30.h),
                     SocialMediaCard(
@@ -72,7 +71,7 @@ class HomeViewBody extends StatelessWidget {
                         context.push('/telegramView');
                       },
                       imagePath: Assets.imagesTelegramImage,
-                      label: 'TELEGRAM',
+                      label: 'telegram'.tr(context: context),
                     ),
                     SizedBox(height: 30.h),
                     SocialMediaCard(
@@ -80,7 +79,7 @@ class HomeViewBody extends StatelessWidget {
                         context.push('/instagramView');
                       },
                       imagePath: Assets.imagesInstagramNewGradientLogoAnimation,
-                      label: 'INSTAGRAM',
+                      label: 'instagram'.tr(context: context),
                     ),
                     SizedBox(height: 30.h),
                     SocialMediaCard(
@@ -88,7 +87,7 @@ class HomeViewBody extends StatelessWidget {
                         context.push('/xView');
                       },
                       imagePath: Assets.imagesXtwitter,
-                      label: 'X',
+                      label: 'x'.tr(context: context),
                     ),
                     SizedBox(height: 30.h),
                     SocialMediaCard(
@@ -96,7 +95,7 @@ class HomeViewBody extends StatelessWidget {
                         context.push('/facebookView');
                       },
                       imagePath: Assets.imagesFacebookLogo,
-                      label: 'FACEBOOK',
+                      label: 'facebook'.tr(context: context),
                     ),
                     SizedBox(height: 30.h),
                     SocialMediaCard(
@@ -104,7 +103,7 @@ class HomeViewBody extends StatelessWidget {
                         context.push('/smsView');
                       },
                       imagePath: Assets.imagesSmsLogo,
-                      label: 'SMS',
+                      label: 'sms'.tr(context: context),
                     ),
                     SizedBox(height: 30.h),
                     SocialMediaCard(
@@ -112,7 +111,7 @@ class HomeViewBody extends StatelessWidget {
                         context.push('/emailView');
                       },
                       imagePath: Assets.imagesEmailLogo,
-                      label: 'E-mail',
+                      label: 'Email'.tr(context: context),
                     ),
                     SizedBox(height: 25.h),
                   ],

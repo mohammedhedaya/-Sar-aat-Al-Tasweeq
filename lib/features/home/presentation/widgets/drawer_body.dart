@@ -1,4 +1,5 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'custom_theme_drawer_widget.dart';
@@ -113,10 +114,17 @@ class _DrawerBodyState extends State<DrawerBody> {
           },
         ),
         DrawerListTileItem(
-          title: "اللغة (العربية)",
+          title: context.locale == const Locale('en')
+              ? "Language (English)"
+              : "اللغة (العربية)",
           icon: Assets.imagesLanguage,
           isSelected: _selectedIndex == 8,
-          onTap: () {
+          onTap: () async {
+            if (context.locale == const Locale('en')) {
+              await EasyLocalization.of(context)!.setLocale(const Locale('ar'));
+            } else {
+              await EasyLocalization.of(context)!.setLocale(const Locale('en'));
+            }
             _onItemTap(8);
           },
         ),
