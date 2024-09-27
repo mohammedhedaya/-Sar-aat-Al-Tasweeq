@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -62,12 +63,13 @@ class WhatsappViewBody extends StatelessWidget {
                             context.push('/launchYourAdView');
                           },
                           image: Assets.imagesXerror,
-                          textButton: "الأشتراك",
+                          textButton: "subscribe".tr(context: context),
                           content: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                "الرجاء الأشتراك فى الباقة",
+                                "pleaseSubscribeToThePackage"
+                                    .tr(context: context),
                                 style: AppStyles.style15W900,
                                 textAlign: TextAlign.center,
                               ),
@@ -81,7 +83,7 @@ class WhatsappViewBody extends StatelessWidget {
                       },
                     );
                   },
-                  text: "إضافة رقم الواتساب",
+                  text: "addWhatsAppNumber".tr(context: context),
                 ),
                 SizedBox(height: 50.h),
                 CustomSubscribeBtn(
@@ -95,12 +97,13 @@ class WhatsappViewBody extends StatelessWidget {
                             context.push('/scanQrCodeView');
                           },
                           image: Assets.imagesXerror,
-                          textButton: "الأشتراك",
+                          textButton: "subscribe".tr(context: context),
                           content: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                "الرجاء الأشتراك فى الباقة",
+                                "pleaseSubscribeToThePackage"
+                                    .tr(context: context),
                                 style: AppStyles.style15W900,
                                 textAlign: TextAlign.center,
                               ),
@@ -114,11 +117,11 @@ class WhatsappViewBody extends StatelessWidget {
                       },
                     );
                   },
-                  text: "مسح الباركود",
+                  text: "BarcodeScanning".tr(context: context),
                 ),
                 SizedBox(height: 39.h),
                 Text(
-                  "شاهد طريقة أستخدام الواتساب ؟",
+                  "seeHowToSeeUseWatshapp".tr(context: context),
                   style: AppStyles.style14W600,
                 ),
                 SizedBox(height: 10.h),
@@ -130,7 +133,7 @@ class WhatsappViewBody extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Text(
-                      "نسمعك بوضوح",
+                      "hearyouclearly".tr(context: context),
                       style: AppStyles.style14W600,
                     ),
                     SizedBox(width: 5.w),
@@ -141,7 +144,7 @@ class WhatsappViewBody extends StatelessWidget {
                   ],
                 ),
                 Text(
-                  "نساعدك فى بناء تجربتك مع سرعه التسويق",
+                  "WeHelpYou".tr(context: context),
                   style: AppStyles.style12W600,
                 ),
                 SizedBox(height: 16.h),
@@ -166,7 +169,7 @@ class WhatsappViewBody extends StatelessWidget {
                       ),
                       child: Center(
                         child: Text(
-                          "الأقتراحات",
+                          "suggestions".tr(context: context),
                           style: AppStyles.style14W700,
                           textAlign: TextAlign.center,
                         ),
