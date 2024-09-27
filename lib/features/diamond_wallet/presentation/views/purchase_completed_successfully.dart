@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -74,7 +75,7 @@ class _PurchaseCompletedSuccessfullyState
                 children: [
                   SizedBox(height: MediaQuery.of(context).size.height * 0.2),
                   Text(
-                    "تم الشراء بنجاح",
+                    "donePurchase".tr(context: context),
                     style: AppStyles.style22W600,
                   ),
                   SizedBox(height: 25.h),
@@ -107,11 +108,11 @@ class _PurchaseCompletedSuccessfullyState
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  "معلومات الشراء",
+                                  "purchaseInfo".tr(context: context),
                                   style: AppStyles.style14W600,
                                 ),
                                 Text(
-                                  "40 ريال سعودى",
+                                  "40 ${"sar".tr(context: context)}",
                                   style: AppStyles.style14W600,
                                 ),
                               ],
@@ -125,7 +126,7 @@ class _PurchaseCompletedSuccessfullyState
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      '  • 40 ماسة',
+                                      '  • 40 ${"a_diamed".tr(context: context)}',
                                       style: AppStyles.style14W400,
                                     ),
                                     SvgPicture.asset(

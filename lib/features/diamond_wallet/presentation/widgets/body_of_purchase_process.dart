@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -34,14 +35,21 @@ class BodyOfPurchaseProcess extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "سرعة التسويق",
+                      "market_speed".tr(context: context),
                       style: AppStyles.style20W400.copyWith(
                         fontWeight: FontWeight.w200,
                       ),
                       textAlign: TextAlign.start,
                     ),
                     Text(
-                      "شراء ماسات داخل التطبيق\n40 ماسة",
+                      "purchase_diamonds_with_in_the_app".tr(context: context),
+                      style: AppStyles.style20W400.copyWith(
+                        fontWeight: FontWeight.w200,
+                      ),
+                      textAlign: TextAlign.start,
+                    ),
+                    Text(
+                      " 40 ${'a_diamed'.tr(context: context)}",
                       style: AppStyles.style20W400.copyWith(
                         fontWeight: FontWeight.w200,
                       ),
@@ -71,7 +79,7 @@ class BodyOfPurchaseProcess extends StatelessWidget {
                 ),
               ),
               child: Text(
-                "ادفع 40 ر.س",
+                "${"pay".tr(context: context)} 40 ${"sar".tr(context: context)}",
                 style: AppStyles.style14W400.copyWith(
                   color: AppColors.whiteColor,
                 ),

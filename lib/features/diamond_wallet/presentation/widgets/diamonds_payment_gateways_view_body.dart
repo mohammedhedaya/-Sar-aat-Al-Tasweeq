@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -25,7 +26,7 @@ class DiamondsPaymentGatewayViewBody extends StatelessWidget {
         children: [
           SizedBox(height: 50.h),
           CustomPaymentMethodItem(
-            title: "Visa / Master Card",
+            title: "Visa / Master Card".tr(context: context),
             icon: Assets.imagesWalletLine,
             onTap: () {
               context.push("/myCardViewDiamondWallet");
@@ -33,7 +34,7 @@ class DiamondsPaymentGatewayViewBody extends StatelessWidget {
           ),
           SizedBox(height: 15.h),
           CustomPaymentMethodItem(
-            title: "Apple Pay",
+            title: "apple_Pay".tr(context: context),
             icon: Assets.imagesApplePay,
             onTap: () {},
           ),
@@ -48,7 +49,7 @@ class DiamondsPaymentGatewayViewBody extends StatelessWidget {
                 child: TextButton.icon(
                   onPressed: () {},
                   label: Text(
-                    "رابط الدفع السريع",
+                    "fast_payment_link".tr(context: context),
                     style: AppStyles.style14W400,
                   ),
                   icon: const Icon(
@@ -77,7 +78,7 @@ class DiamondsPaymentGatewayViewBody extends StatelessWidget {
                       ),
                       filled: true,
                       fillColor: Colors.white,
-                      hintText: "أدخل كود الخصم",
+                      hintText: "insert_discount_code".tr(context: context),
                       hintStyle: AppStyles.style14W400.copyWith(
                         color: const Color(0XFF828087),
                       ),
@@ -98,7 +99,7 @@ class DiamondsPaymentGatewayViewBody extends StatelessWidget {
                     ),
                     child: Center(
                       child: Text(
-                        "تطبيق",
+                        "apply".tr(context: context),
                         style: AppStyles.style14W400,
                       ),
                     ),

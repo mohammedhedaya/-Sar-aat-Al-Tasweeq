@@ -1,6 +1,6 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-
 import '../../../../core/utils/app_text_style.dart';
 import '../widgets/body_of_purchase_process.dart';
 
@@ -27,7 +27,7 @@ class PurchaseProcess extends StatelessWidget {
         ],
         elevation: 0,
         title: Text(
-          "عملية شراء",
+          "purchase_Process".tr(context: context),
           style: AppStyles.style20W900,
         ),
       ),

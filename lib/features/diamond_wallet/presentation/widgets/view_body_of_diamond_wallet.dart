@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -12,15 +13,42 @@ class ViewBodyOfDiamondWallet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<Map<String, dynamic>> diamondData = [
-      {'price': '40 ماسة', 'diamonds': '40 ر.س'},
-      {'price': '80 ماسة', 'diamonds': '80 ر.س'},
-      {'price': '100 ماسة', 'diamonds': '100 ر.س'},
-      {'price': '150 ماسة', 'diamonds': '150 ر.س'},
-      {'price': '200 ماسة', 'diamonds': '200 ر.س'},
-      {'price': '300 ماسة', 'diamonds': '300 ر.س'},
-      {'price': '500 ماسة', 'diamonds': '500 ر.س'},
-      {'price': '1000 ماسة', 'diamonds': '1000 ر.س'},
-      {'price': '2000 ماسة', 'diamonds': '2000 ر.س'},
+      {
+        'price': '40 ${"a_diamed".tr(context: context)}',
+        'diamonds': '40 ${"sar".tr(context: context)}'
+      },
+      {
+        'price': '80 ${"a_diamed".tr(context: context)}',
+        'diamonds': '80 ${"sar".tr(context: context)}'
+      },
+      {
+        'price': '100 ${"a_diamed".tr(context: context)}',
+        'diamonds': '100 ${"sar".tr(context: context)}'
+      },
+      {
+        'price': '150 ${"a_diamed".tr(context: context)}',
+        'diamonds': '150 ${"sar".tr(context: context)}'
+      },
+      {
+        'price': '200 ${"a_diamed".tr(context: context)}',
+        'diamonds': '200 ${"sar".tr(context: context)}'
+      },
+      {
+        'price': '300 ${"a_diamed".tr(context: context)}',
+        'diamonds': '300 ${"sar".tr(context: context)}'
+      },
+      {
+        'price': '500 ${"a_diamed".tr(context: context)}',
+        'diamonds': '500 ${"sar".tr(context: context)}'
+      },
+      {
+        'price': '1000 ${"a_diamed".tr(context: context)}',
+        'diamonds': '1000 ${"sar".tr(context: context)}'
+      },
+      {
+        'price': '2000 ${"a_diamed".tr(context: context)}',
+        'diamonds': '2000 ${"sar".tr(context: context)}'
+      },
     ];
     return Container(
       decoration: const BoxDecoration(
@@ -44,7 +72,7 @@ class ViewBodyOfDiamondWallet extends StatelessWidget {
                 ),
                 SizedBox(height: 20.h),
                 Text(
-                  'المحفظة الماسية',
+                  "diamond_wallet".tr(context: context),
                   style: AppStyles.style20W600,
                 ),
               ],

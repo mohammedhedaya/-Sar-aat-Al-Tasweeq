@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -12,11 +13,68 @@ class MyCardViewDiamondWallet extends StatefulWidget {
   const MyCardViewDiamondWallet({super.key});
 
   @override
-  State<MyCardViewDiamondWallet> createState() => _MyCardViewDiamondWalletState();
+  State<MyCardViewDiamondWallet> createState() =>
+      _MyCardViewDiamondWalletState();
 }
 
 class _MyCardViewDiamondWalletState extends State<MyCardViewDiamondWallet> {
   int? selectedCardIndex;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      resizeToAvoidBottomInset: false,
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        backgroundColor: Colors.transparent,
+        surfaceTintColor: Colors.transparent,
+        actions: [
+          IconButton(
+            onPressed: () {
+              context.pop();
+            },
+            icon: const Icon(
+              Icons.arrow_forward_ios_outlined,
+              color: Colors.white,
+            ),
+          ),
+        ],
+        elevation: 0,
+        title: Text(
+          "cards".tr(context: context),
+          style: AppStyles.style20W800,
+        ),
+      ),
+      body: Container(
+        margin: EdgeInsets.symmetric(horizontal: 23.w),
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(
+              Assets.imagesHomeBackground,
+            ),
+            alignment: Alignment.bottomCenter,
+            opacity: 0.26,
+          ),
+        ),
+        child: selectedCardIndex != null
+            ? _buildExpandedCard(
+                selectedCardIndex!,
+                [
+                  const Color(0XFFE6DDFF),
+                  const Color(0XFF6F45E9),
+                  const Color(0xff270685)
+                ][selectedCardIndex!],
+              )
+            : Stack(
+                children: [
+                  _buildCard(0, const Color(0XFFE6DDFF), 0.075),
+                  _buildCard(1, const Color(0XFF6F45E9), 0.135),
+                  _buildCard(2, const Color(0xff270685), 0.195),
+                ],
+              ),
+      ),
+    );
+  }
 
   Widget _buildCard(int index, Color color, double topPosition) {
     return Positioned(
@@ -105,22 +163,16 @@ class _MyCardViewDiamondWalletState extends State<MyCardViewDiamondWallet> {
         SizedBox(height: MediaQuery.of(context).size.height * 0.075),
         Align(
           alignment: Alignment.centerRight,
-          child: Material( // Wrap InkWell with Material
-            color: Colors.transparent, // Keep the background transparent
+          child: Material(
+            color: Colors.transparent,
             child: InkWell(
               onTap: () {
                 setState(() {
                   selectedCardIndex = null;
                 });
               },
-              child: Container(
-                decoration: const BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Colors.white,
-                ),
-                child: const Icon(
-                  Icons.keyboard_arrow_right_rounded,
-                ),
+              child: const Icon(
+                Icons.keyboard_arrow_right_rounded,
               ),
             ),
           ),
@@ -129,7 +181,8 @@ class _MyCardViewDiamondWalletState extends State<MyCardViewDiamondWallet> {
         Align(
           alignment: Alignment.centerRight,
           child: Text(
-            "سيتم خصم مبلغ 400 ريال من البطاقة",
+            "an_amount_of_400_riyal_will_be_deducted_from_your_card"
+                .tr(context: context),
             style: AppStyles.style12W600,
           ),
         ),
@@ -201,72 +254,16 @@ class _MyCardViewDiamondWalletState extends State<MyCardViewDiamondWallet> {
           ),
         ),
         SizedBox(height: 58.h),
-        Material( // Wrap the button with Material
-          color: Colors.transparent, // Optional, to keep background clear
+        Material(
+          color: Colors.transparent,
           child: CustomAuthBtn(
             onPressed: () {
               context.push("/purchaseCompletedSuccessfully");
             },
-            text: "أدفع",
+            text: "pay".tr(context: context),
           ),
         ),
       ],
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      resizeToAvoidBottomInset: false,
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        backgroundColor: Colors.transparent,
-        surfaceTintColor: Colors.transparent,
-        actions: [
-          IconButton(
-            onPressed: () {
-              context.pop();
-            },
-            icon: const Icon(
-              Icons.arrow_forward_ios_outlined,
-              color: Colors.white,
-            ),
-          ),
-        ],
-        elevation: 0,
-        title: Text(
-          "بطاقاتى",
-          style: AppStyles.style20W800,
-        ),
-      ),
-      body: Container(
-        margin: EdgeInsets.symmetric(horizontal: 23.w),
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(
-              Assets.imagesHomeBackground,
-            ),
-            alignment: Alignment.bottomCenter,
-            opacity: 0.26,
-          ),
-        ),
-        child: selectedCardIndex != null
-            ? _buildExpandedCard(
-          selectedCardIndex!,
-          [
-            const Color(0XFFE6DDFF),
-            const Color(0XFF6F45E9),
-            const Color(0xff270685)
-          ][selectedCardIndex!],
-        )
-            : Stack(
-          children: [
-            _buildCard(0, const Color(0XFFE6DDFF), 0.075),
-            _buildCard(1, const Color(0XFF6F45E9), 0.135),
-            _buildCard(2, const Color(0xff270685), 0.195),
-          ],
-        ),
-      ),
     );
   }
 }
