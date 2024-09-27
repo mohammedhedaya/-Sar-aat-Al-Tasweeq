@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../core/utils/app_colors.dart';
@@ -16,7 +17,7 @@ class ScanQrCodeView extends StatelessWidget {
         automaticallyImplyLeading: false,
         elevation: 0,
         title: Text(
-          "أمسح الباركود",
+          "scanQR".tr(context: context),
           style: AppStyles.style20W800,
         ),
         actions: [

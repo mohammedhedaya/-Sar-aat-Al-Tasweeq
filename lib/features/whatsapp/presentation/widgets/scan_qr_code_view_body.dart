@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -31,7 +32,7 @@ class ScanQrCodeViewBody extends StatelessWidget {
             ),
             SizedBox(height: 42.h),
             Text(
-              "قم بمسح الباركود ",
+              "scanQR".tr(context: context),
               style: AppStyles.style20W800,
             ),
             SizedBox(height: 48.h),
@@ -53,7 +54,7 @@ class ScanQrCodeViewBody extends StatelessWidget {
             ),
             SizedBox(height: 19.h),
             Text(
-              "قم بمسح الباركود ",
+              "scanQR".tr(context: context),
               style: AppStyles.style20W800,
             ),
             SizedBox(height: 19.h),
@@ -63,4 +64,3 @@ class ScanQrCodeViewBody extends StatelessWidget {
     );
   }
 }
-

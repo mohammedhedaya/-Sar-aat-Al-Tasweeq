@@ -1,8 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
-
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 
@@ -27,7 +27,7 @@ class _QRViewInContainerState extends State<QRViewInContainer> {
         automaticallyImplyLeading: false,
         elevation: 0,
         title: Text(
-          "أمسح الباركود",
+          "scanQR".tr(context: context),
           style: AppStyles.style20W800,
         ),
         actions: [
@@ -78,9 +78,9 @@ class _QRViewInContainerState extends State<QRViewInContainer> {
                         ),
                         textAlign: TextAlign.center,
                       )
-                    : const Text(
-                        'Scan a code',
-                        style: TextStyle(
+                    : Text(
+                        "scanQR".tr(context: context),
+                        style: const TextStyle(
                           color: AppColors.whiteColor,
                         ),
                         textAlign: TextAlign.center,
