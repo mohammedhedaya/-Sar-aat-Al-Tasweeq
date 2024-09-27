@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -21,7 +22,7 @@ class AddGroupViewBody extends StatelessWidget {
             onTap: () {
               context.push('/addWhatsappGroupView');
             },
-            title: "إضافة مجموعات الواتساب",
+            title: "AddWhatsappGroup".tr(context: context),
             icon: Assets.imagesAddWhatsappgroup,
           ),
           Divider(
@@ -33,7 +34,7 @@ class AddGroupViewBody extends StatelessWidget {
             onTap: () {
               context.push('/addTelegramGroupView');
             },
-            title: "إضافة القنوات التليجرام",
+            title: "AddTelegramGroup".tr(context: context),
             icon: Assets.imagesAddtelegramgroup,
           ),
         ],

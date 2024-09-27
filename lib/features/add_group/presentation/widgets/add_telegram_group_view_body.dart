@@ -1,4 +1,5 @@
 import 'package:country_code_picker/country_code_picker.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -33,7 +34,7 @@ class _AddTelegramGroupViewBodyState extends State<AddTelegramGroupViewBody> {
               Assets.imagesApplogo,
             ),
             Text(
-              "اسم القناة",
+              "chanelName".tr(context: context),
               style: AppStyles.style12W400.copyWith(
                 color: AppColors.whiteColor,
               ),
@@ -46,7 +47,7 @@ class _AddTelegramGroupViewBodyState extends State<AddTelegramGroupViewBody> {
             ),
             SizedBox(height: 26.h),
             Text(
-              "رابط القناة",
+              "chanelLink".tr(context: context),
               style: AppStyles.style12W400.copyWith(
                 color: AppColors.whiteColor,
               ),
@@ -74,7 +75,7 @@ class _AddTelegramGroupViewBodyState extends State<AddTelegramGroupViewBody> {
             ),
             SizedBox(height: 26.h),
             Text(
-              "الدولة",
+              "country".tr(context: context),
               style: AppStyles.style12W400.copyWith(
                 color: AppColors.whiteColor,
               ),
@@ -106,7 +107,7 @@ class _AddTelegramGroupViewBodyState extends State<AddTelegramGroupViewBody> {
                 onTap: () {},
                 child: const Icon(
                   Icons.keyboard_arrow_down_rounded,
-                  color: Color.fromARGB(255, 10, 229, 207),
+                  color: Color.fromARGB(255, 8, 195, 176),
                   size: 30,
                 ),
               ),
@@ -119,8 +120,8 @@ class _AddTelegramGroupViewBodyState extends State<AddTelegramGroupViewBody> {
                   context: context,
                   barrierColor: const Color(0xffFFF9F9).withOpacity(0.33),
                   builder: (context) {
-                    return const CustomAddedSuccesDialog(
-                      text: "تم إضافة قناتك في التلجرام",
+                    return CustomAddedSuccesDialog(
+                      text: "doneAddyourtelegramgroup".tr(context: context),
                     );
                   },
                 );
@@ -141,7 +142,7 @@ class _AddTelegramGroupViewBodyState extends State<AddTelegramGroupViewBody> {
                     ),
                   ),
                   child: Text(
-                    "إضافة القناة فى التليجرام",
+                    "Addyourtelegramgroup".tr(context: context),
                     style: AppStyles.style14W400.copyWith(
                       color: AppColors.whiteColor,
                     ),

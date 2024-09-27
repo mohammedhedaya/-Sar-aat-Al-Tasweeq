@@ -1,6 +1,7 @@
 import 'package:country_code_picker/country_code_picker.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart'; // Import this for Clipboard
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import '../../../../core/utils/app_colors.dart';
@@ -31,7 +32,7 @@ class _AddWhatsappGroupViewBodyState extends State<AddWhatsappGroupViewBody> {
               Assets.imagesApplogo,
             ),
             Text(
-              "اسم الجروب",
+              "GroupName".tr(context: context),
               style: AppStyles.style12W400.copyWith(
                 color: AppColors.whiteColor,
               ),
@@ -44,7 +45,7 @@ class _AddWhatsappGroupViewBodyState extends State<AddWhatsappGroupViewBody> {
             ),
             SizedBox(height: 26.h),
             Text(
-              "رابط الجروب",
+              "GroupLink".tr(context: context),
               style: AppStyles.style12W400.copyWith(
                 color: AppColors.whiteColor,
               ),
@@ -72,7 +73,7 @@ class _AddWhatsappGroupViewBodyState extends State<AddWhatsappGroupViewBody> {
             ),
             SizedBox(height: 26.h),
             Text(
-              "الدولة",
+              "country".tr(context: context),
               style: AppStyles.style12W400.copyWith(
                 color: AppColors.whiteColor,
               ),
@@ -104,7 +105,7 @@ class _AddWhatsappGroupViewBodyState extends State<AddWhatsappGroupViewBody> {
                 onTap: () {},
                 child: const Icon(
                   Icons.keyboard_arrow_down_rounded,
-                  color: Color.fromARGB(255, 10, 229, 207),
+                  color: Color.fromARGB(255, 10, 196, 177),
                   size: 30,
                 ),
               ),
@@ -117,8 +118,8 @@ class _AddWhatsappGroupViewBodyState extends State<AddWhatsappGroupViewBody> {
                   context: context,
                   barrierColor: const Color(0xffFFF9F9).withOpacity(0.33),
                   builder: (context) {
-                    return const CustomAddedSuccesDialog(
-                      text: "تم إضافة مجموعتك في الواتساب",
+                    return CustomAddedSuccesDialog(
+                      text: "doneAddyourwhatsappgroup".tr(context: context),
                     );
                   },
                 );
@@ -139,7 +140,7 @@ class _AddWhatsappGroupViewBodyState extends State<AddWhatsappGroupViewBody> {
                     ),
                   ),
                   child: Text(
-                    "إضافة جروبك فى الواتساب",
+                    "Addyourwhatsappgroup".tr(context: context),
                     style: AppStyles.style14W400.copyWith(
                       color: AppColors.whiteColor,
                     ),
