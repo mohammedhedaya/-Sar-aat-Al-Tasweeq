@@ -1,8 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
-
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
@@ -17,6 +17,38 @@ class MyCardsViewBody extends StatefulWidget {
 
 class _MyCardsViewBodyState extends State<MyCardsViewBody> {
   int? selectedCardIndex;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 23.w),
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage(
+            Assets.imagesHomeBackground,
+          ),
+          alignment: Alignment.bottomCenter,
+          opacity: 0.26,
+        ),
+      ),
+      child: selectedCardIndex != null
+          ? _buildExpandedCard(
+              selectedCardIndex!,
+              [
+                const Color(0XFFE6DDFF),
+                const Color(0XFF6F45E9),
+                const Color(0xff270685)
+              ][selectedCardIndex!],
+            )
+          : Stack(
+              children: [
+                _buildCard(0, const Color(0XFFE6DDFF), 0.075),
+                _buildCard(1, const Color(0XFF6F45E9), 0.135),
+                _buildCard(2, const Color(0xff270685), 0.195),
+              ],
+            ),
+    );
+  }
 
   Widget _buildCard(int index, Color color, double topPosition) {
     return Positioned(
@@ -126,7 +158,8 @@ class _MyCardsViewBodyState extends State<MyCardsViewBody> {
         Align(
           alignment: Alignment.centerRight,
           child: Text(
-            "سيتم خصم مبلغ 400 ريال من البطاقة",
+            "an_amount_of_400_riyal_will_be_deducted_from_your_card"
+                .tr(context: context),
             style: AppStyles.style12W600,
           ),
         ),
@@ -202,41 +235,9 @@ class _MyCardsViewBodyState extends State<MyCardsViewBody> {
           onPressed: () {
             context.push("/subscribedView");
           },
-          text: "أدفع",
+          text: "pay".tr(context: context),
         ),
       ],
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.symmetric(horizontal: 23.w),
-      decoration: const BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage(
-            Assets.imagesHomeBackground,
-          ),
-          alignment: Alignment.bottomCenter,
-          opacity: 0.26,
-        ),
-      ),
-      child: selectedCardIndex != null
-          ? _buildExpandedCard(
-              selectedCardIndex!,
-              [
-                const Color(0XFFE6DDFF),
-                const Color(0XFF6F45E9),
-                const Color(0xff270685)
-              ][selectedCardIndex!],
-            )
-          : Stack(
-              children: [
-                _buildCard(0, const Color(0XFFE6DDFF), 0.075),
-                _buildCard(1, const Color(0XFF6F45E9), 0.135),
-                _buildCard(2, const Color(0xff270685), 0.195),
-              ],
-            ),
     );
   }
 }

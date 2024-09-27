@@ -1,8 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
-
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
@@ -15,7 +15,7 @@ class SubscribeToThePackageViewBody extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) {
         return Container(
-          height: constraints.maxHeight, 
+          height: constraints.maxHeight,
           decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage(
@@ -44,13 +44,12 @@ class SubscribeToThePackageViewBody extends StatelessWidget {
                         color: const Color(0xffABABAB),
                       ),
                       child: SingleChildScrollView(
-                        // Scroll content if it overflows
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             SizedBox(height: 30.h),
                             Text(
-                              'فيصل عبدالعزيز',
+                              "faisal_abdelaziz".tr(context: context),
                               style: AppStyles.style20W400,
                             ),
                             SizedBox(height: 5.h),
@@ -66,7 +65,7 @@ class SubscribeToThePackageViewBody extends StatelessWidget {
                                 ),
                                 SizedBox(width: 8.w),
                                 Text(
-                                  'الاشتراك في الباقة',
+                                  "subcribetothepackage".tr(context: context),
                                   style: AppStyles.style14W400.copyWith(
                                     color: const Color(0xff323232),
                                   ),
@@ -96,11 +95,11 @@ class SubscribeToThePackageViewBody extends StatelessWidget {
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
-                                        "مزايا الباقة",
+                                        "packege_features".tr(context: context),
                                         style: AppStyles.style14W600,
                                       ),
                                       Text(
-                                        "30 ريال سعودى",
+                                        "30_saudi_riyal".tr(context: context),
                                         style: AppStyles.style14W600,
                                       ),
                                     ],
@@ -113,55 +112,55 @@ class SubscribeToThePackageViewBody extends StatelessWidget {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          '• 15 مكالمة مجانية',
+                                          "• ${"15_diamond_free".tr(context: context)}",
                                           style: AppStyles.style14W400.copyWith(
                                             color: AppColors.whiteColor,
                                           ),
                                         ),
                                         Text(
-                                          '• شعار واتساب متاح لمدة 4 أسابيع',
+                                          "• ${"whatsapp_logo_free".tr(context: context)}",
                                           style: AppStyles.style14W400.copyWith(
                                             color: AppColors.whiteColor,
                                           ),
                                         ),
                                         Text(
-                                          '• شعار الانستجرام متاح لمدة 4 أسابيع',
+                                          "• ${"telegram_logo_free".tr(context: context)}",
                                           style: AppStyles.style14W400.copyWith(
                                             color: AppColors.whiteColor,
                                           ),
                                         ),
                                         Text(
-                                          '• شعار X متاح لمدة  4 أسابيع',
+                                          "• ${"instagram_logo_free".tr(context: context)}",
                                           style: AppStyles.style14W400.copyWith(
                                             color: AppColors.whiteColor,
                                           ),
                                         ),
                                         Text(
-                                          '• شعار الانستجرام متاح لمدة 4 أسابيع',
+                                          "• ${"x_logo_free".tr(context: context)}",
                                           style: AppStyles.style14W400.copyWith(
                                             color: AppColors.whiteColor,
                                           ),
                                         ),
                                         Text(
-                                          '• شعار فيس بوك متاح لمدة 4 أسابيع',
+                                          "• ${"facebook_logo_free".tr(context: context)}",
                                           style: AppStyles.style14W400.copyWith(
                                             color: AppColors.whiteColor,
                                           ),
                                         ),
                                         Text(
-                                          '• شعار تيك توك متاح لمدة 4 أسابيع',
+                                          "• ${"ticktok_logo_free".tr(context: context)}",
                                           style: AppStyles.style14W400.copyWith(
                                             color: AppColors.whiteColor,
                                           ),
                                         ),
                                         Text(
-                                          '• شعار رسائل نصية متاح لمدة 4 أسابيع',
+                                          "• ${"sms_logo_free".tr(context: context)}",
                                           style: AppStyles.style14W400.copyWith(
                                             color: AppColors.whiteColor,
                                           ),
                                         ),
                                         Text(
-                                          '• شعار الإيميلات متاح لمدة 4 أسابيع',
+                                          "• ${"email_logo_free".tr(context: context)}",
                                           style: AppStyles.style14W400.copyWith(
                                             color: AppColors.whiteColor,
                                           ),
@@ -191,7 +190,7 @@ class SubscribeToThePackageViewBody extends StatelessWidget {
                                           ),
                                         ),
                                         child: Text(
-                                          "أشتراك",
+                                          "subscribe".tr(context: context),
                                           style: AppStyles.style14W400.copyWith(
                                             color: AppColors.whiteColor,
                                           ),
@@ -202,7 +201,6 @@ class SubscribeToThePackageViewBody extends StatelessWidget {
                                 ],
                               ),
                             ),
-                            SizedBox(height: 20.h),
                           ],
                         ),
                       ),

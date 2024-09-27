@@ -45,6 +45,7 @@ class CustomItemIncludeCountry extends StatelessWidget {
                   boxDecoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8.r),
                   ),
+                  alignLeft: true,
                   showCountryOnly: true,
                   showOnlyCountryWhenClosed: true,
                   showFlagDialog: true,
