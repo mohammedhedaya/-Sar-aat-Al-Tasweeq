@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/utils/app_colors.dart';
@@ -32,7 +33,7 @@ class ContactUsViewBody extends StatelessWidget {
                 SizedBox(height: MediaQuery.of(context).size.height * 0.05),
                 ContactUsItem(
                   onTap: () {},
-                  title: "المحادثة عبر الواتساب",
+                  title: "contactUsViaWhatsapp".tr(context: context),
                   icon: Assets.imagesWhatsapp,
                 ),
                 const Divider(
@@ -42,7 +43,7 @@ class ContactUsViewBody extends StatelessWidget {
                 ),
                 ContactUsItem(
                   onTap: () {},
-                  title: "الأتصال عبر الهاتف",
+                  title: "contactUsViaPhone".tr(context: context),
                   icon: Assets.imagesPhone,
                 ),
                 SizedBox(height: 25.h),

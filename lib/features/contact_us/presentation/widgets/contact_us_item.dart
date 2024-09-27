@@ -18,6 +18,7 @@ class ContactUsItem extends StatelessWidget {
     return ListTile(
       onTap: onTap,
       contentPadding: EdgeInsets.zero,
+      visualDensity: VisualDensity.compact,
       title: Text(
         title,
         style: AppStyles.style20W400,

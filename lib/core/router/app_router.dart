@@ -99,7 +99,7 @@ import '../../features/subscribe_package/presentation/views/payment_gateway_view
 import '../../features/subscribe_package/presentation/views/subscribe_to_the_package_view.dart';
 import '../../features/diamond_wallet/presentation/views/my_card_view_diamond_wallet.dart';
 import '../../features/diamond_wallet/presentation/views/purchase_process_view.dart';
-import '../../features/chat/presentation/views/chat_view.dart';
+import '../../features/support_chat/presentation/views/chat_view.dart';
 import '../../features/contact_us/presentation/views/contact_us_view.dart';
 import '../../features/share_with_my_freinds/presentation/views/share_and_earn_view.dart';
 import '../services/service_locator.dart';

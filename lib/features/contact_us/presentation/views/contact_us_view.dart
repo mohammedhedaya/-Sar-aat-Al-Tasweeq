@@ -1,6 +1,6 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-
 import '../../../../core/utils/app_text_style.dart';
 import '../widgets/contact_us_view_body.dart';
 
@@ -16,7 +16,7 @@ class ContactUsView extends StatelessWidget {
         elevation: 0,
         automaticallyImplyLeading: false,
         title: Text(
-          "تواصل معنا",
+          "contact_us".tr(context: context),
           style: AppStyles.style20W900,
         ),
         actions: [

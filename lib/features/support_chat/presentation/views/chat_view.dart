@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -18,7 +19,7 @@ class ChatView extends StatelessWidget {
         surfaceTintColor: Colors.transparent,
         elevation: 0,
         title: Text(
-          'المحادثة الفورية',
+          "online_chat".tr(context: context),
           style: AppStyles.style20W800.copyWith(
             shadows: [
               Shadow(
@@ -46,6 +47,7 @@ class ChatView extends StatelessWidget {
               ),
               child: const Icon(
                 Icons.arrow_forward,
+                color: AppColors.blackColor,
               ),
             ),
           ),
