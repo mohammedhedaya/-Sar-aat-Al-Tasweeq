@@ -33,7 +33,7 @@ class LaunchAdChatsViewBody extends StatelessWidget {
                       padding: EdgeInsets.only(bottom: 35.h),
                       child: ListTile(
                         onTap: () {
-                          context.push("/telegramChatsMessagesViewBody");
+                          context.push("/launchChatsMessagesView");
                         },
                         tileColor: const Color(0xffA1A1A1),
                         shape: RoundedRectangleBorder(

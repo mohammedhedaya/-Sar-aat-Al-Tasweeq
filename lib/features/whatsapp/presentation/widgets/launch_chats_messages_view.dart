@@ -1,5 +1,6 @@
 // import 'package:audio_waveforms/audio_waveforms.dart';
 import 'package:chat_bubbles/bubbles/bubble_special_three.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -193,7 +194,7 @@ class LaunchChatsMessagesViewBody extends StatelessWidget {
                         cursorColor: const Color(0xff3F3F3F),
                         onChanged: (value) {},
                         decoration: InputDecoration(
-                          hintText: 'اكتب رسالتك',
+                          hintText: "writeyourmessage".tr(context: context),
                           hintStyle: const TextStyle(
                             color: Color(0xffBBBBBB),
                           ),
@@ -204,7 +205,9 @@ class LaunchChatsMessagesViewBody extends StatelessWidget {
                           filled: true,
                           fillColor: const Color(0xffFFFEFE),
                           contentPadding: EdgeInsets.symmetric(
-                              horizontal: 20.w, vertical: 10.h),
+                            horizontal: 20.w,
+                            vertical: 10.h,
+                          ),
                           suffixIcon: InkWell(
                             onTap: () {},
                             child: Container(

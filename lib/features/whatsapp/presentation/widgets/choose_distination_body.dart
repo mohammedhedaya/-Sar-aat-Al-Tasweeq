@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../views/whatsapp_choose_detination_pages_view/send_whatsapp/whatsapp_chats_page.dart';
@@ -30,7 +31,6 @@ class _WhatsappChooseTheDestinationViewBodyState
     });
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -39,7 +39,7 @@ class _WhatsappChooseTheDestinationViewBodyState
         children: [
           Center(
             child: Text(
-              "أختر وجهة ( الواتساب )",
+              "ChooseAdestination(WhatsApp)".tr(context: context),
               style: AppStyles.style17W800,
               textAlign: TextAlign.center,
             ),
@@ -74,7 +74,7 @@ class _WhatsappChooseTheDestinationViewBodyState
                     child: Column(
                       children: [
                         Text(
-                          "الكل",
+                          "All".tr(context: context),
                           style: AppStyles.style17W800.copyWith(
                             color: _currentPage == 0
                                 ? const Color(0xff2F2F2F)
@@ -120,7 +120,7 @@ class _WhatsappChooseTheDestinationViewBodyState
                     child: Column(
                       children: [
                         Text(
-                          "الدردشات",
+                          "chats".tr(context: context),
                           style: _currentPage == 1
                               ? AppStyles.style17W800.copyWith(
                                   color: const Color(0xff2F2F2F),
@@ -166,7 +166,7 @@ class _WhatsappChooseTheDestinationViewBodyState
                     child: Column(
                       children: [
                         Text(
-                          "المجموعات",
+                          "groups".tr(context: context),
                           style: _currentPage == 2
                               ? AppStyles.style17W800.copyWith(
                                   color: const Color(0xff2F2F2F),

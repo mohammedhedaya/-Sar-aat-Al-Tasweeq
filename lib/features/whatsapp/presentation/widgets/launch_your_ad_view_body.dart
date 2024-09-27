@@ -1,7 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../views/launch_pages_view/delete_page_view.dart';
@@ -59,7 +59,7 @@ class _LaunchYourWhatsappAdViewBodyState
                   elevation: WidgetStateProperty.all(4),
                 ),
                 child: Text(
-                  "واتساب",
+                  "whatsapp".tr(context: context),
                   style: AppStyles.style10W800,
                 ),
               ),
@@ -79,7 +79,7 @@ class _LaunchYourWhatsappAdViewBodyState
                   elevation: WidgetStateProperty.all(4),
                 ),
                 child: Text(
-                  "دليل الهاتف",
+                  "Contacts".tr(context: context),
                   style: AppStyles.style10W800,
                 ),
               ),
@@ -100,7 +100,7 @@ class _LaunchYourWhatsappAdViewBodyState
                   elevation: WidgetStateProperty.all(4),
                 ),
                 child: Text(
-                  "حذف",
+                  "delete".tr(context: context),
                   style: AppStyles.style10W800
                       .copyWith(color: AppColors.whiteColor),
                 ),
@@ -127,7 +127,7 @@ class _LaunchYourWhatsappAdViewBodyState
                       elevation: WidgetStateProperty.all(4),
                     ),
                     child: Text(
-                      "الدردشات",
+                      "chats".tr(context: context),
                       style: AppStyles.style10W800,
                     ),
                   ),

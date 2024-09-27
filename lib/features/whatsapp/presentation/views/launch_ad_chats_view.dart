@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -16,7 +17,7 @@ class LaunchAdChatsView extends StatelessWidget {
         elevation: 0,
         centerTitle: true,
         title: Text(
-          "دردشات الواتساب",
+          "WhatsAppchats".tr(context: context),
           style: AppStyles.style23W700.copyWith(
             fontSize: 21.sp,
           ),

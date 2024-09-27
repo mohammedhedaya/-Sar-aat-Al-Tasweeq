@@ -1,9 +1,9 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
-
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_text_style.dart';
 import '../../../../../core/utils/assets.dart';
@@ -27,14 +27,14 @@ class _DeletePageViewState extends State<DeletePageView> {
         children: [
           LaunchAdTextField(
             onChanged: (value) {},
-            hintText: 'أكتب رسالتك...',
+            hintText: "writeyourmessage".tr(context: context),
             onSuffixIconTap: () {},
           ),
           SizedBox(height: 72.h),
           CustomAuthTextField(
             controller: groupLinkController,
             fiiledColor: AppColors.whiteColor.withOpacity(0.10),
-            hintText: "أضف الرابط",
+            hintText: "addLink".tr(context: context),
             hintStyle: AppStyles.style12W700.copyWith(
               color: const Color(0xffffffff),
             ),
@@ -57,7 +57,7 @@ class _DeletePageViewState extends State<DeletePageView> {
           SizedBox(height: 19.h),
           CustomAuthTextField(
             fiiledColor: AppColors.whiteColor.withOpacity(0.10),
-            hintText: "أضف الموقع",
+            hintText: "addLocation".tr(context: context),
             hintStyle: AppStyles.style12W700.copyWith(
               color: const Color(0xffffffff),
             ),
@@ -95,7 +95,7 @@ class _DeletePageViewState extends State<DeletePageView> {
                 ),
                 child: Center(
                   child: Text(
-                    "إختار الوجهة",
+                    "chooseDestination".tr(context: context),
                     style: AppStyles.style14W400,
                     textAlign: TextAlign.center,
                   ),
