@@ -49,11 +49,11 @@ class ResetPasswordView extends StatelessWidget {
                       onChanged: (email) {},
                       validator: (email) {
                         if (email == null || email.isEmpty) {
-                          return 'من فضلك قم بادخال بريد الكتروني';
+                          return "emailValidation".tr(context: context);
                         } else if (!RegExp(
                           r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+",
                         ).hasMatch(email)) {
-                          return 'من فضلك قم بادخال بريد الكتروني صحيح';
+                          return "trueEmailValidation".tr(context: context);
                         }
                         return null;
                       },

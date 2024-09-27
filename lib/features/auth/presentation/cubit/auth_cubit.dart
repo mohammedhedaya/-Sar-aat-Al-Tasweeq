@@ -1,8 +1,7 @@
 import 'dart:io';
-
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'auth_state.dart';
 
 class AuthCubit extends Cubit<AuthState> {
@@ -26,38 +25,23 @@ class AuthCubit extends Cubit<AuthState> {
   File? profileImage;
   String? profileImageError;
 
-  String? validatePassword(String? value) {
-    if (value == null || value.isEmpty) {
-      return 'هذا الحقل مطلوب';
-    }
-    // One RegExp to check all conditions
-    const passwordPattern = r'^(?=.*[A-Z])(?=.*[a-z])(?=(?:.*\d){6,}).{6,}$';
-    final regExp = RegExp(passwordPattern);
-
-    if (!regExp.hasMatch(password!)) {
-      return 'كلمة السر يجب أن تحتوي على 6 أحرف على الأقل\nتشمل حرف كبير، حرف صغير، و 6 أرقام';
-    }
-
-    return null;
-  }
-
-  void setProfileImage(File? image) {
+  void setProfileImage(File? image, context) {
     profileImage = image;
-    validateProfileImage();
+    validateProfileImage(context);
     emit(AuthProfileImageUpdated());
   }
 
-  void validateProfileImage() {
+  void validateProfileImage(context) {
     if (profileImage == null) {
-      profileImageError = 'الرجاء اختيار صورة للملف الشخصي';
+      profileImageError = "chooseProfileImage".tr(context: context);
     } else {
       profileImageError = null;
     }
     emit(AuthProfileImageValidated());
   }
 
-  bool validateSignUpProfile() {
-    validateProfileImage();
+  bool validateSignUpProfile(context) {
+    validateProfileImage(context);
     return signUpProfileFormKey.currentState!.validate() &&
         profileImageError == null;
   }

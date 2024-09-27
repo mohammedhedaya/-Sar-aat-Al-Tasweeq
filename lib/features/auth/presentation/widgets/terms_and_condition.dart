@@ -1,5 +1,5 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 
@@ -55,11 +55,11 @@ class _TermsConditionsWidgetState extends State<TermsConditionsWidget> {
           },
           child: RichText(
             text: TextSpan(
-              text: "أوافق على",
+              text: "iagree".tr(context: context),
               style: AppStyles.style13W400,
               children: [
                 TextSpan(
-                  text: " الشروط والاحكام",
+                  text: "termsAndConditions".tr(context: context),
                   style: AppStyles.style13W600,
                 )
               ],
@@ -76,7 +76,7 @@ class _TermsConditionsWidgetState extends State<TermsConditionsWidget> {
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text(
-            "الشروط والاحكام",
+            "termsAndConditions".tr(context: context),
             style: AppStyles.style16W900,
           ),
           content: SingleChildScrollView(
@@ -91,7 +91,7 @@ class _TermsConditionsWidgetState extends State<TermsConditionsWidget> {
                 Navigator.of(context).pop();
               },
               child: Text(
-                "موافق",
+                "agree".tr(context: context),
                 style: AppStyles.style13W600,
               ),
             ),

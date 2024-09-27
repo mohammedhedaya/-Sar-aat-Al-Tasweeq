@@ -15,9 +15,8 @@ class SignUpView extends StatelessWidget {
         elevation: 0,
         surfaceTintColor: Colors.transparent,
         automaticallyImplyLeading: false,
-        title: Align(
-          alignment: Alignment.centerLeft,
-          child: IconButton(
+        actions: [
+          IconButton(
             onPressed: () {
               context.pop();
             },
@@ -26,7 +25,7 @@ class SignUpView extends StatelessWidget {
               color: Colors.black38,
             ),
           ),
-        ),
+        ],
       ),
       body: const SignUpViewBody(),
     );

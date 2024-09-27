@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -62,7 +63,6 @@ class _ResetPasswordOTPViewState extends State<ResetPasswordOTPView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: const Color(0xFF2F2F2F),
       body: Column(
         children: [
           Expanded(
@@ -72,7 +72,7 @@ class _ResetPasswordOTPViewState extends State<ResetPasswordOTPView> {
                 children: [
                   const SizedBox(height: 150),
                   Text(
-                    'يرجى إدخال رمز التحقق',
+                    "otp".tr(context: context),
                     textAlign: TextAlign.center,
                     style: AppStyles.style12W400.copyWith(
                       color: AppColors.whiteColor,
@@ -97,7 +97,9 @@ class _ResetPasswordOTPViewState extends State<ResetPasswordOTPView> {
                         borderRadius: BorderRadius.circular(5.r),
                       ),
                     ),
-                    onCompleted: (pin) {},
+                    onCompleted: (pin) {
+                      context.push('/resetNewPasswordView');
+                    },
                     onChanged: (value) {},
                     onSubmitted: (pin) {},
                     keyboardType: TextInputType.number,
@@ -177,7 +179,7 @@ class _ResetPasswordOTPViewState extends State<ResetPasswordOTPView> {
                   onPressed: () {
                     context.push('/resetNewPasswordView');
                   },
-                  text: "التالي",
+                  text: "next".tr(context: context),
                 ),
               ],
             ),

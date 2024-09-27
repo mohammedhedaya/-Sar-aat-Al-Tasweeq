@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -40,21 +41,21 @@ class SignUpViewBody extends StatelessWidget {
                     top: 30.h,
                     right: 24.h,
                     child: Text(
-                      "إنشاء حساب",
+                      "signup".tr(context: context),
                       style: AppStyles.style40W600.copyWith(
                         color: AppColors.blackColor,
                       ),
                     ),
                   ),
                   Positioned(
-                    top: 250.h,
+                    top: 210.h,
                     left: 41.w,
                     right: 26.w,
                     child: Column(
                       children: [
                         CustomAuthTextField(
                           fiiledColor: AppColors.whiteColor.withOpacity(0.10),
-                          hintText: 'الاسم الأول',
+                          hintText: "first_name".tr(context: context),
                           onChanged: (firstName) {
                             cubit.firstName = firstName;
                           },
@@ -62,7 +63,7 @@ class SignUpViewBody extends StatelessWidget {
                         SizedBox(height: 40.h),
                         CustomAuthTextField(
                           fiiledColor: AppColors.whiteColor.withOpacity(0.10),
-                          hintText: 'الاسم الثانى',
+                          hintText: "second_name".tr(context: context),
                           onChanged: (secondName) {
                             cubit.secondName = secondName;
                           },
@@ -70,7 +71,7 @@ class SignUpViewBody extends StatelessWidget {
                         SizedBox(height: 40.h),
                         CustomAuthTextField(
                           fiiledColor: AppColors.whiteColor.withOpacity(0.10),
-                          hintText: 'الاسم الأخير',
+                          hintText: "last_name".tr(context: context),
                           onChanged: (lastName) {
                             cubit.lastName = lastName;
                           },
@@ -78,15 +79,15 @@ class SignUpViewBody extends StatelessWidget {
                         SizedBox(height: 40.h),
                         CustomAuthTextField(
                           fiiledColor: AppColors.whiteColor.withOpacity(0.10),
-                          hintText: 'الأيميل',
+                          hintText: 'email'.tr(context: context),
                           keyboardType: TextInputType.emailAddress,
                           validator: (email) {
                             if (email == null || email.isEmpty) {
-                              return 'من فضلك قم بادخال بريد الكتروني';
+                              return "emailValidation".tr(context: context);
                             } else if (!RegExp(
                               r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+",
                             ).hasMatch(email)) {
-                              return 'من فضلك قم بادخال بريد الكتروني صحيح';
+                              return "trueEmailValidation".tr(context: context);
                             }
                             return null;
                           },
@@ -97,27 +98,42 @@ class SignUpViewBody extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Positioned(
-                    bottom: 0,
-                    left: -50.w,
-                    child: Container(
-                      height: 170.h,
-                      width: 170.w,
-                      decoration: const BoxDecoration(
-                        color: AppColors.whiteColor,
-                        borderRadius: BorderRadius.only(
-                          topRight: Radius.circular(300),
+                  context.locale == const Locale('en')
+                      ? Positioned(
+                          bottom: 0,
+                          right: -50.w,
+                          child: Container(
+                            height: 170.h,
+                            width: 170.w,
+                            decoration: const BoxDecoration(
+                              color: AppColors.whiteColor,
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(300),
+                              ),
+                            ),
+                          ),
+                        )
+                      : Positioned(
+                          bottom: 0,
+                          left: -50.w,
+                          child: Container(
+                            height: 170.h,
+                            width: 170.w,
+                            decoration: const BoxDecoration(
+                              color: AppColors.whiteColor,
+                              borderRadius: BorderRadius.only(
+                                topRight: Radius.circular(300),
+                              ),
+                            ),
+                          ),
                         ),
-                      ),
-                    ),
-                  ),
                   Positioned(
                     bottom: 65.h,
                     left: 41.w,
                     child: Row(
                       children: [
                         Text(
-                          "تسجيل\nالحساب",
+                          "account_registration".tr(context: context),
                           style: AppStyles.style32W700,
                         ),
                         SizedBox(
@@ -137,11 +153,20 @@ class SignUpViewBody extends StatelessWidget {
                               color: AppColors.loginBtn,
                               shape: BoxShape.circle,
                             ),
-                            child: Center(
-                              child: SvgPicture.asset(
-                                Assets.imagesArrowForwardLoginPage,
-                              ),
-                            ),
+                            child: context.locale == const Locale('en')
+                                ? Center(
+                                    child: Transform.flip(
+                                      flipX: true,
+                                      child: SvgPicture.asset(
+                                        Assets.imagesArrowForwardLoginPage,
+                                      ),
+                                    ),
+                                  )
+                                : Center(
+                                    child: SvgPicture.asset(
+                                      Assets.imagesArrowForwardLoginPage,
+                                    ),
+                                  ),
                           ),
                         ),
                       ],

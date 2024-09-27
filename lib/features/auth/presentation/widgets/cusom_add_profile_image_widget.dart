@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -29,13 +30,15 @@ class _CustomAddProfileImageWidgetState
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: const Text('Choose Image Source'),
+          title: Text(
+            'ChooseImageSource'.tr(context: context),
+          ),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               ListTile(
                 leading: const Icon(Icons.camera_alt),
-                title: const Text('Camera'),
+                title:  Text('Camera'.tr(context: context )),
                 onTap: () async {
                   context.pop();
                   final pickedFile =
@@ -46,12 +49,11 @@ class _CustomAddProfileImageWidgetState
                     });
                     widget.onImageSelected(_imageFile);
                   }
-                  // context.pop();
                 },
               ),
               ListTile(
                 leading: const Icon(Icons.photo_library),
-                title: const Text('Gallery'),
+                title:  Text('Gallery'.tr(context: context )),
                 onTap: () async {
                   context.pop();
 
@@ -63,7 +65,6 @@ class _CustomAddProfileImageWidgetState
                     });
                     widget.onImageSelected(_imageFile);
                   }
-                  // context.pop();
                 },
               ),
             ],

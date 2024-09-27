@@ -1,4 +1,5 @@
 import 'package:country_code_picker/country_code_picker.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -31,18 +32,19 @@ class SignUpProfileView extends StatelessWidget {
                     children: [
                       SizedBox(height: 70.h),
                       CustomAddProfileImageWidget(
-                        onImageSelected: (file) => cubit.setProfileImage(file),
+                        onImageSelected: (file) =>
+                            cubit.setProfileImage(file, context),
                         errorText: cubit.profileImageError,
                       ),
                       SizedBox(height: 29.h),
                       Text(
-                        "صورة الملف الشخصى",
+                        "profile_image".tr(context: context),
                         style: AppStyles.style20W400,
                       ),
                       SizedBox(height: 75.h),
                       CustomAuthTextField(
                         fiiledColor: AppColors.whiteColor.withOpacity(0.10),
-                        hintText: "رقم الهاتف",
+                        hintText: "phone".tr(context: context),
                         keyboardType: TextInputType.phone,
                         suffixIcon: Container(
                           constraints: BoxConstraints(
@@ -51,10 +53,15 @@ class SignUpProfileView extends StatelessWidget {
                           height: 70.h,
                           decoration: BoxDecoration(
                             color: const Color(0xffD9D9D9),
-                            borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(20.r),
-                              bottomLeft: Radius.circular(20.r),
-                            ),
+                            borderRadius: context.locale == const Locale('en')
+                                ? BorderRadius.only(
+                                    topRight: Radius.circular(20.r),
+                                    bottomRight: Radius.circular(20.r),
+                                  )
+                                : BorderRadius.only(
+                                    topLeft: Radius.circular(20.r),
+                                    bottomLeft: Radius.circular(20.r),
+                                  ),
                           ),
                           child: CountryCodePicker(
                             onChanged: (value) {},
@@ -66,7 +73,6 @@ class SignUpProfileView extends StatelessWidget {
                             textOverflow: TextOverflow.ellipsis,
                             boxDecoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(8.r),
-                              // color: const Color(0XFFD9D9D9),
                             ),
                             padding: EdgeInsets.zero,
                             flagDecoration: BoxDecoration(
@@ -78,7 +84,7 @@ class SignUpProfileView extends StatelessWidget {
                       SizedBox(height: 23.h),
                       CustomAuthTextField(
                         fiiledColor: AppColors.whiteColor.withOpacity(0.10),
-                        hintText: "كلمة السر",
+                        hintText: "password".tr(context: context),
                         suffixIcon: IconButton(
                           onPressed: () {
                             cubit.obscurePasswordText();
@@ -91,7 +97,22 @@ class SignUpProfileView extends StatelessWidget {
                           ),
                         ),
                         obscureText: cubit.obscurePasswordTextValue,
-                        validator: cubit.validatePassword,
+                        validator: (password) {
+                          if (password == null || password.isEmpty) {
+                            return "passwordValidation".tr(context: context);
+                          }
+
+                          // One RegExp to check all conditions
+                          const passwordPattern =
+                              r'^(?=.*[A-Z])(?=.*[a-z])(?=(?:.*\d){6,}).{6,}$';
+                          final regExp = RegExp(passwordPattern);
+
+                          if (!regExp.hasMatch(password)) {
+                            return "checkPassword".tr(context: context);
+                          }
+
+                          return null;
+                        },
                         onChanged: (password) {
                           cubit.password = password;
                         },
@@ -99,7 +120,7 @@ class SignUpProfileView extends StatelessWidget {
                       SizedBox(height: 23.h),
                       CustomAuthTextField(
                         fiiledColor: AppColors.whiteColor.withOpacity(0.10),
-                        hintText: "تأكيد كلمة السر",
+                        hintText: "confirm_password".tr(context: context),
                         suffixIcon: IconButton(
                           onPressed: () {
                             cubit.obscurePasswordText();
@@ -114,9 +135,9 @@ class SignUpProfileView extends StatelessWidget {
                         obscureText: cubit.obscurePasswordTextValue,
                         validator: (value) {
                           if (value == null || value.isEmpty) {
-                            return 'هذا الحقل مطلوب';
+                            return "defaultValidation".tr(context: context);
                           } else if (cubit.password != value) {
-                            return 'كلمة السر غير متطابقة';
+                            return "passwordDontMatch".tr(context: context);
                           }
                           return null;
                         },
@@ -169,7 +190,6 @@ class SignUpProfileView extends StatelessWidget {
                                       boxDecoration: BoxDecoration(
                                         borderRadius:
                                             BorderRadius.circular(8.r),
-                                        // color: const Color(0XFFD9D9D9),
                                       ),
                                       padding: EdgeInsets.zero,
                                       showFlag: true,
@@ -186,7 +206,8 @@ class SignUpProfileView extends StatelessWidget {
                               },
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
-                                  return 'هذا الحقل مطلوب';
+                                  return "defaultValidation"
+                                      .tr(context: context);
                                 }
                                 return null;
                               },
@@ -196,7 +217,7 @@ class SignUpProfileView extends StatelessWidget {
                           Expanded(
                             child: CustomAuthTextField(
                               onChanged: (value) {},
-                              hintText: "المدينة",
+                              hintText: "city".tr(context: context),
                               textAlign: TextAlign.center,
                               fiiledColor: Colors.white.withOpacity(0.10),
                             ),
@@ -210,7 +231,7 @@ class SignUpProfileView extends StatelessWidget {
                         width: double.infinity,
                         child: ElevatedButton(
                           onPressed: () {
-                            if (cubit.validateSignUpProfile()) {
+                            if (cubit.validateSignUpProfile(context)) {
                               context.push("/signUpOTPView");
                             }
                           },
@@ -221,7 +242,7 @@ class SignUpProfileView extends StatelessWidget {
                             ),
                           ),
                           child: Text(
-                            "التالى",
+                            "next".tr(context: context),
                             style: AppStyles.style14W600,
                           ),
                         ),

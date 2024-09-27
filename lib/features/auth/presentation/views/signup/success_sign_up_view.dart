@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
@@ -60,7 +61,8 @@ class SuccessSignUpView extends StatelessWidget {
                     ),
                     const SizedBox(height: 35),
                     Text(
-                      "تم تسجيل حسابك بنجاح",
+                      "your_account_has_been_successfully_registered"
+                          .tr(context: context),
                       style: AppStyles.style25W800,
                       textAlign: TextAlign.center,
                     ),
@@ -69,7 +71,7 @@ class SuccessSignUpView extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "أبدأ التسويق",
+                          "start_marketing".tr(context: context),
                           style: AppStyles.style32W700,
                         ),
                         InkWell(
@@ -85,11 +87,20 @@ class SuccessSignUpView extends StatelessWidget {
                               color: AppColors.loginBtn,
                               shape: BoxShape.circle,
                             ),
-                            child: Center(
-                              child: SvgPicture.asset(
-                                Assets.imagesArrowForwardLoginPage,
-                              ),
-                            ),
+                            child: context.locale == const Locale('en')
+                                ? Center(
+                                    child: Transform.flip(
+                                      flipX: true,
+                                      child: SvgPicture.asset(
+                                        Assets.imagesArrowForwardLoginPage,
+                                      ),
+                                    ),
+                                  )
+                                : Center(
+                                    child: SvgPicture.asset(
+                                      Assets.imagesArrowForwardLoginPage,
+                                    ),
+                                  ),
                           ),
                         ),
                       ],

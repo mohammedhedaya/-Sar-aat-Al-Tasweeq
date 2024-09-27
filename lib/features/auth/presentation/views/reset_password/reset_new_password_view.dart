@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -33,7 +34,7 @@ class ResetNewPasswordView extends StatelessWidget {
                       height: 225.h,
                     ),
                     Text(
-                      'كلمة السر الجديدة',
+                      "new_password".tr(context: context),
                       style: AppStyles.style12W400.copyWith(
                         color: AppColors.whiteColor,
                       ),
@@ -60,7 +61,7 @@ class ResetNewPasswordView extends StatelessWidget {
                       },
                       validator: (password) {
                         if (password == null || password.isEmpty) {
-                          return 'من فضلك قم بادخال كلمة السر';
+                          return "passwordValidation".tr(context: context);
                         }
 
                         // One RegExp to check all conditions
@@ -69,7 +70,7 @@ class ResetNewPasswordView extends StatelessWidget {
                         final regExp = RegExp(passwordPattern);
 
                         if (!regExp.hasMatch(password)) {
-                          return 'كلمة السر يجب أن تحتوي على 6 أحرف على الأقل\nتشمل حرف كبير، حرف صغير، و 6 أرقام';
+                          return "checkPassword".tr(context: context);
                         }
 
                         return null;
@@ -77,7 +78,7 @@ class ResetNewPasswordView extends StatelessWidget {
                     ),
                     SizedBox(height: 25.h),
                     Text(
-                      'تأكيد كلمة السر الجديدة',
+                      "confirm_new_password".tr(context: context),
                       style: AppStyles.style12W400.copyWith(
                         color: AppColors.whiteColor,
                       ),
@@ -101,9 +102,9 @@ class ResetNewPasswordView extends StatelessWidget {
                       obscureText: cubit.obscurePasswordTextValue,
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return 'هذا الحقل مطلوب';
+                          return "defaultValidation".tr(context: context);
                         } else if (cubit.password != value) {
-                          return 'كلمة السر غير متطابقة';
+                          return "passwordDontMatch".tr(context: context);
                         }
                         return null;
                       },
@@ -119,7 +120,7 @@ class ResetNewPasswordView extends StatelessWidget {
                           context.go("/");
                         }
                       },
-                      text: "التالي",
+                      text: "next".tr(context: context),
                     ),
                   ],
                 ),
