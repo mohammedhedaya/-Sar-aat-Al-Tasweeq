@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/assets.dart';
@@ -26,11 +27,11 @@ class _DrawerNotificationItemState extends State<DrawerNotificationItem> {
   Widget build(BuildContext context) {
     return DrawerListTileItem(
       onTap: () {
-        widget.onTap?.call();  // Call the onTap callback from the parent
-        widget.onSwitchChanged(!widget.isSwitched);  // Toggle the switch value
+        widget.onTap?.call();
+        widget.onSwitchChanged(!widget.isSwitched);
       },
       isSelected: widget.isSelected,
-      title: "الأشعارات",
+      title: "notifications".tr(context: context),
       icon: Assets.imagesNotifications,
       trailing: Transform.scale(
         scale: 0.6,
@@ -41,7 +42,7 @@ class _DrawerNotificationItemState extends State<DrawerNotificationItem> {
           inactiveThumbColor: AppColors.whiteColor,
           activeTrackColor: const Color(0xffDCC966),
           value: widget.isSwitched,
-          onChanged: widget.onSwitchChanged,  // Handle switch changes
+          onChanged: widget.onSwitchChanged, // Handle switch changes
         ),
       ),
     );

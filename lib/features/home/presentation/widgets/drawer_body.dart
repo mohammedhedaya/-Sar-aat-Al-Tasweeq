@@ -42,7 +42,7 @@ class _DrawerBodyState extends State<DrawerBody> {
           ),
         ),
         DrawerListTileItem(
-          title: "منصات الترويج",
+          title: "promotion_platforms".tr(context: context),
           icon: Assets.imagesSHAREICON,
           isSelected: _selectedIndex == 0,
           onTap: () {
@@ -51,7 +51,7 @@ class _DrawerBodyState extends State<DrawerBody> {
           },
         ),
         DrawerListTileItem(
-          title: "الملف الشخصي",
+          title: "profile".tr(context: context),
           icon: Assets.imagesHomeInDrawer,
           isSelected: _selectedIndex == 1,
           onTap: () {
@@ -60,7 +60,7 @@ class _DrawerBodyState extends State<DrawerBody> {
           },
         ),
         DrawerListTileItem(
-          title: "اشتراك بالباقة",
+          title: "subscription_of_package".tr(context: context),
           icon: Assets.imagesSubscribeOfPackage,
           isSelected: _selectedIndex == 2,
           onTap: () {
@@ -69,7 +69,7 @@ class _DrawerBodyState extends State<DrawerBody> {
           },
         ),
         DrawerListTileItem(
-          title: "المحفظة الماسية",
+          title: "diamond_wallet".tr(context: context),
           icon: Assets.imagesWallet,
           isSelected: _selectedIndex == 3,
           onTap: () {
@@ -78,7 +78,7 @@ class _DrawerBodyState extends State<DrawerBody> {
           },
         ),
         DrawerListTileItem(
-          title: "المحادثة الفورية",
+          title: "online_chat".tr(context: context),
           icon: Assets.imagesChating,
           isSelected: _selectedIndex == 4,
           onTap: () {
@@ -87,7 +87,7 @@ class _DrawerBodyState extends State<DrawerBody> {
           },
         ),
         DrawerListTileItem(
-          title: "تواصل معنا",
+          title: "contact_us".tr(context: context),
           icon: Assets.imagesConectUs,
           isSelected: _selectedIndex == 5,
           onTap: () {
@@ -96,7 +96,7 @@ class _DrawerBodyState extends State<DrawerBody> {
           },
         ),
         DrawerListTileItem(
-          title: "اضافة مجموعات",
+          title: "add_groups".tr(context: context),
           icon: Assets.imagesAddGroups,
           isSelected: _selectedIndex == 6,
           onTap: () {
@@ -105,7 +105,7 @@ class _DrawerBodyState extends State<DrawerBody> {
           },
         ),
         DrawerListTileItem(
-          title: "شارك مع الأصدقاء واربح",
+          title: "share_with_friends".tr(context: context),
           icon: Assets.imagesShareingWithMyFriends,
           isSelected: _selectedIndex == 7,
           onTap: () {
@@ -135,7 +135,7 @@ class _DrawerBodyState extends State<DrawerBody> {
           onSwitchChanged: _onNotificationSwitchChanged,
         ),
         DrawerListTileItem(
-          title: "الثيم",
+          title: "theme".tr(context: context),
           icon: Assets.imagesIconTheme,
           isSelected: _selectedIndex == 10,
           onTap: () {
@@ -155,7 +155,7 @@ class _DrawerBodyState extends State<DrawerBody> {
           ),
         ),
         DrawerListTileItem(
-          title: "الاقتراحات",
+          title: "suggestions".tr(context: context),
           icon: Assets.imagesSuggestions,
           isSelected: _selectedIndex == 11,
           onTap: () {
@@ -164,7 +164,7 @@ class _DrawerBodyState extends State<DrawerBody> {
           },
         ),
         DrawerListTileItem(
-          title: "حسابات سرعة التسويق",
+          title: "fast_makeing_accounts".tr(context: context),
           icon: Assets.imagesMarketingspeedcalculations,
           isSelected: _selectedIndex == 12,
           onTap: () {
@@ -173,13 +173,13 @@ class _DrawerBodyState extends State<DrawerBody> {
           },
         ),
         DrawerListTileItem(
-          title: "سياسة التطبيق",
+          title: "app_policy".tr(context: context),
           icon: Assets.imagesApplicationpolicy,
           isSelected: _selectedIndex == 13,
           onTap: () => _onItemTap(13),
         ),
         DrawerListTileItem(
-          title: "تسجيل الخروج",
+          title: "logout".tr(context: context),
           icon: Assets.imagesLogOutIcon,
           isSelected: _selectedIndex == 14,
           onTap: () {
