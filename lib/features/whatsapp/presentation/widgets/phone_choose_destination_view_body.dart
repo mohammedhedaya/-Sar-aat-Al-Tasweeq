@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -27,7 +28,7 @@ class _PhoneChooseTheDestinationViewBodyState
               children: [
                 Center(
                   child: Text(
-                    "أختر وجهة (دليل الهاتف)",
+                    "ChooseAdestination(Contacts)".tr(context: context),
                     style: AppStyles.style17W800,
                     textAlign: TextAlign.center,
                   ),
@@ -52,7 +53,7 @@ class _PhoneChooseTheDestinationViewBodyState
                     child: Column(
                       children: [
                         Text(
-                          "ارقام الهاتف",
+                          "Contacts".tr(context: context),
                           style: AppStyles.style17W800.copyWith(
                             color: const Color(0xff2F2F2F),
                           ),
@@ -71,7 +72,7 @@ class _PhoneChooseTheDestinationViewBodyState
                 SizedBox(height: 32.h),
                 CheckboxListTile(
                   title: Text(
-                    'تحديد الكل',
+                    "SelectAll".tr(context: context),
                     style: AppStyles.style13W600,
                   ),
                   shape: RoundedRectangleBorder(
@@ -164,7 +165,7 @@ class _PhoneChooseTheDestinationViewBodyState
               ),
               child: Center(
                 child: Text(
-                  "قم بالإرسال",
+                  "send".tr(context: context),
                   style: AppStyles.style14W400,
                   textAlign: TextAlign.center,
                 ),
