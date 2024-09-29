@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -80,7 +81,7 @@ class CustomPickMediaDialog extends StatelessWidget {
                 ),
                 SizedBox(height: 12.h),
                 Text(
-                  "الأستديو",
+                  "Gallery".tr(context: context),
                   style: AppStyles.style17W800.copyWith(
                     fontWeight: FontWeight.w400,
                   ),

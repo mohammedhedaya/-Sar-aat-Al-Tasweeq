@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../views/send_to_followrs_pages_view/instagram_send_to_all_followrs_page.dart';
@@ -38,7 +39,7 @@ class _InstagramChooseDestinationSendToFollowrsViewBodyState
         children: [
           Center(
             child: Text(
-              "أختر الوجهة ( الإنستجرام )",
+              "Choosedestination(Instagram)".tr(context: context),
               style: AppStyles.style17W800,
             ),
           ),
@@ -72,7 +73,7 @@ class _InstagramChooseDestinationSendToFollowrsViewBodyState
                     child: Column(
                       children: [
                         Text(
-                          "الكل",
+                          "All".tr(context: context),
                           style: AppStyles.style17W800.copyWith(
                             color: _currentPage == 0
                                 ? const Color(0xff2F2F2F)
@@ -91,7 +92,7 @@ class _InstagramChooseDestinationSendToFollowrsViewBodyState
                   ),
                 ),
               ),
-              SizedBox(width: 25.w),
+              SizedBox(width: 15.w),
               Expanded(
                 child: InkWell(
                   onTap: () {
@@ -118,7 +119,7 @@ class _InstagramChooseDestinationSendToFollowrsViewBodyState
                     child: Column(
                       children: [
                         Text(
-                          "المتابعين",
+                          "Followers".tr(context: context),
                           style: _currentPage == 1
                               ? AppStyles.style17W800.copyWith(
                                   color: const Color(0xff2F2F2F),
@@ -137,7 +138,7 @@ class _InstagramChooseDestinationSendToFollowrsViewBodyState
                   ),
                 ),
               ),
-              SizedBox(width: 25.w),
+              SizedBox(width: 15.w),
               Expanded(
                 child: InkWell(
                   onTap: () {
@@ -164,7 +165,7 @@ class _InstagramChooseDestinationSendToFollowrsViewBodyState
                     child: Column(
                       children: [
                         Text(
-                          "المتابعون",
+                          "followings".tr(context: context),
                           style: _currentPage == 2
                               ? AppStyles.style17W800.copyWith(
                                   color: const Color(0xff2F2F2F),
