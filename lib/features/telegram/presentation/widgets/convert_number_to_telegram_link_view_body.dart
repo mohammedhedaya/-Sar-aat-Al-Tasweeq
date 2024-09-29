@@ -1,4 +1,5 @@
 import 'package:country_code_picker/country_code_picker.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -32,8 +33,8 @@ class _ConvertNumberToTelegramLinkViewBodyState
       });
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('يرجى إدخال رقم هاتف صحيح!'),
+        SnackBar(
+          content: Text("defaultValidation".tr(context: context)),
         ),
       );
     }
@@ -51,8 +52,8 @@ class _ConvertNumberToTelegramLinkViewBodyState
     if (_telegramLink.isNotEmpty) {
       Clipboard.setData(ClipboardData(text: _telegramLink));
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('تم نسخ رابط التليجرام!'),
+        SnackBar(
+          content: Text("Thelinkhasbeencopied".tr(context: context)),
         ),
       );
     }
@@ -73,7 +74,7 @@ class _ConvertNumberToTelegramLinkViewBodyState
               });
             },
             controller: _phoneController,
-            hintText: "رقم الهاتف",
+            hintText: 'phone'.tr(context: context),
             keyboardType: TextInputType.phone,
             fiiledColor: AppColors.whiteColor.withOpacity(0.10),
             suffixIcon: Container(
@@ -83,10 +84,15 @@ class _ConvertNumberToTelegramLinkViewBodyState
               height: 70.h,
               decoration: BoxDecoration(
                 color: const Color(0xffD9D9D9),
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(20.r),
-                  bottomLeft: Radius.circular(20.r),
-                ),
+                borderRadius: context.locale.languageCode == 'ar'
+                    ? BorderRadius.only(
+                        topLeft: Radius.circular(20.r),
+                        bottomLeft: Radius.circular(20.r),
+                      )
+                    : BorderRadius.only(
+                        topRight: Radius.circular(20.r),
+                        bottomRight: Radius.circular(20.r),
+                      ),
               ),
               child: CountryCodePicker(
                 onChanged: (value) {
@@ -119,9 +125,9 @@ class _ConvertNumberToTelegramLinkViewBodyState
                   borderRadius: BorderRadius.circular(20.r),
                 ),
               ),
-              child: const Text(
-                "إنشاء رابط التليجرام",
-                style: TextStyle(
+              child: Text(
+                "Createatelegramlink".tr(context: context),
+                style: const TextStyle(
                   color: Colors.white,
                 ),
               ),
@@ -131,7 +137,7 @@ class _ConvertNumberToTelegramLinkViewBodyState
             Padding(
               padding: EdgeInsetsDirectional.only(start: 9.w),
               child: Text(
-                "رابط الرقم",
+                "Numberlink".tr(context: context),
                 style: AppStyles.style12W400.copyWith(
                   color: Colors.white,
                 ),
