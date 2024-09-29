@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -40,7 +41,7 @@ class FacebookDeleteGroupsSendingView extends StatelessWidget {
                 child: Column(
                   children: [
                     Text(
-                      "جاري الحذف",
+                      "deleting".tr(context: context),
                       style: AppStyles.style46W900,
                     ),
                     SizedBox(height: 60.h),
@@ -58,14 +59,14 @@ class FacebookDeleteGroupsSendingView extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                "6 دقائق",
+                                "6days".tr(context: context),
                                 style: AppStyles.style14W800.copyWith(
                                   color: AppColors.blackColor,
                                   fontSize: 23.sp,
                                 ),
                               ),
                               Text(
-                                "المتبقى",
+                                "remaining".tr(context: context),
                                 style: AppStyles.style19W900,
                               ),
                             ],
@@ -82,17 +83,18 @@ class FacebookDeleteGroupsSendingView extends StatelessWidget {
                             ),
                             child: Column(
                               children: [
-                                const CustomProgressBarAndText(
-                                  label: "حذف المجموعات :",
+                                CustomProgressBarAndText(
+                                  label: "Delete groups:".tr(context: context),
                                   value: "3000",
                                   progress: 0.4,
                                 ),
                                 SizedBox(height: 11.h),
-                                const CustomProgressBarAndText(
-                                  label: "حذف عدد الكل :",
+                                CustomProgressBarAndText(
+                                  label: "Delete the number of all:"
+                                      .tr(context: context),
                                   value: "4000",
                                   progress: 0.75,
-                                  textcolor: Color(0xffE21D1D),
+                                  textcolor: const Color(0xffE21D1D),
                                 ),
                               ],
                             ),
@@ -115,9 +117,9 @@ class FacebookDeleteGroupsSendingView extends StatelessWidget {
                                 context.pop();
                               },
                               image: Assets.imagesSuccessgreenicon,
-                              textButton: "التالى",
+                              textButton: "next".tr(context: context),
                               content: Text(
-                                "تم الحذف بنجاح",
+                                "Deletedsuccessfully".tr(context: context),
                                 style: AppStyles.style15W900,
                                 textAlign: TextAlign.center,
                               ),
@@ -145,7 +147,7 @@ class FacebookDeleteGroupsSendingView extends StatelessWidget {
                         ),
                         child: Center(
                           child: Text(
-                            "إلغاء",
+                            "cancel".tr(context: context),
                             style: AppStyles.style14W400,
                             textAlign: TextAlign.center,
                           ),

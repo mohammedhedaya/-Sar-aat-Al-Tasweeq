@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -27,7 +28,7 @@ class _FacbookDeleteGroupsChooseDestinationViewBodyState
               children: [
                 Center(
                   child: Text(
-                    "أختر الوجهة (حذف الفيسبوك)",
+                    "Choosedestination(deleteFacebook)".tr(context: context),
                     style: AppStyles.style17W800,
                     textAlign: TextAlign.center,
                   ),
@@ -52,7 +53,7 @@ class _FacbookDeleteGroupsChooseDestinationViewBodyState
                     child: Column(
                       children: [
                         Text(
-                          "عدد المجموعات الفيسبوك",
+                          "NumberofFacebookgroups".tr(context: context),
                           style: AppStyles.style17W800.copyWith(
                             color: const Color(0xff2F2F2F),
                           ),
@@ -71,7 +72,7 @@ class _FacbookDeleteGroupsChooseDestinationViewBodyState
                 SizedBox(height: 25.h),
                 CheckboxListTile(
                   title: Text(
-                    'تحديد الكل',
+                    "SelectAll".tr(context: context),
                     style: AppStyles.style13W600,
                   ),
                   shape: RoundedRectangleBorder(
@@ -164,7 +165,7 @@ class _FacbookDeleteGroupsChooseDestinationViewBodyState
               ),
               child: Center(
                 child: Text(
-                  "قم بالحذف",
+                  "delete".tr(context: context),
                   style: AppStyles.style14W400,
                   textAlign: TextAlign.center,
                 ),
