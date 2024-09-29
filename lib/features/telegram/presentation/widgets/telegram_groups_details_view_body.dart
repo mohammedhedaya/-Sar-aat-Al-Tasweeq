@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -65,7 +66,7 @@ class _TelegramGroupsDetailsViewBodyState
                   ),
                   child: Center(
                     child: Text(
-                      "إعادة الشحن",
+                      "recharge".tr(context: context),
                       style: AppStyles.style14W400,
                       textAlign: TextAlign.center,
                     ),
@@ -142,7 +143,7 @@ class _TelegramGroupsDetailsViewBodyState
                                 builder: (context) {
                                   return AlertDialog(
                                     title: Text(
-                                      "رابط الجروب",
+                                      "GroupLink".tr(context: context),
                                       style: AppStyles.style12W400.copyWith(
                                         color: Colors.white,
                                       ),
@@ -206,7 +207,7 @@ class _TelegramGroupsDetailsViewBodyState
                                             ),
                                             child: Center(
                                               child: Text(
-                                                "التالى",
+                                                "next".tr(context: context),
                                                 style: AppStyles.style14W400,
                                                 textAlign: TextAlign.center,
                                               ),
@@ -247,7 +248,9 @@ class _TelegramGroupsDetailsViewBodyState
                             ),
                             child: Center(
                               child: Text(
-                                isAdded[i] ? "منضم" : "إضافة",
+                                isAdded[i]
+                                    ? "Joined".tr(context: context)
+                                    : "add".tr(context: context),
                                 style: AppStyles.style14W400,
                                 textAlign: TextAlign.center,
                               ),
@@ -276,9 +279,9 @@ class _TelegramGroupsDetailsViewBodyState
                           context.pop();
                         },
                         image: Assets.imagesRechargeWallet,
-                        textButton: "التالى",
+                        textButton: "next".tr(context: context),
                         content: Text(
-                          "إعادة الشحن",
+                          "recharge".tr(context: context),
                           style: AppStyles.style32W700,
                           textAlign: TextAlign.center,
                         ),
@@ -354,7 +357,7 @@ class _TelegramGroupsDetailsViewBodyState
                       SizedBox(width: 5.w),
                       Expanded(
                         child: Text(
-                          'أختار 300 مجموعة بشكل عشوائى',
+                          "Choose300groupsrandomly".tr(context: context),
                           style: AppStyles.style14W400,
                         ),
                       ),
