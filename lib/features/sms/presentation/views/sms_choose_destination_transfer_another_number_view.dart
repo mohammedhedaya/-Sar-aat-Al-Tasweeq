@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -30,7 +31,7 @@ class _SMSChooseDestinationTransferAnotherNumberViewState
           children: [
             Flexible(
               child: Text(
-                'أطلق إعلانك بكل سهولة',
+                "launchaddwithease".tr(context: context),
                 style: AppStyles.style17W800.copyWith(
                   fontWeight: FontWeight.w700,
                 ),
@@ -58,13 +59,13 @@ class _SMSChooseDestinationTransferAnotherNumberViewState
         child: Column(
           children: [
             Text(
-              "عدد الأرقام :(5000) دليل الهاتف",
+              "Numberofnumbers:(5000)contacts".tr(context: context),
               style: AppStyles.style17W800,
             ),
             SizedBox(height: 41.h),
             CheckboxListTile(
               title: Text(
-                'تحديد الكل',
+                "${"SelectAll".tr(context: context)} (5000)",
                 style: AppStyles.style13W600,
               ),
               shape: RoundedRectangleBorder(
@@ -153,7 +154,7 @@ class _SMSChooseDestinationTransferAnotherNumberViewState
                   ),
                   child: Center(
                     child: Text(
-                      "قم بالإرسال",
+                      "send".tr(context: context),
                       style: AppStyles.style14W400,
                       textAlign: TextAlign.center,
                     ),

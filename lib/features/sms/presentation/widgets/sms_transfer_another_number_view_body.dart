@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -22,7 +23,7 @@ class SMSTransferAnotherNumberViewBody extends StatelessWidget {
               child: TextButton(
                 onPressed: () {},
                 style: ButtonStyle(
-                  fixedSize: WidgetStateProperty.all(const Size(165, 24)),
+                  // fixedSize: WidgetStateProperty.all(const Size(165, 24)),
                   backgroundColor: WidgetStateProperty.all(Colors.white),
                   shape: WidgetStateProperty.all(const StadiumBorder()),
                   visualDensity: VisualDensity.compact,
@@ -31,7 +32,7 @@ class SMSTransferAnotherNumberViewBody extends StatelessWidget {
                   elevation: WidgetStateProperty.all(5),
                 ),
                 child: Text(
-                  "تحويل رقم أخر من دليل الهاتف",
+                  "Transferanothernumberfromthephonebook".tr(context: context),
                   style: AppStyles.style10W800,
                   textAlign: TextAlign.center,
                 ),
@@ -40,13 +41,13 @@ class SMSTransferAnotherNumberViewBody extends StatelessWidget {
             SizedBox(height: 54.h),
             LaunchAdTextField(
               onChanged: (value) {},
-              hintText: "أكتب رسالتك...",
+              hintText: "writeyourmessage".tr(context: context),
               onSuffixIconTap: () {},
             ),
             SizedBox(height: 72.h),
             CustomAuthTextField(
               fiiledColor: AppColors.whiteColor.withOpacity(0.10),
-              hintText: "أضف الرابط",
+              hintText: "addLink".tr(context: context),
               hintStyle: AppStyles.style12W700.copyWith(
                 color: const Color(0xffffffff),
               ),
@@ -61,7 +62,7 @@ class SMSTransferAnotherNumberViewBody extends StatelessWidget {
             SizedBox(height: 19.h),
             CustomAuthTextField(
               fiiledColor: AppColors.whiteColor.withOpacity(0.10),
-              hintText: "أضف الموقع",
+              hintText: "addLocation".tr(context: context),
               hintStyle: AppStyles.style12W700.copyWith(
                 color: const Color(0xffffffff),
               ),
@@ -92,7 +93,7 @@ class SMSTransferAnotherNumberViewBody extends StatelessWidget {
                     SizedBox(width: 10.w),
                     Flexible(
                       child: Text(
-                        "إضافة ملف من الأرقام لإرسال اليهم",
+                        "Addafileofnumberstosendtothem".tr(context: context),
                         style: AppStyles.style14W400,
                         textAlign: TextAlign.center,
                       ),
@@ -126,7 +127,7 @@ class SMSTransferAnotherNumberViewBody extends StatelessWidget {
                   ),
                   child: Center(
                     child: Text(
-                      "إختار الوجهة",
+                      "chooseDestination".tr(context: context),
                       style: AppStyles.style14W400,
                       textAlign: TextAlign.center,
                     ),
