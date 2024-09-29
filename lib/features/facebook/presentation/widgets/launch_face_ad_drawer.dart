@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -19,7 +20,6 @@ class CustomLaunchFacebookAdDrawer extends StatelessWidget {
         borderRadius: BorderRadius.circular(0),
       ),
       width: MediaQuery.of(context).size.width * 0.6,
-      // // backgroundColor: AppColors.navBarColor,
       child: Padding(
         padding: const EdgeInsets.all(20),
         child: SingleChildScrollView(
@@ -92,7 +92,7 @@ class CustomLaunchFacebookAdDrawer extends StatelessWidget {
                           ),
                           SizedBox(height: 8.h),
                           Text(
-                            'يوم',
+                            'day'.tr(context: context),
                             style: AppStyles.style14W400,
                           ),
                         ],
@@ -106,7 +106,7 @@ class CustomLaunchFacebookAdDrawer extends StatelessWidget {
                 onTap: () {
                   context.push("/addFacebookGroupsView");
                 },
-                title: "إضافة مجموعات فيسبوك",
+                title: "AddgroupsFacebook".tr(context: context),
                 image: Assets.imagesIconsendtwoarrow,
               ),
               SizedBox(height: 40.h),
@@ -114,7 +114,8 @@ class CustomLaunchFacebookAdDrawer extends StatelessWidget {
                 onTap: () {
                   context.push("/choosePersonToSendFacebookAdView");
                 },
-                title: "أختر شخص من فيسبوك ارسل اعلانك على جميع متابعينه",
+                title: "ChooseapersonfromFacebookandsendyouradtoallhisfollowers"
+                    .tr(context: context),
                 image: Assets.imagesShareDribbbleLight,
               ),
               SizedBox(height: 40.h),
@@ -122,7 +123,8 @@ class CustomLaunchFacebookAdDrawer extends StatelessWidget {
                 onTap: () {
                   context.push("/chooseGroupToSendFacbookAdView");
                 },
-                title: "أختار أحد المجموعات ويتم الإرسال على جميع الحسابات ",
+                title: "Chooseoneofthegroupsanditwillbesenttoallaccounts"
+                    .tr(context: context),
                 image: Assets.imagesChoosegroup,
               ),
               SizedBox(height: 20.h),
