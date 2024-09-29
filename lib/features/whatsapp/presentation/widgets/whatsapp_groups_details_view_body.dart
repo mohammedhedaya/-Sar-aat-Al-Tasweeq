@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -64,7 +65,7 @@ class _GroupsDetailsViewBodyState extends State<GroupsDetailsViewBody> {
                   ),
                   child: Center(
                     child: Text(
-                      "إعادة الشحن",
+                      "recharge".tr(context: context),
                       style: AppStyles.style14W400,
                       textAlign: TextAlign.center,
                     ),
@@ -205,7 +206,7 @@ class _GroupsDetailsViewBodyState extends State<GroupsDetailsViewBody> {
                                             ),
                                             child: Center(
                                               child: Text(
-                                                "التالى",
+                                                "next".tr(context: context),
                                                 style: AppStyles.style14W400,
                                                 textAlign: TextAlign.center,
                                               ),
@@ -246,7 +247,9 @@ class _GroupsDetailsViewBodyState extends State<GroupsDetailsViewBody> {
                             ),
                             child: Center(
                               child: Text(
-                                isAdded[i] ? "منضم" : "إضافة",
+                                isAdded[i]
+                                    ? "Joined".tr(context: context)
+                                    : "add".tr(context: context),
                                 style: AppStyles.style14W400,
                                 textAlign: TextAlign.center,
                               ),
@@ -275,9 +278,9 @@ class _GroupsDetailsViewBodyState extends State<GroupsDetailsViewBody> {
                           context.pop();
                         },
                         image: Assets.imagesRechargeWallet,
-                        textButton: "التالى",
+                        textButton: "next".tr(context: context),
                         content: Text(
-                          "إعادة الشحن",
+                          "recharge".tr(context: context),
                           style: AppStyles.style32W700,
                           textAlign: TextAlign.center,
                         ),
@@ -353,7 +356,7 @@ class _GroupsDetailsViewBodyState extends State<GroupsDetailsViewBody> {
                       SizedBox(width: 5.w),
                       Expanded(
                         child: Text(
-                          'أختار 300 مجموعة بشكل عشوائى',
+                          "Choose300groupsrandomly".tr(context: context),
                           style: AppStyles.style14W400,
                         ),
                       ),
