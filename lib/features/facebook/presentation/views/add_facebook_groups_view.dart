@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../core/utils/app_text_style.dart';
@@ -15,7 +16,7 @@ class AddFacebookGroupsView extends StatelessWidget {
         elevation: 0,
         automaticallyImplyLeading: false,
         title: Text(
-          "إضافة مجموعات الفيسبوك",
+          "AddgroupsFacebook".tr(context: context),
           style: AppStyles.style22W600.copyWith(
             fontWeight: FontWeight.w400,
           ),
