@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -45,7 +46,8 @@ class _FacebookChooseGroupsViewBody1State
                       SizedBox(width: 10.w),
                       Expanded(
                         child: Text(
-                          "أختار أحد المجموعات ويتم الإرسال على جميع الحسابات ",
+                          "chooseoneofthegroupsanditissenttoallnumbers"
+                              .tr(context: context),
                           style: AppStyles.style14W400,
                         ),
                       ),
@@ -73,7 +75,7 @@ class _FacebookChooseGroupsViewBody1State
                       ),
                     ),
                     child: Text(
-                      "إعادة الشحن",
+                      "recharge".tr(context: context),
                       style: AppStyles.style14W400,
                     ),
                   ),
@@ -84,7 +86,7 @@ class _FacebookChooseGroupsViewBody1State
         ),
         SizedBox(height: 40.h),
         Text(
-          "المجموعات",
+          "groups".tr(context: context),
           style: AppStyles.style21W900.copyWith(
             fontWeight: FontWeight.w700,
           ),
@@ -94,7 +96,7 @@ class _FacebookChooseGroupsViewBody1State
           padding: EdgeInsetsDirectional.symmetric(horizontal: 20.w),
           child: CheckboxListTile(
             title: Text(
-              'تحديد الكل',
+              "SelectAll".tr(context: context),
               style: AppStyles.style13W600,
             ),
             shape: RoundedRectangleBorder(
@@ -186,7 +188,7 @@ class _FacebookChooseGroupsViewBody1State
             ),
             child: Center(
               child: Text(
-                "التالى",
+                "next".tr(context: context),
                 style: AppStyles.style14W400,
                 textAlign: TextAlign.center,
               ),
@@ -196,24 +198,24 @@ class _FacebookChooseGroupsViewBody1State
         SizedBox(height: 17.h),
         RichText(
           text: TextSpan(
-            text: "اسم المجموعة  ",
+            text: "GroupName".tr(context: context),
             style: AppStyles.style13W600,
             children: [
               TextSpan(
-                text: 'حراج وشراء',
+                text: ' حراج وشراء ',
                 style: AppStyles.style13W600.copyWith(
                   color: const Color(0xff00C0CC),
                 ),
               ),
               const TextSpan(
-                text: "    ",
+                text: "   ",
               ),
               TextSpan(
-                text: "عدد الحسابات ",
+                text: "Numberofaccounts:".tr(context: context),
                 style: AppStyles.style13W600,
               ),
               TextSpan(
-                text: "(1200)",
+                text: " (1200) ",
                 style: AppStyles.style13W600.copyWith(
                   color: const Color(0xff00C0CC),
                 ),
@@ -223,7 +225,8 @@ class _FacebookChooseGroupsViewBody1State
         ),
         SizedBox(height: 9.h),
         Text(
-          "* عدد المسموح الإرسال علية 400 شخص فقط برجاء شحن المزيد من الماسات",
+          "* The number allowed to be sent is 400 people only. Please charge more diamonds."
+              .tr(context: context),
           style: AppStyles.style13W600.copyWith(
             fontSize: 9.sp,
           ),
