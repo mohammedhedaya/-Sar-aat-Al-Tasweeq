@@ -1,4 +1,5 @@
 import 'package:country_code_picker/country_code_picker.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -26,7 +27,7 @@ class LaunchAdTelegramGroupsViewBody extends StatelessWidget {
             Padding(
               padding: EdgeInsetsDirectional.only(start: 10.w),
               child: Text(
-                "اسم القناة",
+                "chanelName".tr(context: context),
                 style: AppStyles.style12W400.copyWith(
                   color: AppColors.whiteColor,
                 ),
@@ -42,7 +43,7 @@ class LaunchAdTelegramGroupsViewBody extends StatelessWidget {
             Padding(
               padding: EdgeInsetsDirectional.only(start: 10.w),
               child: Text(
-                "رابط القناة",
+                "chanelLink".tr(context: context),
                 style: AppStyles.style12W400.copyWith(
                   color: AppColors.whiteColor,
                 ),
@@ -54,7 +55,7 @@ class LaunchAdTelegramGroupsViewBody extends StatelessWidget {
             Padding(
               padding: EdgeInsetsDirectional.only(start: 10.w),
               child: Text(
-                "الدولة",
+                "country".tr(context: context),
                 style: AppStyles.style12W400.copyWith(
                   color: AppColors.whiteColor,
                 ),
@@ -96,8 +97,8 @@ class LaunchAdTelegramGroupsViewBody extends StatelessWidget {
                   context: context,
                   barrierColor: const Color(0xffFFF9F9).withOpacity(0.33),
                   builder: (context) {
-                    return const CustomAddedSuccesDialog(
-                      text: "تم إضافة القناة في التيليجرام",
+                    return CustomAddedSuccesDialog(
+                      text: "doneAddyourtelegramgroup".tr(context: context),
                     );
                   },
                 );
@@ -118,7 +119,7 @@ class LaunchAdTelegramGroupsViewBody extends StatelessWidget {
                     ),
                   ),
                   child: Text(
-                    "إضافة القناة فى التليجرام",
+                    "Addyourtelegramgroup".tr(context: context),
                     style: AppStyles.style14W400.copyWith(
                       color: AppColors.whiteColor,
                     ),

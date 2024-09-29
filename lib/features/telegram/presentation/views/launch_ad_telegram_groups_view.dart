@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../widgets/launch_telegram_groups_view_body.dart';
@@ -15,7 +16,7 @@ class LaunchAdTelegramGroupsView extends StatelessWidget {
         elevation: 0,
         automaticallyImplyLeading: false,
         title: Text(
-          "إضافة قنوات تيليجرام",
+          "AddTelegramGroup".tr(context: context),
           style: AppStyles.style20W400,
         ),
         actions: [

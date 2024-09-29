@@ -127,7 +127,7 @@ class _LaunchYourTelegramAdViewBodyState
                       elevation: WidgetStateProperty.all(4),
                     ),
                     child: Text(
-                      "Chats".tr(context: context),
+                      "chats".tr(context: context),
                       style: AppStyles.style10W800,
                     ),
                   ),
