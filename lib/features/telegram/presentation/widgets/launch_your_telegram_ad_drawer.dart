@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -89,7 +90,7 @@ class LaunchYourTelegramAdDrawer extends StatelessWidget {
                           ),
                           SizedBox(height: 8.h),
                           Text(
-                            'يوم',
+                            'day'.tr(context: context),
                             style: AppStyles.style14W400,
                           ),
                         ],
@@ -103,7 +104,8 @@ class LaunchYourTelegramAdDrawer extends StatelessWidget {
                 onTap: () {
                   context.push('/convertNumberToTelegramLinkView');
                 },
-                title: "تحويل الرقم الى رابط مباشرة للتليجرام",
+                title: "ConvertthenumberintoadirectlinktoTelegram"
+                    .tr(context: context),
                 image: Assets.imagesWhatsapppast,
               ),
               SizedBox(height: 40.h),
@@ -111,7 +113,7 @@ class LaunchYourTelegramAdDrawer extends StatelessWidget {
                 onTap: () {
                   context.push('/launchAdTelegramGroupsView');
                 },
-                title: "إضافة قناتك (زود المتابعين)",
+                title: "Addyourchannel(increasefollowers)".tr(context: context),
                 image: Assets.imagesAddgroup,
               ),
               SizedBox(height: 40.h),
@@ -119,7 +121,7 @@ class LaunchYourTelegramAdDrawer extends StatelessWidget {
                 onTap: () {
                   context.push('/chooseTelegramGroupToSendView');
                 },
-                title: "أختار أحد القنوات ويتم الإرسال على جميع الأرقام ",
+                title: "Chooseoneofthegroupsandsendtoallnumbers".tr(context: context),
                 image: Assets.imagesChoosegroup,
               ),
               SizedBox(height: 40.h),
@@ -127,7 +129,7 @@ class LaunchYourTelegramAdDrawer extends StatelessWidget {
                 onTap: () {
                   context.push('/telegramGroupsView');
                 },
-                title: "قنوات التليجرام",
+                title: "TelegramChannels".tr(context: context),
                 image: Assets.imagesWhatsappGroupicon,
               ),
             ],
