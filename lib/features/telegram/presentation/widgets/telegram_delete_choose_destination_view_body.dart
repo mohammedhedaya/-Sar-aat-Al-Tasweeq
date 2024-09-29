@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../views/telegram_choose_destination_page/delete_telegram/telegram_delete_all_page.dart';
@@ -38,7 +39,7 @@ class _TelegramDeleteChooseDestinationViewBodyState
         children: [
           Center(
             child: Text(
-              "أختر الوجهة (حذف التليجرام)",
+              "Chooseadestination(deleteTelegram)".tr(context: context),
               style: AppStyles.style17W800,
               textAlign: TextAlign.center,
             ),
@@ -73,7 +74,7 @@ class _TelegramDeleteChooseDestinationViewBodyState
                     child: Column(
                       children: [
                         Text(
-                          "حذف الكل",
+                          "deleteAll".tr(context: context),
                           style: AppStyles.style10W800.copyWith(
                             color: _currentPage == 0
                                 ? const Color(0xff2F2F2F)
@@ -119,7 +120,7 @@ class _TelegramDeleteChooseDestinationViewBodyState
                     child: Column(
                       children: [
                         Text(
-                          "حذف الدردشات",
+                          "deleteChats".tr(context: context),
                           style: _currentPage == 1
                               ? AppStyles.style10W800.copyWith(
                                   color: const Color(0xff2F2F2F),
@@ -165,7 +166,7 @@ class _TelegramDeleteChooseDestinationViewBodyState
                     child: Column(
                       children: [
                         Text(
-                          "حذف المجموعات",
+                          "deleteGroups".tr(context: context),
                           style: _currentPage == 2
                               ? AppStyles.style10W800.copyWith(
                                   color: const Color(0xff2F2F2F),

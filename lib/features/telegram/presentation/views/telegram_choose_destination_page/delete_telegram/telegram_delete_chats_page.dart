@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -7,20 +8,21 @@ class TelegramDeleteChatsPage extends StatefulWidget {
   const TelegramDeleteChatsPage({super.key});
 
   @override
-  State<TelegramDeleteChatsPage> createState() => _TelegramDeleteChatsPageState();
+  State<TelegramDeleteChatsPage> createState() =>
+      _TelegramDeleteChatsPageState();
 }
 
 class _TelegramDeleteChatsPageState extends State<TelegramDeleteChatsPage> {
-    bool selectAll = false;
+  bool selectAll = false;
   List<bool> isSelected = List.generate(15, (index) => false);
   @override
   Widget build(BuildContext context) {
-    return  Column(
+    return Column(
       children: [
         SizedBox(height: 25.h),
         CheckboxListTile(
           title: Text(
-            'تحديد الكل',
+            "SelectAll".tr(context: context),
             style: AppStyles.style13W600,
           ),
           shape: RoundedRectangleBorder(
@@ -109,7 +111,7 @@ class _TelegramDeleteChatsPageState extends State<TelegramDeleteChatsPage> {
               ),
               child: Center(
                 child: Text(
-                  "قم بالحذف",
+                  "delete".tr(context: context),
                   style: AppStyles.style14W400,
                   textAlign: TextAlign.center,
                 ),
