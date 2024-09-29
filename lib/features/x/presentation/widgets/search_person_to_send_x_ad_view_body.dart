@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -18,7 +19,8 @@ class SearchPersonToSendXAdViewBody extends StatelessWidget {
           Align(
             alignment: AlignmentDirectional.topStart,
             child: Text(
-              "أبحث عن شخص ارسل اعلانك على جميع متابعينة",
+              "Searchforsomeonewhosentyouradtoallofhisfollowers"
+                  .tr(context: context),
               style: AppStyles.style13W600.copyWith(
                 fontWeight: FontWeight.w700,
               ),
@@ -34,7 +36,7 @@ class SearchPersonToSendXAdViewBody extends StatelessWidget {
                     cursorColor: Colors.blue,
                     decoration: InputDecoration(
                       isDense: true,
-                      hintText: "بحث عن شخص",
+                      hintText: "Searchforaperson".tr(context: context),
                       hintStyle: AppStyles.style14W800.copyWith(
                         color: Colors.black,
                       ),

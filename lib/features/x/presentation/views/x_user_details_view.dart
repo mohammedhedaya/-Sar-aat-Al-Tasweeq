@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -79,11 +80,11 @@ class _XUserDetailsViewState extends State<XUserDetailsView> {
                         RichText(
                           textAlign: TextAlign.start,
                           text: TextSpan(
-                            text: "اسم الشخص ",
+                            text: "username".tr(context: context),
                             style: AppStyles.style13W600,
                             children: [
                               TextSpan(
-                                text: "CARZIMA23",
+                                text: " CARZIMA23 ",
                                 style: AppStyles.style13W600.copyWith(
                                   color: const Color(0xff00C0CC),
                                 ),
@@ -94,11 +95,12 @@ class _XUserDetailsViewState extends State<XUserDetailsView> {
                         RichText(
                           textAlign: TextAlign.start,
                           text: TextSpan(
-                            text: "عدد المتابعين والمتابعون ",
+                            text: "Numberoffollowersandfollowings"
+                                .tr(context: context),
                             style: AppStyles.style13W600,
                             children: [
                               TextSpan(
-                                text: "(4000)",
+                                text: " (4000) ",
                                 style: AppStyles.style13W600.copyWith(
                                   color: const Color(0xff00C0CC),
                                 ),
@@ -131,7 +133,7 @@ class _XUserDetailsViewState extends State<XUserDetailsView> {
                         ),
                         child: Center(
                           child: Text(
-                            "إعادة الشحن",
+                            "recharge".tr(context: context),
                             style: AppStyles.style14W400,
                             textAlign: TextAlign.center,
                           ),
@@ -145,7 +147,8 @@ class _XUserDetailsViewState extends State<XUserDetailsView> {
               Align(
                 alignment: AlignmentDirectional.topStart,
                 child: Text(
-                  "* عدد المسموح الإرسال علية 400 شخص فقط برجاء شحن المزيد من الماسات",
+                  "* The number allowed to be sent is 400 people only. Please charge more diamonds."
+                      .tr(context: context),
                   style: AppStyles.style13W600.copyWith(
                     fontSize: 9.sp,
                   ),
@@ -186,7 +189,7 @@ class _XUserDetailsViewState extends State<XUserDetailsView> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                "تحديد الكل",
+                                "SelectAll".tr(context: context),
                                 style: AppStyles.style10W800.copyWith(
                                   color: _currentPage == 0
                                       ? Colors.white
@@ -237,7 +240,7 @@ class _XUserDetailsViewState extends State<XUserDetailsView> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              "المتابعين",
+                              "followings".tr(context: context),
                               style: _currentPage == 1
                                   ? AppStyles.style10W800.copyWith(
                                       color: const Color(0xff2F2F2F),
@@ -290,7 +293,7 @@ class _XUserDetailsViewState extends State<XUserDetailsView> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              "المتابعون",
+                              "Followers".tr(context: context),
                               style: _currentPage == 2
                                   ? AppStyles.style10W800.copyWith(
                                       color: const Color(0xff2F2F2F),
