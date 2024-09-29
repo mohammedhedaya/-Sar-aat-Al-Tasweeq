@@ -1,5 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 
@@ -18,7 +20,8 @@ class AddTrendsViewBody extends StatelessWidget {
                 children: [
                   Center(
                     child: Text(
-                      "يتحدث ترندات X بشكل يومى مع سرعة التسويق",
+                      "Xtrendsareupdateddailywiththespeedofmarketing"
+                          .tr(context: context),
                       style: AppStyles.style13W600.copyWith(
                         fontWeight: FontWeight.w800,
                       ),
@@ -34,7 +37,7 @@ class AddTrendsViewBody extends StatelessWidget {
                     cursorColor: Colors.blue,
                     decoration: InputDecoration(
                       isDense: true,
-                      hintText: "ابحث عن ترندات X",
+                      hintText: "Searchforxtrends".tr(context: context),
                       hintStyle: AppStyles.style20W400.copyWith(
                         color: const Color(0xff00C0CC),
                       ),
@@ -87,7 +90,10 @@ class AddTrendsViewBody extends StatelessWidget {
         Padding(
           padding: EdgeInsets.only(bottom: 20.h),
           child: InkWell(
-            onTap: () {},
+            onTap: () {
+              context.pop();
+              context.pop();
+            },
             child: Container(
               height: 40.h,
               width: 200.w,
@@ -105,7 +111,7 @@ class AddTrendsViewBody extends StatelessWidget {
               ),
               child: Center(
                 child: Text(
-                  "التالى",
+                  "next".tr(context: context),
                   style: AppStyles.style14W400,
                   textAlign: TextAlign.center,
                 ),

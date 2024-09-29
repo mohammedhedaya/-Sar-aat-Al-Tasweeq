@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -41,7 +42,7 @@ class _LaunchYourXAdViewBodyState extends State<LaunchYourXAdViewBody> {
             Align(
               alignment: AlignmentDirectional.topStart,
               child: Text(
-                "X",
+                "x".tr(context: context),
                 style: AppStyles.style20W800,
               ),
             ),
@@ -49,7 +50,7 @@ class _LaunchYourXAdViewBodyState extends State<LaunchYourXAdViewBody> {
             Align(
               alignment: AlignmentDirectional.topStart,
               child: Text(
-                "أرفق صوره أو مقطع فيديو",
+                "Attach a photo or video".tr(context: context),
                 style: AppStyles.style16W600.copyWith(
                   color: Colors.white,
                 ),
@@ -85,7 +86,7 @@ class _LaunchYourXAdViewBodyState extends State<LaunchYourXAdViewBody> {
             SizedBox(height: 34.h),
             CustomAuthTextField(
               onChanged: (value) {},
-              hintText: "اكتب تعليقاً.....",
+              hintText: "Writeacomment".tr(context: context),
               fiiledColor: Colors.white.withOpacity(0.10),
               hintStyle: AppStyles.style16W600.copyWith(
                 color: const Color(0xffB0B0B0),
@@ -94,7 +95,7 @@ class _LaunchYourXAdViewBodyState extends State<LaunchYourXAdViewBody> {
             SizedBox(height: 21.h),
             CustomAuthTextField(
               fiiledColor: AppColors.whiteColor.withOpacity(0.10),
-              hintText: "أضف الرابط",
+              hintText: "addLink".tr(context: context),
               hintStyle: AppStyles.style12W700.copyWith(
                 color: const Color(0xffffffff),
               ),
@@ -109,7 +110,7 @@ class _LaunchYourXAdViewBodyState extends State<LaunchYourXAdViewBody> {
             SizedBox(height: 21.h),
             CustomAuthTextField(
               fiiledColor: AppColors.whiteColor.withOpacity(0.10),
-              hintText: "أضف الموقع",
+              hintText: "addLocation".tr(context: context),
               hintStyle: AppStyles.style12W700.copyWith(
                 color: const Color(0xffffffff),
               ),
@@ -169,7 +170,8 @@ class _LaunchYourXAdViewBodyState extends State<LaunchYourXAdViewBody> {
                                             visualDensity:
                                                 VisualDensity.compact,
                                             title: Text(
-                                              "أنشر أعلانك على ${1 + index + 4} ترندات X",
+                                              "Publishyouradon5trends"
+                                                  .tr(context: context),
                                               style: AppStyles.style18W700
                                                   .copyWith(
                                                 color: Colors.black,
@@ -180,10 +182,18 @@ class _LaunchYourXAdViewBodyState extends State<LaunchYourXAdViewBody> {
                                                 color: Color(0xff3C3636),
                                                 shape: BoxShape.circle,
                                               ),
-                                              child: const Icon(
-                                                Icons.keyboard_arrow_left_sharp,
-                                                color: Colors.white,
-                                              ),
+                                              child: context.locale ==
+                                                      const Locale('en')
+                                                  ? const Icon(
+                                                      Icons
+                                                          .keyboard_arrow_right_sharp,
+                                                      color: Colors.white,
+                                                    )
+                                                  : const Icon(
+                                                      Icons
+                                                          .keyboard_arrow_left_sharp,
+                                                      color: Colors.white,
+                                                    ),
                                             ),
                                           ),
                                           const Divider(
@@ -203,7 +213,7 @@ class _LaunchYourXAdViewBodyState extends State<LaunchYourXAdViewBody> {
                     },
                   );
                 },
-                text: "#   إضافة ترند",
+                text: "addtrends".tr(context: context),
               ),
             ),
             SizedBox(height: 21.h),
@@ -230,7 +240,7 @@ class _LaunchYourXAdViewBodyState extends State<LaunchYourXAdViewBody> {
                   ),
                   child: Center(
                     child: Text(
-                      "إرسال",
+                      "send".tr(context: context),
                       style: AppStyles.style14W400,
                       textAlign: TextAlign.center,
                     ),

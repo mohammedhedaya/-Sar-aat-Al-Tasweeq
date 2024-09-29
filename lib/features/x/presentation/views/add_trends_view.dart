@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../core/utils/app_text_style.dart';
@@ -8,16 +9,16 @@ class AddTrendsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final GoRouterState state = GoRouterState.of(context);
-    final extra = state.extra as Map<String, int>?;
-    final Object numbOfTrends = extra?['numbOfTrends'] ?? 'Unknown Number';
+    // final GoRouterState state = GoRouterState.of(context);
+    // final extra = state.extra as Map<String, int>?;
+    // final Object numbOfTrends = extra?['numbOfTrends'] ?? 'Unknown Number';
     return Scaffold(
       appBar: AppBar(
         surfaceTintColor: Colors.transparent,
         elevation: 0,
         automaticallyImplyLeading: false,
         title: Text(
-          "أنشر أعلانك على ${numbOfTrends.toString()} ترندات X",
+          "Publishyouradon5trends".tr(context: context),
           style: AppStyles.style18W700.copyWith(
             shadows: [
               Shadow(
