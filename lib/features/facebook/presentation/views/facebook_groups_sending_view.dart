@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -40,7 +41,7 @@ class FacebookGroupsSendingView extends StatelessWidget {
                 child: Column(
                   children: [
                     Text(
-                      "جاري الإرسال",
+                      "sending".tr(context: context),
                       style: AppStyles.style46W900,
                     ),
                     SizedBox(height: 60.h),
@@ -58,14 +59,14 @@ class FacebookGroupsSendingView extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                "6 دقائق",
+                                "6days".tr(context: context),
                                 style: AppStyles.style14W800.copyWith(
                                   color: AppColors.blackColor,
                                   fontSize: 23.sp,
                                 ),
                               ),
                               Text(
-                                "المتبقى",
+                                "remaining".tr(context: context),
                                 style: AppStyles.style19W900,
                               ),
                             ],
@@ -82,23 +83,25 @@ class FacebookGroupsSendingView extends StatelessWidget {
                             ),
                             child: Column(
                               children: [
-                                const CustomProgressBarAndText(
-                                  label: "عدد المجموعات  :",
+                                CustomProgressBarAndText(
+                                  label: "NumbersOfGroups".tr(context: context),
                                   value: "2500",
                                   progress: 0.8,
                                 ),
                                 SizedBox(height: 23.h),
-                                const CustomProgressBarAndText(
-                                  label: "عدد المجموعات المغلقة :",
+                                CustomProgressBarAndText(
+                                  label: "Numberofclosedgroups:"
+                                      .tr(context: context),
                                   value: "500",
                                   progress: 1.0,
                                 ),
                                 SizedBox(height: 23.h),
-                                const CustomProgressBarAndText(
-                                  label: "العدد المسموح الأرسال:",
+                                CustomProgressBarAndText(
+                                  label: "Allowednumberoftransmissions:"
+                                      .tr(context: context),
                                   value: "2500",
                                   progress: 0.8,
-                                  textcolor: Color(0xffE21D1D),
+                                  textcolor: const Color(0xffE21D1D),
                                 ),
                               ],
                             ),
@@ -121,9 +124,9 @@ class FacebookGroupsSendingView extends StatelessWidget {
                                 context.pop();
                               },
                               image: Assets.imagesSuccessgreenicon,
-                              textButton: "التالى",
+                              textButton: "next".tr(context: context),
                               content: Text(
-                                "تم الإرسال بنجاح ",
+                                "SentSuccessfully".tr(context: context),
                                 style: AppStyles.style15W900,
                                 textAlign: TextAlign.center,
                               ),
@@ -151,7 +154,7 @@ class FacebookGroupsSendingView extends StatelessWidget {
                         ),
                         child: Center(
                           child: Text(
-                            "إلغاء",
+                            "cancel".tr(context: context),
                             style: AppStyles.style14W400,
                             textAlign: TextAlign.center,
                           ),
