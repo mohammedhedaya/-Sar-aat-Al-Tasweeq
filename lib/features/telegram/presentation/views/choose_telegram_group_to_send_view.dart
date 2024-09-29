@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -19,7 +20,7 @@ class ChooseTelegramGroupToSendView extends StatelessWidget {
         title: Row(
           children: [
             Text(
-              "إبداء فى تسويق مشروعك !",
+              "Startmarketingyourproject!".tr(context: context),
               style: AppStyles.style16W400.copyWith(
                 fontWeight: FontWeight.w700,
               ),

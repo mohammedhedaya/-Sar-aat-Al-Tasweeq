@@ -1,4 +1,6 @@
 {
+    "ChannelName": "اسم القناة",
+    "channels": "القنوات",
     "Createatelegramlink": "إنشاء رابط التليجرام",
     "Chooseadestination(deleteTelegram)": "اختر الوجهة (حذف تيليجرام)",
     "Chooseadestination(Telegram)": "أختر الوجهة (تيليجرام)",

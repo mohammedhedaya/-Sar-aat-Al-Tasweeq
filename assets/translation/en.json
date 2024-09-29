@@ -1,4 +1,6 @@
 {
+    "ChannelName": "Channel Name",
+    "channels": "Channels",
     "Createatelegramlink": "Create a Telegram link",
     "Chooseadestination(deleteTelegram)": "Choose a destination (Delete Telegram)",
     "Chooseadestination(Telegram)": "Choose a destination (Telegram)",
