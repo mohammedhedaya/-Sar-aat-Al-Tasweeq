@@ -1,6 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 import '../../../../core/utils/assets.dart';
 import '../../../../core/utils/app_text_style.dart';
 
@@ -29,7 +31,8 @@ class _AddHashtagsViewBodyState extends State<AddHashtagsViewBody> {
                 Align(
                   alignment: AlignmentDirectional.topStart,
                   child: Text(
-                    "يجب عليك كتابة الهاشتاج فى محرك البحث  ( # )",
+                    "You must type the hashtag in the search engine (#)"
+                        .tr(context: context),
                     style: AppStyles.style13W600.copyWith(
                       fontWeight: FontWeight.w800,
                     ),
@@ -42,7 +45,7 @@ class _AddHashtagsViewBodyState extends State<AddHashtagsViewBody> {
                   style: const TextStyle(color: Colors.black),
                   decoration: InputDecoration(
                     isDense: true,
-                    hintText: "بحث عن الهاشتاج",
+                    hintText: "Searchforhashtags".tr(context: context),
                     hintStyle: AppStyles.style14W800.copyWith(
                       color: Colors.black,
                     ),
@@ -74,7 +77,7 @@ class _AddHashtagsViewBodyState extends State<AddHashtagsViewBody> {
           padding: EdgeInsetsDirectional.symmetric(horizontal: 15.w),
           child: CheckboxListTile(
             title: Text(
-              'تحديد الكل',
+              "SelectAll".tr(context: context),
               style: AppStyles.style13W600,
             ),
             shape: RoundedRectangleBorder(
@@ -153,7 +156,9 @@ class _AddHashtagsViewBodyState extends State<AddHashtagsViewBody> {
         Padding(
           padding: EdgeInsets.only(bottom: 15.h),
           child: InkWell(
-            onTap: () {},
+            onTap: () {
+              context.pop();
+            },
             child: Container(
               height: 40.h,
               width: 200.w,
@@ -171,7 +176,7 @@ class _AddHashtagsViewBodyState extends State<AddHashtagsViewBody> {
               ),
               child: Center(
                 child: Text(
-                  "التالى",
+                  "next".tr(context: context),
                   style: AppStyles.style14W400,
                   textAlign: TextAlign.center,
                 ),
