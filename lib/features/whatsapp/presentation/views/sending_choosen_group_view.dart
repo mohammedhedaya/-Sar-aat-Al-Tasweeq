@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -41,7 +42,7 @@ class SendingChoosenGroupView extends StatelessWidget {
                 child: Column(
                   children: [
                     Text(
-                      "جاري الإرسال",
+                      "sending".tr(context: context),
                       style: AppStyles.style46W900,
                     ),
                     SizedBox(height: 38.h),
@@ -49,7 +50,7 @@ class SendingChoosenGroupView extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "اسم المجموعة :",
+                          "GroupName".tr(context: context),
                           style: AppStyles.style19W900,
                         ),
                         Text(
@@ -80,14 +81,14 @@ class SendingChoosenGroupView extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                "6 دقائق",
+                                "6days".tr(context: context),
                                 style: AppStyles.style14W800.copyWith(
                                   color: AppColors.blackColor,
                                   fontSize: 23.sp,
                                 ),
                               ),
                               Text(
-                                "المتبقى",
+                                "remaining".tr(context: context),
                                 style: AppStyles.style19W900,
                               ),
                             ],
@@ -104,23 +105,26 @@ class SendingChoosenGroupView extends StatelessWidget {
                             ),
                             child: Column(
                               children: [
-                                const CustomProgressBarAndText(
-                                  label: "عدد الأرقام :",
+                                CustomProgressBarAndText(
+                                  label:
+                                      "NumbersOfContacts".tr(context: context),
                                   value: "1200",
                                   progress: 1.0,
                                 ),
                                 SizedBox(height: 11.h),
-                                const CustomProgressBarAndText(
-                                  label: "عدد المسموح الأرسال :",
+                                CustomProgressBarAndText(
+                                  label: "Allowednumberoftransmissions:"
+                                      .tr(context: context),
                                   value: "1000",
                                   progress: 1.0,
                                 ),
                                 SizedBox(height: 11.h),
-                                const CustomProgressBarAndText(
-                                  label: "جارى الإرسال على الأرقام :",
+                                CustomProgressBarAndText(
+                                  label: "Sendingtothenumbers:"
+                                      .tr(context: context),
                                   value: "300",
                                   progress: 0.7,
-                                  textcolor: Color(0xffE21D1D),
+                                  textcolor: const Color(0xffE21D1D),
                                 ),
                               ],
                             ),
@@ -141,9 +145,9 @@ class SendingChoosenGroupView extends StatelessWidget {
                                 context.pop();
                               },
                               image: Assets.imagesSuccessgreenicon,
-                              textButton: "التالى",
+                              textButton: "next".tr(context: context),
                               content: Text(
-                                "تم الإرسال بنجاح ",
+                                "SentSuccessfully".tr(context: context),
                                 style: AppStyles.style15W900,
                                 textAlign: TextAlign.center,
                               ),
@@ -171,7 +175,7 @@ class SendingChoosenGroupView extends StatelessWidget {
                         ),
                         child: Center(
                           child: Text(
-                            "إلغاء",
+                            "cancel".tr(context: context),
                             style: AppStyles.style14W400,
                             textAlign: TextAlign.center,
                           ),

@@ -1,8 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
-
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
 import 'custom_show_dialog.dart';
@@ -58,7 +58,8 @@ class _LaunchAdChooseGroupToSendViewBody2State
           Align(
             alignment: Alignment.topRight,
             child: Text(
-              "* عدد المسموح الإرسال علية 400 شخص فقط برجاء شحن المزيد من الماسات",
+              "* The number allowed to be sent is 400 people only. Please charge more diamonds."
+                  .tr(context: context),
               style: AppStyles.style13W600.copyWith(
                 fontSize: 9.sp,
               ),
@@ -71,11 +72,11 @@ class _LaunchAdChooseGroupToSendViewBody2State
             children: [
               RichText(
                 text: TextSpan(
-                  text: "اسم المجموعة:  ",
+                  text: "GroupName".tr(context: context),
                   style: AppStyles.style13W600,
                   children: [
                     TextSpan(
-                      text: '(حراج)',
+                      text: ' (حراج) ',
                       style: AppStyles.style13W600.copyWith(
                         color: const Color(0xffE21D1D),
                         fontWeight: FontWeight.w700,
@@ -104,7 +105,7 @@ class _LaunchAdChooseGroupToSendViewBody2State
                   ),
                   child: Center(
                     child: Text(
-                      "إعادة الشحن",
+                      "recharge".tr(context: context),
                       style: AppStyles.style14W400,
                       textAlign: TextAlign.center,
                     ),
@@ -116,7 +117,7 @@ class _LaunchAdChooseGroupToSendViewBody2State
           SizedBox(height: 25.h),
           CheckboxListTile(
             title: Text(
-              'تحديد الكل',
+              "SelectAll".tr(context: context),
               style: AppStyles.style13W600,
             ),
             shape: RoundedRectangleBorder(
@@ -194,9 +195,9 @@ class _LaunchAdChooseGroupToSendViewBody2State
                       context.push('/sendingChoosenGroupView');
                     },
                     image: Assets.imagesRechargeWallet,
-                    textButton: "التالى",
+                    textButton: "next".tr(context: context),
                     content: Text(
-                      "إعادة الشحن",
+                      "recharge".tr(context: context),
                       style: AppStyles.style32W700,
                       textAlign: TextAlign.center,
                     ),
@@ -221,7 +222,7 @@ class _LaunchAdChooseGroupToSendViewBody2State
               ),
               child: Center(
                 child: Text(
-                  "إرسال",
+                  "send".tr(context: context),
                   style: AppStyles.style14W400,
                   textAlign: TextAlign.center,
                 ),
