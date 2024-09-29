@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -89,7 +90,7 @@ class LaunchYourAdInstagramDrawer extends StatelessWidget {
                           ),
                           SizedBox(height: 8.h),
                           Text(
-                            'يوم',
+                            'day'.tr(context: context),
                             style: AppStyles.style14W400,
                           ),
                         ],
@@ -103,7 +104,7 @@ class LaunchYourAdInstagramDrawer extends StatelessWidget {
                 onTap: () {
                   context.push("/sendYourAdToFollowersView");
                 },
-                title: "أرسل إعلانك على المتابعين والمتابعون.",
+                title: "SendyouradonFollowersandfollowers".tr(context: context),
                 image: Assets.imagesIconsendtwoarrow,
               ),
               SizedBox(height: 40.h),
@@ -111,7 +112,9 @@ class LaunchYourAdInstagramDrawer extends StatelessWidget {
                 onTap: () {
                   context.push("/choosePersonAndSendAdView");
                 },
-                title: "أختر شخص من الإنستجرام ارسل اعلانك على جميع متابعينه",
+                title:
+                    "ChooseapersonfromInstagramandsendyouradtoallhisfollowers"
+                        .tr(context: context),
                 image: Assets.imagesShareDribbbleLight,
               ),
               SizedBox(height: 40.h),
