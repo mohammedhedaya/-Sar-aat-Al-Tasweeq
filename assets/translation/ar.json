@@ -1,4 +1,12 @@
 {
+    "Numberlink": "رابط الرقم",
+    "Thelinkhasbeencopied": "تم نسخ الرابط",
+    "CreateWhatsApplink": "إنشاء رابط الواتساب",
+    "WhatsAppgroups": "جروبات الواتساب",
+    "chooseoneofthegroupsanditissenttoallnumbers": "أختار أحد المجموعات ويتم الإرسال على جميع الأرقام",
+    "Addyourgroup(providefollowers)": "إضافة جروبك (زود المتابعين)",
+    "ConvertthenumbertothedirectlinktoWhatsApp": "تحويل الرقم إلى رابط مباشر للواتس اب",
+    "day":"يوم",
     "Deletedsuccessfully": "تم الحذف بنجاح",
     "Delete the number of all:": "حذف عدد الكل :",
     "Delete groups:": "حذف المجموعات :",

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -6,8 +7,8 @@ import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
 import 'custom_launch_drawer_item.dart';
 
-class LaunchYourAdDrawer extends StatelessWidget {
-  const LaunchYourAdDrawer({super.key});
+class LaunchYourAdWhatsappDrawer extends StatelessWidget {
+  const LaunchYourAdWhatsappDrawer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -89,7 +90,7 @@ class LaunchYourAdDrawer extends StatelessWidget {
                           ),
                           SizedBox(height: 8.h),
                           Text(
-                            'يوم',
+                            'day'.tr(context: context),
                             style: AppStyles.style14W400,
                           ),
                         ],
@@ -103,7 +104,8 @@ class LaunchYourAdDrawer extends StatelessWidget {
                 onTap: () {
                   context.push('/convertNumberToWhatsappLinkView');
                 },
-                title: "تحويل الرقم الى رابط مباشرة للواتساب",
+                title: "ConvertthenumbertothedirectlinktoWhatsApp"
+                    .tr(context: context),
                 image: Assets.imagesWhatsapppast,
               ),
               SizedBox(height: 40.h),
@@ -111,7 +113,7 @@ class LaunchYourAdDrawer extends StatelessWidget {
                 onTap: () {
                   context.push('/launchAdAddWhatsappGroupsView');
                 },
-                title: "إضافة جروبك (زود المتابعين)",
+                title: "Addyourgroup(providefollowers)".tr(context: context),
                 image: Assets.imagesAddgroup,
               ),
               SizedBox(height: 40.h),
@@ -119,7 +121,8 @@ class LaunchYourAdDrawer extends StatelessWidget {
                 onTap: () {
                   context.push('/launchAdChooseGroupView');
                 },
-                title: "أختار أحد المجموعات ويتم الإرسال على جميع الأرقام ",
+                title: "chooseoneofthegroupsanditissenttoallnumbers"
+                    .tr(context: context),
                 image: Assets.imagesChoosegroup,
               ),
               SizedBox(height: 40.h),
@@ -127,7 +130,7 @@ class LaunchYourAdDrawer extends StatelessWidget {
                 onTap: () {
                   context.push('/whatsappGroupsView');
                 },
-                title: "جروبات الواتساب",
+                title: "WhatsAppgroups".tr(context: context),
                 image: Assets.imagesWhatsappGroupicon,
               ),
               SizedBox(height: 20.h),

@@ -1,4 +1,5 @@
 import 'package:country_code_picker/country_code_picker.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -44,8 +45,8 @@ class _ConvertNumberToWhatsappLinkViewBodyState
   void _copyToClipboard() {
     Clipboard.setData(ClipboardData(text: _whatsAppLink));
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        content: Text('تم نسخ رابط الواتس اب !'),
+      SnackBar(
+        content: Text("Thelinkhasbeencopied".tr(context: context)),
       ),
     );
   }
@@ -66,7 +67,7 @@ class _ConvertNumberToWhatsappLinkViewBodyState
                 _isButtonVisible = value.isNotEmpty;
               });
             },
-            hintText: "رقم الهاتف",
+            hintText: "phone".tr(context: context),
             keyboardType: TextInputType.phone,
             fiiledColor: AppColors.whiteColor.withOpacity(0.10),
             suffixIcon: Container(
@@ -76,10 +77,15 @@ class _ConvertNumberToWhatsappLinkViewBodyState
               height: 70.h,
               decoration: BoxDecoration(
                 color: const Color(0xffD9D9D9),
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(20.r),
-                  bottomLeft: Radius.circular(20.r),
-                ),
+                borderRadius: context.locale.languageCode == 'ar'
+                    ? BorderRadius.only(
+                        topLeft: Radius.circular(20.r),
+                        bottomLeft: Radius.circular(20.r),
+                      )
+                    : BorderRadius.only(
+                        topRight: Radius.circular(20.r),
+                        bottomRight: Radius.circular(20.r),
+                      ),
               ),
               child: CountryCodePicker(
                 onChanged: (value) {
@@ -113,9 +119,9 @@ class _ConvertNumberToWhatsappLinkViewBodyState
                   borderRadius: BorderRadius.circular(20.r),
                 ),
               ),
-              child: const Text(
-                "إنشاء رابط الواتس اب",
-                style: TextStyle(
+              child: Text(
+                "CreateWhatsApplink".tr(context: context),
+                style: const TextStyle(
                   color: Colors.white,
                 ),
               ),
@@ -126,7 +132,7 @@ class _ConvertNumberToWhatsappLinkViewBodyState
             Padding(
               padding: EdgeInsetsDirectional.only(start: 9.w),
               child: Text(
-                "رابط الرقم",
+                "Numberlink".tr(context: context),
                 style: AppStyles.style12W400.copyWith(
                   color: Colors.white,
                 ),

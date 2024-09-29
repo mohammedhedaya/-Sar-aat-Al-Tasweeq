@@ -1,4 +1,12 @@
 {
+    "Numberlink": "Number link",
+    "Thelinkhasbeencopied": "The link has been copied",
+    "CreateWhatsApplink": "Create WhatsApp link",
+    "WhatsAppgroups": "WhatsApp groups",
+    "chooseoneofthegroupsanditissenttoallnumbers": "Choose one of the groups and it is sent to all numbers",
+    "Addyourgroup(providefollowers)": "Add your group (provide followers)",
+    "ConvertthenumbertothedirectlinktoWhatsApp": "Convert the number to the direct link to WhatsApp",
+    "day": "Day",
     "Deletedsuccessfully": "Deleted successfully",
     "Delete the number of all:": "Delete the number of all :",
     "Delete groups:": "Delete groups :",

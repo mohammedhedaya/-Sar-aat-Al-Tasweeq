@@ -22,7 +22,7 @@ class _LaunchYourWhatsappAdViewState extends State<LaunchYourWhatsappAdView> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      drawer: const LaunchYourAdDrawer(),
+      drawer: const LaunchYourAdWhatsappDrawer(),
       floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
       floatingActionButton: Container(
         decoration: BoxDecoration(
