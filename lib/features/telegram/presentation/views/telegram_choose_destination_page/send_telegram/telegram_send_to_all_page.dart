@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -20,7 +21,7 @@ class _TelegramSendToAllPageState extends State<TelegramSendToAllPage> {
         SizedBox(height: 25.h),
         CheckboxListTile(
           title: Text(
-            'تحديد الكل',
+            "SelectAll".tr(context: context),
             style: AppStyles.style13W600,
           ),
           shape: RoundedRectangleBorder(
@@ -107,7 +108,7 @@ class _TelegramSendToAllPageState extends State<TelegramSendToAllPage> {
             ),
             child: Center(
               child: Text(
-                "قم بالإرسال",
+                "send".tr(context: context),
                 style: AppStyles.style14W400,
                 textAlign: TextAlign.center,
               ),

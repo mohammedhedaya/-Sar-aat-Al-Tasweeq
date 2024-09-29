@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../views/telegram_choose_destination_page/send_telegram/telegram_send_to_all_page.dart';
@@ -38,7 +39,7 @@ class _TelegramChooseTheDestinationViewBodyState
         children: [
           Center(
             child: Text(
-              "أختر وجهة ( تيليجرام )",
+              "Chooseadestination(Telegram)".tr(context: context),
               style: AppStyles.style17W800,
               textAlign: TextAlign.center,
             ),
@@ -73,7 +74,7 @@ class _TelegramChooseTheDestinationViewBodyState
                     child: Column(
                       children: [
                         Text(
-                          "الكل",
+                          "All".tr(context: context),
                           style: AppStyles.style17W800.copyWith(
                             color: _currentPage == 0
                                 ? const Color(0xff2F2F2F)
@@ -119,7 +120,7 @@ class _TelegramChooseTheDestinationViewBodyState
                     child: Column(
                       children: [
                         Text(
-                          "الدردشات",
+                          "chats".tr(context: context),
                           style: _currentPage == 1
                               ? AppStyles.style17W800.copyWith(
                                   color: const Color(0xff2F2F2F),
@@ -165,7 +166,7 @@ class _TelegramChooseTheDestinationViewBodyState
                     child: Column(
                       children: [
                         Text(
-                          "المجموعات",
+                          "groups".tr(context: context),
                           style: _currentPage == 2
                               ? AppStyles.style17W800.copyWith(
                                   color: const Color(0xff2F2F2F),
