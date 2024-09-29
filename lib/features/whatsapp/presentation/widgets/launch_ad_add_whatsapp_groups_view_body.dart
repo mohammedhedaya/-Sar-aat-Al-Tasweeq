@@ -1,9 +1,9 @@
 import 'package:country_code_picker/country_code_picker.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
@@ -25,7 +25,7 @@ class LaunchAdAddWhatsappGroupsViewBody extends StatelessWidget {
               Assets.imagesApplogo,
             ),
             Text(
-              "اسم الجروب",
+              "GroupName".tr(context: context),
               style: AppStyles.style12W400.copyWith(
                 color: AppColors.whiteColor,
               ),
@@ -38,7 +38,7 @@ class LaunchAdAddWhatsappGroupsViewBody extends StatelessWidget {
             ),
             SizedBox(height: 26.h),
             Text(
-              "رابط الجروب",
+              "GroupLink".tr(context: context),
               style: AppStyles.style12W400.copyWith(
                 color: AppColors.whiteColor,
               ),
@@ -47,7 +47,7 @@ class LaunchAdAddWhatsappGroupsViewBody extends StatelessWidget {
             const CustomLinkGroupTextField(),
             SizedBox(height: 26.h),
             Text(
-              "الدولة",
+              "country".tr(context: context),
               style: AppStyles.style12W400.copyWith(
                 color: AppColors.whiteColor,
               ),
@@ -88,8 +88,8 @@ class LaunchAdAddWhatsappGroupsViewBody extends StatelessWidget {
                   context: context,
                   barrierColor: const Color(0xffFFF9F9).withOpacity(0.33),
                   builder: (context) {
-                    return const CustomAddedSuccesDialog(
-                      text: "تم إضافة مجموعتك في الواتساب",
+                    return CustomAddedSuccesDialog(
+                      text: "doneAddyourwhatsappgroup".tr(context: context),
                     );
                   },
                 );
@@ -110,7 +110,7 @@ class LaunchAdAddWhatsappGroupsViewBody extends StatelessWidget {
                     ),
                   ),
                   child: Text(
-                    "إضافة جروبك فى الواتساب",
+                    "Addyourwhatsappgroup".tr(context: context),
                     style: AppStyles.style14W400.copyWith(
                       color: AppColors.whiteColor,
                     ),
