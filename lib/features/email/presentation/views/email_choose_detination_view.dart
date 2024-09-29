@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -29,7 +30,7 @@ class _EmailChooseDetinationViewState extends State<EmailChooseDetinationView> {
           children: [
             Flexible(
               child: Text(
-                'أطلق إعلانك بكل سهولة',
+                "launchaddwithease".tr(context: context),
                 style: AppStyles.style17W800.copyWith(
                   fontWeight: FontWeight.w700,
                 ),
@@ -57,13 +58,13 @@ class _EmailChooseDetinationViewState extends State<EmailChooseDetinationView> {
         child: Column(
           children: [
             Text(
-              "عدد الأيميلات :(5000) ميل",
+              "Numberofemails:(5000)email".tr(context: context),
               style: AppStyles.style17W800,
             ),
             SizedBox(height: 41.h),
             CheckboxListTile(
               title: Text(
-                "تحديد الكل(5000)",
+                "${"SelectAll".tr(context: context)} (5000)",
                 style: AppStyles.style13W600,
               ),
               shape: RoundedRectangleBorder(
@@ -152,7 +153,7 @@ class _EmailChooseDetinationViewState extends State<EmailChooseDetinationView> {
                   ),
                   child: Center(
                     child: Text(
-                      "قم بالإرسال",
+                      "send".tr(context: context),
                       style: AppStyles.style14W400,
                       textAlign: TextAlign.center,
                     ),

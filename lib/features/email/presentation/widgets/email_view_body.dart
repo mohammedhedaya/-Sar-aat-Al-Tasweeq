@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -22,7 +23,7 @@ class EmailViewBody extends StatelessWidget {
             alignment: Alignment.center,
             children: [
               Positioned(
-                top: 40.h,
+                top: 50.h,
                 child: Text(
                   "E-Mail",
                   style: AppStyles.style78W400,
@@ -59,7 +60,7 @@ class EmailViewBody extends StatelessWidget {
                 CustomAuthTextField(
                   onChanged: (value) {},
                   hintStyle: AppStyles.style14W800,
-                  hintText: "الأيميل",
+                  hintText: "email".tr(context: context),
                   keyboardType: TextInputType.emailAddress,
                   textAlign: TextAlign.center,
                   fiiledColor: Colors.white.withOpacity(0.10),
@@ -68,7 +69,7 @@ class EmailViewBody extends StatelessWidget {
                 CustomAuthTextField(
                   onChanged: (value) {},
                   hintStyle: AppStyles.style14W800,
-                  hintText: "كلمة السر",
+                  hintText: "password".tr(context: context),
                   textAlign: TextAlign.center,
                   fiiledColor: Colors.white.withOpacity(0.10),
                 ),
@@ -86,12 +87,13 @@ class EmailViewBody extends StatelessWidget {
                               context.push("/launchYourEmailAdView");
                             },
                             image: Assets.imagesXerror,
-                            textButton: "الأشتراك",
+                            textButton: "subscribe".tr(context: context),
                             content: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  "الرجاء الأشتراك فى الباقة",
+                                  "pleaseSubscribeToThePackage"
+                                      .tr(context: context),
                                   style: AppStyles.style15W900,
                                   textAlign: TextAlign.center,
                                 ),
@@ -105,12 +107,12 @@ class EmailViewBody extends StatelessWidget {
                         },
                       );
                     },
-                    text: "دخول",
+                    text: "log in".tr(context: context),
                   ),
                 ),
                 SizedBox(height: 39.h),
                 Text(
-                  "شاهد طريقة أستخدام الأيميل ؟",
+                  "Seehowtouseemail?".tr(context: context),
                   style: AppStyles.style14W600,
                 ),
                 SizedBox(height: 10.h),
@@ -122,7 +124,7 @@ class EmailViewBody extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Text(
-                      "نسمعك بوضوح",
+                      "hearyouclearly".tr(context: context),
                       style: AppStyles.style14W600,
                     ),
                     SizedBox(width: 5.w),
@@ -133,7 +135,7 @@ class EmailViewBody extends StatelessWidget {
                   ],
                 ),
                 Text(
-                  "نساعدك فى بناء تجربتك مع سرعه التسويق",
+                  "WeHelpYou".tr(context: context),
                   style: AppStyles.style12W600,
                 ),
                 SizedBox(height: 16.h),
@@ -158,7 +160,7 @@ class EmailViewBody extends StatelessWidget {
                       ),
                       child: Center(
                         child: Text(
-                          "الأقتراحات",
+                          "suggestions".tr(context: context),
                           style: AppStyles.style14W700,
                           textAlign: TextAlign.center,
                         ),
