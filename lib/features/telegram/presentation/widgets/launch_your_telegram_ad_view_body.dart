@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -58,7 +59,7 @@ class _LaunchYourTelegramAdViewBodyState
                   elevation: WidgetStateProperty.all(4),
                 ),
                 child: Text(
-                  "التليجرام",
+                  "telegram".tr(context: context),
                   style: AppStyles.style10W800,
                 ),
               ),
@@ -78,7 +79,7 @@ class _LaunchYourTelegramAdViewBodyState
                   elevation: WidgetStateProperty.all(4),
                 ),
                 child: Text(
-                  "دليل الهاتف",
+                  "Contacts".tr(context: context),
                   style: AppStyles.style10W800,
                 ),
               ),
@@ -99,7 +100,7 @@ class _LaunchYourTelegramAdViewBodyState
                   elevation: WidgetStateProperty.all(4),
                 ),
                 child: Text(
-                  "حذف",
+                  "delete".tr(context: context),
                   style: AppStyles.style10W800
                       .copyWith(color: AppColors.whiteColor),
                 ),
@@ -126,7 +127,7 @@ class _LaunchYourTelegramAdViewBodyState
                       elevation: WidgetStateProperty.all(4),
                     ),
                     child: Text(
-                      "الدردشات",
+                      "Chats".tr(context: context),
                       style: AppStyles.style10W800,
                     ),
                   ),

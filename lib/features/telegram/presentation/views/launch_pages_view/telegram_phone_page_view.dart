@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -18,13 +19,13 @@ class TelegramPhoneDirectoryPageView extends StatelessWidget {
         children: [
           LaunchAdTextField(
             onChanged: (value) {},
-            hintText: 'أكتب رسالتك...',
+            hintText: 'writeyourmessage'.tr(context: context),
             onSuffixIconTap: () {},
           ),
           SizedBox(height: 72.h),
           CustomAuthTextField(
             fiiledColor: AppColors.whiteColor.withOpacity(0.10),
-            hintText: "أضف الرابط",
+            hintText: "addLink".tr(context: context),
             hintStyle: AppStyles.style12W700.copyWith(
               color: const Color(0xffffffff),
             ),
@@ -42,7 +43,7 @@ class TelegramPhoneDirectoryPageView extends StatelessWidget {
           SizedBox(height: 19.h),
           CustomAuthTextField(
             fiiledColor: AppColors.whiteColor.withOpacity(0.10),
-            hintText: "أضف الموقع",
+            hintText: "addLocation".tr(context: context),
             hintStyle: AppStyles.style12W700.copyWith(
               color: const Color(0xffffffff),
             ),
@@ -80,7 +81,7 @@ class TelegramPhoneDirectoryPageView extends StatelessWidget {
                 ),
                 child: Center(
                   child: Text(
-                    "إختار الوجهة",
+                    "chooseDestination".tr(context: context),
                     style: AppStyles.style14W400,
                     textAlign: TextAlign.center,
                   ),
