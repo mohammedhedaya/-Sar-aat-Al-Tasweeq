@@ -1,7 +1,9 @@
 {
+    "SeehowtouseSMS?": "شاهد طريقة أستخدام sms ؟",
+    "Transferanothernumberfromthephonebook": "تحويل رقم أخر من دليل الهاتف",
     "Numberofaccounts:": "عدد الحسابات :",
     "search": "بحث",
-    ":Chooseoneofthegroupsanditwillbesenttoallaccounts":"أختر أحد المجموعات ويتم الإرسال على جميع الحسابات",
+    "Chooseoneofthegroupsanditwillbesenttoallaccounts": "أختر أحد المجموعات ويتم الإرسال على جميع الحسابات",
     "ChooseapersonfromFacebookandsendyouradtoallhisfollowers": "أختر شخص من فيسبوك ارسل اعلانك على جميع متابعينه",
     "AddgroupsFacebook": "اضافة مجموعات فيسبوك",
     "Choosedestination(deleteFacebook)": "إختر الوجهة (حذف فيسبوك)",

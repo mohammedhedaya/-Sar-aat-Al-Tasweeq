@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -20,7 +21,7 @@ class SMSViewBody extends StatelessWidget {
             clipBehavior: Clip.none,
             children: [
               Positioned(
-                top: 50.h,
+                top: 60.h,
                 child: Text(
                   "SMS",
                   style: AppStyles.style78W400,
@@ -63,12 +64,13 @@ class SMSViewBody extends StatelessWidget {
                             context.push('/smsLaunchYourAdPhoneDirectoryView');
                           },
                           image: Assets.imagesXerror,
-                          textButton: "الأشتراك",
+                          textButton: "subscribe".tr(context: context),
                           content: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                "الرجاء الأشتراك فى الباقة",
+                                "pleaseSubscribeToThePackage"
+                                    .tr(context: context),
                                 style: AppStyles.style15W900,
                                 textAlign: TextAlign.center,
                               ),
@@ -82,7 +84,7 @@ class SMSViewBody extends StatelessWidget {
                       },
                     );
                   },
-                  text: "دليل الهاتف",
+                  text: "Contacts".tr(context: context),
                   textStyle: AppStyles.style14W800,
                 ),
                 SizedBox(height: 50.h),
@@ -97,12 +99,13 @@ class SMSViewBody extends StatelessWidget {
                             context.push('/smsTransferAnotherNumberView');
                           },
                           image: Assets.imagesXerror,
-                          textButton: "الأشتراك",
+                          textButton: "subscribe".tr(context: context),
                           content: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                "الرجاء الأشتراك فى الباقة",
+                                "pleaseSubscribeToThePackage"
+                                    .tr(context: context),
                                 style: AppStyles.style15W900,
                                 textAlign: TextAlign.center,
                               ),
@@ -116,12 +119,13 @@ class SMSViewBody extends StatelessWidget {
                       },
                     );
                   },
-                  text: "تحويل رقم أخر من دليل الهاتف",
+                  text: "Transferanothernumberfromthephonebook"
+                      .tr(context: context),
                   textStyle: AppStyles.style14W800,
                 ),
                 SizedBox(height: 39.h),
                 Text(
-                  "شاهد طريقة أستخدام sms ؟",
+                  "SeehowtouseSMS?".tr(context: context),
                   style: AppStyles.style14W600,
                 ),
                 SizedBox(height: 10.h),
@@ -133,7 +137,7 @@ class SMSViewBody extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Text(
-                      "نسمعك بوضوح",
+                      "hearyouclearly".tr(context: context),
                       style: AppStyles.style14W600,
                     ),
                     SizedBox(width: 5.w),
@@ -144,7 +148,7 @@ class SMSViewBody extends StatelessWidget {
                   ],
                 ),
                 Text(
-                  "نساعدك فى بناء تجربتك مع سرعه التسويق",
+                  "WeHelpYou".tr(context: context),
                   style: AppStyles.style12W600,
                 ),
                 SizedBox(height: 16.h),
@@ -169,7 +173,7 @@ class SMSViewBody extends StatelessWidget {
                       ),
                       child: Center(
                         child: Text(
-                          "الأقتراحات",
+                          "suggestions".tr(context: context),
                           style: AppStyles.style14W700,
                           textAlign: TextAlign.center,
                         ),
