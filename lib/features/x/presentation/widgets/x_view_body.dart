@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -57,7 +58,7 @@ class XViewBody extends StatelessWidget {
                   hintStyle: AppStyles.style14W400.copyWith(
                     color: const Color(0xffBABABA),
                   ),
-                  hintText: "اسم المستخدم",
+                  hintText: "username".tr(context: context),
                   textAlign: TextAlign.center,
                   fiiledColor: Colors.white.withOpacity(0.10),
                 ),
@@ -67,7 +68,7 @@ class XViewBody extends StatelessWidget {
                   hintStyle: AppStyles.style14W400.copyWith(
                     color: const Color(0xffBABABA),
                   ),
-                  hintText: "كلمة السر",
+                  hintText: "password".tr(context: context),
                   textAlign: TextAlign.center,
                   fiiledColor: Colors.white.withOpacity(0.10),
                 ),
@@ -85,12 +86,13 @@ class XViewBody extends StatelessWidget {
                               context.push("/launchYourXAdView");
                             },
                             image: Assets.imagesXerror,
-                            textButton: "الأشتراك",
+                            textButton: "subscribe".tr(context: context),
                             content: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  "الرجاء الأشتراك فى الباقة",
+                                  "pleaseSubscribeToThePackage"
+                                      .tr(context: context),
                                   style: AppStyles.style15W900,
                                   textAlign: TextAlign.center,
                                 ),
@@ -104,12 +106,12 @@ class XViewBody extends StatelessWidget {
                         },
                       );
                     },
-                    text: "دخول",
+                    text: "log in".tr(context: context),
                   ),
                 ),
                 SizedBox(height: 39.h),
                 Text(
-                  "شاهد طريقة أستخدام X ؟",
+                "SeehowtouseX?".tr(context: context),
                   style: AppStyles.style14W600,
                 ),
                 SizedBox(height: 10.h),
@@ -121,7 +123,7 @@ class XViewBody extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Text(
-                      "نسمعك بوضوح",
+                      "hearyouclearly".tr(context: context),
                       style: AppStyles.style14W600,
                     ),
                     SizedBox(width: 5.w),
@@ -132,7 +134,7 @@ class XViewBody extends StatelessWidget {
                   ],
                 ),
                 Text(
-                  "نساعدك فى بناء تجربتك مع سرعه التسويق",
+                  "WeHelpYou".tr(context: context),
                   style: AppStyles.style12W600,
                 ),
                 SizedBox(height: 16.h),
@@ -157,7 +159,7 @@ class XViewBody extends StatelessWidget {
                       ),
                       child: Center(
                         child: Text(
-                          "الأقتراحات",
+                          "suggestions".tr(context: context),
                           style: AppStyles.style14W700,
                           textAlign: TextAlign.center,
                         ),
