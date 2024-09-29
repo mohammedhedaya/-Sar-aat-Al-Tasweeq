@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -36,7 +37,7 @@ class _FacebookChooseDestinationViewBodyState
         children: [
           Center(
             child: Text(
-              "أختر وجهة ( الفيسبوك )",
+              "Chooseadestination(Facebook)".tr(context: context),
               style: AppStyles.style17W800,
             ),
           ),
@@ -70,7 +71,7 @@ class _FacebookChooseDestinationViewBodyState
                     child: Column(
                       children: [
                         Text(
-                          "الكل",
+                          "All".tr(context: context),
                           style: AppStyles.style17W800.copyWith(
                             color: _currentPage == 0
                                 ? const Color(0xff2F2F2F)
@@ -89,7 +90,7 @@ class _FacebookChooseDestinationViewBodyState
                   ),
                 ),
               ),
-              SizedBox(width: 25.w),
+              SizedBox(width: 15.w),
               Expanded(
                 child: InkWell(
                   onTap: () {
@@ -116,7 +117,7 @@ class _FacebookChooseDestinationViewBodyState
                     child: Column(
                       children: [
                         Text(
-                          "المتابعين",
+                          "followings".tr(context: context),
                           style: _currentPage == 1
                               ? AppStyles.style17W800.copyWith(
                                   color: const Color(0xff2F2F2F),
@@ -135,7 +136,7 @@ class _FacebookChooseDestinationViewBodyState
                   ),
                 ),
               ),
-              SizedBox(width: 25.w),
+              SizedBox(width: 15.w),
               Expanded(
                 child: InkWell(
                   onTap: () {
@@ -162,7 +163,7 @@ class _FacebookChooseDestinationViewBodyState
                     child: Column(
                       children: [
                         Text(
-                          "المتابعون",
+                          "Followers".tr(context: context),
                           style: _currentPage == 2
                               ? AppStyles.style17W800.copyWith(
                                   color: const Color(0xff2F2F2F),
@@ -224,7 +225,7 @@ class _FaceSendToAllPageState extends State<FaceSendToAllPage> {
         SizedBox(height: 25.h),
         CheckboxListTile(
           title: Text(
-            'تحديد الكل',
+            "SelectAll".tr(context: context),
             style: AppStyles.style13W600,
           ),
           shape: RoundedRectangleBorder(
@@ -311,7 +312,7 @@ class _FaceSendToAllPageState extends State<FaceSendToAllPage> {
             ),
             child: Center(
               child: Text(
-                "قم بالإرسال",
+                "send".tr(context: context),
                 style: AppStyles.style14W400,
                 textAlign: TextAlign.center,
               ),
@@ -341,7 +342,7 @@ class _FaceendToMyFollowrsPageState extends State<FaceendToMyFollowrsPage> {
         SizedBox(height: 25.h),
         CheckboxListTile(
           title: Text(
-            'تحديد الكل',
+            "SelectAll".tr(context: context),
             style: AppStyles.style13W600,
           ),
           shape: RoundedRectangleBorder(
@@ -428,7 +429,7 @@ class _FaceendToMyFollowrsPageState extends State<FaceendToMyFollowrsPage> {
             ),
             child: Center(
               child: Text(
-                "قم بالإرسال",
+                "send".tr(context: context),
                 style: AppStyles.style14W400,
                 textAlign: TextAlign.center,
               ),
@@ -459,7 +460,7 @@ class _FaceSendToMyFollowingsPageState
         SizedBox(height: 25.h),
         CheckboxListTile(
           title: Text(
-            'تحديد الكل',
+            "SelectAll".tr(context: context),
             style: AppStyles.style13W600,
           ),
           shape: RoundedRectangleBorder(
@@ -546,7 +547,7 @@ class _FaceSendToMyFollowingsPageState
             ),
             child: Center(
               child: Text(
-                "قم بالإرسال",
+                "send".tr(context: context),
                 style: AppStyles.style14W400,
                 textAlign: TextAlign.center,
               ),
