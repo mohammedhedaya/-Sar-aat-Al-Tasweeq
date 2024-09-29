@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:adaptive_theme/adaptive_theme.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -72,14 +73,14 @@ class _SendYourXAdToFollowrsViewBodyState
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "أرسل إعلانك على المتابعين  والمتابعون .",
+                    "SendyouradonFollowersandfollowers".tr(context: context),
                     style: AppStyles.style16W400.copyWith(
                       fontSize: 17.sp,
                     ),
                   ),
                   SizedBox(height: 35.h),
                   Text(
-                    "أرفق صوره أو مقطع فيديو",
+                    "Attach a photo or video".tr(context: context),
                     style: AppStyles.style16W600.copyWith(
                       color: Colors.white,
                     ),
@@ -130,7 +131,7 @@ class _SendYourXAdToFollowrsViewBodyState
                   SizedBox(height: 34.h),
                   CustomAuthTextField(
                     onChanged: (value) {},
-                    hintText: "اكتب تعليقاً.....",
+                    hintText: "Writeacomment".tr(context: context),
                     fiiledColor: Colors.white.withOpacity(0.10),
                     hintStyle: AppStyles.style16W600.copyWith(
                       color: const Color(0xffB0B0B0),
@@ -140,7 +141,7 @@ class _SendYourXAdToFollowrsViewBodyState
                   CustomAuthTextField(
                     onChanged: (value) {},
                     fiiledColor: AppColors.whiteColor.withOpacity(0.10),
-                    hintText: "اضف الرابط",
+                    hintText: "addLink".tr(context: context),
                     hintStyle: AppStyles.style12W700.copyWith(
                       color: const Color(0xffffffff),
                     ),
@@ -154,7 +155,7 @@ class _SendYourXAdToFollowrsViewBodyState
                   SizedBox(height: 21.h),
                   CustomAuthTextField(
                     fiiledColor: AppColors.whiteColor.withOpacity(0.10),
-                    hintText: "أضف الموقع",
+                    hintText: "addLocation".tr(context: context),
                     hintStyle: AppStyles.style12W700.copyWith(
                       color: const Color(0xffffffff),
                     ),
@@ -175,7 +176,7 @@ class _SendYourXAdToFollowrsViewBodyState
                         onPressed: () {
                           context.push("/addTrendsView");
                         },
-                        text: "#   إضافة ترند",
+                        text: "addtrends".tr(context: context),
                       ),
                     ),
                   ),
@@ -203,7 +204,7 @@ class _SendYourXAdToFollowrsViewBodyState
                         ),
                         child: Center(
                           child: Text(
-                            "أختر الوجهه",
+                            "chooseDestination".tr(context: context),
                             style: AppStyles.style14W400.copyWith(
                               color: AppColors.whiteColor,
                             ),

@@ -92,7 +92,6 @@ class AddTrendsViewBody extends StatelessWidget {
           child: InkWell(
             onTap: () {
               context.pop();
-              context.pop();
             },
             child: Container(
               height: 40.h,

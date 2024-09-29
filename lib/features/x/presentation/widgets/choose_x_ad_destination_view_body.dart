@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/utils/app_colors.dart';
@@ -39,7 +40,7 @@ class _ChooseXAdDestinationViewBodyState
         children: [
           Center(
             child: Text(
-              "أختر الوجهة ( X )",
+              "Choosedestination(X)".tr(context: context),
               style: AppStyles.style17W800,
               textAlign: TextAlign.center,
             ),
@@ -74,7 +75,7 @@ class _ChooseXAdDestinationViewBodyState
                     child: Column(
                       children: [
                         Text(
-                          "الكل",
+                          "All".tr(context: context),
                           style: _currentPage == 0
                               ? AppStyles.style10W800.copyWith(
                                   color: const Color(0xff2F2F2F),
@@ -120,7 +121,7 @@ class _ChooseXAdDestinationViewBodyState
                     child: Column(
                       children: [
                         Text(
-                          "المتابعين",
+                          "followings".tr(context: context),
                           style: _currentPage == 1
                               ? AppStyles.style10W800.copyWith(
                                   color: const Color(0xff2F2F2F),
@@ -166,7 +167,7 @@ class _ChooseXAdDestinationViewBodyState
                     child: Column(
                       children: [
                         Text(
-                          "المتابعون",
+                          "Followers".tr(context: context),
                           style: _currentPage == 2
                               ? AppStyles.style10W800.copyWith(
                                   color: const Color(0xff2F2F2F),
