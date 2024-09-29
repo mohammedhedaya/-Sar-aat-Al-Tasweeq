@@ -142,7 +142,7 @@ class _GroupsDetailsViewBodyState extends State<GroupsDetailsViewBody> {
                                 builder: (context) {
                                   return AlertDialog(
                                     title: Text(
-                                      "رابط الجروب",
+                                      "GroupLink".tr(context: context),
                                       style: AppStyles.style12W400.copyWith(
                                         color: Colors.white,
                                       ),

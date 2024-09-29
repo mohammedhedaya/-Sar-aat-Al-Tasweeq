@@ -1,8 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
-
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
 import '../../../whatsapp/presentation/widgets/custom_show_dialog.dart';
@@ -31,6 +31,7 @@ class TelegramViewBody extends StatelessWidget {
               Center(
                 child: SvgPicture.asset(
                   Assets.imagesTelegramlogo,
+                  height: 120.h,
                 ),
               ),
             ],
@@ -65,12 +66,13 @@ class TelegramViewBody extends StatelessWidget {
                             context.push('/launchYourTelegramAdView');
                           },
                           image: Assets.imagesXerror,
-                          textButton: "الأشتراك",
+                          textButton: "subscribe".tr(context: context),
                           content: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                "الرجاء الأشتراك فى الباقة",
+                                "pleaseSubscribeToThePackage"
+                                    .tr(context: context),
                                 style: AppStyles.style15W900,
                                 textAlign: TextAlign.center,
                               ),
@@ -84,7 +86,7 @@ class TelegramViewBody extends StatelessWidget {
                       },
                     );
                   },
-                  text: "إضافة رقم التليجرام",
+                  text: "AddTelegramNumber".tr(context: context),
                 ),
                 SizedBox(height: 50.h),
                 CustomSubscribeBtn(
@@ -98,12 +100,13 @@ class TelegramViewBody extends StatelessWidget {
                             context.push('/scanQrCodeView');
                           },
                           image: Assets.imagesXerror,
-                          textButton: "الأشتراك",
+                          textButton: "subscribe".tr(context: context),
                           content: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                "الرجاء الأشتراك فى الباقة",
+                                "pleaseSubscribeToThePackage"
+                                    .tr(context: context),
                                 style: AppStyles.style15W900,
                                 textAlign: TextAlign.center,
                               ),
@@ -117,11 +120,11 @@ class TelegramViewBody extends StatelessWidget {
                       },
                     );
                   },
-                  text: "مسح الباركود",
+                  text: "scanQR".tr(context: context),
                 ),
                 SizedBox(height: 39.h),
                 Text(
-                  "شاهد طريقة أستخدام التليجرام ؟",
+                  "SeehowtouseTelegram?".tr(context: context),
                   style: AppStyles.style14W600,
                 ),
                 SizedBox(height: 10.h),
@@ -133,7 +136,7 @@ class TelegramViewBody extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Text(
-                      "نسمعك بوضوح",
+                     "hearyouclearly".tr(context: context),
                       style: AppStyles.style14W600,
                     ),
                     SizedBox(width: 5.w),
@@ -144,7 +147,7 @@ class TelegramViewBody extends StatelessWidget {
                   ],
                 ),
                 Text(
-                  "نساعدك فى بناء تجربتك مع سرعه التسويق",
+                 "WeHelpYou".tr(context: context),
                   style: AppStyles.style12W600,
                 ),
                 SizedBox(height: 16.h),
@@ -169,7 +172,7 @@ class TelegramViewBody extends StatelessWidget {
                       ),
                       child: Center(
                         child: Text(
-                          "الأقتراحات",
+                          "suggestions".tr(context: context),
                           style: AppStyles.style14W700,
                           textAlign: TextAlign.center,
                         ),
