@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import '../widgets/custom_drawer.dart';
+
 import '../widgets/custom_app_bar.dart';
+import '../widgets/custom_drawer.dart';
 import '../widgets/home_view_body.dart.dart';
 
 class HomeView extends StatefulWidget {
