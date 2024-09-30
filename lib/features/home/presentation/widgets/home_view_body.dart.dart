@@ -30,7 +30,7 @@ class HomeViewBody extends StatelessWidget {
           children: [
             Container(
               width: double.infinity,
-              color: isDark ? AppColors.navBarColor : null,
+              color: isDark ? AppColors.navBarColor : AppColors.blueLight,
               padding: EdgeInsetsDirectional.only(start: 10.w, bottom: 10.h),
               child: Row(
                 children: [
@@ -43,6 +43,7 @@ class HomeViewBody extends StatelessWidget {
                     style: AppStyles.style12W700.copyWith(
                       fontWeight: FontWeight.w900,
                       fontFamily: "Titillium Web",
+                      color: isDark ? null : AppColors.whiteColor,
                     ),
                   ),
                   SizedBox(width: 10.w),

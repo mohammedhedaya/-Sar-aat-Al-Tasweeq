@@ -10,11 +10,13 @@ class AppColors {
   static const darkGray = Color(0xFF2F2F2F);
   static const mixWhiteAndGray = Color(0xFFD9D9D9);
   static const gray = Color(0xFF78838D);
-  static const lightTheme = Color(0xFF78838D);
+  // static const lightTheme = Color(0xFF78838D);
   static const visibilityColor = Color(0xFF939393);
   static const loginBtn = Color(0xFF757575);
   static const redColor = Color(0xFFFF0000);
   static const navBarColor = Color(0xFF1C1C1C);
   static const greenColor = Color(0xFF52B850);
+  static const blueLight = Color(0xFF0a82d1);
+  static const yellowLight = Color(0xFFf5f102);
   static const colorInShareWithFriend = Color(0xFF535353);
 }

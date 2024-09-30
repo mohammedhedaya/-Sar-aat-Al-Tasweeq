@@ -2,29 +2,30 @@ import 'package:flutter/material.dart';
 import '../utils/app_colors.dart';
 
 final ThemeData lightTheme = ThemeData(
-  scaffoldBackgroundColor: AppColors.lightTheme,
+  scaffoldBackgroundColor: AppColors.whiteColor,
   brightness: Brightness.light,
   colorScheme: const ColorScheme.light(
     primary: AppColors.blackColor,
     onPrimary: Colors.white,
-    secondary: AppColors.lightTheme,
+    secondary: AppColors.blueLight,
     onSecondary: Colors.black,
   ),
+
   drawerTheme: const DrawerThemeData(
-    backgroundColor: AppColors.lightTheme,
+    backgroundColor: AppColors.blueLight,
   ),
   appBarTheme: const AppBarTheme(
-    backgroundColor: AppColors.lightTheme,
+    backgroundColor: AppColors.blueLight,
     surfaceTintColor: Colors.transparent,
   ),
   dialogTheme: const DialogTheme(
-    backgroundColor: AppColors.lightTheme,
+    backgroundColor: AppColors.blueLight,
   ),
   // listTileTheme: const ListTileThemeData(
   //   tileColor: Color.fromARGB(255, 62, 62, 62),
   // ),
   bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-    backgroundColor: AppColors.gray,
+    backgroundColor: AppColors.blueLight,
   ),
 );
 

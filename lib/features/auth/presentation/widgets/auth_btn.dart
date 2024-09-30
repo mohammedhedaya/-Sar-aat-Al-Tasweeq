@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/utils/app_colors.dart';
@@ -15,6 +16,7 @@ class CustomAuthBtn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
@@ -26,7 +28,9 @@ class CustomAuthBtn extends StatelessWidget {
       ),
       child: Text(
         text,
-        style: AppStyles.style14W600,
+        style: AppStyles.style14W600.copyWith(
+          color: isDark ? AppColors.whiteColor : AppColors.whiteColor,
+        ),
         textAlign: TextAlign.center,
       ),
     );

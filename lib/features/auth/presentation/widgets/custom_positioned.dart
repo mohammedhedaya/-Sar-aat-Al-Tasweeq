@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -13,6 +14,7 @@ class LoginViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return Stack(
       clipBehavior: Clip.none,
       children: [
@@ -20,10 +22,19 @@ class LoginViewBody extends StatelessWidget {
           right: 0,
           top: 0,
           child: SizedBox(
-            child: SvgPicture.asset(
-              Assets.imagesLogincircle3,
-              fit: BoxFit.fill,
-            ),
+            child: isDark
+                ? SvgPicture.asset(
+                    Assets.imagesLogincircle3,
+                    fit: BoxFit.fill,
+                  )
+                : SvgPicture.asset(
+                    Assets.imagesLogincircle3,
+                    fit: BoxFit.fill,
+                    colorFilter: const ColorFilter.mode(
+                      Color.fromARGB(255, 35, 132, 185),
+                      BlendMode.srcIn,
+                    ),
+                  ),
           ),
         ),
         Positioned(
@@ -32,10 +43,19 @@ class LoginViewBody extends StatelessWidget {
           right: 0,
           child: SizedBox(
             width: double.infinity,
-            child: SvgPicture.asset(
-              Assets.imagesLogincircle2,
-              fit: BoxFit.fill,
-            ),
+            child: isDark
+                ? SvgPicture.asset(
+                    Assets.imagesLogincircle2,
+                    fit: BoxFit.fill,
+                  )
+                : SvgPicture.asset(
+                    Assets.imagesLogincircle2,
+                    fit: BoxFit.fill,
+                    colorFilter: const ColorFilter.mode(
+                      Color.fromARGB(255, 139, 188, 214),
+                      BlendMode.srcIn,
+                    ),
+                  ),
           ),
         ),
         Positioned(
@@ -43,10 +63,19 @@ class LoginViewBody extends StatelessWidget {
           left: 0,
           right: 150.h,
           child: SizedBox(
-            child: SvgPicture.asset(
-              Assets.imagesLogincircle1,
-              fit: BoxFit.fill,
-            ),
+            child: isDark
+                ? SvgPicture.asset(
+                    Assets.imagesLogincircle1,
+                    fit: BoxFit.fill,
+                  )
+                : SvgPicture.asset(
+                    Assets.imagesLogincircle1,
+                    fit: BoxFit.fill,
+                    colorFilter: const ColorFilter.mode(
+                      Color.fromARGB(255, 100, 129, 144),
+                      BlendMode.srcIn,
+                    ),
+                  ),
           ),
         ),
         context.locale == const Locale('en')
@@ -56,9 +85,9 @@ class LoginViewBody extends StatelessWidget {
                 child: Container(
                   height: 200.h,
                   width: 200.w,
-                  decoration: const BoxDecoration(
-                    color: AppColors.whiteColor,
-                    borderRadius: BorderRadius.only(
+                  decoration: BoxDecoration(
+                    color: isDark ? AppColors.whiteColor : AppColors.blueLight,
+                    borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(300),
                     ),
                   ),
@@ -70,9 +99,9 @@ class LoginViewBody extends StatelessWidget {
                 child: Container(
                   height: 200.h,
                   width: 200.w,
-                  decoration: const BoxDecoration(
-                    color: AppColors.whiteColor,
-                    borderRadius: BorderRadius.only(
+                  decoration: BoxDecoration(
+                    color: isDark ? AppColors.whiteColor : AppColors.blueLight,
+                    borderRadius: const BorderRadius.only(
                       topRight: Radius.circular(300),
                     ),
                   ),

@@ -8,3 +8,4 @@ void setupServiceLocator() {
   getIt.registerSingleton<CacheHelper>(CacheHelper());
   getIt.registerFactory<AuthCubit>(() => AuthCubit());
 }
+

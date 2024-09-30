@@ -1,9 +1,9 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_text_style.dart';
 import '../../../../../core/utils/assets.dart';
@@ -24,6 +24,8 @@ class ResetPasswordView extends StatelessWidget {
           child: BlocConsumer<AuthCubit, AuthState>(
             listener: (context, state) {},
             builder: (context, state) {
+              final isDark =
+                  AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
               AuthCubit cubit = BlocProvider.of<AuthCubit>(context);
               return Form(
                 key: cubit.emailResetPasswordFormKey,
@@ -37,7 +39,9 @@ class ResetPasswordView extends StatelessWidget {
                       child: Text(
                         "for_return_password".tr(context: context),
                         style: AppStyles.style12W400.copyWith(
-                          color: AppColors.whiteColor,
+                          color: isDark
+                              ? AppColors.whiteColor
+                              : AppColors.blackColor,
                         ),
                         textAlign: TextAlign.center,
                       ),

@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -19,7 +20,8 @@ class CustomAuthTextField extends StatelessWidget {
     this.obscureText,
     this.prefix,
     this.fiiledColor,
-    this.hintStyle, this.readOnly,
+    this.hintStyle,
+    this.readOnly,
   });
   final bool? readOnly;
   final String hintText;
@@ -37,6 +39,7 @@ class CustomAuthTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return TextFormField(
       readOnly: readOnly ?? false,
       controller: controller,
@@ -44,8 +47,8 @@ class CustomAuthTextField extends StatelessWidget {
       keyboardType: keyboardType,
       cursorColor: AppColors.whiteColor,
       textAlign: textAlign ?? TextAlign.start,
-      style: const TextStyle(
-        color: AppColors.whiteColor,
+      style: TextStyle(
+        color: isDark ? AppColors.whiteColor : AppColors.blackColor,
       ),
       validator: validator ??
           (value) {
@@ -56,8 +59,8 @@ class CustomAuthTextField extends StatelessWidget {
           },
       obscureText: obscureText ?? false,
       decoration: InputDecoration(
-        errorStyle: const TextStyle(
-          color: AppColors.whiteColor,
+        errorStyle: TextStyle(
+          color: isDark ? AppColors.whiteColor : Colors.red,
         ),
         errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(20.r),
@@ -72,10 +75,18 @@ class CustomAuthTextField extends StatelessWidget {
         hintStyle: hintStyle ?? AppStyles.style18W400,
         filled: true,
         fillColor: fiiledColor ?? AppColors.dimGray,
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(20.r),
-          borderSide: BorderSide.none,
-        ),
+        border: isDark
+            ? OutlineInputBorder(
+                borderRadius: BorderRadius.circular(20.r),
+                borderSide: BorderSide.none,
+              )
+            : OutlineInputBorder(
+                borderRadius: BorderRadius.circular(20.r),
+                borderSide: const BorderSide(
+                  color: AppColors.blackColor,
+                  width: 1.0,
+                ),
+              ),
       ),
     );
   }

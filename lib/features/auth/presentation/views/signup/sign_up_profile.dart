@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +18,8 @@ class SignUpProfileView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
+
     return SafeArea(
       child: Scaffold(
         body: SingleChildScrollView(
@@ -153,7 +156,13 @@ class SignUpProfileView extends StatelessWidget {
                               builder: (FormFieldState<String> state) {
                                 return InputDecorator(
                                   decoration: InputDecoration(
-                                    border: InputBorder.none,
+                                    border: isDark
+                                        ? InputBorder.none
+                                        : OutlineInputBorder(
+                                            borderSide: const BorderSide(),
+                                            borderRadius:
+                                                BorderRadius.circular(20.r),
+                                          ),
                                     errorText:
                                         state.hasError ? state.errorText : null,
                                     errorBorder: OutlineInputBorder(
@@ -163,8 +172,10 @@ class SignUpProfileView extends StatelessWidget {
                                       ),
                                     ),
                                     contentPadding: EdgeInsets.zero,
-                                    errorStyle: const TextStyle(
-                                      color: AppColors.whiteColor,
+                                    errorStyle: TextStyle(
+                                      color: isDark
+                                          ? AppColors.whiteColor
+                                          : Colors.red,
                                     ),
                                   ),
                                   child: Container(

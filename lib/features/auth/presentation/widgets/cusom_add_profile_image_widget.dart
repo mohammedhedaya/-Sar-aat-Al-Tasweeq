@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -38,7 +39,7 @@ class _CustomAddProfileImageWidgetState
             children: [
               ListTile(
                 leading: const Icon(Icons.camera_alt),
-                title:  Text('Camera'.tr(context: context )),
+                title: Text('Camera'.tr(context: context)),
                 onTap: () async {
                   context.pop();
                   final pickedFile =
@@ -53,7 +54,7 @@ class _CustomAddProfileImageWidgetState
               ),
               ListTile(
                 leading: const Icon(Icons.photo_library),
-                title:  Text('Gallery'.tr(context: context )),
+                title: Text('Gallery'.tr(context: context)),
                 onTap: () async {
                   context.pop();
 
@@ -76,6 +77,8 @@ class _CustomAddProfileImageWidgetState
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
+
     return Column(
       children: [
         Center(
@@ -84,7 +87,8 @@ class _CustomAddProfileImageWidgetState
             children: [
               CustomPaint(
                 size: Size(150.w, 150.h),
-                painter: DashedCirclePainter(),
+                painter:
+                    isDark ? DashedCirclePainter() : LightDashedCirclePainter(),
               ),
               _imageFile != null
                   ? ClipOval(
@@ -121,7 +125,7 @@ class _CustomAddProfileImageWidgetState
             child: Text(
               widget.errorText!,
               style: TextStyle(
-                color: Colors.white,
+                color: isDark ? Colors.white : Colors.red,
                 fontSize: 12.sp,
               ),
             ),

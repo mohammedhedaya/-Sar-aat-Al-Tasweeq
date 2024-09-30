@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -17,6 +18,8 @@ class _HomeCarouselSliderState extends State<HomeCarouselSlider> {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
+
     return Stack(
       alignment: Alignment.bottomCenter,
       children: [
@@ -62,8 +65,9 @@ class _HomeCarouselSliderState extends State<HomeCarouselSlider> {
             child: AnimatedSmoothIndicator(
               activeIndex: _currentSlide,
               count: 3,
-              effect: const SlideEffect(
-                activeDotColor: AppColors.darkGray,
+              effect: SlideEffect(
+                activeDotColor:
+                    isDark ? AppColors.darkGray : AppColors.blueLight,
                 dotHeight: 14,
                 dotWidth: 14,
                 dotColor: AppColors.whiteColor,

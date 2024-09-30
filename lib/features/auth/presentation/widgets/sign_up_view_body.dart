@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -20,6 +21,7 @@ class SignUpViewBody extends StatelessWidget {
       listener: (context, state) {},
       builder: (context, state) {
         AuthCubit cubit = BlocProvider.of<AuthCubit>(context);
+        final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
         return SingleChildScrollView(
           child: SizedBox(
             height: MediaQuery.of(context).size.height,
@@ -35,6 +37,9 @@ class SignUpViewBody extends StatelessWidget {
                       Assets.imagesWhitecircle,
                       height: 200.h,
                       fit: BoxFit.fill,
+                      colorFilter: ColorFilter.mode(
+                          isDark ? AppColors.whiteColor : AppColors.blueLight,
+                          BlendMode.srcIn),
                     ),
                   ),
                   Positioned(
@@ -105,9 +110,11 @@ class SignUpViewBody extends StatelessWidget {
                           child: Container(
                             height: 170.h,
                             width: 170.w,
-                            decoration: const BoxDecoration(
-                              color: AppColors.whiteColor,
-                              borderRadius: BorderRadius.only(
+                            decoration: BoxDecoration(
+                              color: isDark
+                                  ? AppColors.whiteColor
+                                  : AppColors.blueLight,
+                              borderRadius: const BorderRadius.only(
                                 topLeft: Radius.circular(300),
                               ),
                             ),
@@ -119,9 +126,11 @@ class SignUpViewBody extends StatelessWidget {
                           child: Container(
                             height: 170.h,
                             width: 170.w,
-                            decoration: const BoxDecoration(
-                              color: AppColors.whiteColor,
-                              borderRadius: BorderRadius.only(
+                            decoration: BoxDecoration(
+                              color: isDark
+                                  ? AppColors.whiteColor
+                                  : AppColors.blueLight,
+                              borderRadius: const BorderRadius.only(
                                 topRight: Radius.circular(300),
                               ),
                             ),

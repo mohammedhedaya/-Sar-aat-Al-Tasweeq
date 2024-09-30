@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -62,6 +63,7 @@ class _ResetPasswordOTPViewState extends State<ResetPasswordOTPView> {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return Scaffold(
       body: Column(
         children: [
@@ -75,7 +77,8 @@ class _ResetPasswordOTPViewState extends State<ResetPasswordOTPView> {
                     "otp".tr(context: context),
                     textAlign: TextAlign.center,
                     style: AppStyles.style12W400.copyWith(
-                      color: AppColors.whiteColor,
+                      color:
+                          isDark ? AppColors.whiteColor : AppColors.blackColor,
                     ),
                   ),
                   SizedBox(height: 30.h),
