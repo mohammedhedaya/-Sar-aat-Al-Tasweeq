@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -220,6 +221,7 @@ class _FaceSendToAllPageState extends State<FaceSendToAllPage> {
   List<bool> isSelected = List.generate(15, (index) => false);
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return Column(
       children: [
         SizedBox(height: 25.h),
@@ -235,8 +237,8 @@ class _FaceSendToAllPageState extends State<FaceSendToAllPage> {
           checkColor: const Color(0xff00C0CC),
           visualDensity: VisualDensity.compact,
           contentPadding: EdgeInsets.zero,
-          side: const BorderSide(
-            color: Colors.white,
+          side: BorderSide(
+            color: isDark ? Colors.white : AppColors.blueLight,
           ),
           value: selectAll,
           onChanged: (value) {
@@ -266,8 +268,8 @@ class _FaceSendToAllPageState extends State<FaceSendToAllPage> {
                     activeColor: const Color(0xff00C0CC),
                     checkColor: const Color(0xff00C0CC),
                     visualDensity: VisualDensity.compact,
-                    side: const BorderSide(
-                      color: Colors.white,
+                    side: BorderSide(
+                      color: isDark ? Colors.white : AppColors.blueLight,
                     ),
                     value: isSelected[index],
                     onChanged: (value) {
@@ -337,6 +339,7 @@ class _FaceendToMyFollowrsPageState extends State<FaceendToMyFollowrsPage> {
   List<bool> isSelected = List.generate(15, (index) => false);
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return Column(
       children: [
         SizedBox(height: 25.h),
@@ -352,8 +355,8 @@ class _FaceendToMyFollowrsPageState extends State<FaceendToMyFollowrsPage> {
           checkColor: const Color(0xff00C0CC),
           visualDensity: VisualDensity.compact,
           contentPadding: EdgeInsets.zero,
-          side: const BorderSide(
-            color: Colors.white,
+          side: BorderSide(
+            color: isDark ? Colors.white : AppColors.blueLight,
           ),
           value: selectAll,
           onChanged: (value) {
@@ -383,8 +386,8 @@ class _FaceendToMyFollowrsPageState extends State<FaceendToMyFollowrsPage> {
                     activeColor: const Color(0xff00C0CC),
                     checkColor: const Color(0xff00C0CC),
                     visualDensity: VisualDensity.compact,
-                    side: const BorderSide(
-                      color: Colors.white,
+                    side: BorderSide(
+                      color: isDark ? Colors.white : AppColors.blueLight,
                     ),
                     value: isSelected[index],
                     onChanged: (value) {
@@ -455,6 +458,8 @@ class _FaceSendToMyFollowingsPageState
   List<bool> isSelected = List.generate(15, (index) => false);
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
+
     return Column(
       children: [
         SizedBox(height: 25.h),
@@ -470,8 +475,8 @@ class _FaceSendToMyFollowingsPageState
           checkColor: const Color(0xff00C0CC),
           visualDensity: VisualDensity.compact,
           contentPadding: EdgeInsets.zero,
-          side: const BorderSide(
-            color: Colors.white,
+          side: BorderSide(
+            color: isDark ? Colors.white : AppColors.blueLight,
           ),
           value: selectAll,
           onChanged: (value) {
@@ -501,8 +506,8 @@ class _FaceSendToMyFollowingsPageState
                     activeColor: const Color(0xff00C0CC),
                     checkColor: const Color(0xff00C0CC),
                     visualDensity: VisualDensity.compact,
-                    side: const BorderSide(
-                      color: Colors.white,
+                    side: BorderSide(
+                      color: isDark ? Colors.white : AppColors.blueLight,
                     ),
                     value: isSelected[index],
                     onChanged: (value) {

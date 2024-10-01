@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -24,6 +25,7 @@ class _AddTelegramGroupViewBodyState extends State<AddTelegramGroupViewBody> {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return Padding(
       padding: const EdgeInsets.all(30.0),
       child: SingleChildScrollView(
@@ -36,7 +38,7 @@ class _AddTelegramGroupViewBodyState extends State<AddTelegramGroupViewBody> {
             Text(
               "chanelName".tr(context: context),
               style: AppStyles.style12W400.copyWith(
-                color: AppColors.whiteColor,
+                color: isDark ? AppColors.whiteColor : AppColors.blackColor,
               ),
             ),
             SizedBox(height: 4.h),
@@ -49,7 +51,7 @@ class _AddTelegramGroupViewBodyState extends State<AddTelegramGroupViewBody> {
             Text(
               "chanelLink".tr(context: context),
               style: AppStyles.style12W400.copyWith(
-                color: AppColors.whiteColor,
+                color: isDark ? AppColors.whiteColor : AppColors.blackColor,
               ),
             ),
             SizedBox(height: 4.h),
@@ -77,7 +79,7 @@ class _AddTelegramGroupViewBodyState extends State<AddTelegramGroupViewBody> {
             Text(
               "country".tr(context: context),
               style: AppStyles.style12W400.copyWith(
-                color: AppColors.whiteColor,
+                color: isDark ? AppColors.whiteColor : AppColors.blackColor,
               ),
             ),
             SizedBox(height: 4.h),
@@ -95,10 +97,11 @@ class _AddTelegramGroupViewBodyState extends State<AddTelegramGroupViewBody> {
                   borderRadius: BorderRadius.circular(8.r),
                 ),
                 padding: EdgeInsets.zero,
-                showFlag: true,
+                // showFlag: true,
+                showOnlyCountryWhenClosed: true,
                 flagWidth: 50.w,
-                hideMainText: true,
-                showCountryOnly: true,
+                // hideMainText: true,
+                // showCountryOnly: true,
                 flagDecoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(5.r),
                 ),

@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -12,6 +13,7 @@ class AddSuggestionViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return SingleChildScrollView(
       child: Container(
         margin: EdgeInsets.symmetric(horizontal: 25.w),
@@ -68,15 +70,26 @@ class AddSuggestionViewBody extends StatelessWidget {
               },
               cursorColor: AppColors.whiteColor,
               decoration: InputDecoration(
-                filled: true,
-                fillColor: AppColors.whiteColor.withOpacity(0.10),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20.r),
-                  borderSide: BorderSide.none,
-                ),
-              ),
+                  filled: true,
+                  fillColor: AppColors.whiteColor.withOpacity(0.10),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20.r),
+                    borderSide: isDark
+                        ? BorderSide.none
+                        : const BorderSide(
+                            color: AppColors.blueLight,
+                          ),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20.r),
+                    borderSide: isDark
+                        ? BorderSide.none
+                        : const BorderSide(
+                            color: AppColors.blueLight,
+                          ),
+                  )),
               style: AppStyles.style12W400.copyWith(
-                color: AppColors.whiteColor,
+                color: isDark ? AppColors.whiteColor : AppColors.blackColor,
               ),
               textAlign: TextAlign.start,
               maxLines: 20,

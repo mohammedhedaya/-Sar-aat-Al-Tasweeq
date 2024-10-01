@@ -1,5 +1,7 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shopping_chart/core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
 import 'custom_launch_menu_brn.dart';
@@ -30,6 +32,7 @@ class _LaunchAdTextFieldState extends State<LaunchAdTextField> {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return Stack(
       children: [
         TextField(
@@ -42,15 +45,23 @@ class _LaunchAdTextFieldState extends State<LaunchAdTextField> {
             filled: true,
             fillColor: Colors.white.withOpacity(0.10),
             enabledBorder: OutlineInputBorder(
-              borderSide: BorderSide.none,
+              borderSide: isDark
+                  ? BorderSide.none
+                  : const BorderSide(
+                      color: AppColors.blueLight,
+                    ),
               borderRadius: BorderRadius.circular(20.r),
             ),
             focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide.none,
+              borderSide: isDark
+                  ? BorderSide.none
+                  : const BorderSide(
+                      color: AppColors.blueLight,
+                    ),
               borderRadius: BorderRadius.circular(20.r),
             ),
           ),
-          style: const TextStyle(color: Colors.white),
+          style: TextStyle(color: isDark ? Colors.white : Colors.black),
         ),
         Positioned(
           bottom: 20.h,

@@ -18,7 +18,7 @@ class SearchPersonToSendFacebookAdViewBody extends StatelessWidget {
       children: [
         Container(
           width: double.infinity,
-          color: isDark ? AppColors.navBarColor : null,
+          color: isDark ? AppColors.navBarColor : AppColors.navBarColor,
           padding: EdgeInsetsDirectional.only(start: 15.w, bottom: 10.h),
           child: Row(
             children: [

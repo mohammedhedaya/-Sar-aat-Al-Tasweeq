@@ -1,8 +1,10 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shopping_chart/core/utils/app_colors.dart';
 
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
@@ -20,6 +22,7 @@ class _GroupsDetailsViewBodyState extends State<GroupsDetailsViewBody> {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return Column(
       children: [
         Padding(
@@ -115,7 +118,7 @@ class _GroupsDetailsViewBodyState extends State<GroupsDetailsViewBody> {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15.r),
                       border: Border.all(
-                        color: Colors.white,
+                        color: isDark ? Colors.white : AppColors.blueLight,
                         width: 1,
                       ),
                     ),

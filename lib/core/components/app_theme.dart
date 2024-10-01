@@ -10,8 +10,10 @@ final ThemeData lightTheme = ThemeData(
     secondary: AppColors.blueLight,
     onSecondary: Colors.black,
   ),
-
   drawerTheme: const DrawerThemeData(
+    backgroundColor: AppColors.blueLight,
+  ),
+  floatingActionButtonTheme: const FloatingActionButtonThemeData(
     backgroundColor: AppColors.blueLight,
   ),
   appBarTheme: const AppBarTheme(
@@ -22,18 +24,8 @@ final ThemeData lightTheme = ThemeData(
   dialogTheme: const DialogTheme(
     backgroundColor: AppColors.blueLight,
   ),
-  // listTileTheme: const ListTileThemeData(
-  //   tileColor: Color.fromARGB(255, 62, 62, 62),
-  // ),
   bottomNavigationBarTheme: const BottomNavigationBarThemeData(
     backgroundColor: AppColors.blueLight,
-  ),
-  elevatedButtonTheme: ElevatedButtonThemeData(
-    style: ElevatedButton.styleFrom(
-      textStyle: const TextStyle(
-        color: AppColors.whiteColor,
-      ),
-    ),
   ),
 );
 
@@ -52,12 +44,5 @@ final ThemeData darkTheme = ThemeData(
   appBarTheme: const AppBarTheme(
     backgroundColor: AppColors.navBarColor,
     surfaceTintColor: Colors.transparent,
-  ),
-   elevatedButtonTheme: ElevatedButtonThemeData(
-    style: ElevatedButton.styleFrom(
-      textStyle: const TextStyle(
-        color: AppColors.blackColor,
-      ),
-    ),
   ),
 );

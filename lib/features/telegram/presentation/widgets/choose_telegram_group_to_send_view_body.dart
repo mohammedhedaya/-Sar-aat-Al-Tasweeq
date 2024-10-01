@@ -21,7 +21,7 @@ class ChooseTelegramGroupToSendViewBody extends StatelessWidget {
       children: [
         Container(
           width: double.infinity,
-          color: isDark ? AppColors.navBarColor : null,
+          color: isDark ? AppColors.navBarColor : AppColors.navBarColor,
           padding: EdgeInsetsDirectional.only(start: 10.w, bottom: 10.h),
           child: Row(
             children: [

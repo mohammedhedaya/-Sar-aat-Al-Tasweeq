@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -53,6 +54,7 @@ class _ConvertNumberToWhatsappLinkViewBodyState
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return Padding(
       padding: const EdgeInsets.all(35),
       child: ListView(
@@ -114,6 +116,7 @@ class _ConvertNumberToWhatsappLinkViewBodyState
               style: ElevatedButton.styleFrom(
                 padding: EdgeInsets.zero,
                 elevation: 0,
+                backgroundColor: isDark ? null : AppColors.blueLight,
                 minimumSize: Size(double.infinity, 51.h),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20.r),
@@ -141,7 +144,9 @@ class _ConvertNumberToWhatsappLinkViewBodyState
             SizedBox(height: 4.h),
             Container(
               decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.10),
+                color: isDark
+                    ? Colors.white.withOpacity(0.10)
+                    : AppColors.yellowLight,
                 borderRadius: BorderRadius.circular(20.r),
               ),
               padding: const EdgeInsets.all(22),
@@ -151,7 +156,7 @@ class _ConvertNumberToWhatsappLinkViewBodyState
                     child: Text(
                       _whatsAppLink,
                       style: AppStyles.style12W400.copyWith(
-                        color: Colors.white,
+                        color: isDark ? Colors.white : Colors.black,
                       ),
                       overflow: TextOverflow.ellipsis,
                       textAlign: TextAlign.center,
@@ -160,7 +165,13 @@ class _ConvertNumberToWhatsappLinkViewBodyState
                   SizedBox(width: 8.w),
                   InkWell(
                     onTap: _copyToClipboard,
-                    child: SvgPicture.asset(Assets.imagesCopyIcon2),
+                    child: SvgPicture.asset(
+                      Assets.imagesCopyIcon2,
+                      colorFilter: const ColorFilter.mode(
+                        Colors.black,
+                        BlendMode.srcIn,
+                      ),
+                    ),
                   ),
                 ],
               ),

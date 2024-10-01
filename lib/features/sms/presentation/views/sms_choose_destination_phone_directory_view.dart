@@ -1,8 +1,10 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shopping_chart/core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
 
@@ -20,6 +22,7 @@ class _SMSChooseDestinationPhoneDirectoryViewState
   List<bool> isSelected = List.generate(15, (index) => false);
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -75,8 +78,8 @@ class _SMSChooseDestinationPhoneDirectoryViewState
               checkColor: const Color(0xff00C0CC),
               visualDensity: VisualDensity.compact,
               contentPadding: EdgeInsets.zero,
-              side: const BorderSide(
-                color: Colors.white,
+              side: BorderSide(
+                color: isDark ? Colors.white : AppColors.blueLight,
               ),
               value: selectAll,
               onChanged: (value) {
@@ -106,8 +109,8 @@ class _SMSChooseDestinationPhoneDirectoryViewState
                         activeColor: const Color(0xff00C0CC),
                         checkColor: const Color(0xff00C0CC),
                         visualDensity: VisualDensity.compact,
-                        side: const BorderSide(
-                          color: Colors.white,
+                        side: BorderSide(
+                          color: isDark ? Colors.white : AppColors.blueLight,
                         ),
                         value: isSelected[index],
                         onChanged: (value) {

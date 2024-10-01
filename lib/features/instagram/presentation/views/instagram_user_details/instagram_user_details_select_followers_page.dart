@@ -1,6 +1,8 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shopping_chart/core/utils/app_colors.dart';
 import '../../../../../core/utils/app_text_style.dart';
 import '../../../../../core/utils/assets.dart';
 import '../../../../whatsapp/presentation/widgets/custom_show_dialog.dart';
@@ -9,17 +11,20 @@ class InstagramUserDetailsSelectFollowersPage extends StatefulWidget {
   const InstagramUserDetailsSelectFollowersPage({super.key});
 
   @override
-  State<InstagramUserDetailsSelectFollowersPage> createState() => _InstagramUserDetailsSelectFollowersPageState();
+  State<InstagramUserDetailsSelectFollowersPage> createState() =>
+      _InstagramUserDetailsSelectFollowersPageState();
 }
 
-class _InstagramUserDetailsSelectFollowersPageState extends State<InstagramUserDetailsSelectFollowersPage> {
-    bool selectAll = false;
+class _InstagramUserDetailsSelectFollowersPageState
+    extends State<InstagramUserDetailsSelectFollowersPage> {
+  bool selectAll = false;
   List<bool> isSelected = List.generate(15, (index) => false);
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return Column(
       children: [
-          SizedBox(height: 25.h),
+        SizedBox(height: 25.h),
         CheckboxListTile(
           title: Text(
             'تحديد الكل',
@@ -32,8 +37,8 @@ class _InstagramUserDetailsSelectFollowersPageState extends State<InstagramUserD
           checkColor: const Color(0xff00C0CC),
           visualDensity: VisualDensity.compact,
           contentPadding: EdgeInsets.zero,
-          side: const BorderSide(
-            color: Colors.white,
+          side: BorderSide(
+            color: isDark ? Colors.white : AppColors.blueLight,
           ),
           value: selectAll,
           onChanged: (value) {
@@ -63,8 +68,8 @@ class _InstagramUserDetailsSelectFollowersPageState extends State<InstagramUserD
                     activeColor: const Color(0xff00C0CC),
                     checkColor: const Color(0xff00C0CC),
                     visualDensity: VisualDensity.compact,
-                    side: const BorderSide(
-                      color: Colors.white,
+                    side: BorderSide(
+                      color: isDark ? Colors.white : AppColors.blueLight,
                     ),
                     value: isSelected[index],
                     onChanged: (value) {

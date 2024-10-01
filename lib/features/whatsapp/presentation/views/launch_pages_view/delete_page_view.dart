@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -22,6 +23,8 @@ class _DeletePageViewState extends State<DeletePageView> {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
+
     return SingleChildScrollView(
       child: Column(
         children: [
@@ -36,7 +39,7 @@ class _DeletePageViewState extends State<DeletePageView> {
             fiiledColor: AppColors.whiteColor.withOpacity(0.10),
             hintText: "addLink".tr(context: context),
             hintStyle: AppStyles.style12W700.copyWith(
-              color: const Color(0xffffffff),
+              color: isDark ? const Color(0xffffffff) : const Color(0xff000000),
             ),
             suffixIcon: InkWell(
               onTap: () async {
@@ -59,7 +62,7 @@ class _DeletePageViewState extends State<DeletePageView> {
             fiiledColor: AppColors.whiteColor.withOpacity(0.10),
             hintText: "addLocation".tr(context: context),
             hintStyle: AppStyles.style12W700.copyWith(
-              color: const Color(0xffffffff),
+              color: isDark ? const Color(0xffffffff) : const Color(0xff000000),
             ),
             suffixIcon: InkWell(
               onTap: () {},
@@ -76,7 +79,7 @@ class _DeletePageViewState extends State<DeletePageView> {
           Center(
             child: InkWell(
               onTap: () {
-                context.push('/deleteChooseTheDestinationView');
+                context.push('/whatsappChooseTheDestinationView');
               },
               child: Container(
                 height: 40.h,
@@ -96,7 +99,11 @@ class _DeletePageViewState extends State<DeletePageView> {
                 child: Center(
                   child: Text(
                     "chooseDestination".tr(context: context),
-                    style: AppStyles.style14W400,
+                    style: AppStyles.style14W400.copyWith(
+                      color: isDark
+                          ? const Color(0xff000000)
+                          : const Color(0xffffffff),
+                    ),
                     textAlign: TextAlign.center,
                   ),
                 ),

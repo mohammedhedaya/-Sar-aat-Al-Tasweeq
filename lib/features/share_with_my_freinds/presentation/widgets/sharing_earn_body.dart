@@ -1,8 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart'; // Import Clipboard
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:share_plus/share_plus.dart'; // Import share_plus package
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
@@ -62,16 +62,8 @@ class SharingEarnBody extends StatelessWidget {
                           ),
                           suffixIcon: InkWell(
                             onTap: () {
-                              Clipboard.setData(
-                                const ClipboardData(text: '152510238jcsuxb'),
-                              );
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
-                                  content: Text(
-                                    "referralCodeCopied".tr(context: context),
-                                  ),
-                                ),
-                              );
+                              // Share functionality
+                              Share.share('152510238jcsuxb');
                             },
                             child: Transform.scale(
                               scale: 0.5,

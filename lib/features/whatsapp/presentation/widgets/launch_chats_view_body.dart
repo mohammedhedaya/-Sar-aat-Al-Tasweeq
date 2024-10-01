@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -11,6 +12,8 @@ class LaunchAdChatsViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
+
     return SingleChildScrollView(
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 13.w),
@@ -20,6 +23,7 @@ class LaunchAdChatsViewBody extends StatelessWidget {
             Center(
               child: Image.asset(
                 Assets.imagesChatslogo,
+                color: isDark ? null : AppColors.blueLight,
               ),
             ),
             SizedBox(height: 30.h),

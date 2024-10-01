@@ -18,7 +18,7 @@ class WhatsappGroupsViewBody extends StatelessWidget {
       children: [
         Container(
           width: double.infinity,
-          color: isDark ? AppColors.navBarColor : null,
+          color: isDark ? AppColors.navBarColor : AppColors.blueLight,
           padding: EdgeInsetsDirectional.only(start: 10.w, bottom: 10.h),
           child: Row(
             children: [
@@ -58,8 +58,9 @@ class WhatsappGroupsViewBody extends StatelessWidget {
                             },
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(15.r),
-                              side: const BorderSide(
-                                color: Colors.white,
+                              side: BorderSide(
+                                color:
+                                    isDark ? Colors.white : AppColors.blueLight,
                                 width: 1,
                               ),
                             ),
