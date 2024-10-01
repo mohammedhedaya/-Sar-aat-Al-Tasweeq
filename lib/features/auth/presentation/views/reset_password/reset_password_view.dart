@@ -17,15 +17,31 @@ class ResetPasswordView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          surfaceTintColor: Colors.transparent,
+          automaticallyImplyLeading: false,
+          elevation: 0,
+          actions: [
+            IconButton(
+              onPressed: () {
+                context.pop();
+              },
+              icon: Icon(
+                Icons.arrow_forward_ios_sharp,
+                color: isDark ? AppColors.whiteColor : AppColors.blackColor,
+              ),
+            ),
+          ],
+        ),
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 36, vertical: 25),
           child: BlocConsumer<AuthCubit, AuthState>(
             listener: (context, state) {},
             builder: (context, state) {
-              final isDark =
-                  AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
               AuthCubit cubit = BlocProvider.of<AuthCubit>(context);
               return Form(
                 key: cubit.emailResetPasswordFormKey,
@@ -71,6 +87,7 @@ class ResetPasswordView extends StatelessWidget {
                           context.push('/resetPasswordOTPView');
                         }
                       },
+                      backgroundColor: isDark ? null : AppColors.blueLight,
                       text: "next".tr(context: context),
                     ),
                   ],

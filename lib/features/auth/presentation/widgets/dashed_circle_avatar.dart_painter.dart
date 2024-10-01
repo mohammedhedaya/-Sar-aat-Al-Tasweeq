@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:shopping_chart/core/utils/app_colors.dart';
 
 class DashedCirclePainter extends CustomPainter {
   @override
@@ -35,7 +36,7 @@ class LightDashedCirclePainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     var paint = Paint()
-      ..color = Colors.black
+      ..color = AppColors.blueLight
       ..style = PaintingStyle.stroke
       ..strokeWidth = 2;
 

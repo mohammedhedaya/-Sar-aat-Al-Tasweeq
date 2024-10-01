@@ -60,12 +60,34 @@ class CustomAuthTextField extends StatelessWidget {
       obscureText: obscureText ?? false,
       decoration: InputDecoration(
         errorStyle: TextStyle(
-          color: isDark ? AppColors.whiteColor : Colors.red,
+          color: isDark ? AppColors.yellowLight : Colors.red,
         ),
         errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(20.r),
-          borderSide: const BorderSide(
+          borderSide: BorderSide(
             color: Colors.red,
+            width: 1.w,
+          ),
+        ),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(20.r),
+          borderSide: BorderSide(
+            color: isDark ? Colors.transparent : AppColors.blueLight,
+            width: 1.0,
+          ),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(20.r),
+          borderSide: BorderSide(
+            color: isDark ? Colors.transparent : AppColors.blueLight,
+            width: 1.0,
+          ),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(20.r),
+          borderSide: BorderSide(
+            color: isDark ? Colors.transparent : AppColors.blueLight,
+            width: 2.0,
           ),
         ),
         prefixIcon: prefixIcon,
@@ -75,18 +97,6 @@ class CustomAuthTextField extends StatelessWidget {
         hintStyle: hintStyle ?? AppStyles.style18W400,
         filled: true,
         fillColor: fiiledColor ?? AppColors.dimGray,
-        border: isDark
-            ? OutlineInputBorder(
-                borderRadius: BorderRadius.circular(20.r),
-                borderSide: BorderSide.none,
-              )
-            : OutlineInputBorder(
-                borderRadius: BorderRadius.circular(20.r),
-                borderSide: const BorderSide(
-                  color: AppColors.blackColor,
-                  width: 1.0,
-                ),
-              ),
       ),
     );
   }

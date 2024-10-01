@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import '../../../../core/utils/app_colors.dart';
@@ -28,6 +29,7 @@ class _TermsConditionsWidgetState extends State<TermsConditionsWidget> {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
@@ -42,10 +44,10 @@ class _TermsConditionsWidgetState extends State<TermsConditionsWidget> {
               isChecked = value!;
             });
           },
-          activeColor: AppColors.whiteColor,
-          checkColor: AppColors.blackColor,
-          side: const BorderSide(
-            color: AppColors.whiteColor,
+          activeColor: isDark ? AppColors.whiteColor : AppColors.blueLight,
+          checkColor: isDark ? AppColors.blackColor : AppColors.whiteColor,
+          side: BorderSide(
+            color: isDark ? AppColors.whiteColor : AppColors.blueLight,
             strokeAlign: 3.0,
           ),
         ),
@@ -56,11 +58,15 @@ class _TermsConditionsWidgetState extends State<TermsConditionsWidget> {
           child: RichText(
             text: TextSpan(
               text: "iagree".tr(context: context),
-              style: AppStyles.style13W400,
+              style: AppStyles.style13W400.copyWith(
+                color: isDark ? AppColors.whiteColor : AppColors.blackColor,
+              ),
               children: [
                 TextSpan(
                   text: "termsAndConditions".tr(context: context),
-                  style: AppStyles.style13W600,
+                  style: AppStyles.style13W600.copyWith(
+                    color: isDark ? AppColors.whiteColor : AppColors.blackColor,
+                  ),
                 )
               ],
             ),
@@ -74,15 +80,20 @@ class _TermsConditionsWidgetState extends State<TermsConditionsWidget> {
     showDialog(
       context: context,
       builder: (BuildContext context) {
+        final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
         return AlertDialog(
           title: Text(
             "termsAndConditions".tr(context: context),
-            style: AppStyles.style16W900,
+            style: AppStyles.style16W900.copyWith(
+              color: isDark ? null : AppColors.whiteColor,
+            ),
           ),
           content: SingleChildScrollView(
             child: Text(
               termsAndConditions,
-              style: AppStyles.style13W400,
+              style: AppStyles.style13W400.copyWith(
+                color: isDark ? null : AppColors.whiteColor,
+              ),
             ),
           ),
           actions: [
@@ -92,7 +103,9 @@ class _TermsConditionsWidgetState extends State<TermsConditionsWidget> {
               },
               child: Text(
                 "agree".tr(context: context),
-                style: AppStyles.style13W600,
+                style: AppStyles.style13W600.copyWith(
+                  color: isDark ? null : AppColors.whiteColor,
+                ),
               ),
             ),
           ],

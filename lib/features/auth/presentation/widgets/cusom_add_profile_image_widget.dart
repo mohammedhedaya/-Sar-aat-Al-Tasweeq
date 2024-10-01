@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:shopping_chart/core/utils/app_colors.dart';
 import 'dashed_circle_avatar.dart_painter.dart';
 
 class CustomAddProfileImageWidget extends StatefulWidget {
@@ -33,13 +34,24 @@ class _CustomAddProfileImageWidgetState
         return AlertDialog(
           title: Text(
             'ChooseImageSource'.tr(context: context),
+            style: const TextStyle(
+              color: Colors.white,
+            ),
           ),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               ListTile(
-                leading: const Icon(Icons.camera_alt),
-                title: Text('Camera'.tr(context: context)),
+                leading: const Icon(
+                  Icons.camera_alt,
+                  color: Colors.white,
+                ),
+                title: Text(
+                  'Camera'.tr(context: context),
+                  style: const TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
                 onTap: () async {
                   context.pop();
                   final pickedFile =
@@ -53,8 +65,16 @@ class _CustomAddProfileImageWidgetState
                 },
               ),
               ListTile(
-                leading: const Icon(Icons.photo_library),
-                title: Text('Gallery'.tr(context: context)),
+                leading: const Icon(
+                  Icons.photo_library,
+                  color: Colors.white,
+                ),
+                title: Text(
+                  'Gallery'.tr(context: context),
+                  style: const TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
                 onTap: () async {
                   context.pop();
 
@@ -107,7 +127,8 @@ class _CustomAddProfileImageWidgetState
                   onTap: _pickImage,
                   child: CircleAvatar(
                     radius: 24.r,
-                    backgroundColor: Colors.black,
+                    backgroundColor:
+                        isDark ? Colors.black : AppColors.blueLight,
                     child: const Icon(
                       Icons.add,
                       color: Colors.white,
@@ -125,7 +146,7 @@ class _CustomAddProfileImageWidgetState
             child: Text(
               widget.errorText!,
               style: TextStyle(
-                color: isDark ? Colors.white : Colors.red,
+                color: isDark ? AppColors.yellowLight : Colors.red,
                 fontSize: 12.sp,
               ),
             ),

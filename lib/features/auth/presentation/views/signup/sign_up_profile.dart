@@ -56,6 +56,11 @@ class SignUpProfileView extends StatelessWidget {
                           height: 70.h,
                           decoration: BoxDecoration(
                             color: const Color(0xffD9D9D9),
+                            border: Border.all(
+                              color: isDark
+                                  ? Colors.transparent
+                                  : AppColors.blueLight,
+                            ),
                             borderRadius: context.locale == const Locale('en')
                                 ? BorderRadius.only(
                                     topRight: Radius.circular(20.r),
@@ -156,10 +161,23 @@ class SignUpProfileView extends StatelessWidget {
                               builder: (FormFieldState<String> state) {
                                 return InputDecorator(
                                   decoration: InputDecoration(
+                                    enabledBorder: isDark
+                                        ? InputBorder.none
+                                        : OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color: AppColors.blueLight,
+                                              width: 1.w,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(20.r),
+                                          ),
                                     border: isDark
                                         ? InputBorder.none
                                         : OutlineInputBorder(
-                                            borderSide: const BorderSide(),
+                                            borderSide: BorderSide(
+                                              color: AppColors.blueLight,
+                                              width: 1.w,
+                                            ),
                                             borderRadius:
                                                 BorderRadius.circular(20.r),
                                           ),
@@ -174,7 +192,7 @@ class SignUpProfileView extends StatelessWidget {
                                     contentPadding: EdgeInsets.zero,
                                     errorStyle: TextStyle(
                                       color: isDark
-                                          ? AppColors.whiteColor
+                                          ? AppColors.yellowLight
                                           : Colors.red,
                                     ),
                                   ),
@@ -247,7 +265,9 @@ class SignUpProfileView extends StatelessWidget {
                             }
                           },
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: AppColors.blackColor,
+                            backgroundColor: isDark
+                                ? AppColors.blackColor
+                                : AppColors.blueLight,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(4),
                             ),

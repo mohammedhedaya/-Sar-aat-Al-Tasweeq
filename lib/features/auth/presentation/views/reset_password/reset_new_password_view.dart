@@ -127,6 +127,7 @@ class ResetNewPasswordView extends StatelessWidget {
                           context.go("/");
                         }
                       },
+                      backgroundColor: isDark ? null : AppColors.blueLight,
                       text: "next".tr(context: context),
                     ),
                   ],

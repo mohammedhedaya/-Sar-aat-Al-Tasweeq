@@ -9,18 +9,19 @@ class CustomAuthBtn extends StatelessWidget {
     super.key,
     required this.text,
     this.onPressed,
+    this.backgroundColor,
   });
 
   final String text;
   final void Function()? onPressed;
-
+  final Color? backgroundColor;
   @override
   Widget build(BuildContext context) {
     final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        backgroundColor: AppColors.blackColor,
+        backgroundColor: backgroundColor ?? AppColors.blackColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(4.r),
         ),
