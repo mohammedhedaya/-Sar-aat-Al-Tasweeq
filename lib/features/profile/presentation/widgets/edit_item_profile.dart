@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -12,6 +13,7 @@ class EditItemProfile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return SingleChildScrollView(
       child: Column(
         children: [
@@ -34,9 +36,19 @@ class EditItemProfile extends StatelessWidget {
                       ),
                       child: TextFormField(
                         initialValue: 'فيصل',
-                        decoration: const InputDecoration(
+                        decoration: InputDecoration(
                           border: InputBorder.none,
-                          contentPadding: EdgeInsets.symmetric(
+                          enabledBorder: isDark
+                              ? null
+                              : OutlineInputBorder(
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(10.r),
+                                  ),
+                                  borderSide: const BorderSide(
+                                    color: AppColors.blueLight,
+                                  ),
+                                ),
+                          contentPadding: const EdgeInsets.symmetric(
                             vertical: 15,
                             horizontal: 12,
                           ),
@@ -66,9 +78,19 @@ class EditItemProfile extends StatelessWidget {
                       ),
                       child: TextFormField(
                         initialValue: 'عبدالعزيز',
-                        decoration: const InputDecoration(
+                        decoration: InputDecoration(
                           border: InputBorder.none,
-                          contentPadding: EdgeInsets.symmetric(
+                          enabledBorder: isDark
+                              ? null
+                              : OutlineInputBorder(
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(10.r),
+                                  ),
+                                  borderSide: const BorderSide(
+                                    color: AppColors.blueLight,
+                                  ),
+                                ),
+                          contentPadding: const EdgeInsets.symmetric(
                             vertical: 15,
                             horizontal: 12,
                           ),
@@ -102,9 +124,19 @@ class EditItemProfile extends StatelessWidget {
                       ),
                       child: TextFormField(
                         initialValue: 'ال سعود',
-                        decoration: const InputDecoration(
+                        decoration: InputDecoration(
                           border: InputBorder.none,
-                          contentPadding: EdgeInsets.symmetric(
+                          enabledBorder: isDark
+                              ? null
+                              : OutlineInputBorder(
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(10.r),
+                                  ),
+                                  borderSide: const BorderSide(
+                                    color: AppColors.blueLight,
+                                  ),
+                                ),
+                          contentPadding: const EdgeInsets.symmetric(
                               vertical: 15, horizontal: 12),
                         ),
                         style: AppStyles.style18W400,
@@ -140,6 +172,16 @@ class EditItemProfile extends StatelessWidget {
                   initialValue: '0501234567',
                   keyboardType: TextInputType.phone,
                   decoration: InputDecoration(
+                    enabledBorder: isDark
+                        ? null
+                        : OutlineInputBorder(
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(10.r),
+                            ),
+                            borderSide: const BorderSide(
+                              color: AppColors.blueLight,
+                            ),
+                          ),
                     suffixIcon: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
@@ -184,10 +226,20 @@ class EditItemProfile extends StatelessWidget {
                 child: TextFormField(
                   initialValue: 'faisal_abdelaziz@yahoo.com',
                   keyboardType: TextInputType.emailAddress,
-                  decoration: const InputDecoration(
+                  decoration: InputDecoration(
                     border: InputBorder.none,
-                    contentPadding:
-                        EdgeInsets.symmetric(vertical: 15, horizontal: 12),
+                    enabledBorder: isDark
+                        ? null
+                        : OutlineInputBorder(
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(10.r),
+                            ),
+                            borderSide: const BorderSide(
+                              color: AppColors.blueLight,
+                            ),
+                          ),
+                    contentPadding: const EdgeInsets.symmetric(
+                        vertical: 15, horizontal: 12),
                   ),
                   style: AppStyles.style18W400,
                 ),

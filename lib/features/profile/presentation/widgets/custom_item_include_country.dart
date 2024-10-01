@@ -1,8 +1,8 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 
@@ -11,6 +11,8 @@ class CustomItemIncludeCountry extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
+
     return Row(
       children: [
         Expanded(
@@ -21,7 +23,7 @@ class CustomItemIncludeCountry extends StatelessWidget {
               Text(
                 "country".tr(context: context),
                 style: AppStyles.style12W400.copyWith(
-                  color: AppColors.whiteColor,
+                  color: isDark ? AppColors.whiteColor : AppColors.blackColor,
                 ),
                 textAlign: TextAlign.start,
               ),
@@ -35,8 +37,20 @@ class CustomItemIncludeCountry extends StatelessWidget {
                   borderRadius: BorderRadius.all(
                     Radius.circular(20.r),
                   ),
+                  border: isDark
+                      ? null
+                      : Border.all(
+                          color: AppColors.blueLight,
+                        ),
                 ),
-                child: CountryCodePicker(
+                child:
+                    //  Center(
+                    //   child: Text(
+                    //     "المملكة العربية السعودية",
+                    //     style: AppStyles.style14W400,
+                    //   ),
+                    // ),
+                    CountryCodePicker(
                   onChanged: (value) {},
                   initialSelection: 'SA',
                   favorite: const ['+966', 'SA'],
@@ -65,17 +79,34 @@ class CustomItemIncludeCountry extends StatelessWidget {
               Text(
                 "city".tr(context: context),
                 style: AppStyles.style12W400.copyWith(
-                  color: AppColors.whiteColor,
+                  color: isDark ? AppColors.whiteColor : AppColors.blackColor,
                 ),
                 textAlign: TextAlign.start,
               ),
               SizedBox(height: 8.h),
               Container(
+                height: 60.h,
+                width: double.infinity,
+                padding: EdgeInsets.only(right: 16.w),
                 decoration: BoxDecoration(
                   color: AppColors.whiteColor.withOpacity(0.10),
-                  borderRadius: BorderRadius.circular(20.r),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(20.r),
+                  ),
+                  border: isDark
+                      ? null
+                      : Border.all(
+                          color: AppColors.blueLight,
+                        ),
                 ),
-                child: TextFormField(
+                child:
+                    // Center(
+                    //   child: Text(
+                    //     "الرياض",
+                    //     style: AppStyles.style18W400,
+                    //   ),
+                    // ),
+                    TextFormField(
                   initialValue: 'الرياض',
                   decoration: const InputDecoration(
                     border: InputBorder.none,

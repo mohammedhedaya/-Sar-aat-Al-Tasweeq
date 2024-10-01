@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -54,6 +55,7 @@ class _EditProfileViewState extends State<EditProfileView> {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -64,9 +66,9 @@ class _EditProfileViewState extends State<EditProfileView> {
               onPressed: () {
                 context.pop();
               },
-              icon: const Icon(
+              icon: Icon(
                 Icons.arrow_forward_ios_outlined,
-                color: Colors.white70,
+                color: isDark ? Colors.white70 : Colors.black87,
               ),
             ),
           ],

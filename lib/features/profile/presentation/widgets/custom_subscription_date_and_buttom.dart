@@ -1,7 +1,9 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shopping_chart/core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 
 class CustomSubscriptionDateAndBtns extends StatelessWidget {
@@ -9,6 +11,8 @@ class CustomSubscriptionDateAndBtns extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
+
     return Column(
       children: [
         Row(
@@ -57,7 +61,8 @@ class CustomSubscriptionDateAndBtns extends StatelessWidget {
                   GoRouter.of(context).push('/profileChangePasswordView');
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.white,
+                  backgroundColor:
+                      isDark ? Colors.white : AppColors.yellowLight,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.r),
                   ),
@@ -76,7 +81,7 @@ class CustomSubscriptionDateAndBtns extends StatelessWidget {
                   GoRouter.of(context).push('/editProfileView');
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.teal,
+                  backgroundColor: isDark ? Colors.teal : AppColors.blueLight,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.r),
                   ),

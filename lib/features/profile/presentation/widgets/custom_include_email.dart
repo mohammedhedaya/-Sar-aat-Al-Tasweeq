@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -9,6 +10,7 @@ class CustomIncludeEmail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return Row(
       children: [
         Expanded(
@@ -18,7 +20,7 @@ class CustomIncludeEmail extends StatelessWidget {
               Text(
                 "email".tr(context: context),
                 style: AppStyles.style12W400.copyWith(
-                  color: AppColors.whiteColor,
+                  color: isDark ? AppColors.whiteColor : AppColors.blackColor,
                 ),
                 textAlign: TextAlign.start,
               ),
@@ -31,6 +33,11 @@ class CustomIncludeEmail extends StatelessWidget {
                   borderRadius: BorderRadius.all(
                     Radius.circular(20.r),
                   ),
+                  border: isDark
+                      ? null
+                      : Border.all(
+                          color: AppColors.blueLight,
+                        ),
                 ),
                 child: Center(
                   child: Text(

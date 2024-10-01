@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -12,6 +13,8 @@ class CustomProfileData extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
+
     return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -25,7 +28,9 @@ class CustomProfileData extends StatelessWidget {
                     Text(
                       "first_name".tr(context: context),
                       style: AppStyles.style12W400.copyWith(
-                        color: AppColors.whiteColor,
+                        color: isDark
+                            ? AppColors.whiteColor
+                            : AppColors.blackColor,
                       ),
                       textAlign: TextAlign.start,
                     ),
@@ -38,6 +43,11 @@ class CustomProfileData extends StatelessWidget {
                         borderRadius: BorderRadius.all(
                           Radius.circular(10.r),
                         ),
+                        border: isDark
+                            ? null
+                            : Border.all(
+                                color: AppColors.blueLight,
+                              ),
                       ),
                       child: Align(
                         alignment: Alignment.centerRight,
@@ -59,7 +69,9 @@ class CustomProfileData extends StatelessWidget {
                     Text(
                       "second_name".tr(context: context),
                       style: AppStyles.style12W400.copyWith(
-                        color: AppColors.whiteColor,
+                        color: isDark
+                            ? AppColors.whiteColor
+                            : AppColors.blackColor,
                       ),
                       textAlign: TextAlign.start,
                     ),
@@ -72,6 +84,11 @@ class CustomProfileData extends StatelessWidget {
                         borderRadius: BorderRadius.all(
                           Radius.circular(10.r),
                         ),
+                        border: isDark
+                            ? null
+                            : Border.all(
+                                color: AppColors.blueLight,
+                              ),
                       ),
                       child: Align(
                         alignment: Alignment.centerRight,
@@ -96,8 +113,11 @@ class CustomProfileData extends StatelessWidget {
                   children: [
                     Text(
                       "third_name".tr(context: context),
-                      style: AppStyles.style12W400
-                          .copyWith(color: AppColors.whiteColor, fontSize: 12),
+                      style: AppStyles.style12W400.copyWith(
+                          color: isDark
+                              ? AppColors.whiteColor
+                              : AppColors.blackColor,
+                          fontSize: 12),
                       textAlign: TextAlign.start,
                     ),
                     SizedBox(height: 9.h),
@@ -107,6 +127,11 @@ class CustomProfileData extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: AppColors.whiteColor.withOpacity(0.10),
                         borderRadius: BorderRadius.all(Radius.circular(10.r)),
+                        border: isDark
+                            ? null
+                            : Border.all(
+                                color: AppColors.blueLight,
+                              ),
                       ),
                       child: Align(
                         alignment: Alignment.centerRight,
@@ -132,7 +157,7 @@ class CustomProfileData extends StatelessWidget {
               Text(
                 "phone".tr(context: context),
                 style: AppStyles.style12W400.copyWith(
-                  color: AppColors.whiteColor,
+                  color: isDark ? AppColors.whiteColor : AppColors.blackColor,
                 ),
                 textAlign: TextAlign.start,
               ),
@@ -150,6 +175,11 @@ class CustomProfileData extends StatelessWidget {
                                 topLeft: Radius.circular(20.r),
                                 bottomLeft: Radius.circular(20.r),
                               ),
+                              border: isDark
+                                  ? null
+                                  : Border.all(
+                                      color: AppColors.blueLight,
+                                    ),
                             ),
                             child: Align(
                               alignment: Alignment.center,
@@ -170,6 +200,11 @@ class CustomProfileData extends StatelessWidget {
                               topRight: Radius.circular(20.r),
                               bottomRight: Radius.circular(20.r),
                             ),
+                            border: isDark
+                                ? null
+                                : Border.all(
+                                    color: AppColors.blueLight,
+                                  ),
                           ),
                           child: Row(
                             children: [
@@ -200,6 +235,11 @@ class CustomProfileData extends StatelessWidget {
                                 topRight: Radius.circular(20.r),
                                 bottomRight: Radius.circular(20.r),
                               ),
+                              border: isDark
+                                  ? null
+                                  : Border.all(
+                                      color: AppColors.blueLight,
+                                    ),
                             ),
                             child: Align(
                               alignment: Alignment.centerRight,
@@ -220,6 +260,11 @@ class CustomProfileData extends StatelessWidget {
                               topLeft: Radius.circular(20.r),
                               bottomLeft: Radius.circular(20.r),
                             ),
+                            border: isDark
+                                ? null
+                                : Border.all(
+                                    color: AppColors.blueLight,
+                                  ),
                           ),
                           child: Row(
                             children: [
@@ -228,9 +273,11 @@ class CustomProfileData extends StatelessWidget {
                                 style: AppStyles.style18W400,
                                 textAlign: TextAlign.start,
                               ),
-                              const Icon(
+                              Icon(
                                 Icons.keyboard_arrow_down_outlined,
-                                color: AppColors.whiteColor,
+                                color: isDark
+                                    ? AppColors.whiteColor
+                                    : AppColors.blackColor,
                                 size: 35,
                               ),
                             ],
