@@ -37,7 +37,7 @@ class _QRViewInContainerState extends State<QRViewInContainer> {
             },
             icon: const Icon(
               Icons.arrow_forward_ios_sharp,
-              color: AppColors.whiteColor,
+              // color: AppColors.whiteColor,
             ),
           ),
         ],

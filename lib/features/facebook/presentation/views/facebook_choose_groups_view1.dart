@@ -20,7 +20,7 @@ class FacebookChooseGroupsView1 extends StatelessWidget {
             },
             icon: const Icon(
               Icons.arrow_forward_ios_sharp,
-              color: Colors.white54,
+              // color: Colors.white54,
             ),
           ),
         ],

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import '../../../../core/utils/app_colors.dart';
 import '../widgets/x_view_body.dart';
 
 class XView extends StatelessWidget {
@@ -21,7 +20,7 @@ class XView extends StatelessWidget {
             },
             icon: const Icon(
               Icons.arrow_forward_ios_sharp,
-              color: AppColors.whiteColor,
+              // color: AppColors.whiteColor,
             ),
           ),
         ],

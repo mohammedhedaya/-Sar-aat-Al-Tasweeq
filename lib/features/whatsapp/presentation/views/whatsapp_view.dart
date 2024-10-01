@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import '../../../../core/utils/app_colors.dart';
 import '../widgets/whatsapp_view_body.dart';
 
 class WhatsappView extends StatelessWidget {
@@ -21,7 +20,7 @@ class WhatsappView extends StatelessWidget {
             },
             icon: const Icon(
               Icons.arrow_forward_ios_sharp,
-              color: AppColors.whiteColor,
+              // color: AppColors.whiteColor,
             ),
           ),
         ],

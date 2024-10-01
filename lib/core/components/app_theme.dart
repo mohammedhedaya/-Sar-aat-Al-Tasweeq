@@ -28,6 +28,13 @@ final ThemeData lightTheme = ThemeData(
   bottomNavigationBarTheme: const BottomNavigationBarThemeData(
     backgroundColor: AppColors.blueLight,
   ),
+  elevatedButtonTheme: ElevatedButtonThemeData(
+    style: ElevatedButton.styleFrom(
+      textStyle: const TextStyle(
+        color: AppColors.whiteColor,
+      ),
+    ),
+  ),
 );
 
 final ThemeData darkTheme = ThemeData(
@@ -45,5 +52,12 @@ final ThemeData darkTheme = ThemeData(
   appBarTheme: const AppBarTheme(
     backgroundColor: AppColors.navBarColor,
     surfaceTintColor: Colors.transparent,
+  ),
+   elevatedButtonTheme: ElevatedButtonThemeData(
+    style: ElevatedButton.styleFrom(
+      textStyle: const TextStyle(
+        color: AppColors.blackColor,
+      ),
+    ),
   ),
 );

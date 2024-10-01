@@ -25,9 +25,9 @@ class ProfileView extends StatelessWidget {
               onPressed: () {
                 context.pop();
               },
-              icon: Icon(
+              icon: const Icon(
                 Icons.arrow_forward_ios_outlined,
-                color: isDark ? Colors.white70 : Colors.black,
+                // color: isDark ? Colors.white70 : Colors.black,
               ),
             ),
           ],

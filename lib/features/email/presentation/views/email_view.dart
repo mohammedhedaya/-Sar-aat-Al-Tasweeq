@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import '../../../../core/utils/app_colors.dart';
 import '../widgets/email_view_body.dart';
 
 class EmailView extends StatelessWidget {
@@ -21,7 +20,7 @@ class EmailView extends StatelessWidget {
             },
             icon: const Icon(
               Icons.arrow_forward_ios_sharp,
-              color: AppColors.whiteColor,
+              // color: AppColors.whiteColor,
             ),
           ),
         ],

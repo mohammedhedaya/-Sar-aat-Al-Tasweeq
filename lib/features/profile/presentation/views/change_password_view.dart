@@ -36,9 +36,9 @@ class _ProfileChangePasswordViewState extends State<ProfileChangePasswordView> {
               onPressed: () {
                 context.pop();
               },
-              icon: Icon(
+              icon: const Icon(
                 Icons.arrow_forward_ios_outlined,
-                color: isDark ? Colors.white70 : Colors.black87,
+                // color: isDark ? Colors.white70 : Colors.black87,
               ),
             ),
           ],

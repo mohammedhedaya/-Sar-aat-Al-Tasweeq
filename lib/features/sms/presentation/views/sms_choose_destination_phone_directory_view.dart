@@ -49,7 +49,7 @@ class _SMSChooseDestinationPhoneDirectoryViewState
             },
             icon: const Icon(
               Icons.arrow_forward_ios_rounded,
-              color: Colors.white60,
+              // color: Colors.white60,
             ),
           ),
         ],

@@ -93,7 +93,7 @@ class _LaunchYourXAdViewState extends State<LaunchYourXAdView> {
             },
             icon: const Icon(
               Icons.arrow_forward_ios_sharp,
-              color: Colors.white70,
+              // color: Colors.white70,
             ),
           ),
         ],

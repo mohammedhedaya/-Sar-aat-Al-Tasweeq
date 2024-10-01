@@ -25,9 +25,9 @@ class AddHashtagsView extends StatelessWidget {
             onPressed: () {
               context.pop();
             },
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_forward_ios_sharp,
-              color: Colors.white.withOpacity(0.8),
+              // color: Colors.white.withOpacity(0.8),
             ),
           ),
         ],

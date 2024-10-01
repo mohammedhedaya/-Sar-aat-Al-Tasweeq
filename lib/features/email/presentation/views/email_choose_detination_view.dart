@@ -48,7 +48,7 @@ class _EmailChooseDetinationViewState extends State<EmailChooseDetinationView> {
             },
             icon: const Icon(
               Icons.arrow_forward_ios_rounded,
-              color: Colors.white60,
+              // color: Colors.white60,
             ),
           ),
         ],
