@@ -12,7 +12,7 @@ class SignUpView extends StatelessWidget {
     final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
 
     return Scaffold(
-      resizeToAvoidBottomInset: false,
+      // resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: isDark ? AppColors.whiteColor : AppColors.blueLight,
         elevation: 0,
@@ -23,9 +23,9 @@ class SignUpView extends StatelessWidget {
             onPressed: () {
               context.pop();
             },
-            icon: const Icon(
+            icon: Icon(
               Icons.arrow_forward_ios_outlined,
-              color: Colors.black38,
+              color: isDark ? Colors.black38 : Colors.white70,
             ),
           ),
         ],

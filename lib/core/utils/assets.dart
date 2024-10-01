@@ -298,6 +298,14 @@ class Assets {
   /// assets/images/shareingWithMyFriends.svg
   static const String imagesShareingWithMyFriends = "assets/images/shareingWithMyFriends.svg";
 
+  /// Assets for imagesSignupbgDark
+  /// assets/images/signupbgDark.png
+  static const String imagesSignupbgDark = "assets/images/signupbgDark.png";
+
+  /// Assets for imagesSignupbgLight
+  /// assets/images/signupbgLight.png
+  static const String imagesSignupbgLight = "assets/images/signupbgLight.png";
+
   /// Assets for imagesSmsLogo
   /// assets/images/sms_logo.png
   static const String imagesSmsLogo = "assets/images/sms_logo.png";

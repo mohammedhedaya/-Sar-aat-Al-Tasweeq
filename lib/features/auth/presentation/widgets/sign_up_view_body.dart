@@ -22,167 +22,168 @@ class SignUpViewBody extends StatelessWidget {
       builder: (context, state) {
         AuthCubit cubit = BlocProvider.of<AuthCubit>(context);
         final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
-        return SingleChildScrollView(
-          child: SizedBox(
-            height: MediaQuery.of(context).size.height,
-            child: Form(
-              key: cubit.signUpFormKey,
-              child: Stack(
-                children: [
-                  Positioned(
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    child: SvgPicture.asset(
-                      Assets.imagesWhitecircle,
-                      height: 200.h,
-                      fit: BoxFit.fill,
-                      colorFilter: ColorFilter.mode(
-                          isDark ? AppColors.whiteColor : AppColors.blueLight,
-                          BlendMode.srcIn),
-                    ),
-                  ),
-                  Positioned(
-                    top: 30.h,
-                    right: 24.h,
-                    child: Text(
-                      "signup".tr(context: context),
-                      style: AppStyles.style40W600.copyWith(
-                        color: AppColors.blackColor,
+        return Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: isDark
+                  ? const AssetImage(Assets.imagesSignupbgDark)
+                  : const AssetImage(Assets.imagesSignupbgLight),
+              fit: BoxFit.fill,
+            ),
+          ),
+          child: Form(
+            key: cubit.signUpFormKey,
+            child: ListView(
+              children: [
+                SizedBox(height: 57.h),
+                Padding(
+                  padding: EdgeInsetsDirectional.only(start: 26.w, end: 41.w),
+                  child: Column(
+                    children: [
+                      Align(
+                        alignment: AlignmentDirectional.topStart,
+                        child: Text(
+                          "signup".tr(context: context),
+                          style: AppStyles.style40W600.copyWith(
+                            color: isDark
+                                ? AppColors.blackColor
+                                : AppColors.whiteColor,
+                          ),
+                        ),
                       ),
-                    ),
+                      SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.19),
+                      CustomAuthTextField(
+                        fiiledColor: AppColors.whiteColor.withOpacity(0.10),
+                        hintText: "first_name".tr(context: context),
+                        onChanged: (firstName) {
+                          cubit.firstName = firstName;
+                        },
+                      ),
+                      SizedBox(height: 25.h),
+                      CustomAuthTextField(
+                        fiiledColor: AppColors.whiteColor.withOpacity(0.10),
+                        hintText: "second_name".tr(context: context),
+                        onChanged: (secondName) {
+                          cubit.secondName = secondName;
+                        },
+                      ),
+                      SizedBox(height: 25.h),
+                      CustomAuthTextField(
+                        fiiledColor: AppColors.whiteColor.withOpacity(0.10),
+                        hintText: "last_name".tr(context: context),
+                        onChanged: (lastName) {
+                          cubit.lastName = lastName;
+                        },
+                      ),
+                      SizedBox(height: 25.h),
+                      CustomAuthTextField(
+                        fiiledColor: AppColors.whiteColor.withOpacity(0.10),
+                        hintText: 'email'.tr(context: context),
+                        keyboardType: TextInputType.emailAddress,
+                        validator: (email) {
+                          if (email == null || email.isEmpty) {
+                            return "emailValidation".tr(context: context);
+                          } else if (!RegExp(
+                            r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+",
+                          ).hasMatch(email)) {
+                            return "trueEmailValidation".tr(context: context);
+                          }
+                          return null;
+                        },
+                        onChanged: (email) {
+                          cubit.email = email;
+                        },
+                      ),
+                    ],
                   ),
-                  Positioned(
-                    top: 250.h,
-                    left: 41.w,
-                    right: 26.w,
-                    child: Column(
-                      children: [
-                        CustomAuthTextField(
-                          fiiledColor: AppColors.whiteColor.withOpacity(0.10),
-                          hintText: "first_name".tr(context: context),
-                          onChanged: (firstName) {
-                            cubit.firstName = firstName;
-                          },
-                        ),
-                        SizedBox(height: 50.h),
-                        CustomAuthTextField(
-                          fiiledColor: AppColors.whiteColor.withOpacity(0.10),
-                          hintText: "second_name".tr(context: context),
-                          onChanged: (secondName) {
-                            cubit.secondName = secondName;
-                          },
-                        ),
-                        SizedBox(height: 50.h),
-                        CustomAuthTextField(
-                          fiiledColor: AppColors.whiteColor.withOpacity(0.10),
-                          hintText: "last_name".tr(context: context),
-                          onChanged: (lastName) {
-                            cubit.lastName = lastName;
-                          },
-                        ),
-                        SizedBox(height: 50.h),
-                        CustomAuthTextField(
-                          fiiledColor: AppColors.whiteColor.withOpacity(0.10),
-                          hintText: 'email'.tr(context: context),
-                          keyboardType: TextInputType.emailAddress,
-                          validator: (email) {
-                            if (email == null || email.isEmpty) {
-                              return "emailValidation".tr(context: context);
-                            } else if (!RegExp(
-                              r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+",
-                            ).hasMatch(email)) {
-                              return "trueEmailValidation".tr(context: context);
-                            }
-                            return null;
-                          },
-                          onChanged: (email) {
-                            cubit.email = email;
-                          },
-                        ),
-                      ],
-                    ),
-                  ),
-                  context.locale == const Locale('en')
-                      ? Positioned(
-                          bottom: 0,
-                          right: -50.w,
-                          child: Container(
-                            height: 170.h,
-                            width: 170.w,
-                            decoration: BoxDecoration(
-                              color: isDark
-                                  ? AppColors.whiteColor
-                                  : AppColors.blueLight,
-                              borderRadius: const BorderRadius.only(
-                                topLeft: Radius.circular(300),
+                ),
+                SizedBox(height: 25.h),
+                Stack(
+                  clipBehavior: Clip.none,
+                  children: [
+                    context.locale == const Locale('en')
+                        ? Positioned(
+                            bottom: -120.h,
+                            right: -25.w,
+                            child: Container(
+                              height: 170.h,
+                              width: 170.w,
+                              decoration: BoxDecoration(
+                                color: isDark
+                                    ? AppColors.whiteColor
+                                    : AppColors.blueLight,
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(300.r),
+                                ),
+                              ),
+                            ),
+                          )
+                        : Positioned(
+                            bottom: -85.h,
+                            left: -25.w,
+                            child: Container(
+                              height: 170.h,
+                              width: 170.w,
+                              decoration: BoxDecoration(
+                                color: isDark
+                                    ? AppColors.whiteColor
+                                    : AppColors.blueLight,
+                                borderRadius: BorderRadius.only(
+                                  topRight: Radius.circular(300.r),
+                                ),
                               ),
                             ),
                           ),
-                        )
-                      : Positioned(
-                          bottom: 0,
-                          left: -50.w,
-                          child: Container(
-                            height: 170.h,
-                            width: 170.w,
-                            decoration: BoxDecoration(
-                              color: isDark
-                                  ? AppColors.whiteColor
-                                  : AppColors.blueLight,
-                              borderRadius: const BorderRadius.only(
-                                topRight: Radius.circular(300),
-                              ),
-                            ),
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.only(start: 26.w, end: 41.w),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const SizedBox(),
+                          Text(
+                            "account_registration".tr(context: context),
+                            style: AppStyles.style32W700,
                           ),
-                        ),
-                  Positioned(
-                    bottom: 65.h,
-                    left: 41.w,
-                    child: Row(
-                      children: [
-                        Text(
-                          "account_registration".tr(context: context),
-                          style: AppStyles.style32W700,
-                        ),
-                        SizedBox(
-                            width: MediaQuery.of(context).size.width * 0.25),
-                        InkWell(
-                          onTap: () {
-                            if (cubit.signUpFormKey.currentState!.validate()) {
-                              context.push('/signUpProfileView');
-                            }
-                          },
-                          child: Container(
-                            constraints: BoxConstraints(
-                              minHeight: 64.h,
-                              minWidth: 64.w,
-                            ),
-                            decoration: const BoxDecoration(
-                              color: AppColors.loginBtn,
-                              shape: BoxShape.circle,
-                            ),
-                            child: context.locale == const Locale('en')
-                                ? Center(
-                                    child: Transform.flip(
-                                      flipX: true,
+                          InkWell(
+                            onTap: () {
+                              if (cubit.signUpFormKey.currentState!
+                                  .validate()) {
+                                context.push('/signUpProfileView');
+                              }
+                            },
+                            child: Container(
+                              constraints: BoxConstraints(
+                                minHeight: 64.h,
+                                minWidth: 64.w,
+                              ),
+                              decoration: const BoxDecoration(
+                                color: AppColors.loginBtn,
+                                shape: BoxShape.circle,
+                              ),
+                              child: context.locale == const Locale('en')
+                                  ? Center(
+                                      child: Transform.flip(
+                                        flipX: true,
+                                        child: SvgPicture.asset(
+                                          Assets.imagesArrowForwardLoginPage,
+                                        ),
+                                      ),
+                                    )
+                                  : Center(
                                       child: SvgPicture.asset(
                                         Assets.imagesArrowForwardLoginPage,
                                       ),
                                     ),
-                                  )
-                                : Center(
-                                    child: SvgPicture.asset(
-                                      Assets.imagesArrowForwardLoginPage,
-                                    ),
-                                  ),
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                  ),
-                ],
-              ),
+                  ],
+                ),
+              ],
             ),
           ),
         );
