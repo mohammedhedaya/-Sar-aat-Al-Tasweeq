@@ -34,7 +34,8 @@ class _SwithThemeState extends State<SwithTheme> {
             children: [
               GestureDetector(
                 onTap: () {
-                  AdaptiveTheme.of(context).setLight();
+                  // AdaptiveTheme.of(context).setLight();
+                  AdaptiveTheme.of(context).toggleThemeMode();
                 },
                 child: Container(
                   decoration: BoxDecoration(
@@ -56,7 +57,8 @@ class _SwithThemeState extends State<SwithTheme> {
               SizedBox(width: 12.w),
               GestureDetector(
                 onTap: () {
-                  AdaptiveTheme.of(context).setDark();
+                  // AdaptiveTheme.of(context).setDark();
+                  AdaptiveTheme.of(context).toggleThemeMode();
                 },
                 child: Container(
                   decoration: BoxDecoration(

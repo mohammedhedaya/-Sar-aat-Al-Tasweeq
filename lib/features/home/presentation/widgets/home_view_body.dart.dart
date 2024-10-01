@@ -31,7 +31,7 @@ class HomeViewBody extends StatelessWidget {
             Container(
               width: double.infinity,
               color: isDark ? AppColors.navBarColor : AppColors.blueLight,
-              padding: EdgeInsetsDirectional.only(start: 10.w, bottom: 10.h),
+              padding: EdgeInsetsDirectional.only(start: 10.w, bottom: 4.h),
               child: Row(
                 children: [
                   SvgPicture.asset(
@@ -53,12 +53,14 @@ class HomeViewBody extends StatelessWidget {
                 ],
               ),
             ),
+            SizedBox(height: 20.h),
             const HomeCarouselSlider(),
             SizedBox(height: 20.h),
             Expanded(
               child: SingleChildScrollView(
                 child: Column(
                   children: [
+                    SizedBox(height: 10.h),
                     SocialMediaCard(
                       onTap: () {
                         context.push('/whatsappView');
@@ -114,7 +116,7 @@ class HomeViewBody extends StatelessWidget {
                       imagePath: Assets.imagesEmailLogo,
                       label: 'Email'.tr(context: context),
                     ),
-                    SizedBox(height: 25.h),
+                    SizedBox(height: 30.h),
                   ],
                 ),
               ),

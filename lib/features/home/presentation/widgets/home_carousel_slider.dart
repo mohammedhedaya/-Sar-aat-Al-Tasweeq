@@ -70,7 +70,7 @@ class _HomeCarouselSliderState extends State<HomeCarouselSlider> {
                     isDark ? AppColors.darkGray : AppColors.blueLight,
                 dotHeight: 14,
                 dotWidth: 14,
-                dotColor: AppColors.whiteColor,
+                dotColor: isDark ? AppColors.whiteColor : AppColors.yellowLight,
                 paintStyle: PaintingStyle.fill,
                 type: SlideType.normal,
               ),

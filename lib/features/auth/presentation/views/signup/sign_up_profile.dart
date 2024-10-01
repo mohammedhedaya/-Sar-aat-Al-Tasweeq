@@ -222,9 +222,8 @@ class SignUpProfileView extends StatelessWidget {
                                       ),
                                       padding: EdgeInsets.zero,
                                       showFlag: true,
-                                      hideMainText: true,
-                                      showCountryOnly: true,
-                                      showDropDownButton: true,
+                                      showOnlyCountryWhenClosed: true,
+                                      // showDropDownButton: true,
                                       flagDecoration: BoxDecoration(
                                         borderRadius:
                                             BorderRadius.circular(5.r),

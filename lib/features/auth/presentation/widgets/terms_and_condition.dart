@@ -67,7 +67,7 @@ class _TermsConditionsWidgetState extends State<TermsConditionsWidget> {
                   style: AppStyles.style13W600.copyWith(
                     color: isDark ? AppColors.whiteColor : AppColors.blackColor,
                   ),
-                )
+                ),
               ],
             ),
           ),
