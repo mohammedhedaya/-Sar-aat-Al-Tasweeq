@@ -137,7 +137,9 @@ class InstagramViewBody extends StatelessWidget {
                 ),
                 Text(
                   "WeHelpYou".tr(context: context),
-                  style: AppStyles.style12W600,
+                  style: AppStyles.style12W600.copyWith(
+                    color: const Color(0xffffffff),
+                  ),
                 ),
                 SizedBox(height: 16.h),
                 InkWell(
@@ -162,7 +164,9 @@ class InstagramViewBody extends StatelessWidget {
                       child: Center(
                         child: Text(
                           "suggestions".tr(context: context),
-                          style: AppStyles.style14W700,
+                          style: AppStyles.style14W700.copyWith(
+                            color: const Color(0xffffffff),
+                          ),
                           textAlign: TextAlign.center,
                         ),
                       ),

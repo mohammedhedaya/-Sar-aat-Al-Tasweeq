@@ -1,4 +1,5 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -27,7 +28,7 @@ class _InstagramUserDetailsSelectFollowingsPageState
         SizedBox(height: 25.h),
         CheckboxListTile(
           title: Text(
-            'تحديد الكل',
+            "SelectAll".tr(context: context),
             style: AppStyles.style13W600,
           ),
           shape: RoundedRectangleBorder(
@@ -37,8 +38,8 @@ class _InstagramUserDetailsSelectFollowingsPageState
           checkColor: const Color(0xff00C0CC),
           visualDensity: VisualDensity.compact,
           contentPadding: EdgeInsets.zero,
-          side: const BorderSide(
-            color: Colors.white,
+          side: BorderSide(
+            color: isDark ? Colors.white : AppColors.blueLight,
           ),
           value: selectAll,
           onChanged: (value) {
@@ -104,9 +105,10 @@ class _InstagramUserDetailsSelectFollowingsPageState
                     context.push('/instagramSendingView');
                   },
                   image: Assets.imagesRechargeWallet,
-                  textButton: "إعادة الشحن",
+                  textButton: "recharge".tr(context: context),
                   content: Text(
-                    "العدد المسموح الأرسال عليه 400 شخص فقط الرجاء شحن المزيد من الماسات",
+                    "The number allowed to be sent is 400 people only. Please charge more diamonds."
+                        .tr(context: context),
                     style: AppStyles.style15W900,
                     textAlign: TextAlign.center,
                   ),
@@ -131,7 +133,7 @@ class _InstagramUserDetailsSelectFollowingsPageState
             ),
             child: Center(
               child: Text(
-                "إرسال",
+                "send".tr(context: context),
                 style: AppStyles.style14W400,
                 textAlign: TextAlign.center,
               ),

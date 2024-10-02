@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -23,6 +24,7 @@ class CustomPickMediaDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 40.w),
       child: Row(
@@ -38,7 +40,8 @@ class CustomPickMediaDialog extends StatelessWidget {
                     child: Container(
                       padding: const EdgeInsets.all(20),
                       decoration: BoxDecoration(
-                        color: AppColors.darkGray,
+                        color:
+                            isDark ? AppColors.darkGray : AppColors.blueLight,
                         borderRadius: BorderRadius.circular(11.r),
                       ),
                       child: SvgPicture.asset(
@@ -70,7 +73,8 @@ class CustomPickMediaDialog extends StatelessWidget {
                     child: Container(
                       padding: const EdgeInsets.all(20),
                       decoration: BoxDecoration(
-                        color: AppColors.darkGray,
+                        color:
+                            isDark ? AppColors.darkGray : AppColors.blueLight,
                         borderRadius: BorderRadius.circular(11.r),
                       ),
                       child: SvgPicture.asset(

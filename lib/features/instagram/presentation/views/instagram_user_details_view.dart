@@ -35,6 +35,7 @@ class _InstagramUserDetailsViewState extends State<InstagramUserDetailsView> {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return SafeArea(
       child: Scaffold(
         body: Padding(
@@ -46,7 +47,9 @@ class _InstagramUserDetailsViewState extends State<InstagramUserDetailsView> {
                 padding: EdgeInsets.symmetric(horizontal: 19.w, vertical: 10.h),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10.r),
-                  border: Border.all(color: Colors.white),
+                  border: Border.all(
+                    color: isDark ? AppColors.whiteColor : AppColors.blueLight,
+                  ),
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -62,9 +65,9 @@ class _InstagramUserDetailsViewState extends State<InstagramUserDetailsView> {
                       onTap: () {
                         context.pop();
                       },
-                      child: const Icon(
+                      child: Icon(
                         Icons.arrow_forward_ios_outlined,
-                        color: Colors.white,
+                        color: isDark ? AppColors.whiteColor : Colors.black,
                       ),
                     ),
                   ],
@@ -82,7 +85,10 @@ class _InstagramUserDetailsViewState extends State<InstagramUserDetailsView> {
                           textAlign: TextAlign.start,
                           text: TextSpan(
                             text: "username".tr(context: context),
-                            style: AppStyles.style13W600,
+                            style: AppStyles.style13W600.copyWith(
+                              color:
+                                  isDark ? AppColors.whiteColor : Colors.black,
+                            ),
                             children: [
                               TextSpan(
                                 text: " CARZIMA23 ",
@@ -98,7 +104,10 @@ class _InstagramUserDetailsViewState extends State<InstagramUserDetailsView> {
                           text: TextSpan(
                             text: "Numberoffollowersandfollowings"
                                 .tr(context: context),
-                            style: AppStyles.style13W600,
+                            style: AppStyles.style13W600.copyWith(
+                              color:
+                                  isDark ? AppColors.whiteColor : Colors.black,
+                            ),
                             children: [
                               TextSpan(
                                 text: " (4000) ",

@@ -43,7 +43,7 @@ class _SendYourAdToFollowersViewBodyState
       children: [
         Container(
           width: double.infinity,
-          color: isDark ? AppColors.navBarColor : AppColors.navBarColor,
+          color: isDark ? AppColors.navBarColor : AppColors.blueLight,
           padding: EdgeInsetsDirectional.only(start: 15.w, bottom: 10.h),
           child: Row(
             children: [
@@ -82,7 +82,7 @@ class _SendYourAdToFollowersViewBodyState
                   Text(
                     "Attach a photo or video".tr(context: context),
                     style: AppStyles.style16W600.copyWith(
-                      color: Colors.white,
+                      color: isDark ? Colors.white : Colors.black,
                     ),
                   ),
                   SizedBox(height: 17.h),
@@ -110,6 +110,10 @@ class _SendYourAdToFollowersViewBodyState
                       padding: const EdgeInsets.all(20),
                       decoration: BoxDecoration(
                         color: Colors.white.withOpacity(0.10),
+                        border: Border.all(
+                          color:
+                              isDark ? Colors.transparent : AppColors.blueLight,
+                        ),
                         borderRadius: BorderRadius.circular(20.r),
                       ),
                       child: Center(
@@ -117,6 +121,12 @@ class _SendYourAdToFollowersViewBodyState
                             ? _mediaFile!.path.endsWith('.mp4')
                                 ? SvgPicture.asset(
                                     Assets.imagesUploadIcon,
+                                    colorFilter: ColorFilter.mode(
+                                      isDark
+                                          ? AppColors.whiteColor
+                                          : AppColors.blueLight,
+                                      BlendMode.srcIn,
+                                    ),
                                   )
                                 : Image.file(
                                     _mediaFile!,
@@ -124,6 +134,12 @@ class _SendYourAdToFollowersViewBodyState
                                   )
                             : SvgPicture.asset(
                                 Assets.imagesUploadIcon,
+                                colorFilter: ColorFilter.mode(
+                                  isDark
+                                      ? AppColors.whiteColor
+                                      : AppColors.blueLight,
+                                  BlendMode.srcIn,
+                                ),
                               ),
                       ),
                     ),
@@ -143,7 +159,9 @@ class _SendYourAdToFollowersViewBodyState
                     fiiledColor: AppColors.whiteColor.withOpacity(0.10),
                     hintText: "addLink".tr(context: context),
                     hintStyle: AppStyles.style12W700.copyWith(
-                      color: const Color(0xffffffff),
+                      color: isDark
+                          ? const Color(0xffffffff)
+                          : const Color(0xff000000),
                     ),
                     suffixIcon: Transform.scale(
                       scale: 0.5,
@@ -157,7 +175,9 @@ class _SendYourAdToFollowersViewBodyState
                     fiiledColor: AppColors.whiteColor.withOpacity(0.10),
                     hintText: "addLocation".tr(context: context),
                     hintStyle: AppStyles.style12W700.copyWith(
-                      color: const Color(0xffffffff),
+                      color: isDark
+                          ? const Color(0xffffffff)
+                          : const Color(0xff000000),
                     ),
                     suffixIcon: Transform.scale(
                       scale: 0.5,

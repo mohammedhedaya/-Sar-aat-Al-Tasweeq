@@ -43,7 +43,7 @@ class _ChoosePersonAndSendAdViewBodyState
       children: [
         Container(
           width: double.infinity,
-          color: isDark ? AppColors.navBarColor : AppColors.navBarColor,
+          color: isDark ? AppColors.navBarColor : AppColors.blueLight,
           padding: EdgeInsetsDirectional.only(start: 15.w, bottom: 10.h),
           child: Row(
             children: [
@@ -83,7 +83,7 @@ class _ChoosePersonAndSendAdViewBodyState
                   Text(
                     "Attach a photo or video".tr(context: context),
                     style: AppStyles.style16W600.copyWith(
-                      color: Colors.white,
+                      color: isDark ? Colors.white : Colors.black,
                     ),
                   ),
                   SizedBox(height: 17.h),
@@ -112,12 +112,22 @@ class _ChoosePersonAndSendAdViewBodyState
                       decoration: BoxDecoration(
                         color: Colors.white.withOpacity(0.10),
                         borderRadius: BorderRadius.circular(20.r),
+                        border: Border.all(
+                          color:
+                              isDark ? Colors.transparent : AppColors.blueLight,
+                        ),
                       ),
                       child: Center(
                         child: _mediaFile != null
                             ? _mediaFile!.path.endsWith('.mp4')
                                 ? SvgPicture.asset(
                                     Assets.imagesUploadIcon,
+                                    colorFilter: ColorFilter.mode(
+                                      isDark
+                                          ? AppColors.whiteColor
+                                          : AppColors.blueLight,
+                                      BlendMode.srcIn,
+                                    ),
                                   )
                                 : Image.file(
                                     _mediaFile!,
@@ -125,6 +135,12 @@ class _ChoosePersonAndSendAdViewBodyState
                                   )
                             : SvgPicture.asset(
                                 Assets.imagesUploadIcon,
+                                colorFilter: ColorFilter.mode(
+                                  isDark
+                                      ? AppColors.whiteColor
+                                      : AppColors.blueLight,
+                                  BlendMode.srcIn,
+                                ),
                               ),
                       ),
                     ),
@@ -144,7 +160,9 @@ class _ChoosePersonAndSendAdViewBodyState
                     fiiledColor: AppColors.whiteColor.withOpacity(0.10),
                     hintText: "addLink".tr(context: context),
                     hintStyle: AppStyles.style12W700.copyWith(
-                      color: const Color(0xffffffff),
+                      color: isDark
+                          ? const Color(0xffffffff)
+                          : const Color(0xff000000),
                     ),
                     suffixIcon: Transform.scale(
                       scale: 0.5,
@@ -158,7 +176,9 @@ class _ChoosePersonAndSendAdViewBodyState
                     fiiledColor: AppColors.whiteColor.withOpacity(0.10),
                     hintText: "addLocation".tr(context: context),
                     hintStyle: AppStyles.style12W700.copyWith(
-                      color: const Color(0xffffffff),
+                      color: isDark
+                          ? const Color(0xffffffff)
+                          : const Color(0xff000000),
                     ),
                     suffixIcon: Transform.scale(
                       scale: 0.5,
@@ -186,7 +206,9 @@ class _ChoosePersonAndSendAdViewBodyState
                         height: 40.h,
                         width: 200.w,
                         padding: EdgeInsets.symmetric(
-                            horizontal: 22.w, vertical: 4.h),
+                          horizontal: 22.w,
+                          vertical: 4.h,
+                        ),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(5.r),
                           gradient: const LinearGradient(
