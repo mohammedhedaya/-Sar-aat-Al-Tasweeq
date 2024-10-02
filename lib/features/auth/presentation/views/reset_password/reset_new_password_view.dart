@@ -32,94 +32,105 @@ class ResetNewPasswordView extends StatelessWidget {
                 key: cubit.resetNewPasswordFormKey,
                 child: Column(
                   children: [
-                    Image.asset(
-                      Assets.imagesApplogo,
-                      height: 225.h,
-                    ),
-                    Text(
-                      "new_password".tr(context: context),
-                      style: AppStyles.style12W400.copyWith(
-                        color: isDark
-                            ? AppColors.whiteColor
-                            : AppColors.blackColor,
-                      ),
-                    ),
-                    SizedBox(height: 25.h),
-                    CustomAuthTextField(
-                      fiiledColor: AppColors.whiteColor.withOpacity(0.10),
-                      hintText: "",
-                      textAlign: TextAlign.center,
-                      suffixIcon: IconButton(
-                        onPressed: () {
-                          cubit.obscurePasswordText();
-                        },
-                        color: AppColors.visibilityColor,
-                        icon: Icon(
-                          cubit.obscurePasswordTextValue == true
-                              ? Icons.visibility_outlined
-                              : Icons.visibility_off_outlined,
+                    Expanded(
+                      child: SingleChildScrollView(
+                        child: Column(
+                          children: [
+                            Image.asset(
+                              Assets.imagesApplogo,
+                              height: 225.h,
+                            ),
+                            Text(
+                              "new_password".tr(context: context),
+                              style: AppStyles.style12W400.copyWith(
+                                color: isDark
+                                    ? AppColors.whiteColor
+                                    : AppColors.blackColor,
+                              ),
+                            ),
+                            SizedBox(height: 25.h),
+                            CustomAuthTextField(
+                              fiiledColor:
+                                  AppColors.whiteColor.withOpacity(0.10),
+                              hintText: "",
+                              textAlign: TextAlign.center,
+                              suffixIcon: IconButton(
+                                onPressed: () {
+                                  cubit.obscurePasswordText();
+                                },
+                                color: AppColors.visibilityColor,
+                                icon: Icon(
+                                  cubit.obscurePasswordTextValue == true
+                                      ? Icons.visibility_outlined
+                                      : Icons.visibility_off_outlined,
+                                ),
+                              ),
+                              obscureText: cubit.obscurePasswordTextValue,
+                              onChanged: (password) {
+                                cubit.password = password;
+                              },
+                              validator: (password) {
+                                if (password == null || password.isEmpty) {
+                                  return "passwordValidation"
+                                      .tr(context: context);
+                                }
+
+                                const passwordPattern =
+                                    r'^(?=.*[A-Z])(?=.*[a-z])(?=(?:.*\d){6,}).{6,}$';
+                                final regExp = RegExp(passwordPattern);
+
+                                if (!regExp.hasMatch(password)) {
+                                  return "checkPassword".tr(context: context);
+                                }
+
+                                return null;
+                              },
+                            ),
+                            SizedBox(height: 25.h),
+                            Text(
+                              "confirm_new_password".tr(context: context),
+                              style: AppStyles.style12W400.copyWith(
+                                color: isDark
+                                    ? AppColors.whiteColor
+                                    : AppColors.blackColor,
+                              ),
+                            ),
+                            SizedBox(height: 23.h),
+                            CustomAuthTextField(
+                              fiiledColor:
+                                  AppColors.whiteColor.withOpacity(0.10),
+                              hintText: "",
+                              textAlign: TextAlign.center,
+                              suffixIcon: IconButton(
+                                onPressed: () {
+                                  cubit.obscurePasswordText();
+                                },
+                                color: AppColors.visibilityColor,
+                                icon: Icon(
+                                  cubit.obscurePasswordTextValue == true
+                                      ? Icons.visibility_outlined
+                                      : Icons.visibility_off_outlined,
+                                ),
+                              ),
+                              obscureText: cubit.obscurePasswordTextValue,
+                              validator: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return "defaultValidation"
+                                      .tr(context: context);
+                                } else if (cubit.password != value) {
+                                  return "passwordDontMatch"
+                                      .tr(context: context);
+                                }
+                                return null;
+                              },
+                              onChanged: (confirmpassword) {
+                                cubit.confirmPassword = confirmpassword;
+                              },
+                            ),
+                          ],
                         ),
                       ),
-                      obscureText: cubit.obscurePasswordTextValue,
-                      onChanged: (password) {
-                        cubit.password = password;
-                      },
-                      validator: (password) {
-                        if (password == null || password.isEmpty) {
-                          return "passwordValidation".tr(context: context);
-                        }
-
-                        // One RegExp to check all conditions
-                        const passwordPattern =
-                            r'^(?=.*[A-Z])(?=.*[a-z])(?=(?:.*\d){6,}).{6,}$';
-                        final regExp = RegExp(passwordPattern);
-
-                        if (!regExp.hasMatch(password)) {
-                          return "checkPassword".tr(context: context);
-                        }
-
-                        return null;
-                      },
                     ),
-                    SizedBox(height: 25.h),
-                    Text(
-                      "confirm_new_password".tr(context: context),
-                      style: AppStyles.style12W400.copyWith(
-                        color: isDark
-                            ? AppColors.whiteColor
-                            : AppColors.blackColor,
-                      ),
-                    ),
-                    SizedBox(height: 23.h),
-                    CustomAuthTextField(
-                      fiiledColor: AppColors.whiteColor.withOpacity(0.10),
-                      hintText: "",
-                      textAlign: TextAlign.center,
-                      suffixIcon: IconButton(
-                        onPressed: () {
-                          cubit.obscurePasswordText();
-                        },
-                        color: AppColors.visibilityColor,
-                        icon: Icon(
-                          cubit.obscurePasswordTextValue == true
-                              ? Icons.visibility_outlined
-                              : Icons.visibility_off_outlined,
-                        ),
-                      ),
-                      obscureText: cubit.obscurePasswordTextValue,
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return "defaultValidation".tr(context: context);
-                        } else if (cubit.password != value) {
-                          return "passwordDontMatch".tr(context: context);
-                        }
-                        return null;
-                      },
-                      onChanged: (confirmpassword) {
-                        cubit.confirmPassword = confirmpassword;
-                      },
-                    ),
-                    const Spacer(),
                     CustomAuthBtn(
                       onPressed: () {
                         if (cubit.resetNewPasswordFormKey.currentState!

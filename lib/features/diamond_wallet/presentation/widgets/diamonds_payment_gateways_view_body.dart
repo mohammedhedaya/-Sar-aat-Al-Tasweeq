@@ -54,7 +54,10 @@ class DiamondsPaymentGatewayViewBody extends StatelessWidget {
                   onPressed: () {},
                   label: Text(
                     "fast_payment_link".tr(context: context),
-                    style: AppStyles.style14W400,
+                    style: AppStyles.style14W400.copyWith(
+                      color:
+                          isDark ? AppColors.whiteColor : AppColors.whiteColor,
+                    ),
                   ),
                   icon: const Icon(
                     Icons.ios_share_sharp,

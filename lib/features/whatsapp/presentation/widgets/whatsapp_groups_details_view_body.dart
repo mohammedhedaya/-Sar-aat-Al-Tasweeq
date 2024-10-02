@@ -34,6 +34,10 @@ class _GroupsDetailsViewBodyState extends State<GroupsDetailsViewBody> {
                 children: [
                   SvgPicture.asset(
                     Assets.imagesWallet,
+                    colorFilter: ColorFilter.mode(
+                      isDark ? Colors.white : AppColors.blackColor,
+                      BlendMode.srcIn,
+                    ),
                   ),
                   SizedBox(width: 10.w),
                   Text(
@@ -45,6 +49,10 @@ class _GroupsDetailsViewBodyState extends State<GroupsDetailsViewBody> {
                   SizedBox(width: 10.w),
                   SvgPicture.asset(
                     Assets.imagesJewel,
+                    colorFilter: ColorFilter.mode(
+                      isDark ? Colors.white : AppColors.blackColor,
+                      BlendMode.srcIn,
+                    ),
                   ),
                 ],
               ),
@@ -78,9 +86,9 @@ class _GroupsDetailsViewBodyState extends State<GroupsDetailsViewBody> {
             ],
           ),
         ),
-        const Divider(
+        Divider(
           thickness: 1,
-          color: Colors.white,
+          color: isDark ? Colors.white : Colors.black,
         ),
         ListTile(
           title: Text(
@@ -92,9 +100,9 @@ class _GroupsDetailsViewBodyState extends State<GroupsDetailsViewBody> {
             height: 40.h,
           ),
         ),
-        const Divider(
+        Divider(
           thickness: 1,
-          color: Colors.white,
+          color: isDark ? Colors.white : Colors.black,
         ),
         SizedBox(height: 25.h),
         Expanded(

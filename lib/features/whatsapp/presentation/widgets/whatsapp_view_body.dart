@@ -145,7 +145,9 @@ class WhatsappViewBody extends StatelessWidget {
                 ),
                 Text(
                   "WeHelpYou".tr(context: context),
-                  style: AppStyles.style12W600,
+                  style: AppStyles.style12W600.copyWith(
+                    color: Colors.white,
+                  ),
                 ),
                 SizedBox(height: 16.h),
                 InkWell(
@@ -170,7 +172,9 @@ class WhatsappViewBody extends StatelessWidget {
                       child: Center(
                         child: Text(
                           "suggestions".tr(context: context),
-                          style: AppStyles.style14W700,
+                          style: AppStyles.style14W700.copyWith(
+                            color: Colors.white,
+                          ),
                           textAlign: TextAlign.center,
                         ),
                       ),
