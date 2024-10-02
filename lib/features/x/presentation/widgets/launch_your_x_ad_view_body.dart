@@ -34,6 +34,7 @@ class _LaunchYourXAdViewBodyState extends State<LaunchYourXAdViewBody> {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return SingleChildScrollView(
       child: Padding(
         padding: const EdgeInsets.all(30.0),
@@ -52,7 +53,7 @@ class _LaunchYourXAdViewBodyState extends State<LaunchYourXAdViewBody> {
               child: Text(
                 "Attach a photo or video".tr(context: context),
                 style: AppStyles.style16W600.copyWith(
-                  color: Colors.white,
+                  color: isDark ? Colors.white : Colors.black,
                 ),
               ),
             ),
@@ -66,12 +67,21 @@ class _LaunchYourXAdViewBodyState extends State<LaunchYourXAdViewBody> {
                 decoration: BoxDecoration(
                   color: Colors.white.withOpacity(0.10),
                   borderRadius: BorderRadius.circular(20.r),
+                  border: Border.all(
+                    color: isDark
+                        ? Colors.white.withOpacity(0.10)
+                        : AppColors.blueLight,
+                  ),
                 ),
                 child: Center(
                   child: _mediaFile != null
                       ? _mediaFile!.path.endsWith('.mp4')
                           ? SvgPicture.asset(
                               Assets.imagesUploadIcon,
+                              colorFilter: ColorFilter.mode(
+                                isDark ? Colors.white : AppColors.blueLight,
+                                BlendMode.srcIn,
+                              ),
                             )
                           : Image.file(
                               _mediaFile!,
@@ -79,6 +89,10 @@ class _LaunchYourXAdViewBodyState extends State<LaunchYourXAdViewBody> {
                             )
                       : SvgPicture.asset(
                           Assets.imagesUploadIcon,
+                          colorFilter: ColorFilter.mode(
+                            isDark ? Colors.white : AppColors.blueLight,
+                            BlendMode.srcIn,
+                          ),
                         ),
                 ),
               ),
@@ -97,7 +111,8 @@ class _LaunchYourXAdViewBodyState extends State<LaunchYourXAdViewBody> {
               fiiledColor: AppColors.whiteColor.withOpacity(0.10),
               hintText: "addLink".tr(context: context),
               hintStyle: AppStyles.style12W700.copyWith(
-                color: const Color(0xffffffff),
+                color:
+                    isDark ? const Color(0xffffffff) : const Color(0xff000000),
               ),
               suffixIcon: Transform.scale(
                 scale: 0.5,
@@ -112,7 +127,8 @@ class _LaunchYourXAdViewBodyState extends State<LaunchYourXAdViewBody> {
               fiiledColor: AppColors.whiteColor.withOpacity(0.10),
               hintText: "addLocation".tr(context: context),
               hintStyle: AppStyles.style12W700.copyWith(
-                color: const Color(0xffffffff),
+                color:
+                    isDark ? const Color(0xffffffff) : const Color(0xff000000),
               ),
               suffixIcon: Transform.scale(
                 scale: 0.5,

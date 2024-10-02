@@ -112,7 +112,7 @@ class XViewBody extends StatelessWidget {
                 ),
                 SizedBox(height: 39.h),
                 Text(
-                "SeehowtouseX?".tr(context: context),
+                  "SeehowtouseX?".tr(context: context),
                   style: AppStyles.style14W600,
                 ),
                 SizedBox(height: 10.h),
@@ -136,7 +136,9 @@ class XViewBody extends StatelessWidget {
                 ),
                 Text(
                   "WeHelpYou".tr(context: context),
-                  style: AppStyles.style12W600,
+                  style: AppStyles.style12W600.copyWith(
+                    color: const Color(0xffffffff),
+                  ),
                 ),
                 SizedBox(height: 16.h),
                 InkWell(
@@ -161,7 +163,9 @@ class XViewBody extends StatelessWidget {
                       child: Center(
                         child: Text(
                           "suggestions".tr(context: context),
-                          style: AppStyles.style14W700,
+                          style: AppStyles.style14W700.copyWith(
+                            color: const Color(0xffffffff),
+                          ),
                           textAlign: TextAlign.center,
                         ),
                       ),
