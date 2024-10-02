@@ -21,7 +21,7 @@ class ChooseTelegramGroupToSendViewBody extends StatelessWidget {
       children: [
         Container(
           width: double.infinity,
-          color: isDark ? AppColors.navBarColor : AppColors.navBarColor,
+          color: isDark ? AppColors.navBarColor : AppColors.blueLight,
           padding: EdgeInsetsDirectional.only(start: 10.w, bottom: 10.h),
           child: Row(
             children: [
@@ -61,7 +61,9 @@ class ChooseTelegramGroupToSendViewBody extends StatelessWidget {
                     fiiledColor: AppColors.whiteColor.withOpacity(0.10),
                     hintText: "addLink".tr(context: context),
                     hintStyle: AppStyles.style12W700.copyWith(
-                      color: const Color(0xffffffff),
+                      color: isDark
+                          ? const Color(0xffffffff)
+                          : const Color(0xff000000),
                     ),
                     suffixIcon: Transform.scale(
                       scale: 0.5,

@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +16,7 @@ class LaunchAdTelegramGroupsViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return Padding(
       padding: const EdgeInsets.all(30.0),
       child: SingleChildScrollView(
@@ -29,7 +31,7 @@ class LaunchAdTelegramGroupsViewBody extends StatelessWidget {
               child: Text(
                 "chanelName".tr(context: context),
                 style: AppStyles.style12W400.copyWith(
-                  color: AppColors.whiteColor,
+                  color: isDark ? AppColors.whiteColor : AppColors.blackColor,
                 ),
               ),
             ),
@@ -45,7 +47,7 @@ class LaunchAdTelegramGroupsViewBody extends StatelessWidget {
               child: Text(
                 "chanelLink".tr(context: context),
                 style: AppStyles.style12W400.copyWith(
-                  color: AppColors.whiteColor,
+                  color: isDark ? AppColors.whiteColor : AppColors.blackColor,
                 ),
               ),
             ),
@@ -57,7 +59,7 @@ class LaunchAdTelegramGroupsViewBody extends StatelessWidget {
               child: Text(
                 "country".tr(context: context),
                 style: AppStyles.style12W400.copyWith(
-                  color: AppColors.whiteColor,
+                  color: isDark ? AppColors.whiteColor : AppColors.blackColor,
                 ),
               ),
             ),
@@ -75,17 +77,15 @@ class LaunchAdTelegramGroupsViewBody extends StatelessWidget {
                 boxDecoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8.r),
                 ),
-                showCountryOnly: true,
-                hideMainText: true,
+                showOnlyCountryWhenClosed: true,
                 flagWidth: 50.w,
-                padding: EdgeInsets.zero,
                 flagDecoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(5.r),
                 ),
               ),
               suffixIcon: const Icon(
                 Icons.keyboard_arrow_down_rounded,
-                color: Color.fromARGB(255, 10, 208, 188),
+                color: Color.fromARGB(255, 4, 182, 164),
                 size: 30,
               ),
               onChanged: (value) {},

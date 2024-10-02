@@ -36,7 +36,8 @@ class _ChooseTelegramGroupToSendViewBody1State
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10.r),
                     border: Border.all(
-                      color: AppColors.whiteColor,
+                      color:
+                          isDark ? AppColors.whiteColor : AppColors.blueLight,
                       width: 1,
                     ),
                   ),
@@ -192,7 +193,9 @@ class _ChooseTelegramGroupToSendViewBody1State
           RichText(
             text: TextSpan(
               text: "ChannelName".tr(context: context),
-              style: AppStyles.style13W600,
+              style: AppStyles.style13W600.copyWith(
+                color: isDark ? AppColors.whiteColor : Colors.black,
+              ),
               children: [
                 TextSpan(
                   text: ' حراج وشراء ',

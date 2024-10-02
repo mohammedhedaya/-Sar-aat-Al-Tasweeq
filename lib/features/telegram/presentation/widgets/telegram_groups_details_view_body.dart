@@ -1,8 +1,10 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shopping_chart/core/utils/app_colors.dart';
 import '../../../whatsapp/presentation/widgets/custom_show_dialog.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
@@ -21,6 +23,7 @@ class _TelegramGroupsDetailsViewBodyState
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return Column(
       children: [
         Padding(
@@ -32,6 +35,10 @@ class _TelegramGroupsDetailsViewBodyState
                 children: [
                   SvgPicture.asset(
                     Assets.imagesWallet,
+                    colorFilter: ColorFilter.mode(
+                      isDark ? Colors.white : Colors.black,
+                      BlendMode.srcIn,
+                    ),
                   ),
                   SizedBox(width: 10.w),
                   Text(
@@ -43,6 +50,10 @@ class _TelegramGroupsDetailsViewBodyState
                   SizedBox(width: 10.w),
                   SvgPicture.asset(
                     Assets.imagesJewel,
+                    colorFilter: ColorFilter.mode(
+                      isDark ? Colors.white : Colors.black,
+                      BlendMode.srcIn,
+                    ),
                   ),
                 ],
               ),
@@ -76,9 +87,9 @@ class _TelegramGroupsDetailsViewBodyState
             ],
           ),
         ),
-        const Divider(
+        Divider(
           thickness: 1,
-          color: Colors.white,
+          color: isDark ? Colors.white : Colors.black,
         ),
         ListTile(
           title: Text(
@@ -90,9 +101,9 @@ class _TelegramGroupsDetailsViewBodyState
             height: 40.h,
           ),
         ),
-        const Divider(
+        Divider(
           thickness: 1,
-          color: Colors.white,
+          color: isDark ? Colors.white : Colors.black,
         ),
         SizedBox(height: 25.h),
         Expanded(
@@ -116,7 +127,7 @@ class _TelegramGroupsDetailsViewBodyState
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15.r),
                       border: Border.all(
-                        color: Colors.white,
+                        color: isDark ? Colors.white : AppColors.blueLight,
                         width: 1,
                       ),
                     ),

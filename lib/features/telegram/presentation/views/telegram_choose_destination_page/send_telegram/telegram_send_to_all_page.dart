@@ -34,8 +34,8 @@ class _TelegramSendToAllPageState extends State<TelegramSendToAllPage> {
           checkColor: const Color(0xff00C0CC),
           visualDensity: VisualDensity.compact,
           contentPadding: EdgeInsets.zero,
-          side: const BorderSide(
-            color: Colors.white,
+          side: BorderSide(
+            color: isDark ? Colors.white : AppColors.blueLight,
           ),
           value: selectAll,
           onChanged: (value) {

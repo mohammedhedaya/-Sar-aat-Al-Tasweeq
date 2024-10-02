@@ -79,7 +79,11 @@ class _ChooseTelegramGroupToSendViewBody2State
                     RichText(
                       text: TextSpan(
                         text: "ChannelName".tr(context: context),
-                        style: AppStyles.style13W600,
+                        style: AppStyles.style13W600.copyWith(
+                          color: isDark
+                              ? const Color(0xffffffff)
+                              : const Color(0xff000000),
+                        ),
                         children: [
                           TextSpan(
                             text: ' (حراج) ',

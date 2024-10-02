@@ -60,7 +60,7 @@ class PhoneSendingView extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                "6days",
+                                "6days".tr(context: context),
                                 style: AppStyles.style14W800.copyWith(
                                   color: AppColors.blackColor,
                                   fontSize: 23.sp,

@@ -1,8 +1,10 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shopping_chart/core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
 import '../../../whatsapp/presentation/widgets/custom_show_dialog.dart';
@@ -13,6 +15,7 @@ class TelegramViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return SingleChildScrollView(
       child: Column(
         children: [
@@ -136,7 +139,7 @@ class TelegramViewBody extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Text(
-                     "hearyouclearly".tr(context: context),
+                      "hearyouclearly".tr(context: context),
                       style: AppStyles.style14W600,
                     ),
                     SizedBox(width: 5.w),
@@ -147,8 +150,10 @@ class TelegramViewBody extends StatelessWidget {
                   ],
                 ),
                 Text(
-                 "WeHelpYou".tr(context: context),
-                  style: AppStyles.style12W600,
+                  "WeHelpYou".tr(context: context),
+                  style: AppStyles.style12W600.copyWith(
+                    color: isDark ? null : AppColors.whiteColor,
+                  ),
                 ),
                 SizedBox(height: 16.h),
                 InkWell(
@@ -173,7 +178,9 @@ class TelegramViewBody extends StatelessWidget {
                       child: Center(
                         child: Text(
                           "suggestions".tr(context: context),
-                          style: AppStyles.style14W700,
+                          style: AppStyles.style14W700.copyWith(
+                            color: isDark ? null : AppColors.whiteColor,
+                          ),
                           textAlign: TextAlign.center,
                         ),
                       ),

@@ -1,8 +1,10 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shopping_chart/core/utils/app_colors.dart';
 
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
@@ -12,6 +14,8 @@ class TelegramGroupsViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
+
     return SingleChildScrollView(
       child: Column(
         children: [
@@ -31,51 +35,35 @@ class TelegramGroupsViewBody extends StatelessWidget {
           SizedBox(height: 37.h),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 30.w),
-            child: GridView.count(
-              crossAxisCount: 2,
-              physics: const NeverScrollableScrollPhysics(),
-              crossAxisSpacing: 39.w,
-              mainAxisSpacing: 24.h,
-              shrinkWrap: true,
-              children: [
-                for (int i = 0; i < 12; i++)
-                  InkWell(
-                    onTap: () {
-                      context.push("/telegramGroupsDetailsView");
-                    },
-                    child: Container(
-                      padding: EdgeInsets.only(
-                        left: 5.w,
-                        right: 5.w,
-                        bottom: 15.h,
-                        top: 15.h,
-                      ),
-                      decoration: BoxDecoration(
+            child: Column(
+              children: List.generate(
+                10,
+                (index) {
+                  return Padding(
+                    padding: EdgeInsets.only(bottom: 26.h),
+                    child: ListTile(
+                      onTap: () {
+                        context.push("/telegramGroupsDetailsView");
+                      },
+                      shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15.r),
-                        border: Border.all(
-                          color: Colors.white,
+                        side: BorderSide(
+                          color: isDark ? Colors.white : AppColors.blueLight,
                           width: 1,
                         ),
                       ),
-                      child: Column(
-                        children: [
-                          SvgPicture.asset(
-                            Assets.imagesSuadiFlag,
-                            height: 41.h,
-                          ),
-                          const Spacer(),
-                          Text(
-                            "قنوات المملكة العربية السعودية",
-                            style: AppStyles.style13W600,
-                            textAlign: TextAlign.center,
-                            overflow: TextOverflow.ellipsis,
-                            maxLines: 2,
-                          ),
-                        ],
+                      title: Text(
+                        "مجموعات المملكة العربية السعودية",
+                        style: AppStyles.style14W700,
+                      ),
+                      leading: SvgPicture.asset(
+                        Assets.imagesSuadiFlag,
+                        height: 44.h,
                       ),
                     ),
-                  ),
-              ],
+                  );
+                },
+              ),
             ),
           ),
           SizedBox(height: 25.h),

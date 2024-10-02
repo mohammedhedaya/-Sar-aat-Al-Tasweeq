@@ -61,6 +61,7 @@ class _ConvertNumberToTelegramLinkViewBodyState
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Padding(
       padding: const EdgeInsets.all(35),
       child: ListView(
@@ -120,6 +121,7 @@ class _ConvertNumberToTelegramLinkViewBodyState
               style: ElevatedButton.styleFrom(
                 padding: EdgeInsets.zero,
                 elevation: 0,
+                backgroundColor: isDark ? null : AppColors.blueLight,
                 minimumSize: Size(double.infinity, 51.h),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20.r),
@@ -146,7 +148,9 @@ class _ConvertNumberToTelegramLinkViewBodyState
             SizedBox(height: 4.h),
             Container(
               decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.10),
+                color: isDark
+                    ? Colors.white.withOpacity(0.10)
+                    : AppColors.yellowLight,
                 borderRadius: BorderRadius.circular(20.r),
               ),
               padding: const EdgeInsets.all(22),
@@ -156,7 +160,7 @@ class _ConvertNumberToTelegramLinkViewBodyState
                     child: Text(
                       _telegramLink,
                       style: AppStyles.style12W400.copyWith(
-                        color: Colors.white,
+                        color: isDark ? Colors.white : Colors.black,
                       ),
                       overflow: TextOverflow.ellipsis,
                       textAlign: TextAlign.center,
@@ -165,7 +169,13 @@ class _ConvertNumberToTelegramLinkViewBodyState
                   SizedBox(width: 8.w),
                   InkWell(
                     onTap: _copyToClipboard,
-                    child: SvgPicture.asset(Assets.imagesCopyIcon2),
+                    child: SvgPicture.asset(
+                      Assets.imagesCopyIcon2,
+                      colorFilter: ColorFilter.mode(
+                        isDark ? Colors.white : Colors.black,
+                        BlendMode.srcIn,
+                      ),
+                    ),
                   ),
                 ],
               ),
