@@ -19,12 +19,17 @@ class _SwithThemeState extends State<SwithTheme> {
       alignment: AlignmentDirectional.topEnd,
       child: InkWell(
         onTap: () {
-          AdaptiveTheme.of(context).toggleThemeMode();
+          // AdaptiveTheme.of(context).toggleThemeMode();
+          if (isDark) {
+            AdaptiveTheme.of(context).setLight();
+          } else {
+            AdaptiveTheme.of(context).setDark();
+          }
         },
         child: Container(
           width: 0.2.sw,
           height: 0.1.sw,
-          constraints: BoxConstraints(minHeight: 39.h, minWidth: 89.h),
+          constraints: BoxConstraints(minHeight: 39.h, minWidth: 95.h),
           decoration: BoxDecoration(
             color: const Color(0xffD9D9D9),
             borderRadius: BorderRadius.circular(30.r),
@@ -35,7 +40,12 @@ class _SwithThemeState extends State<SwithTheme> {
               GestureDetector(
                 onTap: () {
                   // AdaptiveTheme.of(context).setLight();
-                  AdaptiveTheme.of(context).toggleThemeMode();
+                  // AdaptiveTheme.of(context).toggleThemeMode();
+                  if (isDark) {
+                    AdaptiveTheme.of(context).setLight();
+                  } else {
+                    AdaptiveTheme.of(context).setDark();
+                  }
                 },
                 child: Container(
                   decoration: BoxDecoration(
@@ -57,8 +67,13 @@ class _SwithThemeState extends State<SwithTheme> {
               SizedBox(width: 12.w),
               GestureDetector(
                 onTap: () {
+                  if (isDark) {
+                    AdaptiveTheme.of(context).setLight();
+                  } else {
+                    AdaptiveTheme.of(context).setDark();
+                  }
                   // AdaptiveTheme.of(context).setDark();
-                  AdaptiveTheme.of(context).toggleThemeMode();
+                  // AdaptiveTheme.of(context).toggleThemeMode();
                 },
                 child: Container(
                   decoration: BoxDecoration(

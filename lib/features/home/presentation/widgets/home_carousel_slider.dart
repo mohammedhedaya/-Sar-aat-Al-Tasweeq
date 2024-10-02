@@ -2,9 +2,10 @@ import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/assets.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class HomeCarouselSlider extends StatefulWidget {
   const HomeCarouselSlider({super.key});

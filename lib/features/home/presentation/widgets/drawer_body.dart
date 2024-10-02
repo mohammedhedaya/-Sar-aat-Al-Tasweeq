@@ -33,6 +33,7 @@ class _DrawerBodyState extends State<DrawerBody> {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return ListView(
       children: [
         AspectRatio(
@@ -143,7 +144,12 @@ class _DrawerBodyState extends State<DrawerBody> {
             setState(() {
               _isDarkTheme = !_isDarkTheme;
             });
-            AdaptiveTheme.of(context).toggleThemeMode();
+            // AdaptiveTheme.of(context).toggleThemeMode();
+            if (isDark) {
+              AdaptiveTheme.of(context).setLight();
+            } else {
+              AdaptiveTheme.of(context).setDark();
+            }
           },
           trailing: CustomThemeDrawerWidget(
             isDarkTheme: _isDarkTheme,

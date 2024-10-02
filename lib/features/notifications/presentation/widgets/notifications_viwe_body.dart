@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -11,6 +12,7 @@ class NotificationsViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return SingleChildScrollView(
       padding: EdgeInsets.symmetric(horizontal: 31.w),
       child: Column(
@@ -21,8 +23,8 @@ class NotificationsViewBody extends StatelessWidget {
             child: SvgPicture.asset(
               Assets.imagesNotifications,
               height: 150.h,
-              colorFilter: const ColorFilter.mode(
-                Color(0xffC8C8C8),
+              colorFilter: ColorFilter.mode(
+                isDark ? const Color(0xffC8C8C8) : Colors.red,
                 BlendMode.srcIn,
               ),
             ),

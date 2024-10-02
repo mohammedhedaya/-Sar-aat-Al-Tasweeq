@@ -39,6 +39,10 @@ class AddSuggestionViewBody extends StatelessWidget {
                 ),
                 SvgPicture.asset(
                   Assets.imagesLikeicon,
+                  colorFilter: ColorFilter.mode(
+                    isDark ? Colors.transparent : Colors.orange,
+                    BlendMode.srcIn,
+                  ),
                 ),
               ],
             ),
@@ -116,14 +120,17 @@ class AddSuggestionViewBody extends StatelessWidget {
                       EdgeInsets.symmetric(horizontal: 22.w, vertical: 4.h),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5.r),
-                    gradient: const LinearGradient(
-                      colors: [
-                        Color(0xff00C0CC),
-                        Color(0xff006066),
-                      ],
-                      begin: Alignment.centerLeft,
-                      end: Alignment.centerRight,
-                    ),
+                    color: isDark ? Colors.transparent : Colors.orange,
+                    gradient: isDark
+                        ? const LinearGradient(
+                            colors: [
+                              Color(0xff00C0CC),
+                              Color(0xff006066),
+                            ],
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                          )
+                        : null,
                   ),
                   child: Center(
                     child: Text(

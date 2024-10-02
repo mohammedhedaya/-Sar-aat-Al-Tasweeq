@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:shopping_chart/core/utils/app_colors.dart';
+import '../../../../core/utils/app_colors.dart';
 
 class DashedCirclePainter extends CustomPainter {
   @override

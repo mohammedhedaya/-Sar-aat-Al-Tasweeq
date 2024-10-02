@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:shopping_chart/features/diamond_wallet/presentation/widgets/view_body_of_diamond_wallet.dart';
+import '../widgets/view_body_of_diamond_wallet.dart';
 
 class DiamondWalletView extends StatelessWidget {
   final VoidCallback? onBackToHome;

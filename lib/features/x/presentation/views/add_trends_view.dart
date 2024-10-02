@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+
 import '../../../../core/utils/app_text_style.dart';
 import '../widgets/add_trends_view_body.dart';
 

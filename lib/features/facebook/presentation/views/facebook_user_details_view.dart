@@ -4,12 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
-import 'face_user_details/facebook_user_details_select_all_page.dart';
-import 'face_user_details/facebook_user_details_select_followers_page.dart';
-import 'face_user_details/facebook_user_details_select_followings_page.dart';
+
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
+import 'face_user_details/facebook_user_details_select_all_page.dart';
+import 'face_user_details/facebook_user_details_select_followers_page.dart';
+import 'face_user_details/facebook_user_details_select_followings_page.dart';
 
 class FaceBookUserDetailsView extends StatefulWidget {
   const FaceBookUserDetailsView({super.key});
