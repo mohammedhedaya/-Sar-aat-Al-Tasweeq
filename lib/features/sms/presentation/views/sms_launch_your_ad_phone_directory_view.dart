@@ -17,6 +17,16 @@ class SMSLaunchYourAdPhoneDirectoryView extends StatelessWidget {
         surfaceTintColor: Colors.transparent,
         automaticallyImplyLeading: false,
         elevation: 0,
+        actions: [
+          IconButton(
+            onPressed: () {
+              context.pop();
+            },
+            icon: const Icon(
+              Icons.arrow_forward_ios_outlined,
+            ),
+          ),
+        ],
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

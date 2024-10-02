@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -13,6 +14,7 @@ class SMSViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return SingleChildScrollView(
       child: Column(
         children: [
@@ -85,7 +87,9 @@ class SMSViewBody extends StatelessWidget {
                     );
                   },
                   text: "Contacts".tr(context: context),
-                  textStyle: AppStyles.style14W800,
+                  textStyle: AppStyles.style14W800.copyWith(
+                    color: isDark ? Colors.white : Colors.white,
+                  ),
                 ),
                 SizedBox(height: 50.h),
                 CustomSubscribeBtn(
@@ -121,7 +125,9 @@ class SMSViewBody extends StatelessWidget {
                   },
                   text: "Transferanothernumberfromthephonebook"
                       .tr(context: context),
-                  textStyle: AppStyles.style14W800,
+                  textStyle: AppStyles.style14W800.copyWith(
+                    color: isDark ? Colors.white : Colors.white,
+                  ),
                 ),
                 SizedBox(height: 39.h),
                 Text(
@@ -149,7 +155,9 @@ class SMSViewBody extends StatelessWidget {
                 ),
                 Text(
                   "WeHelpYou".tr(context: context),
-                  style: AppStyles.style12W600,
+                  style: AppStyles.style12W600.copyWith(
+                    color: Colors.white,
+                  ),
                 ),
                 SizedBox(height: 16.h),
                 InkWell(
@@ -174,7 +182,9 @@ class SMSViewBody extends StatelessWidget {
                       child: Center(
                         child: Text(
                           "suggestions".tr(context: context),
-                          style: AppStyles.style14W700,
+                          style: AppStyles.style14W700.copyWith(
+                            color: Colors.white,
+                          ),
                           textAlign: TextAlign.center,
                         ),
                       ),
