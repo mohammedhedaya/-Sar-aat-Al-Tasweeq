@@ -75,7 +75,9 @@ class _FacebookChooseGroupsViewBody2State
               RichText(
                 text: TextSpan(
                   text: "GroupName".tr(context: context),
-                  style: AppStyles.style13W600,
+                  style: AppStyles.style13W600.copyWith(
+                    color: isDark ? Colors.white : Colors.black,
+                  ),
                   children: [
                     TextSpan(
                       text: ' (حراج) ',

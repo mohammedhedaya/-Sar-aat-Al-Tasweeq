@@ -21,7 +21,7 @@ class ChooseGroupToSendFacbookAdViewBody extends StatelessWidget {
       children: [
         Container(
           width: double.infinity,
-          color: isDark ? AppColors.navBarColor : AppColors.navBarColor,
+          color: isDark ? AppColors.navBarColor : AppColors.blueLight,
           padding: EdgeInsetsDirectional.only(start: 15.w, bottom: 10.h),
           child: Row(
             children: [
@@ -64,7 +64,7 @@ class ChooseGroupToSendFacbookAdViewBody extends StatelessWidget {
                     fiiledColor: AppColors.whiteColor.withOpacity(0.10),
                     hintText: "addLink".tr(context: context),
                     hintStyle: AppStyles.style12W700.copyWith(
-                      color: const Color(0xffffffff),
+                      color: isDark ? Colors.white : Colors.black,
                     ),
                     suffixIcon: Transform.scale(
                       scale: 0.5,
@@ -79,7 +79,7 @@ class ChooseGroupToSendFacbookAdViewBody extends StatelessWidget {
                     fiiledColor: AppColors.whiteColor.withOpacity(0.10),
                     hintText: "addLocation".tr(context: context),
                     hintStyle: AppStyles.style12W700.copyWith(
-                      color: const Color(0xffffffff),
+                      color: isDark ? Colors.white : Colors.black,
                     ),
                     suffixIcon: Transform.scale(
                       scale: 0.5,

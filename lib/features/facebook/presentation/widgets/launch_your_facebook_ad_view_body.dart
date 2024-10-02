@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -33,6 +34,7 @@ class _LaunchYourFacebookAdViewBodyState
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 34.w, vertical: 25.h),
       child: Column(
@@ -47,7 +49,11 @@ class _LaunchYourFacebookAdViewBodyState
                   },
                   style: ButtonStyle(
                     backgroundColor: _currentPage == 0
-                        ? WidgetStateProperty.all(const Color(0xffFFF6F6))
+                        ? WidgetStateProperty.all(
+                            isDark
+                                ? const Color(0xffFFF6F6)
+                                : AppColors.blueLight,
+                          )
                         : WidgetStateProperty.all(const Color(0xffA4A4A4)),
                     shape: WidgetStateProperty.all(
                       const StadiumBorder(),
@@ -71,7 +77,11 @@ class _LaunchYourFacebookAdViewBodyState
                   onPressed: () => _onButtonTapped(1),
                   style: ButtonStyle(
                     backgroundColor: _currentPage == 1
-                        ? WidgetStateProperty.all(const Color(0xffFFF6F6))
+                        ? WidgetStateProperty.all(
+                            isDark
+                                ? const Color(0xffFFF6F6)
+                                : AppColors.blueLight,
+                          )
                         : WidgetStateProperty.all(const Color(0xffA4A4A4)),
                     shape: WidgetStateProperty.all(
                       const StadiumBorder(),

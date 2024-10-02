@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shopping_chart/core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
 import '../../../auth/presentation/widgets/auth_btn.dart';
@@ -137,7 +138,9 @@ class FacebookViewBody extends StatelessWidget {
                 ),
                 Text(
                   "WeHelpYou".tr(context: context),
-                  style: AppStyles.style12W600,
+                  style: AppStyles.style12W600.copyWith(
+                    color: AppColors.whiteColor,
+                  ),
                 ),
                 SizedBox(height: 16.h),
                 InkWell(
@@ -162,7 +165,9 @@ class FacebookViewBody extends StatelessWidget {
                       child: Center(
                         child: Text(
                           "suggestions".tr(context: context),
-                          style: AppStyles.style14W700,
+                          style: AppStyles.style14W700.copyWith(
+                            color: AppColors.whiteColor,
+                          ),
                           textAlign: TextAlign.center,
                         ),
                       ),

@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -35,6 +36,7 @@ class _FaceBookUserDetailsViewState extends State<FaceBookUserDetailsView> {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return SafeArea(
       child: Scaffold(
         body: Padding(
@@ -46,7 +48,9 @@ class _FaceBookUserDetailsViewState extends State<FaceBookUserDetailsView> {
                 padding: EdgeInsets.symmetric(horizontal: 19.w, vertical: 10.h),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10.r),
-                  border: Border.all(color: Colors.white),
+                  border: Border.all(
+                    color: isDark ? Colors.white : AppColors.blueLight,
+                  ),
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -62,9 +66,9 @@ class _FaceBookUserDetailsViewState extends State<FaceBookUserDetailsView> {
                       onTap: () {
                         context.pop();
                       },
-                      child: const Icon(
+                      child: Icon(
                         Icons.arrow_forward_ios_outlined,
-                        color: Colors.white,
+                        color: isDark ? Colors.white : Colors.black,
                       ),
                     ),
                   ],
@@ -82,7 +86,9 @@ class _FaceBookUserDetailsViewState extends State<FaceBookUserDetailsView> {
                           textAlign: TextAlign.start,
                           text: TextSpan(
                             text: "username".tr(context: context),
-                            style: AppStyles.style13W600,
+                            style: AppStyles.style13W600.copyWith(
+                              color: isDark ? Colors.white : Colors.black,
+                            ),
                             children: [
                               TextSpan(
                                 text: " CARZIMA23 ",
@@ -98,7 +104,9 @@ class _FaceBookUserDetailsViewState extends State<FaceBookUserDetailsView> {
                           text: TextSpan(
                             text: "Numberoffollowersandfollowings"
                                 .tr(context: context),
-                            style: AppStyles.style13W600,
+                            style: AppStyles.style13W600.copyWith(
+                              color: isDark ? Colors.white : Colors.black,
+                            ),
                             children: [
                               TextSpan(
                                 text: " (4000) ",

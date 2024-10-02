@@ -90,8 +90,7 @@ class FacebookSendingView extends StatelessWidget {
                                 ),
                                 SizedBox(height: 23.h),
                                 CustomProgressBarAndText(
-                                  label:
-                                      "NumbersOfGroups:".tr(context: context),
+                                  label: "NumbersOfGroups".tr(context: context),
                                   value: "2500",
                                   progress: 0.8,
                                 ),

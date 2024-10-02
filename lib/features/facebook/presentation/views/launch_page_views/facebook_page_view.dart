@@ -1,9 +1,9 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
-
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_text_style.dart';
 import '../../../../../core/utils/assets.dart';
@@ -15,6 +15,7 @@ class FacebookPageView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return SingleChildScrollView(
       child: Column(
         children: [
@@ -28,7 +29,7 @@ class FacebookPageView extends StatelessWidget {
             fiiledColor: AppColors.whiteColor.withOpacity(0.10),
             hintText: "addLink".tr(context: context),
             hintStyle: AppStyles.style12W700.copyWith(
-              color: const Color(0xffffffff),
+              color: isDark ? const Color(0xffffffff) : Colors.black,
             ),
             suffixIcon: Transform.scale(
               scale: 0.5,
@@ -43,7 +44,7 @@ class FacebookPageView extends StatelessWidget {
             fiiledColor: AppColors.whiteColor.withOpacity(0.10),
             hintText: "addLocation".tr(context: context),
             hintStyle: AppStyles.style12W700.copyWith(
-              color: const Color(0xffffffff),
+              color: isDark ? const Color(0xffffffff) : Colors.black,
             ),
             suffixIcon: Transform.scale(
               scale: 0.5,
