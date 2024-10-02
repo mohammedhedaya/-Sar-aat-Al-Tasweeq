@@ -6,7 +6,8 @@ import '../../../../core/utils/app_text_style.dart';
 import '../widgets/subscribe_to_the_package_view_body.dart';
 
 class SubscribeToThePackageView extends StatelessWidget {
-  const SubscribeToThePackageView({super.key});
+  const SubscribeToThePackageView({super.key, this.onBackToHome});
+  final VoidCallback? onBackToHome;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,11 @@ class SubscribeToThePackageView extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {
-              context.pop();
+              if (context.canPop()) {
+                context.pop();
+              } else if (onBackToHome != null) {
+                onBackToHome!();
+              }
             },
             icon: const Icon(
               Icons.arrow_forward_ios_outlined,

@@ -1,6 +1,5 @@
 import '../../../diamond_wallet/presentation/views/diamond_wallet_view.dart';
 import '../../../subscribe_package/presentation/views/subscribe_to_the_package_view.dart';
-
 import '../views/home_view.dart';
 import 'custom_drawer.dart';
 import 'user_bottom_nav_bar_widget.dart';
@@ -24,8 +23,20 @@ class _UserMainLayoutScreenState extends State<UserMainLayoutScreen> {
     super.initState();
     screens = [
       const HomeView(),
-      const DiamondWalletView(),
-      const SubscribeToThePackageView(),
+      DiamondWalletView(
+        onBackToHome: () {
+          setState(() {
+            currentIndex = 0;
+          });
+        },
+      ),
+      SubscribeToThePackageView(
+        onBackToHome: () {
+          setState(() {
+            currentIndex = 0;
+          });
+        },
+      ),
       const MenuView(),
     ];
   }
@@ -41,7 +52,6 @@ class _UserMainLayoutScreenState extends State<UserMainLayoutScreen> {
         currentIndex: currentIndex,
         onTap: (index) {
           if (index == 3) {
-            //! Open the drawer when the menu is tapped
             _scaffoldKey.currentState?.openDrawer();
           } else {
             setState(() {

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import '../widgets/view_body_of_diamond_wallet.dart';
+import 'package:shopping_chart/features/diamond_wallet/presentation/widgets/view_body_of_diamond_wallet.dart';
 
 class DiamondWalletView extends StatelessWidget {
-  const DiamondWalletView({super.key});
+  final VoidCallback? onBackToHome;
+
+  const DiamondWalletView({super.key, this.onBackToHome});
 
   @override
   Widget build(BuildContext context) {
@@ -15,11 +17,14 @@ class DiamondWalletView extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {
-              context.pop();
+              if (context.canPop()) {
+                context.pop();
+              } else if (onBackToHome != null) {
+                onBackToHome!();
+              }
             },
             icon: const Icon(
               Icons.arrow_forward_ios_outlined,
-              // color: Colors.white,
             ),
           ),
         ],
