@@ -59,7 +59,9 @@ class EmailViewBody extends StatelessWidget {
               children: [
                 CustomAuthTextField(
                   onChanged: (value) {},
-                  hintStyle: AppStyles.style14W800,
+                  hintStyle: AppStyles.style14W800.copyWith(
+                    color: Colors.white,
+                  ),
                   hintText: "email".tr(context: context),
                   keyboardType: TextInputType.emailAddress,
                   textAlign: TextAlign.center,
@@ -68,7 +70,9 @@ class EmailViewBody extends StatelessWidget {
                 SizedBox(height: 35.h),
                 CustomAuthTextField(
                   onChanged: (value) {},
-                  hintStyle: AppStyles.style14W800,
+                  hintStyle: AppStyles.style14W800.copyWith(
+                    color: Colors.white,
+                  ),
                   hintText: "password".tr(context: context),
                   textAlign: TextAlign.center,
                   fiiledColor: Colors.white.withOpacity(0.10),
@@ -136,7 +140,9 @@ class EmailViewBody extends StatelessWidget {
                 ),
                 Text(
                   "WeHelpYou".tr(context: context),
-                  style: AppStyles.style12W600,
+                  style: AppStyles.style12W600.copyWith(
+                    color: Colors.white,
+                  ),
                 ),
                 SizedBox(height: 16.h),
                 InkWell(
@@ -161,7 +167,9 @@ class EmailViewBody extends StatelessWidget {
                       child: Center(
                         child: Text(
                           "suggestions".tr(context: context),
-                          style: AppStyles.style14W700,
+                          style: AppStyles.style14W700.copyWith(
+                            color: Colors.white,
+                          ),
                           textAlign: TextAlign.center,
                         ),
                       ),

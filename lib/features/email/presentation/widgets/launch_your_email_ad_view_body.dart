@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -14,6 +15,7 @@ class LaunchYourEmailAdViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return SingleChildScrollView(
       child: Padding(
         padding: const EdgeInsets.all(34.0),
@@ -30,7 +32,8 @@ class LaunchYourEmailAdViewBody extends StatelessWidget {
               fiiledColor: AppColors.whiteColor.withOpacity(0.10),
               hintText: "addLink".tr(context: context),
               hintStyle: AppStyles.style12W700.copyWith(
-                color: const Color(0xffffffff),
+                color:
+                    isDark ? const Color(0xffffffff) : const Color(0xff000000),
               ),
               suffixIcon: Transform.scale(
                 scale: 0.5,
@@ -45,7 +48,8 @@ class LaunchYourEmailAdViewBody extends StatelessWidget {
               fiiledColor: AppColors.whiteColor.withOpacity(0.10),
               hintText: "addLocation".tr(context: context),
               hintStyle: AppStyles.style12W700.copyWith(
-                color: const Color(0xffffffff),
+                color:
+                    isDark ? const Color(0xffffffff) : const Color(0xff000000),
               ),
               suffixIcon: Transform.scale(
                 scale: 0.5,
@@ -61,7 +65,8 @@ class LaunchYourEmailAdViewBody extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xff1C1C1C),
+                  backgroundColor:
+                      isDark ? const Color(0xff1C1C1C) : AppColors.blueLight,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(5.r),
                   ),
@@ -75,7 +80,9 @@ class LaunchYourEmailAdViewBody extends StatelessWidget {
                     Flexible(
                       child: Text(
                         "Addafileofnumberstosendtothem".tr(context: context),
-                        style: AppStyles.style14W400,
+                        style: AppStyles.style14W400.copyWith(
+                          color: Colors.white,
+                        ),
                         textAlign: TextAlign.center,
                       ),
                     ),

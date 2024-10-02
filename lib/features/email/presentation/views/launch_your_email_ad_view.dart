@@ -33,6 +33,16 @@ class LaunchYourEmailAdView extends StatelessWidget {
             ),
           ],
         ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              context.pop();
+            },
+            icon: const Icon(
+              Icons.arrow_forward_ios_sharp,
+            ),
+          ),
+        ],
         leading: IconButton(
           onPressed: () {
             context.pop();
