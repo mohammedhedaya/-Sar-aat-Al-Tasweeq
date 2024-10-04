@@ -82,14 +82,18 @@ class SubscribeToThePackageViewBody extends StatelessWidget {
                               padding: const EdgeInsets.all(24),
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(16.r),
-                                gradient: LinearGradient(
-                                  colors: [
-                                    const Color(0xff7B7B7B),
-                                    const Color(0xff0f0f0f).withOpacity(0.65),
-                                  ],
-                                  begin: Alignment.centerLeft,
-                                  end: Alignment.centerRight,
-                                ),
+                                color: isDark ? null : AppColors.blueLight,
+                                gradient: isDark
+                                    ? LinearGradient(
+                                        colors: [
+                                          const Color(0xff7B7B7B),
+                                          const Color(0xff0f0f0f)
+                                              .withOpacity(0.65),
+                                        ],
+                                        begin: Alignment.centerLeft,
+                                        end: Alignment.centerRight,
+                                      )
+                                    : null,
                               ),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
