@@ -22,6 +22,21 @@ class SignUpProfileView extends StatelessWidget {
 
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          surfaceTintColor: Colors.transparent,
+          automaticallyImplyLeading: false,
+          actions: [
+            IconButton(
+              onPressed: () {
+                context.pop();
+              },
+              icon: const Icon(
+                Icons.arrow_forward_ios_outlined,
+              ),
+            ),
+          ],
+        ),
         body: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsetsDirectional.symmetric(horizontal: 34.w),
@@ -258,11 +273,19 @@ class SignUpProfileView extends StatelessWidget {
                       SizedBox(
                         width: double.infinity,
                         child: ElevatedButton(
-                          onPressed: () {
-                            if (cubit.validateSignUpProfile(context)) {
-                              context.push("/signUpOTPView");
-                            }
-                          },
+                          onPressed: cubit.isTermsChecked
+                              ? () {
+                                  // Proceed with the signup logic
+                                  if (cubit.validateSignUpProfile(context)) {
+                                    context.push("/signUpOTPView");
+                                  }
+                                }
+                              : null,
+                          // onPressed: () {
+                          //   if (cubit.validateSignUpProfile(context)) {
+                          //     context.push("/signUpOTPView");
+                          //   }
+                          // },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: isDark
                                 ? AppColors.blackColor

@@ -12,7 +12,9 @@ class AuthCubit extends Cubit<AuthState> {
   GlobalKey<FormState> signUpProfileFormKey = GlobalKey<FormState>();
   GlobalKey<FormState> resetNewPasswordFormKey = GlobalKey<FormState>();
   GlobalKey<FormState> emailResetPasswordFormKey = GlobalKey<FormState>();
+  
   bool? obscurePasswordTextValue = true;
+  bool isTermsChecked = false; // Add this field
   String? firstName;
   String? secondName;
   String? lastName;
@@ -52,11 +54,13 @@ class AuthCubit extends Cubit<AuthState> {
 
   //! Obscure password text
   void obscurePasswordText() {
-    if (obscurePasswordTextValue == true) {
-      obscurePasswordTextValue = false;
-    } else {
-      obscurePasswordTextValue = true;
-    }
+    obscurePasswordTextValue = !obscurePasswordTextValue!;
     emit(ObscurePasswordTextUpdateState());
+  }
+
+  //! Update terms checkbox value
+  void updateTermsChecked(bool value) {
+    isTermsChecked = value;
+    emit(AuthTermsCheckedUpdateState());
   }
 }

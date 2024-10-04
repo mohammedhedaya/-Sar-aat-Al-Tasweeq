@@ -125,7 +125,7 @@
     "Camera": "Camera",
     "ChooseImageSource": "Choose Image Source",
     "confirm_password": "Confirm Password",
-    "checkPassword": "The password must contain at least 6 characters,\nincluding an uppercase letter,\na lowercase letter, and 6 numbers",
+    "checkPassword": "The password must contain at least two letters,\nincluding a lowercase letter, an uppercase letter,\nand 6 or more numbers",
     "passwordDontMatch": "Password does not match",
     "defaultValidation": "This field is required",
     "passwordValidation": "Please enter your password",

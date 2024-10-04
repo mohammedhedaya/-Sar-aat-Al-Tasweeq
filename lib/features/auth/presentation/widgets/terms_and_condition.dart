@@ -1,6 +1,9 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shopping_chart/features/auth/presentation/cubit/auth_cubit.dart';
+import 'package:shopping_chart/features/auth/presentation/cubit/auth_state.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 
@@ -30,49 +33,58 @@ class _TermsConditionsWidgetState extends State<TermsConditionsWidget> {
   @override
   Widget build(BuildContext context) {
     final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: [
-        Checkbox(
-          value: isChecked,
-          visualDensity: const VisualDensity(
-            horizontal: VisualDensity.minimumDensity,
-            vertical: VisualDensity.minimumDensity,
-          ),
-          onChanged: (value) {
-            setState(() {
-              isChecked = value!;
-            });
-          },
-          activeColor: isDark ? AppColors.whiteColor : AppColors.blueLight,
-          checkColor: isDark ? AppColors.blackColor : AppColors.whiteColor,
-          side: BorderSide(
-            color: isDark ? AppColors.whiteColor : AppColors.blueLight,
-            strokeAlign: 3.0,
-          ),
-        ),
-        InkWell(
-          onTap: () {
-            _showTermsDialog();
-          },
-          child: RichText(
-            text: TextSpan(
-              text: "iagree".tr(context: context),
-              style: AppStyles.style13W400.copyWith(
-                color: isDark ? AppColors.whiteColor : AppColors.blackColor,
+    return BlocBuilder<AuthCubit, AuthState>(
+      builder: (context, state) {
+        final cubit = context.read<AuthCubit>();
+        return Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Checkbox(
+              value: cubit.isTermsChecked,
+              visualDensity: const VisualDensity(
+                horizontal: VisualDensity.minimumDensity,
+                vertical: VisualDensity.minimumDensity,
               ),
-              children: [
-                TextSpan(
-                  text: "termsAndConditions".tr(context: context),
-                  style: AppStyles.style13W600.copyWith(
+              onChanged: (value) {
+                cubit.updateTermsChecked(value ?? false);
+
+                // setState(() {
+                //   isChecked = value!;
+                // });
+              },
+              activeColor: isDark ? AppColors.whiteColor : AppColors.blueLight,
+              checkColor: isDark ? AppColors.blackColor : AppColors.whiteColor,
+              side: BorderSide(
+                color: isDark ? AppColors.whiteColor : AppColors.blueLight,
+                strokeAlign: 3.0,
+              ),
+            ),
+            InkWell(
+              onTap: () {
+                _showTermsDialog();
+              },
+              child: RichText(
+                text: TextSpan(
+                  text: "iagree".tr(context: context),
+                  style: AppStyles.style13W400.copyWith(
                     color: isDark ? AppColors.whiteColor : AppColors.blackColor,
                   ),
+                  children: [
+                    TextSpan(
+                      text: "termsAndConditions".tr(context: context),
+                      style: AppStyles.style13W600.copyWith(
+                        color: isDark
+                            ? AppColors.whiteColor
+                            : AppColors.blackColor,
+                      ),
+                    ),
+                  ],
                 ),
-              ],
+              ),
             ),
-          ),
-        ),
-      ],
+          ],
+        );
+      },
     );
   }
 
