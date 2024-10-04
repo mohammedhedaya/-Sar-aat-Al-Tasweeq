@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shopping_chart/features/subscribe_package/presentation/widgets/package_details_item.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
@@ -12,6 +13,7 @@ class SubscribeToThePackageViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return LayoutBuilder(
       builder: (context, constraints) {
         return Container(
@@ -58,8 +60,10 @@ class SubscribeToThePackageViewBody extends StatelessWidget {
                               children: [
                                 SvgPicture.asset(
                                   Assets.imagesSubscribeOfPackage,
-                                  colorFilter: const ColorFilter.mode(
-                                    Color(0xff323232),
+                                  colorFilter: ColorFilter.mode(
+                                    isDark
+                                        ? const Color(0xff323232)
+                                        : AppColors.yellowLight,
                                     BlendMode.srcIn,
                                   ),
                                 ),
@@ -117,53 +121,45 @@ class SubscribeToThePackageViewBody extends StatelessWidget {
                                             color: AppColors.whiteColor,
                                           ),
                                         ),
-                                        Text(
-                                          "• ${"whatsapp_logo_free".tr(context: context)}",
-                                          style: AppStyles.style14W400.copyWith(
-                                            color: AppColors.whiteColor,
-                                          ),
+                                        PackageDetailsItem(
+                                          logo: Assets.imagesWhatsapplogo,
+                                          title: "whatsapp_logo_free"
+                                              .tr(context: context),
                                         ),
-                                        Text(
-                                          "• ${"telegram_logo_free".tr(context: context)}",
-                                          style: AppStyles.style14W400.copyWith(
-                                            color: AppColors.whiteColor,
-                                          ),
+                                        PackageDetailsItem(
+                                          logo: Assets.imagesTelegramlogo,
+                                          title: "telegram_logo_free"
+                                              .tr(context: context),
                                         ),
-                                        Text(
-                                          "• ${"instagram_logo_free".tr(context: context)}",
-                                          style: AppStyles.style14W400.copyWith(
-                                            color: AppColors.whiteColor,
-                                          ),
+                                        PackageDetailsItem(
+                                          logo: Assets.imagesInstagramIcon,
+                                          title: "instagram_logo_free"
+                                              .tr(context: context),
                                         ),
-                                        Text(
-                                          "• ${"x_logo_free".tr(context: context)}",
-                                          style: AppStyles.style14W400.copyWith(
-                                            color: AppColors.whiteColor,
-                                          ),
+                                        PackageDetailsItem(
+                                          logo: Assets.imagesXIcon,
+                                          title: "x_logo_free"
+                                              .tr(context: context),
                                         ),
-                                        Text(
-                                          "• ${"facebook_logo_free".tr(context: context)}",
-                                          style: AppStyles.style14W400.copyWith(
-                                            color: AppColors.whiteColor,
-                                          ),
+                                        PackageDetailsItem(
+                                          logo: Assets.imagesFacebookIcon,
+                                          title: "facebook_logo_free"
+                                              .tr(context: context),
                                         ),
-                                        Text(
-                                          "• ${"ticktok_logo_free".tr(context: context)}",
-                                          style: AppStyles.style14W400.copyWith(
-                                            color: AppColors.whiteColor,
-                                          ),
+                                        PackageDetailsItem(
+                                          logo: Assets.imagesTiktoksvg,
+                                          title: "ticktok_logo_free"
+                                              .tr(context: context),
                                         ),
-                                        Text(
-                                          "• ${"sms_logo_free".tr(context: context)}",
-                                          style: AppStyles.style14W400.copyWith(
-                                            color: AppColors.whiteColor,
-                                          ),
+                                        PackageDetailsItem(
+                                          logo: Assets.imagesSmsvgp,
+                                          title: "sms_logo_free"
+                                              .tr(context: context),
                                         ),
-                                        Text(
-                                          "• ${"email_logo_free".tr(context: context)}",
-                                          style: AppStyles.style14W400.copyWith(
-                                            color: AppColors.whiteColor,
-                                          ),
+                                        PackageDetailsItem(
+                                          logo: Assets.imagesEmailsvg,
+                                          title: "email_logo_free"
+                                              .tr(context: context),
                                         ),
                                       ],
                                     ),
@@ -180,14 +176,17 @@ class SubscribeToThePackageViewBody extends StatelessWidget {
                                         decoration: BoxDecoration(
                                           borderRadius:
                                               BorderRadius.circular(5.r),
-                                          gradient: const LinearGradient(
-                                            colors: [
-                                              Color(0xff00C0CC),
-                                              Color(0xff006066),
-                                            ],
-                                            begin: Alignment.centerLeft,
-                                            end: Alignment.centerRight,
-                                          ),
+                                          color: isDark ? null : Colors.orange,
+                                          gradient: isDark
+                                              ? const LinearGradient(
+                                                  colors: [
+                                                    Color(0xff00C0CC),
+                                                    Color(0xff006066),
+                                                  ],
+                                                  begin: Alignment.centerLeft,
+                                                  end: Alignment.centerRight,
+                                                )
+                                              : null,
                                         ),
                                         child: Text(
                                           "subscribe".tr(context: context),
