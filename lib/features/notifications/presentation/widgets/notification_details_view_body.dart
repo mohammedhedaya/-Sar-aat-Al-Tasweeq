@@ -20,36 +20,41 @@ class NotificationsDetailsViewBody extends StatelessWidget {
             opacity: 0.45,
           ),
         ),
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 36.w),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(height: MediaQuery.of(context).size.height * 0.04),
-              Text(
-                "Admin".tr(context: context),
-                style: AppStyles.style15W800,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 36.w),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(height: MediaQuery.of(context).size.height * 0.04),
+                  Text(
+                    "Admin".tr(context: context),
+                    style: AppStyles.style15W800,
+                  ),
+                  SizedBox(height: MediaQuery.of(context).size.height * 0.1),
+                  Container(
+                    padding: EdgeInsets.all(10.r),
+                    decoration: BoxDecoration(
+                      color: Colors.white.withOpacity(0.10),
+                      borderRadius: BorderRadius.circular(20.r),
+                    ),
+                    child: Text(
+                      "alsalamealaykum".tr(context: context),
+                      style: AppStyles.style36W400,
+                      textAlign: TextAlign.start,
+                    ),
+                  ),
+                ],
               ),
-              SizedBox(height: MediaQuery.of(context).size.height * 0.1),
-              Container(
-                padding: EdgeInsets.all(10.r),
-                decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.10),
-                  borderRadius: BorderRadius.circular(20.r),
-                ),
-                child: Text(
-                  "alsalamealaykum".tr(context: context),
-                  style: AppStyles.style36W400,
-                  textAlign: TextAlign.start,
-                ),
-              ),
-              SizedBox(height: MediaQuery.of(context).size.height * 0.06),
-              Image.asset(
-                Assets.imagesImageSea,
-              ),
-              SizedBox(height: MediaQuery.of(context).size.height * 0.03),
-            ],
-          ),
+            ),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.06),
+            Image.asset(
+              Assets.imagesImageSea,
+            ),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.03),
+          ],
         ),
       ),
     );
