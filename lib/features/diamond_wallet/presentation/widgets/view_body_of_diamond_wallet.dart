@@ -12,6 +12,7 @@ class ViewBodyOfDiamondWallet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     final List<Map<String, dynamic>> diamondData = [
       {
         'price': '40 ${"a_diamed".tr(context: context)}',
@@ -94,7 +95,9 @@ class ViewBodyOfDiamondWallet extends StatelessWidget {
                   topRight: Radius.circular(70.r),
                   topLeft: Radius.circular(70.r),
                 ),
-                color: const Color(0xff080D12).withOpacity(0.80),
+                color: isDark
+                    ? const Color(0xff080D12).withOpacity(0.80)
+                    : AppColors.blueLight,
               ),
               child: ListView.builder(
                 shrinkWrap: true,
@@ -116,8 +119,8 @@ class ViewBodyOfDiamondWallet extends StatelessWidget {
                           children: [
                             SvgPicture.asset(
                               Assets.imagesJewel,
-                              colorFilter: const ColorFilter.mode(
-                                AppColors.blackColor,
+                              colorFilter: ColorFilter.mode(
+                                isDark ? AppColors.blackColor : AppColors.gray,
                                 BlendMode.srcIn,
                               ),
                             ),
