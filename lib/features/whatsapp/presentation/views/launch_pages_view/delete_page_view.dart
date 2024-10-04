@@ -79,7 +79,7 @@ class _DeletePageViewState extends State<DeletePageView> {
           Center(
             child: InkWell(
               onTap: () {
-                context.push('/whatsappChooseTheDestinationView');
+                context.push('/whatsappChooseDestinationDeleteGroupsView');
               },
               child: Container(
                 height: 40.h,

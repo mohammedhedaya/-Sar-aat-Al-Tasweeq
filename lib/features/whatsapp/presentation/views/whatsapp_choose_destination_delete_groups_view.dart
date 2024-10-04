@@ -2,13 +2,13 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shopping_chart/features/whatsapp/presentation/widgets/whatsapp_choose_destination_delete_groups_view_body.dart';
 
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
-import '../widgets/choose_distination_body.dart';
 
-class WhatsappChooseTheDestinationView extends StatelessWidget {
-  const WhatsappChooseTheDestinationView({super.key});
+class WhatsappChooseDestinationDeleteGroupsView extends StatelessWidget {
+  const WhatsappChooseDestinationDeleteGroupsView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +42,7 @@ class WhatsappChooseTheDestinationView extends StatelessWidget {
           ),
         ],
       ),
-      body: const WhatsappChooseTheDestinationViewBody(),
+      body: const WhatsappChooseDestinationDeleteGroupsViewBody(),
     );
   }
 }
