@@ -134,7 +134,7 @@ class _TelegramGroupsDetailsViewBodyState
                     child: Column(
                       children: [
                         Text(
-                          "انضم لأكثر القنوات شهرة",
+                          "addTelegramChannel".tr(context: context),
                           style: AppStyles.style13W600,
                           textAlign: TextAlign.center,
                         ),
