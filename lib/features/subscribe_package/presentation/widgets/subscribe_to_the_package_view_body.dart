@@ -106,9 +106,27 @@ class SubscribeToThePackageViewBody extends StatelessWidget {
                                         "packege_features".tr(context: context),
                                         style: AppStyles.style14W600,
                                       ),
-                                      Text(
-                                        "30_saudi_riyal".tr(context: context),
-                                        style: AppStyles.style14W600,
+                                      Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          InkWell(
+                                            onTap: () {},
+                                            child: Text(
+                                              "30_saudi_riyal"
+                                                  .tr(context: context),
+                                              style: AppStyles.style14W600,
+                                            ),
+                                          ),
+                                          InkWell(
+                                            onTap: () {},
+                                            child: Text(
+                                              "7.99_dollars"
+                                                  .tr(context: context),
+                                              style: AppStyles.style14W600,
+                                            ),
+                                          ),
+                                        ],
                                       ),
                                     ],
                                   ),
