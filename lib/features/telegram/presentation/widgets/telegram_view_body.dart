@@ -49,7 +49,9 @@ class TelegramViewBody extends StatelessWidget {
               bottom: 25.h,
             ),
             decoration: BoxDecoration(
-              color: const Color(0xff080d12).withOpacity(0.80),
+              color: isDark
+                  ? const Color(0xff080d12).withOpacity(0.80)
+                  : AppColors.blueLight,
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(70.r),
                 topRight: Radius.circular(70.r),
@@ -59,6 +61,9 @@ class TelegramViewBody extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CustomSubscribeBtn(
+                  textStyle: AppStyles.style14W400.copyWith(
+                    color: Colors.white,
+                  ),
                   onPressed: () {
                     showDialog(
                       context: context,
@@ -93,6 +98,9 @@ class TelegramViewBody extends StatelessWidget {
                 ),
                 SizedBox(height: 50.h),
                 CustomSubscribeBtn(
+                  textStyle: AppStyles.style14W400.copyWith(
+                    color: Colors.white,
+                  ),
                   onPressed: () {
                     showDialog(
                       context: context,

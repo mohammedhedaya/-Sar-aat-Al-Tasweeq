@@ -46,7 +46,7 @@ class PaymentGatewayViewBody extends StatelessWidget {
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(5.r),
-                  color: AppColors.navBarColor,
+                  color: isDark ? AppColors.navBarColor : AppColors.blueLight,
                 ),
                 child: TextButton.icon(
                   onPressed: () {},
@@ -100,7 +100,8 @@ class PaymentGatewayViewBody extends StatelessWidget {
                     height: 50.h,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5.r),
-                      color: AppColors.navBarColor,
+                      color:
+                          isDark ? AppColors.navBarColor : AppColors.blueLight,
                     ),
                     child: Center(
                       child: Text(

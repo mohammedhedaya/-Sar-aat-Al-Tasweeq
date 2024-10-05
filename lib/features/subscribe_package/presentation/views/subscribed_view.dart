@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -41,6 +42,7 @@ class _SuccessSubscribedViewState extends State<SuccessSubscribedView>
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return SafeArea(
       child: Scaffold(
         body: Container(
@@ -91,14 +93,17 @@ class _SuccessSubscribedViewState extends State<SuccessSubscribedView>
                         scale: 3.5,
                       ),
                       borderRadius: BorderRadius.circular(16.r),
-                      gradient: LinearGradient(
-                        colors: [
-                          const Color(0xff7B7B7B),
-                          const Color(0xff0F0F0F).withOpacity(0.65),
-                        ],
-                        begin: Alignment.centerRight,
-                        end: Alignment.centerLeft,
-                      ),
+                      color: isDark ? null : AppColors.blueLight,
+                      gradient: isDark
+                          ? LinearGradient(
+                              colors: [
+                                const Color(0xff7B7B7B),
+                                const Color(0xff0F0F0F).withOpacity(0.65),
+                              ],
+                              begin: Alignment.centerRight,
+                              end: Alignment.centerLeft,
+                            )
+                          : null,
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,

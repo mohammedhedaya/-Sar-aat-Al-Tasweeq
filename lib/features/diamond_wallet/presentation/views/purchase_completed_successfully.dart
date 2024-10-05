@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:shopping_chart/core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
 
@@ -43,6 +44,7 @@ class _PurchaseCompletedSuccessfullyState
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return SafeArea(
       child: Scaffold(
         body: Container(
@@ -89,15 +91,18 @@ class _PurchaseCompletedSuccessfullyState
                     ),
                     margin: EdgeInsets.symmetric(horizontal: 25.w),
                     decoration: BoxDecoration(
+                      color: isDark ? null : AppColors.blueLight,
                       borderRadius: BorderRadius.circular(16.r),
-                      gradient: LinearGradient(
-                        colors: [
-                          const Color(0xff7B7B7B),
-                          const Color(0xff0F0F0F).withOpacity(0.65),
-                        ],
-                        begin: Alignment.centerRight,
-                        end: Alignment.centerLeft,
-                      ),
+                      gradient: isDark
+                          ? LinearGradient(
+                              colors: [
+                                const Color(0xff7B7B7B),
+                                const Color(0xff0F0F0F).withOpacity(0.65),
+                              ],
+                              begin: Alignment.centerRight,
+                              end: Alignment.centerLeft,
+                            )
+                          : null,
                     ),
                     child: Column(
                       children: [
@@ -127,7 +132,11 @@ class _PurchaseCompletedSuccessfullyState
                                   children: [
                                     Text(
                                       '  • 40 ${"a_diamed".tr(context: context)}',
-                                      style: AppStyles.style14W400,
+                                      style: AppStyles.style14W400.copyWith(
+                                        color: isDark
+                                            ? Colors.white
+                                            : Colors.white,
+                                      ),
                                     ),
                                     SvgPicture.asset(
                                       Assets.imagesJewelInDiamondWallet,

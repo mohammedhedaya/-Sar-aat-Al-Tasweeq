@@ -37,7 +37,9 @@ class SMSLaunchYourAdPhoneDirectoryViewBody extends StatelessWidget {
                 ),
                 child: Text(
                   "Contacts".tr(context: context),
-                  style: AppStyles.style10W800,
+                  style: AppStyles.style10W800.copyWith(
+                    color: isDark ? Colors.black : Colors.white,
+                  ),
                 ),
               ),
             ),

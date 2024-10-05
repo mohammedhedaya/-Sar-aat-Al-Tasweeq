@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/utils/app_colors.dart';
@@ -15,6 +16,7 @@ class CustomSubscribeBtn extends StatelessWidget {
   final TextStyle? textStyle;
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return TextButton(
       onPressed: onPressed,
       style: TextButton.styleFrom(
@@ -24,7 +26,8 @@ class CustomSubscribeBtn extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20.r),
         ),
-        backgroundColor: AppColors.whiteColor.withOpacity(0.10),
+        backgroundColor:
+            isDark ? AppColors.whiteColor.withOpacity(0.10) : AppColors.gray,
       ),
       child: Text(
         text,

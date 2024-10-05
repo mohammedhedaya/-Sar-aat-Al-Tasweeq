@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shopping_chart/core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
 import '../../../auth/presentation/widgets/auth_btn.dart';
@@ -14,6 +15,7 @@ class InstagramViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return SingleChildScrollView(
       child: Column(
         children: [
@@ -46,7 +48,9 @@ class InstagramViewBody extends StatelessWidget {
               bottom: 25.h,
             ),
             decoration: BoxDecoration(
-              color: const Color(0xff080d12).withOpacity(0.80),
+              color: isDark
+                  ? const Color(0xff080d12).withOpacity(0.80)
+                  : AppColors.blueLight.withOpacity(0.90),
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(70.r),
                 topRight: Radius.circular(70.r),
@@ -58,21 +62,25 @@ class InstagramViewBody extends StatelessWidget {
                 CustomAuthTextField(
                   onChanged: (value) {},
                   hintStyle: AppStyles.style14W400.copyWith(
-                    color: const Color(0xffBABABA),
+                    color:
+                        isDark ? const Color(0xffBABABA) : AppColors.whiteColor,
                   ),
                   hintText: "username".tr(context: context),
                   textAlign: TextAlign.center,
-                  fiiledColor: Colors.white.withOpacity(0.10),
+                  fiiledColor:
+                      isDark ? Colors.white.withOpacity(0.10) : AppColors.gray,
                 ),
                 SizedBox(height: 35.h),
                 CustomAuthTextField(
                   onChanged: (value) {},
                   hintStyle: AppStyles.style14W400.copyWith(
-                    color: const Color(0xffBABABA),
+                    color:
+                        isDark ? const Color(0xffBABABA) : AppColors.whiteColor,
                   ),
                   hintText: "password".tr(context: context),
                   textAlign: TextAlign.center,
-                  fiiledColor: Colors.white.withOpacity(0.10),
+                  fiiledColor:
+                      isDark ? Colors.white.withOpacity(0.10) : AppColors.gray,
                 ),
                 SizedBox(height: 36.h),
                 Padding(

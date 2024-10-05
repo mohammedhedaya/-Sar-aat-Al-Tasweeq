@@ -1,8 +1,10 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shopping_chart/core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
 import 'custom_show_dialog.dart';
@@ -13,6 +15,7 @@ class WhatsappViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return SingleChildScrollView(
       child: Column(
         children: [
@@ -43,7 +46,9 @@ class WhatsappViewBody extends StatelessWidget {
               bottom: 25.h,
             ),
             decoration: BoxDecoration(
-              color: const Color(0xff080d12).withOpacity(0.80),
+              color: isDark
+                  ? const Color(0xff080d12).withOpacity(0.80)
+                  : AppColors.blueLight,
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(70.r),
                 topRight: Radius.circular(70.r),
@@ -53,6 +58,9 @@ class WhatsappViewBody extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CustomSubscribeBtn(
+                  textStyle: AppStyles.style14W400.copyWith(
+                    color: Colors.white,
+                  ),
                   onPressed: () {
                     showDialog(
                       context: context,
@@ -87,6 +95,9 @@ class WhatsappViewBody extends StatelessWidget {
                 ),
                 SizedBox(height: 50.h),
                 CustomSubscribeBtn(
+                  textStyle: AppStyles.style14W400.copyWith(
+                    color: Colors.white,
+                  ),
                   onPressed: () {
                     showDialog(
                       context: context,
