@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -11,12 +12,17 @@ class OurAccountsViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return Column(
       children: [
         SizedBox(height: 30.h),
         SvgPicture.asset(
           Assets.imagesMarketingspeedcalculations,
           height: MediaQuery.of(context).size.height * 0.15,
+          colorFilter: ColorFilter.mode(
+            isDark ? AppColors.whiteColor : AppColors.blueLight,
+            BlendMode.srcIn,
+          ),
         ),
         SizedBox(height: 30.h),
         Expanded(
@@ -25,7 +31,7 @@ class OurAccountsViewBody extends StatelessWidget {
             width: double.infinity,
             padding: EdgeInsets.only(top: 50.h, left: 15.w, right: 15.w),
             decoration: BoxDecoration(
-              color: const Color(0xffABABAB),
+              color: isDark ? const Color(0xffABABAB) : AppColors.blueLight,
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(25.r),
                 topRight: Radius.circular(25.r),

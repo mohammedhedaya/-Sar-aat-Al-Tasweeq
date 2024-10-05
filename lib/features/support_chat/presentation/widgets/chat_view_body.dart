@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:chat_bubbles/chat_bubbles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -11,6 +12,7 @@ class ChatViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return Container(
       decoration: const BoxDecoration(
         image: DecorationImage(
@@ -24,117 +26,140 @@ class ChatViewBody extends StatelessWidget {
             child: ListView(
               children: [
                 SizedBox(height: 25.h),
-                const BubbleSpecialThree(
+                BubbleSpecialThree(
                   text:
                       'وريم إيبسوم هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى)',
-                  color: Color(0xFF7B7B7B),
+                  color: isDark ? const Color(0xFF7B7B7B) : AppColors.blueLight,
                   tail: true,
-                  textStyle: TextStyle(
+                  textStyle: const TextStyle(
                     color: Colors.white,
                     fontSize: 13,
                   ),
                 ),
                 SizedBox(height: 25.h),
-                const BubbleSpecialThree(
+                BubbleSpecialThree(
                   text:
                       'وريم إيبسوم هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى)',
-                  color: Color(0xffFFFEFE),
+                  color: isDark ? const Color(0xffFFFEFE) : AppColors.gray,
                   tail: true,
                   isSender: false,
                   textStyle: TextStyle(
-                    color: Colors.black,
+                    color: isDark ? Colors.black : Colors.white,
                     fontSize: 13,
                   ),
                 ),
                 SizedBox(height: 25.h),
-                const BubbleSpecialThree(
+                BubbleSpecialThree(
                   text:
                       'وريم إيبسوم هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى)',
-                  color: Color(0xFF7B7B7B),
+                  color: isDark ? const Color(0xFF7B7B7B) : AppColors.blueLight,
                   tail: true,
-                  textStyle: TextStyle(
+                  textStyle: const TextStyle(
                     color: Colors.white,
                     fontSize: 13,
                   ),
                 ),
                 SizedBox(height: 25.h),
-                const BubbleSpecialThree(
+                BubbleSpecialThree(
                   text:
                       'وريم إيبسوم هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى)',
-                  color: Color(0xffFFFEFE),
+                  color: isDark ? const Color(0xffFFFEFE) : AppColors.gray,
                   tail: true,
                   isSender: false,
                   textStyle: TextStyle(
-                    color: Colors.black,
+                    color: isDark ? Colors.black : Colors.white,
                     fontSize: 13,
                   ),
                 ),
                 SizedBox(height: 25.h),
-                const BubbleSpecialThree(
+                BubbleSpecialThree(
                   text:
                       'وريم إيبسوم هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى)',
-                  color: Color(0xFF7B7B7B),
+                  color: isDark ? const Color(0xFF7B7B7B) : AppColors.blueLight,
                   tail: true,
-                  textStyle: TextStyle(
+                  textStyle: const TextStyle(
                     color: Colors.white,
                     fontSize: 13,
                   ),
                 ),
                 SizedBox(height: 25.h),
-                const BubbleSpecialThree(
+                BubbleSpecialThree(
                   text:
                       'وريم إيبسوم هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى)',
-                  color: Color(0xffFFFEFE),
+                  color: isDark ? const Color(0xffFFFEFE) : AppColors.gray,
                   tail: true,
                   isSender: false,
                   textStyle: TextStyle(
-                    color: Colors.black,
+                    color: isDark ? Colors.black : Colors.white,
                     fontSize: 13,
                   ),
                 ),
                 SizedBox(height: 25.h),
-                const BubbleSpecialThree(
+                BubbleSpecialThree(
                   text:
                       'وريم إيبسوم هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى)',
-                  color: Color(0xFF7B7B7B),
+                  color: isDark ? const Color(0xFF7B7B7B) : AppColors.blueLight,
                   tail: true,
-                  textStyle: TextStyle(
+                  textStyle: const TextStyle(
                     color: Colors.white,
                     fontSize: 13,
                   ),
                 ),
                 SizedBox(height: 25.h),
-                const BubbleSpecialThree(
+                BubbleSpecialThree(
                   text:
                       'وريم إيبسوم هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى)',
-                  color: Color(0xffFFFEFE),
+                  color: isDark ? const Color(0xffFFFEFE) : AppColors.gray,
                   tail: true,
                   isSender: false,
                   textStyle: TextStyle(
-                    color: Colors.black,
+                    color: isDark ? Colors.black : Colors.white,
                     fontSize: 13,
                   ),
                 ),
                 SizedBox(height: 25.h),
-                const BubbleSpecialThree(
+                BubbleSpecialThree(
                   text:
                       'وريم إيبسوم هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى)',
-                  color: Color(0xFF7B7B7B),
+                  color: isDark ? const Color(0xFF7B7B7B) : AppColors.blueLight,
                   tail: true,
-                  textStyle: TextStyle(
+                  textStyle: const TextStyle(
                     color: Colors.white,
                     fontSize: 13,
                   ),
                 ),
                 SizedBox(height: 25.h),
-                const BubbleSpecialThree(
+                BubbleSpecialThree(
                   text:
                       'وريم إيبسوم هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى)',
-                  color: Color(0xffFFFEFE),
+                  color: isDark ? const Color(0xffFFFEFE) : AppColors.gray,
                   tail: true,
                   isSender: false,
                   textStyle: TextStyle(
-                    color: Colors.black,
+                    color: isDark ? Colors.black : Colors.white,
+                    fontSize: 13,
+                  ),
+                ),
+                SizedBox(height: 25.h),
+                BubbleSpecialThree(
+                  text:
+                      'وريم إيبسوم هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى)',
+                  color: isDark ? const Color(0xFF7B7B7B) : AppColors.blueLight,
+                  tail: true,
+                  textStyle: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 13,
+                  ),
+                ),
+                SizedBox(height: 25.h),
+                BubbleSpecialThree(
+                  text:
+                      'وريم إيبسوم هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى)',
+                  color: isDark ? const Color(0xffFFFEFE) : AppColors.gray,
+                  tail: true,
+                  isSender: false,
+                  textStyle: TextStyle(
+                    color: isDark ? Colors.black : Colors.white,
                     fontSize: 13,
                   ),
                 ),
@@ -142,7 +167,7 @@ class ChatViewBody extends StatelessWidget {
             ),
           ),
           Container(
-            color: AppColors.navBarColor,
+            color: isDark ? AppColors.navBarColor : AppColors.blueLight,
             padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 11.w),
             child: Row(
               children: [

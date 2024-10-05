@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -12,6 +13,7 @@ class SharingEarnBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return SizedBox(
       height: MediaQuery.of(context).size.height,
       child: Stack(
@@ -22,6 +24,10 @@ class SharingEarnBody extends StatelessWidget {
             top: -MediaQuery.of(context).size.height * 0.1,
             child: SvgPicture.asset(
               Assets.imagesBgSharingScreen,
+              colorFilter: ColorFilter.mode(
+                isDark ? AppColors.loginBtn : AppColors.yellowLight,
+                BlendMode.srcIn,
+              ),
               width: MediaQuery.of(context).size.width,
               fit: BoxFit.cover,
             ),
@@ -38,7 +44,8 @@ class SharingEarnBody extends StatelessWidget {
                       topLeft: Radius.circular(25.r),
                       topRight: Radius.circular(25.r),
                     ),
-                    color: const Color(0xffABABAB),
+                    color:
+                        isDark ? const Color(0xffABABAB) : AppColors.blueLight,
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -46,7 +53,11 @@ class SharingEarnBody extends StatelessWidget {
                       SizedBox(height: 50.h),
                       Text(
                         "referralCode".tr(context: context),
-                        style: AppStyles.style20W400ShareWithFiends,
+                        style: AppStyles.style20W400ShareWithFiends.copyWith(
+                          color: isDark
+                              ? const Color(0xff5B5B5B)
+                              : AppColors.whiteColor,
+                        ),
                       ),
                       SizedBox(height: 12.h),
                       TextFormField(
@@ -77,7 +88,11 @@ class SharingEarnBody extends StatelessWidget {
                       SizedBox(height: 10.h),
                       Text(
                         "shareTheAppToEarn".tr(context: context),
-                        style: AppStyles.style20W400ShareWithFiends,
+                        style: AppStyles.style20W400ShareWithFiends.copyWith(
+                          color: isDark
+                              ? const Color(0xff5B5B5B)
+                              : AppColors.whiteColor,
+                        ),
                         textAlign: TextAlign.start,
                       ),
                       SizedBox(height: 50.h),

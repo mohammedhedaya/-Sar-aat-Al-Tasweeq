@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -11,6 +12,7 @@ class AddGroupViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return Padding(
       padding: const EdgeInsets.all(33.0),
       child: Column(
@@ -26,7 +28,7 @@ class AddGroupViewBody extends StatelessWidget {
             icon: Assets.imagesAddWhatsappgroup,
           ),
           Divider(
-            color: Colors.white,
+            color: isDark ? Colors.white : Colors.black,
             thickness: 1,
             height: 1.h,
           ),

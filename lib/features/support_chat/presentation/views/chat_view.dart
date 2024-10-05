@@ -47,7 +47,6 @@ class ChatView extends StatelessWidget {
               ),
               child: const Icon(
                 Icons.arrow_forward,
-                // color: AppColors.blackColor,
               ),
             ),
           ),
