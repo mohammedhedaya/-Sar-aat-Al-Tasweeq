@@ -123,7 +123,7 @@ final GoRouter router = GoRouter(
       path: '/',
       builder: (context, state) => BlocProvider(
         create: (context) => getIt<AuthCubit>(),
-        child: const LoginView(),
+        child: const UserMainLayoutScreen(),
       ),
     ),
     GoRoute(
