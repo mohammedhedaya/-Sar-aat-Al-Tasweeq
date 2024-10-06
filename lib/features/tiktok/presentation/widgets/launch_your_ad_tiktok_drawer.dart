@@ -110,7 +110,7 @@ class LaunchYourAdTiktokDrawer extends StatelessWidget {
               SizedBox(height: 40.h),
               CustomLaunchDrawerItem(
                 onTap: () {
-                  // context.push("/choosePersonAndSendAdView");
+                  context.push("/tiktokChoosePersonAndSendView");
                 },
                 title: "Chooseapersonfromtiktokandsendyouradtoallhisfollowers"
                     .tr(context: context),
