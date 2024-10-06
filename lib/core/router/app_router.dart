@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shopping_chart/features/tiktok/presentation/views/add_tiktok_hashtag_view.dart';
 import 'package:shopping_chart/features/tiktok/presentation/views/launch_your_tiktok_ad_view.dart';
 import 'package:shopping_chart/features/tiktok/presentation/views/tiktok_view.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/views/whatsapp_choose_destination_delete_groups_view.dart';
@@ -609,6 +610,10 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/launchYourTiktokAdView',
       builder: (context, state) => const LaunchYourTiktokAdView(),
+    ),
+    GoRoute(
+      path: '/addTiktokHashtagView',
+      builder: (context, state) => const AddTiktokHashtagView(),
     ),
   ],
 );
