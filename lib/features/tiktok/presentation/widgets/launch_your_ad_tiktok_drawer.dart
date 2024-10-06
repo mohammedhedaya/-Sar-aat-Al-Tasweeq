@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
 import '../../../whatsapp/presentation/widgets/custom_launch_drawer_item.dart';
@@ -101,7 +102,7 @@ class LaunchYourAdTiktokDrawer extends StatelessWidget {
               SizedBox(height: 67.h),
               CustomLaunchDrawerItem(
                 onTap: () {
-                  // context.push("/sendYourAdToFollowersView");
+                  context.push("/sendYourTiktokAdToFollowersView");
                 },
                 title: "SendyouradonFollowersandfollowers".tr(context: context),
                 image: Assets.imagesIconsendtwoarrow,
@@ -111,9 +112,8 @@ class LaunchYourAdTiktokDrawer extends StatelessWidget {
                 onTap: () {
                   // context.push("/choosePersonAndSendAdView");
                 },
-                title:
-                    "ChooseapersonfromInstagramandsendyouradtoallhisfollowers"
-                        .tr(context: context),
+                title: "Chooseapersonfromtiktokandsendyouradtoallhisfollowers"
+                    .tr(context: context),
                 image: Assets.imagesShareDribbbleLight,
               ),
               SizedBox(height: 40.h),

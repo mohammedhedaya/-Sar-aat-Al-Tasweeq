@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
-import '../../../../core/utils/app_text_style.dart';
-import '../../../../core/utils/assets.dart';
-import '../widgets/send_your_Ad_to_followrs_view_body.dart';
+import 'package:shopping_chart/core/utils/app_text_style.dart';
+import 'package:shopping_chart/core/utils/assets.dart';
+import 'package:shopping_chart/features/tiktok/presentation/widgets/send_your_tiktok_ad_to_followers_view_body.dart';
 
-class SendYourAdToFollowersView extends StatelessWidget {
-  const SendYourAdToFollowersView({super.key});
+class SendYourTiktokAdToFollowersView extends StatelessWidget {
+  const SendYourTiktokAdToFollowersView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +42,7 @@ class SendYourAdToFollowersView extends StatelessWidget {
           ),
         ],
       ),
-      body: const SendYourAdToFollowersViewBody(),
+      body: const SendYourTiktokAdToFollowersViewBody(),
     );
   }
 }
