@@ -93,7 +93,7 @@ class _TelegramDeleteChooseDestinationViewBodyState
                   ),
                 ),
               ),
-              SizedBox(width: 25.w),
+              SizedBox(width: 10.w),
               Expanded(
                 child: InkWell(
                   onTap: () {
@@ -139,7 +139,7 @@ class _TelegramDeleteChooseDestinationViewBodyState
                   ),
                 ),
               ),
-              SizedBox(width: 25.w),
+              SizedBox(width: 10.w),
               Expanded(
                 child: InkWell(
                   onTap: () {
@@ -166,12 +166,13 @@ class _TelegramDeleteChooseDestinationViewBodyState
                     child: Column(
                       children: [
                         Text(
-                          "deleteGroups".tr(context: context),
+                          "deletegroups(locksend)".tr(context: context),
                           style: _currentPage == 2
                               ? AppStyles.style10W800.copyWith(
                                   color: const Color(0xff2F2F2F),
                                 )
                               : AppStyles.style10W800,
+                          textAlign: TextAlign.center,
                         ),
                         Text(
                           "3000",

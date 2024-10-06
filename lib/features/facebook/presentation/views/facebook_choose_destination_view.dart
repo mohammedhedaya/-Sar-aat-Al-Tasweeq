@@ -40,7 +40,6 @@ class FacebookChooseDestinationView extends StatelessWidget {
             },
             icon: const Icon(
               Icons.arrow_forward_ios_sharp,
-              // color: Colors.white,
             ),
           ),
         ],

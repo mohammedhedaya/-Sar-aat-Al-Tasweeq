@@ -16,40 +16,57 @@ class FacbookDeleteGroupsChooseDestinationViewBody extends StatefulWidget {
 
 class _FacbookDeleteGroupsChooseDestinationViewBodyState
     extends State<FacbookDeleteGroupsChooseDestinationViewBody> {
-  bool selectAll = false;
-  List<bool> isSelected = List.generate(15, (index) => false);
+  final PageController _pageController = PageController();
+  int _currentPage = 0;
+
+  void _onButtonTapped(int index) {
+    setState(() {
+      _currentPage = index;
+      _pageController.animateToPage(
+        index,
+        duration: const Duration(milliseconds: 300),
+        curve: Curves.easeInOut,
+      );
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
-    return Column(
-      children: [
-        Expanded(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 25.h),
-            child: Column(
-              children: [
-                Center(
-                  child: Text(
-                    "Choosedestination(deleteFacebook)".tr(context: context),
-                    style: AppStyles.style17W800,
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-                SizedBox(height: 40.h),
-                Align(
-                  alignment: AlignmentDirectional.topStart,
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 21.w, vertical: 25.h),
+      child: Column(
+        children: [
+          Center(
+            child: Text(
+              "Choosedestination(deleteFacebook)".tr(context: context),
+              style: AppStyles.style17W800,
+            ),
+          ),
+          SizedBox(height: 40.h),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(
+                child: InkWell(
+                  onTap: () {
+                    _onButtonTapped(0);
+                  },
                   child: Container(
                     padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5.r),
-                      color: AppColors.whiteColor,
+                      color: _currentPage == 0
+                          ? AppColors.whiteColor
+                          : const Color(0xff999999),
                       boxShadow: [
-                        BoxShadow(
-                          color: AppColors.whiteColor.withOpacity(0.25),
-                          spreadRadius: 3,
-                          blurRadius: 5,
-                          offset: const Offset(0, 0),
-                        ),
+                        _currentPage == 0
+                            ? BoxShadow(
+                                color: AppColors.whiteColor.withOpacity(0.25),
+                                spreadRadius: 3,
+                                blurRadius: 5,
+                                offset: const Offset(0, 0),
+                              )
+                            : const BoxShadow(),
                       ],
                     ),
                     child: Column(
@@ -57,8 +74,11 @@ class _FacbookDeleteGroupsChooseDestinationViewBodyState
                         Text(
                           "NumberofFacebookgroups".tr(context: context),
                           style: AppStyles.style17W800.copyWith(
-                            color: const Color(0xff2F2F2F),
+                            color: _currentPage == 0
+                                ? const Color(0xff2F2F2F)
+                                : Colors.white,
                           ),
+                          textAlign: TextAlign.center,
                         ),
                         Text(
                           "4000",
@@ -71,108 +91,307 @@ class _FacbookDeleteGroupsChooseDestinationViewBodyState
                     ),
                   ),
                 ),
-                SizedBox(height: 25.h),
-                CheckboxListTile(
-                  title: Text(
-                    "SelectAll".tr(context: context),
-                    style: AppStyles.style13W600,
-                  ),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(2.r),
-                  ),
-                  activeColor: const Color(0xff00C0CC),
-                  checkColor: const Color(0xff00C0CC),
-                  visualDensity: VisualDensity.compact,
-                  contentPadding: EdgeInsets.zero,
-                  side:  BorderSide(
-                         color: isDark ? Colors.white : AppColors.blueLight,
-
-                  ),
-                  value: selectAll,
-                  onChanged: (value) {
-                    setState(() {
-                      selectAll = value!;
-                      isSelected = List.generate(
-                          isSelected.length, (index) => selectAll);
-                    });
+              ),
+              SizedBox(width: 10.w),
+              Expanded(
+                child: InkWell(
+                  onTap: () {
+                    _onButtonTapped(1);
                   },
-                ),
-                SizedBox(height: 20.h),
-                Expanded(
-                  child: ListView.builder(
-                    itemCount: isSelected.length,
-                    itemBuilder: (context, index) {
-                      return Column(
-                        children: [
-                          CheckboxListTile(
-                            title: Text(
-                              'فيصل عبدالعزيز',
-                              style: AppStyles.style13W600,
-                            ),
-                            contentPadding: EdgeInsets.zero,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(2.r),
-                            ),
-                            activeColor: const Color(0xff00C0CC),
-                            checkColor: const Color(0xff00C0CC),
-                            visualDensity: VisualDensity.compact,
-                            side:  BorderSide(
-                                  color: isDark ? Colors.white : AppColors.blueLight,
-
-                            ),
-                            value: isSelected[index],
-                            onChanged: (value) {
-                              setState(() {
-                                isSelected[index] = value!;
-                                if (!value) selectAll = false;
-                                if (isSelected.every((element) => element)) {
-                                  selectAll = true;
-                                }
-                              });
-                            },
+                  child: Container(
+                    padding: const EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5.r),
+                      color: _currentPage == 1
+                          ? AppColors.whiteColor
+                          : const Color(0xff999999),
+                      boxShadow: [
+                        _currentPage == 1
+                            ? BoxShadow(
+                                color: AppColors.whiteColor.withOpacity(0.25),
+                                spreadRadius: 3,
+                                blurRadius: 5,
+                                offset: const Offset(0, 0),
+                              )
+                            : const BoxShadow(),
+                      ],
+                    ),
+                    child: Column(
+                      children: [
+                        Text(
+                          "deletegroups(locksend)".tr(context: context),
+                          style: _currentPage == 1
+                              ? AppStyles.style17W800.copyWith(
+                                  color: const Color(0xff2F2F2F),
+                                )
+                              : AppStyles.style17W800,
+                          textAlign: TextAlign.center,
+                        ),
+                        Text(
+                          "1000",
+                          style: AppStyles.style17W800.copyWith(
+                            color: const Color(0xff2F2F2F),
+                            fontWeight: FontWeight.w200,
                           ),
-                          Divider(
-                            color: Colors.white,
-                            thickness: 1,
-                            endIndent: 25.w,
-                            indent: 25.w,
-                          ),
-                        ],
-                      );
-                    },
+                        ),
+                      ],
+                    ),
                   ),
                 ),
+              ),
+            ],
+          ),
+          Expanded(
+            child: PageView(
+              controller: _pageController,
+              onPageChanged: (int index) {
+                setState(() {
+                  _currentPage = index;
+                });
+              },
+              children: const [
+                //
+                DeleteAllFacebookGroupsPageView(),
+                //
+                DeleteFacebookGroupsLockSendPageView(),
               ],
             ),
           ),
+        ],
+      ),
+    );
+  }
+}
+
+class DeleteAllFacebookGroupsPageView extends StatefulWidget {
+  const DeleteAllFacebookGroupsPageView({super.key});
+
+  @override
+  State<DeleteAllFacebookGroupsPageView> createState() =>
+      _DeleteAllFacebookGroupsPageViewState();
+}
+
+class _DeleteAllFacebookGroupsPageViewState
+    extends State<DeleteAllFacebookGroupsPageView> {
+  bool selectAll = false;
+  List<bool> isSelected = List.generate(15, (index) => false);
+  @override
+  Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
+    return Column(
+      children: [
+        SizedBox(height: 25.h),
+        CheckboxListTile(
+          title: Text(
+            "SelectAll".tr(context: context),
+            style: AppStyles.style13W600,
+          ),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(2.r),
+          ),
+          activeColor: const Color(0xff00C0CC),
+          checkColor: const Color(0xff00C0CC),
+          visualDensity: VisualDensity.compact,
+          contentPadding: EdgeInsets.zero,
+          side: BorderSide(
+            color: isDark ? Colors.white : AppColors.blueLight,
+          ),
+          value: selectAll,
+          onChanged: (value) {
+            setState(() {
+              selectAll = value!;
+              isSelected =
+                  List.generate(isSelected.length, (index) => selectAll);
+            });
+          },
         ),
-        Padding(
-          padding: EdgeInsets.only(bottom: 20.h),
-          child: InkWell(
-            onTap: () {
-              context.push('/facebookDeleteGroupsSendingView');
+        SizedBox(height: 20.h),
+        Expanded(
+          child: ListView.builder(
+            itemCount: isSelected.length,
+            itemBuilder: (context, index) {
+              return Column(
+                children: [
+                  CheckboxListTile(
+                    title: Text(
+                      'فيصل عبدالعزيز',
+                      style: AppStyles.style13W600,
+                    ),
+                    contentPadding: EdgeInsets.zero,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(2.r),
+                    ),
+                    activeColor: const Color(0xff00C0CC),
+                    checkColor: const Color(0xff00C0CC),
+                    visualDensity: VisualDensity.compact,
+                    side: BorderSide(
+                      color: isDark ? Colors.white : AppColors.blueLight,
+                    ),
+                    value: isSelected[index],
+                    onChanged: (value) {
+                      setState(() {
+                        isSelected[index] = value!;
+                        if (!value) selectAll = false;
+                        if (isSelected.every((element) => element)) {
+                          selectAll = true;
+                        }
+                      });
+                    },
+                  ),
+                  Divider(
+                    color: Colors.white,
+                    thickness: 1,
+                    endIndent: 25.w,
+                    indent: 25.w,
+                  ),
+                ],
+              );
             },
-            child: Container(
-              height: 40.h,
-              width: 200.w,
-              padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 4.h),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5.r),
-                gradient: const LinearGradient(
-                  colors: [
-                    Color(0xff00C0CC),
-                    Color(0xff006066),
-                  ],
-                  begin: Alignment.centerLeft,
-                  end: Alignment.centerRight,
-                ),
+          ),
+        ),
+        InkWell(
+          onTap: () {
+            context.push('/facebookDeleteGroupsSendingView');
+          },
+          child: Container(
+            height: 40.h,
+            width: 200.w,
+            padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 4.h),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(5.r),
+              gradient: const LinearGradient(
+                colors: [
+                  Color(0xff00C0CC),
+                  Color(0xff006066),
+                ],
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
               ),
-              child: Center(
-                child: Text(
-                  "delete".tr(context: context),
-                  style: AppStyles.style14W400,
-                  textAlign: TextAlign.center,
-                ),
+            ),
+            child: Center(
+              child: Text(
+                "delete".tr(context: context),
+                style: AppStyles.style14W400,
+                textAlign: TextAlign.center,
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class DeleteFacebookGroupsLockSendPageView extends StatefulWidget {
+  const DeleteFacebookGroupsLockSendPageView({super.key});
+
+  @override
+  State<DeleteFacebookGroupsLockSendPageView> createState() =>
+      _DeleteFacebookGroupsLockSendPageViewState();
+}
+
+class _DeleteFacebookGroupsLockSendPageViewState
+    extends State<DeleteFacebookGroupsLockSendPageView> {
+  bool selectAll = false;
+  List<bool> isSelected = List.generate(15, (index) => false);
+  @override
+  Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
+    return Column(
+      children: [
+        SizedBox(height: 25.h),
+        CheckboxListTile(
+          title: Text(
+            "SelectAll".tr(context: context),
+            style: AppStyles.style13W600,
+          ),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(2.r),
+          ),
+          activeColor: const Color(0xff00C0CC),
+          checkColor: const Color(0xff00C0CC),
+          visualDensity: VisualDensity.compact,
+          contentPadding: EdgeInsets.zero,
+          side: BorderSide(
+            color: isDark ? Colors.white : AppColors.blueLight,
+          ),
+          value: selectAll,
+          onChanged: (value) {
+            setState(() {
+              selectAll = value!;
+              isSelected =
+                  List.generate(isSelected.length, (index) => selectAll);
+            });
+          },
+        ),
+        SizedBox(height: 20.h),
+        Expanded(
+          child: ListView.builder(
+            itemCount: isSelected.length,
+            itemBuilder: (context, index) {
+              return Column(
+                children: [
+                  CheckboxListTile(
+                    title: Text(
+                      'فيصل عبدالعزيز',
+                      style: AppStyles.style13W600,
+                    ),
+                    contentPadding: EdgeInsets.zero,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(2.r),
+                    ),
+                    activeColor: const Color(0xff00C0CC),
+                    checkColor: const Color(0xff00C0CC),
+                    visualDensity: VisualDensity.compact,
+                    side: BorderSide(
+                      color: isDark ? Colors.white : AppColors.blueLight,
+                    ),
+                    value: isSelected[index],
+                    onChanged: (value) {
+                      setState(() {
+                        isSelected[index] = value!;
+                        if (!value) selectAll = false;
+                        if (isSelected.every((element) => element)) {
+                          selectAll = true;
+                        }
+                      });
+                    },
+                  ),
+                  Divider(
+                    color: Colors.white,
+                    thickness: 1,
+                    endIndent: 25.w,
+                    indent: 25.w,
+                  ),
+                ],
+              );
+            },
+          ),
+        ),
+        InkWell(
+          onTap: () {
+            context.push('/facebookDeleteGroupsSendingView');
+          },
+          child: Container(
+            height: 40.h,
+            width: 200.w,
+            padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 4.h),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(5.r),
+              gradient: const LinearGradient(
+                colors: [
+                  Color(0xff00C0CC),
+                  Color(0xff006066),
+                ],
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
+              ),
+            ),
+            child: Center(
+              child: Text(
+                "delete".tr(context: context),
+                style: AppStyles.style14W400,
+                textAlign: TextAlign.center,
               ),
             ),
           ),

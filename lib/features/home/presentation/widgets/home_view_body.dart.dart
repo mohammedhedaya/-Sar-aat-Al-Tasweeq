@@ -87,6 +87,14 @@ class HomeViewBody extends StatelessWidget {
                     SizedBox(height: 30.h),
                     SocialMediaCard(
                       onTap: () {
+                        context.push('/tiktokView');
+                      },
+                      imagePath: Assets.imagesTIKTOK,
+                      label: 'TikTok'.tr(context: context),
+                    ),
+                    SizedBox(height: 30.h),
+                    SocialMediaCard(
+                      onTap: () {
                         context.push('/xView');
                       },
                       imagePath: Assets.imagesXtwitter,
