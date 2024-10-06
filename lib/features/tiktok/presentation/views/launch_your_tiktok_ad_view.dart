@@ -3,25 +3,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shopping_chart/features/tiktok/presentation/widgets/launch_your_tiktok_ad_view_body.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
-import '../widgets/launch_your_ad_insta_drawer.dart';
-import '../widgets/launch_your_insta_ad_view_body.dart';
 
-class LaunchYourInstaAdView extends StatefulWidget {
-  const LaunchYourInstaAdView({super.key});
+class LaunchYourTiktokAdView extends StatefulWidget {
+  const LaunchYourTiktokAdView({super.key});
 
   @override
-  State<LaunchYourInstaAdView> createState() => _LaunchYourInstaAdViewState();
+  State<LaunchYourTiktokAdView> createState() => _LaunchYourTiktokAdViewState();
 }
 
-class _LaunchYourInstaAdViewState extends State<LaunchYourInstaAdView> {
+class _LaunchYourTiktokAdViewState extends State<LaunchYourTiktokAdView> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      drawer: const LaunchYourAdInstagramDrawer(),
+      // drawer: const LaunchYourAdInstagramDrawer(),
       floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
       floatingActionButton: Container(
         decoration: BoxDecoration(
@@ -97,7 +96,7 @@ class _LaunchYourInstaAdViewState extends State<LaunchYourInstaAdView> {
           ),
         ],
       ),
-      body: const LaunchYourInstaAdViewBody(),
+      body: const LaunchYourTiktokAdViewBody(),
     );
   }
 }

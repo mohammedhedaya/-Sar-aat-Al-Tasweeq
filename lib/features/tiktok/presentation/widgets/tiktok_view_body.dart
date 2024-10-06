@@ -94,7 +94,7 @@ class TiktokViewBody extends StatelessWidget {
                         builder: (context) {
                           return CustomShowDialog(
                             onTap: () {
-                              // context.push("/launchYourInstaAdView");
+                              context.push("/launchYourTiktokAdView");
                             },
                             image: Assets.imagesXerror,
                             textButton: "subscribe".tr(context: context),
