@@ -204,8 +204,7 @@ class _SendYourTiktokAdToFollowersViewBodyState
                   Center(
                     child: InkWell(
                       onTap: () {
-                        // context.push(
-                        //     "/instagramChooseDestinationSendToFollowrsView");
+                        context.push("/tiktokChooseDestinationSendToFollowersView");
                       },
                       child: Container(
                         height: 40.h,
