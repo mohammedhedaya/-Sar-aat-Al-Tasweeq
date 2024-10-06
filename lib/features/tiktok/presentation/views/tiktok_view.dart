@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:shopping_chart/features/tiktok/presentation/widgets/tiktok_view_body.dart';
+import '../widgets/tiktok_view_body.dart';
 
 class TiktokView extends StatelessWidget {
   const TiktokView({super.key});

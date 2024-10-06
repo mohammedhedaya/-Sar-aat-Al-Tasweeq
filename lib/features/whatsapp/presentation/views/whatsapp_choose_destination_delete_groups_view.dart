@@ -2,7 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
-import 'package:shopping_chart/features/whatsapp/presentation/widgets/whatsapp_choose_destination_delete_groups_view_body.dart';
+import '../widgets/whatsapp_choose_destination_delete_groups_view_body.dart';
 
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';

@@ -65,7 +65,7 @@ class TiktokSearchPersonToSendViewBody extends StatelessWidget {
                       (index) {
                         return InkWell(
                           onTap: () {
-                            // context.push("/instagramUserDetailsView");
+                            context.push("/tiktokUserDetailsView");
                           },
                           child: Padding(
                             padding: EdgeInsets.only(

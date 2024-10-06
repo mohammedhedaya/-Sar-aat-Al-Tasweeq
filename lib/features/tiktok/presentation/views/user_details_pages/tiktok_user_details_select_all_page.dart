@@ -3,17 +3,21 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import '../../../../../../core/utils/app_colors.dart';
-import '../../../../../../core/utils/app_text_style.dart';
+import '../../../../../core/utils/app_colors.dart';
+import '../../../../../core/utils/app_text_style.dart';
+import '../../../../../core/utils/assets.dart';
+import '../../../../whatsapp/presentation/widgets/custom_show_dialog.dart';
 
-class WhatsappDeleteAllPage extends StatefulWidget {
-  const WhatsappDeleteAllPage({super.key});
+class TiktokUserDetailsSelectAllPage extends StatefulWidget {
+  const TiktokUserDetailsSelectAllPage({super.key});
 
   @override
-  State<WhatsappDeleteAllPage> createState() => _WhatsappDeleteAllPageState();
+  State<TiktokUserDetailsSelectAllPage> createState() =>
+      _TiktokUserDetailsSelectAllPageState();
 }
 
-class _WhatsappDeleteAllPageState extends State<WhatsappDeleteAllPage> {
+class _TiktokUserDetailsSelectAllPageState
+    extends State<TiktokUserDetailsSelectAllPage> {
   bool selectAll = false;
   List<bool> isSelected = List.generate(15, (index) => false);
   @override
@@ -92,7 +96,25 @@ class _WhatsappDeleteAllPageState extends State<WhatsappDeleteAllPage> {
         ),
         InkWell(
           onTap: () {
-            context.push('/deleteSendingView');
+            showDialog(
+              context: context,
+              barrierColor: const Color(0xffFFF9F9).withOpacity(0.33),
+              builder: (context) {
+                return CustomShowDialog(
+                  onTap: () {
+                    context.push('/tiktokSendingView');
+                  },
+                  image: Assets.imagesRechargeWallet,
+                  textButton: "recharge".tr(context: context),
+                  content: Text(
+                    "The number allowed to be sent is 400 people only. Please charge more diamonds."
+                        .tr(context: context),
+                    style: AppStyles.style15W900,
+                    textAlign: TextAlign.center,
+                  ),
+                );
+              },
+            );
           },
           child: Container(
             height: 40.h,
@@ -111,7 +133,7 @@ class _WhatsappDeleteAllPageState extends State<WhatsappDeleteAllPage> {
             ),
             child: Center(
               child: Text(
-                "delete".tr(context: context),
+                "send".tr(context: context),
                 style: AppStyles.style14W400,
                 textAlign: TextAlign.center,
               ),

@@ -2,7 +2,7 @@ import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:shopping_chart/core/utils/app_colors.dart';
+import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 
 class CustomPaymentMethodItem extends StatelessWidget {

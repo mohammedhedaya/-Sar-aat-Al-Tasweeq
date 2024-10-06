@@ -76,7 +76,7 @@ class _LaunchYourFacebookAdViewState extends State<LaunchYourFacebookAdView> {
           children: [
             Flexible(
               child: Text(
-               "launchaddwithease".tr(context: context),
+                "launchaddwithease".tr(context: context),
                 style: AppStyles.style17W800.copyWith(
                   fontWeight: FontWeight.w700,
                 ),
@@ -94,7 +94,6 @@ class _LaunchYourFacebookAdViewState extends State<LaunchYourFacebookAdView> {
             },
             icon: const Icon(
               Icons.arrow_forward_ios_sharp,
-              // color: Colors.white,
             ),
           ),
         ],

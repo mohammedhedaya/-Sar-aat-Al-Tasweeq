@@ -1,4 +1,5 @@
 // import 'package:audio_waveforms/audio_waveforms.dart';
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:chat_bubbles/bubbles/bubble_special_three.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +13,7 @@ class LaunchChatsMessagesViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return Column(
       children: [
         SizedBox(height: 30.h),
@@ -25,7 +27,7 @@ class LaunchChatsMessagesViewBody extends StatelessWidget {
         Text(
           "أحمد على محمد",
           style: AppStyles.style10W800.copyWith(
-            color: Colors.white,
+            color: isDark ? Colors.white : Colors.black,
           ),
         ),
         SizedBox(height: 53.h),

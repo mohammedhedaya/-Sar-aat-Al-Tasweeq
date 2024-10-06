@@ -22,7 +22,6 @@ class MyCardsView extends StatelessWidget {
             },
             icon: const Icon(
               Icons.arrow_forward_ios_outlined,
-              // color: Colors.white,
             ),
           ),
         ],
