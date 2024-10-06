@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shopping_chart/features/tiktok/presentation/widgets/launch_your_ad_tiktok_drawer.dart';
 import 'package:shopping_chart/features/tiktok/presentation/widgets/launch_your_tiktok_ad_view_body.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
@@ -20,7 +21,7 @@ class _LaunchYourTiktokAdViewState extends State<LaunchYourTiktokAdView> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      // drawer: const LaunchYourAdInstagramDrawer(),
+      drawer: const LaunchYourAdTiktokDrawer(),
       floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
       floatingActionButton: Container(
         decoration: BoxDecoration(
