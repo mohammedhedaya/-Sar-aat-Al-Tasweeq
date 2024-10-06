@@ -192,7 +192,7 @@ class _TiktokChoosePersonAndSendViewBodyState
                   Center(
                     child: CustomAuthBtn(
                       onPressed: () {
-                        // context.push("/searchPersonToSendAdView");
+                        context.push("/tiktokSearchPersonToSendView");
                       },
                       text: "Searchforsomeonewhosentyouradtoallofhisfollowers"
                           .tr(context: context),

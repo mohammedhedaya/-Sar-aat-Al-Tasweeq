@@ -5,6 +5,7 @@ import 'package:shopping_chart/features/tiktok/presentation/views/launch_your_ti
 import 'package:shopping_chart/features/tiktok/presentation/views/send_your_tiktok_ad_to_followers_view.dart';
 import 'package:shopping_chart/features/tiktok/presentation/views/tiktok_choose_destination_send_to_follwers_view.dart';
 import 'package:shopping_chart/features/tiktok/presentation/views/tiktok_choose_person_and_send_view.dart';
+import 'package:shopping_chart/features/tiktok/presentation/views/tiktok_search_person_to_send_view.dart';
 import 'package:shopping_chart/features/tiktok/presentation/views/tiktok_sending_view.dart';
 import 'package:shopping_chart/features/tiktok/presentation/views/tiktok_view.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/views/whatsapp_choose_destination_delete_groups_view.dart';
@@ -635,6 +636,10 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/tiktokChoosePersonAndSendView',
       builder: (context, state) => const TiktokChoosePersonAndSendView(),
+    ),
+     GoRoute(
+      path: '/tiktokSearchPersonToSendView',
+      builder: (context, state) => const TiktokSearchPersonToSendView(),
     ),
   ],
 );
