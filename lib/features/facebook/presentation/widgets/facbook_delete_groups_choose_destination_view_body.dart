@@ -119,7 +119,7 @@ class _FacbookDeleteGroupsChooseDestinationViewBodyState
                     child: Column(
                       children: [
                         Text(
-                          "deletegroups(locksend)".tr(context: context),
+                          "DeletegroupsYouarenotaccepted".tr(context: context),
                           style: _currentPage == 1
                               ? AppStyles.style17W800.copyWith(
                                   color: const Color(0xff2F2F2F),
