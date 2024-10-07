@@ -7,56 +7,41 @@ import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
 
-class ViewBodyOfDiamondWallet extends StatelessWidget {
+class ViewBodyOfDiamondWallet extends StatefulWidget {
   const ViewBodyOfDiamondWallet({super.key});
+
+  @override
+  State<ViewBodyOfDiamondWallet> createState() =>
+      _ViewBodyOfDiamondWalletState();
+}
+
+class _ViewBodyOfDiamondWalletState extends State<ViewBodyOfDiamondWallet> {
+  // SAR to USD conversion rate (example: 1 SAR = 0.27 USD)
+  final double sarToUsdRate = 0.27;
+
+  // A state variable to track whether the price is shown in SAR or USD
+  bool isSar = true;
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+
     final List<Map<String, dynamic>> diamondData = [
-      {
-        'price': '40 ${"a_diamed".tr(context: context)}',
-        'diamonds': '40 ${"sar".tr(context: context)}'
-      },
-      {
-        'price': '80 ${"a_diamed".tr(context: context)}',
-        'diamonds': '80 ${"sar".tr(context: context)}'
-      },
-      {
-        'price': '100 ${"a_diamed".tr(context: context)}',
-        'diamonds': '100 ${"sar".tr(context: context)}'
-      },
-      {
-        'price': '150 ${"a_diamed".tr(context: context)}',
-        'diamonds': '150 ${"sar".tr(context: context)}'
-      },
-      {
-        'price': '200 ${"a_diamed".tr(context: context)}',
-        'diamonds': '200 ${"sar".tr(context: context)}'
-      },
-      {
-        'price': '300 ${"a_diamed".tr(context: context)}',
-        'diamonds': '300 ${"sar".tr(context: context)}'
-      },
-      {
-        'price': '500 ${"a_diamed".tr(context: context)}',
-        'diamonds': '500 ${"sar".tr(context: context)}'
-      },
-      {
-        'price': '1000 ${"a_diamed".tr(context: context)}',
-        'diamonds': '1000 ${"sar".tr(context: context)}'
-      },
-      {
-        'price': '2000 ${"a_diamed".tr(context: context)}',
-        'diamonds': '2000 ${"sar".tr(context: context)}'
-      },
+      {'price': 40, 'diamonds': '40 ${"a_diamed".tr(context: context)}'},
+      {'price': 80, 'diamonds': '80 ${"a_diamed".tr(context: context)}'},
+      {'price': 100, 'diamonds': '100 ${"a_diamed".tr(context: context)}'},
+      {'price': 150, 'diamonds': '150 ${"a_diamed".tr(context: context)}'},
+      {'price': 200, 'diamonds': '200 ${"a_diamed".tr(context: context)}'},
+      {'price': 300, 'diamonds': '300 ${"a_diamed".tr(context: context)}'},
+      {'price': 500, 'diamonds': '500 ${"a_diamed".tr(context: context)}'},
+      {'price': 1000, 'diamonds': '1000 ${"a_diamed".tr(context: context)}'},
+      {'price': 2000, 'diamonds': '2000 ${"a_diamed".tr(context: context)}'},
     ];
+
     return Container(
       decoration: const BoxDecoration(
         image: DecorationImage(
-          image: AssetImage(
-            Assets.imagesBgdiamond,
-          ),
+          image: AssetImage(Assets.imagesBgdiamond),
           alignment: Alignment.topCenter,
           scale: 3.5,
         ),
@@ -126,13 +111,23 @@ class ViewBodyOfDiamondWallet extends StatelessWidget {
                             ),
                             SizedBox(width: 6.w),
                             Text(
-                              diamondData[index]['price'],
+                              diamondData[index]['diamonds'],
                               style: AppStyles.style16W600,
                             ),
                             const Spacer(),
-                            Text(
-                              diamondData[index]['diamonds'],
-                              style: AppStyles.style16W600,
+                            GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  // Toggle between SAR and USD
+                                  isSar = !isSar;
+                                });
+                              },
+                              child: Text(
+                                isSar
+                                    ? '${diamondData[index]['price']} ${"sar".tr(context: context)}'
+                                    : '${(diamondData[index]['price'] * sarToUsdRate).toStringAsFixed(2)} ${"usd".tr(context: context)}',
+                                style: AppStyles.style16W600,
+                              ),
                             ),
                             SizedBox(width: 10.w),
                           ],
