@@ -149,6 +149,7 @@ class _TiktokChoosePersonAndSendViewBodyState
                   CustomAuthTextField(
                     onChanged: (value) {},
                     hintText: "Writeacomment".tr(context: context),
+                    maxLines: 3,
                     fiiledColor: Colors.white.withOpacity(0.10),
                     hintStyle: AppStyles.style16W600.copyWith(
                       color: const Color(0xffB0B0B0),

@@ -64,7 +64,7 @@ class CustomAuthTextField extends StatelessWidget {
           },
       obscureText: obscureText ?? false,
       minLines: minLines,
-      maxLines: maxLines,
+      maxLines: maxLines ?? 1,
       decoration: InputDecoration(
         errorStyle: TextStyle(
           color: isDark ? AppColors.yellowLight : Colors.red,

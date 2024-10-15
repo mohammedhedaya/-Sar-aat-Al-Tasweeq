@@ -107,6 +107,7 @@ class _LaunchYourInstaAdViewBodyState extends State<LaunchYourInstaAdViewBody> {
               hintStyle: AppStyles.style16W600.copyWith(
                 color: const Color(0xffB0B0B0),
               ),
+              maxLines: 3,
             ),
             SizedBox(height: 21.h),
             CustomAuthTextField(
