@@ -22,7 +22,10 @@ class CustomAuthTextField extends StatelessWidget {
     this.fiiledColor,
     this.hintStyle,
     this.readOnly,
+    this.minLines = 1,
+    this.maxLines,
   });
+
   final bool? readOnly;
   final String hintText;
   final Widget? prefixIcon;
@@ -36,6 +39,8 @@ class CustomAuthTextField extends StatelessWidget {
   final bool? obscureText;
   final Color? fiiledColor;
   final TextStyle? hintStyle;
+  final int? minLines;
+  final int? maxLines;
 
   @override
   Widget build(BuildContext context) {
@@ -58,6 +63,8 @@ class CustomAuthTextField extends StatelessWidget {
             return null;
           },
       obscureText: obscureText ?? false,
+      minLines: minLines,
+      maxLines: maxLines,
       decoration: InputDecoration(
         errorStyle: TextStyle(
           color: isDark ? AppColors.yellowLight : Colors.red,
