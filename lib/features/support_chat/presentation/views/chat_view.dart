@@ -21,6 +21,7 @@ class ChatView extends StatelessWidget {
         title: Text(
           "online_chat".tr(context: context),
           style: AppStyles.style20W800.copyWith(
+            color: AppColors.whiteColor,
             shadows: [
               Shadow(
                 color: Colors.white.withOpacity(0.78),

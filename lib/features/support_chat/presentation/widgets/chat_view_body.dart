@@ -178,8 +178,10 @@ class ChatViewBody extends StatelessWidget {
                     child: Container(
                       margin: EdgeInsets.symmetric(horizontal: 10.w),
                       padding: const EdgeInsets.all(5.0),
-                      decoration: const BoxDecoration(
-                        color: AppColors.mixWhiteAndGray,
+                      decoration: BoxDecoration(
+                        color: isDark
+                            ? AppColors.mixWhiteAndGray
+                            : AppColors.whiteColor,
                         shape: BoxShape.circle,
                       ),
                       child: const Center(
@@ -194,7 +196,9 @@ class ChatViewBody extends StatelessWidget {
                 Expanded(
                   child: TextField(
                     decoration: InputDecoration(
-                      fillColor: AppColors.mixWhiteAndGray,
+                      fillColor: isDark
+                          ? AppColors.mixWhiteAndGray
+                          : AppColors.whiteColor,
                       filled: true,
                       hintText: 'اكتب رسالتك',
                       hintStyle: AppStyles.style12W400.copyWith(
