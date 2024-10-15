@@ -46,13 +46,23 @@ class OurAccountsViewBody extends StatelessWidget {
                       Text(
                         "ouraccounts".tr(context: context),
                         style: AppStyles.style20W900.copyWith(
-                          color: AppColors.blackColor,
+                          color: isDark
+                              ? AppColors.blackColor
+                              : AppColors.whiteColor,
                         ),
                       ),
                       SizedBox(width: 14.w),
-                      SvgPicture.asset(
-                        Assets.imagesVerifyIcon,
-                      ),
+                      isDark
+                          ? SvgPicture.asset(
+                              Assets.imagesVerifyIcon,
+                            )
+                          : SvgPicture.asset(
+                              Assets.imagesVerifyIcon,
+                              colorFilter: const ColorFilter.mode(
+                                AppColors.whiteColor,
+                                BlendMode.srcIn,
+                              ),
+                            ),
                     ],
                   ),
                   SizedBox(height: 38.h),
@@ -75,7 +85,9 @@ class OurAccountsViewBody extends StatelessWidget {
                           SizedBox(height: 20.h),
                           Text(
                             "snapchat".tr(context: context),
-                            style: AppStyles.style20W900,
+                            style: AppStyles.style20W900.copyWith(
+                              color: AppColors.whiteColor,
+                            ),
                           ),
                         ],
                       ),
@@ -101,7 +113,9 @@ class OurAccountsViewBody extends StatelessWidget {
                           SizedBox(height: 20.h),
                           Text(
                             "TikTok".tr(context: context),
-                            style: AppStyles.style20W900,
+                            style: AppStyles.style20W900.copyWith(
+                              color: AppColors.whiteColor,
+                            ),
                           ),
                         ],
                       ),
@@ -130,7 +144,9 @@ class OurAccountsViewBody extends StatelessWidget {
                           SizedBox(height: 20.h),
                           Text(
                             "snapchat".tr(context: context),
-                            style: AppStyles.style20W900,
+                            style: AppStyles.style20W900.copyWith(
+                              color: AppColors.whiteColor,
+                            ),
                           ),
                         ],
                       ),
@@ -156,7 +172,9 @@ class OurAccountsViewBody extends StatelessWidget {
                           SizedBox(height: 20.h),
                           Text(
                             "TikTok".tr(context: context),
-                            style: AppStyles.style20W900,
+                            style: AppStyles.style20W900.copyWith(
+                              color: AppColors.whiteColor,
+                            ),
                           ),
                         ],
                       ),
@@ -185,7 +203,9 @@ class OurAccountsViewBody extends StatelessWidget {
                           SizedBox(height: 20.h),
                           Text(
                             "snapchat".tr(context: context),
-                            style: AppStyles.style20W900,
+                            style: AppStyles.style20W900.copyWith(
+                              color: AppColors.whiteColor,
+                            ),
                           ),
                         ],
                       ),
@@ -211,7 +231,9 @@ class OurAccountsViewBody extends StatelessWidget {
                           SizedBox(height: 20.h),
                           Text(
                             "TikTok".tr(context: context),
-                            style: AppStyles.style20W900,
+                            style: AppStyles.style20W900.copyWith(
+                              color: AppColors.whiteColor,
+                            ),
                           ),
                         ],
                       ),
