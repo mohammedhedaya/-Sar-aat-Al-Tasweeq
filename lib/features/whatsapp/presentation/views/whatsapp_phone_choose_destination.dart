@@ -1,22 +1,65 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
+import 'package:shopping_chart/core/utils/app_text_style.dart';
+import 'package:shopping_chart/core/utils/assets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../views/whatsapp_choose_detination_pages_view/delete_whatsapp/whatsapp_delete%20chats_page.dart';
-import '../views/whatsapp_choose_detination_pages_view/delete_whatsapp/whatsapp_delete_all_page.dart';
-import '../views/whatsapp_choose_detination_pages_view/delete_whatsapp/wjatsapp_delete_gropus_page.dart';
+import 'package:shopping_chart/features/whatsapp/presentation/views/whatsapp_choose_detination_pages_view/send_whatsapp/whatsapp_chats_page.dart';
+import 'package:shopping_chart/features/whatsapp/presentation/views/whatsapp_choose_detination_pages_view/send_whatsapp/whatsapp_groups_page.dart';
+import 'package:shopping_chart/features/whatsapp/presentation/views/whatsapp_choose_detination_pages_view/send_whatsapp/whatsapp_send_to_all_page.dart';
 import '../../../../core/utils/app_colors.dart';
-import '../../../../core/utils/app_text_style.dart';
 
-class WhatsappChooseDestinationDeleteGroupsViewBody extends StatefulWidget {
-  const WhatsappChooseDestinationDeleteGroupsViewBody({super.key});
+class WhatsappPhoneChooseDestinationView extends StatelessWidget {
+  const WhatsappPhoneChooseDestinationView({super.key});
 
   @override
-  State<WhatsappChooseDestinationDeleteGroupsViewBody> createState() =>
-      _WhatsappChooseDestinationDeleteGroupsViewBodyState();
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        surfaceTintColor: Colors.transparent,
+        automaticallyImplyLeading: false,
+        elevation: 0,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Flexible(
+              child: Text(
+                "launchaddwithease".tr(context: context),
+                style: AppStyles.style20W800,
+              ),
+            ),
+            SvgPicture.asset(
+              Assets.imagesRocket,
+            ),
+          ],
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              context.pop();
+            },
+            icon: const Icon(
+              Icons.arrow_forward_ios_sharp,
+            ),
+          ),
+        ],
+      ),
+      body: const WhatsappPhoneChooseDestinationViewBody(),
+    );
+  }
 }
 
-class _WhatsappChooseDestinationDeleteGroupsViewBodyState
-    extends State<WhatsappChooseDestinationDeleteGroupsViewBody> {
+class WhatsappPhoneChooseDestinationViewBody extends StatefulWidget {
+  const WhatsappPhoneChooseDestinationViewBody({super.key});
+
+  @override
+  State<WhatsappPhoneChooseDestinationViewBody> createState() =>
+      _WhatsappPhoneChooseDestinationViewBodyState();
+}
+
+class _WhatsappPhoneChooseDestinationViewBodyState
+    extends State<WhatsappPhoneChooseDestinationViewBody> {
   final PageController _pageController = PageController();
   int _currentPage = 0;
 
@@ -39,7 +82,7 @@ class _WhatsappChooseDestinationDeleteGroupsViewBodyState
         children: [
           Center(
             child: Text(
-              "ChooseAdestination(WhatsApp)".tr(context: context),
+              "ChooseAdestination(Contacts)".tr(context: context),
               style: AppStyles.style17W800,
               textAlign: TextAlign.center,
             ),
@@ -74,7 +117,7 @@ class _WhatsappChooseDestinationDeleteGroupsViewBodyState
                     child: Column(
                       children: [
                         Text(
-                          "All".tr(context: context),
+                          "Contacts".tr(context: context),
                           style: AppStyles.style17W800.copyWith(
                             color: _currentPage == 0
                                 ? const Color(0xff2F2F2F)
@@ -166,7 +209,7 @@ class _WhatsappChooseDestinationDeleteGroupsViewBodyState
                     child: Column(
                       children: [
                         Text(
-                          "deleteallgroups".tr(context: context),
+                          "groups".tr(context: context),
                           style: _currentPage == 2
                               ? AppStyles.style17W800.copyWith(
                                   color: const Color(0xff2F2F2F),
@@ -197,11 +240,11 @@ class _WhatsappChooseDestinationDeleteGroupsViewBodyState
               },
               children: const [
                 // Page 1: All
-                WhatsappDeleteAllPage(),
+                WhatsappSendToAllPage(),
                 // Page 2: Chats
-                WhatsappDeleteChatsPage(),
+                WhatsappSendToChatsPage(),
                 // Page 3: Groups
-                WhatsappDeleteGroupsPage(),
+                WhatsappSendToGroupsPage(),
               ],
             ),
           ),

@@ -27,7 +27,7 @@ class _LaunchYourTelegramAdViewBodyState
       _currentPage = index;
       _pageController.animateToPage(
         index,
-        duration: const Duration(milliseconds: 300),
+        duration: const Duration(milliseconds: 1),
         curve: Curves.easeInOut,
       );
     });

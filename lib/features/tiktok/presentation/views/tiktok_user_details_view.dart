@@ -26,7 +26,7 @@ class _TiktokUserDetailsViewState extends State<TiktokUserDetailsView> {
       _currentPage = index;
       _pageController.animateToPage(
         index,
-        duration: const Duration(milliseconds: 300),
+        duration: const Duration(milliseconds: 1),
         curve: Curves.easeInOut,
       );
     });
@@ -336,7 +336,7 @@ class _TiktokUserDetailsViewState extends State<TiktokUserDetailsView> {
                   },
                   children: const [
                     // Page 1: All
-                   TiktokUserDetailsSelectAllPage(),
+                    TiktokUserDetailsSelectAllPage(),
                     // Page 2: Followers
                     TiktokUserDetailsSelectFollowersPage(),
                     // Page 3: Followings

@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shopping_chart/features/whatsapp/presentation/views/whatsapp_phone_choose_destination.dart';
 import '../../features/tiktok/presentation/views/add_tiktok_hashtag_view.dart';
 import '../../features/tiktok/presentation/views/launch_your_tiktok_ad_view.dart';
 import '../../features/tiktok/presentation/views/send_your_tiktok_ad_to_followers_view.dart';
@@ -131,7 +132,7 @@ final GoRouter router = GoRouter(
       path: '/',
       builder: (context, state) => BlocProvider(
         create: (context) => getIt<AuthCubit>(),
-        child: const LoginView(),
+        child: const UserMainLayoutScreen(),
       ),
     ),
     GoRoute(
@@ -645,6 +646,10 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/tiktokUserDetailsView',
       builder: (context, state) => const TiktokUserDetailsView(),
+    ),
+    GoRoute(
+      path: '/whatsappPhoneChooseDestination',
+      builder: (context, state) => const WhatsappPhoneChooseDestinationView(),
     ),
   ],
 );

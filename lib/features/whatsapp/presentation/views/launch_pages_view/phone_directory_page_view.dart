@@ -80,7 +80,7 @@ class _PhoneDirectoryPageViewState extends State<PhoneDirectoryPageView> {
           Center(
             child: InkWell(
               onTap: () {
-                context.push('/whatsappChooseTheDestinationView');
+                context.push('/whatsappPhoneChooseDestination');
               },
               child: Container(
                 height: 40.h,
