@@ -39,7 +39,7 @@ class _WhatsappChooseDestinationDeleteGroupsViewBodyState
         children: [
           Center(
             child: Text(
-              "ChooseAdestination(WhatsApp)".tr(context: context),
+              "ChooseAdestination(Deletewhatsapp)".tr(context: context),
               style: AppStyles.style17W800,
               textAlign: TextAlign.center,
             ),
@@ -93,7 +93,7 @@ class _WhatsappChooseDestinationDeleteGroupsViewBodyState
                   ),
                 ),
               ),
-              SizedBox(width: 25.w),
+              SizedBox(width: 10.w),
               Expanded(
                 child: InkWell(
                   onTap: () {
@@ -139,7 +139,7 @@ class _WhatsappChooseDestinationDeleteGroupsViewBodyState
                   ),
                 ),
               ),
-              SizedBox(width: 25.w),
+              SizedBox(width: 10.w),
               Expanded(
                 child: InkWell(
                   onTap: () {
@@ -166,12 +166,16 @@ class _WhatsappChooseDestinationDeleteGroupsViewBodyState
                     child: Column(
                       children: [
                         Text(
-                          "deleteallgroups".tr(context: context),
+                          "deletegroups(locksend)".tr(context: context),
                           style: _currentPage == 2
                               ? AppStyles.style17W800.copyWith(
                                   color: const Color(0xff2F2F2F),
+                                  fontSize: 10.sp,
                                 )
-                              : AppStyles.style17W800,
+                              : AppStyles.style17W800.copyWith(
+                                  fontSize: 10.sp,
+                                ),
+                          textAlign: TextAlign.center,
                         ),
                         Text(
                           "3000",
@@ -179,6 +183,7 @@ class _WhatsappChooseDestinationDeleteGroupsViewBodyState
                             color: const Color(0xff2F2F2F),
                             fontWeight: FontWeight.w200,
                           ),
+                          textAlign: TextAlign.center,
                         ),
                       ],
                     ),

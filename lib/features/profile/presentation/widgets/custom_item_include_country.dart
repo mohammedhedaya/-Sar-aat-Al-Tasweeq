@@ -60,9 +60,11 @@ class CustomItemIncludeCountry extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8.r),
                   ),
                   alignLeft: true,
+                  padding: EdgeInsets.zero,
                   showCountryOnly: true,
                   showOnlyCountryWhenClosed: true,
                   showFlagDialog: true,
+                  showDropDownButton: true,
                   flagDecoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(4.r),
                   ),
