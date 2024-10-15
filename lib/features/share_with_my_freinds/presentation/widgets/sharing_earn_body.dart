@@ -20,18 +20,32 @@ class SharingEarnBody extends StatelessWidget {
         clipBehavior: Clip.none,
         alignment: Alignment.center,
         children: [
-          Positioned(
-            top: -MediaQuery.of(context).size.height * 0.1,
-            child: SvgPicture.asset(
-              Assets.imagesBgSharingScreen,
-              colorFilter: ColorFilter.mode(
-                isDark ? AppColors.loginBtn : AppColors.yellowLight,
-                BlendMode.srcIn,
-              ),
-              width: MediaQuery.of(context).size.width,
-              fit: BoxFit.cover,
-            ),
-          ),
+          isDark
+              ? Positioned(
+                  top: -MediaQuery.of(context).size.height * 0.1,
+                  child: SvgPicture.asset(
+                    Assets.imagesBgSharingScreen,
+                    colorFilter: const ColorFilter.mode(
+                      AppColors.loginBtn,
+                      BlendMode.srcIn,
+                    ),
+                    width: MediaQuery.of(context).size.width,
+                    fit: BoxFit.cover,
+                  ),
+                )
+              : Positioned(
+                  top: -MediaQuery.of(context).size.height * 0.0,
+                  child: SvgPicture.asset(
+                    Assets.imagesShareEarnCup,
+                    colorFilter: const ColorFilter.mode(
+                      AppColors.yellowLight,
+                      BlendMode.srcIn,
+                    ),
+                    height: MediaQuery.of(context).size.height * 0.2,
+                    width: MediaQuery.of(context).size.width,
+                    fit: BoxFit.cover,
+                  ),
+                ),
           Column(
             children: [
               SizedBox(height: MediaQuery.of(context).size.height * 0.28),

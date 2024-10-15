@@ -298,6 +298,10 @@ class Assets {
   /// assets/images/shareDribbbleLight.svg
   static const String imagesShareDribbbleLight = "assets/images/shareDribbbleLight.svg";
 
+  /// Assets for imagesShareEarnCup
+  /// assets/images/shareEarnCup.svg
+  static const String imagesShareEarnCup = "assets/images/shareEarnCup.svg";
+
   /// Assets for imagesShareingWithMyFriends
   /// assets/images/shareingWithMyFriends.svg
   static const String imagesShareingWithMyFriends = "assets/images/shareingWithMyFriends.svg";
