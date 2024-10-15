@@ -154,7 +154,9 @@ class _LaunchYourInstaAdViewBodyState extends State<LaunchYourInstaAdViewBody> {
             SizedBox(height: 21.h),
             Center(
               child: InkWell(
-                onTap: () {},
+                onTap: () {
+                  context.push("/instagramSendingView");
+                },
                 child: Container(
                   height: 40.h,
                   width: 200.w,

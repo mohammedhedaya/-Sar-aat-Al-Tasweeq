@@ -195,9 +195,8 @@ class _ChoosePersonAndSendXAdViewBodyState
                       onPressed: () {
                         context.push("/searchPersonToSendXAdView");
                       },
-                      text:
-                          "ChooseapersonfromInstagramandsendyouradtoallhisfollowers"
-                              .tr(context: context),
+                      text: "ChooseapersonfromXandsendyouradtoallhisfollowers"
+                          .tr(context: context),
                     ),
                   ),
                   SizedBox(height: 21.h),
