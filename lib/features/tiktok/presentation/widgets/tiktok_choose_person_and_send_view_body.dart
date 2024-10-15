@@ -73,7 +73,7 @@ class _TiktokChoosePersonAndSendViewBodyState
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "ChooseapersonfromInstagramandsendyouradtoallhisfollowers"
+                    "Chooseapersonfromtiktokandsendyouradtoallhisfollowers"
                         .tr(context: context),
                     style: AppStyles.style16W400.copyWith(
                       fontSize: 17.sp,
