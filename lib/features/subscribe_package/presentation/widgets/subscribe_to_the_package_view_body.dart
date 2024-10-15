@@ -8,9 +8,17 @@ import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
 
-class SubscribeToThePackageViewBody extends StatelessWidget {
+class SubscribeToThePackageViewBody extends StatefulWidget {
   const SubscribeToThePackageViewBody({super.key});
 
+  @override
+  State<SubscribeToThePackageViewBody> createState() =>
+      _SubscribeToThePackageViewBodyState();
+}
+
+class _SubscribeToThePackageViewBodyState
+    extends State<SubscribeToThePackageViewBody> {
+  bool isSAR = true;
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
@@ -39,11 +47,13 @@ class SubscribeToThePackageViewBody extends StatelessWidget {
                       width: double.infinity,
                       padding: const EdgeInsets.all(24),
                       decoration: BoxDecoration(
+                        color: isDark
+                            ? const Color(0xffABABAB)
+                            : AppColors.blueLight,
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(25.r),
                           topRight: Radius.circular(25.r),
                         ),
-                        color: const Color(0xffABABAB),
                       ),
                       child: SingleChildScrollView(
                         child: Column(
@@ -71,7 +81,9 @@ class SubscribeToThePackageViewBody extends StatelessWidget {
                                 Text(
                                   "subcribetothepackage".tr(context: context),
                                   style: AppStyles.style14W400.copyWith(
-                                    color: const Color(0xff323232),
+                                    color: isDark
+                                        ? const Color(0xff323232)
+                                        : AppColors.blackColor,
                                   ),
                                 ),
                               ],
@@ -82,7 +94,7 @@ class SubscribeToThePackageViewBody extends StatelessWidget {
                               padding: const EdgeInsets.all(24),
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(16.r),
-                                color: isDark ? null : AppColors.blueLight,
+                                color: isDark ? null : AppColors.yellowLight,
                                 gradient: isDark
                                     ? LinearGradient(
                                         colors: [
@@ -104,26 +116,46 @@ class SubscribeToThePackageViewBody extends StatelessWidget {
                                     children: [
                                       Text(
                                         "packege_features".tr(context: context),
-                                        style: AppStyles.style14W600,
+                                        style: AppStyles.style14W600.copyWith(
+                                          color: isDark
+                                              ? AppColors.whiteColor
+                                              : AppColors.blackColor,
+                                        ),
                                       ),
-                                      Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
+                                      Row(
+                                        // crossAxisAlignment:
+                                        //     CrossAxisAlignment.start,
                                         children: [
                                           InkWell(
                                             onTap: () {},
                                             child: Text(
-                                              "30_saudi_riyal"
-                                                  .tr(context: context),
-                                              style: AppStyles.style14W600,
+                                              isSAR
+                                                  ? "30_saudi_riyal"
+                                                      .tr(context: context)
+                                                  : "7.99_dollars"
+                                                      .tr(context: context),
+                                              style: AppStyles.style14W600
+                                                  .copyWith(
+                                                color: isDark
+                                                    ? AppColors.whiteColor
+                                                    : AppColors.blackColor,
+                                              ),
                                             ),
                                           ),
-                                          InkWell(
-                                            onTap: () {},
-                                            child: Text(
-                                              "7.99_dollars"
-                                                  .tr(context: context),
-                                              style: AppStyles.style14W600,
+                                          SizedBox(width: 5.w),
+                                          GestureDetector(
+                                            onTap: () {
+                                              setState(() {
+                                                isSAR = !isSAR;
+                                              });
+                                            },
+                                            child: Icon(
+                                              isSAR
+                                                  ? Icons.currency_exchange
+                                                  : Icons.currency_exchange,
+                                              color: isDark
+                                                  ? AppColors.whiteColor
+                                                  : AppColors.blackColor,
                                             ),
                                           ),
                                         ],
@@ -139,9 +171,7 @@ class SubscribeToThePackageViewBody extends StatelessWidget {
                                       children: [
                                         Text(
                                           "• ${"15_diamond_free".tr(context: context)}",
-                                          style: AppStyles.style14W400.copyWith(
-                                            color: AppColors.whiteColor,
-                                          ),
+                                          style: AppStyles.style14W400,
                                         ),
                                         PackageDetailsItem(
                                           logo: Assets.imagesWhatsapplogo,
@@ -198,7 +228,9 @@ class SubscribeToThePackageViewBody extends StatelessWidget {
                                         decoration: BoxDecoration(
                                           borderRadius:
                                               BorderRadius.circular(5.r),
-                                          color: isDark ? null : Colors.orange,
+                                          color: isDark
+                                              ? null
+                                              : AppColors.blueLight,
                                           gradient: isDark
                                               ? const LinearGradient(
                                                   colors: [
@@ -233,9 +265,10 @@ class SubscribeToThePackageViewBody extends StatelessWidget {
                 top: MediaQuery.of(context).size.height * 0.13,
                 child: Container(
                   padding: const EdgeInsets.all(10),
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Color(0xffABABAB),
+                    color:
+                        isDark ? const Color(0xffABABAB) : AppColors.blueLight,
                   ),
                   child: const CircleAvatar(
                     radius: 50,

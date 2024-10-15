@@ -5,8 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:pinput/pinput.dart';
-
-import '../../../../../core/utils/app_colors.dart';
+import 'package:shopping_chart/features/auth/presentation/widgets/auth_btn.dart';
 import '../../../../../core/utils/app_text_style.dart';
 
 class SignUpOTPView extends StatefulWidget {
@@ -61,7 +60,6 @@ class _SignUpOTPViewState extends State<SignUpOTPView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: const Color(0xFF2F2F2F),
       body: Column(
         children: [
           Expanded(
@@ -168,23 +166,11 @@ class _SignUpOTPViewState extends State<SignUpOTPView> {
                   }),
                 ),
                 SizedBox(height: 20.h),
-                SizedBox(
-                  width: double.infinity,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      context.push('/successSignUpView');
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: AppColors.blackColor,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(4),
-                      ),
-                    ),
-                    child: Text(
-                      "verify".tr(context: context),
-                      style: AppStyles.style14W600,
-                    ),
-                  ),
+                CustomAuthBtn(
+                  onPressed: () {
+                    context.push('/successSignUpView');
+                  },
+                  text: "verify".tr(context: context),
                 ),
               ],
             ),

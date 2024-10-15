@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 
 class PackageDetailsItem extends StatelessWidget {
@@ -18,9 +17,7 @@ class PackageDetailsItem extends StatelessWidget {
       children: [
         Text(
           "•",
-          style: AppStyles.style14W400.copyWith(
-            color: AppColors.whiteColor,
-          ),
+          style: AppStyles.style14W400,
         ),
         SizedBox(width: 5.w),
         SvgPicture.asset(
@@ -30,9 +27,7 @@ class PackageDetailsItem extends StatelessWidget {
         SizedBox(width: 5.w),
         Text(
           title,
-          style: AppStyles.style14W400.copyWith(
-            color: AppColors.whiteColor,
-          ),
+          style: AppStyles.style14W400,
         ),
       ],
     );
