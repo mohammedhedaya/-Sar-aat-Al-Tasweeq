@@ -65,7 +65,9 @@ class _LaunchYourWhatsappAdViewBodyState
                 ),
                 child: Text(
                   "whatsapp".tr(context: context),
-                  style: AppStyles.style10W800,
+                  style: AppStyles.style10W800.copyWith(
+                    color: isDark ? Colors.black : Colors.white,
+                  ),
                 ),
               ),
               TextButton(
@@ -87,7 +89,9 @@ class _LaunchYourWhatsappAdViewBodyState
                 ),
                 child: Text(
                   "Contacts".tr(context: context),
-                  style: AppStyles.style10W800,
+                  style: AppStyles.style10W800.copyWith(
+                    color: isDark ? Colors.black : Colors.white,
+                  ),
                 ),
               ),
               TextButton(
@@ -135,7 +139,9 @@ class _LaunchYourWhatsappAdViewBodyState
                     ),
                     child: Text(
                       "chats".tr(context: context),
-                      style: AppStyles.style10W800,
+                      style: AppStyles.style10W800.copyWith(
+                        color: isDark ? Colors.black : Colors.white,
+                      ),
                     ),
                   ),
                   Positioned(

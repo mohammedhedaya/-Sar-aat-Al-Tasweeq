@@ -19,7 +19,7 @@ final ThemeData lightTheme = ThemeData(
   appBarTheme: const AppBarTheme(
     backgroundColor: AppColors.blueLight,
     surfaceTintColor: Colors.transparent,
-    actionsIconTheme: IconThemeData(color: AppColors.blackColor),
+    actionsIconTheme: IconThemeData(color: AppColors.whiteColor),
   ),
   dialogTheme: const DialogTheme(
     backgroundColor: AppColors.blueLight,

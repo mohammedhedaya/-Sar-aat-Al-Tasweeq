@@ -26,8 +26,9 @@ class CustomSubscribeBtn extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20.r),
         ),
-        backgroundColor:
-            isDark ? AppColors.whiteColor.withOpacity(0.10) : AppColors.gray,
+        backgroundColor: isDark
+            ? AppColors.whiteColor.withOpacity(0.10)
+            : AppColors.whiteColor,
       ),
       child: Text(
         text,

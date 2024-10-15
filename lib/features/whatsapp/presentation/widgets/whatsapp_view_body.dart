@@ -26,7 +26,7 @@ class WhatsappViewBody extends StatelessWidget {
               Positioned(
                 top: 65.h,
                 child: Text(
-                  "Whats App",
+                  "WhatsApp",
                   style: AppStyles.style78W400,
                   textAlign: TextAlign.center,
                 ),
@@ -59,7 +59,7 @@ class WhatsappViewBody extends StatelessWidget {
               children: [
                 CustomSubscribeBtn(
                   textStyle: AppStyles.style14W400.copyWith(
-                    color: Colors.white,
+                    color: isDark ? Colors.white : Colors.black,
                   ),
                   onPressed: () {
                     showDialog(
@@ -96,7 +96,7 @@ class WhatsappViewBody extends StatelessWidget {
                 SizedBox(height: 50.h),
                 CustomSubscribeBtn(
                   textStyle: AppStyles.style14W400.copyWith(
-                    color: Colors.white,
+                    color: isDark ? Colors.white : Colors.black,
                   ),
                   onPressed: () {
                     showDialog(
@@ -148,10 +148,19 @@ class WhatsappViewBody extends StatelessWidget {
                       style: AppStyles.style14W600,
                     ),
                     SizedBox(width: 5.w),
-                    SvgPicture.asset(
-                      Assets.imagesLikeicon,
-                      height: 40.h,
-                    ),
+                    isDark
+                        ? SvgPicture.asset(
+                            Assets.imagesLikeicon,
+                            height: 40.h,
+                          )
+                        : SvgPicture.asset(
+                            Assets.imagesLikeicon,
+                            colorFilter: const ColorFilter.mode(
+                              Colors.orange,
+                              BlendMode.srcIn,
+                            ),
+                            height: 40.h,
+                          ),
                   ],
                 ),
                 Text(
@@ -170,15 +179,18 @@ class WhatsappViewBody extends StatelessWidget {
                       height: 31.h,
                       width: 119.w,
                       decoration: BoxDecoration(
+                        color: isDark ? null : Colors.orange,
                         borderRadius: BorderRadius.circular(5.r),
-                        gradient: const LinearGradient(
-                          colors: [
-                            Color(0xff00C0CC),
-                            Color(0xff006066),
-                          ],
-                          begin: Alignment.centerLeft,
-                          end: Alignment.centerRight,
-                        ),
+                        gradient: isDark
+                            ? const LinearGradient(
+                                colors: [
+                                  Color(0xff00C0CC),
+                                  Color(0xff006066),
+                                ],
+                                begin: Alignment.centerLeft,
+                                end: Alignment.centerRight,
+                              )
+                            : null,
                       ),
                       child: Center(
                         child: Text(
