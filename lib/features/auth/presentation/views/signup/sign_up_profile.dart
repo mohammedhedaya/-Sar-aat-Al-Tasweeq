@@ -273,19 +273,11 @@ class SignUpProfileView extends StatelessWidget {
                       SizedBox(
                         width: double.infinity,
                         child: ElevatedButton(
-                          onPressed: cubit.isTermsChecked
-                              ? () {
-                                  // Proceed with the signup logic
-                                  if (cubit.validateSignUpProfile(context)) {
-                                    context.push("/signUpOTPView");
-                                  }
-                                }
-                              : null,
-                          // onPressed: () {
-                          //   if (cubit.validateSignUpProfile(context)) {
-                          //     context.push("/signUpOTPView");
-                          //   }
-                          // },
+                          onPressed: () {
+                            if (cubit.validateSignUpProfile(context)) {
+                              context.push("/signUpOTPView");
+                            }
+                          },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: isDark
                                 ? AppColors.blackColor

@@ -2,6 +2,7 @@ import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../cubit/auth_cubit.dart';
 import '../cubit/auth_state.dart';
 import '../../../../core/utils/app_colors.dart';
@@ -36,54 +37,82 @@ class _TermsConditionsWidgetState extends State<TermsConditionsWidget> {
     return BlocBuilder<AuthCubit, AuthState>(
       builder: (context, state) {
         final cubit = context.read<AuthCubit>();
-        return Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Checkbox(
-              value: cubit.isTermsChecked,
-              visualDensity: const VisualDensity(
-                horizontal: VisualDensity.minimumDensity,
-                vertical: VisualDensity.minimumDensity,
-              ),
-              onChanged: (value) {
-                cubit.updateTermsChecked(value ?? false);
-
-                // setState(() {
-                //   isChecked = value!;
-                // });
-              },
-              activeColor: isDark ? AppColors.whiteColor : AppColors.blueLight,
-              checkColor: isDark ? AppColors.blackColor : AppColors.whiteColor,
-              side: BorderSide(
-                color: isDark ? AppColors.whiteColor : AppColors.blueLight,
-                strokeAlign: 3.0,
-              ),
-            ),
-            InkWell(
-              onTap: () {
-                _showTermsDialog();
-              },
-              child: RichText(
-                text: TextSpan(
-                  text: "iagree".tr(context: context),
-                  style: AppStyles.style13W400.copyWith(
-                    color: isDark ? AppColors.whiteColor : AppColors.blackColor,
+        return FormField<bool>(validator: (value) {
+          if (value != true) {
+            return 'You must accept the terms and conditions'
+                .tr(context: context);
+          }
+          return null;
+        }, builder: (FormFieldState<bool> state) {
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Checkbox(
+                    value: isChecked,
+                    visualDensity: const VisualDensity(
+                      horizontal: VisualDensity.minimumDensity,
+                      vertical: VisualDensity.minimumDensity,
+                    ),
+                    onChanged: (value) {
+                      cubit.updateTermsChecked(value ?? false);
+                      state.didChange(value);
+                      isChecked = value ?? false;
+                    },
+                    activeColor:
+                        isDark ? AppColors.whiteColor : AppColors.blueLight,
+                    checkColor:
+                        isDark ? AppColors.blackColor : AppColors.whiteColor,
+                    side: BorderSide(
+                      color:
+                          isDark ? AppColors.whiteColor : AppColors.blueLight,
+                      strokeAlign: 3.0,
+                    ),
                   ),
-                  children: [
-                    TextSpan(
-                      text: "termsAndConditions".tr(context: context),
-                      style: AppStyles.style13W600.copyWith(
-                        color: isDark
-                            ? AppColors.whiteColor
-                            : AppColors.blackColor,
+                  InkWell(
+                    onTap: () {
+                      _showTermsDialog();
+                    },
+                    child: RichText(
+                      text: TextSpan(
+                        text: "iagree".tr(context: context),
+                        style: AppStyles.style13W400.copyWith(
+                          color: isDark
+                              ? AppColors.whiteColor
+                              : AppColors.blackColor,
+                        ),
+                        children: [
+                          TextSpan(
+                            text: "termsAndConditions".tr(context: context),
+                            style: AppStyles.style13W600.copyWith(
+                              color: isDark
+                                  ? AppColors.whiteColor
+                                  : AppColors.blackColor,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-            ),
-          ],
-        );
+              if (state.hasError)
+                Padding(
+                  padding: EdgeInsetsDirectional.only(start: 5.w),
+                  child: Text(
+                    state.errorText!,
+                    style: TextStyle(
+                      color: isDark ? AppColors.yellowLight : Colors.red,
+                      fontSize: 12,
+                    ),
+                    textAlign: TextAlign.start,
+                  ),
+                ),
+            ],
+          );
+        });
       },
     );
   }

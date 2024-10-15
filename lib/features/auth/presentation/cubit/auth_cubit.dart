@@ -14,7 +14,7 @@ class AuthCubit extends Cubit<AuthState> {
   GlobalKey<FormState> emailResetPasswordFormKey = GlobalKey<FormState>();
   
   bool? obscurePasswordTextValue = true;
-  bool isTermsChecked = false; // Add this field
+  bool isTermsChecked = false;
   String? firstName;
   String? secondName;
   String? lastName;
@@ -45,20 +45,19 @@ class AuthCubit extends Cubit<AuthState> {
   bool validateSignUpProfile(context) {
     validateProfileImage(context);
     return signUpProfileFormKey.currentState!.validate() &&
-        profileImageError == null;
+        profileImageError == null &&
+        isTermsChecked;
   }
 
   void setSelectedCountry(String? countryCode) {
     selectedCountry = countryCode;
   }
 
-  //! Obscure password text
   void obscurePasswordText() {
     obscurePasswordTextValue = !obscurePasswordTextValue!;
     emit(ObscurePasswordTextUpdateState());
   }
 
-  //! Update terms checkbox value
   void updateTermsChecked(bool value) {
     isTermsChecked = value;
     emit(AuthTermsCheckedUpdateState());
