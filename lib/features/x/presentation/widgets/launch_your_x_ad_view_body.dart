@@ -145,90 +145,7 @@ class _LaunchYourXAdViewBodyState extends State<LaunchYourXAdViewBody> {
               width: 200.w,
               child: CustomAuthBtn(
                 onPressed: () {
-                  showModalBottomSheet(
-                    context: context,
-                    enableDrag: true,
-                    isScrollControlled: true,
-                    barrierColor: AppColors.blackColor.withOpacity(0.71),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(50.r),
-                        topRight: Radius.circular(50.r),
-                      ),
-                    ),
-                    backgroundColor: const Color(0xffDDDDDD),
-                    builder: (builder) {
-                      return SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.7,
-                        child: Column(
-                          children: [
-                            SizedBox(height: 80.h),
-                            Expanded(
-                              child: SingleChildScrollView(
-                                child: Column(
-                                  children: List.generate(5, (index) {
-                                    return Padding(
-                                      padding: EdgeInsets.only(
-                                        left: 40.h,
-                                        right: 40.h,
-                                      ),
-                                      child: Column(
-                                        children: [
-                                          ListTile(
-                                            onTap: () {
-                                              context.push(
-                                                "/addTrendsView",
-                                                extra: {
-                                                  "numbOfTrends": 1 + index + 4
-                                                },
-                                              );
-                                            },
-                                            contentPadding: EdgeInsets.zero,
-                                            visualDensity:
-                                                VisualDensity.compact,
-                                            title: Text(
-                                              "Publishyouradon5trends"
-                                                  .tr(context: context),
-                                              style: AppStyles.style18W700
-                                                  .copyWith(
-                                                color: Colors.black,
-                                              ),
-                                            ),
-                                            trailing: Container(
-                                              decoration: const BoxDecoration(
-                                                color: Color(0xff3C3636),
-                                                shape: BoxShape.circle,
-                                              ),
-                                              child: context.locale ==
-                                                      const Locale('en')
-                                                  ? const Icon(
-                                                      Icons
-                                                          .keyboard_arrow_right_sharp,
-                                                      color: Colors.white,
-                                                    )
-                                                  : const Icon(
-                                                      Icons
-                                                          .keyboard_arrow_left_sharp,
-                                                      color: Colors.white,
-                                                    ),
-                                            ),
-                                          ),
-                                          const Divider(
-                                            color: Colors.black,
-                                            thickness: 1,
-                                          ),
-                                        ],
-                                      ),
-                                    );
-                                  }),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      );
-                    },
-                  );
+                  addXTrendsModalSheet(context);
                 },
                 text: "addtrends".tr(context: context),
               ),
@@ -268,6 +185,178 @@ class _LaunchYourXAdViewBodyState extends State<LaunchYourXAdViewBody> {
           ],
         ),
       ),
+    );
+  }
+
+  Future<dynamic> addXTrendsModalSheet(BuildContext context) {
+    return showModalBottomSheet(
+      context: context,
+      enableDrag: true,
+      isScrollControlled: true,
+      barrierColor: AppColors.blackColor.withOpacity(0.71),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(50.r),
+          topRight: Radius.circular(50.r),
+        ),
+      ),
+      backgroundColor: const Color(0xffDDDDDD),
+      builder: (builder) {
+        return SizedBox(
+          height: MediaQuery.of(context).size.height * 0.7,
+          child: Column(
+            children: [
+              SizedBox(height: 80.h),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(
+                          left: 40.h,
+                          right: 40.h,
+                        ),
+                        child: Column(
+                          children: [
+                            ListTile(
+                              onTap: () {
+                                context.push("/addTrendsView");
+                              },
+                              contentPadding: EdgeInsets.zero,
+                              visualDensity: VisualDensity.compact,
+                              title: Text(
+                                "Publishyouradon5trends".tr(context: context),
+                                style: AppStyles.style18W700.copyWith(
+                                  color: Colors.black,
+                                ),
+                              ),
+                              trailing: Container(
+                                decoration: const BoxDecoration(
+                                  color: Color(0xff3C3636),
+                                  shape: BoxShape.circle,
+                                ),
+                                child: context.locale == const Locale('en')
+                                    ? const Icon(
+                                        Icons.keyboard_arrow_right_sharp,
+                                        color: Colors.white,
+                                      )
+                                    : const Icon(
+                                        Icons.keyboard_arrow_left_sharp,
+                                        color: Colors.white,
+                                      ),
+                              ),
+                            ),
+                            const Divider(
+                              color: Colors.black,
+                              thickness: 1,
+                            ),
+                            ListTile(
+                              onTap: () {
+                                context.push("/addTrendsView");
+                              },
+                              contentPadding: EdgeInsets.zero,
+                              visualDensity: VisualDensity.compact,
+                              title: Text(
+                                "Publishyouradon10trends".tr(context: context),
+                                style: AppStyles.style18W700.copyWith(
+                                  color: Colors.black,
+                                ),
+                              ),
+                              trailing: Container(
+                                decoration: const BoxDecoration(
+                                  color: Color(0xff3C3636),
+                                  shape: BoxShape.circle,
+                                ),
+                                child: context.locale == const Locale('en')
+                                    ? const Icon(
+                                        Icons.keyboard_arrow_right_sharp,
+                                        color: Colors.white,
+                                      )
+                                    : const Icon(
+                                        Icons.keyboard_arrow_left_sharp,
+                                        color: Colors.white,
+                                      ),
+                              ),
+                            ),
+                            const Divider(
+                              color: Colors.black,
+                              thickness: 1,
+                            ),
+                            ListTile(
+                              onTap: () {
+                                context.push("/addTrendsView");
+                              },
+                              contentPadding: EdgeInsets.zero,
+                              visualDensity: VisualDensity.compact,
+                              title: Text(
+                                "Publishyouradon15trends".tr(context: context),
+                                style: AppStyles.style18W700.copyWith(
+                                  color: Colors.black,
+                                ),
+                              ),
+                              trailing: Container(
+                                decoration: const BoxDecoration(
+                                  color: Color(0xff3C3636),
+                                  shape: BoxShape.circle,
+                                ),
+                                child: context.locale == const Locale('en')
+                                    ? const Icon(
+                                        Icons.keyboard_arrow_right_sharp,
+                                        color: Colors.white,
+                                      )
+                                    : const Icon(
+                                        Icons.keyboard_arrow_left_sharp,
+                                        color: Colors.white,
+                                      ),
+                              ),
+                            ),
+                            const Divider(
+                              color: Colors.black,
+                              thickness: 1,
+                            ),
+                            ListTile(
+                              onTap: () {
+                                context.push("/addTrendsView");
+                              },
+                              contentPadding: EdgeInsets.zero,
+                              visualDensity: VisualDensity.compact,
+                              title: Text(
+                                "Publishyouradon20trends".tr(context: context),
+                                style: AppStyles.style18W700.copyWith(
+                                  color: Colors.black,
+                                ),
+                              ),
+                              trailing: Container(
+                                decoration: const BoxDecoration(
+                                  color: Color(0xff3C3636),
+                                  shape: BoxShape.circle,
+                                ),
+                                child: context.locale == const Locale('en')
+                                    ? const Icon(
+                                        Icons.keyboard_arrow_right_sharp,
+                                        color: Colors.white,
+                                      )
+                                    : const Icon(
+                                        Icons.keyboard_arrow_left_sharp,
+                                        color: Colors.white,
+                                      ),
+                              ),
+                            ),
+                            const Divider(
+                              color: Colors.black,
+                              thickness: 1,
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 }

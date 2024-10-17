@@ -147,7 +147,7 @@ class _LaunchYourInstaAdViewBodyState extends State<LaunchYourInstaAdViewBody> {
               width: 200.w,
               child: CustomAuthBtn(
                 onPressed: () {
-                  context.push("/addHashtagsView");
+                  addInstagramTrendsModalSheet(context);
                 },
                 text: "# Add hashtags".tr(context: context),
               ),
@@ -192,6 +192,182 @@ class _LaunchYourInstaAdViewBodyState extends State<LaunchYourInstaAdViewBody> {
           ],
         ),
       ),
+    );
+  }
+
+  Future<dynamic> addInstagramTrendsModalSheet(BuildContext context) {
+    return showModalBottomSheet(
+      context: context,
+      enableDrag: true,
+      isScrollControlled: true,
+      barrierColor: AppColors.blackColor.withOpacity(0.71),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(50.r),
+          topRight: Radius.circular(50.r),
+        ),
+      ),
+      backgroundColor: const Color(0xffDDDDDD),
+      builder: (builder) {
+        return SizedBox(
+          height: MediaQuery.of(context).size.height * 0.7,
+          child: Column(
+            children: [
+              SizedBox(height: 80.h),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(
+                          left: 30.h,
+                          right: 30.h,
+                        ),
+                        child: Column(
+                          children: [
+                            ListTile(
+                              onTap: () {
+                                context.push("/addHashtagsView");
+                              },
+                              contentPadding: EdgeInsets.zero,
+                              visualDensity: VisualDensity.compact,
+                              title: Text(
+                                "Publishyourinstagramadon5trends"
+                                    .tr(context: context),
+                                style: AppStyles.style18W700.copyWith(
+                                  color: Colors.black,
+                                ),
+                              ),
+                              trailing: Container(
+                                decoration: const BoxDecoration(
+                                  color: Color(0xff3C3636),
+                                  shape: BoxShape.circle,
+                                ),
+                                child: context.locale == const Locale('en')
+                                    ? const Icon(
+                                        Icons.keyboard_arrow_right_sharp,
+                                        color: Colors.white,
+                                      )
+                                    : const Icon(
+                                        Icons.keyboard_arrow_left_sharp,
+                                        color: Colors.white,
+                                      ),
+                              ),
+                            ),
+                            const Divider(
+                              color: Colors.black,
+                              thickness: 1,
+                            ),
+                            ListTile(
+                              onTap: () {
+                                context.push("/addHashtagsView");
+                              },
+                              contentPadding: EdgeInsets.zero,
+                              visualDensity: VisualDensity.compact,
+                              title: Text(
+                                "Publishyourinstagramadon10trends"
+                                    .tr(context: context),
+                                style: AppStyles.style18W700.copyWith(
+                                  color: Colors.black,
+                                ),
+                              ),
+                              trailing: Container(
+                                decoration: const BoxDecoration(
+                                  color: Color(0xff3C3636),
+                                  shape: BoxShape.circle,
+                                ),
+                                child: context.locale == const Locale('en')
+                                    ? const Icon(
+                                        Icons.keyboard_arrow_right_sharp,
+                                        color: Colors.white,
+                                      )
+                                    : const Icon(
+                                        Icons.keyboard_arrow_left_sharp,
+                                        color: Colors.white,
+                                      ),
+                              ),
+                            ),
+                            const Divider(
+                              color: Colors.black,
+                              thickness: 1,
+                            ),
+                            ListTile(
+                              onTap: () {
+                                context.push("/addHashtagsView");
+                              },
+                              contentPadding: EdgeInsets.zero,
+                              visualDensity: VisualDensity.compact,
+                              title: Text(
+                                "Publishyourinstagramadon15trends"
+                                    .tr(context: context),
+                                style: AppStyles.style18W700.copyWith(
+                                  color: Colors.black,
+                                ),
+                              ),
+                              trailing: Container(
+                                decoration: const BoxDecoration(
+                                  color: Color(0xff3C3636),
+                                  shape: BoxShape.circle,
+                                ),
+                                child: context.locale == const Locale('en')
+                                    ? const Icon(
+                                        Icons.keyboard_arrow_right_sharp,
+                                        color: Colors.white,
+                                      )
+                                    : const Icon(
+                                        Icons.keyboard_arrow_left_sharp,
+                                        color: Colors.white,
+                                      ),
+                              ),
+                            ),
+                            const Divider(
+                              color: Colors.black,
+                              thickness: 1,
+                            ),
+                            ListTile(
+                              onTap: () {
+                                context.push("/addHashtagsView");
+                              },
+                              contentPadding: EdgeInsets.zero,
+                              visualDensity: VisualDensity.compact,
+                              title: Text(
+                                "Publishyourinstagramadon20trends"
+                                    .tr(context: context),
+                                style: AppStyles.style18W700.copyWith(
+                                  color: Colors.black,
+                                ),
+                              ),
+                              trailing: Container(
+                                decoration: const BoxDecoration(
+                                  color: Color(0xff3C3636),
+                                  shape: BoxShape.circle,
+                                ),
+                                child: context.locale == const Locale('en')
+                                    ? const Icon(
+                                        Icons.keyboard_arrow_right_sharp,
+                                        color: Colors.white,
+                                      )
+                                    : const Icon(
+                                        Icons.keyboard_arrow_left_sharp,
+                                        color: Colors.white,
+                                      ),
+                              ),
+                            ),
+                            const Divider(
+                              color: Colors.black,
+                              thickness: 1,
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 }

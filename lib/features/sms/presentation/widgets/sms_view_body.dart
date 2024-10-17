@@ -91,7 +91,7 @@ class SMSViewBody extends StatelessWidget {
                   },
                   text: "Contacts".tr(context: context),
                   textStyle: AppStyles.style14W800.copyWith(
-                    color: isDark ? Colors.white : Colors.white,
+                    color: isDark ? Colors.white : Colors.black,
                   ),
                 ),
                 SizedBox(height: 50.h),
@@ -129,7 +129,7 @@ class SMSViewBody extends StatelessWidget {
                   text: "Transferanothernumberfromthephonebook"
                       .tr(context: context),
                   textStyle: AppStyles.style14W800.copyWith(
-                    color: isDark ? Colors.white : Colors.white,
+                    color: isDark ? Colors.white : Colors.black,
                   ),
                 ),
                 SizedBox(height: 39.h),

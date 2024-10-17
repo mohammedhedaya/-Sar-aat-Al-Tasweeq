@@ -170,10 +170,10 @@ class _WhatsappChooseDestinationDeleteGroupsViewBodyState
                           style: _currentPage == 2
                               ? AppStyles.style17W800.copyWith(
                                   color: const Color(0xff2F2F2F),
-                                  fontSize: 10.sp,
+                                  fontSize: 8.sp,
                                 )
                               : AppStyles.style17W800.copyWith(
-                                  fontSize: 10.sp,
+                                  fontSize: 8.sp,
                                 ),
                           textAlign: TextAlign.center,
                         ),

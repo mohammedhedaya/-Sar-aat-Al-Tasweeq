@@ -70,6 +70,7 @@ class _ConvertNumberToWhatsappLinkViewBodyState
               });
             },
             hintText: "phone".tr(context: context),
+            onFieldSubmitted: (value) {},
             keyboardType: TextInputType.phone,
             fiiledColor: AppColors.whiteColor.withOpacity(0.10),
             suffixIcon: Container(
@@ -102,6 +103,7 @@ class _ConvertNumberToWhatsappLinkViewBodyState
                   borderRadius: BorderRadius.circular(8.r),
                 ),
                 padding: EdgeInsets.zero,
+                showDropDownButton: true,
                 flagDecoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(5.r),
                 ),

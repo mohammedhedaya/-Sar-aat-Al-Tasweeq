@@ -31,6 +31,7 @@ class AddTrendsViewBody extends StatelessWidget {
                   ),
                   SizedBox(height: 32.h),
                   TextField(
+                    readOnly: true,
                     onChanged: (value) {},
                     style: AppStyles.style20W400.copyWith(
                       color: const Color(0xff00C0CC),
@@ -92,7 +93,7 @@ class AddTrendsViewBody extends StatelessWidget {
           padding: EdgeInsets.only(bottom: 20.h),
           child: InkWell(
             onTap: () {
-              context.pop();
+              context.push('/sendingXAdView');
             },
             child: Container(
               height: 40.h,

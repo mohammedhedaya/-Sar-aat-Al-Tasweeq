@@ -5,7 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_text_style.dart';
-import '../../../../../core/utils/assets.dart';
 import '../../../../whatsapp/presentation/widgets/custom_show_dialog.dart';
 
 class XUserDetailsSelectAllPage extends StatefulWidget {
@@ -98,12 +97,10 @@ class _XUserDetailsSelectAllPageState extends State<XUserDetailsSelectAllPage> {
               context: context,
               barrierColor: const Color(0xffFFF9F9).withOpacity(0.33),
               builder: (context) {
-                return CustomShowDialog(
+                return CustomShowRechargeDialog(
                   onTap: () {
                     context.push('/sendingXAdToFollowrsView');
                   },
-                  image: Assets.imagesRechargeWallet,
-                  textButton: "recharge".tr(context: context),
                   content: Text(
                     "The number allowed to be sent is 400 people only. Please charge more diamonds."
                         .tr(context: context),

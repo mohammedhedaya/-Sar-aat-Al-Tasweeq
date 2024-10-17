@@ -18,21 +18,21 @@ class SendingChoosenGroupView extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        backgroundColor: isDark ? AppColors.darkGray : Colors.white,
-        elevation: 0,
-        actions: [
-          IconButton(
-            onPressed: () {
-              context.pop();
-            },
-            icon: const Icon(
-              Icons.arrow_forward_ios_sharp,
-            ),
-          ),
-        ],
-      ),
+      // appBar: AppBar(
+      //   automaticallyImplyLeading: false,
+      //   backgroundColor: isDark ? AppColors.darkGray : Colors.white,
+      //   elevation: 0,
+      //   actions: [
+      //     IconButton(
+      //       onPressed: () {
+      //         context.pop();
+      //       },
+      //       icon: const Icon(
+      //         Icons.arrow_forward_ios_sharp,
+      //       ),
+      //     ),
+      //   ],
+      // ),
       body: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(

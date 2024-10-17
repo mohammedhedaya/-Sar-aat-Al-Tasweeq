@@ -54,7 +54,7 @@ class _TelegramDeleteChooseDestinationViewBodyState
                     _onButtonTapped(0);
                   },
                   child: Container(
-                    padding: const EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5.r),
                       color: _currentPage == 0
@@ -79,6 +79,7 @@ class _TelegramDeleteChooseDestinationViewBodyState
                             color: _currentPage == 0
                                 ? const Color(0xff2F2F2F)
                                 : Colors.white,
+                            fontSize: 18.sp,
                           ),
                         ),
                         Text(
@@ -100,7 +101,7 @@ class _TelegramDeleteChooseDestinationViewBodyState
                     _onButtonTapped(1);
                   },
                   child: Container(
-                    padding: const EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(9),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5.r),
                       color: _currentPage == 1
@@ -124,14 +125,18 @@ class _TelegramDeleteChooseDestinationViewBodyState
                           style: _currentPage == 1
                               ? AppStyles.style10W800.copyWith(
                                   color: const Color(0xff2F2F2F),
+                                  fontSize: 14.sp,
                                 )
-                              : AppStyles.style10W800,
+                              : AppStyles.style10W800.copyWith(
+                                  fontSize: 14.sp,
+                                ),
                         ),
                         Text(
                           "1000",
                           style: AppStyles.style17W800.copyWith(
                             color: const Color(0xff2F2F2F),
                             fontWeight: FontWeight.w200,
+                            fontSize: 22.sp,
                           ),
                         ),
                       ],

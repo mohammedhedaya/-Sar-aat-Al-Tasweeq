@@ -2,6 +2,8 @@ import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:shopping_chart/core/utils/assets.dart';
 
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
@@ -182,18 +184,54 @@ class EditItemProfile extends StatelessWidget {
                               color: AppColors.blueLight,
                             ),
                           ),
-                    suffixIcon: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(
-                          "966",
-                          style: AppStyles.style18W400,
+                    suffixIcon:
+                        //  CountryCodePicker(
+                        //   onChanged: (value) {},
+                        //   initialSelection: 'SA',
+                        //   favorite: const ['+966', 'SA'],
+                        //   barrierColor: const Color(0xfffff9f9).withOpacity(0.33),
+                        //   textOverflow: TextOverflow.ellipsis,
+                        //   boxDecoration: BoxDecoration(
+                        //     borderRadius: BorderRadius.circular(8.r),
+                        //   ),
+                        //   // alignLeft: true,
+                        //   padding: EdgeInsets.zero,
+                        //   // showCountryOnly: true,
+                        //   // showOnlyCountryWhenClosed: true,
+                        //   // showFlagDialog: true,
+                        //   showDropDownButton: true,
+                        //   flagDecoration: BoxDecoration(
+                        //     borderRadius: BorderRadius.circular(4.r),
+                        //   ),
+                        // ),
+                        Container(
+                      decoration: BoxDecoration(
+                        // color: isDark ? null : AppColors.blueLight,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(10.r),
+                          bottomLeft: Radius.circular(10.r),
                         ),
-                        const Icon(
-                          Icons.keyboard_arrow_down,
-                          color: AppColors.whiteColor,
+                        border: Border.all(
+                          color:
+                              isDark ? Colors.transparent : AppColors.blueLight,
                         ),
-                      ],
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          SizedBox(width: 5.w),
+                          SvgPicture.asset(Assets.imagesSuadiFlag),
+                          SizedBox(width: 5.w),
+                          Text(
+                            "966+",
+                            style: AppStyles.style18W400,
+                          ),
+                          const Icon(
+                            Icons.keyboard_arrow_down,
+                            color: AppColors.blackColor,
+                          ),
+                        ],
+                      ),
                     ),
                     border: InputBorder.none,
                     contentPadding: EdgeInsets.symmetric(
@@ -207,7 +245,7 @@ class EditItemProfile extends StatelessWidget {
             ],
           ),
           SizedBox(height: 30.h),
-          const CustomItemIncludeCountry(),
+          const CustomEditProfileItemIncludeCountry(),
           SizedBox(height: 30.h),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,

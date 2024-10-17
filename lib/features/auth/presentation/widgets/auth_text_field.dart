@@ -24,6 +24,7 @@ class CustomAuthTextField extends StatelessWidget {
     this.readOnly,
     this.minLines = 1,
     this.maxLines,
+    this.onFieldSubmitted,
   });
 
   final bool? readOnly;
@@ -41,6 +42,7 @@ class CustomAuthTextField extends StatelessWidget {
   final TextStyle? hintStyle;
   final int? minLines;
   final int? maxLines;
+  final void Function(String)? onFieldSubmitted;
 
   @override
   Widget build(BuildContext context) {
@@ -48,6 +50,7 @@ class CustomAuthTextField extends StatelessWidget {
     return TextFormField(
       readOnly: readOnly ?? false,
       controller: controller,
+      onFieldSubmitted: onFieldSubmitted,
       onChanged: onChanged,
       keyboardType: keyboardType,
       cursorColor: AppColors.whiteColor,

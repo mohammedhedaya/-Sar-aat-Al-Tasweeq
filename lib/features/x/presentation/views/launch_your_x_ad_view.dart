@@ -79,6 +79,7 @@ class _LaunchYourXAdViewState extends State<LaunchYourXAdView> {
                 "launchaddwithease".tr(context: context),
                 style: AppStyles.style17W800.copyWith(
                   fontWeight: FontWeight.w700,
+                  color: Colors.white,
                 ),
               ),
             ),
@@ -94,7 +95,7 @@ class _LaunchYourXAdViewState extends State<LaunchYourXAdView> {
             },
             icon: const Icon(
               Icons.arrow_forward_ios_sharp,
-              // color: Colors.white70,
+              color: Colors.white,
             ),
           ),
         ],

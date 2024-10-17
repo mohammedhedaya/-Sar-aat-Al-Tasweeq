@@ -180,7 +180,7 @@ class _LaunchYourTiktokAdViewBodyState
                   ),
                   child: Center(
                     child: Text(
-                      "send".tr(context: context),
+                      "chooseDestination".tr(context: context),
                       style: AppStyles.style14W400.copyWith(
                         color: Colors.white,
                       ),
