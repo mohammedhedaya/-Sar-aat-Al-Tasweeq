@@ -23,6 +23,7 @@ class WhatsappGroupsView extends StatelessWidget {
               "Expandyoursalesrange".tr(context: context),
               style: AppStyles.style16W400.copyWith(
                 fontWeight: FontWeight.w700,
+                color: Colors.white,
               ),
             ),
             SizedBox(width: 25.w),
@@ -38,6 +39,7 @@ class WhatsappGroupsView extends StatelessWidget {
             },
             icon: const Icon(
               Icons.arrow_forward_ios_sharp,
+              color: Colors.white,
             ),
           ),
         ],

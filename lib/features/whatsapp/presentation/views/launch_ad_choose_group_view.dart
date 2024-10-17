@@ -23,6 +23,7 @@ class LaunchAdChooseGroupView extends StatelessWidget {
               "Startmarketingyourproject!".tr(context: context),
               style: AppStyles.style16W400.copyWith(
                 fontWeight: FontWeight.w700,
+                color: Colors.white,
               ),
             ),
             SizedBox(width: 10.w),
@@ -38,6 +39,7 @@ class LaunchAdChooseGroupView extends StatelessWidget {
             },
             icon: const Icon(
               Icons.arrow_forward_ios_sharp,
+              color: Colors.white,
             ),
           ),
         ],

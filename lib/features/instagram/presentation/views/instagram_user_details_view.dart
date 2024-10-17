@@ -93,7 +93,9 @@ class _InstagramUserDetailsViewState extends State<InstagramUserDetailsView> {
                               TextSpan(
                                 text: " CARZIMA23 ",
                                 style: AppStyles.style13W600.copyWith(
-                                  color: const Color(0xff00C0CC),
+                                  color: isDark
+                                      ? const Color(0xff00C0CC)
+                                      : AppColors.blueLight,
                                 ),
                               ),
                             ],
@@ -112,7 +114,9 @@ class _InstagramUserDetailsViewState extends State<InstagramUserDetailsView> {
                               TextSpan(
                                 text: " (4000) ",
                                 style: AppStyles.style13W600.copyWith(
-                                  color: const Color(0xff00C0CC),
+                                  color: isDark
+                                      ? const Color(0xff00C0CC)
+                                      : AppColors.blueLight,
                                 ),
                               ),
                             ],
@@ -132,19 +136,24 @@ class _InstagramUserDetailsViewState extends State<InstagramUserDetailsView> {
                             horizontal: 10.w, vertical: 5.h),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(5.r),
-                          gradient: const LinearGradient(
-                            colors: [
-                              Color(0xff00C0CC),
-                              Color(0xff006066),
-                            ],
-                            begin: Alignment.centerLeft,
-                            end: Alignment.centerRight,
-                          ),
+                          color: isDark ? null : AppColors.blueLight,
+                          gradient: isDark
+                              ? const LinearGradient(
+                                  colors: [
+                                    Color(0xff00C0CC),
+                                    Color(0xff006066),
+                                  ],
+                                  begin: Alignment.centerLeft,
+                                  end: Alignment.centerRight,
+                                )
+                              : null,
                         ),
                         child: Center(
                           child: Text(
                             "recharge".tr(context: context),
-                            style: AppStyles.style14W400,
+                            style: AppStyles.style14W400.copyWith(
+                              color: Colors.white,
+                            ),
                             textAlign: TextAlign.center,
                           ),
                         ),
