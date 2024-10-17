@@ -20,6 +20,7 @@ class TelegramChatsView extends StatelessWidget {
           "TelegramChats".tr(context: context),
           style: AppStyles.style23W700.copyWith(
             fontSize: 21.sp,
+            color: Colors.white,
           ),
         ),
         actions: [
@@ -29,6 +30,7 @@ class TelegramChatsView extends StatelessWidget {
             },
             icon: const Icon(
               Icons.arrow_forward_ios_sharp,
+              color: Colors.white,
             ),
           ),
         ],

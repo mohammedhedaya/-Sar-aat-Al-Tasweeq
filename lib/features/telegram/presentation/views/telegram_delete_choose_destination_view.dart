@@ -22,7 +22,9 @@ class TelegramDeleteChooseDestinationView extends StatelessWidget {
             Flexible(
               child: Text(
                 "launchaddwithease".tr(context: context),
-                style: AppStyles.style20W800,
+                style: AppStyles.style20W800.copyWith(
+                  color: Colors.white,
+                ),
               ),
             ),
             SvgPicture.asset(
@@ -37,6 +39,7 @@ class TelegramDeleteChooseDestinationView extends StatelessWidget {
             },
             icon: const Icon(
               Icons.arrow_forward_ios_sharp,
+              color: Colors.white,
             ),
           ),
         ],
