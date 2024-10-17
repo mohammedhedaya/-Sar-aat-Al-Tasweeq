@@ -193,17 +193,10 @@ class _FacebookChooseGroupsViewBody2State
                 context: context,
                 barrierColor: const Color(0xffFFF9F9).withOpacity(0.33),
                 builder: (context) {
-                  return CustomShowDialog(
+                  return CustomShowRechargeDialog(
                     onTap: () {
                       context.push('/sendingChoosenGroupView');
                     },
-                    image: Assets.imagesRechargeWallet,
-                    textButton: "next".tr(context: context),
-                    content: Text(
-                      "recharge".tr(context: context),
-                      style: AppStyles.style32W700,
-                      textAlign: TextAlign.center,
-                    ),
                   );
                 },
               );
