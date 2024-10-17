@@ -37,7 +37,7 @@ class _LaunchAdChooseGroupToSendViewBody2State
               right: 22.w,
             ),
             decoration: BoxDecoration(
-              color: const Color(0xff00C0CC),
+              color: isDark ? const Color(0xff00C0CC) : AppColors.blueLight,
               borderRadius: BorderRadius.circular(15.r),
               border: Border.all(
                 color: Colors.white,
@@ -52,7 +52,9 @@ class _LaunchAdChooseGroupToSendViewBody2State
                 SizedBox(height: 11.h),
                 Text(
                   '400',
-                  style: AppStyles.style14W400,
+                  style: AppStyles.style14W400.copyWith(
+                    color: Colors.white,
+                  ),
                 ),
               ],
             ),
@@ -99,19 +101,24 @@ class _LaunchAdChooseGroupToSendViewBody2State
                       EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5.r),
-                    gradient: const LinearGradient(
-                      colors: [
-                        Color(0xff00C0CC),
-                        Color(0xff006066),
-                      ],
-                      begin: Alignment.centerLeft,
-                      end: Alignment.centerRight,
-                    ),
+                    color: isDark ? null : AppColors.blueLight,
+                    gradient: isDark
+                        ? const LinearGradient(
+                            colors: [
+                              Color(0xff00C0CC),
+                              Color(0xff006066),
+                            ],
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                          )
+                        : null,
                   ),
                   child: Center(
                     child: Text(
                       "recharge".tr(context: context),
-                      style: AppStyles.style14W400,
+                      style: AppStyles.style14W400.copyWith(
+                        color: Colors.white,
+                      ),
                       textAlign: TextAlign.center,
                     ),
                   ),
@@ -218,19 +225,24 @@ class _LaunchAdChooseGroupToSendViewBody2State
               padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 4.h),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5.r),
-                gradient: const LinearGradient(
-                  colors: [
-                    Color(0xff00C0CC),
-                    Color(0xff006066),
-                  ],
-                  begin: Alignment.centerLeft,
-                  end: Alignment.centerRight,
-                ),
+                color: isDark ? null : AppColors.blueLight,
+                gradient: isDark
+                    ? const LinearGradient(
+                        colors: [
+                          Color(0xff00C0CC),
+                          Color(0xff006066),
+                        ],
+                        begin: Alignment.centerLeft,
+                        end: Alignment.centerRight,
+                      )
+                    : null,
               ),
               child: Center(
                 child: Text(
                   "send".tr(context: context),
-                  style: AppStyles.style14W400,
+                  style: AppStyles.style14W400.copyWith(
+                    color: Colors.white,
+                  ),
                   textAlign: TextAlign.center,
                 ),
               ),

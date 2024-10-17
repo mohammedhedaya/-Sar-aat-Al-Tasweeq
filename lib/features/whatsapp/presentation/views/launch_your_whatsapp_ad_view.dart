@@ -100,6 +100,7 @@ class _LaunchYourWhatsappAdViewState extends State<LaunchYourWhatsappAdView> {
             },
             icon: const Icon(
               Icons.arrow_forward_ios_sharp,
+              color: Colors.white,
             ),
           ),
         ],

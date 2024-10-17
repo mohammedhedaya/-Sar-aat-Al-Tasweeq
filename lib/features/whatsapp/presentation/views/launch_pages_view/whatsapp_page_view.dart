@@ -104,7 +104,7 @@ class _WhatsappPageViewState extends State<WhatsappPageView> {
                     "chooseDestination".tr(context: context),
                     style: AppStyles.style14W400.copyWith(
                       color: isDark
-                          ? const Color(0xff000000)
+                          ? const Color(0xffffffff)
                           : const Color(0xffffffff),
                     ),
                     textAlign: TextAlign.center,
