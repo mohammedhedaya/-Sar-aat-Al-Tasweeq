@@ -108,8 +108,7 @@ class _LaunchYourTiktokAdViewBodyState
               hintStyle: AppStyles.style16W600.copyWith(
                 color: const Color(0xffB0B0B0),
               ),
-                    maxLines: 3,
-
+              maxLines: 3,
             ),
             SizedBox(height: 21.h),
             CustomAuthTextField(
@@ -167,19 +166,24 @@ class _LaunchYourTiktokAdViewBodyState
                       EdgeInsets.symmetric(horizontal: 22.w, vertical: 4.h),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5.r),
-                    gradient: const LinearGradient(
-                      colors: [
-                        Color(0xff00C0CC),
-                        Color(0xff006066),
-                      ],
-                      begin: Alignment.centerLeft,
-                      end: Alignment.centerRight,
-                    ),
+                    color: isDark ? null : Colors.orange,
+                    gradient: isDark
+                        ? const LinearGradient(
+                            colors: [
+                              Color(0xff00C0CC),
+                              Color(0xff006066),
+                            ],
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                          )
+                        : null,
                   ),
                   child: Center(
                     child: Text(
                       "send".tr(context: context),
-                      style: AppStyles.style14W400,
+                      style: AppStyles.style14W400.copyWith(
+                        color: Colors.white,
+                      ),
                       textAlign: TextAlign.center,
                     ),
                   ),

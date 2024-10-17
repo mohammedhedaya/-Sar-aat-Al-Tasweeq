@@ -6,7 +6,6 @@ import 'package:go_router/go_router.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
-import '../../../auth/presentation/widgets/auth_btn.dart';
 import '../../../auth/presentation/widgets/auth_text_field.dart';
 import '../../../whatsapp/presentation/widgets/custom_show_dialog.dart';
 
@@ -64,29 +63,31 @@ class TiktokViewBody extends StatelessWidget {
                   onChanged: (value) {},
                   hintStyle: AppStyles.style14W400.copyWith(
                     color:
-                        isDark ? const Color(0xffBABABA) : AppColors.whiteColor,
+                        isDark ? const Color(0xffBABABA) : AppColors.blackColor,
                   ),
                   hintText: "username".tr(context: context),
                   textAlign: TextAlign.center,
-                  fiiledColor:
-                      isDark ? Colors.white.withOpacity(0.10) : AppColors.gray,
+                  fiiledColor: isDark
+                      ? Colors.white.withOpacity(0.10)
+                      : AppColors.whiteColor,
                 ),
                 SizedBox(height: 35.h),
                 CustomAuthTextField(
                   onChanged: (value) {},
                   hintStyle: AppStyles.style14W400.copyWith(
                     color:
-                        isDark ? const Color(0xffBABABA) : AppColors.whiteColor,
+                        isDark ? const Color(0xffBABABA) : AppColors.blackColor,
                   ),
                   hintText: "password".tr(context: context),
                   textAlign: TextAlign.center,
-                  fiiledColor:
-                      isDark ? Colors.white.withOpacity(0.10) : AppColors.gray,
+                  fiiledColor: isDark
+                      ? Colors.white.withOpacity(0.10)
+                      : AppColors.whiteColor,
                 ),
                 SizedBox(height: 36.h),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 40.w),
-                  child: CustomAuthBtn(
+                  child: ElevatedButton(
                     onPressed: () {
                       showDialog(
                         context: context,
@@ -104,7 +105,9 @@ class TiktokViewBody extends StatelessWidget {
                                 Text(
                                   "pleaseSubscribeToThePackage"
                                       .tr(context: context),
-                                  style: AppStyles.style15W900,
+                                  style: AppStyles.style15W900.copyWith(
+                                    color: Colors.white,
+                                  ),
                                   textAlign: TextAlign.center,
                                 ),
                                 SizedBox(width: 10.w),
@@ -117,7 +120,23 @@ class TiktokViewBody extends StatelessWidget {
                         },
                       );
                     },
-                    text: "log in".tr(context: context),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor:
+                          isDark ? AppColors.blackColor : Colors.orange,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(4.r),
+                      ),
+                      minimumSize: Size(double.infinity, 45.h),
+                    ),
+                    child: Text(
+                      "log in".tr(context: context),
+                      style: AppStyles.style14W600.copyWith(
+                        color: isDark
+                            ? AppColors.whiteColor
+                            : AppColors.whiteColor,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
                   ),
                 ),
                 SizedBox(height: 39.h),
@@ -141,6 +160,10 @@ class TiktokViewBody extends StatelessWidget {
                     SvgPicture.asset(
                       Assets.imagesLikeicon,
                       height: 40.h,
+                      colorFilter: ColorFilter.mode(
+                        isDark ? const Color(0xff00C0CC) : Colors.orange,
+                        BlendMode.srcIn,
+                      ),
                     ),
                   ],
                 ),
@@ -161,14 +184,17 @@ class TiktokViewBody extends StatelessWidget {
                       width: 119.w,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5.r),
-                        gradient: const LinearGradient(
-                          colors: [
-                            Color(0xff00C0CC),
-                            Color(0xff006066),
-                          ],
-                          begin: Alignment.centerLeft,
-                          end: Alignment.centerRight,
-                        ),
+                        color: isDark ? null : Colors.orange,
+                        gradient: isDark
+                            ? const LinearGradient(
+                                colors: [
+                                  Color(0xff00C0CC),
+                                  Color(0xff006066),
+                                ],
+                                begin: Alignment.centerLeft,
+                                end: Alignment.centerRight,
+                              )
+                            : null,
                       ),
                       child: Center(
                         child: Text(

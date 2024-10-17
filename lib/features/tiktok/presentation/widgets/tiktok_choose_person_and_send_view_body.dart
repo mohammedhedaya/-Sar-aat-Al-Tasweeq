@@ -212,14 +212,17 @@ class _TiktokChoosePersonAndSendViewBodyState
                         ),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(5.r),
-                          gradient: const LinearGradient(
-                            colors: [
-                              Color(0xff00C0CC),
-                              Color(0xff006066),
-                            ],
-                            begin: Alignment.centerLeft,
-                            end: Alignment.centerRight,
-                          ),
+                          color: isDark ? null : Colors.orange,
+                          gradient: isDark
+                              ? const LinearGradient(
+                                  colors: [
+                                    Color(0xff00C0CC),
+                                    Color(0xff006066),
+                                  ],
+                                  begin: Alignment.centerLeft,
+                                  end: Alignment.centerRight,
+                                )
+                              : null,
                         ),
                         child: Center(
                           child: Text(
