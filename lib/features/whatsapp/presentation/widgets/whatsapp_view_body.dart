@@ -78,7 +78,9 @@ class WhatsappViewBody extends StatelessWidget {
                               Text(
                                 "pleaseSubscribeToThePackage"
                                     .tr(context: context),
-                                style: AppStyles.style15W900,
+                                style: AppStyles.style15W900.copyWith(
+                                  color: Colors.white,
+                                ),
                                 textAlign: TextAlign.center,
                               ),
                               SizedBox(width: 10.w),
@@ -115,7 +117,9 @@ class WhatsappViewBody extends StatelessWidget {
                               Text(
                                 "pleaseSubscribeToThePackage"
                                     .tr(context: context),
-                                style: AppStyles.style15W900,
+                                style: AppStyles.style15W900.copyWith(
+                                  color: Colors.white,
+                                ),
                                 textAlign: TextAlign.center,
                               ),
                               SizedBox(width: 10.w),

@@ -64,7 +64,9 @@ class _LaunchYourTelegramAdViewBodyState
                 ),
                 child: Text(
                   "telegram".tr(context: context),
-                  style: AppStyles.style10W800,
+                  style: AppStyles.style10W800.copyWith(
+                    color: isDark ? Colors.black : Colors.white,
+                  ),
                 ),
               ),
               TextButton(
@@ -86,7 +88,9 @@ class _LaunchYourTelegramAdViewBodyState
                 ),
                 child: Text(
                   "Contacts".tr(context: context),
-                  style: AppStyles.style10W800,
+                  style: AppStyles.style10W800.copyWith(
+                    color: isDark ? Colors.black : Colors.white,
+                  ),
                 ),
               ),
               TextButton(
@@ -134,7 +138,9 @@ class _LaunchYourTelegramAdViewBodyState
                     ),
                     child: Text(
                       "chats".tr(context: context),
-                      style: AppStyles.style10W800,
+                      style: AppStyles.style10W800.copyWith(
+                        color: isDark ? Colors.black : Colors.white,
+                      ),
                     ),
                   ),
                   Positioned(

@@ -67,18 +67,23 @@ class _ChooseTelegramGroupToSendViewBody1State
                   padding: const EdgeInsets.all(24),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5.r),
-                    gradient: const LinearGradient(
-                      colors: [
-                        Color(0xff00C0CC),
-                        Color(0xff006066),
-                      ],
-                      begin: Alignment.centerLeft,
-                      end: Alignment.centerRight,
-                    ),
+                    color: isDark ? null : AppColors.blueLight,
+                    gradient: isDark
+                        ? const LinearGradient(
+                            colors: [
+                              Color(0xff00C0CC),
+                              Color(0xff006066),
+                            ],
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                          )
+                        : null,
                   ),
                   child: Text(
                     "recharge".tr(context: context),
-                    style: AppStyles.style14W400,
+                    style: AppStyles.style14W400.copyWith(
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ),
@@ -171,19 +176,24 @@ class _ChooseTelegramGroupToSendViewBody1State
               padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 4.h),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5.r),
-                gradient: const LinearGradient(
-                  colors: [
-                    Color(0xff00C0CC),
-                    Color(0xff006066),
-                  ],
-                  begin: Alignment.centerLeft,
-                  end: Alignment.centerRight,
-                ),
+                color: isDark ? null : AppColors.blueLight,
+                gradient: isDark
+                    ? const LinearGradient(
+                        colors: [
+                          Color(0xff00C0CC),
+                          Color(0xff006066),
+                        ],
+                        begin: Alignment.centerLeft,
+                        end: Alignment.centerRight,
+                      )
+                    : null,
               ),
               child: Center(
                 child: Text(
                   "next".tr(context: context),
-                  style: AppStyles.style14W400,
+                  style: AppStyles.style14W400.copyWith(
+                    color: Colors.white,
+                  ),
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -200,7 +210,8 @@ class _ChooseTelegramGroupToSendViewBody1State
                 TextSpan(
                   text: ' حراج وشراء ',
                   style: AppStyles.style13W600.copyWith(
-                    color: const Color(0xff00C0CC),
+                    color:
+                        isDark ? const Color(0xff00C0CC) : AppColors.blueLight,
                   ),
                 ),
                 const TextSpan(
@@ -213,7 +224,8 @@ class _ChooseTelegramGroupToSendViewBody1State
                 TextSpan(
                   text: "(1200)",
                   style: AppStyles.style13W600.copyWith(
-                    color: const Color(0xff00C0CC),
+                    color:
+                        isDark ? const Color(0xff00C0CC) : AppColors.blueLight,
                   ),
                 ),
               ],
@@ -237,7 +249,7 @@ class _ChooseTelegramGroupToSendViewBody1State
               right: 22.w,
             ),
             decoration: BoxDecoration(
-              color: const Color(0xff00C0CC),
+              color: isDark ? const Color(0xff00C0CC) : AppColors.blueLight,
               borderRadius: BorderRadius.circular(15.r),
               border: Border.all(
                 color: Colors.white,
@@ -252,7 +264,9 @@ class _ChooseTelegramGroupToSendViewBody1State
                 SizedBox(height: 11.h),
                 Text(
                   '400',
-                  style: AppStyles.style14W400,
+                  style: AppStyles.style14W400.copyWith(
+                    color: Colors.white,
+                  ),
                 ),
               ],
             ),

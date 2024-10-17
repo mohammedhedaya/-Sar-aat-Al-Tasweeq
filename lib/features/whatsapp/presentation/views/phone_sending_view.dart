@@ -152,19 +152,24 @@ class PhoneSendingView extends StatelessWidget {
                       ),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5.r),
-                        gradient: const LinearGradient(
-                          colors: [
-                            Color(0xff00C0CC),
-                            Color(0xff006066),
-                          ],
-                          begin: Alignment.centerLeft,
-                          end: Alignment.centerRight,
-                        ),
+                        color: isDark ? null : AppColors.blueLight,
+                        gradient: isDark
+                            ? const LinearGradient(
+                                colors: [
+                                  Color(0xff00C0CC),
+                                  Color(0xff006066),
+                                ],
+                                begin: Alignment.centerLeft,
+                                end: Alignment.centerRight,
+                              )
+                            : null,
                       ),
                       child: Center(
                         child: Text(
                           "cancel".tr(context: context),
-                          style: AppStyles.style14W400,
+                          style: AppStyles.style14W400.copyWith(
+                            color: Colors.white,
+                          ),
                           textAlign: TextAlign.center,
                         ),
                       ),

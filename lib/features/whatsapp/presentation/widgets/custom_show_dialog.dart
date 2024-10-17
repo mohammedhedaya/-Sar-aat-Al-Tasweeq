@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -19,6 +20,7 @@ class CustomShowDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return AlertDialog(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15.r),
@@ -36,21 +38,26 @@ class CustomShowDialog extends StatelessWidget {
               width: 119.w,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5.r),
-                gradient: const LinearGradient(
-                  colors: [
-                    Color(0xff00C0CC),
-                    Color(0xff006066),
-                  ],
-                  begin: Alignment.centerLeft,
-                  end: Alignment.centerRight,
-                  // begin: Alignment.centerLeft,
-                  // end: Alignment.centerRight,
-                ),
+                color: isDark ? null : Colors.orange,
+                gradient: isDark
+                    ? const LinearGradient(
+                        colors: [
+                          Color(0xff00C0CC),
+                          Color(0xff006066),
+                        ],
+                        begin: Alignment.centerLeft,
+                        end: Alignment.centerRight,
+                        // begin: Alignment.centerLeft,
+                        // end: Alignment.centerRight,
+                      )
+                    : null,
               ),
               child: Center(
                 child: Text(
                   textButton,
-                  style: AppStyles.style14W700,
+                  style: AppStyles.style14W700.copyWith(
+                    color: Colors.white,
+                  ),
                   textAlign: TextAlign.center,
                 ),
               ),

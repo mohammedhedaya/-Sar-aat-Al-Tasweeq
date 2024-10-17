@@ -147,7 +147,7 @@ class SendingChoosenGroupView extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.13),
+                  SizedBox(height: MediaQuery.of(context).size.height * 0.11),
                   InkWell(
                     onTap: () {
                       showDialog(

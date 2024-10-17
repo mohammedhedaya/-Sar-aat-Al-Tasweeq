@@ -73,20 +73,25 @@ class TelegramDeletePageView extends StatelessWidget {
                 width: 200.w,
                 padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 4.h),
                 decoration: BoxDecoration(
+                  color: isDark ? null : AppColors.blueLight,
                   borderRadius: BorderRadius.circular(5.r),
-                  gradient: const LinearGradient(
-                    colors: [
-                      Color(0xff00C0CC),
-                      Color(0xff006066),
-                    ],
-                    begin: Alignment.centerLeft,
-                    end: Alignment.centerRight,
-                  ),
+                  gradient: isDark
+                      ? const LinearGradient(
+                          colors: [
+                            Color(0xff00C0CC),
+                            Color(0xff006066),
+                          ],
+                          begin: Alignment.centerLeft,
+                          end: Alignment.centerRight,
+                        )
+                      : null,
                 ),
                 child: Center(
                   child: Text(
                     "chooseDestination".tr(context: context),
-                    style: AppStyles.style14W400,
+                    style: AppStyles.style14W400.copyWith(
+                      color: isDark ? AppColors.whiteColor : Colors.white,
+                    ),
                     textAlign: TextAlign.center,
                   ),
                 ),

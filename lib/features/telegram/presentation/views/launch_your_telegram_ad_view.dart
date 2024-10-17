@@ -1,8 +1,10 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shopping_chart/core/utils/app_colors.dart';
 import '../widgets/launch_your_telegram_ad_drawer.dart';
 import '../widgets/launch_your_telegram_ad_view_body.dart';
 import '../../../../core/utils/app_text_style.dart';
@@ -20,6 +22,7 @@ class _LaunchYourTelegramAdViewState extends State<LaunchYourTelegramAdView> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return Scaffold(
       key: _scaffoldKey,
       drawer: const LaunchYourTelegramAdDrawer(),
@@ -27,14 +30,17 @@ class _LaunchYourTelegramAdViewState extends State<LaunchYourTelegramAdView> {
       floatingActionButton: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(15.r)),
-          gradient: const LinearGradient(
-            colors: [
-              Color(0xFF006066),
-              Color(0xFF00C0CC),
-            ],
-            begin: Alignment.center,
-            end: Alignment.center,
-          ),
+          color: isDark ? null : AppColors.blueLight,
+          gradient: isDark
+              ? const LinearGradient(
+                  colors: [
+                    Color(0xFF006066),
+                    Color(0xFF00C0CC),
+                  ],
+                  begin: Alignment.center,
+                  end: Alignment.center,
+                )
+              : null,
           boxShadow: [
             BoxShadow(
               color: Colors.black.withOpacity(0.25),
@@ -77,7 +83,9 @@ class _LaunchYourTelegramAdViewState extends State<LaunchYourTelegramAdView> {
             Flexible(
               child: Text(
                 "launchaddwithease".tr(context: context),
-                style: AppStyles.style20W800,
+                style: AppStyles.style20W800.copyWith(
+                  color: Colors.white,
+                ),
               ),
             ),
             SvgPicture.asset(
@@ -92,6 +100,7 @@ class _LaunchYourTelegramAdViewState extends State<LaunchYourTelegramAdView> {
             },
             icon: const Icon(
               Icons.arrow_forward_ios_sharp,
+              color: Colors.white,
             ),
           ),
         ],
