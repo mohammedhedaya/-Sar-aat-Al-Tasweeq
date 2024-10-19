@@ -255,6 +255,7 @@ class CustomProfileData extends StatelessWidget {
                         Container(
                           height: 60.h,
                           padding: EdgeInsets.all(6.w),
+                          alignment: Alignment.center,
                           decoration: BoxDecoration(
                             color: AppColors.whiteColor.withOpacity(0.20),
                             borderRadius: BorderRadius.only(
@@ -267,21 +268,10 @@ class CustomProfileData extends StatelessWidget {
                                     color: AppColors.blueLight,
                                   ),
                           ),
-                          child: Row(
-                            children: [
-                              Text(
-                                '966+',
-                                style: AppStyles.style18W400,
-                                textAlign: TextAlign.start,
-                              ),
-                              Icon(
-                                Icons.keyboard_arrow_down_outlined,
-                                color: isDark
-                                    ? AppColors.whiteColor
-                                    : AppColors.blackColor,
-                                size: 35,
-                              ),
-                            ],
+                          child: Text(
+                            '966+',
+                            style: AppStyles.style18W400,
+                            textAlign: TextAlign.start,
                           ),
                         ),
                       ],
