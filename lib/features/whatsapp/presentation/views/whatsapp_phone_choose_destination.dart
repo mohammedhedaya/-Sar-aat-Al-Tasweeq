@@ -5,8 +5,6 @@ import 'package:go_router/go_router.dart';
 import 'package:shopping_chart/core/utils/app_text_style.dart';
 import 'package:shopping_chart/core/utils/assets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shopping_chart/features/whatsapp/presentation/views/whatsapp_choose_detination_pages_view/send_whatsapp/whatsapp_chats_page.dart';
-import 'package:shopping_chart/features/whatsapp/presentation/views/whatsapp_choose_detination_pages_view/send_whatsapp/whatsapp_groups_page.dart';
 import 'package:shopping_chart/features/whatsapp/presentation/views/whatsapp_choose_detination_pages_view/send_whatsapp/whatsapp_send_to_all_page.dart';
 import '../../../../core/utils/app_colors.dart';
 
@@ -92,141 +90,51 @@ class _WhatsappPhoneChooseDestinationViewBodyState
           ),
           SizedBox(height: 40.h),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Expanded(
-                child: InkWell(
-                  onTap: () {
-                    _onButtonTapped(0);
-                  },
-                  child: Container(
-                    padding: const EdgeInsets.all(8),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5.r),
-                      color: _currentPage == 0
-                          ? AppColors.whiteColor
-                          : const Color(0xff999999),
-                      boxShadow: [
-                        _currentPage == 0
-                            ? BoxShadow(
-                                color: AppColors.whiteColor.withOpacity(0.25),
-                                spreadRadius: 3,
-                                blurRadius: 5,
-                                offset: const Offset(0, 0),
-                              )
-                            : const BoxShadow(),
-                      ],
-                    ),
-                    child: Column(
-                      children: [
-                        Text(
-                          "Contacts".tr(context: context),
-                          style: AppStyles.style17W800.copyWith(
-                            color: _currentPage == 0
-                                ? const Color(0xff2F2F2F)
-                                : Colors.white,
-                          ),
-                        ),
-                        Text(
-                          "4000",
-                          style: AppStyles.style17W800.copyWith(
-                            color: const Color(0xff2F2F2F),
-                            fontWeight: FontWeight.w200,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(width: 25.w),
-              Expanded(
-                child: InkWell(
-                  onTap: () {
-                    _onButtonTapped(1);
-                  },
-                  child: Container(
-                    padding: const EdgeInsets.all(8),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5.r),
-                      color: _currentPage == 1
-                          ? AppColors.whiteColor
-                          : const Color(0xff999999),
-                      boxShadow: [
-                        _currentPage == 1
-                            ? BoxShadow(
-                                color: AppColors.whiteColor.withOpacity(0.25),
-                                spreadRadius: 3,
-                                blurRadius: 5,
-                                offset: const Offset(0, 0),
-                              )
-                            : const BoxShadow(),
-                      ],
-                    ),
-                    child: Column(
-                      children: [
-                        Text(
-                          "chats".tr(context: context),
-                          style: _currentPage == 1
-                              ? AppStyles.style17W800.copyWith(
-                                  color: const Color(0xff2F2F2F),
+                child: Align(
+                  alignment: AlignmentDirectional.topStart,
+                  child: InkWell(
+                    onTap: () {
+                      _onButtonTapped(0);
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.all(8),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5.r),
+                        color: _currentPage == 0
+                            ? AppColors.whiteColor
+                            : const Color(0xff999999),
+                        boxShadow: [
+                          _currentPage == 0
+                              ? BoxShadow(
+                                  color: AppColors.whiteColor.withOpacity(0.25),
+                                  spreadRadius: 3,
+                                  blurRadius: 5,
+                                  offset: const Offset(0, 0),
                                 )
-                              : AppStyles.style17W800,
-                        ),
-                        Text(
-                          "1000",
-                          style: AppStyles.style17W800.copyWith(
-                            color: const Color(0xff2F2F2F),
-                            fontWeight: FontWeight.w200,
+                              : const BoxShadow(),
+                        ],
+                      ),
+                      child: Column(
+                        children: [
+                          Text(
+                            "Contacts".tr(context: context),
+                            style: AppStyles.style17W800.copyWith(
+                              color: _currentPage == 0
+                                  ? const Color(0xff2F2F2F)
+                                  : Colors.white,
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(width: 25.w),
-              Expanded(
-                child: InkWell(
-                  onTap: () {
-                    _onButtonTapped(2);
-                  },
-                  child: Container(
-                    padding: const EdgeInsets.all(8),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5.r),
-                      color: _currentPage == 2
-                          ? AppColors.whiteColor
-                          : const Color(0xff999999),
-                      boxShadow: [
-                        _currentPage == 2
-                            ? BoxShadow(
-                                color: AppColors.whiteColor.withOpacity(0.25),
-                                spreadRadius: 3,
-                                blurRadius: 5,
-                                offset: const Offset(0, 0),
-                              )
-                            : const BoxShadow(),
-                      ],
-                    ),
-                    child: Column(
-                      children: [
-                        Text(
-                          "groups".tr(context: context),
-                          style: _currentPage == 2
-                              ? AppStyles.style17W800.copyWith(
-                                  color: const Color(0xff2F2F2F),
-                                )
-                              : AppStyles.style17W800,
-                        ),
-                        Text(
-                          "3000",
-                          style: AppStyles.style17W800.copyWith(
-                            color: const Color(0xff2F2F2F),
-                            fontWeight: FontWeight.w200,
+                          Text(
+                            "4000",
+                            style: AppStyles.style17W800.copyWith(
+                              color: const Color(0xff2F2F2F),
+                              fontWeight: FontWeight.w200,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -245,9 +153,9 @@ class _WhatsappPhoneChooseDestinationViewBodyState
                 // Page 1: All
                 WhatsappSendToAllPage(),
                 // Page 2: Chats
-                WhatsappSendToChatsPage(),
-                // Page 3: Groups
-                WhatsappSendToGroupsPage(),
+                // WhatsappSendToChatsPage(),
+                // // Page 3: Groups
+                // WhatsappSendToGroupsPage(),
               ],
             ),
           ),

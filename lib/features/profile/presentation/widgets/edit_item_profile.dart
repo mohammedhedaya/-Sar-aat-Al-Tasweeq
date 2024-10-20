@@ -227,8 +227,8 @@ class EditItemProfile extends StatelessWidget {
                             style: AppStyles.style18W400,
                           ),
                           const Icon(
-                            Icons.keyboard_arrow_down,
-                            color: AppColors.blackColor,
+                            Icons.arrow_drop_down,
+                            color: Colors.black45,
                           ),
                         ],
                       ),
