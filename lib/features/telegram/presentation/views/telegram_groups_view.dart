@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../core/utils/app_text_style.dart';
@@ -17,18 +18,17 @@ class TelegramGroupsView extends StatelessWidget {
         automaticallyImplyLeading: false,
         elevation: 0,
         title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Flexible(
-              child: Text(
-                "launchaddwithease".tr(context: context),
-                style: AppStyles.style20W800.copyWith(
-                  color: Colors.white,
-                ),
+            Text(
+              "Expandyoursalesrange".tr(context: context),
+              style: AppStyles.style17W800.copyWith(
+                fontWeight: FontWeight.w700,
+                color: Colors.white,
               ),
             ),
+            SizedBox(width: 9.w),
             SvgPicture.asset(
-              Assets.imagesRocket,
+              Assets.imagesStartMarktingYourProject,
             ),
           ],
         ),
