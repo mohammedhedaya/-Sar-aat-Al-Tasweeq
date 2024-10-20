@@ -19,13 +19,17 @@ class WhatsappAddSuggestionViewBody extends StatelessWidget {
     return SingleChildScrollView(
       child: Container(
         margin: EdgeInsets.symmetric(horizontal: 25.w),
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage(
+            image: const AssetImage(
               Assets.imagesAddSuggestion,
             ),
             opacity: 0.19,
-            alignment: Alignment(0.3, -1.0),
+            colorFilter: ColorFilter.mode(
+              isDark ? Colors.white : Colors.black,
+              BlendMode.srcIn,
+            ),
+            alignment: const Alignment(0.3, -1.0),
             scale: 4,
           ),
         ),
