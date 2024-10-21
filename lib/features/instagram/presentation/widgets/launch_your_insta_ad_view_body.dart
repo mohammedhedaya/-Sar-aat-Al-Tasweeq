@@ -147,7 +147,8 @@ class _LaunchYourInstaAdViewBodyState extends State<LaunchYourInstaAdViewBody> {
               width: 200.w,
               child: CustomAuthBtn(
                 onPressed: () {
-                  addInstagramTrendsModalSheet(context);
+                  context.push("/addHashtagsView");
+                  // addInstagramTrendsModalSheet(context);
                 },
                 text: "# Add hashtags".tr(context: context),
               ),

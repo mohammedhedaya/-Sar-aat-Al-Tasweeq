@@ -2,6 +2,14 @@
 class Assets {
   Assets._();
   
+  /// Assets for imagesActivePackageLight
+  /// assets/images/activePackageLight.svg
+  static const String imagesActivePackageLight = "assets/images/activePackageLight.svg";
+
+  /// Assets for imagesActiveWallet
+  /// assets/images/activeWallet.svg
+  static const String imagesActiveWallet = "assets/images/activeWallet.svg";
+
   /// Assets for imagesAddFile
   /// assets/images/addFile.svg
   static const String imagesAddFile = "assets/images/addFile.svg";
@@ -41,6 +49,10 @@ class Assets {
   /// Assets for imagesArrowForwardLoginPage
   /// assets/images/arrowForwardLoginPage.svg
   static const String imagesArrowForwardLoginPage = "assets/images/arrowForwardLoginPage.svg";
+
+  /// Assets for imagesBGDiamondLight
+  /// assets/images/BGDiamondLight.png
+  static const String imagesBGDiamondLight = "assets/images/BGDiamondLight.png";
 
   /// Assets for imagesBgSharingScreen
   /// assets/images/bg_sharing_screen.svg
@@ -150,6 +162,10 @@ class Assets {
   /// assets/images/homeInDrawer.svg
   static const String imagesHomeInDrawer = "assets/images/homeInDrawer.svg";
 
+  /// Assets for imagesHomeactive
+  /// assets/images/homeactive.svg
+  static const String imagesHomeactive = "assets/images/homeactive.svg";
+
   /// Assets for imagesHomeicon
   /// assets/images/homeicon.svg
   static const String imagesHomeicon = "assets/images/homeicon.svg";
@@ -193,6 +209,10 @@ class Assets {
   /// Assets for imagesJewelInDiamondWallet
   /// assets/images/jewelInDiamondWallet.svg
   static const String imagesJewelInDiamondWallet = "assets/images/jewelInDiamondWallet.svg";
+
+  /// Assets for imagesJewelintopscreenlight
+  /// assets/images/jewelintopscreenlight.svg
+  static const String imagesJewelintopscreenlight = "assets/images/jewelintopscreenlight.svg";
 
   /// Assets for imagesJewelnTopScreen
   /// assets/images/jewelnTopScreen.svg
@@ -417,6 +437,10 @@ class Assets {
   /// Assets for imagesWallet
   /// assets/images/wallet.svg
   static const String imagesWallet = "assets/images/wallet.svg";
+
+  /// Assets for imagesWalletIconLight
+  /// assets/images/walletIconLight.svg
+  static const String imagesWalletIconLight = "assets/images/walletIconLight.svg";
 
   /// Assets for imagesWalletLine
   /// assets/images/wallet-line.svg

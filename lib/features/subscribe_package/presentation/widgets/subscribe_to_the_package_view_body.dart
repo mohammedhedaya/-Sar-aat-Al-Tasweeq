@@ -181,7 +181,7 @@ class _SubscribeToThePackageViewBodyState
                                                 ),
                                               ),
                                               child: Text(
-                                                "7.99 ${"usd".tr(context: context)}"
+                                                "7.99${r"$".tr(context: context)}"
                                                     .tr(context: context),
                                                 style: TextStyle(
                                                   fontSize: 13.sp,

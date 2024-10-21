@@ -30,13 +30,13 @@ class UserBottomNavBarWidget extends StatelessWidget {
           tooltip: "Home",
           label: 'Home',
           activeIcon: ActiveNavBarContainer(
-            image: Assets.imagesHomeicon,
+            image: Assets.imagesHomeactive,
             height: 29.h,
           ),
           icon: SvgPicture.asset(
             Assets.imagesHomeicon,
             colorFilter: const ColorFilter.mode(
-              AppColors.darkGray,
+              AppColors.whiteColor,
               BlendMode.srcIn,
             ),
           ),
@@ -44,17 +44,14 @@ class UserBottomNavBarWidget extends StatelessWidget {
         BottomNavigationBarItem(
           tooltip: "Wallet",
           label: 'Wallet',
-          activeIcon: const ActiveNavBarContainer(
-            image: Assets.imagesWalleticon,
-            // height: 25.h,
+          activeIcon: ActiveNavBarContainer(
+            image: Assets.imagesActiveWallet,
+            height: 29.h,
           ),
-          // activeIcon: SvgPicture.asset(
-          //   Assets.imagesWalleticon,
-          // ),
           icon: SvgPicture.asset(
             Assets.imagesWalleticon,
             colorFilter: const ColorFilter.mode(
-              AppColors.darkGray,
+              AppColors.whiteColor,
               BlendMode.srcIn,
             ),
           ),
@@ -62,17 +59,14 @@ class UserBottomNavBarWidget extends StatelessWidget {
         BottomNavigationBarItem(
           tooltip: "Package",
           label: 'Package',
-          // activeIcon: SvgPicture.asset(
-          //   Assets.imagesPackageicon,
-          // ),
           activeIcon: ActiveNavBarContainer(
-            image: Assets.imagesPackageicon,
+            image: Assets.imagesActivePackageLight,
             height: 29.h,
           ),
           icon: SvgPicture.asset(
             Assets.imagesPackageicon,
             colorFilter: const ColorFilter.mode(
-              AppColors.darkGray,
+              AppColors.whiteColor,
               BlendMode.srcIn,
             ),
           ),
@@ -84,13 +78,10 @@ class UserBottomNavBarWidget extends StatelessWidget {
             image: Assets.imagesMenuicon,
             height: 29.h,
           ),
-          // activeIcon: SvgPicture.asset(
-          //   Assets.imagesMenuicon,
-          // ),
           icon: SvgPicture.asset(
             Assets.imagesMenuicon,
             colorFilter: const ColorFilter.mode(
-              AppColors.darkGray,
+              AppColors.whiteColor,
               BlendMode.srcIn,
             ),
           ),

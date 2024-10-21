@@ -39,11 +39,17 @@ class _ViewBodyOfDiamondWalletState extends State<ViewBodyOfDiamondWallet> {
     ];
 
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage(Assets.imagesBgdiamond),
+          image: isDark
+              ? const AssetImage(
+                  Assets.imagesBgdiamond,
+                )
+              : const AssetImage(
+                  Assets.imagesBGDiamondLight,
+                ),
           alignment: Alignment.topCenter,
-          scale: 3.5,
+          // scale: 3.5,
         ),
       ),
       child: Column(
@@ -52,10 +58,15 @@ class _ViewBodyOfDiamondWalletState extends State<ViewBodyOfDiamondWallet> {
           Align(
             child: Column(
               children: [
-                SvgPicture.asset(
-                  Assets.imagesJewelnTopScreen,
-                  fit: BoxFit.cover,
-                ),
+                isDark
+                    ? SvgPicture.asset(
+                        Assets.imagesJewelnTopScreen,
+                        fit: BoxFit.cover,
+                      )
+                    : SvgPicture.asset(
+                        Assets.imagesJewelintopscreenlight,
+                        fit: BoxFit.cover,
+                      ),
                 SizedBox(height: 20.h),
                 Text(
                   "diamond_wallet".tr(context: context),
@@ -166,7 +177,7 @@ class _ViewBodyOfDiamondWalletState extends State<ViewBodyOfDiamondWallet> {
                                       ),
                                     ),
                                     child: Text(
-                                      '${(diamondData[index]['price'] * sarToUsdRate).toStringAsFixed(2)} ${"usd".tr(context: context)}',
+                                      '${(diamondData[index]['price'] * sarToUsdRate).toStringAsFixed(2)}${r"$".tr(context: context)}',
                                       style: TextStyle(
                                         fontSize: 13.sp,
                                         fontWeight: FontWeight.w600,
