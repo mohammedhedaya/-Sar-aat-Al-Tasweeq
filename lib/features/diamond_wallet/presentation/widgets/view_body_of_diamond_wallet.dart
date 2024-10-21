@@ -115,20 +115,82 @@ class _ViewBodyOfDiamondWalletState extends State<ViewBodyOfDiamondWallet> {
                               style: AppStyles.style16W600,
                             ),
                             const Spacer(),
-                            GestureDetector(
-                              onTap: () {
-                                setState(() {
-                                  // Toggle between SAR and USD
-                                  isSar = !isSar;
-                                });
-                              },
-                              child: Text(
-                                isSar
-                                    ? '${diamondData[index]['price']} ${"sar".tr(context: context)}'
-                                    : '${(diamondData[index]['price'] * sarToUsdRate).toStringAsFixed(2)} ${"usd".tr(context: context)}',
-                                style: AppStyles.style16W600,
-                              ),
+                            Row(
+                              children: [
+                                InkWell(
+                                  onTap: () {
+                                    setState(() {
+                                      isSar = !isSar;
+                                    });
+                                  },
+                                  child: Container(
+                                    height: 32.h,
+                                    alignment: Alignment.center,
+                                    padding: const EdgeInsets.all(5),
+                                    decoration: BoxDecoration(
+                                      color: isSar
+                                          ? const Color(0xff114F80)
+                                          : const Color(0xffD9D9D9),
+                                      borderRadius: const BorderRadius.only(
+                                        topRight: Radius.circular(3),
+                                        bottomRight: Radius.circular(3),
+                                      ),
+                                    ),
+                                    child: Text(
+                                      '${diamondData[index]['price']} ${"sar".tr(context: context)}',
+                                      style: TextStyle(
+                                        fontSize: 13.sp,
+                                        fontWeight: FontWeight.w600,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                InkWell(
+                                  onTap: () {
+                                    setState(() {
+                                      isSar = !isSar;
+                                    });
+                                  },
+                                  child: Container(
+                                    height: 32.h,
+                                    alignment: Alignment.center,
+                                    padding: const EdgeInsets.all(5),
+                                    decoration: BoxDecoration(
+                                      color: !isSar
+                                          ? const Color(0xff114F80)
+                                          : const Color(0xffD9D9D9),
+                                      borderRadius: const BorderRadius.only(
+                                        topRight: Radius.circular(3),
+                                        bottomRight: Radius.circular(3),
+                                      ),
+                                    ),
+                                    child: Text(
+                                      '${(diamondData[index]['price'] * sarToUsdRate).toStringAsFixed(2)} ${"usd".tr(context: context)}',
+                                      style: TextStyle(
+                                        fontSize: 13.sp,
+                                        fontWeight: FontWeight.w600,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
+                            // GestureDetector(
+                            //   onTap: () {
+                            //     setState(() {
+                            //       // Toggle between SAR and USD
+                            //       isSar = !isSar;
+                            //     });
+                            //   },
+                            //   child: Text(
+                            //     isSar
+                            //         ? '${diamondData[index]['price']} ${"sar".tr(context: context)}'
+                            //         : '${(diamondData[index]['price'] * sarToUsdRate).toStringAsFixed(2)} ${"usd".tr(context: context)}',
+                            //     style: AppStyles.style16W600,
+                            //   ),
+                            // ),
                             SizedBox(width: 10.w),
                           ],
                         ),
