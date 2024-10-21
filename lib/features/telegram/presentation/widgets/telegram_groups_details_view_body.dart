@@ -1,4 +1,5 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
+import 'package:country_code_picker/country_code_picker.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -91,15 +92,16 @@ class _TelegramGroupsDetailsViewBodyState
           thickness: 1,
           color: isDark ? Colors.white : Colors.black,
         ),
-        ListTile(
-          title: Text(
-            "المملكة العربية السعودية",
-            style: AppStyles.style17W800,
-          ),
-          leading: SvgPicture.asset(
-            Assets.imagesSuadiFlag,
-            height: 40.h,
-          ),
+        CountryCodePicker(
+          onChanged: (value) {},
+          initialSelection: 'SA',
+          showCountryOnly: false,
+          showOnlyCountryWhenClosed: true,
+          favorite: const ["+966", "SA"],
+          showDropDownButton: true,
+          alignLeft: true,
+          flagWidth: 40.w,
+          showFlagDialog: true,
         ),
         Divider(
           thickness: 1,
