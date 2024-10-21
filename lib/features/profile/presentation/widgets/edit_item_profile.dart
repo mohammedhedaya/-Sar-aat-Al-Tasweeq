@@ -1,10 +1,8 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
+import 'package:country_code_picker/country_code_picker.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:shopping_chart/core/utils/assets.dart';
-
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 import 'custom_buttom_save_and_exit.dart';
@@ -165,82 +163,116 @@ class EditItemProfile extends StatelessWidget {
                   textAlign: TextAlign.start,
                 ),
               ),
-              Container(
-                decoration: BoxDecoration(
-                  color: AppColors.whiteColor.withOpacity(0.10),
-                  borderRadius: BorderRadius.circular(20.r),
-                ),
-                child: TextFormField(
-                  initialValue: '0501234567',
-                  keyboardType: TextInputType.phone,
-                  decoration: InputDecoration(
-                    enabledBorder: isDark
-                        ? null
-                        : OutlineInputBorder(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(10.r),
-                            ),
-                            borderSide: const BorderSide(
-                              color: AppColors.blueLight,
-                            ),
-                          ),
-                    suffixIcon:
-                        //  CountryCodePicker(
-                        //   onChanged: (value) {},
-                        //   initialSelection: 'SA',
-                        //   favorite: const ['+966', 'SA'],
-                        //   barrierColor: const Color(0xfffff9f9).withOpacity(0.33),
-                        //   textOverflow: TextOverflow.ellipsis,
-                        //   boxDecoration: BoxDecoration(
-                        //     borderRadius: BorderRadius.circular(8.r),
-                        //   ),
-                        //   // alignLeft: true,
-                        //   padding: EdgeInsets.zero,
-                        //   // showCountryOnly: true,
-                        //   // showOnlyCountryWhenClosed: true,
-                        //   // showFlagDialog: true,
-                        //   showDropDownButton: true,
-                        //   flagDecoration: BoxDecoration(
-                        //     borderRadius: BorderRadius.circular(4.r),
-                        //   ),
-                        // ),
-                        Container(
+              Row(
+                children: [
+                  Expanded(
+                    flex: 2,
+                    child: Container(
                       decoration: BoxDecoration(
-                        // color: isDark ? null : AppColors.blueLight,
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(10.r),
-                          bottomLeft: Radius.circular(10.r),
-                        ),
-                        border: Border.all(
-                          color:
-                              isDark ? Colors.transparent : AppColors.blueLight,
-                        ),
+                        color: AppColors.whiteColor.withOpacity(0.10),
+                        borderRadius: BorderRadius.circular(20.r),
                       ),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          SizedBox(width: 5.w),
-                          SvgPicture.asset(Assets.imagesSuadiFlag),
-                          SizedBox(width: 5.w),
-                          Text(
-                            "966+",
-                            style: AppStyles.style18W400,
+                      child: TextFormField(
+                        initialValue: '0501234567',
+                        keyboardType: TextInputType.phone,
+                        decoration: InputDecoration(
+                          enabledBorder: isDark
+                              ? null
+                              : OutlineInputBorder(
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(10.r),
+                                  ),
+                                  borderSide: const BorderSide(
+                                    color: AppColors.blueLight,
+                                  ),
+                                ),
+                          // suffixIcon:
+                          //     //  CountryCodePicker(
+                          //     //   onChanged: (value) {},
+                          //     //   initialSelection: 'SA',
+                          //     //   favorite: const ['+966', 'SA'],
+                          //     //   barrierColor: const Color(0xfffff9f9).withOpacity(0.33),
+                          //     //   textOverflow: TextOverflow.ellipsis,
+                          //     //   boxDecoration: BoxDecoration(
+                          //     //     borderRadius: BorderRadius.circular(8.r),
+                          //     //   ),
+                          //     //   // alignLeft: true,
+                          //     //   padding: EdgeInsets.zero,
+                          //     //   // showCountryOnly: true,
+                          //     //   // showOnlyCountryWhenClosed: true,
+                          //     //   // showFlagDialog: true,
+                          //     //   showDropDownButton: true,
+                          //     //   flagDecoration: BoxDecoration(
+                          //     //     borderRadius: BorderRadius.circular(4.r),
+                          //     //   ),
+                          //     // ),
+                          //     Container(
+                          //   decoration: BoxDecoration(
+                          //     // color: isDark ? null : AppColors.blueLight,
+                          //     borderRadius: BorderRadius.only(
+                          //       topLeft: Radius.circular(10.r),
+                          //       bottomLeft: Radius.circular(10.r),
+                          //     ),
+                          //     border: Border.all(
+                          //       color:
+                          //           isDark ? Colors.transparent : AppColors.blueLight,
+                          //     ),
+                          //   ),
+                          //   child: Row(
+                          //     mainAxisSize: MainAxisSize.min,
+                          //     children: [
+                          //       SizedBox(width: 5.w),
+                          //       SvgPicture.asset(Assets.imagesSuadiFlag),
+                          //       SizedBox(width: 5.w),
+                          //       Text(
+                          //         "966+",
+                          //         style: AppStyles.style18W400,
+                          //       ),
+                          //       const Icon(
+                          //         Icons.arrow_drop_down,
+                          //         color: Colors.black45,
+                          //       ),
+                          //     ],
+                          //   ),
+                          // ),
+                          border: InputBorder.none,
+                          contentPadding: EdgeInsets.symmetric(
+                            vertical: 15.h,
+                            horizontal: 12.w,
                           ),
-                          const Icon(
-                            Icons.arrow_drop_down,
-                            color: Colors.black45,
-                          ),
-                        ],
+                        ),
+                        style: AppStyles.style18W400,
                       ),
-                    ),
-                    border: InputBorder.none,
-                    contentPadding: EdgeInsets.symmetric(
-                      vertical: 15.h,
-                      horizontal: 12.w,
                     ),
                   ),
-                  style: AppStyles.style18W400,
-                ),
+                  SizedBox(width: 5.w),
+                  Expanded(
+                    child: Container(
+                      height: 60.h,
+                      decoration: BoxDecoration(
+                        color: AppColors.whiteColor.withOpacity(0.10),
+                        borderRadius: BorderRadius.circular(20.r),
+                        border: isDark
+                            ? null
+                            : Border.all(
+                                color: AppColors.blueLight,
+                              ),
+                      ),
+                      child: CountryCodePicker(
+                        initialSelection: "SA",
+                        favorite: const ['+966', 'SA'],
+                        // showCountryOnly: true,
+                        showFlagDialog: true,
+                        showDropDownButton: true,
+                        showFlag: false,
+                        textOverflow: TextOverflow.ellipsis,
+                        boxDecoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8.r),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),

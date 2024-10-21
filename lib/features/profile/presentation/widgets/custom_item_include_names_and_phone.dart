@@ -172,10 +172,7 @@ class CustomProfileData extends StatelessWidget {
                             padding: EdgeInsets.only(right: 16.w),
                             decoration: BoxDecoration(
                               color: AppColors.whiteColor.withOpacity(0.10),
-                              borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(20.r),
-                                bottomLeft: Radius.circular(20.r),
-                              ),
+                              borderRadius: BorderRadius.circular(20.r),
                               border: isDark
                                   ? null
                                   : Border.all(
@@ -192,34 +189,35 @@ class CustomProfileData extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Container(
-                          height: 60.h,
-                          padding: EdgeInsets.all(6.w),
-                          decoration: BoxDecoration(
-                            color: AppColors.whiteColor.withOpacity(0.20),
-                            borderRadius: BorderRadius.only(
-                              topRight: Radius.circular(20.r),
-                              bottomRight: Radius.circular(20.r),
+                        SizedBox(width: 5.w),
+                        Expanded(
+                          flex: 2,
+                          child: Container(
+                            height: 60.h,
+                            padding: EdgeInsets.all(6.w),
+                            decoration: BoxDecoration(
+                              color: AppColors.whiteColor.withOpacity(0.20),
+                              borderRadius: BorderRadius.circular(20.r),
+                              border: isDark
+                                  ? null
+                                  : Border.all(
+                                      color: AppColors.blueLight,
+                                    ),
                             ),
-                            border: isDark
-                                ? null
-                                : Border.all(
-                                    color: AppColors.blueLight,
-                                  ),
-                          ),
-                          child: Row(
-                            children: [
-                              Text(
-                                '966+',
-                                style: AppStyles.style18W400,
-                                textAlign: TextAlign.start,
-                              ),
-                              const Icon(
-                                Icons.keyboard_arrow_down_outlined,
-                                color: AppColors.whiteColor,
-                                size: 35,
-                              ),
-                            ],
+                            child: Row(
+                              children: [
+                                Text(
+                                  '966+',
+                                  style: AppStyles.style18W400,
+                                  textAlign: TextAlign.start,
+                                ),
+                                const Icon(
+                                  Icons.keyboard_arrow_down_outlined,
+                                  color: AppColors.whiteColor,
+                                  size: 35,
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ],
@@ -227,15 +225,13 @@ class CustomProfileData extends StatelessWidget {
                   : Row(
                       children: [
                         Expanded(
+                          flex: 2,
                           child: Container(
                             height: 60.h,
                             padding: EdgeInsets.only(right: 16.w),
                             decoration: BoxDecoration(
                               color: AppColors.whiteColor.withOpacity(0.10),
-                              borderRadius: BorderRadius.only(
-                                topRight: Radius.circular(20.r),
-                                bottomRight: Radius.circular(20.r),
-                              ),
+                              borderRadius: BorderRadius.circular(20.r),
                               border: isDark
                                   ? null
                                   : Border.all(
@@ -252,26 +248,26 @@ class CustomProfileData extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Container(
-                          height: 60.h,
-                          padding: EdgeInsets.all(6.w),
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                            color: AppColors.whiteColor.withOpacity(0.20),
-                            borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(20.r),
-                              bottomLeft: Radius.circular(20.r),
+                        SizedBox(width: 5.w),
+                        Expanded(
+                          child: Container(
+                            height: 60.h,
+                            padding: EdgeInsets.all(6.w),
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              color: AppColors.whiteColor.withOpacity(0.20),
+                              borderRadius: BorderRadius.circular(20.r),
+                              border: isDark
+                                  ? null
+                                  : Border.all(
+                                      color: AppColors.blueLight,
+                                    ),
                             ),
-                            border: isDark
-                                ? null
-                                : Border.all(
-                                    color: AppColors.blueLight,
-                                  ),
-                          ),
-                          child: Text(
-                            '966+',
-                            style: AppStyles.style18W400,
-                            textAlign: TextAlign.start,
+                            child: Text(
+                              '966+',
+                              style: AppStyles.style18W400,
+                              textAlign: TextAlign.start,
+                            ),
                           ),
                         ),
                       ],
