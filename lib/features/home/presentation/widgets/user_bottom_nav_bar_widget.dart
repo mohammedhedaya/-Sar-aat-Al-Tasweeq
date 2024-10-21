@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/assets.dart';
+import 'active_nav_bar_container.dart';
 
 class UserBottomNavBarWidget extends StatelessWidget {
   const UserBottomNavBarWidget({
@@ -27,8 +29,9 @@ class UserBottomNavBarWidget extends StatelessWidget {
         BottomNavigationBarItem(
           tooltip: "Home",
           label: 'Home',
-          activeIcon: SvgPicture.asset(
-            Assets.imagesHomeicon,
+          activeIcon: ActiveNavBarContainer(
+            image: Assets.imagesHomeicon,
+            height: 30.h,
           ),
           icon: SvgPicture.asset(
             Assets.imagesHomeicon,
@@ -41,9 +44,13 @@ class UserBottomNavBarWidget extends StatelessWidget {
         BottomNavigationBarItem(
           tooltip: "Wallet",
           label: 'Wallet',
-          activeIcon: SvgPicture.asset(
-            Assets.imagesWalleticon,
+          activeIcon: ActiveNavBarContainer(
+            image: Assets.imagesWalleticon,
+            height: 30.h,
           ),
+          // activeIcon: SvgPicture.asset(
+          //   Assets.imagesWalleticon,
+          // ),
           icon: SvgPicture.asset(
             Assets.imagesWalleticon,
             colorFilter: const ColorFilter.mode(
@@ -55,8 +62,12 @@ class UserBottomNavBarWidget extends StatelessWidget {
         BottomNavigationBarItem(
           tooltip: "Package",
           label: 'Package',
-          activeIcon: SvgPicture.asset(
-            Assets.imagesPackageicon,
+          // activeIcon: SvgPicture.asset(
+          //   Assets.imagesPackageicon,
+          // ),
+          activeIcon: ActiveNavBarContainer(
+            image: Assets.imagesPackageicon,
+            height: 30.h,
           ),
           icon: SvgPicture.asset(
             Assets.imagesPackageicon,
@@ -69,9 +80,13 @@ class UserBottomNavBarWidget extends StatelessWidget {
         BottomNavigationBarItem(
           tooltip: "Menu",
           label: 'Menu',
-          activeIcon: SvgPicture.asset(
-            Assets.imagesMenuicon,
+          activeIcon: ActiveNavBarContainer(
+            image: Assets.imagesMenuicon,
+            height: 30.h,
           ),
+          // activeIcon: SvgPicture.asset(
+          //   Assets.imagesMenuicon,
+          // ),
           icon: SvgPicture.asset(
             Assets.imagesMenuicon,
             colorFilter: const ColorFilter.mode(
