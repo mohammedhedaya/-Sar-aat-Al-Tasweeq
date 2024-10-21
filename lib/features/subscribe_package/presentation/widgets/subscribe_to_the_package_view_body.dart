@@ -114,52 +114,123 @@ class _SubscribeToThePackageViewBodyState
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     children: [
-                                      Text(
-                                        "packege_features".tr(context: context),
-                                        style: AppStyles.style14W600.copyWith(
-                                          color: isDark
-                                              ? AppColors.whiteColor
-                                              : AppColors.blackColor,
+                                      Expanded(
+                                        child: Text(
+                                          "packege_features"
+                                              .tr(context: context),
+                                          style: AppStyles.style14W600.copyWith(
+                                            color: isDark
+                                                ? AppColors.whiteColor
+                                                : AppColors.blackColor,
+                                          ),
                                         ),
                                       ),
                                       Row(
-                                        // crossAxisAlignment:
-                                        //     CrossAxisAlignment.start,
                                         children: [
                                           InkWell(
-                                            onTap: () {},
-                                            child: Text(
-                                              isSAR
-                                                  ? "30_saudi_riyal"
-                                                      .tr(context: context)
-                                                  : "7.99_dollars"
-                                                      .tr(context: context),
-                                              style: AppStyles.style14W600
-                                                  .copyWith(
-                                                color: isDark
-                                                    ? AppColors.whiteColor
-                                                    : AppColors.blackColor,
+                                            onTap: () {
+                                              setState(() {
+                                                isSAR = true;
+                                              });
+                                            },
+                                            child: Container(
+                                              height: 32.h,
+                                              alignment: Alignment.center,
+                                              padding: const EdgeInsets.all(5),
+                                              decoration: BoxDecoration(
+                                                color: isSAR
+                                                    ? const Color(0xff114F80)
+                                                    : const Color(0xffD9D9D9),
+                                                borderRadius:
+                                                    const BorderRadius.only(
+                                                  topRight: Radius.circular(3),
+                                                  bottomRight:
+                                                      Radius.circular(3),
+                                                ),
+                                              ),
+                                              child: Text(
+                                                "30 ${"sar".tr(context: context)}"
+                                                    .tr(context: context),
+                                                style: TextStyle(
+                                                  fontSize: 13.sp,
+                                                  fontWeight: FontWeight.w600,
+                                                  color: Colors.white,
+                                                ),
                                               ),
                                             ),
                                           ),
-                                          SizedBox(width: 5.w),
-                                          GestureDetector(
+                                          InkWell(
                                             onTap: () {
                                               setState(() {
-                                                isSAR = !isSAR;
+                                                isSAR = false;
                                               });
                                             },
-                                            child: Icon(
-                                              isSAR
-                                                  ? Icons.currency_exchange
-                                                  : Icons.currency_exchange,
-                                              color: isDark
-                                                  ? AppColors.whiteColor
-                                                  : AppColors.blackColor,
+                                            child: Container(
+                                              height: 32.h,
+                                              alignment: Alignment.center,
+                                              padding: const EdgeInsets.all(5),
+                                              decoration: BoxDecoration(
+                                                color: !isSAR
+                                                    ? const Color(0xff114F80)
+                                                    : const Color(0xffD9D9D9),
+                                                borderRadius:
+                                                    const BorderRadius.only(
+                                                  topRight: Radius.circular(3),
+                                                  bottomRight:
+                                                      Radius.circular(3),
+                                                ),
+                                              ),
+                                              child: Text(
+                                                "7.99 ${"usd".tr(context: context)}"
+                                                    .tr(context: context),
+                                                style: TextStyle(
+                                                  fontSize: 13.sp,
+                                                  fontWeight: FontWeight.w600,
+                                                  color: Colors.white,
+                                                ),
+                                              ),
                                             ),
                                           ),
                                         ],
                                       ),
+                                      // Row(
+                                      //   // crossAxisAlignment:
+                                      //   //     CrossAxisAlignment.start,
+                                      //   children: [
+                                      //     InkWell(
+                                      //       onTap: () {},
+                                      //       child: Text(
+                                      //         isSAR
+                                      //             ? "30_saudi_riyal"
+                                      //                 .tr(context: context)
+                                      //             : "7.99_dollars"
+                                      //                 .tr(context: context),
+                                      //         style: AppStyles.style14W600
+                                      //             .copyWith(
+                                      //           color: isDark
+                                      //               ? AppColors.whiteColor
+                                      //               : AppColors.blackColor,
+                                      //         ),
+                                      //       ),
+                                      //     ),
+                                      //     SizedBox(width: 5.w),
+                                      //     GestureDetector(
+                                      //       onTap: () {
+                                      //         setState(() {
+                                      //           isSAR = !isSAR;
+                                      //         });
+                                      //       },
+                                      //       child: Icon(
+                                      //         isSAR
+                                      //             ? Icons.currency_exchange
+                                      //             : Icons.currency_exchange,
+                                      //         color: isDark
+                                      //             ? AppColors.whiteColor
+                                      //             : AppColors.blackColor,
+                                      //       ),
+                                      //     ),
+                                      //   ],
+                                      // ),
                                     ],
                                   ),
                                   SizedBox(height: 20.h),
