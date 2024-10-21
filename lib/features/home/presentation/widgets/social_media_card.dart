@@ -33,14 +33,20 @@ class SocialMediaCard extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15.r),
                   color: AppColors.darkGray,
-                ),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(15.r),
-                  child: Image.asset(
-                    imagePath,
+                  image: DecorationImage(
+                    image: AssetImage(
+                      imagePath,
+                    ),
                     fit: BoxFit.cover,
                   ),
                 ),
+                // child: ClipRRect(
+                //   borderRadius: BorderRadius.circular(15.r),
+                //   child: Image.asset(
+                //     imagePath,
+                //     fit: BoxFit.cover,
+                //   ),
+                // ),
               ),
             ),
           ),

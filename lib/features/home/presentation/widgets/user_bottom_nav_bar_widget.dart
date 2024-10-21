@@ -31,7 +31,7 @@ class UserBottomNavBarWidget extends StatelessWidget {
           label: 'Home',
           activeIcon: ActiveNavBarContainer(
             image: Assets.imagesHomeicon,
-            height: 30.h,
+            height: 29.h,
           ),
           icon: SvgPicture.asset(
             Assets.imagesHomeicon,
@@ -44,9 +44,9 @@ class UserBottomNavBarWidget extends StatelessWidget {
         BottomNavigationBarItem(
           tooltip: "Wallet",
           label: 'Wallet',
-          activeIcon: ActiveNavBarContainer(
+          activeIcon: const ActiveNavBarContainer(
             image: Assets.imagesWalleticon,
-            height: 30.h,
+            // height: 25.h,
           ),
           // activeIcon: SvgPicture.asset(
           //   Assets.imagesWalleticon,
@@ -67,7 +67,7 @@ class UserBottomNavBarWidget extends StatelessWidget {
           // ),
           activeIcon: ActiveNavBarContainer(
             image: Assets.imagesPackageicon,
-            height: 30.h,
+            height: 29.h,
           ),
           icon: SvgPicture.asset(
             Assets.imagesPackageicon,
@@ -82,7 +82,7 @@ class UserBottomNavBarWidget extends StatelessWidget {
           label: 'Menu',
           activeIcon: ActiveNavBarContainer(
             image: Assets.imagesMenuicon,
-            height: 30.h,
+            height: 29.h,
           ),
           // activeIcon: SvgPicture.asset(
           //   Assets.imagesMenuicon,

@@ -114,6 +114,10 @@ class Assets {
   /// assets/images/emailLogo.png
   static const String imagesEmailLogo = "assets/images/emailLogo.png";
 
+  /// Assets for imagesEmailLogoo
+  /// assets/images/EmailLogoo.png
+  static const String imagesEmailLogoo = "assets/images/EmailLogoo.png";
+
   /// Assets for imagesEmailsvg
   /// assets/images/emailsvg.svg
   static const String imagesEmailsvg = "assets/images/emailsvg.svg";
@@ -125,6 +129,10 @@ class Assets {
   /// Assets for imagesFacebookLogo
   /// assets/images/facebook_logo.png
   static const String imagesFacebookLogo = "assets/images/facebook_logo.png";
+
+  /// Assets for imagesFacebookLogoo
+  /// assets/images/facebookLogoo.png
+  static const String imagesFacebookLogoo = "assets/images/facebookLogoo.png";
 
   /// Assets for imagesGaleryIcon
   /// assets/images/galeryIcon.svg
@@ -169,6 +177,10 @@ class Assets {
   /// Assets for imagesInstagramIcon
   /// assets/images/instagramIcon.svg
   static const String imagesInstagramIcon = "assets/images/instagramIcon.svg";
+
+  /// Assets for imagesInstagramLogo
+  /// assets/images/InstagramLogo.png
+  static const String imagesInstagramLogo = "assets/images/InstagramLogo.png";
 
   /// Assets for imagesInstagramNewGradientLogoAnimation
   /// assets/images/instagram-new-gradient-logo-animation.gif
@@ -294,6 +306,10 @@ class Assets {
   /// assets/images/SHAREICON.svg
   static const String imagesSHAREICON = "assets/images/SHAREICON.svg";
 
+  /// Assets for imagesSMSLogo
+  /// assets/images/SMSLogo.png
+  static const String imagesSMSLogo = "assets/images/SMSLogo.png";
+
   /// Assets for imagesSendforward
   /// assets/images/sendforward.svg
   static const String imagesSendforward = "assets/images/sendforward.svg";
@@ -374,9 +390,17 @@ class Assets {
   /// assets/images/telegramImage.webp
   static const String imagesTelegramImage = "assets/images/telegramImage.webp";
 
+  /// Assets for imagesTelegramLogo
+  /// assets/images/telegramLogo.png
+  static const String imagesTelegramLogo = "assets/images/telegramLogo.png";
+
   /// Assets for imagesTelegramlogo
   /// assets/images/telegramlogo.svg
   static const String imagesTelegramlogo = "assets/images/telegramlogo.svg";
+
+  /// Assets for imagesTiktokLogo
+  /// assets/images/TiktokLogo.png
+  static const String imagesTiktokLogo = "assets/images/TiktokLogo.png";
 
   /// Assets for imagesTiktoksvg
   /// assets/images/tiktoksvg.svg
@@ -418,6 +442,10 @@ class Assets {
   /// assets/images/whatsappGroupicon.svg
   static const String imagesWhatsappGroupicon = "assets/images/whatsappGroupicon.svg";
 
+  /// Assets for imagesWhatsappLogo
+  /// assets/images/whatsappLogo.png
+  static const String imagesWhatsappLogo = "assets/images/whatsappLogo.png";
+
   /// Assets for imagesWhatsapplogo
   /// assets/images/whatsapplogo.svg
   static const String imagesWhatsapplogo = "assets/images/whatsapplogo.svg";
@@ -433,6 +461,10 @@ class Assets {
   /// Assets for imagesXIcon
   /// assets/images/XIcon.svg
   static const String imagesXIcon = "assets/images/XIcon.svg";
+
+  /// Assets for imagesXLogo
+  /// assets/images/XLogo.png
+  static const String imagesXLogo = "assets/images/XLogo.png";
 
   /// Assets for imagesXerror
   /// assets/images/Xerror.svg

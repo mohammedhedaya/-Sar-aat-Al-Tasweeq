@@ -1,5 +1,4 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -8,7 +7,6 @@ import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
 import 'home_carousel_slider.dart';
-import 'social_media_card.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -61,68 +59,84 @@ class HomeViewBody extends StatelessWidget {
                 child: Column(
                   children: [
                     SizedBox(height: 10.h),
-                    SocialMediaCard(
+                    InkWell(
                       onTap: () {
                         context.push('/whatsappView');
                       },
-                      imagePath: Assets.imagesWhatsAppImage,
-                      label: 'whatsapp'.tr(context: context),
+                      child: Image.asset(
+                        Assets.imagesWhatsappLogo,
+                        height: 150.h,
+                      ),
                     ),
                     SizedBox(height: 30.h),
-                    SocialMediaCard(
+                    InkWell(
                       onTap: () {
                         context.push('/telegramView');
                       },
-                      imagePath: Assets.imagesTelegramImage,
-                      label: 'telegram'.tr(context: context),
+                      child: Image.asset(
+                        Assets.imagesTelegramLogo,
+                        height: 150.h,
+                      ),
                     ),
                     SizedBox(height: 30.h),
-                    SocialMediaCard(
+                    InkWell(
                       onTap: () {
                         context.push('/instagramView');
                       },
-                      imagePath: Assets.imagesInstagramNewGradientLogoAnimation,
-                      label: 'instagram'.tr(context: context),
+                      child: Image.asset(
+                        Assets.imagesInstagramLogo,
+                        height: 150.h,
+                      ),
                     ),
                     SizedBox(height: 30.h),
-                    SocialMediaCard(
+                    InkWell(
                       onTap: () {
                         context.push('/tiktokView');
                       },
-                      imagePath: Assets.imagesTIKTOK,
-                      label: 'TikTok'.tr(context: context),
+                      child: Image.asset(
+                        Assets.imagesTiktokLogo,
+                        height: 150.h,
+                      ),
                     ),
                     SizedBox(height: 30.h),
-                    SocialMediaCard(
+                    InkWell(
                       onTap: () {
                         context.push('/xView');
                       },
-                      imagePath: Assets.imagesXtwitter,
-                      label: 'x'.tr(context: context),
+                      child: Image.asset(
+                        Assets.imagesXLogo,
+                        height: 150.h,
+                      ),
                     ),
                     SizedBox(height: 30.h),
-                    SocialMediaCard(
+                    InkWell(
                       onTap: () {
                         context.push('/facebookView');
                       },
-                      imagePath: Assets.imagesFacebookLogo,
-                      label: 'facebook'.tr(context: context),
+                      child: Image.asset(
+                        Assets.imagesFacebookLogoo,
+                        height: 150.h,
+                      ),
                     ),
                     SizedBox(height: 30.h),
-                    SocialMediaCard(
+                    InkWell(
                       onTap: () {
                         context.push('/smsView');
                       },
-                      imagePath: Assets.imagesSmsLogo,
-                      label: 'sms'.tr(context: context),
+                      child: Image.asset(
+                        Assets.imagesSMSLogo,
+                        height: 150.h,
+                      ),
                     ),
                     SizedBox(height: 30.h),
-                    SocialMediaCard(
+                    InkWell(
                       onTap: () {
                         context.push('/emailView');
                       },
-                      imagePath: Assets.imagesEmailLogo,
-                      label: 'Email'.tr(context: context),
+                      child: Image.asset(
+                        Assets.imagesEmailLogoo,
+                        height: 150.h,
+                      ),
                     ),
                     SizedBox(height: 30.h),
                   ],
