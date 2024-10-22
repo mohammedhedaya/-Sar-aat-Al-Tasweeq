@@ -82,6 +82,14 @@ class Assets {
   /// assets/images/choosegroup.svg
   static const String imagesChoosegroup = "assets/images/choosegroup.svg";
 
+  /// Assets for imagesCloseNavBar
+  /// assets/images/closeNavBar.svg
+  static const String imagesCloseNavBar = "assets/images/closeNavBar.svg";
+
+  /// Assets for imagesCloseNavBarDark
+  /// assets/images/closeNavBarDark.svg
+  static const String imagesCloseNavBarDark = "assets/images/closeNavBarDark.svg";
+
   /// Assets for imagesCoffee
   /// assets/images/coffee.png
   static const String imagesCoffee = "assets/images/coffee.png";
@@ -157,6 +165,10 @@ class Assets {
   /// Assets for imagesHomeBackground
   /// assets/images/homeBackground.png
   static const String imagesHomeBackground = "assets/images/homeBackground.png";
+
+  /// Assets for imagesHomeDark
+  /// assets/images/homeDark.svg
+  static const String imagesHomeDark = "assets/images/homeDark.svg";
 
   /// Assets for imagesHomeInDrawer
   /// assets/images/homeInDrawer.svg
@@ -285,6 +297,10 @@ class Assets {
   /// Assets for imagesNotifications
   /// assets/images/notifications.svg
   static const String imagesNotifications = "assets/images/notifications.svg";
+
+  /// Assets for imagesPackageDark
+  /// assets/images/packageDark.svg
+  static const String imagesPackageDark = "assets/images/packageDark.svg";
 
   /// Assets for imagesPackageSubscribed
   /// assets/images/packageSubscribed.png
@@ -437,6 +453,10 @@ class Assets {
   /// Assets for imagesWallet
   /// assets/images/wallet.svg
   static const String imagesWallet = "assets/images/wallet.svg";
+
+  /// Assets for imagesWalletDark
+  /// assets/images/walletDark.svg
+  static const String imagesWalletDark = "assets/images/walletDark.svg";
 
   /// Assets for imagesWalletIconLight
   /// assets/images/walletIconLight.svg

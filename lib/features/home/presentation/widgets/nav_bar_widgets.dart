@@ -16,6 +16,7 @@ class UserMainLayoutScreen extends StatefulWidget {
 
 class _UserMainLayoutScreenState extends State<UserMainLayoutScreen> {
   int currentIndex = 0;
+  bool isDrawerOpen = false;
   late List<Widget> screens;
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -42,6 +43,14 @@ class _UserMainLayoutScreenState extends State<UserMainLayoutScreen> {
     ];
   }
 
+  void toggleDrawer() {
+    if (isDrawerOpen) {
+      _scaffoldKey.currentState?.closeDrawer();
+    } else {
+      _scaffoldKey.currentState?.openDrawer();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,14 +58,21 @@ class _UserMainLayoutScreenState extends State<UserMainLayoutScreen> {
       resizeToAvoidBottomInset: false,
       body: screens[currentIndex],
       drawer: const CustomMenuDrawer(),
+      onDrawerChanged: (isOpened) {
+        setState(() {
+          isDrawerOpen = isOpened;
+        });
+      },
       bottomNavigationBar: UserBottomNavBarWidget(
         currentIndex: currentIndex,
+        isDrawerOpen: isDrawerOpen,
         onTap: (index) {
           if (index == 3) {
-            _scaffoldKey.currentState?.openDrawer();
+            toggleDrawer();
           } else {
             setState(() {
               currentIndex = index;
+              isDrawerOpen = false; // Reset drawer state when not on menu
             });
           }
         },

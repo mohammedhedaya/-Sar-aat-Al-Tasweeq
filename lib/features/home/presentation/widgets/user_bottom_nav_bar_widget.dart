@@ -11,12 +11,16 @@ class UserBottomNavBarWidget extends StatelessWidget {
     super.key,
     this.onTap,
     required this.currentIndex,
+    required this.isDrawerOpen,
   });
+
   final void Function(int)? onTap;
   final int currentIndex;
+  final bool isDrawerOpen;
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return BottomNavigationBar(
       onTap: onTap,
       currentIndex: currentIndex,
@@ -30,7 +34,7 @@ class UserBottomNavBarWidget extends StatelessWidget {
           tooltip: "Home",
           label: 'Home',
           activeIcon: ActiveNavBarContainer(
-            image: Assets.imagesHomeactive,
+            image: isDark ? Assets.imagesHomeDark : Assets.imagesHomeactive,
             height: 29.h,
           ),
           icon: SvgPicture.asset(
@@ -45,7 +49,7 @@ class UserBottomNavBarWidget extends StatelessWidget {
           tooltip: "Wallet",
           label: 'Wallet',
           activeIcon: ActiveNavBarContainer(
-            image: Assets.imagesActiveWallet,
+            image: isDark ? Assets.imagesWalletDark : Assets.imagesActiveWallet,
             height: 29.h,
           ),
           icon: SvgPicture.asset(
@@ -60,7 +64,9 @@ class UserBottomNavBarWidget extends StatelessWidget {
           tooltip: "Package",
           label: 'Package',
           activeIcon: ActiveNavBarContainer(
-            image: Assets.imagesActivePackageLight,
+            image: isDark
+                ? Assets.imagesPackageDark
+                : Assets.imagesActivePackageLight,
             height: 29.h,
           ),
           icon: SvgPicture.asset(
@@ -74,17 +80,29 @@ class UserBottomNavBarWidget extends StatelessWidget {
         BottomNavigationBarItem(
           tooltip: "Menu",
           label: 'Menu',
-          activeIcon: ActiveNavBarContainer(
-            image: Assets.imagesMenuicon,
-            height: 29.h,
-          ),
-          icon: SvgPicture.asset(
-            Assets.imagesMenuicon,
-            colorFilter: const ColorFilter.mode(
-              AppColors.whiteColor,
-              BlendMode.srcIn,
-            ),
-          ),
+          activeIcon: isDrawerOpen
+              ? ActiveNavBarContainer(
+                  image: Assets.imagesCloseNavBar,
+                  height: 29.h,
+                )
+              : ActiveNavBarContainer(
+                  image: Assets.imagesMenuicon,
+                  height: 29.h,
+                ),
+          icon: isDrawerOpen
+              ? ActiveNavBarContainer(
+                  image: isDark
+                      ? Assets.imagesCloseNavBarDark
+                      : Assets.imagesCloseNavBar,
+                  height: 29.h,
+                )
+              : SvgPicture.asset(
+                  Assets.imagesMenuicon,
+                  colorFilter: const ColorFilter.mode(
+                    AppColors.whiteColor,
+                    BlendMode.srcIn,
+                  ),
+                ),
         ),
       ],
     );

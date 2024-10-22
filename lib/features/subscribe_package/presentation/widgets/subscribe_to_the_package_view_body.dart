@@ -138,9 +138,29 @@ class _SubscribeToThePackageViewBodyState
                                               alignment: Alignment.center,
                                               padding: const EdgeInsets.all(5),
                                               decoration: BoxDecoration(
-                                                color: isSAR
-                                                    ? const Color(0xff114F80)
-                                                    : const Color(0xffD9D9D9),
+                                                color: !isSAR
+                                                    ? const Color(0xffD9D9D9)
+                                                    : (Theme.of(context)
+                                                                .brightness ==
+                                                            Brightness.light
+                                                        ? const Color(
+                                                            0xff114F80)
+                                                        : null),
+                                                gradient: isSAR &&
+                                                        Theme.of(context)
+                                                                .brightness ==
+                                                            Brightness.dark
+                                                    ? const LinearGradient(
+                                                        colors: [
+                                                          Color(0xff00C0CC),
+                                                          Color(0xff006066),
+                                                        ],
+                                                        begin: Alignment
+                                                            .centerLeft,
+                                                        end: Alignment
+                                                            .centerRight,
+                                                      )
+                                                    : null,
                                                 borderRadius:
                                                     const BorderRadius.only(
                                                   topRight: Radius.circular(3),
@@ -170,9 +190,29 @@ class _SubscribeToThePackageViewBodyState
                                               alignment: Alignment.center,
                                               padding: const EdgeInsets.all(5),
                                               decoration: BoxDecoration(
-                                                color: !isSAR
-                                                    ? const Color(0xff114F80)
-                                                    : const Color(0xffD9D9D9),
+                                                color: isSAR
+                                                    ? const Color(0xffD9D9D9)
+                                                    : (Theme.of(context)
+                                                                .brightness ==
+                                                            Brightness.light
+                                                        ? const Color(
+                                                            0xff114F80)
+                                                        : null),
+                                                gradient: !isSAR &&
+                                                        Theme.of(context)
+                                                                .brightness ==
+                                                            Brightness.dark
+                                                    ? const LinearGradient(
+                                                        colors: [
+                                                          Color(0xff00C0CC),
+                                                          Color(0xff006066),
+                                                        ],
+                                                        begin: Alignment
+                                                            .centerLeft,
+                                                        end: Alignment
+                                                            .centerRight,
+                                                      )
+                                                    : null,
                                                 borderRadius:
                                                     const BorderRadius.only(
                                                   topRight: Radius.circular(3),
@@ -193,44 +233,6 @@ class _SubscribeToThePackageViewBodyState
                                           ),
                                         ],
                                       ),
-                                      // Row(
-                                      //   // crossAxisAlignment:
-                                      //   //     CrossAxisAlignment.start,
-                                      //   children: [
-                                      //     InkWell(
-                                      //       onTap: () {},
-                                      //       child: Text(
-                                      //         isSAR
-                                      //             ? "30_saudi_riyal"
-                                      //                 .tr(context: context)
-                                      //             : "7.99_dollars"
-                                      //                 .tr(context: context),
-                                      //         style: AppStyles.style14W600
-                                      //             .copyWith(
-                                      //           color: isDark
-                                      //               ? AppColors.whiteColor
-                                      //               : AppColors.blackColor,
-                                      //         ),
-                                      //       ),
-                                      //     ),
-                                      //     SizedBox(width: 5.w),
-                                      //     GestureDetector(
-                                      //       onTap: () {
-                                      //         setState(() {
-                                      //           isSAR = !isSAR;
-                                      //         });
-                                      //       },
-                                      //       child: Icon(
-                                      //         isSAR
-                                      //             ? Icons.currency_exchange
-                                      //             : Icons.currency_exchange,
-                                      //         color: isDark
-                                      //             ? AppColors.whiteColor
-                                      //             : AppColors.blackColor,
-                                      //       ),
-                                      //     ),
-                                      //   ],
-                                      // ),
                                     ],
                                   ),
                                   SizedBox(height: 20.h),
