@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -11,6 +12,7 @@ class BodyOfPurchaseProcess extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 10.w),
       decoration: const BoxDecoration(
@@ -69,14 +71,23 @@ class BodyOfPurchaseProcess extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 4.h),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5.r),
-                gradient: const LinearGradient(
-                  colors: [
-                    Color(0xff00C0CC),
-                    Color(0xff006066),
-                  ],
-                  begin: Alignment.centerLeft,
-                  end: Alignment.centerRight,
-                ),
+                gradient: isDark
+                    ? const LinearGradient(
+                        colors: [
+                          Color(0xff00C0CC),
+                          Color(0xff006066),
+                        ],
+                        begin: Alignment.centerLeft,
+                        end: Alignment.centerRight,
+                      )
+                    : const LinearGradient(
+                        colors: [
+                          Color(0xffF5CC52),
+                          Color(0xff967E33),
+                        ],
+                        begin: Alignment.centerLeft,
+                        end: Alignment.centerRight,
+                      ),
               ),
               child: Text(
                 "${"pay".tr(context: context)} 40 ${"sar".tr(context: context)}",

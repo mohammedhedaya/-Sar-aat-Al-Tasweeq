@@ -48,7 +48,17 @@ class DiamondsPaymentGatewayViewBody extends StatelessWidget {
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(5.r),
-                  color: isDark ? AppColors.navBarColor : AppColors.blueLight,
+                  color: isDark ? AppColors.navBarColor : null,
+                  gradient: isDark
+                      ? null
+                      : const LinearGradient(
+                          colors: [
+                            Color(0xffF5CC52),
+                            Color(0xff967E33),
+                          ],
+                          begin: Alignment.centerLeft,
+                          end: Alignment.centerRight,
+                        ),
                 ),
                 child: TextButton.icon(
                   onPressed: () {},

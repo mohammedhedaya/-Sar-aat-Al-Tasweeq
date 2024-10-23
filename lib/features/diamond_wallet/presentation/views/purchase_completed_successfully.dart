@@ -78,7 +78,9 @@ class _PurchaseCompletedSuccessfullyState
                   SizedBox(height: MediaQuery.of(context).size.height * 0.2),
                   Text(
                     "donePurchase".tr(context: context),
-                    style: AppStyles.style22W600,
+                    style: AppStyles.style22W600.copyWith(
+                      color: isDark ? Colors.white : AppColors.blueLight,
+                    ),
                   ),
                   SizedBox(height: 25.h),
                   Container(
@@ -91,7 +93,7 @@ class _PurchaseCompletedSuccessfullyState
                     ),
                     margin: EdgeInsets.symmetric(horizontal: 25.w),
                     decoration: BoxDecoration(
-                      color: isDark ? null : AppColors.blueLight,
+                      // color: isDark ? null : AppColors.blueLight,
                       borderRadius: BorderRadius.circular(16.r),
                       gradient: isDark
                           ? LinearGradient(
@@ -102,7 +104,14 @@ class _PurchaseCompletedSuccessfullyState
                               begin: Alignment.centerRight,
                               end: Alignment.centerLeft,
                             )
-                          : null,
+                          : const LinearGradient(
+                              colors: [
+                                Color(0xffF5CC52),
+                                Color(0xff967E33),
+                              ],
+                              begin: Alignment.centerLeft,
+                              end: Alignment.centerRight,
+                            ),
                     ),
                     child: Column(
                       children: [
