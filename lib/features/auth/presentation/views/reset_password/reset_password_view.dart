@@ -64,7 +64,9 @@ class ResetPasswordView extends StatelessWidget {
                     ),
                     SizedBox(height: 30.h),
                     CustomAuthTextField(
-                      fiiledColor: AppColors.whiteColor.withOpacity(0.10),
+                      fiiledColor: isDark
+                          ? AppColors.whiteColor.withOpacity(0.10)
+                          : const Color(0xff85A0B7),
                       hintText: "email".tr(context: context),
                       keyboardType: TextInputType.emailAddress,
                       onChanged: (email) {},

@@ -65,6 +65,7 @@ class _ResetPasswordOTPViewState extends State<ResetPasswordOTPView> {
   Widget build(BuildContext context) {
     final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return Scaffold(
+      backgroundColor: isDark ? null : AppColors.blueLight,
       body: Column(
         children: [
           Expanded(
@@ -77,8 +78,9 @@ class _ResetPasswordOTPViewState extends State<ResetPasswordOTPView> {
                     "otp".tr(context: context),
                     textAlign: TextAlign.center,
                     style: AppStyles.style12W400.copyWith(
-                      color:
-                          isDark ? AppColors.whiteColor : AppColors.blackColor,
+                      color: isDark
+                          ? AppColors.whiteColor
+                          : const Color(0xff78838D),
                     ),
                   ),
                   SizedBox(height: 30.h),
@@ -114,7 +116,9 @@ class _ResetPasswordOTPViewState extends State<ResetPasswordOTPView> {
                       alignment: Alignment.centerLeft,
                       child: Text(
                         '0:$_start',
-                        style: AppStyles.style12W600,
+                        style: AppStyles.style12W600.copyWith(
+                          color: Colors.white,
+                        ),
                       ),
                     ),
                   ),
@@ -123,7 +127,7 @@ class _ResetPasswordOTPViewState extends State<ResetPasswordOTPView> {
             ),
           ),
           Container(
-            color: const Color(0xffABABAB),
+            color: isDark ? const Color(0xffABABAB) : AppColors.whiteLight,
             padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 15.h),
             child: Column(
               children: [
@@ -145,7 +149,9 @@ class _ResetPasswordOTPViewState extends State<ResetPasswordOTPView> {
                       value = "<"; // For backspace symbol
                     }
                     return Material(
-                      color: const Color(0xffABABAB),
+                      color: isDark
+                          ? const Color(0xffABABAB)
+                          : AppColors.whiteLight,
                       child: InkWell(
                         onTap: () {
                           setState(() {
@@ -161,7 +167,9 @@ class _ResetPasswordOTPViewState extends State<ResetPasswordOTPView> {
                           child: value == "<"
                               ? Icon(
                                   Icons.backspace_outlined,
-                                  color: Colors.black,
+                                  color: isDark
+                                      ? Colors.black
+                                      : AppColors.blueLight,
                                   size: 24.sp,
                                 )
                               : Text(
@@ -169,7 +177,9 @@ class _ResetPasswordOTPViewState extends State<ResetPasswordOTPView> {
                                   style: TextStyle(
                                     fontSize: 24.sp,
                                     fontWeight: FontWeight.w600,
-                                    color: Colors.black,
+                                    color: isDark
+                                        ? Colors.black
+                                        : AppColors.blueLight,
                                   ),
                                 ),
                         ),

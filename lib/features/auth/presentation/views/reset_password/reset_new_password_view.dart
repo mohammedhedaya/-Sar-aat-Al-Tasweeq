@@ -50,8 +50,9 @@ class ResetNewPasswordView extends StatelessWidget {
                             ),
                             SizedBox(height: 25.h),
                             CustomAuthTextField(
-                              fiiledColor:
-                                  AppColors.whiteColor.withOpacity(0.10),
+                              fiiledColor: isDark
+                                  ? AppColors.whiteColor.withOpacity(0.10)
+                                  : const Color(0xff85A0B7),
                               hintText: "",
                               textAlign: TextAlign.center,
                               suffixIcon: IconButton(
@@ -63,6 +64,7 @@ class ResetNewPasswordView extends StatelessWidget {
                                   cubit.obscurePasswordTextValue == true
                                       ? Icons.visibility_outlined
                                       : Icons.visibility_off_outlined,
+                                  color: Colors.white,
                                 ),
                               ),
                               obscureText: cubit.obscurePasswordTextValue,
@@ -97,8 +99,9 @@ class ResetNewPasswordView extends StatelessWidget {
                             ),
                             SizedBox(height: 23.h),
                             CustomAuthTextField(
-                              fiiledColor:
-                                  AppColors.whiteColor.withOpacity(0.10),
+                              fiiledColor: isDark
+                                  ? AppColors.whiteColor.withOpacity(0.10)
+                                  : const Color(0xff85A0B7),
                               hintText: "",
                               textAlign: TextAlign.center,
                               suffixIcon: IconButton(
@@ -110,6 +113,7 @@ class ResetNewPasswordView extends StatelessWidget {
                                   cubit.obscurePasswordTextValue == true
                                       ? Icons.visibility_outlined
                                       : Icons.visibility_off_outlined,
+                                  color: Colors.white,
                                 ),
                               ),
                               obscureText: cubit.obscurePasswordTextValue,
