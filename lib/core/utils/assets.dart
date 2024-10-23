@@ -262,6 +262,10 @@ class Assets {
   /// assets/images/logOutIcon.svg
   static const String imagesLogOutIcon = "assets/images/logOutIcon.svg";
 
+  /// Assets for imagesLoginCircleLight1
+  /// assets/images/loginCircleLight1.svg
+  static const String imagesLoginCircleLight1 = "assets/images/loginCircleLight1.svg";
+
   /// Assets for imagesLogincircle1
   /// assets/images/logincircle1.svg
   static const String imagesLogincircle1 = "assets/images/logincircle1.svg";

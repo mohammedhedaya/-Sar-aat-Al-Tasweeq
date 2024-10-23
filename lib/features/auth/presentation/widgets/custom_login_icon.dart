@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -12,6 +13,7 @@ class CustomLoginIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 31.w),
       child: Row(
@@ -28,9 +30,9 @@ class CustomLoginIcon extends StatelessWidget {
                 minHeight: 64.h,
                 minWidth: 64.w,
               ),
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: AppColors.loginBtn,
+                color: isDark ? AppColors.loginBtn : AppColors.blueLight,
               ),
               child: context.locale == const Locale('en')
                   ? Center(

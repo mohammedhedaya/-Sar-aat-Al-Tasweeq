@@ -45,7 +45,7 @@ class CreateAccountAndResetPassword extends StatelessWidget {
               child: Text(
                 "signup".tr(),
                 style: AppStyles.style18W900.copyWith(
-                  color: isDark ? AppColors.blackColor : AppColors.whiteColor,
+                  color: AppColors.blackColor,
                 ),
               ),
             ),

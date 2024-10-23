@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -19,6 +20,7 @@ class CustomLoginForm extends StatelessWidget {
       listener: (context, state) {},
       builder: (context, state) {
         AuthCubit cubit = BlocProvider.of<AuthCubit>(context);
+        final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
         return Form(
           key: cubit.loginFormKey,
           child: Stack(
@@ -31,7 +33,9 @@ class CustomLoginForm extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     CustomAuthTextField(
-                      fiiledColor: AppColors.whiteColor.withOpacity(0.10),
+                      fiiledColor: isDark
+                          ? AppColors.whiteColor.withOpacity(0.10)
+                          : const Color(0xff85A0B7),
                       hintText: "email".tr(context: context),
                       keyboardType: TextInputType.emailAddress,
                       onChanged: (email) {
@@ -50,7 +54,9 @@ class CustomLoginForm extends StatelessWidget {
                     ),
                     SizedBox(height: 20.h),
                     CustomAuthTextField(
-                      fiiledColor: AppColors.whiteColor.withOpacity(0.10),
+                      fiiledColor: isDark
+                          ? AppColors.whiteColor.withOpacity(0.10)
+                          : const Color(0xff85A0B7),
                       hintText: "password".tr(context: context),
                       suffixIcon: IconButton(
                         onPressed: () {
@@ -61,6 +67,7 @@ class CustomLoginForm extends StatelessWidget {
                           cubit.obscurePasswordTextValue == true
                               ? Icons.visibility_outlined
                               : Icons.visibility_off_outlined,
+                          color: Colors.white,
                         ),
                       ),
                       obscureText: cubit.obscurePasswordTextValue,

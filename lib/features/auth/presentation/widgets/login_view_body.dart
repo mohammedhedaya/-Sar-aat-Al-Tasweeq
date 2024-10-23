@@ -31,7 +31,7 @@ class LoginViewBody extends StatelessWidget {
                     Assets.imagesLogincircle3,
                     fit: BoxFit.fill,
                     colorFilter: const ColorFilter.mode(
-                      Color.fromARGB(255, 35, 132, 185),
+                      AppColors.yellowLight,
                       BlendMode.srcIn,
                     ),
                   ),
@@ -52,7 +52,7 @@ class LoginViewBody extends StatelessWidget {
                     Assets.imagesLogincircle2,
                     fit: BoxFit.fill,
                     colorFilter: const ColorFilter.mode(
-                      Color.fromARGB(255, 139, 188, 214),
+                      AppColors.blueLight,
                       BlendMode.srcIn,
                     ),
                   ),
@@ -69,12 +69,8 @@ class LoginViewBody extends StatelessWidget {
                     fit: BoxFit.fill,
                   )
                 : SvgPicture.asset(
-                    Assets.imagesLogincircle1,
+                    Assets.imagesLoginCircleLight1,
                     fit: BoxFit.fill,
-                    colorFilter: const ColorFilter.mode(
-                      Color.fromARGB(255, 100, 129, 144),
-                      BlendMode.srcIn,
-                    ),
                   ),
           ),
         ),
@@ -99,9 +95,9 @@ class LoginViewBody extends StatelessWidget {
                 child: Container(
                   height: 200.h,
                   width: 200.w,
-                  decoration: BoxDecoration(
-                    color: isDark ? AppColors.whiteColor : AppColors.blueLight,
-                    borderRadius: const BorderRadius.only(
+                  decoration: const BoxDecoration(
+                    color: AppColors.whiteColor,
+                    borderRadius: BorderRadius.only(
                       topRight: Radius.circular(300),
                     ),
                   ),

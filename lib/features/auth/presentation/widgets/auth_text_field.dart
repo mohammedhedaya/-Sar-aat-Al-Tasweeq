@@ -106,7 +106,7 @@ class CustomAuthTextField extends StatelessWidget {
         hintText: hintText,
         hintStyle: hintStyle ?? AppStyles.style18W400,
         filled: true,
-        fillColor: fiiledColor ?? AppColors.dimGray,
+        fillColor: fiiledColor ?? AppColors.whiteColor.withOpacity(0.10),
       ),
     );
   }

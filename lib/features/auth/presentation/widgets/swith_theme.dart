@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:adaptive_theme/adaptive_theme.dart';
+import 'package:shopping_chart/core/utils/app_colors.dart';
 import '../../../../core/utils/assets.dart';
 
 class SwithTheme extends StatefulWidget {
@@ -31,7 +32,7 @@ class _SwithThemeState extends State<SwithTheme> {
           height: 0.1.sw,
           constraints: BoxConstraints(minHeight: 39.h, minWidth: 95.h),
           decoration: BoxDecoration(
-            color: const Color(0xffD9D9D9),
+            color: isDark ? const Color(0xffD9D9D9) : AppColors.blueLight,
             borderRadius: BorderRadius.circular(30.r),
           ),
           child: Row(
@@ -49,7 +50,7 @@ class _SwithThemeState extends State<SwithTheme> {
                 },
                 child: Container(
                   decoration: BoxDecoration(
-                    color: isDark ? Colors.transparent : Colors.black,
+                    color: isDark ? Colors.transparent : null,
                     shape: BoxShape.circle,
                   ),
                   child: Padding(
@@ -57,7 +58,7 @@ class _SwithThemeState extends State<SwithTheme> {
                     child: SvgPicture.asset(
                       Assets.imagesLight,
                       colorFilter: ColorFilter.mode(
-                        isDark ? Colors.black : Colors.white,
+                        isDark ? Colors.black : AppColors.yellowLight,
                         BlendMode.srcIn,
                       ),
                     ),
@@ -77,7 +78,7 @@ class _SwithThemeState extends State<SwithTheme> {
                 },
                 child: Container(
                   decoration: BoxDecoration(
-                    color: isDark ? Colors.black : Colors.transparent,
+                    color: isDark ? Colors.black : Colors.white,
                     shape: BoxShape.circle,
                   ),
                   child: Padding(
@@ -85,7 +86,7 @@ class _SwithThemeState extends State<SwithTheme> {
                     child: SvgPicture.asset(
                       Assets.imagesDark,
                       colorFilter: ColorFilter.mode(
-                        isDark ? Colors.white : Colors.black,
+                        isDark ? Colors.white : AppColors.blueLight,
                         BlendMode.srcIn,
                       ),
                     ),

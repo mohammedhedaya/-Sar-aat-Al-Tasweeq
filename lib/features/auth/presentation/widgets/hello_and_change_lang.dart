@@ -21,7 +21,9 @@ class HelloAndChangeLang extends StatelessWidget {
           children: [
             Text(
               "hello".tr(context: context),
-              style: AppStyles.style46W400,
+              style: AppStyles.style46W400.copyWith(
+                color: Colors.white,
+              ),
             ),
             InkWell(
               onTap: () async {
@@ -35,7 +37,9 @@ class HelloAndChangeLang extends StatelessWidget {
               },
               child: Text(
                 context.locale == const Locale('en') ? "العربية" : "English",
-                style: AppStyles.style23W700,
+                style: AppStyles.style23W700.copyWith(
+                  color: Colors.white,
+                ),
               ),
             ),
           ],
