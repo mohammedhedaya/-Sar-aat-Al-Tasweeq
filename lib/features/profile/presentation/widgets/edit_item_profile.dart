@@ -170,7 +170,7 @@ class EditItemProfile extends StatelessWidget {
                     child: Container(
                       decoration: BoxDecoration(
                         color: AppColors.whiteColor.withOpacity(0.10),
-                        borderRadius: BorderRadius.circular(20.r),
+                        borderRadius: BorderRadius.circular(10.r),
                       ),
                       child: TextFormField(
                         initialValue: '0501234567',
@@ -179,9 +179,7 @@ class EditItemProfile extends StatelessWidget {
                           enabledBorder: isDark
                               ? null
                               : OutlineInputBorder(
-                                  borderRadius: BorderRadius.all(
-                                    Radius.circular(10.r),
-                                  ),
+                                  borderRadius: BorderRadius.circular(10.r),
                                   borderSide: const BorderSide(
                                     color: AppColors.blueLight,
                                   ),
@@ -245,13 +243,13 @@ class EditItemProfile extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(width: 5.w),
+                  SizedBox(width: 3.w),
                   Expanded(
                     child: Container(
-                      height: 60.h,
+                      height: 62.h,
                       decoration: BoxDecoration(
                         color: AppColors.whiteColor.withOpacity(0.10),
-                        borderRadius: BorderRadius.circular(20.r),
+                        borderRadius: BorderRadius.circular(10.r),
                         border: isDark
                             ? null
                             : Border.all(
