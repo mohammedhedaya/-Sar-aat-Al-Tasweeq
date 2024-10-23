@@ -20,4 +20,5 @@ class AppColors {
   static const yellowLight = Color(0xFFF9D053);
   static const whiteLight = Color(0xFFEDE8E9);
   static const hightYellowLight = Color(0xFF796727);
+  static const fillLight = Color(0xFF85A0B7);
 }

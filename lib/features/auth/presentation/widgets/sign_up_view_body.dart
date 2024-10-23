@@ -56,7 +56,7 @@ class SignUpViewBody extends StatelessWidget {
                       CustomAuthTextField(
                         fiiledColor: isDark
                             ? AppColors.whiteColor.withOpacity(0.10)
-                            : const Color(0xff85A0B7),
+                            :  AppColors.fillLight,
                         hintText: "first_name".tr(context: context),
                         onChanged: (firstName) {
                           cubit.firstName = firstName;
@@ -66,7 +66,7 @@ class SignUpViewBody extends StatelessWidget {
                       CustomAuthTextField(
                         fiiledColor: isDark
                             ? AppColors.whiteColor.withOpacity(0.10)
-                            : const Color(0xff85A0B7),
+                            :  AppColors.fillLight,
                         hintText: "second_name".tr(context: context),
                         onChanged: (secondName) {
                           cubit.secondName = secondName;
@@ -76,7 +76,7 @@ class SignUpViewBody extends StatelessWidget {
                       CustomAuthTextField(
                         fiiledColor: isDark
                             ? AppColors.whiteColor.withOpacity(0.10)
-                            : const Color(0xff85A0B7),
+                            :  AppColors.fillLight,
                         hintText: "last_name".tr(context: context),
                         onChanged: (lastName) {
                           cubit.lastName = lastName;
@@ -86,7 +86,7 @@ class SignUpViewBody extends StatelessWidget {
                       CustomAuthTextField(
                         fiiledColor: isDark
                             ? AppColors.whiteColor.withOpacity(0.10)
-                            : const Color(0xff85A0B7),
+                            :  AppColors.fillLight,
                         hintText: 'email'.tr(context: context),
                         keyboardType: TextInputType.emailAddress,
                         validator: (email) {

@@ -67,7 +67,7 @@ class SignUpProfileView extends StatelessWidget {
                       CustomAuthTextField(
                         fiiledColor: isDark
                             ? AppColors.whiteColor.withOpacity(0.10)
-                            : const Color(0xff85A0B7),
+                            : AppColors.fillLight,
                         hintText: "phone".tr(context: context),
                         keyboardType: TextInputType.phone,
                         suffixIcon: Container(
@@ -125,7 +125,7 @@ class SignUpProfileView extends StatelessWidget {
                       CustomAuthTextField(
                         fiiledColor: isDark
                             ? AppColors.whiteColor.withOpacity(0.10)
-                            : const Color(0xff85A0B7),
+                            : AppColors.fillLight,
                         hintText: "password".tr(context: context),
                         suffixIcon: IconButton(
                           onPressed: () {
@@ -166,7 +166,7 @@ class SignUpProfileView extends StatelessWidget {
                       CustomAuthTextField(
                         fiiledColor: isDark
                             ? AppColors.whiteColor.withOpacity(0.10)
-                            : const Color(0xff85A0B7),
+                            : AppColors.fillLight,
                         hintText: "confirm_password".tr(context: context),
                         suffixIcon: IconButton(
                           onPressed: () {
@@ -245,7 +245,7 @@ class SignUpProfileView extends StatelessWidget {
                                       color: isDark
                                           ? AppColors.whiteColor
                                               .withOpacity(0.10)
-                                          : const Color(0xff85A0B7),
+                                          : AppColors.fillLight,
                                       borderRadius: const BorderRadius.all(
                                         Radius.circular(20),
                                       ),
@@ -293,7 +293,7 @@ class SignUpProfileView extends StatelessWidget {
                               textAlign: TextAlign.center,
                               fiiledColor: isDark
                                   ? AppColors.whiteColor.withOpacity(0.10)
-                                  : const Color(0xff85A0B7),
+                                  : AppColors.fillLight,
                             ),
                           ),
                         ],

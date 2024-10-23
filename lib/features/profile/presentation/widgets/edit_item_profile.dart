@@ -31,7 +31,9 @@ class EditItemProfile extends StatelessWidget {
                     SizedBox(height: 9.h),
                     Container(
                       decoration: BoxDecoration(
-                        color: AppColors.whiteColor.withOpacity(0.10),
+                        color: isDark
+                            ? AppColors.whiteColor.withOpacity(0.10)
+                            : AppColors.fillLight,
                         borderRadius: BorderRadius.circular(10.r),
                       ),
                       child: TextFormField(
@@ -73,7 +75,9 @@ class EditItemProfile extends StatelessWidget {
                     SizedBox(height: 9.h),
                     Container(
                       decoration: BoxDecoration(
-                        color: AppColors.whiteColor.withOpacity(0.10),
+                        color: isDark
+                            ? AppColors.whiteColor.withOpacity(0.10)
+                            : AppColors.fillLight,
                         borderRadius: BorderRadius.circular(10.r),
                       ),
                       child: TextFormField(
@@ -119,7 +123,9 @@ class EditItemProfile extends StatelessWidget {
                     SizedBox(height: 9.h),
                     Container(
                       decoration: BoxDecoration(
-                        color: AppColors.whiteColor.withOpacity(0.10),
+                        color: isDark
+                            ? AppColors.whiteColor.withOpacity(0.10)
+                            : AppColors.fillLight,
                         borderRadius: BorderRadius.circular(10.r),
                       ),
                       child: TextFormField(
@@ -169,7 +175,9 @@ class EditItemProfile extends StatelessWidget {
                     flex: 2,
                     child: Container(
                       decoration: BoxDecoration(
-                        color: AppColors.whiteColor.withOpacity(0.10),
+                        color: isDark
+                            ? AppColors.whiteColor.withOpacity(0.10)
+                            : AppColors.fillLight,
                         borderRadius: BorderRadius.circular(10.r),
                       ),
                       child: TextFormField(
@@ -248,7 +256,17 @@ class EditItemProfile extends StatelessWidget {
                     child: Container(
                       height: 62.h,
                       decoration: BoxDecoration(
-                        color: AppColors.whiteColor.withOpacity(0.10),
+                        color: isDark
+                            ? AppColors.whiteColor.withOpacity(0.10)
+                            : null,
+                        gradient: isDark
+                            ? null
+                            : const LinearGradient(
+                                colors: [
+                                  AppColors.yellowLight,
+                                  Color(0xff937B31),
+                                ],
+                              ),
                         borderRadius: BorderRadius.circular(10.r),
                         border: isDark
                             ? null
@@ -288,7 +306,9 @@ class EditItemProfile extends StatelessWidget {
               SizedBox(height: 9.h),
               Container(
                 decoration: BoxDecoration(
-                  color: AppColors.whiteColor.withOpacity(0.10),
+                  color: isDark
+                      ? AppColors.whiteColor.withOpacity(0.10)
+                      : AppColors.fillLight,
                   borderRadius: BorderRadius.circular(20.r),
                 ),
                 child: TextFormField(

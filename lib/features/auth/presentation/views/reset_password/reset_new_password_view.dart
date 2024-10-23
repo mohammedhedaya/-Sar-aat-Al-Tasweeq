@@ -52,7 +52,7 @@ class ResetNewPasswordView extends StatelessWidget {
                             CustomAuthTextField(
                               fiiledColor: isDark
                                   ? AppColors.whiteColor.withOpacity(0.10)
-                                  : const Color(0xff85A0B7),
+                                  :  AppColors.fillLight,
                               hintText: "",
                               textAlign: TextAlign.center,
                               suffixIcon: IconButton(
@@ -101,7 +101,7 @@ class ResetNewPasswordView extends StatelessWidget {
                             CustomAuthTextField(
                               fiiledColor: isDark
                                   ? AppColors.whiteColor.withOpacity(0.10)
-                                  : const Color(0xff85A0B7),
+                                  :  AppColors.fillLight,
                               hintText: "",
                               textAlign: TextAlign.center,
                               suffixIcon: IconButton(

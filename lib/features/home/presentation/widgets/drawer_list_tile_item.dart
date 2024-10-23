@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -23,6 +24,7 @@ class DrawerListTileItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: ListTile(
@@ -32,7 +34,8 @@ class DrawerListTileItem extends StatelessWidget {
         ),
         onTap: onTap,
         selected: isSelected,
-        selectedTileColor: AppColors.whiteColor,
+        selectedTileColor:
+            isDark ? AppColors.whiteColor : AppColors.yellowLight,
         visualDensity: VisualDensity.compact,
         title: Text(
           title,

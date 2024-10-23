@@ -30,7 +30,9 @@ class CustomIncludeEmail extends StatelessWidget {
                 height: 60.h,
                 padding: EdgeInsets.symmetric(horizontal: 16.w),
                 decoration: BoxDecoration(
-                  color: AppColors.whiteColor.withOpacity(0.10),
+                  color: isDark
+                      ? AppColors.whiteColor.withOpacity(0.10)
+                      : AppColors.fillLight,
                   borderRadius: BorderRadius.all(
                     Radius.circular(20.r),
                   ),

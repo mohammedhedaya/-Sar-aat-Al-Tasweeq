@@ -38,7 +38,6 @@ class _ProfileChangePasswordViewState extends State<ProfileChangePasswordView> {
               },
               icon: const Icon(
                 Icons.arrow_forward_ios_outlined,
-                // color: isDark ? Colors.white70 : Colors.black87,
               ),
             ),
           ],
@@ -70,7 +69,9 @@ class _ProfileChangePasswordViewState extends State<ProfileChangePasswordView> {
                       ),
                       SizedBox(height: 25.h),
                       CustomAuthTextField(
-                        fiiledColor: AppColors.whiteColor.withOpacity(0.10),
+                        fiiledColor: isDark
+                            ? AppColors.whiteColor.withOpacity(0.10)
+                            : AppColors.fillLight,
                         hintText: "",
                         textAlign: TextAlign.center,
                         obscureText: !isOldPasswordVisible, // obscure the text
@@ -84,7 +85,9 @@ class _ProfileChangePasswordViewState extends State<ProfileChangePasswordView> {
                             isOldPasswordVisible
                                 ? Icons.visibility
                                 : Icons.visibility_off,
-                            color: AppColors.visibilityColor,
+                            color: isDark
+                                ? AppColors.visibilityColor
+                                : AppColors.blueLight,
                           ),
                         ),
                         onChanged: (value) {},
@@ -100,7 +103,9 @@ class _ProfileChangePasswordViewState extends State<ProfileChangePasswordView> {
                       ),
                       SizedBox(height: 23.h),
                       CustomAuthTextField(
-                        fiiledColor: AppColors.whiteColor.withOpacity(0.10),
+                        fiiledColor: isDark
+                            ? AppColors.whiteColor.withOpacity(0.10)
+                            : AppColors.fillLight,
                         hintText: "",
                         textAlign: TextAlign.center,
                         obscureText: !isNewPasswordVisible, // obscure the text
@@ -114,7 +119,9 @@ class _ProfileChangePasswordViewState extends State<ProfileChangePasswordView> {
                             isNewPasswordVisible
                                 ? Icons.visibility
                                 : Icons.visibility_off,
-                            color: AppColors.visibilityColor,
+                            color: isDark
+                                ? AppColors.visibilityColor
+                                : AppColors.blueLight,
                           ),
                         ),
                         onChanged: (value) {},
@@ -130,7 +137,9 @@ class _ProfileChangePasswordViewState extends State<ProfileChangePasswordView> {
                       ),
                       SizedBox(height: 23.h),
                       CustomAuthTextField(
-                        fiiledColor: AppColors.whiteColor.withOpacity(0.10),
+                        fiiledColor: isDark
+                            ? AppColors.whiteColor.withOpacity(0.10)
+                            : AppColors.fillLight,
                         hintText: "",
                         textAlign: TextAlign.center,
                         obscureText:
@@ -146,7 +155,9 @@ class _ProfileChangePasswordViewState extends State<ProfileChangePasswordView> {
                             isConfirmPasswordVisible
                                 ? Icons.visibility
                                 : Icons.visibility_off,
-                            color: AppColors.visibilityColor,
+                            color: isDark
+                                ? AppColors.visibilityColor
+                                : AppColors.blueLight,
                           ),
                         ),
                         onChanged: (value) {},

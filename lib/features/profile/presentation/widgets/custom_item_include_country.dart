@@ -12,7 +12,6 @@ class CustomEditProfileItemIncludeCountry extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
-
     return Row(
       children: [
         Expanded(
@@ -33,7 +32,9 @@ class CustomEditProfileItemIncludeCountry extends StatelessWidget {
                 width: double.infinity,
                 padding: EdgeInsets.only(right: 16.w),
                 decoration: BoxDecoration(
-                  color: AppColors.whiteColor.withOpacity(0.10),
+                  color: isDark
+                      ? AppColors.whiteColor.withOpacity(0.10)
+                      : AppColors.fillLight,
                   borderRadius: BorderRadius.all(
                     Radius.circular(20.r),
                   ),
@@ -91,7 +92,9 @@ class CustomEditProfileItemIncludeCountry extends StatelessWidget {
                 width: double.infinity,
                 padding: EdgeInsets.only(right: 16.w),
                 decoration: BoxDecoration(
-                  color: AppColors.whiteColor.withOpacity(0.10),
+                  color: isDark
+                      ? AppColors.whiteColor.withOpacity(0.10)
+                      : AppColors.fillLight,
                   borderRadius: BorderRadius.all(
                     Radius.circular(20.r),
                   ),

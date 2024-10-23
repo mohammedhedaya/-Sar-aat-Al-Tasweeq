@@ -35,7 +35,7 @@ class CustomLoginForm extends StatelessWidget {
                     CustomAuthTextField(
                       fiiledColor: isDark
                           ? AppColors.whiteColor.withOpacity(0.10)
-                          : const Color(0xff85A0B7),
+                          :  AppColors.fillLight,
                       hintText: "email".tr(context: context),
                       keyboardType: TextInputType.emailAddress,
                       onChanged: (email) {
@@ -56,7 +56,7 @@ class CustomLoginForm extends StatelessWidget {
                     CustomAuthTextField(
                       fiiledColor: isDark
                           ? AppColors.whiteColor.withOpacity(0.10)
-                          : const Color(0xff85A0B7),
+                          :  AppColors.fillLight,
                       hintText: "password".tr(context: context),
                       suffixIcon: IconButton(
                         onPressed: () {

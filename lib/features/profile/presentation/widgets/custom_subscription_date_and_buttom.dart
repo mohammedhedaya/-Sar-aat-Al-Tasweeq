@@ -25,12 +25,16 @@ class CustomSubscriptionDateAndBtns extends StatelessWidget {
                   children: [
                     Text(
                       "subscription_date".tr(context: context),
-                      style: AppStyles.style14W400,
+                      style: AppStyles.style14W400.copyWith(
+                        color: isDark ? Colors.white : AppColors.blueLight,
+                      ),
                     ),
                     SizedBox(width: 8.w),
                     Text(
                       "2/2/1445",
-                      style: AppStyles.style14W400,
+                      style: AppStyles.style14W400.copyWith(
+                        color: isDark ? Colors.white : AppColors.blueLight,
+                      ),
                     ),
                   ],
                 ),
@@ -39,12 +43,16 @@ class CustomSubscriptionDateAndBtns extends StatelessWidget {
                   children: [
                     Text(
                       "expiration_date".tr(context: context),
-                      style: AppStyles.style14W400,
+                      style: AppStyles.style14W400.copyWith(
+                        color: isDark ? Colors.white : AppColors.blueLight,
+                      ),
                     ),
                     SizedBox(width: 8.w),
                     Text(
                       "2/4/1445",
-                      style: AppStyles.style14W400,
+                      style: AppStyles.style14W400.copyWith(
+                        color: isDark ? Colors.white : AppColors.blueLight,
+                      ),
                     ),
                   ],
                 ),
@@ -61,15 +69,16 @@ class CustomSubscriptionDateAndBtns extends StatelessWidget {
                   GoRouter.of(context).push('/profileChangePasswordView');
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor:
-                      isDark ? Colors.white : AppColors.yellowLight,
+                  backgroundColor: isDark ? Colors.white : AppColors.blueLight,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.r),
                   ),
                 ),
                 child: Text(
                   "change_password".tr(context: context),
-                  style: AppStyles.style14W600Profile,
+                  style: AppStyles.style14W600Profile.copyWith(
+                    color: isDark ? AppColors.blackColor : Colors.white,
+                  ),
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -81,14 +90,16 @@ class CustomSubscriptionDateAndBtns extends StatelessWidget {
                   GoRouter.of(context).push('/editProfileView');
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: isDark ? Colors.teal : AppColors.blueLight,
+                  backgroundColor: isDark ? Colors.teal : AppColors.yellowLight,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.r),
                   ),
                 ),
                 child: Text(
                   "edit_profile".tr(context: context),
-                  style: AppStyles.style14W600,
+                  style: AppStyles.style14W600.copyWith(
+                    color: isDark ? Colors.white : AppColors.blackColor,
+                  ),
                 ),
               ),
             ),

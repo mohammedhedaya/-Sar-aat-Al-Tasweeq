@@ -40,7 +40,9 @@ class CustomProfileData extends StatelessWidget {
                       height: 60.h,
                       padding: EdgeInsets.only(right: 16.w),
                       decoration: BoxDecoration(
-                        color: AppColors.whiteColor.withOpacity(0.10),
+                        color: isDark
+                            ? AppColors.whiteColor.withOpacity(0.10)
+                            : AppColors.fillLight,
                         borderRadius: BorderRadius.all(
                           Radius.circular(10.r),
                         ),
@@ -81,7 +83,9 @@ class CustomProfileData extends StatelessWidget {
                       height: 60.h,
                       padding: EdgeInsets.only(right: 16.w),
                       decoration: BoxDecoration(
-                        color: AppColors.whiteColor.withOpacity(0.10),
+                        color: isDark
+                            ? AppColors.whiteColor.withOpacity(0.10)
+                            : AppColors.fillLight,
                         borderRadius: BorderRadius.all(
                           Radius.circular(10.r),
                         ),
@@ -126,7 +130,9 @@ class CustomProfileData extends StatelessWidget {
                       height: 60.h,
                       padding: EdgeInsets.only(right: 16.w),
                       decoration: BoxDecoration(
-                        color: AppColors.whiteColor.withOpacity(0.10),
+                        color: isDark
+                            ? AppColors.whiteColor.withOpacity(0.10)
+                            : AppColors.fillLight,
                         borderRadius: BorderRadius.all(Radius.circular(10.r)),
                         border: isDark
                             ? null
@@ -171,7 +177,9 @@ class CustomProfileData extends StatelessWidget {
                             height: 60.h,
                             padding: EdgeInsets.only(right: 16.w),
                             decoration: BoxDecoration(
-                              color: AppColors.whiteColor.withOpacity(0.10),
+                              color: isDark
+                                  ? AppColors.whiteColor.withOpacity(0.10)
+                                  : AppColors.fillLight,
                               borderRadius: BorderRadius.circular(20.r),
                               border: isDark
                                   ? null
@@ -196,7 +204,9 @@ class CustomProfileData extends StatelessWidget {
                             height: 60.h,
                             padding: EdgeInsets.all(6.w),
                             decoration: BoxDecoration(
-                              color: AppColors.whiteColor.withOpacity(0.20),
+                              color: isDark
+                                  ? AppColors.whiteColor.withOpacity(0.10)
+                                  : AppColors.fillLight,
                               borderRadius: BorderRadius.circular(20.r),
                               border: isDark
                                   ? null
@@ -230,7 +240,9 @@ class CustomProfileData extends StatelessWidget {
                             height: 60.h,
                             padding: EdgeInsets.only(right: 16.w),
                             decoration: BoxDecoration(
-                              color: AppColors.whiteColor.withOpacity(0.10),
+                              color: isDark
+                                  ? AppColors.whiteColor.withOpacity(0.10)
+                                  : AppColors.fillLight,
                               borderRadius: BorderRadius.circular(20.r),
                               border: isDark
                                   ? null
@@ -255,7 +267,17 @@ class CustomProfileData extends StatelessWidget {
                             padding: EdgeInsets.all(6.w),
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
-                              color: AppColors.whiteColor.withOpacity(0.20),
+                              color: isDark
+                                  ? AppColors.whiteColor.withOpacity(0.20)
+                                  : null,
+                              gradient: isDark
+                                  ? null
+                                  : const LinearGradient(
+                                      colors: [
+                                        AppColors.yellowLight,
+                                        Color(0xff937B31),
+                                      ],
+                                    ),
                               borderRadius: BorderRadius.circular(20.r),
                               border: isDark
                                   ? null
@@ -313,7 +335,9 @@ class CustomItemIncludeCountry extends StatelessWidget {
                 width: double.infinity,
                 padding: EdgeInsets.only(right: 16.w),
                 decoration: BoxDecoration(
-                  color: AppColors.whiteColor.withOpacity(0.10),
+                  color: isDark
+                      ? AppColors.whiteColor.withOpacity(0.10)
+                      : AppColors.fillLight,
                   borderRadius: BorderRadius.all(
                     Radius.circular(20.r),
                   ),
@@ -379,7 +403,9 @@ class CustomItemIncludeCountry extends StatelessWidget {
                 width: double.infinity,
                 padding: EdgeInsets.only(right: 16.w),
                 decoration: BoxDecoration(
-                  color: AppColors.whiteColor.withOpacity(0.10),
+                  color: isDark
+                      ? AppColors.whiteColor.withOpacity(0.10)
+                      : AppColors.fillLight,
                   borderRadius: BorderRadius.all(
                     Radius.circular(20.r),
                   ),
