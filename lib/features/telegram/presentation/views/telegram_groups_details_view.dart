@@ -18,11 +18,11 @@ class TelegramGroupsDetailsView extends StatelessWidget {
         automaticallyImplyLeading: false,
         elevation: 0,
         title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+          // mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Flexible(
               child: Text(
-                "launchaddwithease".tr(context: context),
+                "Expandyoursalesrange".tr(context: context),
                 style: AppStyles.style20W800.copyWith(
                   color: Colors.white,
                 ),
