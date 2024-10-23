@@ -46,7 +46,15 @@ class PaymentGatewayViewBody extends StatelessWidget {
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(5.r),
-                  color: isDark ? AppColors.navBarColor : AppColors.blueLight,
+                  color: isDark ? AppColors.navBarColor : null,
+                  gradient: isDark
+                      ? null
+                      : const LinearGradient(
+                          colors: [
+                            AppColors.yellowLight,
+                            Color(0xff937B31),
+                          ],
+                        ),
                 ),
                 child: TextButton.icon(
                   onPressed: () {},

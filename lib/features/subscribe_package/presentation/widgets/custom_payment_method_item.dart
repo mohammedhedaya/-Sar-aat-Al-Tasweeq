@@ -26,28 +26,31 @@ class CustomPaymentMethodItem extends StatelessWidget {
           dense: true,
           title: Text(
             title,
-            style: AppStyles.style20W400,
+            style: AppStyles.style20W400.copyWith(
+              color: isDark ? Colors.white : AppColors.blueLight,
+            ),
             textAlign: TextAlign.left,
           ),
           leading: Container(
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: Colors.white,
+              color: isDark ? Colors.white : AppColors.blueLight,
             ),
-            child: const Icon(
+            child: Icon(
               Icons.keyboard_arrow_right_rounded,
+              color: isDark ? Colors.black : Colors.white,
             ),
           ),
           trailing: SvgPicture.asset(
             icon,
             colorFilter: ColorFilter.mode(
-              isDark ? Colors.white : AppColors.blackColor,
+              isDark ? Colors.white : AppColors.blueLight,
               BlendMode.srcIn,
             ),
           ),
         ),
         Divider(
-          color: isDark ? Colors.white : AppColors.blackColor,
+          color: isDark ? Colors.white : AppColors.blueLight,
           thickness: 1.h,
         )
       ],

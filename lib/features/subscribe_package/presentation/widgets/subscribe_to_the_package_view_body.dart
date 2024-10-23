@@ -62,7 +62,9 @@ class _SubscribeToThePackageViewBodyState
                             SizedBox(height: 30.h),
                             Text(
                               "faisal_abdelaziz".tr(context: context),
-                              style: AppStyles.style20W400,
+                              style: AppStyles.style20W400.copyWith(
+                                color: Colors.white,
+                              ),
                             ),
                             SizedBox(height: 5.h),
                             Row(
@@ -73,7 +75,7 @@ class _SubscribeToThePackageViewBodyState
                                   colorFilter: ColorFilter.mode(
                                     isDark
                                         ? const Color(0xff323232)
-                                        : AppColors.yellowLight,
+                                        : AppColors.whiteColor,
                                     BlendMode.srcIn,
                                   ),
                                 ),
@@ -83,7 +85,7 @@ class _SubscribeToThePackageViewBodyState
                                   style: AppStyles.style14W400.copyWith(
                                     color: isDark
                                         ? const Color(0xff323232)
-                                        : AppColors.blackColor,
+                                        : AppColors.whiteColor,
                                   ),
                                 ),
                               ],
@@ -94,7 +96,7 @@ class _SubscribeToThePackageViewBodyState
                               padding: const EdgeInsets.all(24),
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(16.r),
-                                color: isDark ? null : AppColors.yellowLight,
+                                // color: isDark ? null : AppColors.yellowLight,
                                 gradient: isDark
                                     ? LinearGradient(
                                         colors: [
@@ -105,7 +107,14 @@ class _SubscribeToThePackageViewBodyState
                                         begin: Alignment.centerLeft,
                                         end: Alignment.centerRight,
                                       )
-                                    : null,
+                                    : const LinearGradient(
+                                        colors: [
+                                          Color(0xff796727),
+                                          Color(0xffF9D053),
+                                        ],
+                                        begin: Alignment.topRight,
+                                        end: Alignment.bottomCenter,
+                                      ),
                               ),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -121,7 +130,7 @@ class _SubscribeToThePackageViewBodyState
                                           style: AppStyles.style14W600.copyWith(
                                             color: isDark
                                                 ? AppColors.whiteColor
-                                                : AppColors.blackColor,
+                                                : AppColors.whiteColor,
                                           ),
                                         ),
                                       ),
@@ -244,7 +253,9 @@ class _SubscribeToThePackageViewBodyState
                                       children: [
                                         Text(
                                           "• ${"15_diamond_free".tr(context: context)}",
-                                          style: AppStyles.style14W400,
+                                          style: AppStyles.style14W400.copyWith(
+                                            color: Colors.white,
+                                          ),
                                         ),
                                         PackageDetailsItem(
                                           logo: Assets.imagesWhatsapplogo,
@@ -303,7 +314,7 @@ class _SubscribeToThePackageViewBodyState
                                               BorderRadius.circular(5.r),
                                           color: isDark
                                               ? null
-                                              : AppColors.blueLight,
+                                              : const Color(0xffD8D7D7),
                                           gradient: isDark
                                               ? const LinearGradient(
                                                   colors: [
@@ -318,7 +329,9 @@ class _SubscribeToThePackageViewBodyState
                                         child: Text(
                                           "subscribe".tr(context: context),
                                           style: AppStyles.style14W400.copyWith(
-                                            color: AppColors.whiteColor,
+                                            color: isDark
+                                                ? AppColors.whiteColor
+                                                : AppColors.blueLight,
                                           ),
                                         ),
                                       ),

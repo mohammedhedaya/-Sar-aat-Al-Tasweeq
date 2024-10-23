@@ -76,7 +76,10 @@ class _SuccessSubscribedViewState extends State<SuccessSubscribedView>
                   SizedBox(height: MediaQuery.of(context).size.height * 0.2),
                   Text(
                     "successfully_subscribed".tr(context: context),
-                    style: AppStyles.style22W600,
+                    style: AppStyles.style22W600.copyWith(
+                      color:
+                          isDark ? AppColors.whiteColor : AppColors.blueLight,
+                    ),
                     textAlign: TextAlign.center,
                   ),
                   SizedBox(height: 25.h),
@@ -93,7 +96,6 @@ class _SuccessSubscribedViewState extends State<SuccessSubscribedView>
                         scale: 3.5,
                       ),
                       borderRadius: BorderRadius.circular(16.r),
-                      color: isDark ? null : AppColors.blueLight,
                       gradient: isDark
                           ? LinearGradient(
                               colors: [
@@ -103,7 +105,14 @@ class _SuccessSubscribedViewState extends State<SuccessSubscribedView>
                               begin: Alignment.centerRight,
                               end: Alignment.centerLeft,
                             )
-                          : null,
+                          : LinearGradient(
+                              colors: [
+                                const Color(0xff796727),
+                                const Color(0xffF9D054).withOpacity(0.65),
+                              ],
+                              begin: Alignment.centerRight,
+                              end: Alignment.centerLeft,
+                            ),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,

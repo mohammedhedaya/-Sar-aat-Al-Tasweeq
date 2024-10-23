@@ -17,7 +17,9 @@ class PackageDetailsItem extends StatelessWidget {
       children: [
         Text(
           "•",
-          style: AppStyles.style14W400,
+          style: AppStyles.style14W400.copyWith(
+            color: Colors.white,
+          ),
         ),
         SizedBox(width: 5.w),
         SvgPicture.asset(
@@ -27,7 +29,9 @@ class PackageDetailsItem extends StatelessWidget {
         SizedBox(width: 5.w),
         Text(
           title,
-          style: AppStyles.style14W400,
+          style: AppStyles.style14W400.copyWith(
+            color: Colors.white,
+          ),
         ),
       ],
     );
