@@ -139,7 +139,17 @@ class _ViewBodyOfDiamondWalletState extends State<ViewBodyOfDiamondWallet> {
                                     alignment: Alignment.center,
                                     padding: const EdgeInsets.all(5),
                                     decoration: BoxDecoration(
-                                      color: isSar
+                                      gradient: isSar && isDark
+                                          ? const LinearGradient(
+                                              colors: [
+                                                Color(0xff00C0CC),
+                                                Color(0xff006066),
+                                              ],
+                                              begin: Alignment.centerLeft,
+                                              end: Alignment.centerRight,
+                                            )
+                                          : null,
+                                      color: isSar && !isDark
                                           ? const Color(0xff114F80)
                                           : const Color(0xffD9D9D9),
                                       borderRadius: const BorderRadius.only(
@@ -168,7 +178,17 @@ class _ViewBodyOfDiamondWalletState extends State<ViewBodyOfDiamondWallet> {
                                     alignment: Alignment.center,
                                     padding: const EdgeInsets.all(5),
                                     decoration: BoxDecoration(
-                                      color: !isSar
+                                      gradient: !isSar && isDark
+                                          ? const LinearGradient(
+                                              colors: [
+                                                Color(0xff00C0CC),
+                                                Color(0xff006066),
+                                              ],
+                                              begin: Alignment.centerLeft,
+                                              end: Alignment.centerRight,
+                                            )
+                                          : null,
+                                      color: !isSar && !isDark
                                           ? const Color(0xff114F80)
                                           : const Color(0xffD9D9D9),
                                       borderRadius: const BorderRadius.only(
@@ -188,6 +208,7 @@ class _ViewBodyOfDiamondWalletState extends State<ViewBodyOfDiamondWallet> {
                                 ),
                               ],
                             ),
+
                             // GestureDetector(
                             //   onTap: () {
                             //     setState(() {
