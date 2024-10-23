@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -13,6 +14,7 @@ class CustomHomeAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return AppBar(
       surfaceTintColor: Colors.transparent,
       elevation: 0,
@@ -61,6 +63,10 @@ class CustomHomeAppBar extends StatelessWidget implements PreferredSizeWidget {
               },
               icon: SvgPicture.asset(
                 Assets.imagesNotifications,
+                colorFilter: ColorFilter.mode(
+                  isDark ? AppColors.whiteColor : AppColors.yellowLight,
+                  BlendMode.srcIn,
+                ),
               ),
             ),
             CircleAvatar(

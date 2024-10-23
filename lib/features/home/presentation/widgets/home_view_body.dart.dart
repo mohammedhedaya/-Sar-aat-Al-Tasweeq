@@ -1,4 +1,5 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -68,6 +69,13 @@ class HomeViewBody extends StatelessWidget {
                         height: 150.h,
                       ),
                     ),
+                    Text(
+                      "whatsapp".tr(context: context),
+                      style: AppStyles.style24W400.copyWith(
+                        color:
+                            isDark ? AppColors.whiteColor : AppColors.blueLight,
+                      ),
+                    ),
                     SizedBox(height: 30.h),
                     InkWell(
                       onTap: () {
@@ -76,6 +84,13 @@ class HomeViewBody extends StatelessWidget {
                       child: Image.asset(
                         Assets.imagesTelegramLogo,
                         height: 150.h,
+                      ),
+                    ),
+                    Text(
+                      "telegram".tr(context: context),
+                      style: AppStyles.style24W400.copyWith(
+                        color:
+                            isDark ? AppColors.whiteColor : AppColors.blueLight,
                       ),
                     ),
                     SizedBox(height: 30.h),
@@ -88,6 +103,13 @@ class HomeViewBody extends StatelessWidget {
                         height: 150.h,
                       ),
                     ),
+                    Text(
+                      "instagram".tr(context: context),
+                      style: AppStyles.style24W400.copyWith(
+                        color:
+                            isDark ? AppColors.whiteColor : AppColors.blueLight,
+                      ),
+                    ),
                     SizedBox(height: 30.h),
                     InkWell(
                       onTap: () {
@@ -96,6 +118,13 @@ class HomeViewBody extends StatelessWidget {
                       child: Image.asset(
                         Assets.imagesTiktokLogo,
                         height: 150.h,
+                      ),
+                    ),
+                    Text(
+                      "TikTok".tr(context: context),
+                      style: AppStyles.style24W400.copyWith(
+                        color:
+                            isDark ? AppColors.whiteColor : AppColors.blueLight,
                       ),
                     ),
                     SizedBox(height: 30.h),
@@ -108,6 +137,13 @@ class HomeViewBody extends StatelessWidget {
                         height: 150.h,
                       ),
                     ),
+                    Text(
+                      "x".tr(context: context),
+                      style: AppStyles.style24W400.copyWith(
+                        color:
+                            isDark ? AppColors.whiteColor : AppColors.blueLight,
+                      ),
+                    ),
                     SizedBox(height: 30.h),
                     InkWell(
                       onTap: () {
@@ -116,6 +152,13 @@ class HomeViewBody extends StatelessWidget {
                       child: Image.asset(
                         Assets.imagesFacebookLogoo,
                         height: 150.h,
+                      ),
+                    ),
+                    Text(
+                      "facebook".tr(context: context),
+                      style: AppStyles.style24W400.copyWith(
+                        color:
+                            isDark ? AppColors.whiteColor : AppColors.blueLight,
                       ),
                     ),
                     SizedBox(height: 30.h),
@@ -128,6 +171,13 @@ class HomeViewBody extends StatelessWidget {
                         height: 150.h,
                       ),
                     ),
+                    Text(
+                      "sms".tr(context: context),
+                      style: AppStyles.style24W400.copyWith(
+                        color:
+                            isDark ? AppColors.whiteColor : AppColors.blueLight,
+                      ),
+                    ),
                     SizedBox(height: 30.h),
                     InkWell(
                       onTap: () {
@@ -136,6 +186,13 @@ class HomeViewBody extends StatelessWidget {
                       child: Image.asset(
                         Assets.imagesEmailLogoo,
                         height: 150.h,
+                      ),
+                    ),
+                    Text(
+                      "email".tr(context: context),
+                      style: AppStyles.style24W400.copyWith(
+                        color:
+                            isDark ? AppColors.whiteColor : AppColors.blueLight,
                       ),
                     ),
                     SizedBox(height: 30.h),
