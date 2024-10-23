@@ -14,6 +14,7 @@ class SuccessSignUpView extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return Scaffold(
+      backgroundColor: isDark ? null : AppColors.blueLight,
       body: Stack(
         children: [
           Positioned(
@@ -22,7 +23,7 @@ class SuccessSignUpView extends StatelessWidget {
             child: SvgPicture.asset(
               Assets.imagesSuccesscircle4,
               colorFilter: ColorFilter.mode(
-                isDark ? const Color(0xffD9D9D9) : AppColors.blueLight,
+                isDark ? const Color(0xffD9D9D9) : AppColors.yellowLight,
                 BlendMode.srcIn,
               ),
             ),
@@ -34,7 +35,7 @@ class SuccessSignUpView extends StatelessWidget {
               Assets.imagesSuccesscircle2,
               fit: BoxFit.fill,
               colorFilter: ColorFilter.mode(
-                isDark ? const Color(0xffD9D9D9) : AppColors.blueLight,
+                isDark ? const Color(0xffD9D9D9) : AppColors.yellowLight,
                 BlendMode.srcIn,
               ),
             ),
@@ -46,7 +47,7 @@ class SuccessSignUpView extends StatelessWidget {
               Assets.imagesSuccesscircle3,
               fit: BoxFit.fill,
               colorFilter: ColorFilter.mode(
-                isDark ? const Color(0xffD9D9D9) : AppColors.blueLight,
+                isDark ? const Color(0xffD9D9D9) : AppColors.yellowLight,
                 BlendMode.srcIn,
               ),
             ),
@@ -58,7 +59,7 @@ class SuccessSignUpView extends StatelessWidget {
               Assets.imagesSuccesscircle1,
               fit: BoxFit.fill,
               colorFilter: ColorFilter.mode(
-                isDark ? const Color(0xffD9D9D9) : AppColors.blueLight,
+                isDark ? const Color(0xffD9D9D9) : AppColors.yellowLight,
                 BlendMode.srcIn,
               ),
             ),
@@ -81,7 +82,9 @@ class SuccessSignUpView extends StatelessWidget {
                     Text(
                       "your_account_has_been_successfully_registered"
                           .tr(context: context),
-                      style: AppStyles.style25W800,
+                      style: AppStyles.style25W800.copyWith(
+                        color: Colors.white,
+                      ),
                       textAlign: TextAlign.center,
                     ),
                     SizedBox(height: MediaQuery.sizeOf(context).height * 0.15),
@@ -90,7 +93,9 @@ class SuccessSignUpView extends StatelessWidget {
                       children: [
                         Text(
                           "start_marketing".tr(context: context),
-                          style: AppStyles.style32W700,
+                          style: AppStyles.style32W700.copyWith(
+                            color: Colors.white,
+                          ),
                         ),
                         InkWell(
                           onTap: () {
@@ -128,7 +133,7 @@ class SuccessSignUpView extends StatelessWidget {
                                     minWidth: 64,
                                   ),
                                   decoration: const BoxDecoration(
-                                    color: AppColors.blueLight,
+                                    color: AppColors.whiteColor,
                                     shape: BoxShape.circle,
                                   ),
                                   child: context.locale == const Locale('en')
@@ -138,12 +143,21 @@ class SuccessSignUpView extends StatelessWidget {
                                             child: SvgPicture.asset(
                                               Assets
                                                   .imagesArrowForwardLoginPage,
+                                              colorFilter:
+                                                  const ColorFilter.mode(
+                                                AppColors.blueLight,
+                                                BlendMode.srcIn,
+                                              ),
                                             ),
                                           ),
                                         )
                                       : Center(
                                           child: SvgPicture.asset(
                                             Assets.imagesArrowForwardLoginPage,
+                                            colorFilter: const ColorFilter.mode(
+                                              AppColors.blueLight,
+                                              BlendMode.srcIn,
+                                            ),
                                           ),
                                         ),
                                 ),

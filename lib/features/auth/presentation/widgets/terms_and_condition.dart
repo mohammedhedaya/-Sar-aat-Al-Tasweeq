@@ -81,7 +81,7 @@ class _TermsConditionsWidgetState extends State<TermsConditionsWidget> {
                         style: AppStyles.style13W400.copyWith(
                           color: isDark
                               ? AppColors.whiteColor
-                              : AppColors.blackColor,
+                              : AppColors.blueLight,
                         ),
                         children: [
                           TextSpan(
@@ -89,7 +89,7 @@ class _TermsConditionsWidgetState extends State<TermsConditionsWidget> {
                             style: AppStyles.style13W600.copyWith(
                               color: isDark
                                   ? AppColors.whiteColor
-                                  : AppColors.blackColor,
+                                  : const Color(0xffE21D1D),
                             ),
                           ),
                         ],

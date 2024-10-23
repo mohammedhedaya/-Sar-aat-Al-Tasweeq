@@ -1,10 +1,12 @@
 import 'dart:async';
 
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:pinput/pinput.dart';
+import 'package:shopping_chart/core/utils/app_colors.dart';
 import 'package:shopping_chart/features/auth/presentation/widgets/auth_btn.dart';
 import '../../../../../core/utils/app_text_style.dart';
 
@@ -59,7 +61,9 @@ class _SignUpOTPViewState extends State<SignUpOTPView> {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return Scaffold(
+      backgroundColor: isDark ? null : AppColors.blueLight,
       body: Column(
         children: [
           Expanded(
@@ -69,7 +73,9 @@ class _SignUpOTPViewState extends State<SignUpOTPView> {
                 Text(
                   "otp".tr(context: context),
                   textAlign: TextAlign.center,
-                  style: AppStyles.style12W400,
+                  style: AppStyles.style12W400.copyWith(
+                    color: isDark ? AppColors.gray : Colors.white,
+                  ),
                 ),
                 SizedBox(height: 30.h),
                 Pinput(
@@ -103,7 +109,9 @@ class _SignUpOTPViewState extends State<SignUpOTPView> {
                     alignment: Alignment.centerLeft,
                     child: Text(
                       '0:$_start',
-                      style: AppStyles.style12W600,
+                      style: AppStyles.style12W600.copyWith(
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),
@@ -111,7 +119,7 @@ class _SignUpOTPViewState extends State<SignUpOTPView> {
             ),
           ),
           Container(
-            color: const Color(0xffABABAB),
+            color: isDark ? const Color(0xffABABAB) : AppColors.whiteLight,
             padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 20.h),
             child: Column(
               children: [
@@ -133,7 +141,9 @@ class _SignUpOTPViewState extends State<SignUpOTPView> {
                       value = "<"; // For backspace symbol
                     }
                     return Material(
-                      color: const Color(0xffABABAB),
+                      color: isDark
+                          ? const Color(0xffABABAB)
+                          : AppColors.whiteLight,
                       child: InkWell(
                         onTap: () {
                           setState(() {
@@ -149,14 +159,18 @@ class _SignUpOTPViewState extends State<SignUpOTPView> {
                           child: value == "<"
                               ? Icon(
                                   Icons.backspace_outlined,
-                                  color: Colors.black,
+                                  color: isDark
+                                      ? Colors.black
+                                      : AppColors.blueLight,
                                   size: 22.sp,
                                 )
                               : Text(
                                   value,
                                   style: TextStyle(
                                     fontSize: 21.sp,
-                                    color: Colors.black,
+                                    color: isDark
+                                        ? Colors.black
+                                        : AppColors.blueLight,
                                     fontWeight: FontWeight.w600,
                                   ),
                                 ),

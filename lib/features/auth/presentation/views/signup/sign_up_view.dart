@@ -10,9 +10,7 @@ class SignUpView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
-
     return Scaffold(
-      // resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: isDark ? AppColors.whiteColor : AppColors.blueLight,
         elevation: 0,

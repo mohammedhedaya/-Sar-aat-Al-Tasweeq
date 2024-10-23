@@ -57,11 +57,17 @@ class SignUpProfileView extends StatelessWidget {
                       SizedBox(height: 29.h),
                       Text(
                         "profile_image".tr(context: context),
-                        style: AppStyles.style20W400,
+                        style: AppStyles.style20W400.copyWith(
+                          color: isDark
+                              ? AppColors.whiteColor
+                              : AppColors.blueLight,
+                        ),
                       ),
                       SizedBox(height: 75.h),
                       CustomAuthTextField(
-                        fiiledColor: AppColors.whiteColor.withOpacity(0.10),
+                        fiiledColor: isDark
+                            ? AppColors.whiteColor.withOpacity(0.10)
+                            : const Color(0xff85A0B7),
                         hintText: "phone".tr(context: context),
                         keyboardType: TextInputType.phone,
                         suffixIcon: Container(
@@ -70,12 +76,22 @@ class SignUpProfileView extends StatelessWidget {
                           ),
                           height: 70.h,
                           decoration: BoxDecoration(
-                            color: const Color(0xffD9D9D9),
+                            color: isDark ? const Color(0xffD9D9D9) : null,
                             border: Border.all(
                               color: isDark
                                   ? Colors.transparent
                                   : AppColors.blueLight,
                             ),
+                            gradient: isDark
+                                ? null
+                                : const LinearGradient(
+                                    colors: [
+                                      Color(0xffAC9238),
+                                      Color(0xffDBBA47),
+                                    ],
+                                    begin: Alignment.topRight,
+                                    end: Alignment.bottomLeft,
+                                  ),
                             borderRadius: context.locale == const Locale('en')
                                 ? BorderRadius.only(
                                     topRight: Radius.circular(20.r),
@@ -107,7 +123,9 @@ class SignUpProfileView extends StatelessWidget {
                       ),
                       SizedBox(height: 23.h),
                       CustomAuthTextField(
-                        fiiledColor: AppColors.whiteColor.withOpacity(0.10),
+                        fiiledColor: isDark
+                            ? AppColors.whiteColor.withOpacity(0.10)
+                            : const Color(0xff85A0B7),
                         hintText: "password".tr(context: context),
                         suffixIcon: IconButton(
                           onPressed: () {
@@ -118,6 +136,9 @@ class SignUpProfileView extends StatelessWidget {
                             cubit.obscurePasswordTextValue == true
                                 ? Icons.visibility_outlined
                                 : Icons.visibility_off_outlined,
+                            color: isDark
+                                ? AppColors.whiteColor
+                                : AppColors.blackColor,
                           ),
                         ),
                         obscureText: cubit.obscurePasswordTextValue,
@@ -143,7 +164,9 @@ class SignUpProfileView extends StatelessWidget {
                       ),
                       SizedBox(height: 23.h),
                       CustomAuthTextField(
-                        fiiledColor: AppColors.whiteColor.withOpacity(0.10),
+                        fiiledColor: isDark
+                            ? AppColors.whiteColor.withOpacity(0.10)
+                            : const Color(0xff85A0B7),
                         hintText: "confirm_password".tr(context: context),
                         suffixIcon: IconButton(
                           onPressed: () {
@@ -154,6 +177,9 @@ class SignUpProfileView extends StatelessWidget {
                             cubit.obscurePasswordTextValue == true
                                 ? Icons.visibility_outlined
                                 : Icons.visibility_off_outlined,
+                            color: isDark
+                                ? AppColors.whiteColor
+                                : AppColors.blackColor,
                           ),
                         ),
                         obscureText: cubit.obscurePasswordTextValue,
@@ -216,8 +242,10 @@ class SignUpProfileView extends StatelessWidget {
                                     height: 60.h,
                                     width: double.infinity,
                                     decoration: BoxDecoration(
-                                      color: AppColors.whiteColor
-                                          .withOpacity(0.10),
+                                      color: isDark
+                                          ? AppColors.whiteColor
+                                              .withOpacity(0.10)
+                                          : const Color(0xff85A0B7),
                                       borderRadius: const BorderRadius.all(
                                         Radius.circular(20),
                                       ),
@@ -263,7 +291,9 @@ class SignUpProfileView extends StatelessWidget {
                               onChanged: (value) {},
                               hintText: "city".tr(context: context),
                               textAlign: TextAlign.center,
-                              fiiledColor: Colors.white.withOpacity(0.10),
+                              fiiledColor: isDark
+                                  ? AppColors.whiteColor.withOpacity(0.10)
+                                  : const Color(0xff85A0B7),
                             ),
                           ),
                         ],

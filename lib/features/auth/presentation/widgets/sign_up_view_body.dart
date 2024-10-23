@@ -54,7 +54,9 @@ class SignUpViewBody extends StatelessWidget {
                       SizedBox(
                           height: MediaQuery.of(context).size.height * 0.19),
                       CustomAuthTextField(
-                        fiiledColor: AppColors.whiteColor.withOpacity(0.10),
+                        fiiledColor: isDark
+                            ? AppColors.whiteColor.withOpacity(0.10)
+                            : const Color(0xff85A0B7),
                         hintText: "first_name".tr(context: context),
                         onChanged: (firstName) {
                           cubit.firstName = firstName;
@@ -62,7 +64,9 @@ class SignUpViewBody extends StatelessWidget {
                       ),
                       SizedBox(height: 25.h),
                       CustomAuthTextField(
-                        fiiledColor: AppColors.whiteColor.withOpacity(0.10),
+                        fiiledColor: isDark
+                            ? AppColors.whiteColor.withOpacity(0.10)
+                            : const Color(0xff85A0B7),
                         hintText: "second_name".tr(context: context),
                         onChanged: (secondName) {
                           cubit.secondName = secondName;
@@ -70,7 +74,9 @@ class SignUpViewBody extends StatelessWidget {
                       ),
                       SizedBox(height: 25.h),
                       CustomAuthTextField(
-                        fiiledColor: AppColors.whiteColor.withOpacity(0.10),
+                        fiiledColor: isDark
+                            ? AppColors.whiteColor.withOpacity(0.10)
+                            : const Color(0xff85A0B7),
                         hintText: "last_name".tr(context: context),
                         onChanged: (lastName) {
                           cubit.lastName = lastName;
@@ -78,7 +84,9 @@ class SignUpViewBody extends StatelessWidget {
                       ),
                       SizedBox(height: 25.h),
                       CustomAuthTextField(
-                        fiiledColor: AppColors.whiteColor.withOpacity(0.10),
+                        fiiledColor: isDark
+                            ? AppColors.whiteColor.withOpacity(0.10)
+                            : const Color(0xff85A0B7),
                         hintText: 'email'.tr(context: context),
                         keyboardType: TextInputType.emailAddress,
                         validator: (email) {
@@ -126,9 +134,7 @@ class SignUpViewBody extends StatelessWidget {
                               height: 170.h,
                               width: 170.w,
                               decoration: BoxDecoration(
-                                color: isDark
-                                    ? AppColors.whiteColor
-                                    : AppColors.blueLight,
+                                color: AppColors.whiteColor,
                                 borderRadius: BorderRadius.only(
                                   topRight: Radius.circular(300.r),
                                 ),
@@ -144,7 +150,11 @@ class SignUpViewBody extends StatelessWidget {
                           const SizedBox(),
                           Text(
                             "account_registration".tr(context: context),
-                            style: AppStyles.style32W700,
+                            style: AppStyles.style32W700.copyWith(
+                              color: isDark
+                                  ? AppColors.whiteColor
+                                  : AppColors.blueLight,
+                            ),
                           ),
                           InkWell(
                             onTap: () {
@@ -158,8 +168,10 @@ class SignUpViewBody extends StatelessWidget {
                                 minHeight: 64.h,
                                 minWidth: 64.w,
                               ),
-                              decoration: const BoxDecoration(
-                                color: AppColors.loginBtn,
+                              decoration: BoxDecoration(
+                                color: isDark
+                                    ? AppColors.loginBtn
+                                    : AppColors.blueLight,
                                 shape: BoxShape.circle,
                               ),
                               child: context.locale == const Locale('en')
