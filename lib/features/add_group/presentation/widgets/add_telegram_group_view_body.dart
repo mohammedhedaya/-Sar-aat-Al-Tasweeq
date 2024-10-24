@@ -43,7 +43,9 @@ class _AddTelegramGroupViewBodyState extends State<AddTelegramGroupViewBody> {
             ),
             SizedBox(height: 4.h),
             CustomAuthTextField(
-              fiiledColor: AppColors.whiteColor.withOpacity(0.10),
+              fiiledColor: isDark
+                  ? AppColors.whiteColor.withOpacity(0.10)
+                  : AppColors.fillLight,
               hintText: "",
               onChanged: (value) {},
             ),
@@ -58,7 +60,9 @@ class _AddTelegramGroupViewBodyState extends State<AddTelegramGroupViewBody> {
             CustomAuthTextField(
               onChanged: (value) {},
               controller: groupLinkController,
-              fiiledColor: AppColors.whiteColor.withOpacity(0.10),
+              fiiledColor: isDark
+                  ? AppColors.whiteColor.withOpacity(0.10)
+                  : AppColors.fillLight,
               hintText: "",
               suffixIcon: InkWell(
                 onTap: () async {
@@ -71,6 +75,10 @@ class _AddTelegramGroupViewBodyState extends State<AddTelegramGroupViewBody> {
                   scale: 0.5,
                   child: SvgPicture.asset(
                     Assets.imagesLinkTeal,
+                    colorFilter: ColorFilter.mode(
+                      isDark ? const Color(0xff00C0CC) : AppColors.yellowLight,
+                      BlendMode.srcIn,
+                    ),
                   ),
                 ),
               ),
@@ -85,7 +93,9 @@ class _AddTelegramGroupViewBodyState extends State<AddTelegramGroupViewBody> {
             SizedBox(height: 4.h),
             CustomAuthTextField(
               readOnly: true,
-              fiiledColor: AppColors.whiteColor.withOpacity(0.10),
+              fiiledColor: isDark
+                  ? AppColors.whiteColor.withOpacity(0.10)
+                  : AppColors.fillLight,
               hintText: "",
               prefixIcon: CountryCodePicker(
                 onChanged: (value) {},
@@ -106,13 +116,11 @@ class _AddTelegramGroupViewBodyState extends State<AddTelegramGroupViewBody> {
                   borderRadius: BorderRadius.circular(5.r),
                 ),
               ),
-              suffixIcon: InkWell(
-                onTap: () {},
-                child: const Icon(
-                  Icons.keyboard_arrow_down_rounded,
-                  color: Color.fromARGB(255, 8, 195, 176),
-                  size: 30,
-                ),
+              suffixIcon: Icon(
+                Icons.keyboard_arrow_down_rounded,
+                color:
+                    isDark ? const Color(0xff00C0CC) : AppColors.yellowLight,
+                size: 30,
               ),
               onChanged: (value) {},
             ),
@@ -135,14 +143,23 @@ class _AddTelegramGroupViewBodyState extends State<AddTelegramGroupViewBody> {
                       EdgeInsets.symmetric(horizontal: 22.w, vertical: 4.h),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5.r),
-                    gradient: const LinearGradient(
-                      colors: [
-                        Color(0xff00C0CC),
-                        Color(0xff006066),
-                      ],
-                      begin: Alignment.centerLeft,
-                      end: Alignment.centerRight,
-                    ),
+                    gradient: isDark
+                        ? const LinearGradient(
+                            colors: [
+                              Color(0xff00C0CC),
+                              Color(0xff006066),
+                            ],
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                          )
+                        : const LinearGradient(
+                            colors: [
+                              Color(0xffF9D053),
+                              Color(0xff796727),
+                            ],
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                          ),
                   ),
                   child: Text(
                     "Addyourtelegramgroup".tr(context: context),

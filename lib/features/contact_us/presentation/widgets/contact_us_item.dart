@@ -24,28 +24,33 @@ class ContactUsItem extends StatelessWidget {
       title: Text(
         title,
         style: AppStyles.style20W400.copyWith(
-          color: isDark ? AppColors.whiteColor : AppColors.whiteColor,
+          color: isDark ? AppColors.whiteColor : AppColors.blueLight,
         ),
       ),
       leading: Container(
         padding: const EdgeInsets.all(6.0),
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: isDark ? AppColors.darkGray : AppColors.yellowLight,
+          color: isDark ? AppColors.darkGray : null,
         ),
         child: SvgPicture.asset(
           icon,
+          colorFilter: ColorFilter.mode(
+            isDark ? AppColors.whiteColor : AppColors.yellowLight,
+            BlendMode.srcIn,
+          ),
         ),
       ),
       trailing: Container(
         padding: const EdgeInsets.all(3.0),
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: Colors.white,
+          color: isDark ? Colors.white : AppColors.blueLight,
         ),
-        child: const Icon(
+        child: Icon(
           Icons.arrow_forward_ios_rounded,
           size: 18,
+          color: isDark ? AppColors.blackColor : AppColors.whiteColor,
         ),
       ),
     );
