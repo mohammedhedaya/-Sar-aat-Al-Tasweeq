@@ -25,11 +25,6 @@ class _ConvertNumberToWhatsappLinkViewBodyState
   String _whatsAppLink = '';
   bool _isButtonVisible = false;
 
-  @override
-  void initState() {
-    super.initState();
-  }
-
   void _updateCountryCode(String code) {
     setState(() {
       _countryCode = code;
@@ -72,14 +67,16 @@ class _ConvertNumberToWhatsappLinkViewBodyState
             hintText: "phone".tr(context: context),
             onFieldSubmitted: (value) {},
             keyboardType: TextInputType.phone,
-            fiiledColor: AppColors.whiteColor.withOpacity(0.10),
+            fiiledColor: isDark
+                ? AppColors.whiteColor.withOpacity(0.10)
+                : AppColors.fillLight,
             suffixIcon: Container(
               constraints: BoxConstraints(
                 minWidth: 95.w,
               ),
               height: 70.h,
               decoration: BoxDecoration(
-                color: const Color(0xffD9D9D9),
+                color: isDark ? const Color(0xffD9D9D9) : null,
                 borderRadius: context.locale.languageCode == 'ar'
                     ? BorderRadius.only(
                         topLeft: Radius.circular(20.r),
@@ -88,6 +85,14 @@ class _ConvertNumberToWhatsappLinkViewBodyState
                     : BorderRadius.only(
                         topRight: Radius.circular(20.r),
                         bottomRight: Radius.circular(20.r),
+                      ),
+                gradient: isDark
+                    ? null
+                    : const LinearGradient(
+                        colors: [
+                          Color(0xff937B31),
+                          Color(0xffF9D053),
+                        ],
                       ),
               ),
               child: CountryCodePicker(
@@ -148,7 +153,7 @@ class _ConvertNumberToWhatsappLinkViewBodyState
               decoration: BoxDecoration(
                 color: isDark
                     ? Colors.white.withOpacity(0.10)
-                    : AppColors.yellowLight,
+                    : AppColors.fillLight,
                 borderRadius: BorderRadius.circular(20.r),
               ),
               padding: const EdgeInsets.all(22),
@@ -158,7 +163,7 @@ class _ConvertNumberToWhatsappLinkViewBodyState
                     child: Text(
                       _whatsAppLink,
                       style: AppStyles.style12W400.copyWith(
-                        color: isDark ? Colors.white : Colors.black,
+                        color: Colors.white,
                       ),
                       overflow: TextOverflow.ellipsis,
                       textAlign: TextAlign.center,
@@ -169,8 +174,8 @@ class _ConvertNumberToWhatsappLinkViewBodyState
                     onTap: _copyToClipboard,
                     child: SvgPicture.asset(
                       Assets.imagesCopyIcon2,
-                      colorFilter: const ColorFilter.mode(
-                        Colors.black,
+                      colorFilter: ColorFilter.mode(
+                        isDark ? Colors.black : Colors.white,
                         BlendMode.srcIn,
                       ),
                     ),
