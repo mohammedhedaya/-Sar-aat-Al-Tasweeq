@@ -39,12 +39,14 @@ class AddSuggestionViewBody extends StatelessWidget {
               children: [
                 Text(
                   "hearyouclearly".tr(context: context),
-                  style: AppStyles.style25W400,
+                  style: AppStyles.style25W400.copyWith(
+                    color: isDark ? AppColors.whiteColor : AppColors.blueLight,
+                  ),
                 ),
                 SvgPicture.asset(
                   Assets.imagesLikeicon,
                   colorFilter: ColorFilter.mode(
-                    isDark ? const Color(0xff00C0CC) : Colors.orange,
+                    isDark ? const Color(0xff00C0CC) : AppColors.yellowLight,
                     BlendMode.srcIn,
                   ),
                 ),
@@ -54,7 +56,9 @@ class AddSuggestionViewBody extends StatelessWidget {
             Center(
               child: Text(
                 "WeHelpYou".tr(context: context),
-                style: AppStyles.style20W400,
+                style: AppStyles.style20W400.copyWith(
+                  color: isDark ? AppColors.whiteColor : AppColors.blueLight,
+                ),
                 textAlign: TextAlign.center,
               ),
             ),
@@ -62,7 +66,7 @@ class AddSuggestionViewBody extends StatelessWidget {
             Text(
               "writeyoursuggestion".tr(context: context),
               style: AppStyles.style12W400.copyWith(
-                color: isDark ? AppColors.whiteColor : AppColors.blackColor,
+                color: isDark ? AppColors.whiteColor : AppColors.blueLight,
               ),
               textAlign: TextAlign.start,
             ),
@@ -79,7 +83,9 @@ class AddSuggestionViewBody extends StatelessWidget {
               cursorColor: AppColors.whiteColor,
               decoration: InputDecoration(
                   filled: true,
-                  fillColor: AppColors.whiteColor.withOpacity(0.10),
+                  fillColor: isDark
+                      ? AppColors.whiteColor.withOpacity(0.10)
+                      : const Color(0xff85a0b7).withOpacity(0.50),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20.r),
                     borderSide: isDark
@@ -112,7 +118,9 @@ class AddSuggestionViewBody extends StatelessWidget {
                     builder: (context) {
                       return CustomAddedSuccesDialog(
                         text: "wethankyouforsuggestion".tr(context: context),
-                        style: AppStyles.style15W900,
+                        style: AppStyles.style15W900.copyWith(
+                          color: Colors.white,
+                        ),
                       );
                     },
                   );
@@ -124,7 +132,7 @@ class AddSuggestionViewBody extends StatelessWidget {
                       EdgeInsets.symmetric(horizontal: 22.w, vertical: 4.h),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5.r),
-                    color: isDark ? null : Colors.orange,
+                    // color: isDark ? null : Colors.orange,
                     gradient: isDark
                         ? const LinearGradient(
                             colors: [
@@ -134,7 +142,14 @@ class AddSuggestionViewBody extends StatelessWidget {
                             begin: Alignment.centerLeft,
                             end: Alignment.centerRight,
                           )
-                        : null,
+                        : const LinearGradient(
+                            colors: [
+                              Color(0xffF9D053),
+                              Color(0xff796727),
+                            ],
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                          ),
                   ),
                   child: Center(
                     child: Text(
