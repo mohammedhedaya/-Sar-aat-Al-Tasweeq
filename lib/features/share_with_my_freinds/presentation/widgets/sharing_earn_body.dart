@@ -38,7 +38,7 @@ class SharingEarnBody extends StatelessWidget {
                   child: SvgPicture.asset(
                     Assets.imagesShareEarnCup,
                     colorFilter: const ColorFilter.mode(
-                      AppColors.yellowLight,
+                      AppColors.blueLight,
                       BlendMode.srcIn,
                     ),
                     height: MediaQuery.of(context).size.height * 0.2,
