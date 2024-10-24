@@ -36,10 +36,12 @@ class _WhatsappPageViewState extends State<WhatsappPageView> {
           SizedBox(height: 72.h),
           CustomAuthTextField(
             controller: groupLinkController,
-            fiiledColor: AppColors.whiteColor.withOpacity(0.10),
+            fiiledColor: isDark
+                ? AppColors.whiteColor.withOpacity(0.10)
+                : const Color(0xff8ea7bf).withOpacity(0.46),
             hintText: "addLink".tr(context: context),
             hintStyle: AppStyles.style12W700.copyWith(
-              color: isDark ? const Color(0xffffffff) : const Color(0xff000000),
+              color: isDark ? const Color(0xffffffff) : AppColors.blueLight,
             ),
             suffixIcon: InkWell(
               onTap: () async {
@@ -50,27 +52,37 @@ class _WhatsappPageViewState extends State<WhatsappPageView> {
               },
               child: Transform.scale(
                 scale: 0.5,
-                child: SvgPicture.asset(
-                  Assets.imagesLinkTeal,
-                ),
+                child: isDark
+                    ? SvgPicture.asset(
+                        Assets.imagesLinkTeal,
+                      )
+                    : SvgPicture.asset(
+                        Assets.imagesLinkLight,
+                      ),
               ),
             ),
             onChanged: (value) {},
           ),
           SizedBox(height: 19.h),
           CustomAuthTextField(
-            fiiledColor: AppColors.whiteColor.withOpacity(0.10),
+            fiiledColor: isDark
+                ? AppColors.whiteColor.withOpacity(0.10)
+                : const Color(0xff8ea7bf).withOpacity(0.46),
             hintText: "addLocation".tr(context: context),
             hintStyle: AppStyles.style12W700.copyWith(
-              color: isDark ? const Color(0xffffffff) : const Color(0xff000000),
+              color: isDark ? const Color(0xffffffff) : AppColors.blueLight,
             ),
             suffixIcon: InkWell(
               onTap: () {},
               child: Transform.scale(
                 scale: 0.5,
-                child: SvgPicture.asset(
-                  Assets.imagesLocationTeal,
-                ),
+                child: isDark
+                    ? SvgPicture.asset(
+                        Assets.imagesLocationTeal,
+                      )
+                    : SvgPicture.asset(
+                        Assets.imagesLocationLight,
+                      ),
               ),
             ),
             onChanged: (value) {},
@@ -87,7 +99,6 @@ class _WhatsappPageViewState extends State<WhatsappPageView> {
                 padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 4.h),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(5.r),
-                  color: isDark ? null : AppColors.blueLight,
                   gradient: isDark
                       ? const LinearGradient(
                           colors: [
@@ -97,7 +108,14 @@ class _WhatsappPageViewState extends State<WhatsappPageView> {
                           begin: Alignment.centerLeft,
                           end: Alignment.centerRight,
                         )
-                      : null,
+                      : const LinearGradient(
+                          colors: [
+                            Color(0xffF9D053),
+                            Color(0xff796727),
+                          ],
+                          begin: Alignment.centerLeft,
+                          end: Alignment.centerRight,
+                        ),
                 ),
                 child: Center(
                   child: Text(

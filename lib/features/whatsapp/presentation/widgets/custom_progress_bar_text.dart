@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -22,6 +23,7 @@ class CustomProgressBarAndText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return Column(
       children: [
         Row(
@@ -32,6 +34,7 @@ class CustomProgressBarAndText extends StatelessWidget {
                 label,
                 style: AppStyles.style20W900.copyWith(
                   fontSize: 11.sp,
+                  color: isDark ? AppColors.whiteColor : AppColors.blueLight,
                 ),
               ),
             ),
@@ -40,7 +43,8 @@ class CustomProgressBarAndText extends StatelessWidget {
                 value,
                 style: AppStyles.style20W900.copyWith(
                   fontSize: 13.sp,
-                  color: textcolor ?? AppColors.whiteColor,
+                  color: textcolor ??
+                      (isDark ? AppColors.whiteColor : AppColors.blueLight),
                 ),
               ),
             ),
@@ -49,8 +53,10 @@ class CustomProgressBarAndText extends StatelessWidget {
         SizedBox(height: 4.h),
         LinearProgressIndicator(
           value: progress,
-          backgroundColor: const Color(0xff3F3F3F),
-          color: color ?? const Color(0xffD9D9D9),
+          backgroundColor:
+              isDark ? const Color(0xff3F3F3F) : AppColors.whiteColor,
+          color:
+              color ?? (isDark ? const Color(0xffD9D9D9) : AppColors.blueLight),
           minHeight: 11.h,
         ),
       ],

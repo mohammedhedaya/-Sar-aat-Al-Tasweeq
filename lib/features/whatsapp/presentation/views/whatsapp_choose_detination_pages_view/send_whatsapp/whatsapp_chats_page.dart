@@ -31,8 +31,8 @@ class _WhatsappSendToChatsPageState extends State<WhatsappSendToChatsPage> {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(2.r),
           ),
-          activeColor: const Color(0xff00C0CC),
-          checkColor: const Color(0xff00C0CC),
+          activeColor: isDark ? const Color(0xff00C0CC) : AppColors.yellowLight,
+          checkColor: isDark ? const Color(0xff00C0CC) : AppColors.yellowLight,
           visualDensity: VisualDensity.compact,
           contentPadding: EdgeInsets.zero,
           side: BorderSide(
@@ -63,8 +63,12 @@ class _WhatsappSendToChatsPageState extends State<WhatsappSendToChatsPage> {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(2.r),
                     ),
-                    activeColor: const Color(0xff00C0CC),
-                    checkColor: const Color(0xff00C0CC),
+                    activeColor: isDark
+                        ? const Color(0xff00C0CC)
+                        : AppColors.yellowLight,
+                    checkColor: isDark
+                        ? const Color(0xff00C0CC)
+                        : AppColors.yellowLight,
                     visualDensity: VisualDensity.compact,
                     side: BorderSide(
                       color: isDark ? Colors.white : AppColors.blueLight,
@@ -81,7 +85,7 @@ class _WhatsappSendToChatsPageState extends State<WhatsappSendToChatsPage> {
                     },
                   ),
                   Divider(
-                    color: Colors.white,
+                    color: isDark ? Colors.white : const Color(0xff937B31),
                     thickness: 1,
                     endIndent: 25.w,
                     indent: 25.w,
@@ -100,7 +104,6 @@ class _WhatsappSendToChatsPageState extends State<WhatsappSendToChatsPage> {
             width: 200.w,
             padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 4.h),
             decoration: BoxDecoration(
-              color: isDark ? null : AppColors.blueLight,
               borderRadius: BorderRadius.circular(5.r),
               gradient: isDark
                   ? const LinearGradient(
@@ -111,7 +114,14 @@ class _WhatsappSendToChatsPageState extends State<WhatsappSendToChatsPage> {
                       begin: Alignment.centerLeft,
                       end: Alignment.centerRight,
                     )
-                  : null,
+                  : const LinearGradient(
+                      colors: [
+                        Color(0xFFF9D053),
+                        Color(0xFF937B31),
+                      ],
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight,
+                    ),
             ),
             child: Center(
               child: Text(

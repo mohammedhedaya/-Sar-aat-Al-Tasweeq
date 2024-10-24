@@ -250,9 +250,17 @@ class Assets {
   /// assets/images/likeicon.svg
   static const String imagesLikeicon = "assets/images/likeicon.svg";
 
+  /// Assets for imagesLinkLight
+  /// assets/images/LinkLight.svg
+  static const String imagesLinkLight = "assets/images/LinkLight.svg";
+
   /// Assets for imagesLinkTeal
   /// assets/images/linkTeal.svg
   static const String imagesLinkTeal = "assets/images/linkTeal.svg";
+
+  /// Assets for imagesLocationLight
+  /// assets/images/locationLight.svg
+  static const String imagesLocationLight = "assets/images/locationLight.svg";
 
   /// Assets for imagesLocationTeal
   /// assets/images/locationTeal.svg

@@ -51,8 +51,6 @@ class CustomShowDialog extends StatelessWidget {
                         ],
                         begin: Alignment.centerLeft,
                         end: Alignment.centerRight,
-                        // begin: Alignment.centerLeft,
-                        // end: Alignment.centerRight,
                       )
                     : null,
               ),

@@ -43,7 +43,9 @@ class _LaunchAdTextFieldState extends State<LaunchAdTextField> {
             hintText: widget.hintText,
             hintStyle: AppStyles.style12W700,
             filled: true,
-            fillColor: Colors.white.withOpacity(0.10),
+            fillColor: isDark
+                ? Colors.white.withOpacity(0.10)
+                : const Color(0xff114f80).withOpacity(0.26),
             enabledBorder: OutlineInputBorder(
               borderSide: isDark
                   ? BorderSide.none
@@ -94,14 +96,23 @@ class _LaunchAdTextFieldState extends State<LaunchAdTextField> {
                     shape: BoxShape.circle,
                     gradient: _isExpanded
                         ? null
-                        : const LinearGradient(
-                            colors: [
-                              Color(0xFF006066),
-                              Color(0xFF00C0CC),
-                            ],
-                            begin: Alignment.centerLeft,
-                            end: Alignment.centerRight,
-                          ),
+                        : isDark
+                            ? const LinearGradient(
+                                colors: [
+                                  Color(0xFF006066),
+                                  Color(0xFF00C0CC),
+                                ],
+                                begin: Alignment.centerLeft,
+                                end: Alignment.centerRight,
+                              )
+                            : const LinearGradient(
+                                colors: [
+                                  Color(0xFFF9D053),
+                                  Color(0xFF796727),
+                                ],
+                                begin: Alignment.topRight,
+                                end: Alignment.bottomLeft,
+                              ),
                     boxShadow: [
                       BoxShadow(
                         color: Colors.black.withOpacity(0.25),
