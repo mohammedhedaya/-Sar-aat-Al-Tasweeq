@@ -111,7 +111,7 @@ class CustomShowRechargeDialog extends StatelessWidget {
               width: 119.w,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5.r),
-                color: isDark ? null : Colors.orange,
+                color: isDark ? null : AppColors.whiteColor,
                 gradient: isDark
                     ? const LinearGradient(
                         colors: [
@@ -120,8 +120,6 @@ class CustomShowRechargeDialog extends StatelessWidget {
                         ],
                         begin: Alignment.centerLeft,
                         end: Alignment.centerRight,
-                        // begin: Alignment.centerLeft,
-                        // end: Alignment.centerRight,
                       )
                     : null,
               ),
@@ -129,7 +127,7 @@ class CustomShowRechargeDialog extends StatelessWidget {
                 child: Text(
                   "next".tr(context: context),
                   style: AppStyles.style14W700.copyWith(
-                    color: Colors.white,
+                    color: isDark ? Colors.white : AppColors.blueLight,
                   ),
                   textAlign: TextAlign.center,
                 ),

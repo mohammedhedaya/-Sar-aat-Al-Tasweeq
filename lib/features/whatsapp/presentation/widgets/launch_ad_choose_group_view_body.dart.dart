@@ -58,7 +58,9 @@ class LaunchAdChooseGroupViewBody extends StatelessWidget {
                   const CustomChooseGroupPastLinkTextField(),
                   SizedBox(height: 19.h),
                   CustomAuthTextField(
-                    fiiledColor: AppColors.whiteColor.withOpacity(0.10),
+                    fiiledColor: isDark
+                        ? AppColors.whiteColor.withOpacity(0.10)
+                        : AppColors.fillLight,
                     hintText: "addLocation".tr(context: context),
                     hintStyle: AppStyles.style12W700.copyWith(
                       color: isDark
@@ -67,9 +69,13 @@ class LaunchAdChooseGroupViewBody extends StatelessWidget {
                     ),
                     suffixIcon: Transform.scale(
                       scale: 0.5,
-                      child: SvgPicture.asset(
-                        Assets.imagesLocationTeal,
-                      ),
+                      child: isDark
+                          ? SvgPicture.asset(
+                              Assets.imagesLocationTeal,
+                            )
+                          : SvgPicture.asset(
+                              Assets.imagesLocationLight,
+                            ),
                     ),
                     onChanged: (value) {},
                   ),
@@ -93,7 +99,14 @@ class LaunchAdChooseGroupViewBody extends StatelessWidget {
                                 begin: Alignment.centerLeft,
                                 end: Alignment.centerRight,
                               )
-                            : null,
+                            : const LinearGradient(
+                                colors: [
+                                  Color(0xffF9D053),
+                                  Color(0xff796727),
+                                ],
+                                begin: Alignment.centerLeft,
+                                end: Alignment.centerRight,
+                              ),
                       ),
                       child: Text(
                         "Chooseoneofthegroups".tr(context: context),
@@ -138,7 +151,8 @@ class _CustomChooseGroupPastLinkTextFieldState
 
     return CustomAuthTextField(
       controller: linkController,
-      fiiledColor: AppColors.whiteColor.withOpacity(0.10),
+      fiiledColor:
+          isDark ? AppColors.whiteColor.withOpacity(0.10) : AppColors.fillLight,
       hintText: "addLink".tr(context: context),
       hintStyle: AppStyles.style12W700.copyWith(
         color: isDark ? const Color(0xffffffff) : const Color(0xff000000),
@@ -154,9 +168,13 @@ class _CustomChooseGroupPastLinkTextFieldState
         },
         child: Transform.scale(
           scale: 0.5,
-          child: SvgPicture.asset(
-            Assets.imagesLinkTeal,
-          ),
+          child: isDark
+              ? SvgPicture.asset(
+                  Assets.imagesLinkTeal,
+                )
+              : SvgPicture.asset(
+                  Assets.imagesLinkLight,
+                ),
         ),
       ),
       onChanged: (value) {},

@@ -20,7 +20,6 @@ class CustomAddedSuccesDialog extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15.r),
       ),
-      // backgroundColor: AppColors.darkGray,
       title: SvgPicture.asset(
         Assets.imagesSuccessgreenicon,
       ),
