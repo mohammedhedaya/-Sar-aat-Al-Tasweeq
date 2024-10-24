@@ -132,7 +132,7 @@ final GoRouter router = GoRouter(
       path: '/',
       builder: (context, state) => BlocProvider(
         create: (context) => getIt<AuthCubit>(),
-        child: const LoginView(),
+        child: const UserMainLayoutScreen(),
       ),
     ),
     GoRoute(
@@ -650,6 +650,10 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/whatsappPhoneChooseDestination',
       builder: (context, state) => const WhatsappPhoneChooseDestinationView(),
+    ),
+    GoRoute(
+      path: '/whatsappContactsSendingView',
+      builder: (context, state) => const WhatsappContactsSendingView(),
     ),
   ],
 );
