@@ -302,6 +302,10 @@ class Assets {
   /// assets/images/notifications.svg
   static const String imagesNotifications = "assets/images/notifications.svg";
 
+  /// Assets for imagesNotificationsLight
+  /// assets/images/notificationsLight.png
+  static const String imagesNotificationsLight = "assets/images/notificationsLight.png";
+
   /// Assets for imagesPackageDark
   /// assets/images/packageDark.svg
   static const String imagesPackageDark = "assets/images/packageDark.svg";

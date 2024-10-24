@@ -20,14 +20,15 @@ class NotificationsViewBody extends StatelessWidget {
         children: [
           SizedBox(height: 20.h),
           Center(
-            child: SvgPicture.asset(
-              Assets.imagesNotifications,
-              height: 150.h,
-              colorFilter: ColorFilter.mode(
-                isDark ? const Color(0xffC8C8C8) : Colors.red,
-                BlendMode.srcIn,
-              ),
-            ),
+            child: isDark
+                ? SvgPicture.asset(
+                    Assets.imagesNotifications,
+                    height: 150.h,
+                  )
+                : Image.asset(
+                    Assets.imagesNotificationsLight,
+                    height: 150.h,
+                  ),
           ),
           SizedBox(height: 20.h),
           InkWell(

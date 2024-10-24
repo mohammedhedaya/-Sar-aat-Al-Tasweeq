@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -14,6 +15,7 @@ class NotificationItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return Padding(
       padding: EdgeInsets.only(bottom: 21.h),
       child: ListTile(
@@ -23,11 +25,13 @@ class NotificationItem extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15.r),
         ),
-        tileColor: const Color(0xffD3D3D3),
+        tileColor: isDark ? const Color(0xffD3D3D3) : AppColors.blueLight,
         title: Text(
           "adminsentyoumessage".tr(context: context),
           style: AppStyles.style15W900.copyWith(
-            color: AppColors.navBarColor.withOpacity(0.91),
+            color: isDark
+                ? AppColors.navBarColor.withOpacity(0.91)
+                : AppColors.whiteColor.withOpacity(0.91),
           ),
         ),
         trailing: InkWell(
@@ -38,9 +42,17 @@ class NotificationItem extends StatelessWidget {
         ),
         leading: Container(
           padding: const EdgeInsets.all(8.0),
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
             shape: BoxShape.circle,
-            color: AppColors.darkGray,
+            color: isDark ? AppColors.darkGray : null,
+            gradient: isDark
+                ? null
+                : const LinearGradient(
+                    colors: [
+                      AppColors.yellowLight,
+                      Color(0xff937B31),
+                    ],
+                  ),
           ),
           child: SvgPicture.asset(
             Assets.imagesNotifications,

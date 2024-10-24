@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -10,6 +11,7 @@ class NotificationsDetailsViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AdaptiveTheme.of(context).brightness == Brightness.dark;
     return SingleChildScrollView(
       child: Container(
         decoration: const BoxDecoration(
@@ -37,7 +39,9 @@ class NotificationsDetailsViewBody extends StatelessWidget {
                   Container(
                     padding: EdgeInsets.all(10.r),
                     decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.10),
+                      color: isDark
+                          ? Colors.white.withOpacity(0.10)
+                          : const Color(0xff85A0B7).withOpacity(0.47),
                       borderRadius: BorderRadius.circular(20.r),
                     ),
                     child: Text(
