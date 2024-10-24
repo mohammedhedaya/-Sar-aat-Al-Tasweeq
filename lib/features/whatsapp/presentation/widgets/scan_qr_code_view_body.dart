@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -13,6 +14,7 @@ class ScanQrCodeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isDark = AdaptiveTheme.of(context).theme.brightness == Brightness.dark;
     return SingleChildScrollView(
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 38.w),
@@ -23,7 +25,7 @@ class ScanQrCodeViewBody extends StatelessWidget {
               width: double.infinity,
               padding: EdgeInsets.symmetric(horizontal: 40.w, vertical: 60.h),
               decoration: BoxDecoration(
-                color: const Color(0xff949494),
+                color: isDark ? const Color(0xff949494) : AppColors.yellowLight,
                 borderRadius: BorderRadius.circular(10.r),
               ),
               child: Image.asset(
@@ -33,7 +35,9 @@ class ScanQrCodeViewBody extends StatelessWidget {
             SizedBox(height: 42.h),
             Text(
               "scanQR".tr(context: context),
-              style: AppStyles.style20W800,
+              style: AppStyles.style20W800.copyWith(
+                color: isDark ? AppColors.whiteColor : AppColors.blueLight,
+              ),
             ),
             SizedBox(height: 48.h),
             InkWell(
@@ -43,19 +47,26 @@ class ScanQrCodeViewBody extends StatelessWidget {
               child: Container(
                 constraints: BoxConstraints(minHeight: 64.h, minWidth: 64.w),
                 padding: EdgeInsets.all(8.r),
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: AppColors.mixWhiteAndGray,
+                  color:
+                      isDark ? AppColors.mixWhiteAndGray : AppColors.blueLight,
                 ),
                 child: SvgPicture.asset(
                   Assets.imagesCameraIcon,
+                  colorFilter: ColorFilter.mode(
+                    isDark ? AppColors.blackColor : AppColors.yellowLight,
+                    BlendMode.srcIn,
+                  ),
                 ),
               ),
             ),
             SizedBox(height: 19.h),
             Text(
               "scanQR".tr(context: context),
-              style: AppStyles.style20W800,
+              style: AppStyles.style20W800.copyWith(
+                color: isDark ? AppColors.whiteColor : AppColors.blueLight,
+              ),
             ),
             SizedBox(height: 19.h),
           ],
