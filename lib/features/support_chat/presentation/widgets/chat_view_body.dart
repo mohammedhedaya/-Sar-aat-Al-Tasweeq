@@ -40,11 +40,12 @@ class ChatViewBody extends StatelessWidget {
                 BubbleSpecialThree(
                   text:
                       'وريم إيبسوم هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى)',
-                  color: isDark ? const Color(0xffFFFEFE) : AppColors.gray,
+                  color:
+                      isDark ? const Color(0xffFFFEFE) : AppColors.whiteColor,
                   tail: true,
                   isSender: false,
                   textStyle: TextStyle(
-                    color: isDark ? Colors.black : Colors.white,
+                    color: isDark ? Colors.black : Colors.black,
                     fontSize: 13,
                   ),
                 ),
@@ -63,11 +64,12 @@ class ChatViewBody extends StatelessWidget {
                 BubbleSpecialThree(
                   text:
                       'وريم إيبسوم هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى)',
-                  color: isDark ? const Color(0xffFFFEFE) : AppColors.gray,
+                  color:
+                      isDark ? const Color(0xffFFFEFE) : AppColors.whiteColor,
                   tail: true,
                   isSender: false,
                   textStyle: TextStyle(
-                    color: isDark ? Colors.black : Colors.white,
+                    color: isDark ? Colors.black : Colors.black,
                     fontSize: 13,
                   ),
                 ),
@@ -86,11 +88,12 @@ class ChatViewBody extends StatelessWidget {
                 BubbleSpecialThree(
                   text:
                       'وريم إيبسوم هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى)',
-                  color: isDark ? const Color(0xffFFFEFE) : AppColors.gray,
+                  color:
+                      isDark ? const Color(0xffFFFEFE) : AppColors.whiteColor,
                   tail: true,
                   isSender: false,
                   textStyle: TextStyle(
-                    color: isDark ? Colors.black : Colors.white,
+                    color: isDark ? Colors.black : Colors.black,
                     fontSize: 13,
                   ),
                 ),
@@ -109,11 +112,12 @@ class ChatViewBody extends StatelessWidget {
                 BubbleSpecialThree(
                   text:
                       'وريم إيبسوم هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى)',
-                  color: isDark ? const Color(0xffFFFEFE) : AppColors.gray,
+                  color:
+                      isDark ? const Color(0xffFFFEFE) : AppColors.whiteColor,
                   tail: true,
                   isSender: false,
                   textStyle: TextStyle(
-                    color: isDark ? Colors.black : Colors.white,
+                    color: isDark ? Colors.black : Colors.black,
                     fontSize: 13,
                   ),
                 ),
@@ -132,11 +136,12 @@ class ChatViewBody extends StatelessWidget {
                 BubbleSpecialThree(
                   text:
                       'وريم إيبسوم هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى)',
-                  color: isDark ? const Color(0xffFFFEFE) : AppColors.gray,
+                  color:
+                      isDark ? const Color(0xffFFFEFE) : AppColors.whiteColor,
                   tail: true,
                   isSender: false,
                   textStyle: TextStyle(
-                    color: isDark ? Colors.black : Colors.white,
+                    color: isDark ? Colors.black : Colors.black,
                     fontSize: 13,
                   ),
                 ),
@@ -155,11 +160,12 @@ class ChatViewBody extends StatelessWidget {
                 BubbleSpecialThree(
                   text:
                       'وريم إيبسوم هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى)',
-                  color: isDark ? const Color(0xffFFFEFE) : AppColors.gray,
+                  color:
+                      isDark ? const Color(0xffFFFEFE) : AppColors.whiteColor,
                   tail: true,
                   isSender: false,
                   textStyle: TextStyle(
-                    color: isDark ? Colors.black : Colors.white,
+                    color: isDark ? Colors.black : Colors.black,
                     fontSize: 13,
                   ),
                 ),
@@ -184,10 +190,12 @@ class ChatViewBody extends StatelessWidget {
                             : AppColors.whiteColor,
                         shape: BoxShape.circle,
                       ),
-                      child: const Center(
+                      child: Center(
                         child: Icon(
                           Icons.send,
-                          color: AppColors.navBarColor,
+                          color: isDark
+                              ? AppColors.navBarColor
+                              : AppColors.yellowLight,
                         ),
                       ),
                     ),
@@ -225,9 +233,10 @@ class ChatViewBody extends StatelessWidget {
                   ),
                 ),
                 IconButton(
-                  icon: const Icon(
+                  icon: Icon(
                     Icons.add,
-                    color: AppColors.whiteColor,
+                    color:
+                        isDark ? AppColors.whiteColor : AppColors.yellowLight,
                   ),
                   onPressed: () {},
                 ),
