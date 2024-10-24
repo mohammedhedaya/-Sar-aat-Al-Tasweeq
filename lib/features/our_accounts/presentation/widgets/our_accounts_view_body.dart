@@ -59,7 +59,7 @@ class OurAccountsViewBody extends StatelessWidget {
                           : SvgPicture.asset(
                               Assets.imagesVerifyIcon,
                               colorFilter: const ColorFilter.mode(
-                                AppColors.whiteColor,
+                                AppColors.yellowLight,
                                 BlendMode.srcIn,
                               ),
                             ),
