@@ -79,13 +79,19 @@ class WhatsappViewBody extends StatelessWidget {
                                 "pleaseSubscribeToThePackage"
                                     .tr(context: context),
                                 style: AppStyles.style15W900.copyWith(
-                                  color: Colors.white,
+                                  color: isDark
+                                      ? Colors.white
+                                      : AppColors.blueLight,
                                 ),
                                 textAlign: TextAlign.center,
                               ),
                               SizedBox(width: 10.w),
                               SvgPicture.asset(
                                 Assets.imagesSubscribeOfPackage,
+                                colorFilter: ColorFilter.mode(
+                                  isDark ? Colors.white : AppColors.blueLight,
+                                  BlendMode.srcIn,
+                                ),
                               ),
                             ],
                           ),
@@ -118,13 +124,19 @@ class WhatsappViewBody extends StatelessWidget {
                                 "pleaseSubscribeToThePackage"
                                     .tr(context: context),
                                 style: AppStyles.style15W900.copyWith(
-                                  color: Colors.white,
+                                  color: isDark
+                                      ? Colors.white
+                                      : AppColors.blueLight,
                                 ),
                                 textAlign: TextAlign.center,
                               ),
                               SizedBox(width: 10.w),
                               SvgPicture.asset(
                                 Assets.imagesSubscribeOfPackage,
+                                colorFilter: ColorFilter.mode(
+                                  isDark ? Colors.white : AppColors.blueLight,
+                                  BlendMode.srcIn,
+                                ),
                               ),
                             ],
                           ),
@@ -160,7 +172,7 @@ class WhatsappViewBody extends StatelessWidget {
                         : SvgPicture.asset(
                             Assets.imagesLikeicon,
                             colorFilter: const ColorFilter.mode(
-                              Colors.orange,
+                              AppColors.yellowLight,
                               BlendMode.srcIn,
                             ),
                             height: 40.h,
@@ -183,7 +195,7 @@ class WhatsappViewBody extends StatelessWidget {
                       height: 31.h,
                       width: 119.w,
                       decoration: BoxDecoration(
-                        color: isDark ? null : Colors.orange,
+                        // color: isDark ? null : Colors.orange,
                         borderRadius: BorderRadius.circular(5.r),
                         gradient: isDark
                             ? const LinearGradient(
@@ -194,7 +206,14 @@ class WhatsappViewBody extends StatelessWidget {
                                 begin: Alignment.centerLeft,
                                 end: Alignment.centerRight,
                               )
-                            : null,
+                            : const LinearGradient(
+                                colors: [
+                                  Color(0xffF9D053),
+                                  Color(0xff796727),
+                                ],
+                                begin: Alignment.centerLeft,
+                                end: Alignment.centerRight,
+                              ),
                       ),
                       child: Center(
                         child: Text(

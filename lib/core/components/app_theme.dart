@@ -22,7 +22,7 @@ final ThemeData lightTheme = ThemeData(
     // actionsIconTheme: IconThemeData(color: AppColors.whiteColor),
   ),
   dialogTheme: const DialogTheme(
-    backgroundColor: AppColors.blueLight,
+    backgroundColor: AppColors.yellowLight,
   ),
   bottomNavigationBarTheme: const BottomNavigationBarThemeData(
     backgroundColor: AppColors.blueLight,

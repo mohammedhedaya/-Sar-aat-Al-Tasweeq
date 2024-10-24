@@ -42,7 +42,7 @@ class CustomShowDialog extends StatelessWidget {
               width: 119.w,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5.r),
-                color: isDark ? null : Colors.orange,
+                color: isDark ? null : const Color(0xffEDE8E9),
                 gradient: isDark
                     ? const LinearGradient(
                         colors: [
@@ -60,7 +60,7 @@ class CustomShowDialog extends StatelessWidget {
                 child: Text(
                   textButton,
                   style: AppStyles.style14W700.copyWith(
-                    color: Colors.white,
+                    color: isDark ? Colors.white : AppColors.blueLight,
                   ),
                   textAlign: TextAlign.center,
                 ),
