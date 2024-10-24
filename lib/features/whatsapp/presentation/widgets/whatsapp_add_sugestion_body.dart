@@ -41,12 +41,14 @@ class WhatsappAddSuggestionViewBody extends StatelessWidget {
               children: [
                 Text(
                   "hearyouclearly".tr(context: context),
-                  style: AppStyles.style25W400,
+                  style: AppStyles.style25W400.copyWith(
+                    color: isDark ? AppColors.whiteColor : AppColors.blueLight,
+                  ),
                 ),
                 SvgPicture.asset(
                   Assets.imagesLikeicon,
                   colorFilter: ColorFilter.mode(
-                    isDark ? const Color(0xff00C0CC) : Colors.orange,
+                    isDark ? const Color(0xff00C0CC) : AppColors.yellowLight,
                     BlendMode.srcIn,
                   ),
                 ),
@@ -56,7 +58,9 @@ class WhatsappAddSuggestionViewBody extends StatelessWidget {
             Center(
               child: Text(
                 "WeHelpYou".tr(context: context),
-                style: AppStyles.style20W400,
+                style: AppStyles.style20W400.copyWith(
+                  color: isDark ? AppColors.whiteColor : AppColors.blueLight,
+                ),
                 textAlign: TextAlign.center,
               ),
             ),
@@ -64,7 +68,7 @@ class WhatsappAddSuggestionViewBody extends StatelessWidget {
             Text(
               "writeyoursuggestion".tr(context: context),
               style: AppStyles.style12W400.copyWith(
-                color: AppColors.whiteColor,
+                color: isDark ? AppColors.whiteColor : AppColors.blueLight,
               ),
               textAlign: TextAlign.start,
             ),
@@ -80,24 +84,27 @@ class WhatsappAddSuggestionViewBody extends StatelessWidget {
               },
               cursorColor: AppColors.whiteColor,
               decoration: InputDecoration(
-                  filled: true,
-                  fillColor: AppColors.whiteColor.withOpacity(0.10),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20.r),
-                    borderSide: isDark
-                        ? BorderSide.none
-                        : const BorderSide(
-                            color: AppColors.blueLight,
-                          ),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20.r),
-                    borderSide: isDark
-                        ? BorderSide.none
-                        : const BorderSide(
-                            color: AppColors.blueLight,
-                          ),
-                  )),
+                filled: true,
+                fillColor: isDark
+                    ? AppColors.whiteColor.withOpacity(0.10)
+                    : const Color(0xff85A0B7).withOpacity(0.50),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20.r),
+                  borderSide: isDark
+                      ? BorderSide.none
+                      : const BorderSide(
+                          color: AppColors.blueLight,
+                        ),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20.r),
+                  borderSide: isDark
+                      ? BorderSide.none
+                      : const BorderSide(
+                          color: AppColors.blueLight,
+                        ),
+                ),
+              ),
               style: AppStyles.style12W400.copyWith(
                 color: isDark ? AppColors.whiteColor : AppColors.blackColor,
               ),
@@ -114,7 +121,9 @@ class WhatsappAddSuggestionViewBody extends StatelessWidget {
                     builder: (context) {
                       return CustomAddedSuccesDialog(
                         text: "wethankyouforsuggestion".tr(context: context),
-                        style: AppStyles.style15W900,
+                        style: AppStyles.style15W900.copyWith(
+                          color: AppColors.whiteColor,
+                        ),
                       );
                     },
                   );
@@ -126,7 +135,6 @@ class WhatsappAddSuggestionViewBody extends StatelessWidget {
                       EdgeInsets.symmetric(horizontal: 22.w, vertical: 4.h),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5.r),
-                    color: isDark ? null : Colors.orange,
                     gradient: isDark
                         ? const LinearGradient(
                             colors: [
@@ -136,7 +144,14 @@ class WhatsappAddSuggestionViewBody extends StatelessWidget {
                             begin: Alignment.centerLeft,
                             end: Alignment.centerRight,
                           )
-                        : null,
+                        : const LinearGradient(
+                            colors: [
+                              Color(0xffF9D053),
+                              Color(0xff796727),
+                            ],
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                          ),
                   ),
                   child: Center(
                     child: Text(
