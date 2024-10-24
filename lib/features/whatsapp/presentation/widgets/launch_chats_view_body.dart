@@ -21,10 +21,13 @@ class LaunchAdChatsViewBody extends StatelessWidget {
           children: [
             SizedBox(height: 19.h),
             Center(
-              child: Image.asset(
-                Assets.imagesChatslogo,
-                color: isDark ? null : AppColors.blueLight,
-              ),
+              child: isDark
+                  ? Image.asset(
+                      Assets.imagesChatslogo,
+                    )
+                  : Image.asset(
+                      Assets.imagesChatsLogoLight,
+                    ),
             ),
             SizedBox(height: 30.h),
             Column(
@@ -39,21 +42,27 @@ class LaunchAdChatsViewBody extends StatelessWidget {
                         onTap: () {
                           context.push("/launchChatsMessagesView");
                         },
-                        tileColor: const Color(0xffA1A1A1),
+                        tileColor: isDark
+                            ? const Color(0xffA1A1A1)
+                            : AppColors.blueLight,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(15.r),
                         ),
                         title: Text(
                           "أحمد على محمد",
                           style: AppStyles.style14W800.copyWith(
-                            color: AppColors.navBarColor,
+                            color: isDark
+                                ? AppColors.navBarColor
+                                : AppColors.whiteColor,
                           ),
                         ),
                         subtitle: Text(
                           "السلام عليكم أخبارك طيب؟",
                           style: AppStyles.style14W800.copyWith(
                             fontSize: 11.sp,
-                            color: const Color(0xff5E5E5E),
+                            color: isDark
+                                ? const Color(0xff5E5E5E)
+                                : const Color(0xffBDBDBD),
                           ),
                         ),
                         leading: CircleAvatar(

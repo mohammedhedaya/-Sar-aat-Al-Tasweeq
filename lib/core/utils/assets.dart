@@ -74,6 +74,10 @@ class Assets {
   /// assets/images/chating.svg
   static const String imagesChating = "assets/images/chating.svg";
 
+  /// Assets for imagesChatsLogoLight
+  /// assets/images/chatsLogoLight.png
+  static const String imagesChatsLogoLight = "assets/images/chatsLogoLight.png";
+
   /// Assets for imagesChatslogo
   /// assets/images/chatslogo.png
   static const String imagesChatslogo = "assets/images/chatslogo.png";

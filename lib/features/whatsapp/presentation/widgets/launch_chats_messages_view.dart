@@ -5,6 +5,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:shopping_chart/core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
 
@@ -27,7 +28,7 @@ class LaunchChatsMessagesViewBody extends StatelessWidget {
         Text(
           "أحمد على محمد",
           style: AppStyles.style10W800.copyWith(
-            color: isDark ? Colors.white : Colors.black,
+            color: isDark ? Colors.white : AppColors.blueLight,
           ),
         ),
         SizedBox(height: 53.h),
@@ -36,7 +37,7 @@ class LaunchChatsMessagesViewBody extends StatelessWidget {
             width: double.infinity,
             padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
-              color: const Color(0xffABABAB),
+              color: isDark ? const Color(0xffABABAB) : AppColors.blueLight,
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(50.r),
                 topRight: Radius.circular(50.r),
@@ -55,7 +56,9 @@ class LaunchChatsMessagesViewBody extends StatelessWidget {
                             Container(
                               padding: const EdgeInsets.all(8),
                               decoration: BoxDecoration(
-                                color: const Color(0xff323232),
+                                color: isDark
+                                    ? const Color(0xff323232)
+                                    : Colors.white,
                                 borderRadius: BorderRadius.circular(10.r),
                               ),
                               child: Row(
@@ -76,7 +79,11 @@ class LaunchChatsMessagesViewBody extends StatelessWidget {
                                   SizedBox(width: 5.w),
                                   Text(
                                     "0:31",
-                                    style: AppStyles.style12W700,
+                                    style: AppStyles.style12W700.copyWith(
+                                      color: isDark
+                                          ? Colors.white
+                                          : const Color(0xffDADADA),
+                                    ),
                                   ),
                                 ],
                               ),
@@ -104,14 +111,18 @@ class LaunchChatsMessagesViewBody extends StatelessWidget {
                             Container(
                               padding: const EdgeInsets.all(8),
                               decoration: BoxDecoration(
-                                color: const Color(0xffE0E0E0),
+                                color: isDark
+                                    ? const Color(0xffE0E0E0)
+                                    : AppColors.yellowLight,
                                 borderRadius: BorderRadius.circular(10.r),
                               ),
                               child: Row(
                                 children: [
-                                  const Icon(
+                                  Icon(
                                     Icons.play_arrow_rounded,
-                                    color: Color(0xff323232),
+                                    color: isDark
+                                        ? const Color(0xff323232)
+                                        : AppColors.blueLight,
                                     size: 35,
                                   ),
                                   SizedBox(width: 5.w),
@@ -122,7 +133,9 @@ class LaunchChatsMessagesViewBody extends StatelessWidget {
                                   Text(
                                     "0:31",
                                     style: AppStyles.style12W700.copyWith(
-                                      color: const Color(0xff323232),
+                                      color: isDark
+                                          ? const Color(0xff323232)
+                                          : AppColors.blueLight,
                                     ),
                                   ),
                                 ],
@@ -139,9 +152,11 @@ class LaunchChatsMessagesViewBody extends StatelessWidget {
                                 Assets.imagesImageInProfile,
                               ),
                             ),
-                            const BubbleSpecialThree(
+                            BubbleSpecialThree(
                               text: 'Sure',
-                              color: Color(0xffE0E0E0),
+                              color: isDark
+                                  ? const Color(0xffE0E0E0)
+                                  : AppColors.yellowLight,
                               tail: false,
                               isSender: false,
                             ),
@@ -151,11 +166,15 @@ class LaunchChatsMessagesViewBody extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            const BubbleSpecialThree(
+                            BubbleSpecialThree(
                               text: 'OK',
-                              color: Color(0xff323232),
+                              color: isDark
+                                  ? const Color(0xff323232)
+                                  : Colors.white,
                               textStyle: TextStyle(
-                                color: Color(0xffE0E0E0),
+                                color: isDark
+                                    ? const Color(0xffE0E0E0)
+                                    : AppColors.blueLight,
                               ),
                               tail: false,
                               isSender: false,
@@ -179,8 +198,10 @@ class LaunchChatsMessagesViewBody extends StatelessWidget {
                       onTap: () {},
                       child: Container(
                         padding: const EdgeInsets.all(8),
-                        decoration: const BoxDecoration(
-                          color: Color(0xff3F3F3F),
+                        decoration: BoxDecoration(
+                          color: isDark
+                              ? const Color(0xff3F3F3F)
+                              : AppColors.yellowLight,
                           shape: BoxShape.circle,
                         ),
                         child: const Icon(
@@ -214,8 +235,10 @@ class LaunchChatsMessagesViewBody extends StatelessWidget {
                             onTap: () {},
                             child: Container(
                               margin: const EdgeInsets.all(7),
-                              decoration: const BoxDecoration(
-                                color: Color(0xffB6B6B6),
+                              decoration: BoxDecoration(
+                                color: isDark
+                                    ? const Color(0xffB6B6B6)
+                                    : AppColors.yellowLight,
                                 shape: BoxShape.circle,
                               ),
                               child: const Icon(
