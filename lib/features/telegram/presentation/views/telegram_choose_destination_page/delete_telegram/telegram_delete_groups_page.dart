@@ -31,8 +31,8 @@ class _TelegramDeleteGroupsPageState extends State<TelegramDeleteGroupsPage> {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(2.r),
           ),
-          activeColor: const Color(0xff00C0CC),
-          checkColor: const Color(0xff00C0CC),
+          activeColor: isDark ? const Color(0xff00C0CC) : AppColors.yellowLight,
+          checkColor: isDark ? const Color(0xff00C0CC) : AppColors.yellowLight,
           visualDensity: VisualDensity.compact,
           contentPadding: EdgeInsets.zero,
           side: BorderSide(
@@ -63,8 +63,12 @@ class _TelegramDeleteGroupsPageState extends State<TelegramDeleteGroupsPage> {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(2.r),
                     ),
-                    activeColor: const Color(0xff00C0CC),
-                    checkColor: const Color(0xff00C0CC),
+                    activeColor: isDark
+                        ? const Color(0xff00C0CC)
+                        : AppColors.yellowLight,
+                    checkColor: isDark
+                        ? const Color(0xff00C0CC)
+                        : AppColors.yellowLight,
                     visualDensity: VisualDensity.compact,
                     side: BorderSide(
                       color: isDark ? Colors.white : AppColors.blueLight,
@@ -81,7 +85,7 @@ class _TelegramDeleteGroupsPageState extends State<TelegramDeleteGroupsPage> {
                     },
                   ),
                   Divider(
-                    color: Colors.white,
+                    color: isDark ? Colors.white : AppColors.hightYellowLight,
                     thickness: 1,
                     endIndent: 25.w,
                     indent: 25.w,
@@ -113,7 +117,14 @@ class _TelegramDeleteGroupsPageState extends State<TelegramDeleteGroupsPage> {
                         begin: Alignment.centerLeft,
                         end: Alignment.centerRight,
                       )
-                    : null,
+                    : const LinearGradient(
+                        colors: [
+                          AppColors.linearLight1,
+                          AppColors.linearLight2,
+                        ],
+                        begin: Alignment.centerLeft,
+                        end: Alignment.centerRight,
+                      ),
               ),
               child: Center(
                 child: Text(
