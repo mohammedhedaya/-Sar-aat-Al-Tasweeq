@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:shopping_chart/core/constants/constants.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
@@ -37,7 +38,9 @@ class LaunchAdTelegramGroupsViewBody extends StatelessWidget {
             ),
             SizedBox(height: 4.h),
             CustomAuthTextField(
-              fiiledColor: AppColors.whiteColor.withOpacity(0.10),
+              fiiledColor: isDark
+                  ? AppColors.whiteColor.withOpacity(0.10)
+                  : AppColors.fillLight,
               hintText: "",
               onChanged: (value) {},
             ),
@@ -66,7 +69,9 @@ class LaunchAdTelegramGroupsViewBody extends StatelessWidget {
             SizedBox(height: 4.h),
             CustomAuthTextField(
               readOnly: true,
-              fiiledColor: AppColors.whiteColor.withOpacity(0.10),
+              fiiledColor: isDark
+                  ? AppColors.whiteColor.withOpacity(0.10)
+                  : AppColors.fillLight,
               hintText: "",
               prefixIcon: CountryCodePicker(
                 onChanged: (value) {},
@@ -83,9 +88,11 @@ class LaunchAdTelegramGroupsViewBody extends StatelessWidget {
                   borderRadius: BorderRadius.circular(5.r),
                 ),
               ),
-              suffixIcon: const Icon(
+              suffixIcon: Icon(
                 Icons.keyboard_arrow_down_rounded,
-                color: Color.fromARGB(255, 4, 182, 164),
+                color: isDark
+                    ? const Color.fromARGB(255, 4, 182, 164)
+                    : const Color.fromARGB(255, 243, 184, 6),
                 size: 30,
               ),
               onChanged: (value) {},
@@ -109,7 +116,6 @@ class LaunchAdTelegramGroupsViewBody extends StatelessWidget {
                       EdgeInsets.symmetric(horizontal: 22.w, vertical: 4.h),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5.r),
-                    color: isDark ? null : AppColors.blueLight,
                     gradient: isDark
                         ? const LinearGradient(
                             colors: [
@@ -119,7 +125,14 @@ class LaunchAdTelegramGroupsViewBody extends StatelessWidget {
                             begin: Alignment.centerLeft,
                             end: Alignment.centerRight,
                           )
-                        : null,
+                        : const LinearGradient(
+                            colors: [
+                              AppColors.linearLight1,
+                              AppColors.linearLight2,
+                            ],
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                          ),
                   ),
                   child: Text(
                     "Addyourtelegramgroup".tr(context: context),
@@ -161,7 +174,9 @@ class _CustomPastLinkTelegramTextFieldState
   Widget build(BuildContext context) {
     return CustomAuthTextField(
       controller: linkController,
-      fiiledColor: AppColors.whiteColor.withOpacity(0.10),
+      fiiledColor: isDark(context)
+          ? AppColors.whiteColor.withOpacity(0.10)
+          : AppColors.fillLight,
       hintText: "",
       suffixIcon: InkWell(
         onTap: () async {
@@ -176,9 +191,13 @@ class _CustomPastLinkTelegramTextFieldState
         },
         child: Transform.scale(
           scale: 0.5,
-          child: SvgPicture.asset(
-            Assets.imagesLinkTeal,
-          ),
+          child: isDark(context)
+              ? SvgPicture.asset(
+                  Assets.imagesLinkTeal,
+                )
+              : SvgPicture.asset(
+                  Assets.imagesLinkLight,
+                ),
         ),
       ),
       onChanged: (value) {},
