@@ -76,12 +76,19 @@ class SMSViewBody extends StatelessWidget {
                               Text(
                                 "pleaseSubscribeToThePackage"
                                     .tr(context: context),
-                                style: AppStyles.style15W900,
+                                style: AppStyles.style15W900.copyWith(
+                                  color: isDark
+                                      ? Colors.white
+                                      : AppColors.blueLight,
+                                ),
                                 textAlign: TextAlign.center,
                               ),
                               SizedBox(width: 10.w),
                               SvgPicture.asset(
                                 Assets.imagesSubscribeOfPackage,
+                                colorFilter: ColorFilter.mode(
+                                    isDark ? Colors.white : AppColors.blueLight,
+                                    BlendMode.srcIn),
                               ),
                             ],
                           ),
@@ -113,12 +120,20 @@ class SMSViewBody extends StatelessWidget {
                               Text(
                                 "pleaseSubscribeToThePackage"
                                     .tr(context: context),
-                                style: AppStyles.style15W900,
+                                style: AppStyles.style15W900.copyWith(
+                                  color: isDark
+                                      ? Colors.white
+                                      : AppColors.blueLight,
+                                ),
                                 textAlign: TextAlign.center,
                               ),
                               SizedBox(width: 10.w),
                               SvgPicture.asset(
                                 Assets.imagesSubscribeOfPackage,
+                                colorFilter: ColorFilter.mode(
+                                  isDark ? Colors.white : AppColors.blueLight,
+                                  BlendMode.srcIn,
+                                ),
                               ),
                             ],
                           ),
@@ -153,6 +168,12 @@ class SMSViewBody extends StatelessWidget {
                     SvgPicture.asset(
                       Assets.imagesLikeicon,
                       height: 40.h,
+                      colorFilter: ColorFilter.mode(
+                        isDark
+                            ? const Color(0xff00C0CC)
+                            : AppColors.yellowLight,
+                        BlendMode.srcIn,
+                      ),
                     ),
                   ],
                 ),
@@ -173,14 +194,23 @@ class SMSViewBody extends StatelessWidget {
                       width: 119.w,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5.r),
-                        gradient: const LinearGradient(
-                          colors: [
-                            Color(0xff00C0CC),
-                            Color(0xff006066),
-                          ],
-                          begin: Alignment.centerLeft,
-                          end: Alignment.centerRight,
-                        ),
+                        gradient: isDark
+                            ? const LinearGradient(
+                                colors: [
+                                  Color(0xff00C0CC),
+                                  Color(0xff006066),
+                                ],
+                                begin: Alignment.centerLeft,
+                                end: Alignment.centerRight,
+                              )
+                            : const LinearGradient(
+                                colors: [
+                                  AppColors.linearLight1,
+                                  AppColors.linearLight2,
+                                ],
+                                begin: Alignment.centerLeft,
+                                end: Alignment.centerRight,
+                              ),
                       ),
                       child: Center(
                         child: Text(
