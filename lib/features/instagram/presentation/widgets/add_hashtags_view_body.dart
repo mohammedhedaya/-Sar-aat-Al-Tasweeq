@@ -68,14 +68,26 @@ class _AddHashtagsViewBodyState extends State<AddHashtagsViewBody> {
                         color: Colors.black,
                       ),
                       filled: true,
-                      fillColor: const Color(0xffF3F3F3),
+                      fillColor: isDark
+                          ? const Color(0xffF3F3F3)
+                          : AppColors.fillLight,
                       prefixIcon: Transform.scale(
                         scale: 0.7,
-                        child: SvgPicture.asset(
-                          Assets.imagesKeyIcon,
-                          height: 15.h,
-                          width: 15.w,
-                        ),
+                        child: isDark
+                            ? SvgPicture.asset(
+                                Assets.imagesKeyIcon,
+                                height: 15.h,
+                                width: 15.w,
+                              )
+                            : SvgPicture.asset(
+                                Assets.imagesKeyIcon,
+                                height: 15.h,
+                                width: 15.w,
+                                colorFilter: const ColorFilter.mode(
+                                  AppColors.yellowLight,
+                                  BlendMode.srcIn,
+                                ),
+                              ),
                       ),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(4.r),
@@ -101,8 +113,10 @@ class _AddHashtagsViewBodyState extends State<AddHashtagsViewBody> {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(2.r),
               ),
-              activeColor: const Color(0xff00C0CC),
-              checkColor: const Color(0xff00C0CC),
+              activeColor:
+                  isDark ? const Color(0xff00C0CC) : AppColors.yellowLight,
+              checkColor:
+                  isDark ? const Color(0xff00C0CC) : AppColors.yellowLight,
               visualDensity: VisualDensity.compact,
               contentPadding: EdgeInsets.zero,
               side: BorderSide(
@@ -142,8 +156,12 @@ class _AddHashtagsViewBodyState extends State<AddHashtagsViewBody> {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(2.r),
                         ),
-                        activeColor: const Color(0xff00C0CC),
-                        checkColor: const Color(0xff00C0CC),
+                        activeColor: isDark
+                            ? const Color(0xff00C0CC)
+                            : AppColors.yellowLight,
+                        checkColor: isDark
+                            ? const Color(0xff00C0CC)
+                            : AppColors.yellowLight,
                         visualDensity: VisualDensity.compact,
                         side: BorderSide(
                           color: isDark ? Colors.white : AppColors.blueLight,
@@ -160,7 +178,8 @@ class _AddHashtagsViewBodyState extends State<AddHashtagsViewBody> {
                         },
                       ),
                       Divider(
-                        color: Colors.white,
+                        color:
+                            isDark ? Colors.white : AppColors.hightYellowLight,
                         thickness: 1,
                         endIndent: 25.w,
                         indent: 10.w,
@@ -183,7 +202,6 @@ class _AddHashtagsViewBodyState extends State<AddHashtagsViewBody> {
                 padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 4.h),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(5.r),
-                  color: isDark ? null : AppColors.blueLight,
                   gradient: isDark
                       ? const LinearGradient(
                           colors: [
@@ -193,7 +211,14 @@ class _AddHashtagsViewBodyState extends State<AddHashtagsViewBody> {
                           begin: Alignment.centerLeft,
                           end: Alignment.centerRight,
                         )
-                      : null,
+                      : const LinearGradient(
+                          colors: [
+                            AppColors.linearLight1,
+                            AppColors.linearLight2,
+                          ],
+                          begin: Alignment.centerLeft,
+                          end: Alignment.centerRight,
+                        ),
                 ),
                 child: Center(
                   child: Text(
