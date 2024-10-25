@@ -37,6 +37,7 @@ class _EmailChooseDetinationViewState extends State<EmailChooseDetinationView> {
                 "launchaddwithease".tr(context: context),
                 style: AppStyles.style17W800.copyWith(
                   fontWeight: FontWeight.w700,
+                  color: Colors.white,
                 ),
               ),
             ),
@@ -52,7 +53,7 @@ class _EmailChooseDetinationViewState extends State<EmailChooseDetinationView> {
             },
             icon: const Icon(
               Icons.arrow_forward_ios_rounded,
-              // color: Colors.white60,
+              color: Colors.white,
             ),
           ),
         ],
@@ -74,13 +75,14 @@ class _EmailChooseDetinationViewState extends State<EmailChooseDetinationView> {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(2.r),
               ),
-              activeColor: const Color(0xff00C0CC),
-              checkColor: const Color(0xff00C0CC),
+              activeColor:
+                  isDark ? const Color(0xff00C0CC) : AppColors.yellowLight,
+              checkColor:
+                  isDark ? const Color(0xff00C0CC) : AppColors.yellowLight,
               visualDensity: VisualDensity.compact,
               contentPadding: EdgeInsets.zero,
-              side:  BorderSide(
-                        color: isDark ? Colors.white : AppColors.blueLight,
-
+              side: BorderSide(
+                color: isDark ? Colors.white : AppColors.blueLight,
               ),
               value: selectAll,
               onChanged: (value) {
@@ -107,12 +109,15 @@ class _EmailChooseDetinationViewState extends State<EmailChooseDetinationView> {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(2.r),
                         ),
-                        activeColor: const Color(0xff00C0CC),
-                        checkColor: const Color(0xff00C0CC),
+                        activeColor: isDark
+                            ? const Color(0xff00C0CC)
+                            : AppColors.yellowLight,
+                        checkColor: isDark
+                            ? const Color(0xff00C0CC)
+                            : AppColors.yellowLight,
                         visualDensity: VisualDensity.compact,
-                        side:  BorderSide(
-                                      color: isDark ? Colors.white : AppColors.blueLight,
-
+                        side: BorderSide(
+                          color: isDark ? Colors.white : AppColors.blueLight,
                         ),
                         value: isSelected[index],
                         onChanged: (value) {
@@ -126,7 +131,8 @@ class _EmailChooseDetinationViewState extends State<EmailChooseDetinationView> {
                         },
                       ),
                       Divider(
-                        color: Colors.white,
+                        color:
+                            isDark ? Colors.white : AppColors.hightYellowLight,
                         thickness: 1,
                         endIndent: 25.w,
                         indent: 25.w,
@@ -148,19 +154,30 @@ class _EmailChooseDetinationViewState extends State<EmailChooseDetinationView> {
                       EdgeInsets.symmetric(horizontal: 22.w, vertical: 4.h),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5.r),
-                    gradient: const LinearGradient(
-                      colors: [
-                        Color(0xff00C0CC),
-                        Color(0xff006066),
-                      ],
-                      begin: Alignment.centerLeft,
-                      end: Alignment.centerRight,
-                    ),
+                    gradient: isDark
+                        ? const LinearGradient(
+                            colors: [
+                              Color(0xff00C0CC),
+                              Color(0xff006066),
+                            ],
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                          )
+                        : const LinearGradient(
+                            colors: [
+                              AppColors.linearLight1,
+                              AppColors.linearLight2,
+                            ],
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                          ),
                   ),
                   child: Center(
                     child: Text(
                       "send".tr(context: context),
-                      style: AppStyles.style14W400,
+                      style: AppStyles.style14W400.copyWith(
+                        color: Colors.white,
+                      ),
                       textAlign: TextAlign.center,
                     ),
                   ),
