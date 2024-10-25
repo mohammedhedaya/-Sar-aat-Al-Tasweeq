@@ -33,6 +33,7 @@ class ChooseTelegramGroupToSendViewBody extends StatelessWidget {
                 "400",
                 style: AppStyles.style12W700.copyWith(
                   fontWeight: FontWeight.w900,
+                  color: Colors.white,
                   fontFamily: "Titillium Web",
                 ),
               ),
@@ -58,7 +59,9 @@ class ChooseTelegramGroupToSendViewBody extends StatelessWidget {
                   const CustomChooseGroupPastLinkTextField(),
                   SizedBox(height: 19.h),
                   CustomAuthTextField(
-                    fiiledColor: AppColors.whiteColor.withOpacity(0.10),
+                    fiiledColor: isDark
+                        ? AppColors.whiteColor.withOpacity(0.10)
+                        : AppColors.fillLight,
                     hintText: "addLink".tr(context: context),
                     hintStyle: AppStyles.style12W700.copyWith(
                       color: isDark
@@ -67,9 +70,13 @@ class ChooseTelegramGroupToSendViewBody extends StatelessWidget {
                     ),
                     suffixIcon: Transform.scale(
                       scale: 0.5,
-                      child: SvgPicture.asset(
-                        Assets.imagesLocationTeal,
-                      ),
+                      child: isDark
+                          ? SvgPicture.asset(
+                              Assets.imagesLocationTeal,
+                            )
+                          : SvgPicture.asset(
+                              Assets.imagesLocationLight,
+                            ),
                     ),
                     onChanged: (value) {},
                   ),
@@ -86,19 +93,24 @@ class ChooseTelegramGroupToSendViewBody extends StatelessWidget {
                           vertical: 4.h,
                         ),
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5.r),
-                          color: isDark ? null : AppColors.blueLight,
-                          gradient: isDark
-                              ? const LinearGradient(
-                                  colors: [
-                                    Color(0xff00C0CC),
-                                    Color(0xff006066),
-                                  ],
-                                  begin: Alignment.centerLeft,
-                                  end: Alignment.centerRight,
-                                )
-                              : null,
-                        ),
+                            borderRadius: BorderRadius.circular(5.r),
+                            gradient: isDark
+                                ? const LinearGradient(
+                                    colors: [
+                                      Color(0xff00C0CC),
+                                      Color(0xff006066),
+                                    ],
+                                    begin: Alignment.centerLeft,
+                                    end: Alignment.centerRight,
+                                  )
+                                : const LinearGradient(
+                                    colors: [
+                                      AppColors.linearLight1,
+                                      AppColors.linearLight2,
+                                    ],
+                                    begin: Alignment.centerLeft,
+                                    end: Alignment.centerRight,
+                                  )),
                         child: Text(
                           "Chooseoneofthegroups".tr(context: context),
                           style: AppStyles.style14W400.copyWith(

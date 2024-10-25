@@ -45,6 +45,12 @@ class _ChooseTelegramGroupToSendViewBody1State
                     children: [
                       SvgPicture.asset(
                         Assets.imagesSendforward,
+                        colorFilter: ColorFilter.mode(
+                          isDark
+                              ? const Color(0xff00C0CC)
+                              : AppColors.yellowLight,
+                          BlendMode.srcIn,
+                        ),
                       ),
                       SizedBox(width: 10.w),
                       Expanded(
@@ -67,7 +73,6 @@ class _ChooseTelegramGroupToSendViewBody1State
                   padding: const EdgeInsets.all(24),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5.r),
-                    color: isDark ? null : AppColors.blueLight,
                     gradient: isDark
                         ? const LinearGradient(
                             colors: [
@@ -77,7 +82,14 @@ class _ChooseTelegramGroupToSendViewBody1State
                             begin: Alignment.centerLeft,
                             end: Alignment.centerRight,
                           )
-                        : null,
+                        : const LinearGradient(
+                            colors: [
+                              AppColors.linearLight1,
+                              AppColors.linearLight2,
+                            ],
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                          ),
                   ),
                   child: Text(
                     "recharge".tr(context: context),
@@ -105,8 +117,10 @@ class _ChooseTelegramGroupToSendViewBody1State
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(2.r),
             ),
-            activeColor: const Color(0xff00C0CC),
-            checkColor: const Color(0xff00C0CC),
+            activeColor:
+                isDark ? const Color(0xff00C0CC) : AppColors.yellowLight,
+            checkColor:
+                isDark ? const Color(0xff00C0CC) : AppColors.yellowLight,
             visualDensity: VisualDensity.compact,
             contentPadding: EdgeInsets.zero,
             side: BorderSide(
@@ -137,8 +151,12 @@ class _ChooseTelegramGroupToSendViewBody1State
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(2.r),
                       ),
-                      activeColor: const Color(0xff00C0CC),
-                      checkColor: const Color(0xff00C0CC),
+                      activeColor: isDark
+                          ? const Color(0xff00C0CC)
+                          : AppColors.yellowLight,
+                      checkColor: isDark
+                          ? const Color(0xff00C0CC)
+                          : AppColors.yellowLight,
                       visualDensity: VisualDensity.compact,
                       side: BorderSide(
                         color: isDark ? Colors.white : AppColors.blueLight,
@@ -155,7 +173,7 @@ class _ChooseTelegramGroupToSendViewBody1State
                       },
                     ),
                     Divider(
-                      color: Colors.white,
+                      color: isDark ? Colors.white : AppColors.hightYellowLight,
                       thickness: 1,
                       endIndent: 25.w,
                       indent: 25.w,
@@ -176,7 +194,6 @@ class _ChooseTelegramGroupToSendViewBody1State
               padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 4.h),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5.r),
-                color: isDark ? null : AppColors.blueLight,
                 gradient: isDark
                     ? const LinearGradient(
                         colors: [
@@ -186,7 +203,14 @@ class _ChooseTelegramGroupToSendViewBody1State
                         begin: Alignment.centerLeft,
                         end: Alignment.centerRight,
                       )
-                    : null,
+                    : const LinearGradient(
+                        colors: [
+                          AppColors.linearLight1,
+                          AppColors.linearLight2,
+                        ],
+                        begin: Alignment.centerLeft,
+                        end: Alignment.centerRight,
+                      ),
               ),
               child: Center(
                 child: Text(
@@ -249,7 +273,7 @@ class _ChooseTelegramGroupToSendViewBody1State
               right: 22.w,
             ),
             decoration: BoxDecoration(
-              color: isDark ? const Color(0xff00C0CC) : AppColors.blueLight,
+              color: isDark ? const Color(0xff00C0CC) : AppColors.yellowLight,
               borderRadius: BorderRadius.circular(15.r),
               border: Border.all(
                 color: Colors.white,
