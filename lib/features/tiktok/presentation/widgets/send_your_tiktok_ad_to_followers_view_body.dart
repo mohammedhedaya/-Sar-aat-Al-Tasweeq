@@ -124,7 +124,7 @@ class _SendYourTiktokAdToFollowersViewBodyState
                                     colorFilter: ColorFilter.mode(
                                       isDark
                                           ? AppColors.whiteColor
-                                          : AppColors.blueLight,
+                                          : AppColors.yellowLight,
                                       BlendMode.srcIn,
                                     ),
                                   )
@@ -137,7 +137,7 @@ class _SendYourTiktokAdToFollowersViewBodyState
                                 colorFilter: ColorFilter.mode(
                                   isDark
                                       ? AppColors.whiteColor
-                                      : AppColors.blueLight,
+                                      : AppColors.yellowLight,
                                   BlendMode.srcIn,
                                 ),
                               ),

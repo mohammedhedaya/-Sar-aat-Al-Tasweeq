@@ -128,7 +128,7 @@ class _ChoosePersonAndSendAdViewBodyState
                                     colorFilter: ColorFilter.mode(
                                       isDark
                                           ? AppColors.whiteColor
-                                          : AppColors.blueLight,
+                                          : AppColors.yellowLight,
                                       BlendMode.srcIn,
                                     ),
                                   )
@@ -141,7 +141,7 @@ class _ChoosePersonAndSendAdViewBodyState
                                 colorFilter: ColorFilter.mode(
                                   isDark
                                       ? AppColors.whiteColor
-                                      : AppColors.blueLight,
+                                      : AppColors.yellowLight,
                                   BlendMode.srcIn,
                                 ),
                               ),

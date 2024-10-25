@@ -79,7 +79,7 @@ class _LaunchYourXAdViewBodyState extends State<LaunchYourXAdViewBody> {
                           ? SvgPicture.asset(
                               Assets.imagesUploadIcon,
                               colorFilter: ColorFilter.mode(
-                                isDark ? Colors.white : AppColors.blueLight,
+                                isDark ? Colors.white : AppColors.yellowLight,
                                 BlendMode.srcIn,
                               ),
                             )
@@ -90,7 +90,7 @@ class _LaunchYourXAdViewBodyState extends State<LaunchYourXAdViewBody> {
                       : SvgPicture.asset(
                           Assets.imagesUploadIcon,
                           colorFilter: ColorFilter.mode(
-                            isDark ? Colors.white : AppColors.blueLight,
+                            isDark ? Colors.white : AppColors.yellowLight,
                             BlendMode.srcIn,
                           ),
                         ),

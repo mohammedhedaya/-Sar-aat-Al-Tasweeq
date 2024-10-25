@@ -125,7 +125,7 @@ class _SendYourXAdToFollowrsViewBodyState
                                     colorFilter: ColorFilter.mode(
                                       isDark
                                           ? Colors.white
-                                          : AppColors.blueLight,
+                                          : AppColors.yellowLight,
                                       BlendMode.srcIn,
                                     ),
                                   )
@@ -136,7 +136,7 @@ class _SendYourXAdToFollowrsViewBodyState
                             : SvgPicture.asset(
                                 Assets.imagesUploadIcon,
                                 colorFilter: ColorFilter.mode(
-                                  isDark ? Colors.white : AppColors.blueLight,
+                                  isDark ? Colors.white : AppColors.yellowLight,
                                   BlendMode.srcIn,
                                 ),
                               ),

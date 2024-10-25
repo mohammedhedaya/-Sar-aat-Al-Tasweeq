@@ -126,7 +126,7 @@ class _SendYourAdToFollowersViewBodyState
                                     colorFilter: ColorFilter.mode(
                                       isDark
                                           ? AppColors.whiteColor
-                                          : AppColors.blueLight,
+                                          : AppColors.yellowLight,
                                       BlendMode.srcIn,
                                     ),
                                   )
@@ -139,7 +139,7 @@ class _SendYourAdToFollowersViewBodyState
                                 colorFilter: ColorFilter.mode(
                                   isDark
                                       ? AppColors.whiteColor
-                                      : AppColors.blueLight,
+                                      : AppColors.yellowLight,
                                   BlendMode.srcIn,
                                 ),
                               ),

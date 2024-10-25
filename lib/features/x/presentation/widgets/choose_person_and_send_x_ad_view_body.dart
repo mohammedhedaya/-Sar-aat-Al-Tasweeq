@@ -128,7 +128,7 @@ class _ChoosePersonAndSendXAdViewBodyState
                                     colorFilter: ColorFilter.mode(
                                       isDark
                                           ? Colors.white
-                                          : AppColors.blueLight,
+                                          : AppColors.yellowLight,
                                       BlendMode.srcIn,
                                     ),
                                   )
@@ -139,7 +139,7 @@ class _ChoosePersonAndSendXAdViewBodyState
                             : SvgPicture.asset(
                                 Assets.imagesUploadIcon,
                                 colorFilter: ColorFilter.mode(
-                                  isDark ? Colors.white : AppColors.blueLight,
+                                  isDark ? Colors.white : AppColors.yellowLight,
                                   BlendMode.srcIn,
                                 ),
                               ),
