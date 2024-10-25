@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shopping_chart/core/constants/constants.dart';
+import 'package:shopping_chart/core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
 import '../../../whatsapp/presentation/widgets/custom_launch_drawer_item.dart';
@@ -42,7 +44,9 @@ class LaunchYourTelegramAdDrawer extends StatelessWidget {
                         right: 22.w,
                       ),
                       decoration: BoxDecoration(
-                        color: const Color(0xff00C0CC),
+                        color: isDark(context)
+                            ? const Color(0xff00C0CC)
+                            : AppColors.yellowLight,
                         borderRadius: BorderRadius.circular(15.r),
                         border: Border.all(
                           color: Colors.white,
@@ -57,7 +61,9 @@ class LaunchYourTelegramAdDrawer extends StatelessWidget {
                           SizedBox(height: 11.h),
                           Text(
                             '300',
-                            style: AppStyles.style14W400,
+                            style: AppStyles.style14W400.copyWith(
+                              color: AppColors.whiteColor,
+                            ),
                           ),
                         ],
                       ),
@@ -76,7 +82,9 @@ class LaunchYourTelegramAdDrawer extends StatelessWidget {
                         color: const Color(0xff006066),
                         borderRadius: BorderRadius.circular(15.r),
                         border: Border.all(
-                          color: Colors.white,
+                          color: isDark(context)
+                              ? Colors.white
+                              : AppColors.yellowLight,
                           width: 1,
                         ),
                       ),
@@ -86,12 +94,19 @@ class LaunchYourTelegramAdDrawer extends StatelessWidget {
                             '18',
                             style: AppStyles.style14W400.copyWith(
                               fontSize: 22.sp,
+                              color: isDark(context)
+                                  ? Colors.white
+                                  : AppColors.yellowLight,
                             ),
                           ),
                           SizedBox(height: 8.h),
                           Text(
                             'day'.tr(context: context),
-                            style: AppStyles.style14W400,
+                            style: AppStyles.style14W400.copyWith(
+                              color: isDark(context)
+                                  ? Colors.white
+                                  : AppColors.yellowLight,
+                            ),
                           ),
                         ],
                       ),
@@ -121,7 +136,8 @@ class LaunchYourTelegramAdDrawer extends StatelessWidget {
                 onTap: () {
                   context.push('/chooseTelegramGroupToSendView');
                 },
-                title: "Chooseoneofthegroupsandsendtoallnumbers".tr(context: context),
+                title: "Chooseoneofthegroupsandsendtoallnumbers"
+                    .tr(context: context),
                 image: Assets.imagesChoosegroup,
               ),
               SizedBox(height: 40.h),
