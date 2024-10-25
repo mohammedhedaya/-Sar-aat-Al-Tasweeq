@@ -77,14 +77,16 @@ class _ConvertNumberToTelegramLinkViewBodyState
             controller: _phoneController,
             hintText: 'phone'.tr(context: context),
             keyboardType: TextInputType.phone,
-            fiiledColor: AppColors.whiteColor.withOpacity(0.10),
+            fiiledColor: isDark
+                ? AppColors.whiteColor.withOpacity(0.10)
+                : AppColors.fillLight,
             suffixIcon: Container(
               constraints: BoxConstraints(
                 minWidth: 95.w,
               ),
               height: 70.h,
               decoration: BoxDecoration(
-                color: const Color(0xffD9D9D9),
+                color: isDark ? const Color(0xffD9D9D9) : null,
                 borderRadius: context.locale.languageCode == 'ar'
                     ? BorderRadius.only(
                         topLeft: Radius.circular(20.r),
@@ -93,6 +95,14 @@ class _ConvertNumberToTelegramLinkViewBodyState
                     : BorderRadius.only(
                         topRight: Radius.circular(20.r),
                         bottomRight: Radius.circular(20.r),
+                      ),
+                gradient: isDark
+                    ? null
+                    : const LinearGradient(
+                        colors: [
+                          AppColors.linearLight1,
+                          AppColors.linearLight2,
+                        ],
                       ),
               ),
               child: CountryCodePicker(
@@ -151,7 +161,7 @@ class _ConvertNumberToTelegramLinkViewBodyState
               decoration: BoxDecoration(
                 color: isDark
                     ? Colors.white.withOpacity(0.10)
-                    : AppColors.yellowLight,
+                    : AppColors.fillLight,
                 borderRadius: BorderRadius.circular(20.r),
               ),
               padding: const EdgeInsets.all(22),
@@ -161,7 +171,7 @@ class _ConvertNumberToTelegramLinkViewBodyState
                     child: Text(
                       _telegramLink,
                       style: AppStyles.style12W400.copyWith(
-                        color: isDark ? Colors.white : Colors.black,
+                        color: Colors.white,
                       ),
                       overflow: TextOverflow.ellipsis,
                       textAlign: TextAlign.center,
@@ -172,10 +182,6 @@ class _ConvertNumberToTelegramLinkViewBodyState
                     onTap: _copyToClipboard,
                     child: SvgPicture.asset(
                       Assets.imagesCopyIcon2,
-                      colorFilter: ColorFilter.mode(
-                        isDark ? Colors.white : Colors.black,
-                        BlendMode.srcIn,
-                      ),
                     ),
                   ),
                 ],
