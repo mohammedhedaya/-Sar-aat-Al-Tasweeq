@@ -42,6 +42,7 @@ class TelegramGroupsViewBody extends StatelessWidget {
                   return Padding(
                     padding: EdgeInsets.only(bottom: 26.h),
                     child: ListTile(
+                      tileColor: isDark ? null : AppColors.fillLight,
                       onTap: () {
                         context.push("/telegramGroupsDetailsView");
                       },

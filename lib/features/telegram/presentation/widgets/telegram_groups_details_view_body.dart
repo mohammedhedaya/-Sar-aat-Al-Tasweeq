@@ -67,19 +67,30 @@ class _TelegramGroupsDetailsViewBodyState
                       EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5.r),
-                    gradient: const LinearGradient(
-                      colors: [
-                        Color(0xff00C0CC),
-                        Color(0xff006066),
-                      ],
-                      begin: Alignment.centerLeft,
-                      end: Alignment.centerRight,
-                    ),
+                    gradient: isDark
+                        ? const LinearGradient(
+                            colors: [
+                              Color(0xff00C0CC),
+                              Color(0xff006066),
+                            ],
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                          )
+                        : const LinearGradient(
+                            colors: [
+                              AppColors.linearLight1,
+                              AppColors.linearLight2,
+                            ],
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                          ),
                   ),
                   child: Center(
                     child: Text(
                       "recharge".tr(context: context),
-                      style: AppStyles.style14W400,
+                      style: AppStyles.style14W400.copyWith(
+                        color: Colors.white,
+                      ),
                       textAlign: TextAlign.center,
                     ),
                   ),
@@ -137,7 +148,9 @@ class _TelegramGroupsDetailsViewBodyState
                       children: [
                         Text(
                           "addTelegramChannel".tr(context: context),
-                          style: AppStyles.style13W600,
+                          style: AppStyles.style13W600.copyWith(
+                            color: isDark ? Colors.white : AppColors.blueLight,
+                          ),
                           textAlign: TextAlign.center,
                         ),
                         const Spacer(),
@@ -158,7 +171,9 @@ class _TelegramGroupsDetailsViewBodyState
                                     title: Text(
                                       "GroupLink".tr(context: context),
                                       style: AppStyles.style12W400.copyWith(
-                                        color: Colors.white,
+                                        color: isDark
+                                            ? Colors.white
+                                            : AppColors.blueLight,
                                       ),
                                     ),
                                     content: Container(
@@ -175,7 +190,9 @@ class _TelegramGroupsDetailsViewBodyState
                                               "https://t.me/",
                                               style: AppStyles.style12W400
                                                   .copyWith(
-                                                color: Colors.white,
+                                                color: isDark
+                                                    ? Colors.white
+                                                    : AppColors.blueLight,
                                               ),
                                               textAlign: TextAlign.center,
                                             ),
@@ -185,6 +202,12 @@ class _TelegramGroupsDetailsViewBodyState
                                             onTap: () {},
                                             child: SvgPicture.asset(
                                               Assets.imagesCopyIcon2,
+                                              colorFilter: ColorFilter.mode(
+                                                isDark
+                                                    ? Colors.white
+                                                    : AppColors.blueLight,
+                                                BlendMode.srcIn,
+                                              ),
                                             ),
                                           ),
                                         ],
@@ -207,21 +230,31 @@ class _TelegramGroupsDetailsViewBodyState
                                             margin: EdgeInsets.symmetric(
                                                 horizontal: 30.w),
                                             decoration: BoxDecoration(
-                                              gradient: const LinearGradient(
-                                                colors: [
-                                                  Color(0xff00C0CC),
-                                                  Color(0xff006066),
-                                                ],
-                                                begin: Alignment.centerLeft,
-                                                end: Alignment.centerRight,
-                                              ),
+                                              color: isDark
+                                                  ? null
+                                                  : AppColors.blueLight,
+                                              gradient: isDark
+                                                  ? const LinearGradient(
+                                                      colors: [
+                                                        Color(0xff00C0CC),
+                                                        Color(0xff006066),
+                                                      ],
+                                                      begin:
+                                                          Alignment.centerLeft,
+                                                      end:
+                                                          Alignment.centerRight,
+                                                    )
+                                                  : null,
                                               borderRadius:
                                                   BorderRadius.circular(5.r),
                                             ),
                                             child: Center(
                                               child: Text(
                                                 "next".tr(context: context),
-                                                style: AppStyles.style14W400,
+                                                style: AppStyles.style14W400
+                                                    .copyWith(
+                                                  color: Colors.white,
+                                                ),
                                                 textAlign: TextAlign.center,
                                               ),
                                             ),
@@ -250,21 +283,32 @@ class _TelegramGroupsDetailsViewBodyState
                                       begin: Alignment.centerLeft,
                                       end: Alignment.centerRight,
                                     )
-                                  : const LinearGradient(
-                                      colors: [
-                                        Color(0xff00C0CC),
-                                        Color(0xff006066),
-                                      ],
-                                      begin: Alignment.centerLeft,
-                                      end: Alignment.centerRight,
-                                    ),
+                                  : isDark
+                                      ? const LinearGradient(
+                                          colors: [
+                                            Color(0xff00C0CC),
+                                            Color(0xff006066),
+                                          ],
+                                          begin: Alignment.centerLeft,
+                                          end: Alignment.centerRight,
+                                        )
+                                      : const LinearGradient(
+                                          colors: [
+                                            AppColors.linearLight1,
+                                            AppColors.linearLight2,
+                                          ],
+                                          begin: Alignment.centerLeft,
+                                          end: Alignment.centerRight,
+                                        ),
                             ),
                             child: Center(
                               child: Text(
                                 isAdded[i]
                                     ? "Joined".tr(context: context)
                                     : "add".tr(context: context),
-                                style: AppStyles.style14W400,
+                                style: AppStyles.style14W400.copyWith(
+                                  color: Colors.white,
+                                ),
                                 textAlign: TextAlign.center,
                               ),
                             ),
@@ -303,14 +347,17 @@ class _TelegramGroupsDetailsViewBodyState
                     right: 22.w,
                   ),
                   decoration: BoxDecoration(
-                    gradient: const LinearGradient(
-                      colors: [
-                        Color(0xff00C0CC),
-                        Color(0xff006066),
-                      ],
-                      begin: Alignment.centerLeft,
-                      end: Alignment.centerRight,
-                    ),
+                    color: isDark ? null : AppColors.yellowLight,
+                    gradient: isDark
+                        ? const LinearGradient(
+                            colors: [
+                              Color(0xff00C0CC),
+                              Color(0xff006066),
+                            ],
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                          )
+                        : null,
                     borderRadius: BorderRadius.circular(15.r),
                     border: Border.all(
                       color: Colors.white,
@@ -325,7 +372,9 @@ class _TelegramGroupsDetailsViewBodyState
                       SizedBox(height: 11.h),
                       Text(
                         '300',
-                        style: AppStyles.style14W400,
+                        style: AppStyles.style14W400.copyWith(
+                          color: Colors.white,
+                        ),
                       ),
                     ],
                   ),
@@ -341,14 +390,23 @@ class _TelegramGroupsDetailsViewBodyState
                     right: 12.w,
                   ),
                   decoration: BoxDecoration(
-                    gradient: const LinearGradient(
-                      colors: [
-                        Color(0xff00C0CC),
-                        Color(0xff006066),
-                      ],
-                      begin: Alignment.centerLeft,
-                      end: Alignment.centerRight,
-                    ),
+                    gradient: isDark
+                        ? const LinearGradient(
+                            colors: [
+                              Color(0xff00C0CC),
+                              Color(0xff006066),
+                            ],
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                          )
+                        : const LinearGradient(
+                            colors: [
+                              AppColors.linearLight1,
+                              AppColors.linearLight2,
+                            ],
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                          ),
                     borderRadius: BorderRadius.circular(5.r),
                   ),
                   child: Row(
@@ -364,7 +422,9 @@ class _TelegramGroupsDetailsViewBodyState
                       Expanded(
                         child: Text(
                           "Choose300groupsrandomly".tr(context: context),
-                          style: AppStyles.style14W400,
+                          style: AppStyles.style14W400.copyWith(
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                     ],
