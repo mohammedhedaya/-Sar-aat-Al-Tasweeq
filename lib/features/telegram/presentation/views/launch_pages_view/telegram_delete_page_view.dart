@@ -28,7 +28,9 @@ class TelegramDeletePageView extends StatelessWidget {
           ),
           SizedBox(height: 72.h),
           CustomAuthTextField(
-            fiiledColor: AppColors.whiteColor.withOpacity(0.10),
+            fiiledColor: isDark
+                ? AppColors.whiteColor.withOpacity(0.10)
+                : const Color(0xff8ea7bf).withOpacity(0.26),
             hintText: "addLink".tr(context: context),
             hintStyle: AppStyles.style12W700.copyWith(
               color: isDark ? const Color(0xffffffff) : const Color(0xff000000),
@@ -37,16 +39,22 @@ class TelegramDeletePageView extends StatelessWidget {
               onTap: () {},
               child: Transform.scale(
                 scale: 0.5,
-                child: SvgPicture.asset(
-                  Assets.imagesLinkTeal,
-                ),
+                child: isDark
+                    ? SvgPicture.asset(
+                        Assets.imagesLinkTeal,
+                      )
+                    : SvgPicture.asset(
+                        Assets.imagesLinkLight,
+                      ),
               ),
             ),
             onChanged: (value) {},
           ),
           SizedBox(height: 19.h),
           CustomAuthTextField(
-            fiiledColor: AppColors.whiteColor.withOpacity(0.10),
+            fiiledColor: isDark
+                ? AppColors.whiteColor.withOpacity(0.10)
+                : const Color(0xff8ea7bf).withOpacity(0.26),
             hintText: "addLocation".tr(context: context),
             hintStyle: AppStyles.style12W700.copyWith(
               color: isDark ? const Color(0xffffffff) : const Color(0xff000000),
@@ -55,9 +63,13 @@ class TelegramDeletePageView extends StatelessWidget {
               onTap: () {},
               child: Transform.scale(
                 scale: 0.5,
-                child: SvgPicture.asset(
-                  Assets.imagesLocationTeal,
-                ),
+                child: isDark
+                    ? SvgPicture.asset(
+                        Assets.imagesLocationTeal,
+                      )
+                    : SvgPicture.asset(
+                        Assets.imagesLocationLight,
+                      ),
               ),
             ),
             onChanged: (value) {},
@@ -84,7 +96,14 @@ class TelegramDeletePageView extends StatelessWidget {
                           begin: Alignment.centerLeft,
                           end: Alignment.centerRight,
                         )
-                      : null,
+                      : const LinearGradient(
+                          colors: [
+                            AppColors.linearLight1,
+                            AppColors.linearLight2,
+                          ],
+                          begin: Alignment.centerLeft,
+                          end: Alignment.centerRight,
+                        ),
                 ),
                 child: Center(
                   child: Text(
