@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shopping_chart/core/constants/constants.dart';
 import '../views/send_to_followrs_pages_view/instagram_send_to_all_followrs_page.dart';
 import '../views/send_to_followrs_pages_view/instagram_send_to_my_followings_page.dart';
 import '../views/send_to_followrs_pages_view/instagram_send_to_my_followrs_page.dart';
@@ -57,7 +58,9 @@ class _InstagramChooseDestinationSendToFollowrsViewBodyState
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5.r),
                       color: _currentPage == 0
-                          ? AppColors.whiteColor
+                          ? isDark(context)
+                              ? AppColors.whiteColor
+                              : AppColors.blueLight
                           : const Color(0xff999999),
                       boxShadow: [
                         _currentPage == 0
@@ -76,14 +79,18 @@ class _InstagramChooseDestinationSendToFollowrsViewBodyState
                           "All".tr(context: context),
                           style: AppStyles.style17W800.copyWith(
                             color: _currentPage == 0
-                                ? const Color(0xff2F2F2F)
+                                ? isDark(context)
+                                    ? const Color(0xff2F2F2F)
+                                    : Colors.white
                                 : Colors.white,
                           ),
                         ),
                         Text(
                           "4000",
                           style: AppStyles.style17W800.copyWith(
-                            color: const Color(0xff2F2F2F),
+                            color: isDark(context)
+                                ? const Color(0xff2F2F2F)
+                                : Colors.white,
                             fontWeight: FontWeight.w200,
                           ),
                         ),
@@ -103,7 +110,9 @@ class _InstagramChooseDestinationSendToFollowrsViewBodyState
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5.r),
                       color: _currentPage == 1
-                          ? AppColors.whiteColor
+                          ? isDark(context)
+                              ? AppColors.whiteColor
+                              : AppColors.blueLight
                           : const Color(0xff999999),
                       boxShadow: [
                         _currentPage == 1
@@ -122,14 +131,19 @@ class _InstagramChooseDestinationSendToFollowrsViewBodyState
                           "Followers".tr(context: context),
                           style: _currentPage == 1
                               ? AppStyles.style17W800.copyWith(
-                                  color: const Color(0xff2F2F2F),
-                                )
-                              : AppStyles.style17W800,
+                                  color: isDark(context)
+                                      ? const Color(0xff2F2F2F)
+                                      : Colors.white)
+                              : AppStyles.style17W800.copyWith(
+                                  color: Colors.white,
+                                ),
                         ),
                         Text(
                           "1000",
                           style: AppStyles.style17W800.copyWith(
-                            color: const Color(0xff2F2F2F),
+                            color: isDark(context)
+                                ? const Color(0xff2F2F2F)
+                                : Colors.white,
                             fontWeight: FontWeight.w200,
                           ),
                         ),
@@ -149,7 +163,9 @@ class _InstagramChooseDestinationSendToFollowrsViewBodyState
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5.r),
                       color: _currentPage == 2
-                          ? AppColors.whiteColor
+                          ? isDark(context)
+                              ? AppColors.whiteColor
+                              : AppColors.blueLight
                           : const Color(0xff999999),
                       boxShadow: [
                         _currentPage == 2
@@ -168,14 +184,20 @@ class _InstagramChooseDestinationSendToFollowrsViewBodyState
                           "followings".tr(context: context),
                           style: _currentPage == 2
                               ? AppStyles.style17W800.copyWith(
-                                  color: const Color(0xff2F2F2F),
+                                  color: isDark(context)
+                                      ? const Color(0xff2F2F2F)
+                                      : Colors.white,
                                 )
-                              : AppStyles.style17W800,
+                              : AppStyles.style17W800.copyWith(
+                                  color: Colors.white,
+                                ),
                         ),
                         Text(
                           "3000",
                           style: AppStyles.style17W800.copyWith(
-                            color: const Color(0xff2F2F2F),
+                            color: isDark(context)
+                                ? const Color(0xff2F2F2F)
+                                : Colors.white,
                             fontWeight: FontWeight.w200,
                           ),
                         ),
