@@ -82,13 +82,19 @@ class TelegramViewBody extends StatelessWidget {
                                 "pleaseSubscribeToThePackage"
                                     .tr(context: context),
                                 style: AppStyles.style15W900.copyWith(
-                                  color: Colors.white,
+                                  color: isDark
+                                      ? Colors.white
+                                      : AppColors.blueLight,
                                 ),
                                 textAlign: TextAlign.center,
                               ),
                               SizedBox(width: 10.w),
                               SvgPicture.asset(
                                 Assets.imagesSubscribeOfPackage,
+                                colorFilter: ColorFilter.mode(
+                                  isDark ? Colors.white : AppColors.blueLight,
+                                  BlendMode.srcIn,
+                                ),
                               ),
                             ],
                           ),
@@ -121,13 +127,19 @@ class TelegramViewBody extends StatelessWidget {
                                 "pleaseSubscribeToThePackage"
                                     .tr(context: context),
                                 style: AppStyles.style15W900.copyWith(
-                                  color: Colors.white,
+                                  color: isDark
+                                      ? Colors.white
+                                      : AppColors.blueLight,
                                 ),
                                 textAlign: TextAlign.center,
                               ),
                               SizedBox(width: 10.w),
                               SvgPicture.asset(
                                 Assets.imagesSubscribeOfPackage,
+                                colorFilter: ColorFilter.mode(
+                                  isDark ? Colors.white : AppColors.blueLight,
+                                  BlendMode.srcIn,
+                                ),
                               ),
                             ],
                           ),
@@ -159,7 +171,9 @@ class TelegramViewBody extends StatelessWidget {
                       Assets.imagesLikeicon,
                       height: 40.h,
                       colorFilter: ColorFilter.mode(
-                        isDark ? const Color(0xff00C0CC) : Colors.orange,
+                        isDark
+                            ? const Color(0xff00C0CC)
+                            : AppColors.yellowLight,
                         BlendMode.srcIn,
                       ),
                     ),
@@ -182,7 +196,6 @@ class TelegramViewBody extends StatelessWidget {
                       width: 119.w,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5.r),
-                        color: isDark ? null : Colors.orange,
                         gradient: isDark
                             ? const LinearGradient(
                                 colors: [
@@ -192,7 +205,14 @@ class TelegramViewBody extends StatelessWidget {
                                 begin: Alignment.centerLeft,
                                 end: Alignment.centerRight,
                               )
-                            : null,
+                            : const LinearGradient(
+                                colors: [
+                                  AppColors.linearLight1,
+                                  AppColors.linearLight2,
+                                ],
+                                begin: Alignment.centerLeft,
+                                end: Alignment.centerRight,
+                              ),
                       ),
                       child: Center(
                         child: Text(
