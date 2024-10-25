@@ -56,6 +56,7 @@ class _TiktokChoosePersonAndSendViewBodyState
                 style: AppStyles.style12W700.copyWith(
                   fontWeight: FontWeight.w900,
                   fontFamily: "Titillium Web",
+                  color: Colors.white,
                 ),
               ),
               SizedBox(width: 10.w),
@@ -110,7 +111,9 @@ class _TiktokChoosePersonAndSendViewBodyState
                       height: 268.h,
                       padding: const EdgeInsets.all(20),
                       decoration: BoxDecoration(
-                        color: Colors.white.withOpacity(0.10),
+                        color: isDark
+                            ? Colors.white.withOpacity(0.10)
+                            : AppColors.fillLight,
                         borderRadius: BorderRadius.circular(20.r),
                         border: Border.all(
                           color:
@@ -150,15 +153,19 @@ class _TiktokChoosePersonAndSendViewBodyState
                     onChanged: (value) {},
                     hintText: "Writeacomment".tr(context: context),
                     maxLines: 3,
-                    fiiledColor: Colors.white.withOpacity(0.10),
+                    fiiledColor: isDark
+                        ? Colors.white.withOpacity(0.10)
+                        : AppColors.fillLight,
                     hintStyle: AppStyles.style16W600.copyWith(
-                      color: const Color(0xffB0B0B0),
+                      color: isDark ? const Color(0xffB0B0B0) : Colors.black54,
                     ),
                   ),
                   SizedBox(height: 21.h),
                   CustomAuthTextField(
                     onChanged: (value) {},
-                    fiiledColor: AppColors.whiteColor.withOpacity(0.10),
+                    fiiledColor: isDark
+                        ? Colors.white.withOpacity(0.10)
+                        : AppColors.fillLight,
                     hintText: "addLink".tr(context: context),
                     hintStyle: AppStyles.style12W700.copyWith(
                       color: isDark
@@ -168,13 +175,15 @@ class _TiktokChoosePersonAndSendViewBodyState
                     suffixIcon: Transform.scale(
                       scale: 0.5,
                       child: SvgPicture.asset(
-                        Assets.imagesLinkTeal,
+                        isDark ? Assets.imagesLinkTeal : Assets.imagesLinkLight,
                       ),
                     ),
                   ),
                   SizedBox(height: 21.h),
                   CustomAuthTextField(
-                    fiiledColor: AppColors.whiteColor.withOpacity(0.10),
+                    fiiledColor: isDark
+                        ? Colors.white.withOpacity(0.10)
+                        : AppColors.fillLight,
                     hintText: "addLocation".tr(context: context),
                     hintStyle: AppStyles.style12W700.copyWith(
                       color: isDark
@@ -184,7 +193,9 @@ class _TiktokChoosePersonAndSendViewBodyState
                     suffixIcon: Transform.scale(
                       scale: 0.5,
                       child: SvgPicture.asset(
-                        Assets.imagesLocationTeal,
+                        isDark
+                            ? Assets.imagesLocationTeal
+                            : Assets.imagesLocationLight,
                       ),
                     ),
                     onChanged: (value) {},
@@ -212,7 +223,6 @@ class _TiktokChoosePersonAndSendViewBodyState
                         ),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(5.r),
-                          color: isDark ? null : Colors.orange,
                           gradient: isDark
                               ? const LinearGradient(
                                   colors: [
@@ -222,7 +232,14 @@ class _TiktokChoosePersonAndSendViewBodyState
                                   begin: Alignment.centerLeft,
                                   end: Alignment.centerRight,
                                 )
-                              : null,
+                              : const LinearGradient(
+                                  colors: [
+                                    AppColors.linearLight1,
+                                    AppColors.linearLight2,
+                                  ],
+                                  begin: Alignment.centerLeft,
+                                  end: Alignment.centerRight,
+                                ),
                         ),
                         child: Center(
                           child: Text(

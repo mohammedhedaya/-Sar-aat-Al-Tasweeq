@@ -3,6 +3,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shopping_chart/core/constants/constants.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 
@@ -56,7 +57,9 @@ class _TiktokChooseDestinationSendToFollowersViewBodyState
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5.r),
                       color: _currentPage == 0
-                          ? AppColors.whiteColor
+                          ? isDark(context)
+                              ? AppColors.whiteColor
+                              : AppColors.blueLight
                           : const Color(0xff999999),
                       boxShadow: [
                         _currentPage == 0
@@ -75,14 +78,18 @@ class _TiktokChooseDestinationSendToFollowersViewBodyState
                           "All".tr(context: context),
                           style: AppStyles.style17W800.copyWith(
                             color: _currentPage == 0
-                                ? const Color(0xff2F2F2F)
+                                ? isDark(context)
+                                    ? const Color(0xff2F2F2F)
+                                    : Colors.white
                                 : Colors.white,
                           ),
                         ),
                         Text(
                           "4000",
                           style: AppStyles.style17W800.copyWith(
-                            color: const Color(0xff2F2F2F),
+                            color: isDark(context)
+                                ? const Color(0xff2F2F2F)
+                                : Colors.white,
                             fontWeight: FontWeight.w200,
                           ),
                         ),
@@ -102,7 +109,9 @@ class _TiktokChooseDestinationSendToFollowersViewBodyState
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5.r),
                       color: _currentPage == 1
-                          ? AppColors.whiteColor
+                          ? isDark(context)
+                              ? AppColors.whiteColor
+                              : AppColors.blueLight
                           : const Color(0xff999999),
                       boxShadow: [
                         _currentPage == 1
@@ -121,14 +130,19 @@ class _TiktokChooseDestinationSendToFollowersViewBodyState
                           "Followers".tr(context: context),
                           style: _currentPage == 1
                               ? AppStyles.style17W800.copyWith(
-                                  color: const Color(0xff2F2F2F),
-                                )
-                              : AppStyles.style17W800,
+                                  color: isDark(context)
+                                      ? const Color(0xff2F2F2F)
+                                      : Colors.white)
+                              : AppStyles.style17W800.copyWith(
+                                  color: Colors.white,
+                                ),
                         ),
                         Text(
                           "1000",
                           style: AppStyles.style17W800.copyWith(
-                            color: const Color(0xff2F2F2F),
+                            color: isDark(context)
+                                ? const Color(0xff2F2F2F)
+                                : Colors.white,
                             fontWeight: FontWeight.w200,
                           ),
                         ),
@@ -148,7 +162,9 @@ class _TiktokChooseDestinationSendToFollowersViewBodyState
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5.r),
                       color: _currentPage == 2
-                          ? AppColors.whiteColor
+                          ? isDark(context)
+                              ? AppColors.whiteColor
+                              : AppColors.blueLight
                           : const Color(0xff999999),
                       boxShadow: [
                         _currentPage == 2
@@ -167,14 +183,20 @@ class _TiktokChooseDestinationSendToFollowersViewBodyState
                           "followings".tr(context: context),
                           style: _currentPage == 2
                               ? AppStyles.style17W800.copyWith(
-                                  color: const Color(0xff2F2F2F),
+                                  color: isDark(context)
+                                      ? const Color(0xff2F2F2F)
+                                      : Colors.white,
                                 )
-                              : AppStyles.style17W800,
+                              : AppStyles.style17W800.copyWith(
+                                  color: Colors.white,
+                                ),
                         ),
                         Text(
                           "3000",
                           style: AppStyles.style17W800.copyWith(
-                            color: const Color(0xff2F2F2F),
+                            color: isDark(context)
+                                ? const Color(0xff2F2F2F)
+                                : Colors.white,
                             fontWeight: FontWeight.w200,
                           ),
                         ),
@@ -235,8 +257,8 @@ class _TikTokSendToAllFollowrsPageState
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(2.r),
           ),
-          activeColor: const Color(0xff00C0CC),
-          checkColor: const Color(0xff00C0CC),
+          activeColor: isDark ? const Color(0xff00C0CC) : AppColors.yellowLight,
+          checkColor: isDark ? const Color(0xff00C0CC) : AppColors.yellowLight,
           visualDensity: VisualDensity.compact,
           contentPadding: EdgeInsets.zero,
           side: BorderSide(
@@ -267,8 +289,12 @@ class _TikTokSendToAllFollowrsPageState
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(2.r),
                     ),
-                    activeColor: const Color(0xff00C0CC),
-                    checkColor: const Color(0xff00C0CC),
+                    activeColor: isDark
+                        ? const Color(0xff00C0CC)
+                        : AppColors.yellowLight,
+                    checkColor: isDark
+                        ? const Color(0xff00C0CC)
+                        : AppColors.yellowLight,
                     visualDensity: VisualDensity.compact,
                     side: BorderSide(
                       color: isDark ? Colors.white : AppColors.blueLight,
@@ -285,7 +311,7 @@ class _TikTokSendToAllFollowrsPageState
                     },
                   ),
                   Divider(
-                    color: Colors.white,
+                    color: isDark ? Colors.white : AppColors.hightYellowLight,
                     thickness: 1,
                     endIndent: 25.w,
                     indent: 25.w,
@@ -305,7 +331,6 @@ class _TikTokSendToAllFollowrsPageState
             padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 4.h),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(5.r),
-              color: isDark ? null : AppColors.blueLight,
               gradient: isDark
                   ? const LinearGradient(
                       colors: [
@@ -315,7 +340,14 @@ class _TikTokSendToAllFollowrsPageState
                       begin: Alignment.centerLeft,
                       end: Alignment.centerRight,
                     )
-                  : null,
+                  : const LinearGradient(
+                      colors: [
+                        AppColors.linearLight1,
+                        AppColors.linearLight2,
+                      ],
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight,
+                    ),
             ),
             child: Center(
               child: Text(
@@ -359,8 +391,8 @@ class _TikTokSendToMyFollowrsPageState
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(2.r),
           ),
-          activeColor: const Color(0xff00C0CC),
-          checkColor: const Color(0xff00C0CC),
+          activeColor: isDark ? const Color(0xff00C0CC) : AppColors.yellowLight,
+          checkColor: isDark ? const Color(0xff00C0CC) : AppColors.yellowLight,
           visualDensity: VisualDensity.compact,
           contentPadding: EdgeInsets.zero,
           side: BorderSide(
@@ -391,8 +423,12 @@ class _TikTokSendToMyFollowrsPageState
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(2.r),
                     ),
-                    activeColor: const Color(0xff00C0CC),
-                    checkColor: const Color(0xff00C0CC),
+                    activeColor: isDark
+                        ? const Color(0xff00C0CC)
+                        : AppColors.yellowLight,
+                    checkColor: isDark
+                        ? const Color(0xff00C0CC)
+                        : AppColors.yellowLight,
                     visualDensity: VisualDensity.compact,
                     side: BorderSide(
                       color: isDark ? Colors.white : AppColors.blueLight,
@@ -409,7 +445,7 @@ class _TikTokSendToMyFollowrsPageState
                     },
                   ),
                   Divider(
-                    color: Colors.white,
+                    color: isDark ? Colors.white : AppColors.hightYellowLight,
                     thickness: 1,
                     endIndent: 25.w,
                     indent: 25.w,
@@ -429,7 +465,6 @@ class _TikTokSendToMyFollowrsPageState
             padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 4.h),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(5.r),
-              color: isDark ? null : AppColors.blueLight,
               gradient: isDark
                   ? const LinearGradient(
                       colors: [
@@ -439,7 +474,14 @@ class _TikTokSendToMyFollowrsPageState
                       begin: Alignment.centerLeft,
                       end: Alignment.centerRight,
                     )
-                  : null,
+                  : const LinearGradient(
+                      colors: [
+                        AppColors.linearLight1,
+                        AppColors.linearLight2,
+                      ],
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight,
+                    ),
             ),
             child: Center(
               child: Text(
@@ -483,8 +525,8 @@ class _TikTokSendToMyFollowingsPageState
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(2.r),
           ),
-          activeColor: const Color(0xff00C0CC),
-          checkColor: const Color(0xff00C0CC),
+          activeColor: isDark ? const Color(0xff00C0CC) : AppColors.yellowLight,
+          checkColor: isDark ? const Color(0xff00C0CC) : AppColors.yellowLight,
           visualDensity: VisualDensity.compact,
           contentPadding: EdgeInsets.zero,
           side: BorderSide(
@@ -515,8 +557,12 @@ class _TikTokSendToMyFollowingsPageState
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(2.r),
                     ),
-                    activeColor: const Color(0xff00C0CC),
-                    checkColor: const Color(0xff00C0CC),
+                    activeColor: isDark
+                        ? const Color(0xff00C0CC)
+                        : AppColors.yellowLight,
+                    checkColor: isDark
+                        ? const Color(0xff00C0CC)
+                        : AppColors.yellowLight,
                     visualDensity: VisualDensity.compact,
                     side: BorderSide(
                       color: isDark ? Colors.white : AppColors.blueLight,
@@ -533,7 +579,7 @@ class _TikTokSendToMyFollowingsPageState
                     },
                   ),
                   Divider(
-                    color: Colors.white,
+                    color: isDark ? Colors.white : AppColors.hightYellowLight,
                     thickness: 1,
                     endIndent: 25.w,
                     indent: 25.w,
@@ -553,7 +599,6 @@ class _TikTokSendToMyFollowingsPageState
             padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 4.h),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(5.r),
-              color: isDark ? null : AppColors.blueLight,
               gradient: isDark
                   ? const LinearGradient(
                       colors: [
@@ -563,7 +608,14 @@ class _TikTokSendToMyFollowingsPageState
                       begin: Alignment.centerLeft,
                       end: Alignment.centerRight,
                     )
-                  : null,
+                  : const LinearGradient(
+                      colors: [
+                        AppColors.linearLight1,
+                        AppColors.linearLight2,
+                      ],
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight,
+                    ),
             ),
             child: Center(
               child: Text(

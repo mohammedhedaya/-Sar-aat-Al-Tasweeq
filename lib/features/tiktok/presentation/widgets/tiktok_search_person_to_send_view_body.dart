@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shopping_chart/core/constants/constants.dart';
+import 'package:shopping_chart/core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
 
@@ -40,14 +42,26 @@ class TiktokSearchPersonToSendViewBody extends StatelessWidget {
                         color: Colors.black,
                       ),
                       filled: true,
-                      fillColor: const Color(0xffF3F3F3),
+                      fillColor: isDark(context)
+                          ? const Color(0xffF3F3F3)
+                          : AppColors.fillLight,
                       prefixIcon: Transform.scale(
                         scale: 0.7,
-                        child: SvgPicture.asset(
-                          Assets.imagesKeyIcon,
-                          height: 15.h,
-                          width: 15.w,
-                        ),
+                        child: isDark(context)
+                            ? SvgPicture.asset(
+                                Assets.imagesKeyIcon,
+                                height: 15.h,
+                                width: 15.w,
+                              )
+                            : SvgPicture.asset(
+                                Assets.imagesKeyIcon,
+                                height: 15.h,
+                                width: 15.w,
+                                colorFilter: const ColorFilter.mode(
+                                  AppColors.yellowLight,
+                                  BlendMode.srcIn,
+                                ),
+                              ),
                       ),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(4.r),

@@ -33,8 +33,12 @@ class _TiktokUserDetailsSelectFollowersPageState
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(2.r),
           ),
-          activeColor: const Color(0xff00C0CC),
-          checkColor: const Color(0xff00C0CC),
+         activeColor: isDark
+                        ? const Color(0xff00C0CC)
+                        : AppColors.yellowLight,
+                    checkColor: isDark
+                        ? const Color(0xff00C0CC)
+                        : AppColors.yellowLight,
           visualDensity: VisualDensity.compact,
           contentPadding: EdgeInsets.zero,
           side: BorderSide(
@@ -65,8 +69,12 @@ class _TiktokUserDetailsSelectFollowersPageState
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(2.r),
                     ),
-                    activeColor: const Color(0xff00C0CC),
-                    checkColor: const Color(0xff00C0CC),
+                      activeColor: isDark
+                        ? const Color(0xff00C0CC)
+                        : AppColors.yellowLight,
+                    checkColor: isDark
+                        ? const Color(0xff00C0CC)
+                        : AppColors.yellowLight,
                     visualDensity: VisualDensity.compact,
                     side: BorderSide(
                       color: isDark ? Colors.white : AppColors.blueLight,
@@ -83,7 +91,8 @@ class _TiktokUserDetailsSelectFollowersPageState
                     },
                   ),
                   Divider(
-                    color: Colors.white,
+                                        color: isDark ? Colors.white : AppColors.hightYellowLight,
+
                     thickness: 1,
                     endIndent: 25.w,
                     indent: 25.w,
@@ -120,7 +129,6 @@ class _TiktokUserDetailsSelectFollowersPageState
             padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 4.h),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(5.r),
-              color: isDark ? null : AppColors.blueLight,
               gradient: isDark
                   ? const LinearGradient(
                       colors: [
@@ -130,7 +138,14 @@ class _TiktokUserDetailsSelectFollowersPageState
                       begin: Alignment.centerLeft,
                       end: Alignment.centerRight,
                     )
-                  : null,
+                  : const LinearGradient(
+                      colors: [
+                        AppColors.linearLight1,
+                        AppColors.linearLight2,
+                      ],
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight,
+                    ),
             ),
             child: Center(
               child: Text(
