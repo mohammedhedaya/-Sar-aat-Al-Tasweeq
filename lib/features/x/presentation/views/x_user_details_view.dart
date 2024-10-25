@@ -56,6 +56,12 @@ class _XUserDetailsViewState extends State<XUserDetailsView> {
                   children: [
                     SvgPicture.asset(
                       Assets.imagesSendforward,
+                      colorFilter: ColorFilter.mode(
+                        isDark
+                            ? const Color(0xff00C0CC)
+                            : AppColors.yellowLight,
+                        BlendMode.srcIn,
+                      ),
                     ),
                     Text(
                       "CARZIMA23",
@@ -132,19 +138,30 @@ class _XUserDetailsViewState extends State<XUserDetailsView> {
                             horizontal: 10.w, vertical: 5.h),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(5.r),
-                          gradient: const LinearGradient(
-                            colors: [
-                              Color(0xff00C0CC),
-                              Color(0xff006066),
-                            ],
-                            begin: Alignment.centerLeft,
-                            end: Alignment.centerRight,
-                          ),
+                          gradient: isDark
+                              ? const LinearGradient(
+                                  colors: [
+                                    Color(0xff00C0CC),
+                                    Color(0xff006066),
+                                  ],
+                                  begin: Alignment.centerLeft,
+                                  end: Alignment.centerRight,
+                                )
+                              : const LinearGradient(
+                                  colors: [
+                                    AppColors.linearLight1,
+                                    AppColors.linearLight2,
+                                  ],
+                                  begin: Alignment.centerLeft,
+                                  end: Alignment.centerRight,
+                                ),
                         ),
                         child: Center(
                           child: Text(
                             "recharge".tr(context: context),
-                            style: AppStyles.style14W400,
+                            style: AppStyles.style14W400.copyWith(
+                              color: AppColors.whiteColor,
+                            ),
                             textAlign: TextAlign.center,
                           ),
                         ),
@@ -211,6 +228,7 @@ class _XUserDetailsViewState extends State<XUserDetailsView> {
                                 "4000",
                                 style: AppStyles.style17W800.copyWith(
                                   fontWeight: FontWeight.w200,
+                                  color: Colors.white,
                                 ),
                                 overflow: TextOverflow.ellipsis,
                               ),
@@ -232,7 +250,9 @@ class _XUserDetailsViewState extends State<XUserDetailsView> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(5.r),
                           color: _currentPage == 1
-                              ? AppColors.whiteColor
+                              ? isDark
+                                  ? AppColors.whiteColor
+                                  : AppColors.blueLight
                               : const Color(0xff999999),
                           boxShadow: [
                             _currentPage == 1
@@ -253,7 +273,9 @@ class _XUserDetailsViewState extends State<XUserDetailsView> {
                               "followings".tr(context: context),
                               style: _currentPage == 1
                                   ? AppStyles.style10W800.copyWith(
-                                      color: const Color(0xff2F2F2F),
+                                      color: isDark
+                                          ? const Color(0xff2F2F2F)
+                                          : Colors.white,
                                     )
                                   : AppStyles.style10W800.copyWith(
                                       color: Colors.white,
@@ -263,7 +285,9 @@ class _XUserDetailsViewState extends State<XUserDetailsView> {
                             Text(
                               "1000",
                               style: AppStyles.style17W800.copyWith(
-                                color: const Color(0xff2F2F2F),
+                                color: isDark
+                                    ? const Color(0xff2F2F2F)
+                                    : Colors.white,
                                 fontWeight: FontWeight.w200,
                               ),
                               overflow: TextOverflow.ellipsis,
@@ -285,7 +309,9 @@ class _XUserDetailsViewState extends State<XUserDetailsView> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(5.r),
                           color: _currentPage == 2
-                              ? AppColors.whiteColor
+                              ? isDark
+                                  ? AppColors.whiteColor
+                                  : AppColors.blueLight
                               : const Color(0xff999999),
                           boxShadow: [
                             _currentPage == 2
@@ -306,7 +332,9 @@ class _XUserDetailsViewState extends State<XUserDetailsView> {
                               "Followers".tr(context: context),
                               style: _currentPage == 2
                                   ? AppStyles.style10W800.copyWith(
-                                      color: const Color(0xff2F2F2F),
+                                      color: isDark
+                                          ? const Color(0xff2F2F2F)
+                                          : Colors.white,
                                     )
                                   : AppStyles.style10W800.copyWith(
                                       color: Colors.white,
@@ -316,7 +344,9 @@ class _XUserDetailsViewState extends State<XUserDetailsView> {
                             Text(
                               "3000",
                               style: AppStyles.style17W800.copyWith(
-                                color: const Color(0xff2F2F2F),
+                                color: isDark
+                                    ? const Color(0xff2F2F2F)
+                                    : Colors.white,
                                 fontWeight: FontWeight.w200,
                               ),
                               overflow: TextOverflow.ellipsis,

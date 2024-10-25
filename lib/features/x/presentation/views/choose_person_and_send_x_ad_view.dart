@@ -23,6 +23,7 @@ class ChoosePersonAndSendXAdView extends StatelessWidget {
               "Expandyoursalesrange".tr(context: context),
               style: AppStyles.style17W800.copyWith(
                 fontWeight: FontWeight.w700,
+                color: Colors.white,
               ),
             ),
             SizedBox(width: 9.w),
@@ -38,7 +39,8 @@ class ChoosePersonAndSendXAdView extends StatelessWidget {
             },
             icon: const Icon(
               Icons.arrow_forward_ios_sharp,
-            ),
+              color: Colors.white,
+             ),
           ),
         ],
       ),

@@ -21,6 +21,7 @@ class AddTrendsView extends StatelessWidget {
         title: Text(
           "Publishyouradon5trends".tr(context: context),
           style: AppStyles.style18W700.copyWith(
+            color: Colors.white,
             shadows: [
               Shadow(
                 color: Colors.white.withOpacity(0.25),
@@ -37,6 +38,7 @@ class AddTrendsView extends StatelessWidget {
             },
             icon: const Icon(
               Icons.arrow_forward_ios_rounded,
+              color: Colors.white,
             ),
           ),
         ],

@@ -56,6 +56,7 @@ class _SendYourXAdToFollowrsViewBodyState
                 style: AppStyles.style12W700.copyWith(
                   fontWeight: FontWeight.w900,
                   fontFamily: "Titillium Web",
+                  color: Colors.white,
                 ),
               ),
               SizedBox(width: 10.w),
@@ -109,7 +110,9 @@ class _SendYourXAdToFollowrsViewBodyState
                       height: 268.h,
                       padding: const EdgeInsets.all(20),
                       decoration: BoxDecoration(
-                        color: Colors.white.withOpacity(0.10),
+                        color: isDark
+                            ? Colors.white.withOpacity(0.10)
+                            : AppColors.fillLight,
                         borderRadius: BorderRadius.circular(20.r),
                         border: Border.all(
                           color: isDark
@@ -147,16 +150,20 @@ class _SendYourXAdToFollowrsViewBodyState
                   CustomAuthTextField(
                     onChanged: (value) {},
                     hintText: "Writeacomment".tr(context: context),
-                    fiiledColor: Colors.white.withOpacity(0.10),
+                    fiiledColor: isDark
+                        ? Colors.white.withOpacity(0.10)
+                        : AppColors.fillLight,
                     hintStyle: AppStyles.style16W600.copyWith(
-                      color: const Color(0xffB0B0B0),
+                      color: isDark ? const Color(0xffB0B0B0) : Colors.black54,
                     ),
                     maxLines: 3,
                   ),
                   SizedBox(height: 21.h),
                   CustomAuthTextField(
                     onChanged: (value) {},
-                    fiiledColor: AppColors.whiteColor.withOpacity(0.10),
+                    fiiledColor: isDark
+                        ? Colors.white.withOpacity(0.10)
+                        : AppColors.fillLight,
                     hintText: "addLink".tr(context: context),
                     hintStyle: AppStyles.style12W700.copyWith(
                       color: isDark
@@ -166,13 +173,15 @@ class _SendYourXAdToFollowrsViewBodyState
                     suffixIcon: Transform.scale(
                       scale: 0.5,
                       child: SvgPicture.asset(
-                        Assets.imagesLinkTeal,
+                        isDark ? Assets.imagesLinkTeal : Assets.imagesLinkLight,
                       ),
                     ),
                   ),
                   SizedBox(height: 21.h),
                   CustomAuthTextField(
-                    fiiledColor: AppColors.whiteColor.withOpacity(0.10),
+                    fiiledColor: isDark
+                        ? Colors.white.withOpacity(0.10)
+                        : AppColors.fillLight,
                     hintText: "addLocation".tr(context: context),
                     hintStyle: AppStyles.style12W700.copyWith(
                       color: isDark
@@ -182,7 +191,9 @@ class _SendYourXAdToFollowrsViewBodyState
                     suffixIcon: Transform.scale(
                       scale: 0.5,
                       child: SvgPicture.asset(
-                        Assets.imagesLocationTeal,
+                        isDark
+                            ? Assets.imagesLocationTeal
+                            : Assets.imagesLocationLight,
                       ),
                     ),
                     onChanged: (value) {},
@@ -215,14 +226,23 @@ class _SendYourXAdToFollowrsViewBodyState
                         ),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(5.r),
-                          gradient: const LinearGradient(
-                            colors: [
-                              Color(0xff00C0CC),
-                              Color(0xff006066),
-                            ],
-                            begin: Alignment.centerLeft,
-                            end: Alignment.centerRight,
-                          ),
+                          gradient: isDark
+                              ? const LinearGradient(
+                                  colors: [
+                                    Color(0xff00C0CC),
+                                    Color(0xff006066),
+                                  ],
+                                  begin: Alignment.centerLeft,
+                                  end: Alignment.centerRight,
+                                )
+                              : const LinearGradient(
+                                  colors: [
+                                    AppColors.linearLight1,
+                                    AppColors.linearLight2,
+                                  ],
+                                  begin: Alignment.centerLeft,
+                                  end: Alignment.centerRight,
+                                ),
                         ),
                         child: Center(
                           child: Text(

@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shopping_chart/core/constants/constants.dart';
+import 'package:shopping_chart/core/utils/app_colors.dart';
 
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
@@ -27,14 +29,17 @@ class _LaunchYourXAdViewState extends State<LaunchYourXAdView> {
       floatingActionButton: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(15.r)),
-          gradient: const LinearGradient(
-            colors: [
-              Color(0xFF006066),
-              Color(0xFF00C0CC),
-            ],
-            begin: Alignment.center,
-            end: Alignment.center,
-          ),
+          color: isDark(context) ? null : AppColors.blueLight,
+          gradient: isDark(context)
+              ? const LinearGradient(
+                  colors: [
+                    Color(0xFF006066),
+                    Color(0xFF00C0CC),
+                  ],
+                  begin: Alignment.center,
+                  end: Alignment.center,
+                )
+              : null,
           boxShadow: [
             BoxShadow(
               color: Colors.black.withOpacity(0.25),

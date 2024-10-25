@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
+import 'package:shopping_chart/core/constants/constants.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
@@ -32,7 +33,9 @@ class SendingXAdView extends StatelessWidget {
                 width: double.infinity,
                 padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(
-                  color: const Color(0xffABABAB),
+                  color: isDark(context)
+                      ? const Color(0xffABABAB)
+                      : AppColors.blueLight,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(25.r),
                     topRight: Radius.circular(25.r),
@@ -42,14 +45,18 @@ class SendingXAdView extends StatelessWidget {
                   children: [
                     Text(
                       "sending".tr(context: context),
-                      style: AppStyles.style46W900,
+                      style: AppStyles.style46W900.copyWith(
+                        color: AppColors.whiteColor,
+                      ),
                     ),
                     SizedBox(height: 60.h),
                     Container(
                       margin: EdgeInsets.symmetric(horizontal: 20.w),
                       padding: const EdgeInsets.all(25),
                       decoration: BoxDecoration(
-                        color: const Color(0xff727272),
+                        color: isDark(context)
+                            ? const Color(0xff727272)
+                            : AppColors.yellowLight,
                         borderRadius: BorderRadius.circular(10.r),
                       ),
                       child: Column(
@@ -58,8 +65,12 @@ class SendingXAdView extends StatelessWidget {
                             radius: 55.0,
                             lineWidth: 7.5.w,
                             percent: 0.70,
-                            backgroundColor: AppColors.blackColor,
-                            progressColor: AppColors.whiteColor,
+                            backgroundColor: isDark(context)
+                                ? AppColors.blackColor
+                                : AppColors.whiteColor,
+                            progressColor: isDark(context)
+                                ? AppColors.whiteColor
+                                : AppColors.hightYellowLight,
                             reverse: true,
                             center: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -67,13 +78,17 @@ class SendingXAdView extends StatelessWidget {
                                 Text(
                                   "6days".tr(context: context),
                                   style: AppStyles.style14W800.copyWith(
-                                    color: AppColors.blackColor,
+                                    color: isDark(context)
+                                        ? AppColors.blackColor
+                                        : AppColors.hightYellowLight,
                                     fontSize: 23.sp,
                                   ),
                                 ),
                                 Text(
                                   "remaining".tr(context: context),
-                                  style: AppStyles.style19W900,
+                                  style: AppStyles.style19W900.copyWith(
+                                    color: Colors.white,
+                                  ),
                                 ),
                               ],
                             ),
@@ -104,7 +119,9 @@ class SendingXAdView extends StatelessWidget {
                               textButton: "next".tr(context: context),
                               content: Text(
                                 "SentSuccessfully".tr(context: context),
-                                style: AppStyles.style15W900,
+                                style: AppStyles.style15W900.copyWith(
+                                  color: AppColors.whiteColor,
+                                ),
                                 textAlign: TextAlign.center,
                               ),
                             );
@@ -120,19 +137,30 @@ class SendingXAdView extends StatelessWidget {
                         ),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(5.r),
-                          gradient: const LinearGradient(
-                            colors: [
-                              Color(0xff00C0CC),
-                              Color(0xff006066),
-                            ],
-                            begin: Alignment.centerLeft,
-                            end: Alignment.centerRight,
-                          ),
+                          gradient: isDark(context)
+                              ? const LinearGradient(
+                                  colors: [
+                                    Color(0xff00C0CC),
+                                    Color(0xff006066),
+                                  ],
+                                  begin: Alignment.centerLeft,
+                                  end: Alignment.centerRight,
+                                )
+                              : const LinearGradient(
+                                  colors: [
+                                    AppColors.linearLight1,
+                                    AppColors.linearLight2,
+                                  ],
+                                  begin: Alignment.centerLeft,
+                                  end: Alignment.centerRight,
+                                ),
                         ),
                         child: Center(
                           child: Text(
                             "cancel".tr(context: context),
-                            style: AppStyles.style14W400,
+                            style: AppStyles.style14W400.copyWith(
+                              color: AppColors.whiteColor,
+                            ),
                             textAlign: TextAlign.center,
                           ),
                         ),

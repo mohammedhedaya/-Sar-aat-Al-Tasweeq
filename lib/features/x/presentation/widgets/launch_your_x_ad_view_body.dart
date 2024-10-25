@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:shopping_chart/core/constants/constants.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
@@ -218,7 +219,8 @@ class _LaunchYourXAdViewBodyState extends State<LaunchYourXAdViewBody> {
           topRight: Radius.circular(50.r),
         ),
       ),
-      backgroundColor: const Color(0xffDDDDDD),
+      backgroundColor:
+          isDark(context) ? const Color(0xffDDDDDD) : AppColors.blueLight,
       builder: (builder) {
         return SizedBox(
           height: MediaQuery.of(context).size.height * 0.7,
@@ -245,12 +247,16 @@ class _LaunchYourXAdViewBodyState extends State<LaunchYourXAdViewBody> {
                               title: Text(
                                 "Publishyouradon5trends".tr(context: context),
                                 style: AppStyles.style18W700.copyWith(
-                                  color: Colors.black,
+                                  color: isDark(context)
+                                      ? Colors.black
+                                      : Colors.white,
                                 ),
                               ),
                               trailing: Container(
-                                decoration: const BoxDecoration(
-                                  color: Color(0xff3C3636),
+                                decoration: BoxDecoration(
+                                  color: isDark(context)
+                                      ? const Color(0xff3C3636)
+                                      : AppColors.yellowLight,
                                   shape: BoxShape.circle,
                                 ),
                                 child: context.locale == const Locale('en')
@@ -264,8 +270,10 @@ class _LaunchYourXAdViewBodyState extends State<LaunchYourXAdViewBody> {
                                       ),
                               ),
                             ),
-                            const Divider(
-                              color: Colors.black,
+                            Divider(
+                              color: isDark(context)
+                                  ? Colors.black
+                                  : AppColors.hightYellowLight,
                               thickness: 1,
                             ),
                             ListTile(
@@ -277,12 +285,16 @@ class _LaunchYourXAdViewBodyState extends State<LaunchYourXAdViewBody> {
                               title: Text(
                                 "Publishyouradon10trends".tr(context: context),
                                 style: AppStyles.style18W700.copyWith(
-                                  color: Colors.black,
+                                  color: isDark(context)
+                                      ? Colors.black
+                                      : Colors.white,
                                 ),
                               ),
                               trailing: Container(
-                                decoration: const BoxDecoration(
-                                  color: Color(0xff3C3636),
+                                decoration: BoxDecoration(
+                                  color: isDark(context)
+                                      ? const Color(0xff3C3636)
+                                      : AppColors.yellowLight,
                                   shape: BoxShape.circle,
                                 ),
                                 child: context.locale == const Locale('en')
@@ -296,8 +308,10 @@ class _LaunchYourXAdViewBodyState extends State<LaunchYourXAdViewBody> {
                                       ),
                               ),
                             ),
-                            const Divider(
-                              color: Colors.black,
+                            Divider(
+                              color: isDark(context)
+                                  ? Colors.black
+                                  : AppColors.hightYellowLight,
                               thickness: 1,
                             ),
                             ListTile(
@@ -309,12 +323,16 @@ class _LaunchYourXAdViewBodyState extends State<LaunchYourXAdViewBody> {
                               title: Text(
                                 "Publishyouradon15trends".tr(context: context),
                                 style: AppStyles.style18W700.copyWith(
-                                  color: Colors.black,
+                                  color: isDark(context)
+                                      ? Colors.black
+                                      : Colors.white,
                                 ),
                               ),
                               trailing: Container(
-                                decoration: const BoxDecoration(
-                                  color: Color(0xff3C3636),
+                                decoration: BoxDecoration(
+                                  color: isDark(context)
+                                      ? const Color(0xff3C3636)
+                                      : AppColors.yellowLight,
                                   shape: BoxShape.circle,
                                 ),
                                 child: context.locale == const Locale('en')
@@ -328,8 +346,10 @@ class _LaunchYourXAdViewBodyState extends State<LaunchYourXAdViewBody> {
                                       ),
                               ),
                             ),
-                            const Divider(
-                              color: Colors.black,
+                            Divider(
+                              color: isDark(context)
+                                  ? Colors.black
+                                  : AppColors.hightYellowLight,
                               thickness: 1,
                             ),
                             ListTile(
@@ -341,12 +361,16 @@ class _LaunchYourXAdViewBodyState extends State<LaunchYourXAdViewBody> {
                               title: Text(
                                 "Publishyouradon20trends".tr(context: context),
                                 style: AppStyles.style18W700.copyWith(
-                                  color: Colors.black,
+                                  color: isDark(context)
+                                      ? Colors.black
+                                      : Colors.white,
                                 ),
                               ),
                               trailing: Container(
-                                decoration: const BoxDecoration(
-                                  color: Color(0xff3C3636),
+                                decoration: BoxDecoration(
+                                  color: isDark(context)
+                                      ? const Color(0xff3C3636)
+                                      : AppColors.yellowLight,
                                   shape: BoxShape.circle,
                                 ),
                                 child: context.locale == const Locale('en')
@@ -360,8 +384,10 @@ class _LaunchYourXAdViewBodyState extends State<LaunchYourXAdViewBody> {
                                       ),
                               ),
                             ),
-                            const Divider(
-                              color: Colors.black,
+                            Divider(
+                              color: isDark(context)
+                                  ? Colors.black
+                                  : AppColors.hightYellowLight,
                               thickness: 1,
                             ),
                           ],

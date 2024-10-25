@@ -19,7 +19,6 @@ class AddTrendsViewBody extends StatelessWidget {
           image: const AssetImage(
             Assets.imagesHashtagIcon,
           ),
-          // opacity: 0.10,
           colorFilter: ColorFilter.mode(
             isDark ? Colors.white : Colors.black12,
             BlendMode.modulate,
@@ -52,12 +51,14 @@ class AddTrendsViewBody extends StatelessWidget {
                       style: AppStyles.style20W400.copyWith(
                         color: const Color(0xff00C0CC),
                       ),
-                      cursorColor: Colors.blue,
+                      cursorColor: isDark ? Colors.blue : Colors.black,
                       decoration: InputDecoration(
                         isDense: true,
                         hintText: "Searchforxtrends".tr(context: context),
                         hintStyle: AppStyles.style20W400.copyWith(
-                          color: const Color(0xff00C0CC),
+                          color: isDark
+                              ? const Color(0xff00C0CC)
+                              : AppColors.blueLight,
                         ),
                         filled: true,
                         fillColor: const Color(0xffF3F3F3),
@@ -81,17 +82,25 @@ class AddTrendsViewBody extends StatelessWidget {
                               dense: true,
                               title: Text(
                                 "#يوم_الوطنى",
-                                style: AppStyles.style13W600,
+                                style: AppStyles.style13W600.copyWith(
+                                  color: isDark
+                                      ? Colors.white
+                                      : AppColors.blueLight,
+                                ),
                               ),
                               subtitle: Text(
                                 "8.8 M",
                                 style: AppStyles.style13W600.copyWith(
-                                  color: const Color(0xffACACAC),
+                                  color: isDark
+                                      ? const Color(0xffACACAC)
+                                      : AppColors.blueLight.withOpacity(0.5),
                                 ),
                               ),
                             ),
                             Divider(
-                              color: AppColors.whiteColor,
+                              color: isDark
+                                  ? AppColors.whiteColor
+                                  : AppColors.hightYellowLight,
                               thickness: 1,
                               endIndent: 25.w,
                               indent: 10.w,
@@ -117,19 +126,30 @@ class AddTrendsViewBody extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 4.h),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(5.r),
-                  gradient: const LinearGradient(
-                    colors: [
-                      Color(0xff00C0CC),
-                      Color(0xff006066),
-                    ],
-                    begin: Alignment.centerLeft,
-                    end: Alignment.centerRight,
-                  ),
+                  gradient: isDark
+                      ? const LinearGradient(
+                          colors: [
+                            Color(0xff00C0CC),
+                            Color(0xff006066),
+                          ],
+                          begin: Alignment.centerLeft,
+                          end: Alignment.centerRight,
+                        )
+                      : const LinearGradient(
+                          colors: [
+                            AppColors.linearLight1,
+                            AppColors.linearLight2,
+                          ],
+                          begin: Alignment.centerLeft,
+                          end: Alignment.centerRight,
+                        ),
                 ),
                 child: Center(
                   child: Text(
                     "next".tr(context: context),
-                    style: AppStyles.style14W400,
+                    style: AppStyles.style14W400.copyWith(
+                      color: Colors.white,
+                    ),
                     textAlign: TextAlign.center,
                   ),
                 ),
