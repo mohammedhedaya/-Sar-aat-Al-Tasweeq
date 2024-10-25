@@ -30,6 +30,7 @@ class SearchPersonToSendFacebookAdViewBody extends StatelessWidget {
                 "400",
                 style: AppStyles.style12W700.copyWith(
                   fontWeight: FontWeight.w900,
+                  color: Colors.white,
                   fontFamily: "Titillium Web",
                 ),
               ),
@@ -44,7 +45,9 @@ class SearchPersonToSendFacebookAdViewBody extends StatelessWidget {
           child: SingleChildScrollView(
             child: Padding(
               padding: EdgeInsetsDirectional.symmetric(
-                  horizontal: 21.w, vertical: 24.h),
+                horizontal: 21.w,
+                vertical: 24.h,
+              ),
               child: Column(
                 children: [
                   Align(
@@ -68,14 +71,26 @@ class SearchPersonToSendFacebookAdViewBody extends StatelessWidget {
                         color: Colors.black,
                       ),
                       filled: true,
-                      fillColor: const Color(0xffF3F3F3),
+                      fillColor: isDark
+                          ? const Color(0xffF3F3F3)
+                          : AppColors.fillLight,
                       prefixIcon: Transform.scale(
                         scale: 0.7,
-                        child: SvgPicture.asset(
-                          Assets.imagesKeyIcon,
-                          height: 15.h,
-                          width: 15.w,
-                        ),
+                        child: isDark
+                            ? SvgPicture.asset(
+                                Assets.imagesKeyIcon,
+                                height: 15.h,
+                                width: 15.w,
+                              )
+                            : SvgPicture.asset(
+                                Assets.imagesKeyIcon,
+                                height: 15.h,
+                                width: 15.w,
+                                colorFilter: const ColorFilter.mode(
+                                  AppColors.yellowLight,
+                                  BlendMode.srcIn,
+                                ),
+                              ),
                       ),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(4.r),

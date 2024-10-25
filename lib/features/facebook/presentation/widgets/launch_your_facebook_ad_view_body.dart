@@ -67,7 +67,9 @@ class _LaunchYourFacebookAdViewBodyState
                   ),
                   child: Text(
                     "facebook".tr(context: context),
-                    style: AppStyles.style10W800,
+                    style: AppStyles.style10W800.copyWith(
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ),
@@ -95,7 +97,9 @@ class _LaunchYourFacebookAdViewBodyState
                   ),
                   child: Text(
                     "groups".tr(context: context),
-                    style: AppStyles.style10W800,
+                    style: AppStyles.style10W800.copyWith(
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ),
@@ -119,8 +123,9 @@ class _LaunchYourFacebookAdViewBodyState
                   ),
                   child: Text(
                     "deleteGroups".tr(context: context),
-                    style: AppStyles.style10W800
-                        .copyWith(color: AppColors.whiteColor),
+                    style: AppStyles.style10W800.copyWith(
+                      color: AppColors.whiteColor,
+                    ),
                   ),
                 ),
               ),

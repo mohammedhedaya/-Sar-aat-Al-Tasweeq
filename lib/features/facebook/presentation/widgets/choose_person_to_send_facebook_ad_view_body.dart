@@ -35,7 +35,8 @@ class ChoosePersonToSendFacebookAdViewBody extends StatelessWidget {
             ),
             SizedBox(height: 72.h),
             CustomAuthTextField(
-              fiiledColor: AppColors.whiteColor.withOpacity(0.10),
+              fiiledColor:
+                  isDark ? Colors.white.withOpacity(0.10) : AppColors.fillLight,
               hintText: "addLink".tr(context: context),
               hintStyle: AppStyles.style12W700.copyWith(
                 color: isDark ? const Color(0xffffffff) : Colors.black,
@@ -43,14 +44,15 @@ class ChoosePersonToSendFacebookAdViewBody extends StatelessWidget {
               suffixIcon: Transform.scale(
                 scale: 0.5,
                 child: SvgPicture.asset(
-                  Assets.imagesLinkTeal,
+                  isDark ? Assets.imagesLinkTeal : Assets.imagesLinkLight,
                 ),
               ),
               onChanged: (value) {},
             ),
             SizedBox(height: 19.h),
             CustomAuthTextField(
-              fiiledColor: AppColors.whiteColor.withOpacity(0.10),
+              fiiledColor:
+                  isDark ? Colors.white.withOpacity(0.10) : AppColors.fillLight,
               hintText: "addLocation".tr(context: context),
               hintStyle: AppStyles.style12W700.copyWith(
                 color: isDark ? const Color(0xffffffff) : Colors.black,
@@ -58,7 +60,9 @@ class ChoosePersonToSendFacebookAdViewBody extends StatelessWidget {
               suffixIcon: Transform.scale(
                 scale: 0.5,
                 child: SvgPicture.asset(
-                  Assets.imagesLocationTeal,
+                  isDark
+                      ? Assets.imagesLocationTeal
+                      : Assets.imagesLocationLight,
                 ),
               ),
               onChanged: (value) {},
@@ -76,19 +80,30 @@ class ChoosePersonToSendFacebookAdViewBody extends StatelessWidget {
                       EdgeInsets.symmetric(horizontal: 22.w, vertical: 4.h),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5.r),
-                    gradient: const LinearGradient(
-                      colors: [
-                        Color(0xff00C0CC),
-                        Color(0xff006066),
-                      ],
-                      begin: Alignment.centerLeft,
-                      end: Alignment.centerRight,
-                    ),
+                    gradient: isDark
+                        ? const LinearGradient(
+                            colors: [
+                              Color(0xff00C0CC),
+                              Color(0xff006066),
+                            ],
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                          )
+                        : const LinearGradient(
+                            colors: [
+                              AppColors.linearLight1,
+                              AppColors.linearLight2,
+                            ],
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                          ),
                   ),
                   child: Center(
                     child: Text(
                       "next".tr(context: context),
-                      style: AppStyles.style14W400,
+                      style: AppStyles.style14W400.copyWith(
+                        color: Colors.white,
+                      ),
                       textAlign: TextAlign.center,
                     ),
                   ),

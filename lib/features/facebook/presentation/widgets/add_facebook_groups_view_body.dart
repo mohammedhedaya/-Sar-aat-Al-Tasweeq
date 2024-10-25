@@ -35,20 +35,22 @@ class _AddFacebookGroupsViewBodyState extends State<AddFacebookGroupsViewBody> {
                     SvgPicture.asset(
                       Assets.imagesWallet,
                       colorFilter: ColorFilter.mode(
-                        isDark ? Colors.white : AppColors.blueLight,
+                        isDark ? Colors.white : AppColors.blackColor,
                         BlendMode.srcIn,
                       ),
                     ),
                     SizedBox(width: 10.w),
                     Text(
                       "300",
-                      style: AppStyles.style17W800,
+                      style: AppStyles.style17W800.copyWith(
+                        color: isDark ? Colors.white : AppColors.blackColor,
+                      ),
                     ),
                     SizedBox(width: 10.w),
                     SvgPicture.asset(
                       Assets.imagesJewel,
                       colorFilter: ColorFilter.mode(
-                        isDark ? Colors.white : AppColors.blueLight,
+                        isDark ? Colors.white : AppColors.blackColor,
                         BlendMode.srcIn,
                       ),
                     ),
@@ -65,19 +67,30 @@ class _AddFacebookGroupsViewBodyState extends State<AddFacebookGroupsViewBody> {
                     ),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5.r),
-                      gradient: const LinearGradient(
-                        colors: [
-                          Color(0xff00C0CC),
-                          Color(0xff006066),
-                        ],
-                        begin: Alignment.centerLeft,
-                        end: Alignment.centerRight,
-                      ),
+                      gradient: isDark
+                          ? const LinearGradient(
+                              colors: [
+                                Color(0xff00C0CC),
+                                Color(0xff006066),
+                              ],
+                              begin: Alignment.centerLeft,
+                              end: Alignment.centerRight,
+                            )
+                          : const LinearGradient(
+                              colors: [
+                                AppColors.linearLight1,
+                                AppColors.linearLight2,
+                              ],
+                              begin: Alignment.centerLeft,
+                              end: Alignment.centerRight,
+                            ),
                     ),
                     child: Center(
                       child: Text(
                         "recharge".tr(context: context),
-                        style: AppStyles.style14W400,
+                        style: AppStyles.style14W400.copyWith(
+                          color: AppColors.whiteColor,
+                        ),
                         textAlign: TextAlign.center,
                       ),
                     ),
@@ -103,12 +116,21 @@ class _AddFacebookGroupsViewBodyState extends State<AddFacebookGroupsViewBody> {
                 ),
                 prefixIcon: Transform.scale(
                   scale: 0.65,
-                  child: SvgPicture.asset(
-                    Assets.imagesKeyIcon,
-                  ),
+                  child: isDark
+                      ? SvgPicture.asset(
+                          Assets.imagesKeyIcon,
+                        )
+                      : SvgPicture.asset(
+                          Assets.imagesKeyIcon,
+                          colorFilter: const ColorFilter.mode(
+                            AppColors.yellowLight,
+                            BlendMode.srcIn,
+                          ),
+                        ),
                 ),
                 filled: true,
-                fillColor: const Color(0xffF3F3F3),
+                fillColor:
+                    isDark ? const Color(0xffF3F3F3) : AppColors.fillLight,
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(4.r),
                   borderSide: const BorderSide(
@@ -149,7 +171,9 @@ class _AddFacebookGroupsViewBodyState extends State<AddFacebookGroupsViewBody> {
                       children: [
                         Text(
                           "جروب العائلة",
-                          style: AppStyles.style13W600,
+                          style: AppStyles.style13W600.copyWith(
+                            color: isDark ? Colors.white : AppColors.blueLight,
+                          ),
                           textAlign: TextAlign.center,
                         ),
                         const Spacer(),
@@ -170,7 +194,9 @@ class _AddFacebookGroupsViewBodyState extends State<AddFacebookGroupsViewBody> {
                                     title: Text(
                                       "GroupLink".tr(context: context),
                                       style: AppStyles.style12W400.copyWith(
-                                        color: Colors.white,
+                                        color: isDark
+                                            ? Colors.white
+                                            : AppColors.blueLight,
                                       ),
                                     ),
                                     content: Container(
@@ -187,7 +213,9 @@ class _AddFacebookGroupsViewBodyState extends State<AddFacebookGroupsViewBody> {
                                               "https://facebook.com/groups/",
                                               style: AppStyles.style12W400
                                                   .copyWith(
-                                                color: Colors.white,
+                                                color: isDark
+                                                    ? Colors.white
+                                                    : AppColors.blueLight,
                                               ),
                                               textAlign: TextAlign.center,
                                             ),
@@ -197,6 +225,12 @@ class _AddFacebookGroupsViewBodyState extends State<AddFacebookGroupsViewBody> {
                                             onTap: () {},
                                             child: SvgPicture.asset(
                                               Assets.imagesCopyIcon2,
+                                              colorFilter: ColorFilter.mode(
+                                                isDark
+                                                    ? Colors.white
+                                                    : AppColors.blueLight,
+                                                BlendMode.srcIn,
+                                              ),
                                             ),
                                           ),
                                         ],
@@ -219,21 +253,31 @@ class _AddFacebookGroupsViewBodyState extends State<AddFacebookGroupsViewBody> {
                                             margin: EdgeInsets.symmetric(
                                                 horizontal: 30.w),
                                             decoration: BoxDecoration(
-                                              gradient: const LinearGradient(
-                                                colors: [
-                                                  Color(0xff00C0CC),
-                                                  Color(0xff006066),
-                                                ],
-                                                begin: Alignment.centerLeft,
-                                                end: Alignment.centerRight,
-                                              ),
+                                              color: isDark
+                                                  ? null
+                                                  : AppColors.blueLight,
+                                              gradient: isDark
+                                                  ? const LinearGradient(
+                                                      colors: [
+                                                        Color(0xff00C0CC),
+                                                        Color(0xff006066),
+                                                      ],
+                                                      begin:
+                                                          Alignment.centerLeft,
+                                                      end:
+                                                          Alignment.centerRight,
+                                                    )
+                                                  : null,
                                               borderRadius:
                                                   BorderRadius.circular(5.r),
                                             ),
                                             child: Center(
                                               child: Text(
                                                 "next".tr(context: context),
-                                                style: AppStyles.style14W400,
+                                                style: AppStyles.style14W400
+                                                    .copyWith(
+                                                  color: Colors.white,
+                                                ),
                                                 textAlign: TextAlign.center,
                                               ),
                                             ),
@@ -262,21 +306,32 @@ class _AddFacebookGroupsViewBodyState extends State<AddFacebookGroupsViewBody> {
                                       begin: Alignment.centerLeft,
                                       end: Alignment.centerRight,
                                     )
-                                  : const LinearGradient(
-                                      colors: [
-                                        Color(0xff00C0CC),
-                                        Color(0xff006066),
-                                      ],
-                                      begin: Alignment.centerLeft,
-                                      end: Alignment.centerRight,
-                                    ),
+                                  : isDark
+                                      ? const LinearGradient(
+                                          colors: [
+                                            Color(0xff00C0CC),
+                                            Color(0xff006066),
+                                          ],
+                                          begin: Alignment.centerLeft,
+                                          end: Alignment.centerRight,
+                                        )
+                                      : const LinearGradient(
+                                          colors: [
+                                            AppColors.linearLight1,
+                                            AppColors.linearLight2,
+                                          ],
+                                          begin: Alignment.centerLeft,
+                                          end: Alignment.centerRight,
+                                        ),
                             ),
                             child: Center(
                               child: Text(
                                 isAdded[i]
                                     ? "Joined".tr(context: context)
                                     : "add".tr(context: context),
-                                style: AppStyles.style14W400,
+                                style: AppStyles.style14W400.copyWith(
+                                  color: Colors.white,
+                                ),
                                 textAlign: TextAlign.center,
                               ),
                             ),

@@ -24,6 +24,7 @@ class FacbookDeleteGroupsChooseDestinationView extends StatelessWidget {
                 "launchaddwithease".tr(context: context),
                 style: AppStyles.style17W800.copyWith(
                   fontWeight: FontWeight.w700,
+                  color: Colors.white,
                 ),
               ),
             ),
@@ -39,6 +40,7 @@ class FacbookDeleteGroupsChooseDestinationView extends StatelessWidget {
             },
             icon: const Icon(
               Icons.arrow_forward_ios_sharp,
+              color: Colors.white,
             ),
           ),
         ],

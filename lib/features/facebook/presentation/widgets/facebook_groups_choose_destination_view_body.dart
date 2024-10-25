@@ -42,7 +42,8 @@ class _FacebookGroupsChooseDestinationViewBodyState
                     padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5.r),
-                      color: AppColors.whiteColor,
+                      color:
+                          isDark ? AppColors.whiteColor : AppColors.blueLight,
                       boxShadow: [
                         BoxShadow(
                           color: AppColors.whiteColor.withOpacity(0.25),
@@ -57,13 +58,15 @@ class _FacebookGroupsChooseDestinationViewBodyState
                         Text(
                           "NumberofFacebookgroups".tr(context: context),
                           style: AppStyles.style17W800.copyWith(
-                            color: const Color(0xff2F2F2F),
+                            color:
+                                isDark ? const Color(0xff2F2F2F) : Colors.white,
                           ),
                         ),
                         Text(
                           "4000",
                           style: AppStyles.style17W800.copyWith(
-                            color: const Color(0xff2F2F2F),
+                            color:
+                                isDark ? const Color(0xff2F2F2F) : Colors.white,
                             fontWeight: FontWeight.w200,
                           ),
                         ),
@@ -80,8 +83,10 @@ class _FacebookGroupsChooseDestinationViewBodyState
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(2.r),
                   ),
-                  activeColor: const Color(0xff00C0CC),
-                  checkColor: const Color(0xff00C0CC),
+                  activeColor:
+                      isDark ? const Color(0xff00C0CC) : AppColors.yellowLight,
+                  checkColor:
+                      isDark ? const Color(0xff00C0CC) : AppColors.yellowLight,
                   visualDensity: VisualDensity.compact,
                   contentPadding: EdgeInsets.zero,
                   side: BorderSide(
@@ -112,8 +117,12 @@ class _FacebookGroupsChooseDestinationViewBodyState
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(2.r),
                             ),
-                            activeColor: const Color(0xff00C0CC),
-                            checkColor: const Color(0xff00C0CC),
+                            activeColor: isDark
+                                ? const Color(0xff00C0CC)
+                                : AppColors.yellowLight,
+                            checkColor: isDark
+                                ? const Color(0xff00C0CC)
+                                : AppColors.yellowLight,
                             visualDensity: VisualDensity.compact,
                             side: BorderSide(
                               color:
@@ -131,7 +140,9 @@ class _FacebookGroupsChooseDestinationViewBodyState
                             },
                           ),
                           Divider(
-                            color: Colors.white,
+                            color: isDark
+                                ? Colors.white
+                                : AppColors.hightYellowLight,
                             thickness: 1,
                             endIndent: 25.w,
                             indent: 25.w,
@@ -157,19 +168,30 @@ class _FacebookGroupsChooseDestinationViewBodyState
               padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 4.h),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5.r),
-                gradient: const LinearGradient(
-                  colors: [
-                    Color(0xff00C0CC),
-                    Color(0xff006066),
-                  ],
-                  begin: Alignment.centerLeft,
-                  end: Alignment.centerRight,
-                ),
+                gradient: isDark
+                    ? const LinearGradient(
+                        colors: [
+                          Color(0xff00C0CC),
+                          Color(0xff006066),
+                        ],
+                        begin: Alignment.centerLeft,
+                        end: Alignment.centerRight,
+                      )
+                    : const LinearGradient(
+                        colors: [
+                          AppColors.linearLight1,
+                          AppColors.linearLight2,
+                        ],
+                        begin: Alignment.centerLeft,
+                        end: Alignment.centerRight,
+                      ),
               ),
               child: Center(
                 child: Text(
                   "send".tr(context: context),
-                  style: AppStyles.style14W400,
+                  style: AppStyles.style14W400.copyWith(
+                    color: Colors.white,
+                  ),
                   textAlign: TextAlign.center,
                 ),
               ),

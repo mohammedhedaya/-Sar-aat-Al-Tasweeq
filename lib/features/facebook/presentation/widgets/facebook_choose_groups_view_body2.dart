@@ -36,7 +36,7 @@ class _FacebookChooseGroupsViewBody2State
               right: 22.w,
             ),
             decoration: BoxDecoration(
-              color: const Color(0xff00C0CC),
+              color: isDark ? const Color(0xff00C0CC) : AppColors.yellowLight,
               borderRadius: BorderRadius.circular(15.r),
               border: Border.all(
                 color: Colors.white,
@@ -51,7 +51,9 @@ class _FacebookChooseGroupsViewBody2State
                 SizedBox(height: 11.h),
                 Text(
                   '400',
-                  style: AppStyles.style14W400,
+                  style: AppStyles.style14W400.copyWith(
+                    color: AppColors.whiteColor,
+                  ),
                 ),
               ],
             ),
@@ -97,19 +99,30 @@ class _FacebookChooseGroupsViewBody2State
                       EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5.r),
-                    gradient: const LinearGradient(
-                      colors: [
-                        Color(0xff00C0CC),
-                        Color(0xff006066),
-                      ],
-                      begin: Alignment.centerLeft,
-                      end: Alignment.centerRight,
-                    ),
+                    gradient: isDark
+                        ? const LinearGradient(
+                            colors: [
+                              Color(0xff00C0CC),
+                              Color(0xff006066),
+                            ],
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                          )
+                        : const LinearGradient(
+                            colors: [
+                              AppColors.linearLight1,
+                              AppColors.linearLight2,
+                            ],
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                          ),
                   ),
                   child: Center(
                     child: Text(
                       "recharge".tr(context: context),
-                      style: AppStyles.style14W400,
+                      style: AppStyles.style14W400.copyWith(
+                        color: AppColors.whiteColor,
+                      ),
                       textAlign: TextAlign.center,
                     ),
                   ),
@@ -126,8 +139,10 @@ class _FacebookChooseGroupsViewBody2State
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(2.r),
             ),
-            activeColor: const Color(0xff00C0CC),
-            checkColor: const Color(0xff00C0CC),
+            activeColor:
+                isDark ? const Color(0xff00C0CC) : AppColors.yellowLight,
+            checkColor:
+                isDark ? const Color(0xff00C0CC) : AppColors.yellowLight,
             visualDensity: VisualDensity.compact,
             contentPadding: EdgeInsets.zero,
             side: BorderSide(
@@ -158,8 +173,12 @@ class _FacebookChooseGroupsViewBody2State
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(2.r),
                       ),
-                      activeColor: const Color(0xff00C0CC),
-                      checkColor: const Color(0xff00C0CC),
+                      activeColor: isDark
+                          ? const Color(0xff00C0CC)
+                          : AppColors.yellowLight,
+                      checkColor: isDark
+                          ? const Color(0xff00C0CC)
+                          : AppColors.yellowLight,
                       visualDensity: VisualDensity.compact,
                       side: BorderSide(
                         color: isDark ? Colors.white : AppColors.blueLight,
@@ -176,7 +195,7 @@ class _FacebookChooseGroupsViewBody2State
                       },
                     ),
                     Divider(
-                      color: Colors.white,
+                      color: isDark ? Colors.white : AppColors.hightYellowLight,
                       thickness: 1,
                       endIndent: 25.w,
                       indent: 25.w,
@@ -207,19 +226,30 @@ class _FacebookChooseGroupsViewBody2State
               padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 4.h),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5.r),
-                gradient: const LinearGradient(
-                  colors: [
-                    Color(0xff00C0CC),
-                    Color(0xff006066),
-                  ],
-                  begin: Alignment.centerLeft,
-                  end: Alignment.centerRight,
-                ),
+                gradient: isDark
+                    ? const LinearGradient(
+                        colors: [
+                          Color(0xff00C0CC),
+                          Color(0xff006066),
+                        ],
+                        begin: Alignment.centerLeft,
+                        end: Alignment.centerRight,
+                      )
+                    : const LinearGradient(
+                        colors: [
+                          AppColors.linearLight1,
+                          AppColors.linearLight2,
+                        ],
+                        begin: Alignment.centerLeft,
+                        end: Alignment.centerRight,
+                      ),
               ),
               child: Center(
                 child: Text(
                   "send".tr(context: context),
-                  style: AppStyles.style14W400,
+                  style: AppStyles.style14W400.copyWith(
+                    color: AppColors.whiteColor,
+                  ),
                   textAlign: TextAlign.center,
                 ),
               ),
