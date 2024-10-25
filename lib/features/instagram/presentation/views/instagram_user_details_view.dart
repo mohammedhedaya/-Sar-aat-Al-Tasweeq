@@ -56,6 +56,12 @@ class _InstagramUserDetailsViewState extends State<InstagramUserDetailsView> {
                   children: [
                     SvgPicture.asset(
                       Assets.imagesSendforward,
+                      colorFilter: ColorFilter.mode(
+                        isDark
+                            ? const Color(0xff00C0CC)
+                            : AppColors.yellowLight,
+                        BlendMode.srcIn,
+                      ),
                     ),
                     Text(
                       "CARZIMA23",
@@ -133,10 +139,11 @@ class _InstagramUserDetailsViewState extends State<InstagramUserDetailsView> {
                       },
                       child: Container(
                         padding: EdgeInsets.symmetric(
-                            horizontal: 10.w, vertical: 5.h),
+                          horizontal: 10.w,
+                          vertical: 5.h,
+                        ),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(5.r),
-                          color: isDark ? null : AppColors.blueLight,
                           gradient: isDark
                               ? const LinearGradient(
                                   colors: [
@@ -146,7 +153,14 @@ class _InstagramUserDetailsViewState extends State<InstagramUserDetailsView> {
                                   begin: Alignment.centerLeft,
                                   end: Alignment.centerRight,
                                 )
-                              : null,
+                              : const LinearGradient(
+                                  colors: [
+                                    AppColors.linearLight1,
+                                    AppColors.linearLight2,
+                                  ],
+                                  begin: Alignment.centerLeft,
+                                  end: Alignment.centerRight,
+                                ),
                         ),
                         child: Center(
                           child: Text(
@@ -219,6 +233,7 @@ class _InstagramUserDetailsViewState extends State<InstagramUserDetailsView> {
                               "4000",
                               style: AppStyles.style17W800.copyWith(
                                 fontWeight: FontWeight.w200,
+                                color: Colors.white,
                               ),
                               overflow: TextOverflow.ellipsis,
                             ),
@@ -239,7 +254,9 @@ class _InstagramUserDetailsViewState extends State<InstagramUserDetailsView> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(5.r),
                           color: _currentPage == 1
-                              ? AppColors.whiteColor
+                              ? isDark
+                                  ? Colors.white
+                                  : AppColors.blueLight
                               : const Color(0xff999999),
                           boxShadow: [
                             _currentPage == 1
@@ -260,7 +277,9 @@ class _InstagramUserDetailsViewState extends State<InstagramUserDetailsView> {
                               "followings".tr(context: context),
                               style: _currentPage == 1
                                   ? AppStyles.style10W800.copyWith(
-                                      color: const Color(0xff2F2F2F),
+                                      color: isDark
+                                          ? const Color(0xff2F2F2F)
+                                          : Colors.white,
                                     )
                                   : AppStyles.style10W800.copyWith(
                                       color: Colors.white,
@@ -270,7 +289,9 @@ class _InstagramUserDetailsViewState extends State<InstagramUserDetailsView> {
                             Text(
                               "1000",
                               style: AppStyles.style17W800.copyWith(
-                                color: const Color(0xff2F2F2F),
+                                color: isDark
+                                    ? const Color(0xff2F2F2F)
+                                    : Colors.white,
                                 fontWeight: FontWeight.w200,
                               ),
                               overflow: TextOverflow.ellipsis,
@@ -292,7 +313,9 @@ class _InstagramUserDetailsViewState extends State<InstagramUserDetailsView> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(5.r),
                           color: _currentPage == 2
-                              ? AppColors.whiteColor
+                              ? isDark
+                                  ? AppColors.whiteColor
+                                  : AppColors.blueLight
                               : const Color(0xff999999),
                           boxShadow: [
                             _currentPage == 2
@@ -313,7 +336,9 @@ class _InstagramUserDetailsViewState extends State<InstagramUserDetailsView> {
                               "Followers".tr(context: context),
                               style: _currentPage == 2
                                   ? AppStyles.style10W800.copyWith(
-                                      color: const Color(0xff2F2F2F),
+                                      color: isDark
+                                          ? const Color(0xff2F2F2F)
+                                          : Colors.white,
                                     )
                                   : AppStyles.style10W800.copyWith(
                                       color: Colors.white,
@@ -323,7 +348,9 @@ class _InstagramUserDetailsViewState extends State<InstagramUserDetailsView> {
                             Text(
                               "3000",
                               style: AppStyles.style17W800.copyWith(
-                                color: const Color(0xff2F2F2F),
+                                color: isDark
+                                    ? const Color(0xff2F2F2F)
+                                    : Colors.white,
                                 fontWeight: FontWeight.w200,
                               ),
                               overflow: TextOverflow.ellipsis,
