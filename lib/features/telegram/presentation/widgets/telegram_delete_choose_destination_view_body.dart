@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shopping_chart/core/constants/constants.dart';
 import '../views/telegram_choose_destination_page/delete_telegram/telegram_delete_all_page.dart';
 import '../views/telegram_choose_destination_page/delete_telegram/telegram_delete_chats_page.dart';
 import '../views/telegram_choose_destination_page/delete_telegram/telegram_delete_groups_page.dart';
@@ -58,7 +59,9 @@ class _TelegramDeleteChooseDestinationViewBodyState
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5.r),
                       color: _currentPage == 0
-                          ? AppColors.whiteColor
+                          ? isDark(context)
+                              ? AppColors.whiteColor
+                              : AppColors.blueLight
                           : const Color(0xff999999),
                       boxShadow: [
                         _currentPage == 0
@@ -77,7 +80,9 @@ class _TelegramDeleteChooseDestinationViewBodyState
                           "deleteAll".tr(context: context),
                           style: AppStyles.style10W800.copyWith(
                             color: _currentPage == 0
-                                ? const Color(0xff2F2F2F)
+                                ? isDark(context)
+                                    ? const Color(0xff2F2F2F)
+                                    : Colors.white
                                 : Colors.white,
                             fontSize: 18.sp,
                           ),
@@ -85,7 +90,9 @@ class _TelegramDeleteChooseDestinationViewBodyState
                         Text(
                           "4000",
                           style: AppStyles.style17W800.copyWith(
-                            color: const Color(0xff2F2F2F),
+                            color: isDark(context)
+                                ? const Color(0xff2F2F2F)
+                                : Colors.white,
                             fontWeight: FontWeight.w200,
                           ),
                         ),
@@ -105,7 +112,9 @@ class _TelegramDeleteChooseDestinationViewBodyState
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5.r),
                       color: _currentPage == 1
-                          ? AppColors.whiteColor
+                          ? isDark(context)
+                              ? AppColors.whiteColor
+                              : AppColors.blueLight
                           : const Color(0xff999999),
                       boxShadow: [
                         _currentPage == 1
@@ -124,17 +133,24 @@ class _TelegramDeleteChooseDestinationViewBodyState
                           "deleteChats".tr(context: context),
                           style: _currentPage == 1
                               ? AppStyles.style10W800.copyWith(
-                                  color: const Color(0xff2F2F2F),
+                                  color: isDark(context)
+                                      ? const Color(0xff2F2F2F)
+                                      : Colors.white,
                                   fontSize: 14.sp,
                                 )
                               : AppStyles.style10W800.copyWith(
                                   fontSize: 14.sp,
+                                  color: isDark(context)
+                                      ? const Color(0xff2F2F2F)
+                                      : Colors.white,
                                 ),
                         ),
                         Text(
                           "1000",
                           style: AppStyles.style17W800.copyWith(
-                            color: const Color(0xff2F2F2F),
+                            color: isDark(context)
+                                ? const Color(0xff2F2F2F)
+                                : Colors.white,
                             fontWeight: FontWeight.w200,
                             fontSize: 22.sp,
                           ),
@@ -155,7 +171,9 @@ class _TelegramDeleteChooseDestinationViewBodyState
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5.r),
                       color: _currentPage == 2
-                          ? AppColors.whiteColor
+                          ? isDark(context)
+                              ? AppColors.whiteColor
+                              : AppColors.blueLight
                           : const Color(0xff999999),
                       boxShadow: [
                         _currentPage == 2
@@ -174,15 +192,23 @@ class _TelegramDeleteChooseDestinationViewBodyState
                           "deletegroups(locksend)".tr(context: context),
                           style: _currentPage == 2
                               ? AppStyles.style10W800.copyWith(
-                                  color: const Color(0xff2F2F2F),
+                                  color: isDark(context)
+                                      ? const Color(0xff2F2F2F)
+                                      : Colors.white,
                                 )
-                              : AppStyles.style10W800,
+                              : AppStyles.style10W800.copyWith(
+                                  color: isDark(context)
+                                      ? const Color(0xff2F2F2F)
+                                      : Colors.white,
+                                ),
                           textAlign: TextAlign.center,
                         ),
                         Text(
                           "3000",
                           style: AppStyles.style17W800.copyWith(
-                            color: const Color(0xff2F2F2F),
+                            color: isDark(context)
+                                ? const Color(0xff2F2F2F)
+                                : Colors.white,
                             fontWeight: FontWeight.w200,
                           ),
                         ),

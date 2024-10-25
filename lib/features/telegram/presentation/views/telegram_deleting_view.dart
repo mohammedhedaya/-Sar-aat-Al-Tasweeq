@@ -17,21 +17,6 @@ class TelegramDeletingView extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return Scaffold(
-      // appBar: AppBar(
-      //   automaticallyImplyLeading: false,
-      //   backgroundColor: isDark ? AppColors.darkGray : Colors.white,
-      //   elevation: 0,
-      //   actions: [
-      //     IconButton(
-      //       onPressed: () {
-      //         context.pop();
-      //       },
-      //       icon: const Icon(
-      //         Icons.arrow_forward_ios_sharp,
-      //       ),
-      //     ),
-      //   ],
-      // ),
       body: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
@@ -48,7 +33,7 @@ class TelegramDeletingView extends StatelessWidget {
               width: double.infinity,
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: const Color(0xffABABAB),
+                color: isDark ? const Color(0xffABABAB) : AppColors.blueLight,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(25.r),
                   topRight: Radius.circular(25.r),
@@ -58,7 +43,9 @@ class TelegramDeletingView extends StatelessWidget {
                 children: [
                   Text(
                     "deleting".tr(context: context),
-                    style: AppStyles.style46W900,
+                    style: AppStyles.style46W900.copyWith(
+                      color: Colors.white,
+                    ),
                   ),
                   SizedBox(height: 60.h),
                   Row(
@@ -68,8 +55,12 @@ class TelegramDeletingView extends StatelessWidget {
                         radius: 55.0,
                         lineWidth: 6.0.w,
                         percent: 0.70,
-                        backgroundColor: AppColors.blackColor,
-                        progressColor: AppColors.whiteColor,
+                        backgroundColor: isDark
+                            ? AppColors.blackColor
+                            : AppColors.whiteColor,
+                        progressColor: isDark
+                            ? AppColors.whiteColor
+                            : AppColors.yellowLight,
                         reverse: true,
                         center: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -77,13 +68,17 @@ class TelegramDeletingView extends StatelessWidget {
                             Text(
                               "6days".tr(context: context),
                               style: AppStyles.style14W800.copyWith(
-                                color: AppColors.blackColor,
+                                color: isDark
+                                    ? AppColors.blackColor
+                                    : AppColors.yellowLight,
                                 fontSize: 23.sp,
                               ),
                             ),
                             Text(
                               "remaining".tr(context: context),
-                              style: AppStyles.style19W900,
+                              style: AppStyles.style19W900.copyWith(
+                                color: Colors.white,
+                              ),
                             ),
                           ],
                         ),
@@ -94,7 +89,9 @@ class TelegramDeletingView extends StatelessWidget {
                         child: Container(
                           padding: const EdgeInsets.all(25),
                           decoration: BoxDecoration(
-                            color: const Color(0xff727272),
+                            color: isDark
+                                ? const Color(0xff727272)
+                                : AppColors.yellowLight,
                             borderRadius: BorderRadius.circular(10.r),
                           ),
                           child: Column(
@@ -141,7 +138,10 @@ class TelegramDeletingView extends StatelessWidget {
                             textButton: "next".tr(context: context),
                             content: Text(
                               "Deletedsuccessfully".tr(context: context),
-                              style: AppStyles.style15W900,
+                              style: AppStyles.style15W900.copyWith(
+                                color:
+                                    isDark ? Colors.white : AppColors.blueLight,
+                              ),
                               textAlign: TextAlign.center,
                             ),
                           );
@@ -157,7 +157,6 @@ class TelegramDeletingView extends StatelessWidget {
                       ),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5.r),
-                        color: isDark ? null : AppColors.blueLight,
                         gradient: isDark
                             ? const LinearGradient(
                                 colors: [
@@ -167,7 +166,14 @@ class TelegramDeletingView extends StatelessWidget {
                                 begin: Alignment.centerLeft,
                                 end: Alignment.centerRight,
                               )
-                            : null,
+                            : const LinearGradient(
+                                colors: [
+                                  AppColors.linearLight1,
+                                  AppColors.linearLight2,
+                                ],
+                                begin: Alignment.centerLeft,
+                                end: Alignment.centerRight,
+                              ),
                       ),
                       child: Center(
                         child: Text(
