@@ -46,7 +46,8 @@ class _PhoneChooseTheDestinationViewBodyState
                             isDark ? Colors.transparent : AppColors.blueLight,
                       ),
                       borderRadius: BorderRadius.circular(5.r),
-                      color: AppColors.whiteColor,
+                      color:
+                          isDark ? AppColors.whiteColor : AppColors.blueLight,
                       boxShadow: [
                         BoxShadow(
                           color: AppColors.whiteColor.withOpacity(0.25),
@@ -61,13 +62,17 @@ class _PhoneChooseTheDestinationViewBodyState
                         Text(
                           "Contacts".tr(context: context),
                           style: AppStyles.style17W800.copyWith(
-                            color: const Color(0xff2F2F2F),
+                            color: isDark
+                                ? const Color(0xff2F2F2F)
+                                : AppColors.whiteColor,
                           ),
                         ),
                         Text(
                           "4000",
                           style: AppStyles.style17W800.copyWith(
-                            color: const Color(0xff2F2F2F),
+                            color: isDark
+                                ? const Color(0xff2F2F2F)
+                                : AppColors.whiteColor,
                             fontWeight: FontWeight.w200,
                           ),
                         ),
@@ -84,8 +89,10 @@ class _PhoneChooseTheDestinationViewBodyState
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(2.r),
                   ),
-                  activeColor: const Color(0xff00C0CC),
-                  checkColor: const Color(0xff00C0CC),
+                  activeColor:
+                      isDark ? const Color(0xff00C0CC) : AppColors.yellowLight,
+                  checkColor:
+                      isDark ? const Color(0xff00C0CC) : AppColors.yellowLight,
                   visualDensity: VisualDensity.compact,
                   contentPadding: EdgeInsets.zero,
                   side: BorderSide(
@@ -116,8 +123,12 @@ class _PhoneChooseTheDestinationViewBodyState
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(2.r),
                             ),
-                            activeColor: const Color(0xff00C0CC),
-                            checkColor: const Color(0xff00C0CC),
+                            activeColor: isDark
+                                ? const Color(0xff00C0CC)
+                                : AppColors.yellowLight,
+                            checkColor: isDark
+                                ? const Color(0xff00C0CC)
+                                : AppColors.yellowLight,
                             visualDensity: VisualDensity.compact,
                             side: BorderSide(
                               color:
@@ -135,7 +146,9 @@ class _PhoneChooseTheDestinationViewBodyState
                             },
                           ),
                           Divider(
-                            color: Colors.white,
+                            color: isDark
+                                ? Colors.white
+                                : AppColors.hightYellowLight,
                             thickness: 1,
                             endIndent: 25.w,
                             indent: 25.w,
@@ -160,7 +173,6 @@ class _PhoneChooseTheDestinationViewBodyState
               width: 200.w,
               padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 4.h),
               decoration: BoxDecoration(
-                color: isDark ? null : AppColors.blueLight,
                 borderRadius: BorderRadius.circular(5.r),
                 gradient: isDark
                     ? const LinearGradient(
@@ -171,7 +183,14 @@ class _PhoneChooseTheDestinationViewBodyState
                         begin: Alignment.centerLeft,
                         end: Alignment.centerRight,
                       )
-                    : null,
+                    : const LinearGradient(
+                        colors: [
+                          AppColors.linearLight1,
+                          AppColors.linearLight2,
+                        ],
+                        begin: Alignment.centerLeft,
+                        end: Alignment.centerRight,
+                      ),
               ),
               child: Center(
                 child: Text(
