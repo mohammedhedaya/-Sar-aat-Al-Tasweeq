@@ -31,6 +31,7 @@ class WhatsappGroupsViewBody extends StatelessWidget {
                 style: AppStyles.style12W700.copyWith(
                   fontWeight: FontWeight.w900,
                   fontFamily: "Titillium Web",
+                  color: Colors.white,
                 ),
               ),
               SizedBox(width: 10.w),
@@ -53,6 +54,7 @@ class WhatsappGroupsViewBody extends StatelessWidget {
                         return Padding(
                           padding: EdgeInsets.only(bottom: 26.h),
                           child: ListTile(
+                            tileColor: isDark ? null : AppColors.fillLight,
                             onTap: () {
                               context.push("/whatsappGroupsDetailsView");
                             },
