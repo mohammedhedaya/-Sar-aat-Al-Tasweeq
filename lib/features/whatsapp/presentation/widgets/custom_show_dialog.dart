@@ -76,9 +76,11 @@ class CustomShowRechargeDialog extends StatelessWidget {
     super.key,
     this.onTap,
     this.content,
+    this.colorFilter,
   });
   final void Function()? onTap;
   final Widget? content;
+  final ColorFilter? colorFilter;
   @override
   Widget build(BuildContext context) {
     final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
@@ -92,6 +94,11 @@ class CustomShowRechargeDialog extends StatelessWidget {
         },
         child: SvgPicture.asset(
           Assets.imagesRechargeWallet,
+          colorFilter: colorFilter ??
+              ColorFilter.mode(
+                isDark ? const Color(0xff00C0CC) : AppColors.yellowLight,
+                BlendMode.srcIn,
+              ),
         ),
       ),
       content: content ??
