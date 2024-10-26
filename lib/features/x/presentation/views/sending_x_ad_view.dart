@@ -17,160 +17,173 @@ class SendingXAdView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: CustomScrollView(
-          slivers: [
-            SliverToBoxAdapter(
-              child: AspectRatio(
-                aspectRatio: 1.5,
-                child: Image.asset(
-                  Assets.imagesApplogo,
-                ),
-              ),
-            ),
-            SliverFillRemaining(
-              hasScrollBody: false,
-              child: Container(
-                width: double.infinity,
-                padding: const EdgeInsets.all(12),
-                decoration: BoxDecoration(
-                  color: isDark(context)
-                      ? const Color(0xffABABAB)
-                      : AppColors.blueLight,
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(25.r),
-                    topRight: Radius.circular(25.r),
+        child: Container(
+          decoration: isDark(context)
+              ? null
+              : const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(
+                      Assets.imagesFrameBGLight,
+                    ),
+                    fit: BoxFit.fitWidth,
+                    alignment: Alignment.topCenter,
                   ),
                 ),
-                child: Column(
-                  children: [
-                    Text(
-                      "sending".tr(context: context),
-                      style: AppStyles.style46W900.copyWith(
-                        color: AppColors.whiteColor,
-                      ),
-                    ),
-                    SizedBox(height: 60.h),
-                    Container(
-                      margin: EdgeInsets.symmetric(horizontal: 20.w),
-                      padding: const EdgeInsets.all(25),
-                      decoration: BoxDecoration(
-                        color: isDark(context)
-                            ? const Color(0xff727272)
-                            : AppColors.yellowLight,
-                        borderRadius: BorderRadius.circular(10.r),
-                      ),
-                      child: Column(
-                        children: [
-                          CircularPercentIndicator(
-                            radius: 55.0,
-                            lineWidth: 7.5.w,
-                            percent: 0.70,
-                            backgroundColor: isDark(context)
-                                ? AppColors.blackColor
-                                : AppColors.whiteColor,
-                            progressColor: isDark(context)
-                                ? AppColors.whiteColor
-                                : AppColors.hightYellowLight,
-                            reverse: true,
-                            center: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  "6days".tr(context: context),
-                                  style: AppStyles.style14W800.copyWith(
-                                    color: isDark(context)
-                                        ? AppColors.blackColor
-                                        : AppColors.hightYellowLight,
-                                    fontSize: 23.sp,
-                                  ),
-                                ),
-                                Text(
-                                  "remaining".tr(context: context),
-                                  style: AppStyles.style19W900.copyWith(
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          SizedBox(height: 24.h),
-                          CustomProgressBarAndText(
-                            label: "Sendingon20trends:".tr(context: context),
-                            value: "18",
-                            progress: 0.8,
-                            textcolor: const Color(0xffE21D1D),
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(height: 80.h),
-                    InkWell(
-                      onTap: () {
-                        showDialog(
-                          context: context,
-                          barrierColor:
-                              const Color(0xffFFF9F9).withOpacity(0.33),
-                          builder: (context) {
-                            return CustomShowDialog(
-                              onTap: () {
-                                context.pop();
-                              },
-                              image: Assets.imagesSuccessgreenicon,
-                              textButton: "next".tr(context: context),
-                              content: Text(
-                                "SentSuccessfully".tr(context: context),
-                                style: AppStyles.style15W900.copyWith(
-                                  color: AppColors.whiteColor,
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            );
-                          },
-                        );
-                      },
-                      child: Container(
-                        height: 40.h,
-                        width: 198.w,
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 22.w,
-                          vertical: 4.h,
-                        ),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5.r),
-                          gradient: isDark(context)
-                              ? const LinearGradient(
-                                  colors: [
-                                    Color(0xff00C0CC),
-                                    Color(0xff006066),
-                                  ],
-                                  begin: Alignment.centerLeft,
-                                  end: Alignment.centerRight,
-                                )
-                              : const LinearGradient(
-                                  colors: [
-                                    AppColors.linearLight1,
-                                    AppColors.linearLight2,
-                                  ],
-                                  begin: Alignment.centerLeft,
-                                  end: Alignment.centerRight,
-                                ),
-                        ),
-                        child: Center(
-                          child: Text(
-                            "cancel".tr(context: context),
-                            style: AppStyles.style14W400.copyWith(
-                              color: AppColors.whiteColor,
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
+          child: CustomScrollView(
+            slivers: [
+              SliverToBoxAdapter(
+                child: AspectRatio(
+                  aspectRatio: 1.4,
+                  child: Image.asset(
+                    Assets.imagesApplogo,
+                  ),
                 ),
               ),
-            ),
-          ],
+              SliverFillRemaining(
+                hasScrollBody: false,
+                child: Container(
+                  width: double.infinity,
+                  padding: const EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    color: isDark(context)
+                        ? const Color(0xffABABAB)
+                        : AppColors.blueLight,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(25.r),
+                      topRight: Radius.circular(25.r),
+                    ),
+                  ),
+                  child: Column(
+                    children: [
+                      Text(
+                        "sending".tr(context: context),
+                        style: AppStyles.style46W900.copyWith(
+                          color: AppColors.whiteColor,
+                        ),
+                      ),
+                      SizedBox(height: 60.h),
+                      Container(
+                        margin: EdgeInsets.symmetric(horizontal: 20.w),
+                        padding: const EdgeInsets.all(25),
+                        decoration: BoxDecoration(
+                          color: isDark(context)
+                              ? const Color(0xff727272)
+                              : AppColors.yellowLight,
+                          borderRadius: BorderRadius.circular(10.r),
+                        ),
+                        child: Column(
+                          children: [
+                            CircularPercentIndicator(
+                              radius: 55.0,
+                              lineWidth: 7.5.w,
+                              percent: 0.70,
+                              backgroundColor: isDark(context)
+                                  ? AppColors.blackColor
+                                  : AppColors.whiteColor,
+                              progressColor: isDark(context)
+                                  ? AppColors.whiteColor
+                                  : AppColors.hightYellowLight,
+                              reverse: true,
+                              center: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    "6days".tr(context: context),
+                                    style: AppStyles.style14W800.copyWith(
+                                      color: isDark(context)
+                                          ? AppColors.blackColor
+                                          : AppColors.hightYellowLight,
+                                      fontSize: 23.sp,
+                                    ),
+                                  ),
+                                  Text(
+                                    "remaining".tr(context: context),
+                                    style: AppStyles.style19W900.copyWith(
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(height: 24.h),
+                            CustomProgressBarAndText(
+                              label: "Sendingon20trends:".tr(context: context),
+                              value: "18",
+                              progress: 0.8,
+                              textcolor: const Color(0xffE21D1D),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(height: 80.h),
+                      InkWell(
+                        onTap: () {
+                          showDialog(
+                            context: context,
+                            barrierColor:
+                                const Color(0xffFFF9F9).withOpacity(0.33),
+                            builder: (context) {
+                              return CustomShowDialog(
+                                onTap: () {
+                                  context.pop();
+                                },
+                                image: Assets.imagesSuccessgreenicon,
+                                textButton: "next".tr(context: context),
+                                content: Text(
+                                  "SentSuccessfully".tr(context: context),
+                                  style: AppStyles.style15W900.copyWith(
+                                    color: AppColors.whiteColor,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                ),
+                              );
+                            },
+                          );
+                        },
+                        child: Container(
+                          height: 40.h,
+                          width: 198.w,
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 22.w,
+                            vertical: 4.h,
+                          ),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(5.r),
+                            gradient: isDark(context)
+                                ? const LinearGradient(
+                                    colors: [
+                                      Color(0xff00C0CC),
+                                      Color(0xff006066),
+                                    ],
+                                    begin: Alignment.centerLeft,
+                                    end: Alignment.centerRight,
+                                  )
+                                : const LinearGradient(
+                                    colors: [
+                                      AppColors.linearLight1,
+                                      AppColors.linearLight2,
+                                    ],
+                                    begin: Alignment.centerLeft,
+                                    end: Alignment.centerRight,
+                                  ),
+                          ),
+                          child: Center(
+                            child: Text(
+                              "cancel".tr(context: context),
+                              style: AppStyles.style14W400.copyWith(
+                                color: AppColors.whiteColor,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

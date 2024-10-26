@@ -104,20 +104,13 @@ class EmailViewBody extends StatelessWidget {
                                 Text(
                                   "pleaseSubscribeToThePackage"
                                       .tr(context: context),
-                                  style: AppStyles.style15W900.copyWith(
-                                    color: isDark
-                                        ? Colors.white
-                                        : AppColors.blueLight,
-                                  ),
+                                  style: AppStyles.style15W900
+                                      .copyWith(color: Colors.white),
                                   textAlign: TextAlign.center,
                                 ),
                                 SizedBox(width: 10.w),
                                 SvgPicture.asset(
                                   Assets.imagesSubscribeOfPackage,
-                                  colorFilter: ColorFilter.mode(
-                                    isDark ? Colors.white : AppColors.blueLight,
-                                    BlendMode.srcIn,
-                                  ),
                                 ),
                               ],
                             ),

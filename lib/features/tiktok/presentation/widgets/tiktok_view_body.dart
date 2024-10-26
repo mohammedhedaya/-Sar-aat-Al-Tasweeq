@@ -106,9 +106,7 @@ class TiktokViewBody extends StatelessWidget {
                                   "pleaseSubscribeToThePackage"
                                       .tr(context: context),
                                   style: AppStyles.style15W900.copyWith(
-                                    color: isDark
-                                        ? Colors.white
-                                        : AppColors.blueLight,
+                                    color: Colors.white,
                                   ),
                                   textAlign: TextAlign.center,
                                 ),

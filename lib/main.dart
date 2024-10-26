@@ -14,6 +14,7 @@ void main() async {
   setupServiceLocator();
   await ScreenUtil.ensureScreenSize();
   Bloc.observer = MyBlocObserver();
+  
 
   runApp(
     DevicePreview(
