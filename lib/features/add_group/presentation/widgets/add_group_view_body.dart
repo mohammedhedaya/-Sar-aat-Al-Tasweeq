@@ -2,11 +2,11 @@ import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shopping_chart/core/utils/app_colors.dart';
-
+import 'package:shopping_chart/core/utils/app_text_style.dart';
 import '../../../../core/utils/assets.dart';
-import '../../../contact_us/presentation/widgets/contact_us_item.dart';
 
 class AddGroupViewBody extends StatelessWidget {
   const AddGroupViewBody({super.key});
@@ -21,24 +21,88 @@ class AddGroupViewBody extends StatelessWidget {
           Image.asset(
             Assets.imagesApplogo,
           ),
-          ContactUsItem(
+          ListTile(
             onTap: () {
               context.push('/addWhatsappGroupView');
             },
-            title: "AddWhatsappGroup".tr(context: context),
-            icon: Assets.imagesAddWhatsappgroup,
+            contentPadding: EdgeInsets.zero,
+            visualDensity: VisualDensity.compact,
+            title: Text(
+              "AddWhatsappGroup".tr(context: context),
+              style: AppStyles.style20W400.copyWith(
+                color: isDark ? AppColors.whiteColor : AppColors.blueLight,
+              ),
+            ),
+            leading: Container(
+              padding: const EdgeInsets.all(6.0),
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: isDark ? AppColors.darkGray : null,
+              ),
+              child: SvgPicture.asset(
+                Assets.imagesAddWhatsappgroup,
+                colorFilter: ColorFilter.mode(
+                  isDark ? AppColors.whiteColor : AppColors.yellowLight,
+                  BlendMode.srcIn,
+                ),
+              ),
+            ),
+            trailing: Container(
+              padding: const EdgeInsets.all(3.0),
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: isDark ? AppColors.whiteColor : AppColors.blueLight,
+              ),
+              child: Icon(
+                Icons.arrow_forward_ios_rounded,
+                size: 18,
+                color: isDark ? AppColors.blackColor : AppColors.whiteColor,
+              ),
+            ),
           ),
           Divider(
             color: isDark ? Colors.white : AppColors.blueLight,
             thickness: 1,
             height: 1.h,
           ),
-          ContactUsItem(
+          ListTile(
             onTap: () {
               context.push('/addTelegramGroupView');
             },
-            title: "AddTelegramGroup".tr(context: context),
-            icon: Assets.imagesAddtelegramgroup,
+            contentPadding: EdgeInsets.zero,
+            visualDensity: VisualDensity.compact,
+            title: Text(
+              "AddTelegramGroup".tr(context: context),
+              style: AppStyles.style20W400.copyWith(
+                color: isDark ? AppColors.whiteColor : AppColors.blueLight,
+              ),
+            ),
+            leading: Container(
+              padding: const EdgeInsets.all(6.0),
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: isDark ? AppColors.darkGray : null,
+              ),
+              child: SvgPicture.asset(
+                Assets.imagesAddtelegramgroup,
+                colorFilter: ColorFilter.mode(
+                  isDark ? AppColors.whiteColor : AppColors.yellowLight,
+                  BlendMode.srcIn,
+                ),
+              ),
+            ),
+            trailing: Container(
+              padding: const EdgeInsets.all(3.0),
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: isDark ? AppColors.whiteColor : AppColors.blueLight,
+              ),
+              child: Icon(
+                Icons.arrow_forward_ios_rounded,
+                size: 18,
+                color: isDark ? AppColors.blackColor : AppColors.whiteColor,
+              ),
+            ),
           ),
         ],
       ),

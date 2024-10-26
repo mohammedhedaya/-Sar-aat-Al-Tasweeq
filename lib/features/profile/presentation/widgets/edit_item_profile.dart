@@ -1,5 +1,4 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
-import 'package:country_code_picker/country_code_picker.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -225,18 +224,31 @@ class EditItemProfile extends StatelessWidget {
                                 color: AppColors.blueLight,
                               ),
                       ),
-                      child: CountryCodePicker(
-                        initialSelection: "SA",
-                        favorite: const ['+966', 'SA'],
-                        // showCountryOnly: true,
-                        showFlagDialog: true,
-                        showDropDownButton: true,
-                        showFlag: false,
-                        textOverflow: TextOverflow.ellipsis,
-                        boxDecoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8.r),
-                        ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "966+",
+                            style: AppStyles.style18W400,
+                          ),
+                          const Icon(
+                            Icons.arrow_drop_down,
+                            size: 34,
+                          ),
+                        ],
                       ),
+                      // CountryCodePicker(
+                      //   initialSelection: "SA",
+                      //   favorite: const ['+966', 'SA'],
+                      //   // showCountryOnly: true,
+                      //   showFlagDialog: true,
+                      //   showDropDownButton: true,
+                      //   showFlag: false,
+                      //   textOverflow: TextOverflow.ellipsis,
+                      //   boxDecoration: BoxDecoration(
+                      //     borderRadius: BorderRadius.circular(8.r),
+                      //   ),
+                      // ),
                     ),
                   ),
                 ],

@@ -55,6 +55,7 @@ class _SendYourAdToFollowersViewBodyState
                 "400",
                 style: AppStyles.style12W700.copyWith(
                   fontWeight: FontWeight.w900,
+                  color: Colors.white,
                   fontFamily: "Titillium Web",
                 ),
               ),

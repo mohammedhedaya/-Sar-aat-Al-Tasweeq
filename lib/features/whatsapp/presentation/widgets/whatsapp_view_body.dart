@@ -52,10 +52,7 @@ class WhatsappViewBody extends StatelessWidget {
                   top: 65.h,
                   child: Text(
                     "WhatsApp",
-                    style: AppStyles.style78W400.copyWith(
-                      color:
-                          isDark ? AppColors.whiteColor : AppColors.blueLight,
-                    ),
+                    style: AppStyles.style78W400,
                     textAlign: TextAlign.center,
                   ),
                 ),
