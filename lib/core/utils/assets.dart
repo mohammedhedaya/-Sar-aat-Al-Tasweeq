@@ -158,6 +158,10 @@ class Assets {
   /// assets/images/facebookLogoo.png
   static const String imagesFacebookLogoo = "assets/images/facebookLogoo.png";
 
+  /// Assets for imagesFrameBGLight
+  /// assets/images/FrameBGLight.png
+  static const String imagesFrameBGLight = "assets/images/FrameBGLight.png";
+
   /// Assets for imagesGaleryIcon
   /// assets/images/galeryIcon.svg
   static const String imagesGaleryIcon = "assets/images/galeryIcon.svg";
@@ -381,6 +385,10 @@ class Assets {
   /// Assets for imagesShareingWithMyFriends
   /// assets/images/shareingWithMyFriends.svg
   static const String imagesShareingWithMyFriends = "assets/images/shareingWithMyFriends.svg";
+
+  /// Assets for imagesSharingEarnLight
+  /// assets/images/SharingEarnLight.png
+  static const String imagesSharingEarnLight = "assets/images/SharingEarnLight.png";
 
   /// Assets for imagesSignupbgDark
   /// assets/images/signupbgDark.png

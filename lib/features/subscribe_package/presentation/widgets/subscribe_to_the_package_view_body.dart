@@ -39,9 +39,21 @@ class _SubscribeToThePackageViewBodyState
             clipBehavior: Clip.none,
             alignment: Alignment.center,
             children: [
+              !isDark
+                  ? Positioned(
+                      top: -MediaQuery.of(context).size.height * 0.12,
+                      child: Image.asset(
+                        Assets.imagesFrameBGLight,
+                        width: MediaQuery.of(context).size.width,
+                        fit: BoxFit.cover,
+                      ),
+                    )
+                  : const Positioned(
+                      child: SizedBox.shrink(),
+                    ),
               Column(
                 children: [
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.2),
+                  SizedBox(height: MediaQuery.of(context).size.height * 0.22),
                   Expanded(
                     child: Container(
                       width: double.infinity,
@@ -348,7 +360,7 @@ class _SubscribeToThePackageViewBodyState
                 ],
               ),
               Positioned(
-                top: MediaQuery.of(context).size.height * 0.13,
+                top: MediaQuery.of(context).size.height * 0.14,
                 child: Container(
                   padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(

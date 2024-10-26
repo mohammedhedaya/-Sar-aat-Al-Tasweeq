@@ -12,49 +12,62 @@ class ContactUsViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
-    return Column(
+    return Stack(
+      clipBehavior: Clip.none,
+      alignment: Alignment.center,
       children: [
-        const Expanded(
-          flex: 1,
-          child: SizedBox(),
-        ),
-        Expanded(
-          flex: 3,
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 35.w),
-            width: double.infinity,
-            decoration: BoxDecoration(
-              color: isDark ? const Color(0xffABABAB) : AppColors.blueLight,
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(25.r),
-                topRight: Radius.circular(25.r),
+        !isDark
+            ? Positioned(
+                top: -MediaQuery.of(context).size.height * 0.13,
+                child: Image.asset(
+                  Assets.imagesFrameBGLight,
+                  width: MediaQuery.of(context).size.width,
+                  fit: BoxFit.cover,
+                ),
+              )
+            : const SizedBox.shrink(),
+        Column(
+          children: [
+            SizedBox(height: MediaQuery.of(context).size.height * 0.25),
+            Expanded(
+              flex: 2,
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 35.w),
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: isDark ? const Color(0xffABABAB) : AppColors.blueLight,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(25.r),
+                    topRight: Radius.circular(25.r),
+                  ),
+                ),
+                child: Column(
+                  children: [
+                    SizedBox(height: MediaQuery.of(context).size.height * 0.05),
+                    ContactUsItem(
+                      onTap: () {},
+                      title: "contactUsViaWhatsapp".tr(context: context),
+                      icon: Assets.imagesWhatsapp,
+                    ),
+                    const Divider(
+                      color: AppColors.whiteColor,
+                      height: 1,
+                      thickness: 1,
+                    ),
+                    ContactUsItem(
+                      onTap: () {},
+                      title: "contactUsViaPhone".tr(context: context),
+                      icon: Assets.imagesPhone,
+                    ),
+                    SizedBox(height: 25.h),
+                    Image.asset(
+                      Assets.imagesApplogo,
+                    ),
+                  ],
+                ),
               ),
             ),
-            child: Column(
-              children: [
-                SizedBox(height: MediaQuery.of(context).size.height * 0.05),
-                ContactUsItem(
-                  onTap: () {},
-                  title: "contactUsViaWhatsapp".tr(context: context),
-                  icon: Assets.imagesWhatsapp,
-                ),
-                const Divider(
-                  color: AppColors.whiteColor,
-                  height: 1,
-                  thickness: 1,
-                ),
-                ContactUsItem(
-                  onTap: () {},
-                  title: "contactUsViaPhone".tr(context: context),
-                  icon: Assets.imagesPhone,
-                ),
-                SizedBox(height: 25.h),
-                Image.asset(
-                  Assets.imagesApplogo,
-                ),
-              ],
-            ),
-          ),
+          ],
         ),
       ],
     );

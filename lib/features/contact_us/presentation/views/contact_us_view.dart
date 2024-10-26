@@ -1,6 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shopping_chart/core/constants/constants.dart';
+import 'package:shopping_chart/core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../widgets/contact_us_view_body.dart';
 
@@ -17,7 +19,9 @@ class ContactUsView extends StatelessWidget {
         automaticallyImplyLeading: false,
         title: Text(
           "contact_us".tr(context: context),
-          style: AppStyles.style20W900,
+          style: AppStyles.style20W900.copyWith(
+            color: isDark(context) ? Colors.white : AppColors.blueLight,
+          ),
         ),
         actions: [
           IconButton(
@@ -26,6 +30,7 @@ class ContactUsView extends StatelessWidget {
             },
             icon: const Icon(
               Icons.arrow_forward_ios_rounded,
+              color: Colors.white,
             ),
           ),
         ],
