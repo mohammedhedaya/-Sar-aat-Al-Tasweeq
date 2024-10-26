@@ -17,205 +17,232 @@ class SMSViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return SingleChildScrollView(
-      child: Column(
-        children: [
-          Stack(
-            alignment: Alignment.center,
-            clipBehavior: Clip.none,
-            children: [
-              Positioned(
-                top: 60.h,
-                child: Text(
-                  "SMS",
-                  style: AppStyles.style78W400,
-                  textAlign: TextAlign.center,
+      child: Container(
+        decoration: !isDark
+            ? const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(
+                    Assets.imagesFrameBGLight,
+                  ),
+                  fit: BoxFit.fitWidth,
+                  alignment: Alignment.topCenter,
+                ),
+              )
+            : null,
+        child: Column(
+          children: [
+            SizedBox(height: 15.h),
+            Align(
+              alignment: AlignmentDirectional.topEnd,
+              child: IconButton(
+                onPressed: () {
+                  context.pop();
+                },
+                icon: const Icon(
+                  Icons.arrow_forward_ios_sharp,
+                  color: Colors.white,
                 ),
               ),
-              Image.asset(
-                Assets.imagesSmsLogo,
-                height: 100.h,
-              ),
-            ],
-          ),
-          SizedBox(height: 80.h),
-          Container(
-            width: double.infinity,
-            padding: EdgeInsets.only(
-              left: 41.w,
-              right: 31.w,
-              top: 80.h,
-              bottom: 25.h,
             ),
-            decoration: BoxDecoration(
-              color: isDark
-                  ? const Color(0xff080d12).withOpacity(0.80)
-                  : AppColors.blueLight,
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(70.r),
-                topRight: Radius.circular(70.r),
-              ),
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            Stack(
+              alignment: Alignment.center,
+              clipBehavior: Clip.none,
               children: [
-                CustomSubscribeBtn(
-                  onPressed: () {
-                    showDialog(
-                      context: context,
-                      barrierColor: const Color(0xffFFF9F9).withOpacity(0.33),
-                      builder: (context) {
-                        return CustomShowDialog(
-                          onTap: () {
-                            context.push('/smsLaunchYourAdPhoneDirectoryView');
-                          },
-                          image: Assets.imagesXerror,
-                          textButton: "subscribe".tr(context: context),
-                          content: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                "pleaseSubscribeToThePackage"
-                                    .tr(context: context),
-                                style: AppStyles.style15W900.copyWith(
-                                  color: Colors.white,
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                              SizedBox(width: 10.w),
-                              SvgPicture.asset(
-                                Assets.imagesSubscribeOfPackage,
-                              ),
-                            ],
-                          ),
-                        );
-                      },
-                    );
-                  },
-                  text: "Contacts".tr(context: context),
-                  textStyle: AppStyles.style14W800.copyWith(
-                    color: isDark ? Colors.white : Colors.black,
+                Positioned(
+                  top: 60.h,
+                  child: Text(
+                    "SMS",
+                    style: AppStyles.style78W400,
+                    textAlign: TextAlign.center,
                   ),
                 ),
-                SizedBox(height: 50.h),
-                CustomSubscribeBtn(
-                  onPressed: () {
-                    showDialog(
-                      context: context,
-                      barrierColor: const Color(0xffFFF9F9).withOpacity(0.33),
-                      builder: (context) {
-                        return CustomShowDialog(
-                          onTap: () {
-                            context.push('/smsTransferAnotherNumberView');
-                          },
-                          image: Assets.imagesXerror,
-                          textButton: "subscribe".tr(context: context),
-                          content: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                "pleaseSubscribeToThePackage"
-                                    .tr(context: context),
-                                style: AppStyles.style15W900
-                                    .copyWith(color: Colors.white),
-                                textAlign: TextAlign.center,
-                              ),
-                              SizedBox(width: 10.w),
-                              SvgPicture.asset(
-                                Assets.imagesSubscribeOfPackage,
-                              ),
-                            ],
-                          ),
-                        );
-                      },
-                    );
-                  },
-                  text: "Transferanothernumberfromthephonebook"
-                      .tr(context: context),
-                  textStyle: AppStyles.style14W800.copyWith(
-                    color: isDark ? Colors.white : Colors.black,
-                  ),
-                ),
-                SizedBox(height: 39.h),
-                Text(
-                  "SeehowtouseSMS?".tr(context: context),
-                  style: AppStyles.style14W600,
-                ),
-                SizedBox(height: 10.h),
                 Image.asset(
-                  Assets.imagesImageSea,
+                  Assets.imagesSmsLogo,
+                  height: 100.h,
                 ),
-                SizedBox(height: 12.h),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Text(
-                      "hearyouclearly".tr(context: context),
-                      style: AppStyles.style14W600,
-                    ),
-                    SizedBox(width: 5.w),
-                    SvgPicture.asset(
-                      Assets.imagesLikeicon,
-                      height: 40.h,
-                      colorFilter: ColorFilter.mode(
-                        isDark
-                            ? const Color(0xff00C0CC)
-                            : AppColors.yellowLight,
-                        BlendMode.srcIn,
-                      ),
-                    ),
-                  ],
+              ],
+            ),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.15),
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.only(
+                left: 41.w,
+                right: 31.w,
+                top: 80.h,
+                bottom: 25.h,
+              ),
+              decoration: BoxDecoration(
+                color: isDark
+                    ? const Color(0xff080d12).withOpacity(0.80)
+                    : AppColors.blueLight,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(70.r),
+                  topRight: Radius.circular(70.r),
                 ),
-                Text(
-                  "WeHelpYou".tr(context: context),
-                  style: AppStyles.style12W600.copyWith(
-                    color: Colors.white,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  CustomSubscribeBtn(
+                    onPressed: () {
+                      showDialog(
+                        context: context,
+                        barrierColor: const Color(0xffFFF9F9).withOpacity(0.33),
+                        builder: (context) {
+                          return CustomShowDialog(
+                            onTap: () {
+                              context
+                                  .push('/smsLaunchYourAdPhoneDirectoryView');
+                            },
+                            image: Assets.imagesXerror,
+                            textButton: "subscribe".tr(context: context),
+                            content: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  "pleaseSubscribeToThePackage"
+                                      .tr(context: context),
+                                  style: AppStyles.style15W900.copyWith(
+                                    color: Colors.white,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                ),
+                                SizedBox(width: 10.w),
+                                SvgPicture.asset(
+                                  Assets.imagesSubscribeOfPackage,
+                                ),
+                              ],
+                            ),
+                          );
+                        },
+                      );
+                    },
+                    text: "Contacts".tr(context: context),
+                    textStyle: AppStyles.style14W800.copyWith(
+                      color: isDark ? Colors.white : Colors.black,
+                    ),
                   ),
-                ),
-                SizedBox(height: 16.h),
-                InkWell(
-                  onTap: () {
-                    context.push('/whatsappAddSuggestionView');
-                  },
-                  child: Center(
-                    child: Container(
-                      height: 31.h,
-                      width: 119.w,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5.r),
-                        gradient: isDark
-                            ? const LinearGradient(
-                                colors: [
-                                  Color(0xff00C0CC),
-                                  Color(0xff006066),
-                                ],
-                                begin: Alignment.centerLeft,
-                                end: Alignment.centerRight,
-                              )
-                            : const LinearGradient(
-                                colors: [
-                                  AppColors.linearLight1,
-                                  AppColors.linearLight2,
-                                ],
-                                begin: Alignment.centerLeft,
-                                end: Alignment.centerRight,
-                              ),
+                  SizedBox(height: 50.h),
+                  CustomSubscribeBtn(
+                    onPressed: () {
+                      showDialog(
+                        context: context,
+                        barrierColor: const Color(0xffFFF9F9).withOpacity(0.33),
+                        builder: (context) {
+                          return CustomShowDialog(
+                            onTap: () {
+                              context.push('/smsTransferAnotherNumberView');
+                            },
+                            image: Assets.imagesXerror,
+                            textButton: "subscribe".tr(context: context),
+                            content: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  "pleaseSubscribeToThePackage"
+                                      .tr(context: context),
+                                  style: AppStyles.style15W900
+                                      .copyWith(color: Colors.white),
+                                  textAlign: TextAlign.center,
+                                ),
+                                SizedBox(width: 10.w),
+                                SvgPicture.asset(
+                                  Assets.imagesSubscribeOfPackage,
+                                ),
+                              ],
+                            ),
+                          );
+                        },
+                      );
+                    },
+                    text: "Transferanothernumberfromthephonebook"
+                        .tr(context: context),
+                    textStyle: AppStyles.style14W800.copyWith(
+                      color: isDark ? Colors.white : Colors.black,
+                    ),
+                  ),
+                  SizedBox(height: 39.h),
+                  Text(
+                    "SeehowtouseSMS?".tr(context: context),
+                    style: AppStyles.style14W600,
+                  ),
+                  SizedBox(height: 10.h),
+                  Image.asset(
+                    Assets.imagesImageSea,
+                  ),
+                  SizedBox(height: 12.h),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        "hearyouclearly".tr(context: context),
+                        style: AppStyles.style14W600,
                       ),
-                      child: Center(
-                        child: Text(
-                          "suggestions".tr(context: context),
-                          style: AppStyles.style14W700.copyWith(
-                            color: Colors.white,
+                      SizedBox(width: 5.w),
+                      SvgPicture.asset(
+                        Assets.imagesLikeicon,
+                        height: 40.h,
+                        colorFilter: ColorFilter.mode(
+                          isDark
+                              ? const Color(0xff00C0CC)
+                              : AppColors.yellowLight,
+                          BlendMode.srcIn,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Text(
+                    "WeHelpYou".tr(context: context),
+                    style: AppStyles.style12W600.copyWith(
+                      color: Colors.white,
+                    ),
+                  ),
+                  SizedBox(height: 16.h),
+                  InkWell(
+                    onTap: () {
+                      context.push('/whatsappAddSuggestionView');
+                    },
+                    child: Center(
+                      child: Container(
+                        height: 31.h,
+                        width: 119.w,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5.r),
+                          gradient: isDark
+                              ? const LinearGradient(
+                                  colors: [
+                                    Color(0xff00C0CC),
+                                    Color(0xff006066),
+                                  ],
+                                  begin: Alignment.centerLeft,
+                                  end: Alignment.centerRight,
+                                )
+                              : const LinearGradient(
+                                  colors: [
+                                    AppColors.linearLight1,
+                                    AppColors.linearLight2,
+                                  ],
+                                  begin: Alignment.centerLeft,
+                                  end: Alignment.centerRight,
+                                ),
+                        ),
+                        child: Center(
+                          child: Text(
+                            "suggestions".tr(context: context),
+                            style: AppStyles.style14W700.copyWith(
+                              color: Colors.white,
+                            ),
+                            textAlign: TextAlign.center,
                           ),
-                          textAlign: TextAlign.center,
                         ),
                       ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

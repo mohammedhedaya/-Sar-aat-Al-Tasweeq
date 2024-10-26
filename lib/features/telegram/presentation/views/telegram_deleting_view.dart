@@ -19,16 +19,16 @@ class TelegramDeletingView extends StatelessWidget {
     return Scaffold(
       body: Container(
         decoration: isDark
-              ? null
-              : const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(
-              Assets.imagesFrameBGLight,
-            ),
-            fit: BoxFit.fitWidth,
-            alignment: Alignment.topCenter,
-          ),
-        ),
+            ? null
+            : const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(
+                    Assets.imagesFrameBGLight,
+                  ),
+                  fit: BoxFit.fitWidth,
+                  alignment: Alignment.topCenter,
+                ),
+              ),
         child: CustomScrollView(
           slivers: [
             SliverToBoxAdapter(
@@ -152,9 +152,7 @@ class TelegramDeletingView extends StatelessWidget {
                               content: Text(
                                 "Deletedsuccessfully".tr(context: context),
                                 style: AppStyles.style15W900.copyWith(
-                                  color: isDark
-                                      ? Colors.white
-                                      : AppColors.blueLight,
+                                  color: Colors.white,
                                 ),
                                 textAlign: TextAlign.center,
                               ),

@@ -17,205 +17,234 @@ class XViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDark = AdaptiveTheme.of(context).mode == AdaptiveThemeMode.dark;
     return SingleChildScrollView(
-      child: Column(
-        children: [
-          Stack(
-            clipBehavior: Clip.none,
-            alignment: Alignment.center,
-            children: [
-              Positioned(
-                top: 40.h,
-                child: Text(
-                  "X",
-                  style: AppStyles.style78W400,
-                  textAlign: TextAlign.center,
+      child: Container(
+        decoration: !isDark
+            ? const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(
+                    Assets.imagesFrameBGLight,
+                  ),
+                  fit: BoxFit.fitWidth,
+                  alignment: Alignment.topCenter,
+                ),
+              )
+            : null,
+        child: Column(
+          children: [
+            SizedBox(height: 15.h),
+            Align(
+              alignment: AlignmentDirectional.topEnd,
+              child: IconButton(
+                onPressed: () {
+                  context.pop();
+                },
+                icon: const Icon(
+                  Icons.arrow_forward_ios_sharp,
+                  color: Colors.white,
                 ),
               ),
-              SvgPicture.asset(
-                Assets.imagesXIcon,
-              ),
-            ],
-          ),
-          SizedBox(height: 100.h),
-          Container(
-            width: double.infinity,
-            padding: EdgeInsets.only(
-              left: 41.w,
-              right: 31.w,
-              top: 80.h,
-              bottom: 25.h,
             ),
-            decoration: BoxDecoration(
-              color: isDark
-                  ? const Color(0xff080d12).withOpacity(0.80)
-                  : AppColors.blueLight,
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(70.r),
-                topRight: Radius.circular(70.r),
-              ),
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            Stack(
+              clipBehavior: Clip.none,
+              alignment: Alignment.center,
               children: [
-                CustomAuthTextField(
-                  onChanged: (value) {},
-                  hintStyle: AppStyles.style14W400.copyWith(
-                    color:
-                        isDark ? const Color(0xffBABABA) : AppColors.blackColor,
-                  ),
-                  hintText: "username".tr(context: context),
-                  textAlign: TextAlign.center,
-                  fiiledColor: isDark
-                      ? Colors.white.withOpacity(0.10)
-                      : AppColors.whiteColor,
-                ),
-                SizedBox(height: 35.h),
-                CustomAuthTextField(
-                  onChanged: (value) {},
-                  hintStyle: AppStyles.style14W400.copyWith(
-                    color:
-                        isDark ? const Color(0xffBABABA) : AppColors.blackColor,
-                  ),
-                  hintText: "password".tr(context: context),
-                  textAlign: TextAlign.center,
-                  fiiledColor: isDark
-                      ? Colors.white.withOpacity(0.10)
-                      : AppColors.whiteColor,
-                ),
-                SizedBox(height: 36.h),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 40.w),
-                  child: ElevatedButton(
-                    onPressed: () {
-                      showDialog(
-                        context: context,
-                        barrierColor: const Color(0xffFFF9F9).withOpacity(0.33),
-                        builder: (context) {
-                          return CustomShowDialog(
-                            onTap: () {
-                              context.push("/launchYourXAdView");
-                            },
-                            image: Assets.imagesXerror,
-                            textButton: "subscribe".tr(context: context),
-                            content: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  "pleaseSubscribeToThePackage"
-                                      .tr(context: context),
-                                  style: AppStyles.style15W900
-                                      .copyWith(color: Colors.white),
-                                  textAlign: TextAlign.center,
-                                ),
-                                SizedBox(width: 10.w),
-                                SvgPicture.asset(
-                                  Assets.imagesSubscribeOfPackage,
-                                ),
-                              ],
-                            ),
-                          );
-                        },
-                      );
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: isDark
-                          ? AppColors.blackColor
-                          : const Color(0xffB99C3D),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(4.r),
-                      ),
-                      minimumSize: Size(double.infinity, 45.h),
-                    ),
-                    child: Text(
-                      "log in".tr(context: context),
-                      style: AppStyles.style14W600.copyWith(
-                        color: AppColors.whiteColor,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
+                Positioned(
+                  top: 40.h,
+                  child: Text(
+                    "X",
+                    style: AppStyles.style78W400,
+                    textAlign: TextAlign.center,
                   ),
                 ),
-                SizedBox(height: 39.h),
-                Text(
-                  "SeehowtouseX?".tr(context: context),
-                  style: AppStyles.style14W600,
+                SvgPicture.asset(
+                  Assets.imagesXIcon,
                 ),
-                SizedBox(height: 10.h),
-                Image.asset(
-                  Assets.imagesImageSea,
+              ],
+            ),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.15),
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.only(
+                left: 41.w,
+                right: 31.w,
+                top: 80.h,
+                bottom: 25.h,
+              ),
+              decoration: BoxDecoration(
+                color: isDark
+                    ? const Color(0xff080d12).withOpacity(0.80)
+                    : AppColors.blueLight,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(70.r),
+                  topRight: Radius.circular(70.r),
                 ),
-                SizedBox(height: 12.h),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Text(
-                      "hearyouclearly".tr(context: context),
-                      style: AppStyles.style14W600,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  CustomAuthTextField(
+                    onChanged: (value) {},
+                    hintStyle: AppStyles.style14W400.copyWith(
+                      color: isDark
+                          ? const Color(0xffBABABA)
+                          : AppColors.blackColor,
                     ),
-                    SizedBox(width: 5.w),
-                    SvgPicture.asset(
-                      Assets.imagesLikeicon,
-                      height: 40.h,
-                      colorFilter: ColorFilter.mode(
-                        isDark
-                            ? const Color(0xff00C0CC)
-                            : AppColors.yellowLight,
-                        BlendMode.srcIn,
-                      ),
-                    ),
-                  ],
-                ),
-                Text(
-                  "WeHelpYou".tr(context: context),
-                  style: AppStyles.style12W600.copyWith(
-                    color: const Color(0xffffffff),
+                    hintText: "username".tr(context: context),
+                    textAlign: TextAlign.center,
+                    fiiledColor: isDark
+                        ? Colors.white.withOpacity(0.10)
+                        : AppColors.whiteColor,
                   ),
-                ),
-                SizedBox(height: 16.h),
-                InkWell(
-                  onTap: () {
-                    context.push('/whatsappAddSuggestionView');
-                  },
-                  child: Center(
-                    child: Container(
-                      height: 31.h,
-                      width: 119.w,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5.r),
-                        gradient: isDark
-                            ? const LinearGradient(
-                                colors: [
-                                  Color(0xff00C0CC),
-                                  Color(0xff006066),
+                  SizedBox(height: 35.h),
+                  CustomAuthTextField(
+                    onChanged: (value) {},
+                    hintStyle: AppStyles.style14W400.copyWith(
+                      color: isDark
+                          ? const Color(0xffBABABA)
+                          : AppColors.blackColor,
+                    ),
+                    hintText: "password".tr(context: context),
+                    textAlign: TextAlign.center,
+                    fiiledColor: isDark
+                        ? Colors.white.withOpacity(0.10)
+                        : AppColors.whiteColor,
+                  ),
+                  SizedBox(height: 36.h),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 40.w),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        showDialog(
+                          context: context,
+                          barrierColor:
+                              const Color(0xffFFF9F9).withOpacity(0.33),
+                          builder: (context) {
+                            return CustomShowDialog(
+                              onTap: () {
+                                context.push("/launchYourXAdView");
+                              },
+                              image: Assets.imagesXerror,
+                              textButton: "subscribe".tr(context: context),
+                              content: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    "pleaseSubscribeToThePackage"
+                                        .tr(context: context),
+                                    style: AppStyles.style15W900
+                                        .copyWith(color: Colors.white),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                  SizedBox(width: 10.w),
+                                  SvgPicture.asset(
+                                    Assets.imagesSubscribeOfPackage,
+                                  ),
                                 ],
-                                begin: Alignment.centerLeft,
-                                end: Alignment.centerRight,
-                              )
-                            : const LinearGradient(
-                                colors: [
-                                  AppColors.linearLight1,
-                                  AppColors.linearLight2,
-                                ],
-                                begin: Alignment.centerLeft,
-                                end: Alignment.centerRight,
                               ),
+                            );
+                          },
+                        );
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: isDark
+                            ? AppColors.blackColor
+                            : const Color(0xffB99C3D),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(4.r),
+                        ),
+                        minimumSize: Size(double.infinity, 45.h),
                       ),
-                      child: Center(
-                        child: Text(
-                          "suggestions".tr(context: context),
-                          style: AppStyles.style14W700.copyWith(
-                            color: const Color(0xffffffff),
+                      child: Text(
+                        "log in".tr(context: context),
+                        style: AppStyles.style14W600.copyWith(
+                          color: AppColors.whiteColor,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 39.h),
+                  Text(
+                    "SeehowtouseX?".tr(context: context),
+                    style: AppStyles.style14W600,
+                  ),
+                  SizedBox(height: 10.h),
+                  Image.asset(
+                    Assets.imagesImageSea,
+                  ),
+                  SizedBox(height: 12.h),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        "hearyouclearly".tr(context: context),
+                        style: AppStyles.style14W600,
+                      ),
+                      SizedBox(width: 5.w),
+                      SvgPicture.asset(
+                        Assets.imagesLikeicon,
+                        height: 40.h,
+                        colorFilter: ColorFilter.mode(
+                          isDark
+                              ? const Color(0xff00C0CC)
+                              : AppColors.yellowLight,
+                          BlendMode.srcIn,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Text(
+                    "WeHelpYou".tr(context: context),
+                    style: AppStyles.style12W600.copyWith(
+                      color: const Color(0xffffffff),
+                    ),
+                  ),
+                  SizedBox(height: 16.h),
+                  InkWell(
+                    onTap: () {
+                      context.push('/whatsappAddSuggestionView');
+                    },
+                    child: Center(
+                      child: Container(
+                        height: 31.h,
+                        width: 119.w,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5.r),
+                          gradient: isDark
+                              ? const LinearGradient(
+                                  colors: [
+                                    Color(0xff00C0CC),
+                                    Color(0xff006066),
+                                  ],
+                                  begin: Alignment.centerLeft,
+                                  end: Alignment.centerRight,
+                                )
+                              : const LinearGradient(
+                                  colors: [
+                                    AppColors.linearLight1,
+                                    AppColors.linearLight2,
+                                  ],
+                                  begin: Alignment.centerLeft,
+                                  end: Alignment.centerRight,
+                                ),
+                        ),
+                        child: Center(
+                          child: Text(
+                            "suggestions".tr(context: context),
+                            style: AppStyles.style14W700.copyWith(
+                              color: const Color(0xffffffff),
+                            ),
+                            textAlign: TextAlign.center,
                           ),
-                          textAlign: TextAlign.center,
                         ),
                       ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

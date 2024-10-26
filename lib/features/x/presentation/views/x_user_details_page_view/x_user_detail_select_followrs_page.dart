@@ -109,7 +109,9 @@ class _XUserDetailsSelectFollowrsPageState
                   content: Text(
                     "The number allowed to be sent is 400 people only. Please charge more diamonds."
                         .tr(context: context),
-                    style: AppStyles.style15W900,
+                    style: AppStyles.style15W900.copyWith(
+                      color: Colors.white,
+                    ),
                     textAlign: TextAlign.center,
                   ),
                 );

@@ -99,7 +99,9 @@ class _XUserDetailsViewState extends State<XUserDetailsView> {
                               TextSpan(
                                 text: " CARZIMA23 ",
                                 style: AppStyles.style13W600.copyWith(
-                                  color: const Color(0xff00C0CC),
+                                  color: isDark
+                                      ? const Color(0xff00C0CC)
+                                      : AppColors.blueLight,
                                 ),
                               ),
                             ],
@@ -118,7 +120,9 @@ class _XUserDetailsViewState extends State<XUserDetailsView> {
                               TextSpan(
                                 text: " (4000) ",
                                 style: AppStyles.style13W600.copyWith(
-                                  color: const Color(0xff00C0CC),
+                                  color: isDark
+                                      ? const Color(0xff00C0CC)
+                                      : AppColors.blueLight,
                                 ),
                               ),
                             ],

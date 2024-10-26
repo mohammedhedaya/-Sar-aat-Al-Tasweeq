@@ -194,9 +194,7 @@ class _AddFacebookGroupsViewBodyState extends State<AddFacebookGroupsViewBody> {
                                     title: Text(
                                       "GroupLink".tr(context: context),
                                       style: AppStyles.style12W400.copyWith(
-                                        color: isDark
-                                            ? Colors.white
-                                            : AppColors.blueLight,
+                                        color: Colors.white,
                                       ),
                                     ),
                                     content: Container(
@@ -213,10 +211,7 @@ class _AddFacebookGroupsViewBodyState extends State<AddFacebookGroupsViewBody> {
                                               "https://facebook.com/groups/",
                                               style: AppStyles.style12W400
                                                   .copyWith(
-                                                color: isDark
-                                                    ? Colors.white
-                                                    : AppColors.blueLight,
-                                              ),
+                                                      color: Colors.white),
                                               textAlign: TextAlign.center,
                                             ),
                                           ),
@@ -225,10 +220,9 @@ class _AddFacebookGroupsViewBodyState extends State<AddFacebookGroupsViewBody> {
                                             onTap: () {},
                                             child: SvgPicture.asset(
                                               Assets.imagesCopyIcon2,
-                                              colorFilter: ColorFilter.mode(
-                                                isDark
-                                                    ? Colors.white
-                                                    : AppColors.blueLight,
+                                              colorFilter:
+                                                  const ColorFilter.mode(
+                                                Colors.white,
                                                 BlendMode.srcIn,
                                               ),
                                             ),
@@ -255,7 +249,8 @@ class _AddFacebookGroupsViewBodyState extends State<AddFacebookGroupsViewBody> {
                                             decoration: BoxDecoration(
                                               color: isDark
                                                   ? null
-                                                  : AppColors.blueLight,
+                                                  : AppColors.whiteColor
+                                                      .withOpacity(0.10),
                                               gradient: isDark
                                                   ? const LinearGradient(
                                                       colors: [

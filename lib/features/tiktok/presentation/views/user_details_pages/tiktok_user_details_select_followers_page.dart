@@ -33,12 +33,8 @@ class _TiktokUserDetailsSelectFollowersPageState
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(2.r),
           ),
-         activeColor: isDark
-                        ? const Color(0xff00C0CC)
-                        : AppColors.yellowLight,
-                    checkColor: isDark
-                        ? const Color(0xff00C0CC)
-                        : AppColors.yellowLight,
+          activeColor: isDark ? const Color(0xff00C0CC) : AppColors.yellowLight,
+          checkColor: isDark ? const Color(0xff00C0CC) : AppColors.yellowLight,
           visualDensity: VisualDensity.compact,
           contentPadding: EdgeInsets.zero,
           side: BorderSide(
@@ -69,7 +65,7 @@ class _TiktokUserDetailsSelectFollowersPageState
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(2.r),
                     ),
-                      activeColor: isDark
+                    activeColor: isDark
                         ? const Color(0xff00C0CC)
                         : AppColors.yellowLight,
                     checkColor: isDark
@@ -91,8 +87,7 @@ class _TiktokUserDetailsSelectFollowersPageState
                     },
                   ),
                   Divider(
-                                        color: isDark ? Colors.white : AppColors.hightYellowLight,
-
+                    color: isDark ? Colors.white : AppColors.hightYellowLight,
                     thickness: 1,
                     endIndent: 25.w,
                     indent: 25.w,
@@ -112,11 +107,12 @@ class _TiktokUserDetailsSelectFollowersPageState
                   onTap: () {
                     context.push('/tiktokSendingView');
                   },
-                
                   content: Text(
                     "The number allowed to be sent is 400 people only. Please charge more diamonds."
                         .tr(context: context),
-                    style: AppStyles.style15W900,
+                    style: AppStyles.style15W900.copyWith(
+                      color: Colors.white,
+                    ),
                     textAlign: TextAlign.center,
                   ),
                 );

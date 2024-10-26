@@ -190,10 +190,7 @@ class _TelegramGroupsDetailsViewBodyState
                                               "https://t.me/",
                                               style: AppStyles.style12W400
                                                   .copyWith(
-                                                color: isDark
-                                                    ? Colors.white
-                                                    : AppColors.blueLight,
-                                              ),
+                                                      color: Colors.white),
                                               textAlign: TextAlign.center,
                                             ),
                                           ),
@@ -202,12 +199,6 @@ class _TelegramGroupsDetailsViewBodyState
                                             onTap: () {},
                                             child: SvgPicture.asset(
                                               Assets.imagesCopyIcon2,
-                                              colorFilter: ColorFilter.mode(
-                                                isDark
-                                                    ? Colors.white
-                                                    : AppColors.blueLight,
-                                                BlendMode.srcIn,
-                                              ),
                                             ),
                                           ),
                                         ],
@@ -232,7 +223,8 @@ class _TelegramGroupsDetailsViewBodyState
                                             decoration: BoxDecoration(
                                               color: isDark
                                                   ? null
-                                                  : AppColors.blueLight,
+                                                  : AppColors.whiteColor
+                                                      .withOpacity(0.10),
                                               gradient: isDark
                                                   ? const LinearGradient(
                                                       colors: [

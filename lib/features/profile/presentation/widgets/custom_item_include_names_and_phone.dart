@@ -362,25 +362,6 @@ class CustomItemIncludeCountry extends StatelessWidget {
                     ],
                   ),
                 ),
-                //     CountryCodePicker(
-                //   onChanged: (value) {},
-                //   initialSelection: 'SA',
-                //   favorite: const ['+966', 'SA'],
-                //   barrierColor: const Color(0xfffff9f9).withOpacity(0.33),
-                //   textOverflow: TextOverflow.ellipsis,
-                //   boxDecoration: BoxDecoration(
-                //     borderRadius: BorderRadius.circular(8.r),
-                //   ),
-                //   alignLeft: true,
-                //   padding: EdgeInsets.zero,
-                //   showCountryOnly: true,
-                //   showOnlyCountryWhenClosed: true,
-                //   showFlagDialog: true,
-                //   showDropDownButton: true,
-                //   flagDecoration: BoxDecoration(
-                //     borderRadius: BorderRadius.circular(4.r),
-                //   ),
-                // ),
               ),
             ],
           ),
@@ -415,14 +396,7 @@ class CustomItemIncludeCountry extends StatelessWidget {
                           color: AppColors.blueLight,
                         ),
                 ),
-                child:
-                    // Center(
-                    //   child: Text(
-                    //     "الرياض",
-                    //     style: AppStyles.style18W400,
-                    //   ),
-                    // ),
-                    TextFormField(
+                child: TextFormField(
                   readOnly: true,
                   initialValue: 'الرياض',
                   decoration: const InputDecoration(

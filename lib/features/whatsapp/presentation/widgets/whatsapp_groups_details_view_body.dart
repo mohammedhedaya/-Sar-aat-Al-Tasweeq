@@ -189,7 +189,8 @@ class _GroupsDetailsViewBodyState extends State<GroupsDetailsViewBody> {
                                               "https://web.whatsapp.com/",
                                               style: AppStyles.style12W400
                                                   .copyWith(
-                                                      color: Colors.white),
+                                                color: Colors.white,
+                                              ),
                                               textAlign: TextAlign.center,
                                             ),
                                           ),

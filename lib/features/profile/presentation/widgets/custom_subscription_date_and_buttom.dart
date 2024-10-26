@@ -90,7 +90,8 @@ class CustomSubscriptionDateAndBtns extends StatelessWidget {
                   GoRouter.of(context).push('/editProfileView');
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: isDark ? Colors.teal : AppColors.yellowLight,
+                  backgroundColor:
+                      isDark ? Colors.teal : const Color(0xffB99C3D),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.r),
                   ),
@@ -98,7 +99,7 @@ class CustomSubscriptionDateAndBtns extends StatelessWidget {
                 child: Text(
                   "edit_profile".tr(context: context),
                   style: AppStyles.style14W600.copyWith(
-                    color: isDark ? Colors.white : AppColors.blackColor,
+                    color: Colors.white,
                   ),
                 ),
               ),

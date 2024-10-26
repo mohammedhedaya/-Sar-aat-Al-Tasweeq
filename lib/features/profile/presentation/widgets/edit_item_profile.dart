@@ -192,55 +192,6 @@ class EditItemProfile extends StatelessWidget {
                                     color: AppColors.blueLight,
                                   ),
                                 ),
-                          // suffixIcon:
-                          //     //  CountryCodePicker(
-                          //     //   onChanged: (value) {},
-                          //     //   initialSelection: 'SA',
-                          //     //   favorite: const ['+966', 'SA'],
-                          //     //   barrierColor: const Color(0xfffff9f9).withOpacity(0.33),
-                          //     //   textOverflow: TextOverflow.ellipsis,
-                          //     //   boxDecoration: BoxDecoration(
-                          //     //     borderRadius: BorderRadius.circular(8.r),
-                          //     //   ),
-                          //     //   // alignLeft: true,
-                          //     //   padding: EdgeInsets.zero,
-                          //     //   // showCountryOnly: true,
-                          //     //   // showOnlyCountryWhenClosed: true,
-                          //     //   // showFlagDialog: true,
-                          //     //   showDropDownButton: true,
-                          //     //   flagDecoration: BoxDecoration(
-                          //     //     borderRadius: BorderRadius.circular(4.r),
-                          //     //   ),
-                          //     // ),
-                          //     Container(
-                          //   decoration: BoxDecoration(
-                          //     // color: isDark ? null : AppColors.blueLight,
-                          //     borderRadius: BorderRadius.only(
-                          //       topLeft: Radius.circular(10.r),
-                          //       bottomLeft: Radius.circular(10.r),
-                          //     ),
-                          //     border: Border.all(
-                          //       color:
-                          //           isDark ? Colors.transparent : AppColors.blueLight,
-                          //     ),
-                          //   ),
-                          //   child: Row(
-                          //     mainAxisSize: MainAxisSize.min,
-                          //     children: [
-                          //       SizedBox(width: 5.w),
-                          //       SvgPicture.asset(Assets.imagesSuadiFlag),
-                          //       SizedBox(width: 5.w),
-                          //       Text(
-                          //         "966+",
-                          //         style: AppStyles.style18W400,
-                          //       ),
-                          //       const Icon(
-                          //         Icons.arrow_drop_down,
-                          //         color: Colors.black45,
-                          //       ),
-                          //     ],
-                          //   ),
-                          // ),
                           border: InputBorder.none,
                           contentPadding: EdgeInsets.symmetric(
                             vertical: 15.h,
@@ -320,7 +271,7 @@ class EditItemProfile extends StatelessWidget {
                         ? null
                         : OutlineInputBorder(
                             borderRadius: BorderRadius.all(
-                              Radius.circular(10.r),
+                              Radius.circular(20.r),
                             ),
                             borderSide: const BorderSide(
                               color: AppColors.blueLight,

@@ -27,7 +27,6 @@ class ProfileView extends StatelessWidget {
               },
               icon: const Icon(
                 Icons.arrow_forward_ios_outlined,
-                // color: isDark ? Colors.white70 : Colors.black,
               ),
             ),
           ],
