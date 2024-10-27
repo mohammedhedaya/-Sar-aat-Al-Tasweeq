@@ -73,6 +73,7 @@ class SignUpProfileView extends StatelessWidget {
                         suffixIcon: Container(
                           constraints: BoxConstraints(
                             minWidth: 95.w,
+                            maxWidth: 130.w,
                           ),
                           height: 70.h,
                           decoration: BoxDecoration(
@@ -102,22 +103,37 @@ class SignUpProfileView extends StatelessWidget {
                                     bottomLeft: Radius.circular(20.r),
                                   ),
                           ),
-                          child: CountryCodePicker(
-                            onChanged: (value) {},
-                            initialSelection: 'SA',
-                            favorite: const ['+966', 'SA'],
-                            textStyle: const TextStyle(color: Colors.black),
-                            barrierColor:
-                                const Color(0xfffff9f9).withOpacity(0.33),
-                            textOverflow: TextOverflow.ellipsis,
-                            boxDecoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(8.r),
-                            ),
-                            padding: EdgeInsets.zero,
-                            showDropDownButton: true,
-                            flagDecoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(5.r),
-                            ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Expanded(
+                                child: CountryCodePicker(
+                                  onChanged: (value) {},
+                                  initialSelection: 'SA',
+                                  favorite: const ['+966', 'SA'],
+                                  textStyle:
+                                      const TextStyle(color: Colors.black),
+                                  barrierColor:
+                                      const Color(0xfffff9f9).withOpacity(0.33),
+                                  textOverflow: TextOverflow.ellipsis,
+                                  boxDecoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(8.r),
+                                  ),
+                                  padding: EdgeInsets.zero,
+                                  dialogTextStyle: const TextStyle(
+                                    color: Colors.white,
+                                  ),
+                                  flagDecoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(5.r),
+                                  ),
+                                ),
+                              ),
+                              const Icon(
+                                Icons.arrow_drop_down,
+                                size: 34,
+                                color: Colors.black,
+                              ),
+                            ],
                           ),
                         ),
                       ),
@@ -250,28 +266,43 @@ class SignUpProfileView extends StatelessWidget {
                                         Radius.circular(20),
                                       ),
                                     ),
-                                    child: CountryCodePicker(
-                                      onChanged: (value) {
-                                        cubit.setSelectedCountry(value.code);
-                                        state.didChange(value.code);
-                                      },
-                                      initialSelection: 'SA',
-                                      favorite: const ['+966', 'SA'],
-                                      barrierColor: const Color(0xfffff9f9)
-                                          .withOpacity(0.33),
-                                      textOverflow: TextOverflow.ellipsis,
-                                      boxDecoration: BoxDecoration(
-                                        borderRadius:
-                                            BorderRadius.circular(8.r),
-                                      ),
-                                      padding: EdgeInsets.zero,
-                                      showFlag: true,
-                                      showOnlyCountryWhenClosed: true,
-                                      showDropDownButton: true,
-                                      flagDecoration: BoxDecoration(
-                                        borderRadius:
-                                            BorderRadius.circular(5.r),
-                                      ),
+                                    child: Row(
+                                      children: [
+                                        Expanded(
+                                          child: CountryCodePicker(
+                                            onChanged: (value) {
+                                              cubit.setSelectedCountry(
+                                                  value.code);
+                                              state.didChange(value.code);
+                                            },
+                                            initialSelection: 'SA',
+                                            favorite: const ['+966', 'SA'],
+                                            barrierColor:
+                                                const Color(0xfffff9f9)
+                                                    .withOpacity(0.33),
+                                            textOverflow: TextOverflow.ellipsis,
+                                            boxDecoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(8.r),
+                                            ),
+                                            dialogTextStyle: const TextStyle(
+                                              color: Colors.white,
+                                            ),
+                                            padding: EdgeInsets.zero,
+                                            showFlag: true,
+                                            showOnlyCountryWhenClosed: true,
+                                            flagDecoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(5.r),
+                                            ),
+                                          ),
+                                        ),
+                                        const Icon(
+                                          Icons.arrow_drop_down,
+                                          size: 34,
+                                          color: Colors.black,
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 );
