@@ -1,4 +1,5 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
+import 'package:country_code_picker/country_code_picker.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -224,31 +225,44 @@ class EditItemProfile extends StatelessWidget {
                                 color: AppColors.blueLight,
                               ),
                       ),
-                      child: Row(
+                      child:
+                          //  Row(
+                          //   mainAxisAlignment: MainAxisAlignment.center,
+                          //   children: [
+                          //     Text(
+                          //       "966+",
+                          //       style: AppStyles.style18W400,
+                          //     ),
+                          //     const Icon(
+                          //       Icons.arrow_drop_down,
+                          //       size: 34,
+                          //     ),
+                          //   ],
+                          // ),
+                          Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text(
-                            "966+",
-                            style: AppStyles.style18W400,
+                          Expanded(
+                            child: CountryCodePicker(
+                              initialSelection: "SA",
+                              favorite: const ['+966', 'SA'],
+                              showFlagDialog: true,
+                              showFlag: false,
+                              textOverflow: TextOverflow.ellipsis,
+                              dialogTextStyle: const TextStyle(
+                                color: Colors.white,
+                              ),
+                              boxDecoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(8.r),
+                              ),
+                            ),
                           ),
                           const Icon(
                             Icons.arrow_drop_down,
-                            size: 34,
+                            size: 30,
                           ),
                         ],
                       ),
-                      // CountryCodePicker(
-                      //   initialSelection: "SA",
-                      //   favorite: const ['+966', 'SA'],
-                      //   // showCountryOnly: true,
-                      //   showFlagDialog: true,
-                      //   showDropDownButton: true,
-                      //   showFlag: false,
-                      //   textOverflow: TextOverflow.ellipsis,
-                      //   boxDecoration: BoxDecoration(
-                      //     borderRadius: BorderRadius.circular(8.r),
-                      //   ),
-                      // ),
                     ),
                   ),
                 ],

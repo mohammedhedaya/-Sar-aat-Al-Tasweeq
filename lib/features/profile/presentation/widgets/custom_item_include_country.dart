@@ -1,9 +1,8 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
+import 'package:country_code_picker/country_code_picker.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:shopping_chart/core/utils/assets.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 
@@ -45,42 +44,56 @@ class CustomEditProfileItemIncludeCountry extends StatelessWidget {
                           color: AppColors.blueLight,
                         ),
                 ),
-                child: Row(
+                child:
+                    // Row(
+                    //   children: [
+                    //     SvgPicture.asset(Assets.imagesSuadiFlag),
+                    //     SizedBox(width: 3.w),
+                    //     Expanded(
+                    //       child: Text(
+                    //         "المملكة العربية السعودية",
+                    //         style: AppStyles.style14W400,
+                    //         overflow: TextOverflow.ellipsis,
+                    //       ),
+                    //     ),
+                    //     const Icon(
+                    //       Icons.arrow_drop_down,
+                    //       size: 34,
+                    //     ),
+                    //   ],
+                    // ),
+                    Row(
                   children: [
-                    SvgPicture.asset(Assets.imagesSuadiFlag),
-                    SizedBox(width: 3.w),
                     Expanded(
-                      child: Text(
-                        "المملكة العربية السعودية",
-                        style: AppStyles.style14W400,
-                        overflow: TextOverflow.ellipsis,
+                      child: CountryCodePicker(
+                        onChanged: (value) {},
+                        initialSelection: 'SA',
+                        favorite: const ['+966', 'SA'],
+                        barrierColor: const Color(0xfffff9f9).withOpacity(0.33),
+                        textOverflow: TextOverflow.ellipsis,
+                        boxDecoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8.r),
+                        ),
+                        alignLeft: true,
+                        padding: EdgeInsets.zero,
+                        showCountryOnly: true,
+                        showOnlyCountryWhenClosed: true,
+                        showFlagDialog: true,
+                        dialogTextStyle: const TextStyle(
+                          color: Colors.white,
+                        ),
+                        flagDecoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(4.r),
+                        ),
                       ),
                     ),
-                    const Icon(
+                    Icon(
                       Icons.arrow_drop_down,
                       size: 34,
+                      color: isDark ? Colors.white : Colors.black,
                     ),
                   ],
                 ),
-                //     CountryCodePicker(
-                //   onChanged: (value) {},
-                //   initialSelection: 'SA',
-                //   favorite: const ['+966', 'SA'],
-                //   barrierColor: const Color(0xfffff9f9).withOpacity(0.33),
-                //   textOverflow: TextOverflow.ellipsis,
-                //   boxDecoration: BoxDecoration(
-                //     borderRadius: BorderRadius.circular(8.r),
-                //   ),
-                //   alignLeft: true,
-                //   padding: EdgeInsets.zero,
-                //   showCountryOnly: true,
-                //   showOnlyCountryWhenClosed: true,
-                //   showFlagDialog: true,
-                //   showDropDownButton: true,
-                //   flagDecoration: BoxDecoration(
-                //     borderRadius: BorderRadius.circular(4.r),
-                //   ),
-                // ),
               ),
             ],
           ),

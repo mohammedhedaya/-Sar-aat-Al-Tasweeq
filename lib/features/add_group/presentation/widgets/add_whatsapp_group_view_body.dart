@@ -106,6 +106,9 @@ class _AddWhatsappGroupViewBodyState extends State<AddWhatsappGroupViewBody> {
                   borderRadius: BorderRadius.circular(8.r),
                 ),
                 padding: EdgeInsets.zero,
+                dialogTextStyle: const TextStyle(
+                  color: Colors.white,
+                ),
                 showFlag: true,
                 flagWidth: 50.w,
                 // hideMainText: true,

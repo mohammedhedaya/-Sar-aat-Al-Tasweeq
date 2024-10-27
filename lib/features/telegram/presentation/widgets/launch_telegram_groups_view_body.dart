@@ -75,6 +75,9 @@ class LaunchAdTelegramGroupsViewBody extends StatelessWidget {
               hintText: "",
               prefixIcon: CountryCodePicker(
                 onChanged: (value) {},
+                dialogTextStyle: const TextStyle(
+                  color: Colors.white,
+                ),
                 initialSelection: 'SA',
                 favorite: const ['+966', 'SA'],
                 barrierColor: const Color(0xfffff9f9).withOpacity(0.33),

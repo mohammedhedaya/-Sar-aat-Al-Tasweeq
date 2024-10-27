@@ -110,6 +110,12 @@ class _TelegramGroupsDetailsViewBodyState
           showOnlyCountryWhenClosed: true,
           favorite: const ["+966", "SA"],
           showDropDownButton: true,
+          boxDecoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(5.r),
+          ),
+          dialogTextStyle: const TextStyle(
+            color: Colors.white,
+          ),
           alignLeft: true,
           flagWidth: 40.w,
           showFlagDialog: true,

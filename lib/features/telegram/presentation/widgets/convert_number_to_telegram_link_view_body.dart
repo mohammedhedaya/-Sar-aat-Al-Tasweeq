@@ -117,6 +117,9 @@ class _ConvertNumberToTelegramLinkViewBodyState
                 boxDecoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8.r),
                 ),
+                dialogTextStyle: const TextStyle(
+                  color: Colors.white,
+                ),
                 padding: EdgeInsets.zero,
                 showDropDownButton: true,
                 flagDecoration: BoxDecoration(

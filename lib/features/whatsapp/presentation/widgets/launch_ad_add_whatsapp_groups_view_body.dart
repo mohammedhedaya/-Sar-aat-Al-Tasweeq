@@ -73,8 +73,9 @@ class LaunchAdAddWhatsappGroupsViewBody extends StatelessWidget {
                 boxDecoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8.r),
                 ),
-                // showCountryOnly: true,
-                // hideMainText: true,
+                dialogTextStyle: const TextStyle(
+                  color: Colors.white,
+                ),
                 showOnlyCountryWhenClosed: true,
                 flagWidth: 50.w,
                 padding: EdgeInsets.zero,

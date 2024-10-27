@@ -110,16 +110,16 @@ class _AddTelegramGroupViewBodyState extends State<AddTelegramGroupViewBody> {
                 // showFlag: true,
                 showOnlyCountryWhenClosed: true,
                 flagWidth: 50.w,
-                // hideMainText: true,
-                // showCountryOnly: true,
+                dialogTextStyle: const TextStyle(
+                  color: Colors.white,
+                ),
                 flagDecoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(5.r),
                 ),
               ),
               suffixIcon: Icon(
                 Icons.keyboard_arrow_down_rounded,
-                color:
-                    isDark ? const Color(0xff00C0CC) : AppColors.yellowLight,
+                color: isDark ? const Color(0xff00C0CC) : AppColors.yellowLight,
                 size: 30,
               ),
               onChanged: (value) {},

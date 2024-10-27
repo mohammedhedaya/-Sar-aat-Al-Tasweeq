@@ -101,6 +101,9 @@ class _ConvertNumberToWhatsappLinkViewBodyState
                 },
                 initialSelection: 'SA',
                 favorite: const ['+966', 'SA'],
+                dialogTextStyle: const TextStyle(
+                  color: Colors.white,
+                ),
                 barrierColor: const Color(0xfffff9f9).withOpacity(0.33),
                 textStyle: const TextStyle(color: Colors.black),
                 textOverflow: TextOverflow.ellipsis,
