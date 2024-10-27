@@ -257,9 +257,10 @@ class EditItemProfile extends StatelessWidget {
                               ),
                             ),
                           ),
-                          const Icon(
+                          Icon(
                             Icons.arrow_drop_down,
                             size: 30,
+                            color: isDark ? Colors.white : Colors.black,
                           ),
                         ],
                       ),

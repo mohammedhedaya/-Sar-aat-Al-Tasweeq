@@ -297,10 +297,12 @@ class SignUpProfileView extends StatelessWidget {
                                             ),
                                           ),
                                         ),
-                                        const Icon(
+                                        Icon(
                                           Icons.arrow_drop_down,
                                           size: 34,
-                                          color: Colors.black,
+                                          color: isDark
+                                              ? Colors.white
+                                              : Colors.black,
                                         ),
                                       ],
                                     ),
